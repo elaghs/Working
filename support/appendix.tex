@@ -1,0 +1,48 @@
+\ifdefined\TECHREPORT
+\label{appendix:traceequiv}
+\textbf{Theorem \ref{thm:traceequiv}: Trace Equivalence}
+\textit{
+\input{agree-to-ta-thm}
+}
+
+\vspace{0.1in}
+
+%\mike{Re-introduce $\phi$!  This might confuse people.}
+
+\noindent \textbf{Proof: } (1) by construction.  Given an arbitrary trace $\sigma_{c}$ we construct an equivalent trace $\sigma_{t}$.  We construct $\sigma_{t}$ using induction over the natural numbers, assuming that we have constructed $\sigma_{t1} \ldots \sigma_{tk}$ and then extending the trace to $\sigma_{tk+1}$.
+
+The proof decomposes into two cases.  First, we must show that the initial states match (base case).  By the initial state construction $l_{c} = l_{t-a} = (l_1^0,l_2^0,...,l_n^0)$ and $u_{c} = u_{t} = u_0$.  By construction, the domain of $\nu_{c}$ consists of $\dom(V_{A}) \cup \dom(v_{0})$, and
+for $x \in \nu_{c}~.~\nu_{c}(x) = \nu_{t}(x) = \nu_{0}(x)$, and for $x \in V_{A}$, we have $\nu_{c}(x) = \nu_{t}(x) = \nu_{pc}(x) = \nu_{t}(x_{pre}) = V_{A0}(x)$.  We initialize $\nu_{t}(v_{sat})$ to true.
+Finally, $o_{c} = \emptyset$ and $\{(v, false)~|~v \in V_{OL} \}$, so $(\forall (o,v_{o}) \in \mapoutputevent~.~(o \in o_{c} \iff \nu_{t}(v_{ol}) = true))$.
+
+Suppose alternately that we have $k > 0$.  We show that we can extend the trace $\sigma_{t}$ to match $\sigma_{c}$ at step $k+1$.
+
+Given state $\sigma_{ck}$, $\sigma_{ck+1}$ must be reached by one of the six transition rules in Definition~\ref{def:centa-semantics}.  Suppose CENTA rule (1) is used.  In this case, time advances by $d$.  But in this case, we can apply NTA rule 1 for $\sigma_{tk}$ for the same value of $d$.  This is immediate for any of the invariants for machines $\{\mathcal{A}_{1}, \mathcal{A}_{2}, \ldots, \mathcal{A}_{n}\}$ because from the pre-state equivalence $\stateequiv$ the states have the same valuations for locations, variables, and clocks.  For the valuation of $\mathcal{A}_{a}$, there is only one state ($l_{w}$) with invariant $(\lbb c_{\period} \leq \period \rbb, \lbb v_{sat} = \ktrue \rbb)$.  $v_{sat}$ is true in state $k$ and remains true in $k+1$ since no variables change value during a time update.  It remains to show that $u_{t}(c_{\period}) + d \leq \period$, which is straightforward since $u_{t}(c_{\period}) = u_{c}(c_{\period})$ and (1) contains a constraint: $u(c_{\period})+ d \leq \period$.  Therefore $\sigma_{ck+1} \stateequiv \sigma_{tk+1}$.
+
+
+Suppose CENTA rule (2) is used.  In this case, a $\tau$ transition occurs in one of the machines $\{\mathcal{A}_{1}, \mathcal{A}_{2}, \ldots, \mathcal{A}_{n}\}$.  In this case, same transition can occur in the translated model using rule (2), yielding the same destination state, clock resets and variable valuations, so (a), (b), (c) are immediately satisfied.  Furthermore, $\agreestate$ is not modified by rule (2), so the definitions $v_{pc}$ and $o_{c}$ remain the same.  By $assigns\_ok$, it is also the case that no variables in the sets $V_{P}$ and $O_{E}$ or variable $v_{sat}$ will be modified, so (d), (e), and (f) are maintained, and $\sigma_{ck+1} \stateequiv \sigma_{tk+1}$.
+
+Suppose CENTA rule (3) is used.  In this case, the reasoning is very similar to rule (2).
+
+Suppose CENTA rule (4) is used.  In this case, we are latching an input signal into an input variable related to the AGREE contract.  By rule (4), there exists an event $(\alpha_{i}, v_{ie}) \in \mapinputevent$.  Therefore, we can apply rule (3) with the $E_I$ transition:
+$(l_{w}, \alpha_{i}?, (\lbb \ktrue \rbb, \lbb \ktrue \rbb), \emptyset, \{ (v_{i}, \lbb \ktrue \rbb) \}, l_{w})$. The result of the application of rule (3) to the translation and rule (4) to the AGREE model perform the same variable modifications and clock resets, satisfying (a), (b), (c).  By $assigns\_ok$, no variables in the sets $V_{P}$ and $O_{E}$ or variable $v_{sat}$ will be modified, so (d), (e), and (f) are maintained and the state invariant for $l_{w}$ is maintained, and $\sigma_{ck+1} \stateequiv \sigma_{tk+1}$.
+
+Suppose CENTA rule (5) is used.  This rule has the form:
+
+$(\bar{l}_{c},u_{c}, \nu_{c}, (\nu_{pc}, \emptyset)) \rightarrow (\bar{l}_{c}, u'_{c}, \nu''_{c}, (\nu'_{c}, o'_{c}))$ if $\nu'_{c} \in Val^{O}(\nu_{c})$, $u_{c}(c_{\period}) = \period$, $C2S(\nu_{c}, \nu'_{c})$, $u'_{c} = u_{c} \oplus (c_{\period} \mapsto 0)$, and $o'_{c} = \outputevents(\nu'_{c})$.  We note that $\nu'_{c}$ is constructed from $\nu_{c}$ by nondeterministically assigning a value to each of the $m$ output variables from their types $Val^{O}(\nu_{c})$.  For the moment, we will call these additional assignments $\nu_{O} = \{(v_{0}, c_0), (v_1, c_1), \ldots, (v_m, c_m)\}$, and note that $\nu'_{c} = \nu_{c} \oplus \nu_{O}$.  In the construction of the translated automata, we create an assignment for {\em every} such valuation of outputs in the $Y_{TA}$ rule.  We choose the edge $e_{to}$ that has the matching assignment $\nu'_{c}$ from $Y_{TA}$: $Y_{tao}$.  This edge is defined in the translation as: $(l_{w}, \tau, (\lbb c_{\period} = \period \rbb, \bigwedge \{\lbb v_{o} = \kfalse\rbb~|~v_{o} \in \ran~\mapoutputevent \} ), \{c_{\period}\}, y, l_{w})$, where $y = Y_{tao} \concat Y_{TS} \concat Y_{TO} \concat Y_{TP} \concat Y_{TI} $.
+
+We first note that the guard for $e_{to}$ is satisfied due to state equivalence on pre-states $s_{C}$ and $s_{T}$ (b) and (e).  We then examine transition post-states.  First, the valuations of $l_{c}$ and $l_{t-a}$ are unchanged in both rules and that the reset clocks are the same, satisfying equivalence parts (a) and (b) on the post-states.  To determine equivalence of variable maps, we first describe intermediate variable maps during evaluation of $y$, noting that $\nu'_{t} = y(\nu_{t})$ is equivalent to $\nu^{1}_{t} = Y_{tao}(\nu)$, $\nu^{2}_{t} = Y_{TS}(\nu^{1})$, $\nu^{3}_{t} = Y_{TO}(\nu^{2}_{t})$, $\nu^{4}_{t} = Y_{TP}(\nu^{3}_t)$, and $\nu'_{t} = Y_{TI}(\nu^{4}_t)$, and that each of the lists assign a disjoint set of variables.  Because $\nu_{t}^{1} = \nu_{t} \oplus \nu_{O}$, $(\forall x \in \dom~\nu'_{c}~.~\nu'_{c}(x) = \nu^{1}_{t}(x))$, satisfying (c).  By disjointness of assignments, (c) is also satisfied for $\nu_{t}'$.  Since $Y_{tao}$ does not assign any `pre' variables,  $(\forall x \in V_{A}~.~\nu_{pc}(x) = \nu^{1}_{t}(x_{pre}))$ holds.  From these equivalences of valuations of current and pre variables $\nu'_{c}$, $\nu_{pc}$ with $\nu^{1}_{t}$, we claim\footnote{A complete argument would require translation rules for replacing `pre' expressions and expression evaluation semantics; this is a lengthy but not difficult argument.} that $C2S(\nu_{pc},\nu'_{c}) = C2S^{*}(\nu^{1}_{t})$.  Therefore, $\nu^{2}_{t}(v_{sat}) = \nu^{'}_{t}(v_{sat}) = true$, so we satisfy (f) and the state invariant of $l_{w}$.  Next, we assign
+output latch variables to match outputs in $\nu^{3}$ (satisfying (e)), and finally assign `pre' variables based on current valuations in $\nu^{4}$ (satisfying (d)). Finally, to satisfy (c) for $\nu_{t}'$ and $\nu_{c}''$, we reset all latched input variables to false using $Y_{TI}$.  Since variables other than latched inputs are unchanged, the properties (d) (e) (f) still hold.
+
+
+Suppose finally that CENTA rule (6) is used.  The proof here is very similar (and symmetric) to the proof of rule (4).
+
+Since $\sigma_{ck+1}$ must be derived from $\sigma_{ck}$ through one of the six CENTA rules, and we demonstrate that any rule CENTA application has an analogous NTA rule for the translated AGREE model, it is possible to extend $\sigma_{tk}$ to $\sigma_{tk+1}$ such that $\sigma_{ck+1} \stateequiv \sigma_{tk+1}$. %$\qed$
+
+\textbf{Proof: }(2) By construction.  The proof is similar to the proof of (1). Given an arbitrary trace $\sigma_{t}$, an equivalent trace $\sigma_{c}$ is constructed by induction over the natural numbers. That is to say, we assume that $\sigma_{c1} \ldots \sigma_{ck}$ has been constructed, and then we are extending it to $\sigma_{ck+1}$. The base case is established in a similar way described for \ref{thm:traceequiv}. Given state $\sigma_{tk}$, state $\sigma_{tk+1}$ must be reached by one of the three rules in the definition of NTA. We show that, for each rule whereby $\sigma_{tk+1}$ is reached, we can construct $\sigma_{ck+1}$ using CENTA rules such that $\sigma_{ck+1} \stateequiv \sigma_{tk+1}$.\\
+Suppose that we have reached $\sigma_{tk+1}$ using NTA rule (1); using this rule, $(\bar{l}_{t},u_{t}, \nu_{t}) \rightarrow (\bar{l}_{t}, u_{t}+d, \nu_{t})$ such that, $I(\bar{l_{t}})$ is satisfied after adding $d$ to $u_{t}$. Therefore, we know that, in $\sigma_{tk+1}$, for every $\mathcal{A}_{i} \in \{\mathcal{A}_1,\mathcal{A}_2, \ldots,\mathcal{A}_n,\mathcal{A}_a \}$, invariants are satisfied. Since the invariant of $\mathcal{A}_a$ is
+$I = \{(l_{w},(\lbb c_{\period} \le \period \rbb, \lbb \nu_{sat} = true \rbb))\}$, we have
+$u_{t}(c_{\period}) +d \le \period$. Then, here, with the same value of $d$, we can apply CENTA rule (1) to $\sigma_{ck}$.  Due to pre-state equivalence for every $\mathcal{A}_{i} \in \{\mathcal{A}_1,\mathcal{A}_2, \ldots,\mathcal{A}_n\}$, the states have the same valuation for locations, variables, and clocks. For $\mathcal{A}_a$, we have only one state $l_{w}$, where $\nu_{sat}$ remains $\ktrue$ because, during the time update, no variables have changed. As $u_{t}(c_{\period})=u_{c}(c_{\period})$, the clocks are the same in state $k+1$ after adding the same amount of $d$ to $c_{\period}$. Therefore, $\sigma_{ck+1} \stateequiv \sigma_{tk+1}$.
+
+
+\input{appendix2} 

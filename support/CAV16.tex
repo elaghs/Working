@@ -1,0 +1,156 @@
+\documentclass {llncs}
+\usepackage{tabularx,colortbl}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{flushend}
+\usepackage{cite}
+\usepackage{amsmath}
+%\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{epsfig}
+\usepackage{stmaryrd}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{latexsym}
+%\usepackage{float}
+\usepackage{graphics}
+\usepackage{graphicx}
+%\usepackage{enumitem}
+\usepackage{comment}
+\usepackage{longtable}
+\usepackage{supertabular}
+\usepackage{times}
+\usepackage{listings}
+\usepackage{subfigure}
+\usepackage{color}
+\usepackage{balance}
+
+
+%\theoremstyle{Definition}
+%\newtheorem{definition}{Definition}
+%
+%\theoremstyle{Theorem}
+%\newtheorem{theorem}{Theorem}
+
+
+%\newcommand{\definition}{\noindent \textbf{Definition} \citation{}}
+%newcommand{\theorem}{\noindent \textbf{Theorem} \citation{}}
+
+
+\newcommand{\mkeyword}[1]{\mbox{\texttt{#1}}}
+\DeclareMathOperator{\kuop}{uop}
+\DeclareMathOperator{\kbop}{bop}
+\DeclareMathOperator{\kite}{ite}
+\DeclareMathOperator{\kpre}{pre}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\ktrue}{true}
+\DeclareMathOperator{\kfalse}{false}
+\DeclareMathOperator{\kselect}{select}
+\DeclareMathOperator{\ran}{range}
+\newcommand{\lbb}{[\![}
+\newcommand{\rbb}{]\!]}
+\newcommand{\expr}{\phi}
+\newcommand{\exprS}{\Phi}
+% this toggles between a tech-report version of the paper and the MEMOCODE version
+%\newcommand{\TECHREPORT}{}
+%\tolerance=1
+%\emergencystretch=\maxdimen
+%\hyphenpenalty=10000
+%\hbadness=10000
+\sloppypar
+
+
+
+\begin{document}
+
+ % Add this to every tex file, so that you can comment with a diff color%
+ \definecolor{gold}{rgb}{0.90,.66,0}
+ \definecolor{dgreen}{rgb}{0,0.6,0}
+ \newcommand{\mike}[1]{\textcolor{red}{}}
+ \newcommand{\fixed}[1]{\textcolor{red}{#1}}
+ \newcommand{\ela}[1]{\textcolor{purple}{}}
+\newcommand{\stateequiv}{\equiv_{s}}
+\newcommand{\traceequiv}{\equiv_{\sigma}}
+\newcommand{\ta}{\text{TA}}
+\newcommand{\cta}{\text{TA$_{C}$}}
+\newcommand{\tta}{\text{TA$_{T}$}}
+
+%\newcommand{\TECHREPORT}{}
+
+
+\title{An Efficient Way of Computing Set of Support\thanks{This work has been supported by XXX}}
+
+%\author{
+%\IEEEauthorblockN{Michael W. Whalen$^{\dag}$, Sanjai Rayadurgam$^{\dag}$, Elaheh Ghassabani$^{\dag}$, \\Anitha Murugesan$^{\dag}$, Oleg Sokolsky$^{*}$, Mats P.E. Heimdahl$^{\dag}$, Insup Lee$^{*}$}
+%\IEEEauthorblockA{
+%$^{\dag}$Department of Computer Science and Engineering,University of Minnesota\\
+%%200 Union Street, Minneapolis, MN 55455\\
+%\{whalen, rsanjai, ghassaba, anitha, heimdhal\}@cs.umn.edu\\
+%$^{*}$Department of Computer and Information Science, University of Pennsylvania, \\
+%%3330 Walnut St., Philadelphia, PA 19104\\
+%\{sokolsky, lee\}@cis.upenn.edu}
+
+\author{Michael W. Whalen\inst{1}, Andrew Gacek\inst{2}, Elaheh Ghassabani\inst{1}}
+
+\institute{Department of Computer Science and Engineering\\
+ University of Minnesota, 200 Union Street, Minneapolis, MN 55455,USA\\
+\email{\{whalen,ghassaba\}@cs.umn.edu}
+ \and
+Rockwell Collins Advanced Technology Center\\
+400 Collins Rd. NE, Cedar Rapids, IA, 52498, USA\\
+\email{\{andrew.gacek\}@rockwellcollins.com}
+}
+
+\maketitle
+
+\begin{abstract}
+\input{abstract}
+\end{abstract}
+
+\keywords{Auto-traceability, Set of Support, Completeness, Requirement Engineering}
+
+\input{introduction}
+
+%\ifdefined\TECHREPORT
+%\input{description}
+%\fi
+%\section{Illustrative Example}
+
+\input{running_ex}
+
+\input{background}
+
+\input{support}
+
+\input{impl}
+
+\input{experiments}
+
+\input{related}
+
+\input{conclusion}
+%ACKNOWLEDGMENTS are optional
+\vspace{0.05in}
+\textbf{Acknowledgments:}
+We thank XXXX
+\bibliographystyle{splncs}
+\bibliography{../../../bibtex/crisys}
+
+%\ifdefined\TECHREPORT
+%\appendix
+%
+%\section{Appendix: Proof of Equivalence}
+%\input{appendix}
+%\fi
+
+%\section{Appendix: GPCA CENTA Model}
+%\label{appendix:gpcacenta}
+%\begin{figure}[!ht]
+%\begin{center}
+%\includegraphics[scale=0.6]{images/sampled_pca.PNG} %[trim = 0 2 0 0, clip=true]{Comp}
+%\caption{GPCA AGREE Properties modeled as a Timed Automata} \label{fig:samplepca}
+%\end{center}
+%\end{figure}
+
+%\balancecolumns
+
+\end{document}

@@ -1,0 +1,10 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{belov2013core}
+Belov, A., Chen, H., Mishchenko, A., Marques-Silva, J.: Core minimization in
+  sat-based abstraction. In: Design, Automation \& Test in Europe Conference \&
+  Exhibition (DATE), 2013. pp. 1411--1416. IEEE (2013)
+
+\end{thebibliography}

@@ -33,7 +33,7 @@ seeds = ['310264614', '1867767380', '1741903345']
 solvers = ['z3', 'yices', 'yices2']
 class Loader(object):
     def load_k_induction (self, file, solver, seed_index):
-        out_name = solver + "_seed"+ str(seed_index) + "_" + file 
+        out_name = "kInd" + solver + "_seed"+ str(seed_index) + "_" + file 
         proc = subprocess.Popen(['java','-jar',  jkind_exe, '-jkind', '-support', '-timeout', '1000', 
                                  '-solver', solver, '-xml', out_name, '-random_seed', seeds[seed_index], file])
         dest = os.path.join (os.path.join (os.getcwd(), os.pardir), 'exp1_k_induction')
@@ -41,7 +41,7 @@ class Loader(object):
         shutil.move (out_name + '.xml', dest)
         
     def load_no_pdr (self, file, solver, seed_index):
-        out_name = solver + "_seed"+ str(seed_index) + "_" + file 
+        out_name = "noPdr" + solver + "_seed"+ str(seed_index) + "_" + file 
         proc = subprocess.Popen(['java','-jar',  jkind_exe, '-jkind', '-support', '-timeout', '1000', 
                                  '-solver', solver, '-xml', out_name,'-pdr_max', '0', '-random_seed', seeds[seed_index], file])
         dest = os.path.join (os.path.join (os.getcwd(), os.pardir), 'exp1_no_pdr')
@@ -49,7 +49,7 @@ class Loader(object):
         shutil.move (out_name + '.xml', dest)    
                                       
     def load_no_induction (self, file, solver, seed_index):
-        out_name = solver + "_seed"+ str(seed_index) + "_" + file 
+        out_name = "noInd" + solver + "_seed"+ str(seed_index) + "_" + file 
         proc = subprocess.Popen(['java','-jar',  jkind_exe, '-jkind', '-support', '-timeout', '1000', 
                                  '-solver', solver, '-xml', out_name, '-no_k_induction', '-no_bmc', '-no_inv_gen',
                                  '-random_seed', seeds[seed_index], file])

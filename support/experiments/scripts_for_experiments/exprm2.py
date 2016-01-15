@@ -6,7 +6,7 @@ __date__ = "$Jan 15, 2016 1:08:06 AM$"
 
 # instructions on how to use this script:
 # 1- in the current directory, wherever you have this script, create a folder under the name of experiments
-# 2- copy all of the .lus models in the experiments folder
+# 2- copy all of the .lus models in the experiments folder (get the polished benchmarks)
 #    --> make sure you DON'T change the directory to the experiments folder. 
 #    --> stay in the current directory, NOT in the experiments
 # 3- install jkind (I'll give you a jar file) and set the path for it.
@@ -15,7 +15,7 @@ __date__ = "$Jan 15, 2016 1:08:06 AM$"
 # 4- don't forget to install all the solvers that jkind needs (especially, z3, yices, yices2)
 # you're all set. run the script!
 
-import os, threading, subprocess, time, shutil, glob
+import os, threading, subprocess, shutil, glob
 
 def create_exp_directories ():
     if not os.path.exists(os.path.join(os.getcwd(), 'exp2_with_jsup')):
@@ -24,7 +24,7 @@ def create_exp_directories ():
 class Loader(object):
     def load_jsupport (self, file):
         out_name = file + "_jsup" 
-        proc = subprocess.Popen(['java','-jar',  jkind_exe, '-jsupport', '-timeout', '700', file])
+        proc = subprocess.Popen(['java','-jar',  jkind_exe, '-jsupport', '-timeout', '1000', file])
         dest = os.path.join (os.path.join (os.getcwd(), os.pardir), 'exp2_with_jsup')
         proc.communicate();
         shutil.move (out_name + '.xml', dest)

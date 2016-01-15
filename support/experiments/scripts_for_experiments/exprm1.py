@@ -28,29 +28,36 @@ def create_exp_directories ():
     if not os.path.exists(os.path.join(os.getcwd(), 'exp1_no_pdr')):
         os.makedirs('exp1_No_PDR')
             
-directory_counter = 1
-seeds = ['310264614', '1867767380', '1741903345']
+
+# we can just use seeds = ['310264614', '1867767380', '1741903345']
+seeds = []
+for i in range (3):
+    seeds.append (str(random.randint(1, 2147483647)))
+random_seeds = open ('random_seeds.txt', 'w')
+random_seeds.write(str(seeds))
+random_seeds.close()
+
 solvers = ['z3', 'yices', 'yices2']
 class Loader(object):
     def load_k_induction (self, file, solver, seed_index):
-        out_name = "kInd" + solver + "_seed"+ str(seed_index) + "_" + file 
-        proc = subprocess.Popen(['java','-jar',  jkind_exe, '-jkind', '-support', '-timeout', '1000', 
+        out_name = "kInd_" + solver + "_seed"+ str(seed_index) + "_" + file 
+        proc = subprocess.Popen(['java','-jar',  jkind_exe, '-jkind', '-support', '-timeout', '3600', 
                                  '-solver', solver, '-xml', out_name, '-random_seed', seeds[seed_index], file])
         dest = os.path.join (os.path.join (os.getcwd(), os.pardir), 'exp1_k_induction')
         proc.communicate();
         shutil.move (out_name + '.xml', dest)
         
     def load_no_pdr (self, file, solver, seed_index):
-        out_name = "noPdr" + solver + "_seed"+ str(seed_index) + "_" + file 
-        proc = subprocess.Popen(['java','-jar',  jkind_exe, '-jkind', '-support', '-timeout', '1000', 
+        out_name = "noPdr_" + solver + "_seed"+ str(seed_index) + "_" + file 
+        proc = subprocess.Popen(['java','-jar',  jkind_exe, '-jkind', '-support', '-timeout', '3600', 
                                  '-solver', solver, '-xml', out_name,'-pdr_max', '0', '-random_seed', seeds[seed_index], file])
         dest = os.path.join (os.path.join (os.getcwd(), os.pardir), 'exp1_no_pdr')
         proc.communicate();
         shutil.move (out_name + '.xml', dest)    
                                       
     def load_no_induction (self, file, solver, seed_index):
-        out_name = "noInd" + solver + "_seed"+ str(seed_index) + "_" + file 
-        proc = subprocess.Popen(['java','-jar',  jkind_exe, '-jkind', '-support', '-timeout', '1000', 
+        out_name = "noInd_" + solver + "_seed"+ str(seed_index) + "_" + file 
+        proc = subprocess.Popen(['java','-jar',  jkind_exe, '-jkind', '-support', '-timeout', '3600', 
                                  '-solver', solver, '-xml', out_name, '-no_k_induction', '-no_bmc', '-no_inv_gen',
                                  '-random_seed', seeds[seed_index], file])
         dest = os.path.join (os.path.join (os.getcwd(), os.pardir), 'exp1_no_induction')

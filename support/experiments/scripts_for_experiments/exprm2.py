@@ -24,7 +24,7 @@ def create_exp_directories ():
 class Loader(object):
     def load_jsupport (self, file):
         out_name = file + "_jsup" 
-        proc = subprocess.Popen(['java','-jar',  jkind_exe, '-jsupport', '-timeout', '1000', file])
+        proc = subprocess.Popen(['java','-jar',  jkind_exe, '-jsupport', '-timeout', '3600', file])
         dest = os.path.join (os.path.join (os.getcwd(), os.pardir), 'exp2_with_jsup')
         proc.communicate();
         shutil.move (out_name + '.xml', dest)

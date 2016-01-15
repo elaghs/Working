@@ -1,6 +1,8 @@
 # instructions:
 # 1- in the current directory, wherever you have this script, create a folder under the name of experiments
 # 2- copy all of the .lus models in the experiments folder
+#    --> you need to get the polished benchmarks from here: 
+#            https://github.com/elaghs/Working/blob/master/support/experiments/polished_benchmark/polished_benchmarks.zip
 #    --> make sure you DON'T change the directory to the experiments folder. 
 #    --> stay in the current directory, NOT in the experiments
 # 3- get the latest jkind .jar files from here: https://github.com/elaghs/jkind/tree/support-paper/JAR-files

@@ -92,7 +92,8 @@ for file in os.listdir(models_dir):
     shutil.move (os.path.join(models_dir, file), exprm_dir)
     
 load_experiments (files_list)
-        
+for jthread in jkind_threads:
+        jthread.join()        
     
 print ('Done!')
 

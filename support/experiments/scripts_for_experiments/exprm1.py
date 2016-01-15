@@ -18,7 +18,7 @@ __date__ = "$Jan 14, 2016 5:08:06 PM$"
 # 4- don't forget to install all the solvers that jkind needs (especially, z3, yices, yices2)
 # you're all set. run the script!
 
-import os, threading, subprocess, shutil
+import os, threading, subprocess, shutil, random
 
 def create_exp_directories ():
     if not os.path.exists(os.path.join(os.getcwd(), 'exp1_k_induction')):
@@ -133,24 +133,26 @@ for i in range (70):
     bound = 6
     files_list = []
     for file in os.listdir(models_dir):
-        shutil.move (os.path.join(models_dir, file), exprm_dir)
-        files_list.append (file)
-        bound = bound - 1
-        if bound == 0:
-            load_experiments (files_list)
-            while True:
-                for jthread in jkind_threads:
-                    if not jthread.isAlive():
-                        jkind_threads.remove(jthread)
-                        if len(jkind_threads) < 3:
-                            files_list = []
-                            break
-files_list = []            
+        if bound > 0:
+            bound = bound -1 
+            shutil.move (os.path.join(models_dir, file), exprm_dir)
+            files_list.append (file) 
+    load_experiments (files_list)
+    while True:
+        for jthread in jkind_threads:
+            if not jthread.isAlive():
+                jkind_threads.remove(jthread)
+                if len(jkind_threads) < 4:
+                    files_list = []
+                    break
+        break                    
+                            
+files_list = [] 
 for file in os.listdir(models_dir):
     files_list.append (file)
     shutil.move (os.path.join(models_dir, file), exprm_dir)
-    load_experiments (files_list)
     
+load_experiments (files_list)
 for jthread in jkind_threads:
         jthread.join()
     

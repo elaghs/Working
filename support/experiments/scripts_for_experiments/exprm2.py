@@ -15,7 +15,7 @@ __date__ = "$Jan 15, 2016 1:08:06 AM$"
 # 4- don't forget to install all the solvers that jkind needs (especially, z3, yices, yices2)
 # you're all set. run the script!
 
-import os, threading, subprocess, shutil, glob
+import os, threading, subprocess, shutil
 
 def create_exp_directories ():
     if not os.path.exists(os.path.join(os.getcwd(), 'exp2_with_jsup')):
@@ -28,6 +28,10 @@ class Loader(object):
         dest = os.path.join (os.path.join (os.getcwd(), os.pardir), 'exp2_with_jsup')
         proc.communicate();
         shutil.move (out_name + '.xml', dest)
+        try:
+            os.remove(file)
+        except OSError:
+            pass
                     
 
 def run_experiments (file):
@@ -37,8 +41,8 @@ def run_experiments (file):
     jthread.start() 
  
 
-def load_experiments ():
-    for file in glob.glob("*.lus"):
+def load_experiments (files_list):
+    for file in files_list:
         run_experiments (file)
 
 #####################################################################################################################
@@ -66,27 +70,28 @@ os.chdir(exprm_dir)
 
 for i in range (20): 
     bound = 20
+    files_list = []
     for file in os.listdir(models_dir):
         shutil.move (os.path.join(models_dir, file), exprm_dir)
+        files_list.append (file)
         bound = bound - 1
         if bound == 0:
-            load_experiments ()
-            for jthread in jkind_threads:
-                jthread.join()
-            jkind_threads = []
-            filelist = glob.glob("*.lus")
-            for f in filelist:
-                os.remove(f)
-            break
+            load_experiments (files_list)
+            while True:
+                for jthread in jkind_threads:
+                    if not jthread.isAlive():
+                        jkind_threads.remove(jthread)
+                        if len(jkind_threads) < 4:
+                            files_list = []
+                            break
+files_list = []            
 for file in os.listdir(models_dir):
+    files_list.append (file)
     shutil.move (os.path.join(models_dir, file), exprm_dir)
-    load_experiments ()
-    for jthread in jkind_threads:
+    load_experiments (files_list)
+    
+for jthread in jkind_threads:
         jthread.join()
-        jkind_threads = []
-        filelist = glob.glob("*.lus")
-        for f in filelist:
-            os.remove(f)
         
     
 print ('Done!')

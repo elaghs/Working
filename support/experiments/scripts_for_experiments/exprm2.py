@@ -69,29 +69,30 @@ create_exp_directories()
 os.chdir(exprm_dir) 
 
 for i in range (20):
-    bound = 20
+    bound = 19
     files_list = []
     for file in os.listdir(models_dir):
         if bound > 0:
             bound = bound -1 
             shutil.move (os.path.join(models_dir, file), exprm_dir)
             files_list.append (file) 
-    load_experiments (files_list)
+    if len(files_list) > 0:        
+        load_experiments (files_list)
     while True:
         for jthread in jkind_threads:
             if not jthread.isAlive():
                 jkind_threads.remove(jthread)
-                if len(jkind_threads) < 5:
-                    files_list = []
-                    break
-        break                    
+        if len(jkind_threads) < 3:
+            files_list = []
+            break                    
                             
 files_list = [] 
 for file in os.listdir(models_dir):
     files_list.append (file)
     shutil.move (os.path.join(models_dir, file), exprm_dir)
     
-load_experiments (files_list)
+if len(files_list) > 0:        
+        load_experiments (files_list) 
 for jthread in jkind_threads:
         jthread.join()        
     

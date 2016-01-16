@@ -34,7 +34,7 @@ class Loader(object):
             pass
                     
 
-def run_experiments (file):
+def run_experiment (file):
     load = Loader()
     jthread = threading.Thread(target = load.load_jsupport, args=(file,))
     jkind_threads.append (jthread)
@@ -43,16 +43,16 @@ def run_experiments (file):
 
 def load_experiments (files_list):
     for file in files_list:
-        run_experiments (file)
+        run_experiment (file)
 
 #####################################################################################################################
 
-if os.environ.get("JKIND_HOME") != None:
+if os.environ.get("JKIND_HOME") is not None:
     jkind_home = os.environ["JKIND_HOME"]
-elif os.environ.get("path") != None:
+elif os.environ.get("path")  is not None:
      path_var = os.environ["path"].split(';')
      jkind_home = [p for p in path_var if "jkind" in p]
-elif os.environ.get("PATH")!= None:
+elif os.environ.get("PATH") is not None:
      path_var = os.environ["PATH"].split(';')
      jkind_home = [p for p in path_var if "jkind" in p]
      

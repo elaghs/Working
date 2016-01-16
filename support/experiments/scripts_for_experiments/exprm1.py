@@ -74,7 +74,7 @@ class Loader(object):
 # --> add a similar funcation to the Loader class. 
 # --> follow the rule for the naming the .xml files and sleep time.
 # --> then add related lines (elif conidtions) to this function
-def run_experiments (file, fun, solver, seed_index):
+def run_experiment (file, fun, solver, seed_index):
     load = Loader()
     if fun == 1:
         jthread = threading.Thread(target = load.load_k_induction, args=(file, solver, seed_index,))
@@ -91,19 +91,19 @@ def load_experiments (files_list):
     for file in files_list:
         for solver in solvers:
             for seed in seeds:
-                run_experiments (file, 1, solver, seeds.index(seed))
-                run_experiments (file, 2, solver, seeds.index(seed))
-                run_experiments (file, 3, solver, seeds.index(seed))
+                run_experiment (file, 1, solver, seeds.index(seed))
+                run_experiment (file, 2, solver, seeds.index(seed))
+                run_experiment (file, 3, solver, seeds.index(seed))
 
 
 #####################################################################################################################
 
-if os.environ.get("JKIND_HOME") != None:
+if os.environ.get("JKIND_HOME")  is not None:
     jkind_home = os.environ["JKIND_HOME"]
-elif os.environ.get("path") != None:
+elif os.environ.get("path")  is not None:
      path_var = os.environ["path"].split(';')
      jkind_home = [p for p in path_var if "jkind" in p]
-elif os.environ.get("PATH")!= None:
+elif os.environ.get("PATH")  is not None:
      path_var = os.environ["PATH"].split(';')
      jkind_home = [p for p in path_var if "jkind" in p]
      

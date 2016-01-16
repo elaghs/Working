@@ -131,6 +131,8 @@ for i in range (79):
     
     if len(files_list) > 0:        
         load_experiments (files_list)
+    else:
+        break
     while True:
         for jthread in jkind_threads:
             if not jthread.isAlive():

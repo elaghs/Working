@@ -18,139 +18,106 @@ __date__ = "$Jan 14, 2016 5:08:06 PM$"
 # 4- don't forget to install all the solvers that jkind needs (especially, z3, yices, yices2)
 # you're all set. run the script!
 
-import os, threading, subprocess, shutil, random
+import os, threading, subprocess, shutil, random, sys, glob
 
-def create_exp_directories ():
-    if not os.path.exists(os.path.join(os.getcwd(), 'exp1_k_induction')):
-        os.makedirs('exp1_k_induction')
-    if not os.path.exists(os.path.join(os.getcwd(), 'exp1_no_induction')):
-        os.makedirs('exp1_No_induction')
-    if not os.path.exists(os.path.join(os.getcwd(), 'exp1_no_pdr')):
-        os.makedirs('exp1_No_PDR')
-            
+#
+# Configuration
+#
+
+EXPERIMENTS_DIR = 'experiments'
+RESULTS_DIR = 'results1'
+TIMEOUT = 3600
+SOLVERS = ['z3', 'yices', 'smtinterpol']
+ENGINES = [('k_ind', ['-pdr_max', '0']),
+           ('pdr', ['-no_bmc', '-no_k_induction', '-no_inv_gen']),
+           ('both', [])]
+
+#
+# Gather Lustre files
+#
+
+if not os.path.exists(EXPERIMENTS_DIR):
+    print("'" + EXPERIMENTS_DIR + "' directory does not exist")
+    sys.exit(-1)
+os.chdir(EXPERIMENTS_DIR)
+lus_files = glob.glob("*.lus")
+if len(lus_files) == 0:
+    print("No Lustre files found in '" + EXPERIMENTS_DIR + "' directory")
+    sys.exit(-1)
+os.chdir("..")
+
+
+#
+# Find jkind.jar
+#
+
+jkind_jar = None
+path = os.environ.get("JKIND_HOME") or os.environ.get("path") or os.environ.get("path")
+for dir in path.split(';'):
+    jar = os.path.join(dir, "jkind.jar")
+    if os.path.exists(jar):
+        jkind_jar = jar
+        break
+if jkind_jar is None:
+    print("Unable to find jkind.jar in JKIND_HOME or PATH environment variables")
+    sys.exit(-1)
+print("Using JKind: " + jkind_jar)
+
+
+#
+# Create output directory
+#
+
+if os.path.exists(RESULTS_DIR):
+    print(RESULTS_DIR + " already exists, exiting to prevent overwriting")
+    sys.exit(-1)
+os.mkdir(RESULTS_DIR)
+
+
+#
+# Select and record random seeds
+#
 
 # we can just use seeds = ['310264614', '1867767380', '1741903345']
-seeds = []
-for i in range (3):
-    seeds.append (str(random.randint(1, 2147483647)))
-random_seeds = open ('random_seeds.txt', 'w')
-random_seeds.write(str(seeds))
-random_seeds.close()
-
-solvers = ['z3', 'yices', 'yices2']
-class Loader(object):
-    def load_k_induction (self, file, solver, seed_index):
-        out_name = "kInd_" + solver + "_seed"+ str(seed_index) + "_" + file 
-        proc = subprocess.Popen(['java','-jar',  jkind_exe, '-jkind', '-support', '-timeout', '3600', 
-                                 '-solver', solver, '-xml', out_name, '-random_seed', seeds[seed_index], file])
-        dest = os.path.join (os.path.join (os.getcwd(), os.pardir), 'exp1_k_induction')
-        proc.communicate();
-        shutil.move (out_name + '.xml', dest)
-
-        
-    def load_no_pdr (self, file, solver, seed_index):
-        out_name = "noPdr_" + solver + "_seed"+ str(seed_index) + "_" + file 
-        proc = subprocess.Popen(['java','-jar',  jkind_exe, '-jkind', '-support', '-timeout', '3600', 
-                                 '-solver', solver, '-xml', out_name,'-pdr_max', '0', '-random_seed', seeds[seed_index], file])
-        dest = os.path.join (os.path.join (os.getcwd(), os.pardir), 'exp1_no_pdr')
-        proc.communicate();
-        shutil.move (out_name + '.xml', dest)
-
-                                      
-    def load_no_induction (self, file, solver, seed_index):
-        out_name = "noInd_" + solver + "_seed"+ str(seed_index) + "_" + file 
-        proc = subprocess.Popen(['java','-jar',  jkind_exe, '-jkind', '-support', '-timeout', '3600', 
-                                 '-solver', solver, '-xml', out_name, '-no_k_induction', '-no_bmc', '-no_inv_gen',
-                                 '-random_seed', seeds[seed_index], file])
-        dest = os.path.join (os.path.join (os.getcwd(), os.pardir), 'exp1_no_induction')
-        proc.communicate();
-        shutil.move (out_name + '.xml', dest)
+seeds = [str(random.randint(1, 2147483647)) for _ in range(3)]
+with open(os.path.join(RESULTS_DIR, 'random_seeds.txt'), 'w') as random_seeds:
+    random_seeds.write(str(seeds))
+print("Using random seeds: " + str(seeds))
 
 
+#
+# Run JKind
+#
 
-# file is the .lus model
-# fun is the id of function that should be called
-# if you want to add more runs with other settings:
-# --> add a similar funcation to the Loader class. 
-# --> follow the rule for the naming the .xml files and sleep time.
-# --> then add related lines (elif conidtions) to this function
-def run_experiment (file, fun, solver, seed_index):
-    load = Loader()
-    if fun == 1:
-        jthread = threading.Thread(target = load.load_k_induction, args=(file, solver, seed_index,))
-    elif fun == 2:
-        jthread = threading.Thread(target = load.load_no_pdr, args=(file, solver, seed_index,))
-    elif fun == 3:
-        jthread = threading.Thread(target = load.load_no_induction, args=(file, solver, seed_index,))
-        
-    jkind_threads.append (jthread)
-    jthread.start() 
- 
+def run_single_jkind(solver, engine_args, seed, xml_path, file_path):
+    args = ['java', '-jar', jkind_jar, '-jkind',
+            '-support',
+            '-timeout', str(TIMEOUT), 
+            '-solver', solver,
+            '-xml', xml_path,
+            '-random_seed', seed,
+            file_path] + engine_args
+    with open("debug1.txt", "a") as debug:
+        debug.write("Running jkind with arguments: {}\n".format(args))
+        proc = subprocess.Popen(args, stdout=debug)
+        proc.wait()
+        debug.write("\n")
 
-def load_experiments (files_list): 
-    for file in files_list:
-        for solver in solvers:
-            for seed in seeds:
-                run_experiment (file, 1, solver, seeds.index(seed))
-                run_experiment (file, 2, solver, seeds.index(seed))
-                run_experiment (file, 3, solver, seeds.index(seed))
+def run_all_jkind(lus_file):
+    os.mkdir(os.path.join(RESULTS_DIR, lus_file))
+    for seed_index, seed in enumerate(seeds):
+        for (engine, engine_args) in ENGINES:
+            for solver in SOLVERS:
+                xml_file = "{}_{}_seed{}".format(solver, engine, seed_index)
+                xml_path = os.path.join(RESULTS_DIR, lus_file, xml_file)
+                lus_path = os.path.join(EXPERIMENTS_DIR, lus_file)
+                run_single_jkind(solver, engine_args, seed, xml_path, lus_path)
+                sys.stdout.write(".")
+                sys.stdout.flush()
 
-
-#####################################################################################################################
-
-if os.environ.get("JKIND_HOME")  is not None:
-    jkind_home = os.environ["JKIND_HOME"]
-elif os.environ.get("path")  is not None:
-     path_var = os.environ["path"].split(';')
-     jkind_home = [p for p in path_var if "jkind" in p]
-elif os.environ.get("PATH")  is not None:
-     path_var = os.environ["PATH"].split(';')
-     jkind_home = [p for p in path_var if "jkind" in p]
-     
-jkind_exe = os.path.join (jkind_home[0], 'jkind.jar')
-
-jkind_threads = []  
-
-models_dir = os.path.join(os.getcwd(), 'experiments')
-
-os.makedirs('current_run')
-exprm_dir = os.path.join(os.getcwd(), 'current_run')
- 
-create_exp_directories ()
-
-os.chdir(exprm_dir) 
-
-for i in range (79):
-    bound = 5
-    files_list = []
-    for file in os.listdir(models_dir):
-        if bound > 0:
-            bound = bound -1 
-            shutil.move (os.path.join(models_dir, file), exprm_dir)
-            files_list.append (file)
-    
-    if len(files_list) > 0:        
-        load_experiments (files_list)
-    else:
-        break
-    while True:
-        for jthread in jkind_threads:
-            if not jthread.isAlive():
-                jkind_threads.remove(jthread)
-        if len(jkind_threads) < 3:
-            files_list = []
-            break                    
-                            
-files_list = [] 
-for file in os.listdir(models_dir):
-    files_list.append (file)
-    shutil.move (os.path.join(models_dir, file), exprm_dir)
-    
-if len(files_list) > 0:        
-        load_experiments (files_list)  
-        
-for jthread in jkind_threads:
-        jthread.join()
-    
-print ('Done!')
-
+for i, lus_file in enumerate(lus_files):
+    sys.stdout.write("({} of {}) {} [".format(i+1, len(lus_files), lus_file))
+    sys.stdout.flush()
+    run_all_jkind(lus_file)
+    sys.stdout.write("]\n")
+    sys.stdout.flush()

@@ -1,8 +1,5 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
 The style file: splncs03.bst
+I found no \citation commands---while reading file main.aux
 Database file #1: biblio.bib
-Repeated entry---line 106 of file biblio.bib
- : @inproceedings{belov2013core
- :                             ,
-I'm skipping whatever remains of this entry
 (There was 1 error message)

@@ -1,6 +1,14 @@
 \section{Introduction}
 \label{sec:intro}
 
+Symbolic model checking is an important verification technique for both hardware~\cite{} and software~\cite{SoftwareModelCheckingTakesOff} systems, supporting a level of rigor beyond what is possible with testing.  Current tools using induction-based techniques such as PDR~\cite{} and k-induction~\cite{} can often verify safety properties of complex infinite-state systems.  However, in the event that a property is proved, it is not always clear what level of assurance should be invested in the result.  Given that these kinds of analyses are performed for safety- and security-critical software, this can lead to overconfidence in the behavior of the fielded system.  It is well known that issues such as vacuity~\cite{} can cause verification to succeed despite errors in a property specification or in the model. Even for non-vacuous specifications, it is possible to over-constrain the specification of the {\em environment} in the model such that the implementation will not work in the actual operating environment.
+
+Additionally, we are often interested in the {\em completeness} of requirements over a given implementation model.  A model may satisfy its requirements, but these requirements may be sufficiently adequate to ensure the safe operation of the system.  Although this problem is, at its root, domain dependent and slightly subjective, standards documents such as DO178C~\cite{} advocate measuring requirements completeness by measuring coverage of source code from tests derived from requirements.  It is known~\cite{ISSTA2006} that this measure is indirect, and can only be performed late in the development cycle.
+
+Finally, another aspect of the verification process that is important is that of traceability: it is necessary to map requirements to the locations in models or source code that lead to their satisfaction. Current traceability approaches involve either manual mappings between requirements and code/models~\cite{} or a heuristic approach involving natural language processing~\cite{}.  Both of these approaches tend to be inaccurate.
+
+[Pivot to explanation of what we are doing]
+
 \begin{itemize}
     \item Overview of the problem: sequential model checkers do not provide much insight into proofs.
     \item Section should roughly follow the structure of "Finding Minimal Unsatisfiable Cores of

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.10.14)  21 JAN 2016 12:07
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.10.14)  21 JAN 2016 20:13
 entering extended mode
 **C:/docs/git/git_elaheh/Working/support/support_TeX/main.tex
 (C:/docs/git/git_elaheh/Working/support/support_TeX/main.tex
@@ -513,15 +513,23 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (C:\docs\git\git_elaheh\Working\support\support_TeX\introduction.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
-)
-(C:\docs\git\git_elaheh\Working\support\support_TeX\running_ex.tex [1
+
+
+LaTeX Warning: Citation `SoftwareModelCheckingTakesOff' on page 1 undefined on 
+input line 4.
+
+
+LaTeX Warning: Citation `ISSTA2006' on page 1 undefined on input line 6.
+
+[1
 
 {C:/Users/Whalen/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}])
+(C:\docs\git\git_elaheh\Working\support\support_TeX\running_ex.tex)
 (C:\docs\git\git_elaheh\Working\support\support_TeX\background.tex)
-(C:\docs\git\git_elaheh\Working\support\support_TeX\support.tex)
+(C:\docs\git\git_elaheh\Working\support\support_TeX\support.tex [2])
 (C:\docs\git\git_elaheh\Working\support\support_TeX\impl.tex)
 (C:\docs\git\git_elaheh\Working\support\support_TeX\experiments.tex)
-(C:\docs\git\git_elaheh\Working\support\support_TeX\related.tex [2])
+(C:\docs\git\git_elaheh\Working\support\support_TeX\related.tex)
 (C:\docs\git\git_elaheh\Working\support\support_TeX\conclusion.tex)
 (C:\docs\git\git_elaheh\Working\support\support_TeX\main.bbl
 
@@ -531,15 +539,18 @@ LaTeX Warning: Empty `thebibliography' environment on input line 5.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 5289 strings out of 494045
- 70918 string characters out of 3145965
+ 5293 strings out of 494045
+ 70982 string characters out of 3145965
  141300 words of memory out of 3000000
- 8420 multiletter control sequences out of 15000+200000
- 28110 words of font info for 81 fonts, out of 3000000 for 9000
+ 8423 multiletter control sequences out of 15000+200000
+ 29794 words of font info for 83 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 34i,10n,35p,1241b,243s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,10n,35p,1279b,243s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program F
 iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program Fi
@@ -550,7 +561,7 @@ iKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
 1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on main.pdf (3 pages, 95246 bytes).
+Output written on main.pdf (3 pages, 98654 bytes).
 PDF statistics:
  49 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -92,7 +92,8 @@ print("Using random seeds: " + str(seeds))
 def run_single_jkind(solver, engine_args, seed, xml_path, file_path):
     args = ['java', '-jar', jkind_jar, '-jkind',
             '-support',
-            '-timeout', str(TIMEOUT), 
+            '-timeout', str(TIMEOUT),
+            '-n', '1000000',
             '-solver', solver,
             '-xml', xml_path,
             '-random_seed', seed,

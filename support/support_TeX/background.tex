@@ -1,10 +1,188 @@
 \section{Preliminaries}
 \label{sec:background}
 
-\begin{itemize}
-    \item Symbolic transition systems (use material from Sheeran's "Induction using a SAT Solver" paper?)
-    \item Lustre language
-    \item UNSAT cores
-    \item jkind
-    \item more here?
-\end{itemize}
+\newcommand{\bool}[0]{\mathit{bool}}
+\newcommand{\reach}[0]{\mathit{R}}
+\newcommand{\ite}[3]{\mathit{if}\ #1\ \mathit{then}\ #2\ \mathit{else}\ #3}
+
+\subsection{Transition Systems and Safety Properties}
+
+Given a state space $S$, a transition system $(I,T)$ consists of an
+initial state predicate $I : S \to \bool$ and a transition step
+predicate $T : S \times S \to \bool$. We define the notion of
+reachability for $(I, T)$ as a the smallest predicate $\reach : S \to
+\bool$ which satisfies the following formulas:
+\begin{equation*}
+  \forall s.~ I(s) \Rightarrow \reach(s)
+\end{equation*}
+\begin{equation*}
+  \forall s, s'.~ \reach(s) \land T(s, s') \Rightarrow \reach(s')
+\end{equation*}
+When the transition system is not obvious from context we will write
+$\reach_{(I,T)}$ for the reachability predicate on the transition
+system $(I,T)$.
+
+A safety property $P : S \to \bool$ is a state predicate. A safety
+property $P$ holds on a transition system $(I, T)$ if it holds on all
+reachable states, i.e., $\forall s.~ \reach(s) \Rightarrow P(s)$,
+written as $\reach \Rightarrow P$ for short.
+
+For an arbitrary transition system $(I, T)$, computing reachability
+can be very expensive or even impossible. Thus, we need a more
+effective way of checking if a safety property $P$ is satisfied by the
+system. The key idea is to over-approximate reachability. If we can
+find an over-approximation that implies the property, then the
+property must hold. Otherwise, the approximation needs to be refined.
+
+A good first approximation for reachability is the property itself.
+That is, we can check if the following formulas hold:
+\begin{equation}
+  \forall s.~ I(s) \Rightarrow P(s)
+  \label{eq:1-ind-base}
+\end{equation*}
+\begin{equation}
+  \forall s, s'.~ P(s) \land T(s, s') \Rightarrow P(s')
+  \label{eq:1-ind-step}
+\end{equation*}
+If both formulas hold then $P$ is {\em inductive} and holds over the
+system. If (\ref{eq:1-ind-base}) fails to hold, then $P$ is violated
+by an initial state of the system. If (\ref{eq:1-ind-step}) fails to
+hold, then $P$ is too much of an over-approximation and needs to be
+refined.
+
+One way to refine our over-approximation is to add additional lemmas
+to the property of interest. For example, given another property $L :
+S \to bool$ we can consider the extended property $P'(s) = P(s) \land
+L(s)$, written as $P' = P \land L$ for short. If $P'$ holds on the
+system, then $P$ must hold as well. The hope is that the addition of
+$L$ makes formula (\ref{eq:1-ind-step}) provable because the
+antecedent is more constrained. However, the consequent of
+(\ref{eq:1-ind-step}) is also more constrained, so the lemma $L$ may
+require additional lemmas of its own.
+
+Another way to refine our over-approximation is to use use {\em
+  $k$-induction} which to unrolls the property over $k$ steps of the
+transition system. For example, 1-induction consists of formulas
+(\ref{eq:1-ind-base}) and (\ref{eq:1-ind-step}) above, whereas
+2-induction consists of the following formulas:
+\begin{align*}
+  \forall s.~ I(s) \Rightarrow P(s)
+&&  \forall s, s'.~ I(s) \land T(s, s') \Rightarrow P(s')
+\end{align*}
+\begin{equation*}
+  \forall s, s', s''.~ P(s) \land T(s, s') \land P(s') \land T(s', s'')  \Rightarrow P(s'')
+\end{equation*}
+That is, there are two base step checks and one inductive step check.
+In general, for an arbitrary $k$, $k$-induction consists of the $k$
+base step checks and one inductive step check as shown in
+Figure~\ref{fig:k-induction}. We say that a property is $k$-inductive
+if it satisfies the $k$-induction constraints for a the given value of
+$k$. The hope is that the additional formulas in the antecedent of
+the inductive step make it provable.
+
+\begin{figure}
+\begin{equation*}
+  \forall s_0.~ I(s_0) \Rightarrow P(s_0)
+\end{equation*}
+\begin{center}
+$\vdots$
+\end{center}
+\begin{equation*}
+  \forall s_0, \ldots, s_{k-1}.~ I(s_0) \land T(s_0, s_1) \land \cdots
+  \land T(s_{k-2}, s_{k-1}) \Rightarrow P(s_{k-1})
+\end{equation*}
+\begin{equation*}
+  \forall s_0, \ldots, s_k.~ P(s_0) \land T(s_0, s_1) \land P(s_{k-1})
+  \land T(s_{k-1}, s_k) \Rightarrow P(s_k)
+\end{equation*}
+\caption{$k$-induction formulas: $k$ base cases and one inductive
+  step}
+\label{fig:k-induction}
+\end{figure}
+
+In practice, we often use a combination of the above techniques. Thus,
+a typical conclusion is of the form ``$P$ with lemmas $L_1, \ldots, L_n$
+is $k$-inductive''.
+
+\subsection{JKind and Lustre}
+
+JKind is an infinite-state model checker for safety properties. JKind
+proves safety properties using multiple cooperative engines in
+parallel including $k$-induction, property directed reachability
+(PDR), and template-based lemma generation. JKind operates over
+expressions in the theory of linear integer and real arithmetic. In
+the back-end, JKind uses an SMT-solver such as Yices, Z3, CVC4,
+MathSAT, or SMTInterpol.
+
+\begin{figure}[t]
+\begin{verbatim}
+node main(x : int) returns (r : int; ok : bool);
+let
+  r = (0 -> pre r) + (if x > 0 then x else -x);
+  ok = (r >= 0);
+tel;
+\end{verbatim}
+  \caption{Example Lustre program}
+  \label{fig:lustre-ex}
+\end{figure}
+
+The input language to JKind is Lustre, a synchronous dataflow language.
+An example Lustre program is shown in Figure~\ref{fig:lustre-ex}. For
+our purposes, a Lustre program consists of 1) some input variables,
+{\tt x} in the example, 2) some output variables, {\tt r} and {\tt ok}
+in the example, and 3) an equation for each output variable. A Lustre
+program runs over discrete time steps. On each step, the input
+variables take on some values and are used to compute values for the
+output variables on the same step. In addition, equations may refer to
+the previous value of a variable using the {\tt pre} operator. This
+operator is undefined in the initial step, so the arrow operator, {\tt
+  ->}, is used to guard such the {\tt pre} operator. In the initial
+step the expression {\tt e1 -> e2} reduces to {\tt e1}, and it
+reduces to {\tt e2} in all other steps.
+
+We interpret a Lustre program as a model specification by considering
+the behavior of the program under all possible input traces. Safety
+properties over Lustre can then be expressed as Boolean output
+variables in Lustre. A safety property holds if the corresponding
+Boolean output variable is always true for all input traces. For
+example, the program in Figure~\ref{fig:lustre-ex} represents an
+integrator over the absolute value of the input variable. The output
+variable {\tt ok} is a safety property of the system expressing that
+the computed result is always non-negative. In this case, the property
+is true.
+
+It is easy to translate this interpretation of Lustre into the
+traditional initial and transition relations. We will show this by
+example using Figure~\ref{fig:lustre-ex}. First we introduce a new Boolean
+variable $init$ into the state space to denote when the system is in
+its initial step. Then we define,
+\begin{align*}
+  &I((x, r, \mathit{ok}, \mathit{init})) = \mathit{init} \\
+  &T((x, r, \mathit{ok}, \mathit{init}), (x', r', \mathit{ok'},
+  \mathit{init'})) = \\
+  &\hspace{1cm} (r' = (\ite{init}{0}{r})) \land (\mathit{ok'} =
+  (r' \geq 0)) \land \neg\mathit{init'}
+\end{align*}
+Each equation in the Lustre program is translated into a conjunct in
+the transition relation. A safety property such as {\tt ok} is
+translated into $\mathit{init} \lor \mathit{ok}$. Nested uses of arrow
+and pre operators are handled by introducing new output variables for
+nested expressions, though such details are unimportant for our
+purposes.
+
+
+%% Prevous plan:
+%%
+%% Symbolic transition systems (use material from Sheeran's "Induction using a SAT Solver" paper?)
+%% Lustre language
+%% UNSAT cores
+%% jkind
+%% more here?
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main.tex"
+%%% End
+
+%%  LocalWords:  bool reachability JKind Lustre PDR Yices MathSAT ok
+%%  LocalWords:  SMTInterpol dataflow init

@@ -1,15 +1,29 @@
 \section{Related work}
 \label{sec:related}
-Alloy is a framework for describing high-level design of various systems, whose analyzer is a fully automatic constraint solver. Constraints are translated into propositional logic solved by a SAT solver; hence, the analysis considers only a finite number of values for each type. For this reason, even for a set of simple constraints, the analyzer is never able to prove the correctness of a property.
-%our is proof
-% our is SMT solver instead of SAT: much more
-%they can efficiently prove a rich combination of decidable background theories without sacrificing completeness or full automation.
-% we support diffrent pwerful smt solvers
+
+In recent years, extraction of Minimally Unsatisfiable Subformulas (MUSes) has been the focus of a lot of research work \cite{marques2010minimal, belov2012towards, ryvchin2011faster, belov2012computing, nadel2010boosting, ryvchin2011faster, }. Although algorithms proposed by such work can handle very large problems,
+computing MUSes is still very resource-intensive task.
+While some work aimed to provide a set of minimal unsatisfiable formulae, they define minimality in
+a way that given a set of clauses \mathbb{M}, removing every member of \mathbb{M} makes it satisfiable
+\cite{belov2012computing}. 
+Such algorithms are often compared with each other. In this work, we compare a regular computation of minimal unsat-core against minimum unsat-core. In addition, our focus is not to provide a novel way of computing minimal unsat-core. Instead, we makes use of MUSes to efficiently compute a set of support in a model necessary for inductive proofs.
+
+Nadel, in \cite{nadel2010boosting}, discusses a 
+number of applications of MUS extraction in formal verification. 
+Gupta et al. \cite{gupta2003iterative} and McMillan and Amla \cite{mcmillan2003automatic} introduced the use of unsatisfiable cores in proof-based abstraction engines. Their goal is to shrink the abstraction size by omitting the parts of the design that are irrelevant to the proof of the property
+under verification. However, \cite{gupta2003iterative, mcmillan2003automatic} do not consider core minimization. To our knowledge, none of the existing work
+has used MUS to provide support information that explains
+the correctness of proofs provided by different inductive techniques
+including PDR and k-induction.
+negative result.
+
+\cite{torlak2008finding} proposes an algorithm for finding MUSes of declarative specification implemented for the Alloy language. Alloy is a framework for describing high-level design of various systems, whose analyzer is a fully automatic constraint solver. Constraints are translated into propositional logic solved by a SAT solver; hence, the analysis considers only a finite number of values for each type. For this reason, even for a set of simple constraints, the analyzer is never able to prove the correctness of a property. A major difference between this work and ours is that we 
+extract UNSAT cores from an inductive proof over a sequential model involving lemmas. In addition, Alloy mostly works based on SAT solving, instead of SMT solving. In our implementation, JKind supports a variety of powerful SMT solvers (such as Z3, Yices, Yices2, etc.).
 
 \begin{itemize}
-    \item MUS's
-    \item Work on Alloy
-    \item Work that Teme pointed us to.
-    \item Anything else Elaheh has found.
+    \item MUS's : checked
+    \item Work on Alloy: checked
+    \item Work that Teme pointed us to : will be added
+    \item Anything else Elaheh has found : \%60 checked
 \end{itemize}
 

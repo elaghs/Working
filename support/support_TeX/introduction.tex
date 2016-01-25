@@ -10,8 +10,8 @@ most tools, when the answer to a correctness query is positive, no
 further information is provided. What we would like to provide is
 traceability information, e.g., a {\em set of support}, that explains
 the proof, in much the same way that a counterexample explains the
-negative result. This is not a new idea: UNSAT cores~\cite{Who Did
-  this?} provide the same kind of information for individual SAT or
+negative result. This is not a new idea: UNSAT cores~\cite{zhang2003extracting} 
+provide the same kind of information for individual SAT or
 SMT queries, and this approach has been lifted to bounded analysis
 in~\cite{Kodkodpaper}. What we propose is a generic and efficient
 mechanism for extracting supporting information, similiar to an UNSAT
@@ -32,10 +32,10 @@ Once generated, the set of support information can be used for many purposes in 
 \end{description}
 \noindent Nevertheless, to be useful for these tasks, the generation
 process must be efficient and the generated set-of-support must be
-accurate and precise (that is, sound and close to minimal).  
+accurate and precise (that is, sound and close to minimal).
 
 
-In the remainder of this paper, we present an algorithm for efficient generation of set-of-support information for induction-based model checkers.  Our contributions, as detailed in the remainder of the paper, are as follows: 
+In the remainder of this paper, we present an algorithm for efficient generation of set-of-support information for induction-based model checkers.  Our contributions, as detailed in the remainder of the paper, are as follows:
 
 \begin{itemize}
     \item We present a technique for extracting UNSAT cores from an inductive verification of a safety property over a sequential model involving lemmas.
@@ -54,7 +54,7 @@ The rest of this article is organized as follows. In Section~\ref{sec:exmpl}, we
     \item we want to generalize this idea for sequential systems
 \end{itemize}
 \fi
-  
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "main.tex"

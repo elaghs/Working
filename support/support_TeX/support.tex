@@ -1,8 +1,147 @@
 \section{Set of Support}
 \label{sec:support}
 
-\begin{itemize}
-    \item What is it?
-    \item How do we formalize it in terms of symbolic transition systems?
-    \item How do we prove it correct?
-\end{itemize}
+\newcommand{\rest}[2]{#1^{#2}}
+
+Given a transition system which satisfies a safety property $P$, we
+want to know which parts of the system are necessary for satisfying
+the safety property. One possible way of asking this is, ``What is the
+most general version of this transition system that still satisfies
+the property?'' It turns out this has a very uninteresting answer. The
+most general system is $I(s) = P(s)$ and $T(s, s') = P(s')$, i.e., you
+start in any state satisfying the property and can transition to any
+state that still satisfies the property. The problem is that this has
+no connection to the original transition system. Instead, we need to
+target modifications to the original transition system which in turn
+requires us to know about the structure of the transition system. We
+focus on Lustre programs so that the top-level structure of the
+transition system is known.
+
+In the transition system encoding of a Lustre program
+(Section~\ref{sec:background}), each Lustre equation corresponds to a
+top-level conjunct in the transition relation. Removing a conjunct
+from the transition relation corresponds to changing a computed output
+variable into a non-deterministic input variable. If the resulting
+system still satisfies the property, that tells us the removed
+equation was not an essential part of satisfying the property.
+
+\begin{definition}
+  \label{def:holds}
+  Let $\mathcal{L}$ be a Lustre program, and let $P$ be a safety
+  property expressed over $\mathcal{L}$. $P$ holds on $\mathcal{L}$,
+  written $\mathcal{L} \vdash P$, iff the encoding of $P$ holds on the
+  transition system encoding of $\mathcal{L}$
+  (Section~\ref{sec:background}).
+\end{definition}
+
+\begin{definition}[Restriction]
+  \label{def:restriction}
+  Let $\mathcal{L}$ be a Lustre program, and let $X$ be a subset of
+  the output variables of $\mathcal{L}$. The restriction of
+  $\mathcal{L}$ to $X$, written $\rest{\mathcal{L}}{X}$, is a Lustre
+  program identical to $\mathcal{L}$ except with all equations for
+  variables not in $X$ removed and with all output variables not in
+  $X$ changed to input variables
+\end{definition}
+
+\begin{definition}[Set of support]
+  \label{def:set-of-support}
+  Let $\mathcal{L}$ be a Lustre program, let $P$ be a safety property
+  expressed over $\mathcal{L}$, and let $X$ be a subset of the output
+  variables of $\mathcal{L}$. $X$ is a set of support for
+  $\mathcal{L}$ and $P$ iff $\rest{\mathcal{L}}{X}\vdash P$. Moreover,
+  $X$ is a minimal set of support for $\mathcal{L}$ and $P$ iff there
+  is no proper subset of $X$ which is also a set of support for
+  $\mathcal{L}$ and $P$. We will elide $\mathcal{L}$ and $P$ when they
+  are clear from context.
+\end{definition}
+
+Note that a Lustre program and safety property may have multiple
+minimal sets of support.
+
+\begin{lemma}
+  \label{lem:set-of-support-monotonic}
+  Let $X \subseteq Y$. If $X$ is a set of support for $\mathcal{L}$
+  and $P$ then $Y$ is also a set of support.
+\end{lemma}
+\begin{proof}
+  TODO \qed
+\end{proof}
+
+
+\begin{algorithm}
+\label{alg:naive}
+  \SetKwInOut{Input}{input}
+  \SetKwInOut{Output}{output}
+  \Input{$\mathcal{L}\vdash P$}
+  \Output{Minimal set of support for $\mathcal{L}$ and $P$}
+  \BlankLine
+  $X \leftarrow \mbox{output variables of $\mathcal{L}$}$ \\
+  \For{$x \in X$} {
+    \If{$\rest{\mathcal{L}}{X\setminus \{x\}}\vdash P$}{
+      $X \leftarrow X\setminus \{x\}$
+    }
+  }
+  \Return{X}
+\caption{Simple algorithm for computing a minimal set of support}
+\end{algorithm}
+
+This lemma gives us a simple, but inefficient algorithm for computing
+a minimal set of support, Algorithm~\ref{alg:naive}. The resulting set
+of this algorithm is obviously a set of support for $\mathcal{L}$ and
+$P$. To show that it is minimal, suppose towards contradiction that
+the result is $R$ and there is another set of support $M$ with $M
+\subset R$. Take $x \in R\setminus M$. Since $x \in R$ it must be that
+during the algorithm $\rest{\mathcal{L}}{X\setminus \{x\}}\vdash P$ is
+not true for some set $X$ where $R \subseteq X$. We have $M \subset R
+\subseteq X$ and $x\not\in M$, thus $M \subseteq X\setminus \{x\}$.
+Since $M$ is a set of support,
+Lemma~\ref{lem:set-of-support-monotonic} says that $X\setminus \{x\}$
+is a set of support, and so $\rest{\mathcal{L}}{X\setminus
+  \{x\}}\vdash P$. This is a contradiction, thus $R$ must be minimal.
+
+This algorithm has two problems in practice. First, checking if a
+safety property holds on a system is undecidable in general thus the
+algorithm may never terminate. This may be even when the safety
+problem is easily provable over the original Lustre specification.
+Second, this algorithm is very inefficient since it requires
+attempting to re-prove the property multiple times.
+
+\begin{algorithm}
+\label{alg:support-top}
+  \SetKwInOut{Input}{input}
+  \SetKwInOut{Output}{output}
+  \Input{$P$ with $Q_1, \ldots, Q_n$ is $k$-inductive for $\mathcal{L}$}
+  \Output{Nearly minimal set of support for $\mathcal{L}$ and $P$}
+  \BlankLine
+  $k \leftarrow \mbox{compute minimal value of $k$}$ \\
+  $\{R_1, \ldots, R_m\} \leftarrow \mbox{minimize set of invariants
+    $\{Q_1, \ldots, Q_n\}$} \\
+  $X \leftarrow \mbox{compute minimal set of support for $P \land R_1
+    \land \cdots \land R_m$ to be $k$-inductive}$ \\
+  \Return{X}
+\caption{Efficient algorithm for computing a nearly minimal set of support}
+\end{algorithm}
+
+To get a more efficient algorithm, we relax our goal to finding a {\em
+  nearly} minimal set of support. Moreover, we start with more
+information about why a property holds. Since this algorithm is
+intended to be added to an existing model checker, we will have
+additional information such as lemmas and what depth of $k$-induction
+is required to prove the property. The problem then becomes:
+\begin{quote}
+Given that $P$ with lemmas $Q_1, \ldots, Q_n$ is $k$-inductive, what
+is a nearly minimal set of support for $P$?
+\end{quote}
+Algorithm~\ref{alg:support-top} efficiently computes an answer to this
+question. The main steps of this algorithm are elaborated below.
+
+TODO: Explain each step
+
+%% Old notes:
+%% - What is it?
+%% - How do we formalize it in terms of symbolic transition systems?
+%% - How do we prove it correct?
+
+
+%%  LocalWords:  Lustre iff TODO invariants

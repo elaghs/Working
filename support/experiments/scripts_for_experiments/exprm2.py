@@ -1,102 +1,96 @@
 # This is for running the second experiment suggested by Andrew:
 # Computes a minimal support from JSupport
 
-__author__ = "Elaheh"
-__date__ = "$Jan 15, 2016 1:08:06 AM$"
 
-# instructions on how to use this script:
-# 1- in the current directory, wherever you have this script, create a folder under the name of experiments
-# 2- copy all of the .lus models in the experiments folder (get the polished benchmarks)
-#    --> make sure you DON'T change the directory to the experiments folder. 
-#    --> stay in the current directory, NOT in the experiments
-# 3- install jkind (I'll give you a jar file) and set the path for it.
-#    --> in Linux you should use the environment variable "JKIND_HOME" for it
-#    --> in Windows you can put it in "path"
-# 4- don't forget to install all the solvers that jkind needs (especially, z3, yices, yices2)
-# you're all set. run the script!
+import os, subprocess, shutil, sys, glob
 
-import os, threading, subprocess, shutil
+#
+# Configuration
+#
 
-def create_exp_directories ():
-    if not os.path.exists(os.path.join(os.getcwd(), 'exp2_with_jsup')):
-            os.makedirs('exp2_with_jsup')
+EXPERIMENTS_DIR = 'benchmarks'
+RESULTS_DIR = 'results2'
+TIMEOUT = 3600
 
-class Loader(object):
-    def load_jsupport (self, file):
-        out_name = file + "_jsup" 
-        proc = subprocess.Popen(['java','-jar',  jkind_exe, '-jsupport', '-timeout', '3600', file])
-        dest = os.path.join (os.path.join (os.getcwd(), os.pardir), 'exp2_with_jsup')
-        proc.communicate();
-        shutil.move (out_name + '.xml', dest)
-        try:
-            os.remove(file)
-        except OSError:
-            pass
-                    
 
-def run_experiment (file):
-    load = Loader()
-    jthread = threading.Thread(target = load.load_jsupport, args=(file,))
-    jkind_threads.append (jthread)
-    jthread.start() 
- 
+#
+# Gather Lustre files
+#
 
-def load_experiments (files_list):
-    for file in files_list:
-        run_experiment (file)
+if not os.path.exists(EXPERIMENTS_DIR):
+    print("'" + EXPERIMENTS_DIR + "' directory does not exist")
+    sys.exit(-1)
+os.chdir(EXPERIMENTS_DIR)
+lus_files = glob.glob("*.lus")
+if len(lus_files) == 0:
+    print("No Lustre files found in '" + EXPERIMENTS_DIR + "' directory")
+    sys.exit(-1)
+os.chdir("..")
 
-#####################################################################################################################
 
-if os.environ.get("JKIND_HOME") is not None:
-    jkind_home = os.environ["JKIND_HOME"]
-elif os.environ.get("path")  is not None:
-     path_var = os.environ["path"].split(';')
-     jkind_home = [p for p in path_var if "jkind" in p]
-elif os.environ.get("PATH") is not None:
-     path_var = os.environ["PATH"].split(';')
-     jkind_home = [p for p in path_var if "jkind" in p]
-     
-jkind_exe = os.path.join (jkind_home[0], 'jkind.jar')
+#
+# Find jkind.jar
+#
 
-jkind_threads = []  
-
-models_dir = os.path.join(os.getcwd(), 'experiments')
-
-os.makedirs('current_run')
-exprm_dir = os.path.join(os.getcwd(), 'current_run')
- 
-create_exp_directories()
-os.chdir(exprm_dir) 
-
-for i in range (20):
-    bound = 19
-    files_list = []
-    for file in os.listdir(models_dir):
-        if bound > 0:
-            bound = bound -1 
-            shutil.move (os.path.join(models_dir, file), exprm_dir)
-            files_list.append (file) 
-    if len(files_list) > 0:        
-        load_experiments (files_list)
-    else:
+jkind_jar = None
+path = os.environ.get("JKIND_HOME") or os.environ.get("path") or os.environ.get("path")
+for dir in path.split(';'):
+    jar = os.path.join(dir, "jkind.jar")
+    if os.path.exists(jar):
+        jkind_jar = jar
         break
-    while True:
-        for jthread in jkind_threads:
-            if not jthread.isAlive():
-                jkind_threads.remove(jthread)
-        if len(jkind_threads) < 3:
-            files_list = []
-            break                    
-                            
-files_list = [] 
-for file in os.listdir(models_dir):
-    files_list.append (file)
-    shutil.move (os.path.join(models_dir, file), exprm_dir)
-    
-if len(files_list) > 0:        
-        load_experiments (files_list) 
-for jthread in jkind_threads:
-        jthread.join()        
-    
-print ('Done!')
+if jkind_jar is None:
+    print("Unable to find jkind.jar in JKIND_HOME or PATH environment variables")
+    sys.exit(-1)
+print("Using JKind: " + jkind_jar)
 
+
+#
+# Create output directory
+#
+
+if os.path.exists(RESULTS_DIR):
+    print(RESULTS_DIR + " already exists, exiting to prevent overwriting")
+    sys.exit(-1)
+os.mkdir(RESULTS_DIR)
+
+"""
+#
+# Select and record random seeds
+#
+
+# we can just use seeds = ['310264614', '1867767380', '1741903345']
+seeds = [str(random.randint(1, 2147483647)) for _ in range(3)]
+with open(os.path.join(RESULTS_DIR, 'random_seeds.txt'), 'w') as random_seeds:
+    random_seeds.write(str(seeds))
+print("Using random seeds: " + str(seeds))"""
+
+
+#
+# Run JKind
+#
+
+def run_single_jkind(file_path):
+    args = ['java', '-jar', jkind_jar, '-jsupport',
+            '-timeout', str(TIMEOUT),
+            '-n', '1000000',
+            file_path]
+    with open("debug2.txt", "a") as debug:
+        debug.write("Running jsupport with arguments: {}\n".format(args))
+        proc = subprocess.Popen(args, stdout=debug)
+        proc.wait()
+        debug.write("\n")
+        shutil.move (file_path + "_jsup.xml", RESULTS_DIR)
+
+def run_all_jkind(lus_file): 
+    lus_path = os.path.join(EXPERIMENTS_DIR, lus_file)
+    run_single_jkind(lus_path)
+    sys.stdout.write(".")
+    sys.stdout.flush()
+ 
+for i, lus_file in enumerate(lus_files):
+    sys.stdout.write("({} of {}) {} [".format(i+1, len(lus_files), lus_file))
+    sys.stdout.flush()
+    run_all_jkind(lus_file)
+    sys.stdout.write("]\n")
+    sys.stdout.flush()

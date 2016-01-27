@@ -1,7 +1,10 @@
 \section{Set of Support}
 \label{sec:support}
 
-\newcommand{\rest}[2]{#1^{#2}}
+\marginpar{Andrew: I'm still wavering on the name ``set of support''
+  something like ``valid core'' or ``validity core'' might be more
+  suggestive and fit with the running text better. But changing the
+  name would also mean changing lots of code and text.}
 
 Given a transition system which satisfies a safety property $P$, we
 want to know which parts of the system are necessary for satisfying
@@ -10,95 +13,96 @@ most general version of this transition system that still satisfies
 the property?'' It turns out this has a very uninteresting answer. The
 most general system is $I(s) = P(s)$ and $T(s, s') = P(s')$, i.e., you
 start in any state satisfying the property and can transition to any
-state that still satisfies the property. The problem is that this has
-no connection to the original transition system. Instead, we need to
-target modifications to the original transition system which in turn
-requires us to know about the structure of the transition system. We
-focus on Lustre programs so that the top-level structure of the
-transition system is known.
+state that still satisfies the property. This answer gives no insight
+into the original system because it has no connection to the original
+system. In this section we introduce the notion of {\em set of
+  support} which looks generalizing the original transition system
+while preserving a safety property.
 
-In the transition system encoding of a Lustre program
-(Section~\ref{sec:background}), each Lustre equation corresponds to a
-top-level conjunct in the transition relation. Removing a conjunct
-from the transition relation corresponds to changing a computed output
-variable into a non-deterministic input variable. If the resulting
-system still satisfies the property, that tells us the removed
-equation was not an essential part of satisfying the property.
+In order to talk about generalizing a transition system, we assume the
+transition relation of the system has the structure of a top-level
+conjunction. This assumption gives us a structure that we can easily
+manipulate as we generalize the system. Moreover, we will see later
+that this restriction can be effectively relaxed by introducing new
+variables which act like activation literals for pieces of the
+transition relation. For easy of notation we will write the top-level
+of the transition system $T_1(s, s') \land \cdots \land T_n(s, s')$ as
+just $T_1 \land \cdots \land T_n$ or even $\bigwedge T$ where $T =
+\{T_1, \ldots, T_n\}$. We now define our notion of generalization for
+transition systems.
 
-\begin{definition}
-  \label{def:holds}
-  Let $\mathcal{L}$ be a Lustre program, and let $P$ be a safety
-  property expressed over $\mathcal{L}$. $P$ holds on $\mathcal{L}$,
-  written $\mathcal{L} \vdash P$, iff the encoding of $P$ holds on the
-  transition system encoding of $\mathcal{L}$
-  (Section~\ref{sec:background}).
-\end{definition}
-
-\begin{definition}[Restriction]
-  \label{def:restriction}
-  Let $\mathcal{L}$ be a Lustre program, and let $X$ be a subset of
-  the output variables of $\mathcal{L}$. The restriction of
-  $\mathcal{L}$ to $X$, written $\rest{\mathcal{L}}{X}$, is a Lustre
-  program identical to $\mathcal{L}$ except with all equations for
-  variables not in $X$ removed and with all output variables not in
-  $X$ changed to input variables
-\end{definition}
+\marginpar{We may want to simplify notation and allow $(I, T)$ where
+  $T$ is a set to mean the same as $(I, \bigwedge T)$.}
 
 \begin{definition}[Set of support]
   \label{def:set-of-support}
-  Let $\mathcal{L}$ be a Lustre program, let $P$ be a safety property
-  expressed over $\mathcal{L}$, and let $X$ be a subset of the output
-  variables of $\mathcal{L}$. $X$ is a set of support for
-  $\mathcal{L}$ and $P$ iff $\rest{\mathcal{L}}{X}\vdash P$. Moreover,
-  $X$ is a minimal set of support for $\mathcal{L}$ and $P$ iff there
-  is no proper subset of $X$ which is also a set of support for
-  $\mathcal{L}$ and $P$. We will elide $\mathcal{L}$ and $P$ when they
-  are clear from context.
+  Let $(I, \bigwedge T)$ be a transition system and let $P$ be a
+  safety property with $(I, \bigwedge T)\vdash P$. We say $S \subseteq
+  T$ is a {\em set of support} for $(I, T)\vdash P$ iff $(I, \bigwedge
+  S) \vdash P$. When $I$, $T$, and $P$ can be inferred from context we
+  will simply say $S$ is a set of support.
 \end{definition}
 
-Note that a Lustre program and safety property may have multiple
-minimal sets of support.
+\begin{definition}[Minimal Set of support]
+  \label{def:minimal-set-of-support}
+  A set of support $S$ for $(I, \bigwedge T)\vdash P$ is minimal iff
+  there does not exist $M \subset S$ such that $M$ is a set of support
+  for $(I, \bigwedge T)\vdash P$.
+\end{definition}
 
 \begin{lemma}
   \label{lem:set-of-support-monotonic}
-  Let $X \subseteq Y$. If $X$ is a set of support for $\mathcal{L}$
-  and $P$ then $Y$ is also a set of support.
+  Let $(I, \bigwedge T)$ be a transition system and let $P$ be a
+  safety property with $(I, \bigwedge T)\vdash P$. Let $S_1 \subseteq
+  S_2 \subseteq T$. If $S_1$ is a set of support for $(I, \bigwedge
+  T)\vdash P$ then $S_2$ is a set of support for $(I, \bigwedge T)\vdash P$.
 \end{lemma}
 \begin{proof}
-  TODO \qed
+  From $S_1 \subseteq S_2$ we have $\forall s, s'.~ \bigwedge
+  S_1(s,s') \Rightarrow \bigwedge S_2(s, s')$. Thus the reachable
+  states of $(I, \bigwedge S_1)$ are a subset of the reachable states
+  of $(I, \bigwedge S_2)$. \qed
 \end{proof}
-
 
 \begin{algorithm}
 \label{alg:naive}
   \SetKwInOut{Input}{input}
   \SetKwInOut{Output}{output}
-  \Input{$\mathcal{L}\vdash P$}
-  \Output{Minimal set of support for $\mathcal{L}$ and $P$}
+  \Input{$(I, \bigwedge T)\vdash P$}
+  \Output{Minimal set of support for $(I, \bigwedge T)\vdash P$}
   \BlankLine
-  $X \leftarrow \mbox{output variables of $\mathcal{L}$}$ \\
-  \For{$x \in X$} {
-    \If{$\rest{\mathcal{L}}{X\setminus \{x\}}\vdash P$}{
-      $X \leftarrow X\setminus \{x\}$
+  $S \leftarrow T$ \\
+  \For{$x \in S$} {
+    \If{$(I, \bigwedge (S\setminus\{x\})) \vdash P$}{
+      $S \leftarrow S\setminus \{x\}$
     }
   }
-  \Return{X}
+  \Return{S}
 \caption{Simple algorithm for computing a minimal set of support}
 \end{algorithm}
 
 This lemma gives us a simple, but inefficient algorithm for computing
-a minimal set of support, Algorithm~\ref{alg:naive}. The resulting set
-of this algorithm is obviously a set of support for $\mathcal{L}$ and
-$P$. To show that it is minimal, suppose towards contradiction that
-the result is $R$ and there is another set of support $M$ with $M
-\subset R$. Take $x \in R\setminus M$. Since $x \in R$ it must be that
-during the algorithm $\rest{\mathcal{L}}{X\setminus \{x\}}\vdash P$ is
-not true for some set $X$ where $R \subseteq X$. We have $M \subset R
-\subseteq X$ and $x\not\in M$, thus $M \subseteq X\setminus \{x\}$.
-Since $M$ is a set of support,
-Lemma~\ref{lem:set-of-support-monotonic} says that $X\setminus \{x\}$
-is a set of support, and so $\rest{\mathcal{L}}{X\setminus
-  \{x\}}\vdash P$. This is a contradiction, thus $R$ must be minimal.
+a minimal set of support, Algorithm~\ref{alg:naive}
+ The resulting set
+of this algorithm is obviously a set of support for $(I, \bigwedge
+T)\vdash P$. Minimality requires more work.
+
+\begin{lemma}
+  The result of Algorithm~\ref{alg:naive} is a minimal set of support
+  for $(I, \bigwedge T)\vdash P$.
+\end{lemma}
+\begin{proof}
+  Let the result be $R$. Suppose towards contradiction that $M \subset
+  R$ is a set of support. Take $x \in R\setminus M$. Since $x \in R$
+  it must be that during the algorithm $(I,
+  \bigwedge(S\setminus\{x\})\vdash P$ is not true for some set $S$
+  where $R \subseteq S$. We have $M \subset R \subseteq S$ and
+  $x\not\in M$, thus $M \subseteq S\setminus \{x\}$. Since $M$ is a
+  set of support, Lemma~\ref{lem:set-of-support-monotonic} says that
+  $S\setminus \{x\}$ is a set of support, and so $(I, \bigwedge
+  (S\setminus\{x\}))\vdash P$. This is a contradiction, thus $R$ must
+  be minimal.
+\end{proof}
 
 This algorithm has two problems in practice. First, checking if a
 safety property holds on a system is undecidable in general thus the
@@ -107,41 +111,48 @@ problem is easily provable over the original Lustre specification.
 Second, this algorithm is very inefficient since it requires
 attempting to re-prove the property multiple times.
 
+The key to a more efficient algorithm is to make better use of the
+information that comes out of checking that $P$ holds on a system $(I,
+\bigwedge T)$. Thus we suppose that we know something stronger: $P$
+with lemmas $Q_1, \ldots, Q_n$ is $k$-inductive for $(I, \bigwedge
+T)$. This gives us the broad structure of a proof for $P$ which allows
+us to reconstruct the proof over a modified transition system.
+However, the proof itself may be unnecessarily large. If $k$ larger
+than needed reconstructing the proof is needlessly expensive. If more
+lemmas are used than needed, additional parts of the transition system
+may become part of the set of support making the result less precise.
+Thus we should first reduce these elements of the proof before trying
+to find a set of support. This is the basis for
+Algorithm~\ref{alg:support-top}.
+
 \begin{algorithm}
 \label{alg:support-top}
   \SetKwInOut{Input}{input}
   \SetKwInOut{Output}{output}
-  \Input{$P$ with $Q_1, \ldots, Q_n$ is $k$-inductive for $\mathcal{L}$}
-  \Output{Nearly minimal set of support for $\mathcal{L}$ and $P$}
+  \Input{$P$ with $Q_1, \ldots, Q_n$ is $k$-inductive for $(I,
+    \bigwedge T)$}
+  \Output{Nearly minimal set of support for $(I, \bigwedge T)\vdash P$}
   \BlankLine
   $k \leftarrow \mbox{compute minimal value of $k$}$ \\
-  $\{R_1, \ldots, R_m\} \leftarrow \mbox{minimize set of invariants
+  $\{R_1, \ldots, R_m\} \leftarrow \mbox{reduce set of invariants
     $\{Q_1, \ldots, Q_n\}$} \\
-  $X \leftarrow \mbox{compute minimal set of support for $P \land R_1
-    \land \cdots \land R_m$ to be $k$-inductive}$ \\
-  \Return{X}
+  $S \leftarrow \mbox{compute minimal $S\subseteq T$ such that $P \land R_1
+    \land \cdots \land R_m$ is $k$-inductive for $(I, \bigwedge S)$}$ \\
+  \Return{S}
 \caption{Efficient algorithm for computing a nearly minimal set of support}
 \end{algorithm}
 
-To get a more efficient algorithm, we relax our goal to finding a {\em
-  nearly} minimal set of support. Moreover, we start with more
-information about why a property holds. Since this algorithm is
-intended to be added to an existing model checker, we will have
-additional information such as lemmas and what depth of $k$-induction
-is required to prove the property. The problem then becomes:
-\begin{quote}
-Given that $P$ with lemmas $Q_1, \ldots, Q_n$ is $k$-inductive, what
-is a nearly minimal set of support for $P$?
-\end{quote}
-Algorithm~\ref{alg:support-top} efficiently computes an answer to this
-question. The main steps of this algorithm are elaborated below.
-
 TODO: Explain each step
 
-%% Old notes:
-%% - What is it?
-%% - How do we formalize it in terms of symbolic transition systems?
-%% - How do we prove it correct?
+TODO: Explain why not always minimal
+
+TODO: Show how our conjunction restriction can be used with activation
+literals to target any part of a transition system.
 
 
-%%  LocalWords:  Lustre iff TODO invariants
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main.tex"
+%%% End
+
+%%  LocalWords:  Lustre iff TODO invariants Minimality

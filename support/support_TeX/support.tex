@@ -38,9 +38,9 @@ transition systems.
   \label{def:set-of-support}
   Let $(I, \bigwedge T)$ be a transition system and let $P$ be a
   safety property with $(I, \bigwedge T)\vdash P$. We say $S \subseteq
-  T$ is a {\em set of support} for $(I, T)\vdash P$ iff $(I, \bigwedge
-  S) \vdash P$. When $I$, $T$, and $P$ can be inferred from context we
-  will simply say $S$ is a set of support.
+  T$ is a {\em set of support} for $(I, \bigwedge T)\vdash P$ iff $(I,
+  \bigwedge S) \vdash P$. When $I$, $T$, and $P$ can be inferred from
+  context we will simply say $S$ is a set of support.
 \end{definition}
 
 \begin{definition}[Minimal Set of support]
@@ -114,12 +114,12 @@ attempting to re-prove the property multiple times.
 The key to a more efficient algorithm is to make better use of the
 information that comes out of checking that $P$ holds on a system $(I,
 \bigwedge T)$. Thus we suppose that we know something stronger: $P$
-with lemmas $Q_1, \ldots, Q_n$ is $k$-inductive for $(I, \bigwedge
+with invariants $Q_1, \ldots, Q_n$ is $k$-inductive for $(I, \bigwedge
 T)$. This gives us the broad structure of a proof for $P$ which allows
 us to reconstruct the proof over a modified transition system.
 However, the proof itself may be unnecessarily large. If $k$ larger
 than needed reconstructing the proof is needlessly expensive. If more
-lemmas are used than needed, additional parts of the transition system
+invariants are used than needed, additional parts of the transition system
 may become part of the set of support making the result less precise.
 Thus we should first reduce these elements of the proof before trying
 to find a set of support. This is the basis for
@@ -142,13 +142,40 @@ Algorithm~\ref{alg:support-top}.
 \caption{Efficient algorithm for computing a nearly minimal set of support}
 \end{algorithm}
 
-TODO: Explain each step
+The first step in Algorithm~\ref{alg:support-top} is to minimize the
+value of $k$ such that $P$ with $Q_1, \ldots, Q_n$ is $k$-inductive
+for $(I, \bigwedge T)$. That is, we want to find $k'$ such that
+$\widehat{P} = P \land Q_1 \land \cdots \land Q_n$ is $k'$-inductive
+for $(I, \bigwedge T)$. Naively this would require checking the base
+case formulas and the inductive case formulas for $k'$-induction.
+However, we are searching for $k' \leq k$ so we know that the base
+case formulas will already hold since $\widehat{P}$ is $k$-inductive.
+Thus it sufficies to check just the inductive step formula. We can do
+this by checking the inductive step formula starting at $k' = 0$ and
+increasing up to potentially $k$.
 
-TODO: Explain why not always minimal
+The second step in Algorithm~\ref{alg:support-top} is to reduce the
+set of invariants such that $P$ together with the invariants is
+$k$-inductive for $(I, \bigwedge T)$. First, note that it is not
+effective to naively try to remove the invariants one by one. It may
+be that two invariants mutually depend on each other while still being
+unnecessary towards proving $P$. Also, it is not effective to start
+with no invariants and try adding them since $P$ most likely requires
+some of the invariants, but we do not know which. Instead, we take a
+hybrid approach.
+
+TODO: Explaining this requires something like UNSAT cores. We need to
+add that into our formalism.
+
+Unfortuently, we do not guaranteed minimal set of invariants in step 2
+of Algorithm~\ref{alg:support-top}. This means the result of algorithm
+may not be a minimal support. In Section~\ref{sec:exprm} we study how
+close the algorithm comes to minimality in practice.
 
 TODO: Show how our conjunction restriction can be used with activation
-literals to target any part of a transition system.
+literals to target any part of a transition system?
 
+TODO: Rewrite background based on what we use in this section
 
 %%% Local Variables:
 %%% mode: latex

@@ -10,7 +10,8 @@ import os, subprocess, shutil, sys, glob
 
 EXPERIMENTS_DIR = 'benchmarks'
 RESULTS_DIR = 'results2'
-TIMEOUT = 3600
+TIMEOUT = 700
+TIMEDOUT_DIR = 'timedout2'
 
 
 #
@@ -52,18 +53,11 @@ print("Using JKind: " + jkind_jar)
 if os.path.exists(RESULTS_DIR):
     print(RESULTS_DIR + " already exists, exiting to prevent overwriting")
     sys.exit(-1)
+if os.path.exists(TIMEDOUT_DIR):
+    print(TIMEDOUT_DIR + " already exists, exiting to prevent overwriting")
+    sys.exit(-1)
 os.mkdir(RESULTS_DIR)
-
-"""
-#
-# Select and record random seeds
-#
-
-# we can just use seeds = ['310264614', '1867767380', '1741903345']
-seeds = [str(random.randint(1, 2147483647)) for _ in range(3)]
-with open(os.path.join(RESULTS_DIR, 'random_seeds.txt'), 'w') as random_seeds:
-    random_seeds.write(str(seeds))
-print("Using random seeds: " + str(seeds))"""
+os.mkdir(TIMEDOUT_DIR)
 
 
 #
@@ -80,7 +74,11 @@ def run_single_jkind(file_path):
         proc = subprocess.Popen(args, stdout=debug)
         proc.wait()
         debug.write("\n")
-        shutil.move (file_path + "_jsup.xml", RESULTS_DIR)
+        try:
+            shutil.move (file_path + "_jsup.xml", RESULTS_DIR)
+        except OSError:
+            shutil.move (file_path, TIMEDOUT_DIR)
+            pass
 
 def run_all_jkind(lus_file): 
     lus_path = os.path.join(EXPERIMENTS_DIR, lus_file)

@@ -89,7 +89,8 @@ def run_single_jkind(solver, engine_args, xml_path, file_path):
         while proc.poll() is None:
             line = str(proc.stdout.readline())
             if line != 'b\'\'':
-                line = line [2:(len(line)-5)]
+                #uncomment the following line if runs on windows & python 3.4
+                #line = line [2:(len(line)-5)]
                 debug.write(line)
                 debug.write("\n")
                 if "UNKNOWN" in line:

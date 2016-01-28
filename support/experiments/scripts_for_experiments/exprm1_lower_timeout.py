@@ -89,7 +89,8 @@ def run_single_jkind(solver, engine_args, xml_path, file_path):
         while proc.poll() is None:
             line = str(proc.stdout.readline())
             if line != 'b\'\'':
-                line = line [2:(len(line)-5)]
+                #uncomment the following line if runs on windows & python 3.4
+                #line = line [2:(len(line)-5)]
                 debug.write(line)
                 debug.write("\n")
                 if "UNKNOWN" in line:
@@ -107,13 +108,20 @@ def run_all_jkind(lus_file):
             xml_file = "{}_{}".format(solver, engine)
             xml_path = os.path.join(RESULTS_DIR, lus_file, xml_file)
             if run_single_jkind(solver, engine_args, xml_path, lus_path):
-                timedout = timedout + 1
+                timedout += 1
+                if timedout == 1:
+                    info = open("timeout_info.txt", "w")
+                info.write(xml_file)
+                info.write("\n")
             sys.stdout.write(".")
             sys.stdout.flush()
             
     if timedout > 0:
+        info.write('total number of timeouts = ' + str(timedout))
+        info.close()
         shutil.move (lus_path, TIMEDOUT_DIR)
         shutil.move (os.path.join(RESULTS_DIR, lus_file), TIMEDOUT_RES)
+        shutil.move ('timeout_info.txt', os.path.join(TIMEDOUT_RES, lus_file))
 
 for i, lus_file in enumerate(lus_files):
     sys.stdout.write("({} of {}) {} [".format(i+1, len(lus_files), lus_file))

@@ -28,7 +28,7 @@ models = []
 with open (os.path.join(MINING_DIR, SORTED_MODELS)) as models_name:
     for line in models_name:
         if (line is not '\n'):
-            models.append(line[0:len(line)-1])
+            models.append(line.strip('\n'))
 models_name.close()
 
 #

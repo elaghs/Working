@@ -160,6 +160,7 @@ for i in range (len(all_timings)):
         timing_info[SETTINGS[indx] + rec_sufx[flag]] = all_timings[i]
         flag = -1
         indx += 1
+
         
 timing_info.close()
 
@@ -167,5 +168,5 @@ print('all timing info was written into timing_info file.')
 print('all support info was extracted into the '+ MINING_DIR +' directory.\nDone!')
 
 
-### add jsupport here
+
 

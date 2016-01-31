@@ -3,6 +3,7 @@
 # The goal is to compute Jaccard distance between each pair of support sets
 # Then, we will compute min, max, avg, std deviation of the distances for each model
 # Then, we will compute min, max, avg, std deviation of the avg distances among all models
+# Then, we will provide information on the overhead that support computation implies
 # The final results will be put into the $ANALYSES_DIR$ directory
 
 __author__ = "Elaheh"
@@ -72,7 +73,7 @@ for sup_info in all_sup_info:
         if you want to know all values for a particular model, you need to extract them with key = file_name
     '''
     if analysis_rec != []:
-        analyses_writer [sup_info.strip('_support_info')] = analysis_rec
+        analyses_writer [sup_info[0:len(sup_info)-13]] = analysis_rec
         analyses.append(analysis_rec)
     support_info.close()
 
@@ -89,19 +90,19 @@ max_list = []
 indx = 0
 for result in analyses:
     s_mean = stat.mean (result)
-    analyses_writer [(all_sup_info[indx].strip('_support_info')) + '_mean'] = s_mean
+    analyses_writer [all_sup_info[indx][0:len(all_sup_info[indx])-13] + '_mean'] = s_mean
     mean.append(s_mean)
     
     s_stdev = stat.pstdev(result)
-    analyses_writer [(all_sup_info[indx].strip('_support_info')) + '_pstdev'] = s_stdev
+    analyses_writer [all_sup_info[indx][0:len(all_sup_info[indx])-13] + '_pstdev'] = s_stdev
     stdev.append(s_stdev)
     
     s_min = min(result)
-    analyses_writer [(all_sup_info[indx].strip('_support_info')) + '_min'] = s_min
+    analyses_writer [all_sup_info[indx][0:len(all_sup_info[indx])-13] + '_min'] = s_min
     min_list.append(s_min)
     
     s_max = max(result)
-    analyses_writer [(all_sup_info[indx].strip('_support_info')) + '_max'] = s_max
+    analyses_writer [all_sup_info[indx][0:len(all_sup_info[indx])-13] + '_max'] = s_max
     max_list.append(s_max)
     
     indx += 1

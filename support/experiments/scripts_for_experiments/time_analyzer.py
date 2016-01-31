@@ -13,6 +13,7 @@ from matplotlib.pyplot import cm
 import numpy as np
 
 TIMEOUT = 700.00
+SOLVERS = ['z3', 'yices', 'smtinterpol', 'mathsat']
 MINING_DIR = 'mining'
 ANALYSES_DIR = 'timing_analyses' 
 TIMING_INFO = 'timing_info'
@@ -56,6 +57,12 @@ reader = shelve.open(os.path.join(MINING_DIR, 'timing_info'))
 all_timings = []
 for i in range(9):
     all_timings.append(reader[TIMINGS[i]])
+    
+#add support computation time for _both setting
+sup_timings = []
+for solver in SOLVERS:
+    sup_timings.append(reader[solver+'_both_sup'])
+
 reader.close()
 
 #
@@ -66,7 +73,7 @@ writer = open(os.path.join(ANALYSES_DIR, 'timing_analyses.txt'), 'a')
 for i, legend in enumerate(LEGENDS):
     writer.write('###################  timing report on the \"'+ legend + '\" setting  ###################\n')
     writer.write('\nminimum runtime is: ' + str(min(map(float, all_timings[i]))))
-    writer.write('\nmaximum tuntime is: ' + str(max(map(float, all_timings[i]))))
+    writer.write('\nmaximum runtime is: ' + str(max(map(float, all_timings[i]))))
     writer.write('\npopulation standard deviation runtime is: ' + str(stat.pstdev(map(float, all_timings[i]))))
     writer.write('\naverage runtime is: ' + str(stat.mean(map(float, all_timings[i])))) 
     writer.write('\n-------------------------------------------------------------------------------------------------')
@@ -77,12 +84,55 @@ writer.close()
 
 
 #
+# Calculate support overhead
+# This shows what percentage of the overal runtime is because of support comutation
+# Formula:  overhead_percentage = 100 * (SupportRuntime/ Runtime)
+#
+
+# required indices in all_timings [1, 3, 5, 7]
+for indx, item in enumerate(sup_timings):
+    for i in range(len(item)):
+        sup_timings[indx][i] = 100.00 * (float(item[i])/ float(all_timings[indx + 1][i]))
+
+# in the following lists, indices show 'z3', 'yices', 'smtinterpol', 'mathsat', respectively        
+mean_overheads = []
+max_overheads = []
+min_overheads = []
+stdev_overheads = []
+
+for item in sup_timings:
+    mean_overheads.append(stat.mean(item))
+    stdev_overheads.append(stat.pstdev(item))
+    min_overheads.append(min(item))
+    max_overheads.append(max(item))
+del sup_timings
+
+#
+# Report on support runtime overhead
+#
+writer = open(os.path.join(ANALYSES_DIR, 'sup_overhead.txt'), 'a')
+writer.write("this is to report the overhead of support computation on different solvers\n")
+writer.write("This report is based on the results when both k_induction and PDR were activated.\n\n")
+writer.write("This shows what percentage of the overal runtime is because of support comutation:\n")
+writer.write("         Formula:  overhead_percentage = 100 * (SupportRuntime/ Runtime)\n\n\n")
+
+for i, solver in enumerate(SOLVERS):
+    writer.write('\n\n###################  runtime overhead on \"'+ solver + '\"  ###################\n')
+    writer.write('\naverage overhead is: ' + str(mean_overheads[i]) + "%")
+    writer.write('\npopulation standard deviation overhead is: ' + str(stdev_overheads[i]) + "%")
+    writer.write('\nminimum overhead is: ' + str(min_overheads[i]) + "%")
+    writer.write('\nmaximum overhead is: ' + str(max_overheads[i]) + "%")
+writer.close() 
+
+
+#
 # Clean UNKNOWN results
 #
 for i, legend in enumerate(LEGENDS):
     for j, rt in enumerate(all_timings[i]):
         if float(rt) >= TIMEOUT:
             all_timings[i][j] = float('nan')
+            
 #
 # Visualize the results
 #

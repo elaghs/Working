@@ -121,7 +121,7 @@ for dir in sorted_models_mem:
         
         for elem in tree.iter(tag = 'Answer'):
             if (elem.text == 'unknown'): 
-                support_info[dir + setting] = []
+                support_info[setting] = []
                 all_timings [indx].append (rt)
                 indx += 1
                 all_timings [indx].append(rt)

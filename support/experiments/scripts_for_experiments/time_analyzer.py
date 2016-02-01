@@ -77,7 +77,7 @@ for i, legend in enumerate(LEGENDS):
     writer.write('\npopulation standard deviation runtime is: ' + str(stat.pstdev(map(float, all_timings[i]))))
     writer.write('\naverage runtime is: ' + str(stat.mean(map(float, all_timings[i])))) 
     writer.write('\n-------------------------------------------------------------------------------------------------')
-    writer.write('\nfor '+ str(NUM_OF_MODELS) + ' models, the following shows min/max/mean/stdev runtimes')
+    writer.write('\nfor '+ str(NUM_OF_MODELS) + ' models, the following shows runtimes in \"'+ legend + '\" setting')
     writer.write('\neach item in the following list is related to a model in the benchmarks.\n\n')
     writer.write(str([round(float(i), 2) for i in all_timings[i]]) + '\n\n\n\n')  
 writer.close()  
@@ -131,7 +131,7 @@ writer.close()
 for i, legend in enumerate(LEGENDS):
     for j, rt in enumerate(all_timings[i]):
         if float(rt) >= TIMEOUT:
-            all_timings[i][j] = float('nan')
+            all_timings[i][j] = float('inf')
             
 #
 # Visualize the results
@@ -150,6 +150,7 @@ colors = cm.rainbow(np.linspace(0, 1, len(LEGENDS)))
 
 for indx, legend in enumerate(LEGENDS):
     plt.scatter(x_axis, all_timings[indx], label=legend, color=colors[indx])
+    #plt.plot(x_axis, all_timings[indx], label=legend)
     
 plt.xlabel('LUS models')
 plt.ylabel('Runtime (sec)')

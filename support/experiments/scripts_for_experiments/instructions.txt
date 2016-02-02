@@ -10,3 +10,11 @@
 #    --> in Linux you should use the environment variable "JKIND_HOME" for it
 #    --> in Windows you can put it in "path"
 # 5- don't forget to install all the solvers that jkind needs (especially, z3, yices, mathsat)
+
+# Here is the order that scripts should be run:
+# 1- exprm1.py, exprm2.py
+# 2- result_mining1.py
+# 3- result_mining2.py
+# 4- support_analyzer.py
+# 5- support_reporter.py
+# 6- time_analyzer.py

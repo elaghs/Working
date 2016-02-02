@@ -1,0 +1,19 @@
+experiments on Intel(R) Core(TM) i5-2430M CPU @ 2.40GHz + 4GB RAM with -timeout 700 sec
+
+total number of the experiments that timed out is: 122
+number of timeouts for each setting is as follows:
+z3_both:  10
+z3_k_ind:  122
+z3_pdr:  10
+yices_both:  10
+yices_k_ind:  122
+yices_pdr:  10
+smtinterpol_both:  10
+smtinterpol_k_ind:  122
+smtinterpol_pdr:  10
+mathsat_both:  10
+mathsat_k_ind:  122
+mathsat_pdr:  10
+
+##########################
+jsupport: 18

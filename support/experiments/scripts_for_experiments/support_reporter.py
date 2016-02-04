@@ -31,6 +31,7 @@ mean_points = reader ['all_mean']
 min_points = reader ['all_min']
 max_points = reader ['all_max']
 stdev_points = reader ['all_pstdev']
+ 
 # we can load more statistical results here if we want
 reader.close()
 
@@ -47,10 +48,10 @@ writer.write('\noverall average of Jaccard distances is: ' + str(mean))
 writer.write('\n-------------------------------------------------------------------------------------------------')
 writer.write('\nfor '+ str(NUM_OF_MODELS) + ' models, the following shows pairwise Jaccard distances min/max/mean/stdev')
 writer.write('\neach element in the following lists is related to a model in the benchmarks.\n')
-writer.write('\nminimum of Jaccard distances for models:\n' + str([round(float(i), 2) for i in min_points]))
-writer.write('\nmaximum of Jaccard distances for models:\n' + str([round(float(i), 2) for i in max_points]))
-writer.write('\npopulation standard deviation of Jaccard distances for models:\n' + str([round(float(i), 2) for i in stdev_points]))
-writer.write('\naverage of Jaccard distances is:\n' + str([round(float(i), 2) for i in mean_points])) 
+writer.write('\n\nminimum of Jaccard distances for models:\n' + str([round(float(i), 2) for i in min_points]))
+writer.write('\n\nmaximum of Jaccard distances for models:\n' + str([round(float(i), 2) for i in max_points]))
+writer.write('\n\npopulation standard deviation of Jaccard distances for models:\n' + str([round(float(i), 2) for i in stdev_points]))
+writer.write('\n\naverage of Jaccard distances is:\n' + str([round(float(i), 2) for i in mean_points])) 
 # we can add more statistical results here later if we want
 writer.close()
 
@@ -64,10 +65,9 @@ x_axis = []
 for i in range(NUM_OF_MODELS):
     x_axis.append(i)
 
-x = np.arange(NUM_OF_MODELS)
 fig = plt.figure()
 ax = plt.subplot(111) 
-
+ 
 plt.plot(x_axis, min_points, label='min')
 plt.plot(x_axis, max_points, label='max')
 plt.plot(x_axis, mean_points, label='mean')

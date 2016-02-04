@@ -10,7 +10,7 @@ __author__ = "Elaheh"
 __date__ = "$Jan 30, 2016 5:05:47 PM$"
 
 import os, sys, shelve, distance, glob
-import statistics as stat
+import numpy as np
 from operator import itemgetter
 
 ANALYSES_DIR = 'support_analyses'
@@ -61,9 +61,9 @@ for sup_info in all_sup_info:
             if not (set2 == [] or set1 == []):
                 analysis_rec.append(distance.jaccard(set1, set2))
             
-            # ignore UNKNOWN results. we may want to put 'float(nan)' instead of '0.0'    
+            # UNKNOWN results:    
             else:
-                analysis_rec.append(0.0)
+                analysis_rec.append(float('nan'))
                 
         indx += 1
     '''
@@ -86,14 +86,14 @@ mean = []
 stdev = []
 min_list = []
 max_list = []
-
+ 
 indx = 0
 for result in analyses:
-    s_mean = stat.mean (result)
+    s_mean = np.nanmean (result)
     analyses_writer [all_sup_info[indx][0:len(all_sup_info[indx])-13] + '_mean'] = s_mean
     mean.append(s_mean)
     
-    s_stdev = stat.pstdev(result)
+    s_stdev = np.nanstd(result)
     analyses_writer [all_sup_info[indx][0:len(all_sup_info[indx])-13] + '_pstdev'] = s_stdev
     stdev.append(s_stdev)
     
@@ -112,10 +112,10 @@ for result in analyses:
 # Compute min, max, avg, std deviation of the distances among all models
 #
 
-mean_all = stat.mean(mean)
+mean_all = np.nanmean(mean)
 min_all = min(min_list)
 max_all = max(max_list)
-stdev_all = stat.pstdev(stdev)
+stdev_all = np.nanstd(stdev)
 
 analyses_writer ['min'] = min_all   
 analyses_writer ['max'] = max_all
@@ -130,23 +130,35 @@ analyses_writer ['mean'] = mean_all
 #
 
 mean_dic = []
+nan_dic = []
 for indx, val in enumerate(mean):
-    mean_dic.append({'id': indx, 'val': val})
-    
+    if str(val) == 'nan':
+        nan_dic.append({'id': indx, 'val': float('nan')})
+    else:
+        mean_dic.append({'id': indx, 'val': float(val)})
+
 sorted_mean_list = sorted(mean_dic, key=itemgetter('val')) 
+sorted_mean_list += nan_dic
+
+del nan_dic
+del mean_dic
 
 sorted_stdev = []
+sorted_mean = []
 sorted_max = []
-sorted_min = []
+sorted_min = [] 
+
+
 for item in sorted_mean_list:
     sorted_stdev.append(stdev[item['id']])
     sorted_max.append(max_list[item['id']])
     sorted_min.append(min_list[item['id']])
-    
+    sorted_mean.append(mean[item['id']])
+ 
 analyses_writer ['all_min'] = sorted_min   
 analyses_writer ['all_max'] = sorted_max
 analyses_writer ['all_pstdev'] = sorted_stdev
-analyses_writer ['all_mean'] = sorted(mean)
+analyses_writer ['all_mean'] = sorted_mean
 
 analyses_writer.close()
 

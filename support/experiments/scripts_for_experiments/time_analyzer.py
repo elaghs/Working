@@ -7,12 +7,11 @@ __author__ = "Elaheh"
 __date__ = "$Jan 30, 2016 5:35:12 AM$"
 
 import os, sys, shelve
-import statistics as stat
+import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import cm
 import numpy as np
 
-TIMEOUT = 700.00
 SOLVERS = ['z3', 'yices', 'smtinterpol', 'mathsat']
 MINING_DIR = 'mining'
 ANALYSES_DIR = 'timing_analyses' 
@@ -74,8 +73,8 @@ for i, legend in enumerate(LEGENDS):
     writer.write('###################  timing report on the \"'+ legend + '\" setting  ###################\n')
     writer.write('\nminimum runtime is: ' + str(min(map(float, all_timings[i]))))
     writer.write('\nmaximum runtime is: ' + str(max(map(float, all_timings[i]))))
-    writer.write('\npopulation standard deviation runtime is: ' + str(stat.pstdev(map(float, all_timings[i]))))
-    writer.write('\naverage runtime is: ' + str(stat.mean(map(float, all_timings[i])))) 
+    writer.write('\npopulation standard deviation runtime is: ' + str(np.nanstd(map(float, all_timings[i]))))
+    writer.write('\naverage runtime is: ' + str(np.nanmean(map(float, all_timings[i])))) 
     writer.write('\n-------------------------------------------------------------------------------------------------')
     writer.write('\nfor '+ str(NUM_OF_MODELS) + ' models, the following shows runtimes in \"'+ legend + '\" setting')
     writer.write('\neach item in the following list is related to a model in the benchmarks.\n\n')
@@ -101,8 +100,8 @@ min_overheads = []
 stdev_overheads = []
 
 for item in sup_timings:
-    mean_overheads.append(stat.mean(item))
-    stdev_overheads.append(stat.pstdev(item))
+    mean_overheads.append(np.nanmean(item))
+    stdev_overheads.append(np.nanstd(item))
     min_overheads.append(min(item))
     max_overheads.append(max(item))
 del sup_timings
@@ -124,14 +123,6 @@ for i, solver in enumerate(SOLVERS):
     writer.write('\nmaximum overhead is: ' + str(max_overheads[i]) + "%")
 writer.close() 
 
-
-#
-# Clean UNKNOWN results
-#
-for i, legend in enumerate(LEGENDS):
-    for j, rt in enumerate(all_timings[i]):
-        if float(rt) >= TIMEOUT:
-            all_timings[i][j] = float('inf')
             
 #
 # Visualize the results
@@ -146,11 +137,16 @@ x = np.arange(NUM_OF_MODELS)
 fig = plt.figure()
 ax = plt.subplot(111)
 
-colors = cm.rainbow(np.linspace(0, 1, len(LEGENDS)))
+#colors = cm.rainbow(np.linspace(0, 1, len(LEGENDS)))
 
-for indx, legend in enumerate(LEGENDS):
-    plt.scatter(x_axis, all_timings[indx], label=legend, color=colors[indx])
-    #plt.plot(x_axis, all_timings[indx], label=legend)
+'''for indx, legend in enumerate(LEGENDS):
+    #plt.scatter(x_axis, all_timings[indx], label=legend, color=colors[indx])
+    plt.plot(x_axis, all_timings[indx], label=legend)'''
+for indx in range(3):
+    #plt.scatter(x_axis, all_timings[indx], label=legend, color=colors[indx])
+    plt.plot(x_axis, all_timings[indx], label=LEGENDS[indx])  
+    
+
     
 plt.xlabel('LUS models')
 plt.ylabel('Runtime (sec)')

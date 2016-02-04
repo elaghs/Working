@@ -46,7 +46,7 @@ for file in models:
             sup_set.append(sup.text)
         jsup.append({'sup': sup_set, 'time': float(time)})
     except OSError:
-        jsup.append({'sup': [], 'time': TIMEOUT})
+        jsup.append({'sup': [], 'time': float('nan')})
         pass
 
 #

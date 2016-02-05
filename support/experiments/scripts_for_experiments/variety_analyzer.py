@@ -191,7 +191,7 @@ plt.bar(x_axis1, y_axis1, align='center')
 plt.xticks(x_axis1, max_labels, rotation='vertical')
  
 plt.xlabel('Pairwise Configurations')
-plt.ylabel('Frequency 405 models')
+plt.ylabel('Frequency in 405 models')
 plt.title('Pairwise Configurations with maximum Jaccard distances') 
 plt.show()
 fig1.savefig(os.path.join(ANALYSES_DIR, 'max_settings_analyses.png'))
@@ -211,7 +211,7 @@ plt.xticks(x_axis2, min_labels, rotation='vertical')
  
 plt.xlabel('Pairwise Configurations')
 plt.ylabel('Frequency in 405 models')
-plt.title('Pairwise Configurations with maximum Jaccard distances') 
+plt.title('Pairwise Configurations with minimum Jaccard distances') 
 plt.show()
 fig2.savefig(os.path.join(ANALYSES_DIR, 'min_settings_analyses.png'))
 

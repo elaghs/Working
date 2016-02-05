@@ -7,7 +7,6 @@ __author__ = "Elaheh"
 __date__ = "$Jan 30, 2016 5:35:12 AM$"
 
 import os, sys, shelve
-import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import cm
 import numpy as np
@@ -71,10 +70,11 @@ writer = open(os.path.join(ANALYSES_DIR, 'timing_analyses.txt'), 'a')
 
 for i, legend in enumerate(LEGENDS):
     writer.write('###################  timing report on the \"'+ legend + '\" setting  ###################\n')
-    writer.write('\nminimum runtime is: ' + str(min(map(float, all_timings[i]))))
-    writer.write('\nmaximum runtime is: ' + str(max(map(float, all_timings[i]))))
-    writer.write('\npopulation standard deviation runtime is: ' + str(np.nanstd(map(float, all_timings[i]))))
-    writer.write('\naverage runtime is: ' + str(np.nanmean(map(float, all_timings[i])))) 
+    all_timings[i] = [float(x) for x in all_timings[i]]
+    writer.write('\nminimum runtime is: ' + str(min(all_timings[i])))
+    writer.write('\nmaximum runtime is: ' + str(max(all_timings[i])))
+    writer.write('\npopulation standard deviation runtime is: ' + str(np.nanstd(all_timings[i])))
+    writer.write('\naverage runtime is: ' + str(np.nanmean(all_timings[i]))) 
     writer.write('\n-------------------------------------------------------------------------------------------------')
     writer.write('\nfor '+ str(NUM_OF_MODELS) + ' models, the following shows runtimes in \"'+ legend + '\" setting')
     writer.write('\neach item in the following list is related to a model in the benchmarks.\n\n')
@@ -91,7 +91,7 @@ writer.close()
 # required indices in all_timings [1, 3, 5, 7]
 for indx, item in enumerate(sup_timings):
     for i in range(len(item)):
-        sup_timings[indx][i] = 100.00 * (float(item[i])/ float(all_timings[indx + 1][i]))
+        sup_timings[indx][i] = 100.00 * (float(item[i])/ all_timings[indx + 1][i])
 
 # in the following lists, indices show 'z3', 'yices', 'smtinterpol', 'mathsat', respectively        
 mean_overheads = []

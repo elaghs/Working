@@ -117,8 +117,9 @@ for indx, item in enumerate(all_models_sup_sets):
 #
 sim_all_models = []
 for indx, item in enumerate(all_models_sup_sets):
+    sets = [x for x in item if x != []]
     try:
-        sim_all_models.append(round(len(set.intersection(*item))/ len(set.union(*item)), 2))
+        sim_all_models.append(round(len(set.intersection(*sets))/ len(set.union(*sets)), 2))
     except ZeroDivisionError:
         sim_all_models.append(float('nan'))
         pass
@@ -136,7 +137,7 @@ writer.write('\n    -- how far is the core set from a minimal set? (in terms of 
 writer.write('\n    -- similarity = |intersection(sup_sets)| / |union(sup_sets)|')
 writer.write('\n-------------------------------------------------------------------------------------------------\n\n')
 for indx, model in enumerate(all_sup_info):
-    writer.write('\n'+ str(indx) + ') ' + model + ':')
+    writer.write('\n'+ str(indx) + ') ' + model[0:len(model)-13] + ':')
     writer.write('\n    -- file size = ' + str(os.path.getsize(os.path.join(os.pardir,
                                                 BENCHMARKS, model[0:len(model)-13]))/1000) + ' KB')
     writer.write('\n    -- core set = ' + str(core_elements_all_models[indx]['core']))
@@ -157,7 +158,7 @@ for i in range(len(SETTINGS)):
 fig1 = plt.figure()  
 
 plt.bar(x_axis, settings_with_smallest, align='center')
-plt.xticks(x_axis, SETTINGS, rotation='vertical')
+plt.xticks(x_axis, SETTINGS, rotation='65')
 # shows how many times a configuration had the smallest support set  
 plt.xlabel('Configurations')
 plt.ylabel('Frequency in 405 models')
@@ -169,7 +170,7 @@ fig1.savefig(os.path.join(os.pardir, ANALYSES_DIR, 'small_conf.png'))
 fig2 = plt.figure()  
 
 plt.bar(x_axis, settings_with_biggest, align='center')
-plt.xticks(x_axis, SETTINGS, rotation='vertical')
+plt.xticks(x_axis, SETTINGS, rotation='65')
  
 plt.xlabel('Configurations')
 plt.ylabel('Frequency in 405 models')

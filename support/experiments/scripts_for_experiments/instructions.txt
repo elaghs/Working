@@ -17,4 +17,4 @@
 # 3- result_mining2.py
 # 4- support_analyzer.py
 # 5- support_reporter.py
-# 6- time_analyzer.py
+# 6- time_analyzer.py, jsupport_analyzer.py, variaty_analyzer.py, support_analyzer2.py

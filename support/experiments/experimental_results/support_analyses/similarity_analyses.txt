@@ -7,2837 +7,2837 @@ this is to report, for each model:
 -------------------------------------------------------------------------------------------------
 
 
-0) car_1.lus_support_info:
+0) car_1.lus:
     -- file size = 1.049 KB
-    -- core set = {'V27_dist', 'OK'}
+    -- core set = {'OK', 'V27_dist'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.67
 
 
-1) car_1_e7_184_e3_299.lus_support_info:
+1) car_1_e7_184_e3_299.lus:
     -- file size = 1.048 KB
-    -- core set = {'V27_dist', 'OK'}
+    -- core set = {'OK', 'V27_dist'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-2) car_2.lus_support_info:
+2) car_2.lus:
     -- file size = 1.024 KB
-    -- core set = {'V27_dist', 'V30_move', 'OK', 'V26_bump'}
+    -- core set = {'V26_bump', 'OK', 'V27_dist', 'V30_move'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.8
 
 
-3) car_2_e7_1027_e1_1047.lus_support_info:
+3) car_2_e7_1027_e1_1047.lus:
     -- file size = 1.029 KB
-    -- core set = {'V27_dist', 'V30_move', 'OK', 'V26_bump'}
+    -- core set = {'V26_bump', 'OK', 'V27_dist', 'V30_move'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.57
 
 
-4) car_2_e7_1027_e7_359.lus_support_info:
+4) car_2_e7_1027_e7_359.lus:
     -- file size = 1.022 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-5) car_2_e8_491_e7_826.lus_support_info:
+5) car_2_e8_491_e7_826.lus:
     -- file size = 1.024 KB
-    -- core set = {'V27_dist', 'V30_move', 'OK', 'V26_bump'}
+    -- core set = {'V26_bump', 'OK', 'V27_dist', 'V30_move'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.57
 
 
-6) car_3.lus_support_info:
+6) car_3.lus:
     -- file size = 1.024 KB
-    -- core set = {'V24_toofast', 'V30_move', 'OK', 'V28_speed'}
+    -- core set = {'OK', 'V28_speed', 'V30_move', 'V24_toofast'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-7) car_3_e2_695.lus_support_info:
+7) car_3_e2_695.lus:
     -- file size = 1.03 KB
-    -- core set = {'V28_speed', 'OK'}
+    -- core set = {'OK', 'V28_speed'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.4
 
 
-8) car_3_e7_626.lus_support_info:
+8) car_3_e7_626.lus:
     -- file size = 1.023 KB
-    -- core set = {'V24_toofast', 'V30_move', 'OK', 'V28_speed'}
+    -- core set = {'OK', 'V28_speed', 'V30_move', 'V24_toofast'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-9) car_3_e8_33.lus_support_info:
+9) car_3_e8_33.lus:
     -- file size = 1.025 KB
-    -- core set = {'V24_toofast', 'V30_move', 'OK', 'V28_speed'}
+    -- core set = {'OK', 'V28_speed', 'V30_move', 'V24_toofast'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.8
 
 
-10) car_3_e8_33_e2_1010.lus_support_info:
+10) car_3_e8_33_e2_1010.lus:
     -- file size = 1.031 KB
-    -- core set = {'V28_speed', 'OK'}
+    -- core set = {'OK', 'V28_speed'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.67
 
 
-11) car_3_e8_33_e7_220.lus_support_info:
+11) car_3_e8_33_e7_220.lus:
     -- file size = 1.024 KB
-    -- core set = {'V24_toofast', 'V30_move', 'OK', 'V28_speed'}
+    -- core set = {'OK', 'V28_speed', 'V30_move', 'V24_toofast'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.57
 
 
-12) car_4_e3_57_e4_1047.lus_support_info:
+12) car_4_e3_57_e4_1047.lus:
     -- file size = 1.031 KB
-    -- core set = {'V28_speed', 'OK'}
+    -- core set = {'OK', 'V28_speed'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.67
 
 
-13) car_4_e3_57_e6_784.lus_support_info:
+13) car_4_e3_57_e6_784.lus:
     -- file size = 1.025 KB
-    -- core set = {'V28_speed', 'OK'}
+    -- core set = {'OK', 'V28_speed'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.67
 
 
-14) car_4_e7_592.lus_support_info:
+14) car_4_e7_592.lus:
     -- file size = 1.024 KB
-    -- core set = {'V28_speed', 'OK'}
+    -- core set = {'OK', 'V28_speed'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.4
 
 
-15) car_4_e7_592_e7_265.lus_support_info:
+15) car_4_e7_592_e7_265.lus:
     -- file size = 1.023 KB
-    -- core set = {'V28_speed', 'OK'}
+    -- core set = {'OK', 'V28_speed'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-16) car_4_e8_118.lus_support_info:
+16) car_4_e8_118.lus:
     -- file size = 1.026 KB
-    -- core set = {'V28_speed', 'OK'}
+    -- core set = {'OK', 'V28_speed'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.67
 
 
-17) car_4_e8_118_e7_178.lus_support_info:
+17) car_4_e8_118_e7_178.lus:
     -- file size = 1.025 KB
-    -- core set = {'V28_speed', 'OK'}
+    -- core set = {'OK', 'V28_speed'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-18) car_5.lus_support_info:
+18) car_5.lus:
     -- file size = 1.059 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-19) car_5_e7_244.lus_support_info:
+19) car_5_e7_244.lus:
     -- file size = 1.058 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-20) car_5_e7_244_e1_823.lus_support_info:
+20) car_5_e7_244_e1_823.lus:
     -- file size = 1.064 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-21) car_6.lus_support_info:
+21) car_6.lus:
     -- file size = 1.039 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-22) car_6_e1_152.lus_support_info:
+22) car_6_e1_152.lus:
     -- file size = 1.045 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-23) car_6_e1_152_e1_391.lus_support_info:
+23) car_6_e1_152_e1_391.lus:
     -- file size = 1.051 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-24) car_all_e2_108.lus_support_info:
+24) car_all_e2_108.lus:
     -- file size = 1.122 KB
-    -- core set = {'V27_dist', 'V30_move', 'V28_speed', 'V26_bump', 'OK'}
+    -- core set = {'V26_bump', 'OK', 'V28_speed', 'V27_dist', 'V30_move'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.83
 
 
-25) car_all_e2_142_e7_209.lus_support_info:
+25) car_all_e2_142_e7_209.lus:
     -- file size = 1.121 KB
-    -- core set = {'V27_dist', 'V30_move', 'V28_speed', 'V26_bump', 'OK'}
+    -- core set = {'V26_bump', 'OK', 'V28_speed', 'V27_dist', 'V30_move'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.56
 
 
-26) car_all_e2_142_e8_194.lus_support_info:
+26) car_all_e2_142_e8_194.lus:
     -- file size = 1.123 KB
-    -- core set = {'V27_dist', 'V30_move', 'V28_speed', 'V26_bump', 'OK'}
+    -- core set = {'V26_bump', 'OK', 'V28_speed', 'V27_dist', 'V30_move'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.83
 
 
-27) car_all_e3_1068_e4_275.lus_support_info:
+27) car_all_e3_1068_e4_275.lus:
     -- file size = 1.122 KB
-    -- core set = {'V27_dist', 'V30_move', 'V28_speed', 'V26_bump', 'OK'}
+    -- core set = {'V26_bump', 'OK', 'V28_speed', 'V27_dist', 'V30_move'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.83
 
 
-28) car_all_e3_1068_e6_790.lus_support_info:
+28) car_all_e3_1068_e6_790.lus:
     -- file size = 1.116 KB
-    -- core set = {'V30_move', 'OK', 'V26_bump', 'V24_toofast', 'V27_dist', 'V28_speed'}
+    -- core set = {'V27_dist', 'V26_bump', 'OK', 'V28_speed', 'V30_move', 'V24_toofast'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.86
 
 
-29) car_all_e7_188_e7_743.lus_support_info:
+29) car_all_e7_188_e7_743.lus:
     -- file size = 1.114 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-30) car_all_e8_856.lus_support_info:
+30) car_all_e8_856.lus:
     -- file size = 1.117 KB
-    -- core set = {'V24_toofast', 'V27_dist', 'V30_move', 'OK', 'V28_speed'}
+    -- core set = {'OK', 'V28_speed', 'V27_dist', 'V30_move', 'V24_toofast'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.71
 
 
-31) car_all_e8_856_e7_578.lus_support_info:
+31) car_all_e8_856_e7_578.lus:
     -- file size = 1.116 KB
-    -- core set = {'V24_toofast', 'V27_dist', 'V30_move', 'OK', 'V28_speed'}
+    -- core set = {'OK', 'V28_speed', 'V27_dist', 'V30_move', 'V24_toofast'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.56
 
 
-32) cd_e7_621_e8_714.lus_support_info:
+32) cd_e7_621_e8_714.lus:
     -- file size = 0.863 KB
-    -- core set = {'V110_acceptable', 'V22_speed', 'OK', 'V93_X', 'V25_realistic', 'V24_minus', 'V98_Sofar', 'V23_plus', 'V109_cpt'}
+    -- core set = {'V110_acceptable', 'V25_realistic', 'V22_speed', 'V23_plus', 'V24_minus', 'V109_cpt', 'V93_X', 'OK', 'V98_Sofar'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-33) DRAGON_1.lus_support_info:
+33) DRAGON_1.lus:
     -- file size = 7.128 KB
-    -- core set = {'V131_g01', 'V66_exclusive', 'V71_erreur', 'OK'}
+    -- core set = {'OK', 'V71_erreur', 'V131_g01', 'V66_exclusive'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.8
 
 
-34) DRAGON_10_e1_3587_e3_2749.lus_support_info:
+34) DRAGON_10_e1_3587_e3_2749.lus:
     -- file size = 7.039 KB
-    -- core set = {'OK', 'V70_invalid', 'V72_env', 'V139_g08', 'V138_g07', 'V144_mem_init', 'V132_g01', 'V165_X', 'V133_g02'}
+    -- core set = {'V139_g08', 'V165_X', 'V144_mem_init', 'V72_env', 'V138_g07', 'OK', 'V70_invalid', 'V132_g01', 'V133_g02'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-35) DRAGON_10_e1_998.lus_support_info:
+35) DRAGON_10_e1_998.lus:
     -- file size = 7.039 KB
-    -- core set = {'OK', 'V70_invalid', 'V72_env', 'V139_g08', 'V138_g07', 'V144_mem_init', 'V132_g01', 'V165_X', 'V133_g02'}
+    -- core set = {'V139_g08', 'V165_X', 'V144_mem_init', 'V72_env', 'V138_g07', 'OK', 'V70_invalid', 'V132_g01', 'V133_g02'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-36) DRAGON_10_e2_2785_e3_1744.lus_support_info:
+36) DRAGON_10_e2_2785_e3_1744.lus:
     -- file size = 7.039 KB
-    -- core set = {'OK', 'V70_invalid', 'V72_env', 'V139_g08', 'V138_g07', 'V144_mem_init', 'V132_g01', 'V165_X', 'V133_g02'}
+    -- core set = {'V139_g08', 'V165_X', 'V144_mem_init', 'V72_env', 'V138_g07', 'OK', 'V70_invalid', 'V132_g01', 'V133_g02'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-37) DRAGON_10_e2_402.lus_support_info:
+37) DRAGON_10_e2_402.lus:
     -- file size = 7.039 KB
-    -- core set = {'OK', 'V70_invalid', 'V72_env', 'V139_g08', 'V138_g07', 'V144_mem_init', 'V132_g01', 'V165_X', 'V133_g02'}
+    -- core set = {'V139_g08', 'V165_X', 'V144_mem_init', 'V72_env', 'V138_g07', 'OK', 'V70_invalid', 'V132_g01', 'V133_g02'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-38) DRAGON_10_e3_144_e5_2046.lus_support_info:
+38) DRAGON_10_e3_144_e5_2046.lus:
     -- file size = 7.039 KB
-    -- core set = {'OK', 'V70_invalid', 'V72_env', 'V139_g08', 'V138_g07', 'V144_mem_init', 'V132_g01', 'V165_X', 'V133_g02'}
+    -- core set = {'V139_g08', 'V165_X', 'V144_mem_init', 'V72_env', 'V138_g07', 'OK', 'V70_invalid', 'V132_g01', 'V133_g02'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-39) DRAGON_10_e3_144_e6_4484.lus_support_info:
+39) DRAGON_10_e3_144_e6_4484.lus:
     -- file size = 7.033 KB
-    -- core set = {'OK', 'V70_invalid', 'V72_env', 'V139_g08', 'V138_g07', 'V144_mem_init', 'V132_g01', 'V165_X', 'V133_g02'}
+    -- core set = {'V139_g08', 'V165_X', 'V144_mem_init', 'V72_env', 'V138_g07', 'OK', 'V70_invalid', 'V132_g01', 'V133_g02'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-40) DRAGON_10_e3_3429.lus_support_info:
+40) DRAGON_10_e3_3429.lus:
     -- file size = 7.033 KB
-    -- core set = {'OK', 'V70_invalid', 'V72_env', 'V139_g08', 'V138_g07', 'V144_mem_init', 'V132_g01', 'V165_X', 'V133_g02'}
+    -- core set = {'V139_g08', 'V165_X', 'V144_mem_init', 'V72_env', 'V138_g07', 'OK', 'V70_invalid', 'V132_g01', 'V133_g02'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-41) DRAGON_11.lus_support_info:
+41) DRAGON_11.lus:
     -- file size = 7.113 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-42) DRAGON_11_e1_2450.lus_support_info:
+42) DRAGON_11_e1_2450.lus:
     -- file size = 7.119 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-43) DRAGON_11_e1_2450_e1_5887.lus_support_info:
+43) DRAGON_11_e1_2450_e1_5887.lus:
     -- file size = 7.125 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-44) DRAGON_11_e1_2450_e2_1483.lus_support_info:
+44) DRAGON_11_e1_2450_e2_1483.lus:
     -- file size = 7.125 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-45) DRAGON_11_e1_2450_e3_2330.lus_support_info:
+45) DRAGON_11_e1_2450_e3_2330.lus:
     -- file size = 7.119 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-46) DRAGON_11_e2_1678_e1_3565.lus_support_info:
+46) DRAGON_11_e2_1678_e1_3565.lus:
     -- file size = 7.125 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-47) DRAGON_11_e2_5396_e3_282.lus_support_info:
+47) DRAGON_11_e2_5396_e3_282.lus:
     -- file size = 7.119 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-48) DRAGON_11_e3_382_e1_505.lus_support_info:
+48) DRAGON_11_e3_382_e1_505.lus:
     -- file size = 7.119 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-49) DRAGON_11_e3_382_e4_4421.lus_support_info:
+49) DRAGON_11_e3_382_e4_4421.lus:
     -- file size = 7.119 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-50) DRAGON_12_e2_1618.lus_support_info:
+50) DRAGON_12_e2_1618.lus:
     -- file size = 7.125 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-51) DRAGON_12_e2_1618_e1_6030.lus_support_info:
+51) DRAGON_12_e2_1618_e1_6030.lus:
     -- file size = 7.131 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-52) DRAGON_12_e2_1618_e2_138.lus_support_info:
+52) DRAGON_12_e2_1618_e2_138.lus:
     -- file size = 7.131 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-53) DRAGON_12_e2_1618_e3_2012.lus_support_info:
+53) DRAGON_12_e2_1618_e3_2012.lus:
     -- file size = 7.125 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-54) DRAGON_12_e7_4611_e8_5145.lus_support_info:
+54) DRAGON_12_e7_4611_e8_5145.lus:
     -- file size = 7.119 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-55) DRAGON_13_e3_1418_e3_2761.lus_support_info:
+55) DRAGON_13_e3_1418_e3_2761.lus:
     -- file size = 7.112 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-56) DRAGON_13_e7_2336_e8_1940.lus_support_info:
+56) DRAGON_13_e7_2336_e8_1940.lus:
     -- file size = 7.112 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-57) DRAGON_14_e1_2392.lus_support_info:
+57) DRAGON_14_e1_2392.lus:
     -- file size = 7.12 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = nan
 
 
-58) DRAGON_14_e2_3606.lus_support_info:
+58) DRAGON_14_e2_3606.lus:
     -- file size = 7.12 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = nan
 
 
-59) DRAGON_14_e3_1259_e1_5798.lus_support_info:
+59) DRAGON_14_e3_1259_e1_5798.lus:
     -- file size = 7.12 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = nan
 
 
-60) DRAGON_14_e3_5120.lus_support_info:
+60) DRAGON_14_e3_5120.lus:
     -- file size = 7.114 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = nan
 
 
-61) DRAGON_14_e7_3162_e8_5719.lus_support_info:
+61) DRAGON_14_e7_3162_e8_5719.lus:
     -- file size = 7.114 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = nan
 
 
-62) DRAGON_1_e1_14612_e1_268_e7_501.lus_support_info:
+62) DRAGON_1_e1_14612_e1_268_e7_501.lus:
     -- file size = 7.139 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-63) DRAGON_1_e1_14612_e2_2653_e7_4370.lus_support_info:
+63) DRAGON_1_e1_14612_e2_2653_e7_4370.lus:
     -- file size = 7.139 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-64) DRAGON_1_e1_14612_e7_1026.lus_support_info:
+64) DRAGON_1_e1_14612_e7_1026.lus:
     -- file size = 7.133 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-65) DRAGON_1_e1_3184.lus_support_info:
+65) DRAGON_1_e1_3184.lus:
     -- file size = 7.134 KB
-    -- core set = {'V131_g01', 'V66_exclusive', 'V71_erreur', 'OK'}
+    -- core set = {'OK', 'V71_erreur', 'V131_g01', 'V66_exclusive'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.8
 
 
-66) DRAGON_1_e2_1997.lus_support_info:
+66) DRAGON_1_e2_1997.lus:
     -- file size = 7.134 KB
-    -- core set = {'V131_g01', 'V66_exclusive', 'V71_erreur', 'OK'}
+    -- core set = {'OK', 'V71_erreur', 'V131_g01', 'V66_exclusive'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.8
 
 
-67) DRAGON_1_e2_1997_e7_3613_e2_3409.lus_support_info:
+67) DRAGON_1_e2_1997_e7_3613_e2_3409.lus:
     -- file size = 7.139 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-68) DRAGON_1_e3_11891_e7_4569_e4_4881.lus_support_info:
+68) DRAGON_1_e3_11891_e7_4569_e4_4881.lus:
     -- file size = 7.133 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-69) DRAGON_2_e1_2316.lus_support_info:
+69) DRAGON_2_e1_2316.lus:
     -- file size = 7.2 KB
-    -- core set = {'OK', 'V70_invalid', 'V136_g05', 'V72_env', 'V69_dirty', 'V135_g04', 'V68_shared_dirty', 'V165_X', 'V66_exclusive', 'V67_shared'}
+    -- core set = {'V68_shared_dirty', 'V136_g05', 'V135_g04', 'V67_shared', 'V165_X', 'V66_exclusive', 'V72_env', 'V69_dirty', 'OK', 'V70_invalid'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-70) DRAGON_2_e2_3183.lus_support_info:
+70) DRAGON_2_e2_3183.lus:
     -- file size = 7.2 KB
-    -- core set = {'OK', 'V70_invalid', 'V136_g05', 'V72_env', 'V69_dirty', 'V135_g04', 'V68_shared_dirty', 'V165_X', 'V66_exclusive', 'V67_shared'}
+    -- core set = {'V68_shared_dirty', 'V136_g05', 'V135_g04', 'V67_shared', 'V165_X', 'V66_exclusive', 'V72_env', 'V69_dirty', 'OK', 'V70_invalid'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-71) DRAGON_2_e2_3183_e1_2644.lus_support_info:
+71) DRAGON_2_e2_3183_e1_2644.lus:
     -- file size = 7.206 KB
-    -- core set = {'OK', 'V70_invalid', 'V136_g05', 'V72_env', 'V69_dirty', 'V135_g04', 'V68_shared_dirty', 'V165_X', 'V66_exclusive', 'V67_shared'}
+    -- core set = {'V68_shared_dirty', 'V136_g05', 'V135_g04', 'V67_shared', 'V165_X', 'V66_exclusive', 'V72_env', 'V69_dirty', 'OK', 'V70_invalid'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-72) DRAGON_2_e2_3183_e2_3580.lus_support_info:
+72) DRAGON_2_e2_3183_e2_3580.lus:
     -- file size = 7.206 KB
-    -- core set = {'OK', 'V70_invalid', 'V136_g05', 'V72_env', 'V69_dirty', 'V135_g04', 'V68_shared_dirty', 'V165_X', 'V66_exclusive', 'V67_shared'}
+    -- core set = {'V68_shared_dirty', 'V136_g05', 'V135_g04', 'V67_shared', 'V165_X', 'V66_exclusive', 'V72_env', 'V69_dirty', 'OK', 'V70_invalid'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-73) DRAGON_2_e2_3183_e3_5972.lus_support_info:
+73) DRAGON_2_e2_3183_e3_5972.lus:
     -- file size = 7.2 KB
-    -- core set = {'OK', 'V70_invalid', 'V136_g05', 'V72_env', 'V69_dirty', 'V135_g04', 'V68_shared_dirty', 'V165_X', 'V66_exclusive', 'V67_shared'}
+    -- core set = {'V68_shared_dirty', 'V136_g05', 'V135_g04', 'V67_shared', 'V165_X', 'V66_exclusive', 'V72_env', 'V69_dirty', 'OK', 'V70_invalid'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-74) DRAGON_2_e7_25_e8_3171.lus_support_info:
+74) DRAGON_2_e7_25_e8_3171.lus:
     -- file size = 7.194 KB
-    -- core set = {'OK', 'V70_invalid', 'V136_g05', 'V72_env', 'V69_dirty', 'V135_g04', 'V68_shared_dirty', 'V165_X', 'V66_exclusive', 'V67_shared'}
+    -- core set = {'V68_shared_dirty', 'V136_g05', 'V135_g04', 'V67_shared', 'V165_X', 'V66_exclusive', 'V72_env', 'V69_dirty', 'OK', 'V70_invalid'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-75) DRAGON_3.lus_support_info:
+75) DRAGON_3.lus:
     -- file size = 7.181 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'OK', 'V185_First', 'V143_g04', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V71_shared_dirty'}
+    -- core set = {'V75_env', 'V72_dirty', 'V143_g04', 'V69_exclusive', 'V73_invalid', 'V144_g05', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-76) DRAGON_3_e1_4783.lus_support_info:
+76) DRAGON_3_e1_4783.lus:
     -- file size = 7.187 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'OK', 'V185_First', 'V143_g04', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V71_shared_dirty'}
+    -- core set = {'V75_env', 'V72_dirty', 'V143_g04', 'V69_exclusive', 'V73_invalid', 'V144_g05', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-77) DRAGON_3_e1_4783_e1_3755.lus_support_info:
+77) DRAGON_3_e1_4783_e1_3755.lus:
     -- file size = 7.193 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'OK', 'V185_First', 'V143_g04', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V71_shared_dirty'}
+    -- core set = {'V75_env', 'V72_dirty', 'V143_g04', 'V69_exclusive', 'V73_invalid', 'V144_g05', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-78) DRAGON_3_e1_4783_e2_158.lus_support_info:
+78) DRAGON_3_e1_4783_e2_158.lus:
     -- file size = 7.193 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'OK', 'V185_First', 'V143_g04', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V71_shared_dirty'}
+    -- core set = {'V75_env', 'V72_dirty', 'V143_g04', 'V69_exclusive', 'V73_invalid', 'V144_g05', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-79) DRAGON_3_e1_4783_e3_511.lus_support_info:
+79) DRAGON_3_e1_4783_e3_511.lus:
     -- file size = 7.187 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'OK', 'V185_First', 'V143_g04', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V71_shared_dirty'}
+    -- core set = {'V75_env', 'V72_dirty', 'V143_g04', 'V69_exclusive', 'V73_invalid', 'V144_g05', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-80) DRAGON_3_e2_5343_e1_988.lus_support_info:
+80) DRAGON_3_e2_5343_e1_988.lus:
     -- file size = 7.193 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'OK', 'V185_First', 'V143_g04', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V71_shared_dirty'}
+    -- core set = {'V75_env', 'V72_dirty', 'V143_g04', 'V69_exclusive', 'V73_invalid', 'V144_g05', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-81) DRAGON_3_e3_3846.lus_support_info:
+81) DRAGON_3_e3_3846.lus:
     -- file size = 7.181 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'OK', 'V185_First', 'V143_g04', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V71_shared_dirty'}
+    -- core set = {'V75_env', 'V72_dirty', 'V143_g04', 'V69_exclusive', 'V73_invalid', 'V144_g05', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-82) DRAGON_3_e3_5422_e1_2288.lus_support_info:
+82) DRAGON_3_e3_5422_e1_2288.lus:
     -- file size = 7.187 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'OK', 'V185_First', 'V143_g04', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V71_shared_dirty'}
+    -- core set = {'V75_env', 'V72_dirty', 'V143_g04', 'V69_exclusive', 'V73_invalid', 'V144_g05', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-83) DRAGON_3_e3_5422_e2_3135.lus_support_info:
+83) DRAGON_3_e3_5422_e2_3135.lus:
     -- file size = 7.187 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'OK', 'V185_First', 'V143_g04', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V71_shared_dirty'}
+    -- core set = {'V75_env', 'V72_dirty', 'V143_g04', 'V69_exclusive', 'V73_invalid', 'V144_g05', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-84) DRAGON_4_e1_4312.lus_support_info:
+84) DRAGON_4_e1_4312.lus:
     -- file size = 7.037 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-85) DRAGON_4_e2_2799.lus_support_info:
+85) DRAGON_4_e2_2799.lus:
     -- file size = 7.037 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-86) DRAGON_4_e2_2799_e1_1303.lus_support_info:
+86) DRAGON_4_e2_2799_e1_1303.lus:
     -- file size = 7.043 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-87) DRAGON_4_e2_2799_e2_2251.lus_support_info:
+87) DRAGON_4_e2_2799_e2_2251.lus:
     -- file size = 7.043 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-88) DRAGON_4_e2_2799_e3_1915.lus_support_info:
+88) DRAGON_4_e2_2799_e3_1915.lus:
     -- file size = 7.037 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-89) DRAGON_4_e3_1540_e1_5048.lus_support_info:
+89) DRAGON_4_e3_1540_e1_5048.lus:
     -- file size = 7.037 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-90) DRAGON_4_e3_4133.lus_support_info:
+90) DRAGON_4_e3_4133.lus:
     -- file size = 7.031 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-91) DRAGON_4_e7_2329_e8_3915.lus_support_info:
+91) DRAGON_4_e7_2329_e8_3915.lus:
     -- file size = 7.031 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-92) DRAGON_5_e1_1835.lus_support_info:
+92) DRAGON_5_e1_1835.lus:
     -- file size = 7.058 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-93) DRAGON_5_e2_3018_e2_936.lus_support_info:
+93) DRAGON_5_e2_3018_e2_936.lus:
     -- file size = 7.064 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-94) DRAGON_5_e7_2017_e8_4841.lus_support_info:
+94) DRAGON_5_e7_2017_e8_4841.lus:
     -- file size = 7.052 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-95) DRAGON_6.lus_support_info:
+95) DRAGON_6.lus:
     -- file size = 7.035 KB
-    -- core set = {'V134_g03', 'V66_exclusive', 'OK', 'V143_g12'}
+    -- core set = {'OK', 'V134_g03', 'V143_g12', 'V66_exclusive'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.8
 
 
-96) DRAGON_6_e7_5046_e7_3623.lus_support_info:
+96) DRAGON_6_e7_5046_e7_3623.lus:
     -- file size = 7.033 KB
-    -- core set = {'V134_g03', 'V66_exclusive', 'OK', 'V143_g12'}
+    -- core set = {'OK', 'V134_g03', 'V66_exclusive', 'V143_g12'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-97) DRAGON_7.lus_support_info:
+97) DRAGON_7.lus:
     -- file size = 7.059 KB
-    -- core set = {'V134_g03', 'OK', 'V141_g10', 'V137_g06', 'V143_g12', 'V66_exclusive', 'V67_shared', 'V139_g08'}
+    -- core set = {'V139_g08', 'V67_shared', 'V66_exclusive', 'V134_g03', 'V141_g10', 'OK', 'V143_g12', 'V137_g06'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.89
 
 
-98) DRAGON_7_e2_2872_e2_5844.lus_support_info:
+98) DRAGON_7_e2_2872_e2_5844.lus:
     -- file size = 7.071 KB
-    -- core set = {'V134_g03', 'OK', 'V141_g10', 'V137_g06', 'V143_g12', 'V66_exclusive', 'V67_shared', 'V139_g08'}
+    -- core set = {'V139_g08', 'V67_shared', 'V66_exclusive', 'V134_g03', 'V141_g10', 'OK', 'V143_g12', 'V137_g06'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.89
 
 
-99) DRAGON_7_e2_2872_e3_2640.lus_support_info:
+99) DRAGON_7_e2_2872_e3_2640.lus:
     -- file size = 7.065 KB
-    -- core set = {'V134_g03', 'OK', 'V141_g10', 'V137_g06', 'V143_g12', 'V66_exclusive', 'V67_shared', 'V139_g08'}
+    -- core set = {'V139_g08', 'V67_shared', 'V66_exclusive', 'V134_g03', 'V141_g10', 'OK', 'V143_g12', 'V137_g06'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.89
 
 
-100) DRAGON_7_e2_2872_e7_1264.lus_support_info:
+100) DRAGON_7_e2_2872_e7_1264.lus:
     -- file size = 7.064 KB
-    -- core set = {'V134_g03', 'OK', 'V141_g10', 'V137_g06', 'V143_g12', 'V66_exclusive', 'V67_shared', 'V139_g08'}
+    -- core set = {'V139_g08', 'V67_shared', 'V66_exclusive', 'V134_g03', 'V141_g10', 'OK', 'V143_g12', 'V137_g06'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-101) DRAGON_8.lus_support_info:
+101) DRAGON_8.lus:
     -- file size = 7.038 KB
-    -- core set = {'V68_shared_dirty', 'V69_dirty', 'V142_g11', 'V140_g09', 'OK'}
+    -- core set = {'V68_shared_dirty', 'OK', 'V142_g11', 'V69_dirty', 'V140_g09'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.83
 
 
-102) DRAGON_8_e2_3896_e3_3125.lus_support_info:
+102) DRAGON_8_e2_3896_e3_3125.lus:
     -- file size = 7.044 KB
-    -- core set = {'V68_shared_dirty', 'V69_dirty', 'V142_g11', 'V140_g09', 'OK'}
+    -- core set = {'V68_shared_dirty', 'OK', 'V142_g11', 'V69_dirty', 'V140_g09'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.28
 
 
-103) DRAGON_8_e3_786.lus_support_info:
+103) DRAGON_8_e3_786.lus:
     -- file size = 7.038 KB
-    -- core set = {'V68_shared_dirty', 'V69_dirty', 'V142_g11', 'V140_g09', 'OK'}
+    -- core set = {'V68_shared_dirty', 'OK', 'V142_g11', 'V69_dirty', 'V140_g09'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.83
 
 
-104) DRAGON_8_e3_786_e7_4541.lus_support_info:
+104) DRAGON_8_e3_786_e7_4541.lus:
     -- file size = 7.037 KB
-    -- core set = {'V140_g09', 'V69_dirty', 'V142_g11', 'V68_shared_dirty', 'OK'}
+    -- core set = {'V140_g09', 'V68_shared_dirty', 'OK', 'V69_dirty', 'V142_g11'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-105) DRAGON_8_e7_3752.lus_support_info:
+105) DRAGON_8_e7_3752.lus:
     -- file size = 7.037 KB
-    -- core set = {'V140_g09', 'V69_dirty', 'V142_g11', 'V68_shared_dirty', 'OK'}
+    -- core set = {'V140_g09', 'V68_shared_dirty', 'OK', 'V69_dirty', 'V142_g11'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-106) DRAGON_9_e7_1843.lus_support_info:
+106) DRAGON_9_e7_1843.lus:
     -- file size = 7.03 KB
-    -- core set = {'V69_dirty', 'V140_g09', 'OK'}
+    -- core set = {'OK', 'V69_dirty', 'V140_g09'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-107) DRAGON_9_e7_1843_e1_5434.lus_support_info:
+107) DRAGON_9_e7_1843_e1_5434.lus:
     -- file size = 7.036 KB
-    -- core set = {'V69_dirty', 'V140_g09', 'OK'}
+    -- core set = {'OK', 'V69_dirty', 'V140_g09'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-108) DRAGON_9_e7_1843_e2_1145.lus_support_info:
+108) DRAGON_9_e7_1843_e2_1145.lus:
     -- file size = 7.036 KB
-    -- core set = {'V69_dirty', 'V140_g09', 'OK'}
+    -- core set = {'OK', 'V69_dirty', 'V140_g09'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-109) DRAGON_9_e7_1843_e3_5316.lus_support_info:
+109) DRAGON_9_e7_1843_e3_5316.lus:
     -- file size = 7.03 KB
-    -- core set = {'V69_dirty', 'V140_g09', 'OK'}
+    -- core set = {'OK', 'V69_dirty', 'V140_g09'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-110) DRAGON_9_e7_1843_e7_2225.lus_support_info:
+110) DRAGON_9_e7_1843_e7_2225.lus:
     -- file size = 7.029 KB
-    -- core set = {'V69_dirty', 'V140_g09', 'OK'}
+    -- core set = {'OK', 'V69_dirty', 'V140_g09'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-111) DRAGON_9_e7_1843_e8_3031.lus_support_info:
+111) DRAGON_9_e7_1843_e8_3031.lus:
     -- file size = 7.031 KB
-    -- core set = {'V69_dirty', 'V140_g09', 'OK'}
+    -- core set = {'OK', 'V69_dirty', 'V140_g09'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.75
 
 
-112) DRAGON_all2_e3_4612_e1_6463.lus_support_info:
+112) DRAGON_all2_e3_4612_e1_6463.lus:
     -- file size = 8.805 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-113) DRAGON_all2_e3_4612_e2_5774.lus_support_info:
+113) DRAGON_all2_e3_4612_e2_5774.lus:
     -- file size = 8.805 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-114) DRAGON_all2_e3_4612_e3_1543.lus_support_info:
+114) DRAGON_all2_e3_4612_e3_1543.lus:
     -- file size = 8.799 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-115) DRAGON_all2_e3_4612_e4_3719.lus_support_info:
+115) DRAGON_all2_e3_4612_e4_3719.lus:
     -- file size = 8.805 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-116) DRAGON_all2_e3_4612_e5_3642.lus_support_info:
+116) DRAGON_all2_e3_4612_e5_3642.lus:
     -- file size = 8.805 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-117) DRAGON_all2_e3_4612_e6_274.lus_support_info:
+117) DRAGON_all2_e3_4612_e6_274.lus:
     -- file size = 8.799 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-118) DRAGON_all_e1_4022.lus_support_info:
+118) DRAGON_all_e1_4022.lus:
     -- file size = 7.508 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'V74_erreur', 'OK', 'V71_shared_dirty', 'V185_First', 'V140_g01', 'V143_g04', 'V142_g03', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V151_g12'}
+    -- core set = {'V74_erreur', 'V140_g01', 'V75_env', 'V72_dirty', 'V151_g12', 'V143_g04', 'V69_exclusive', 'V144_g05', 'V73_invalid', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V142_g03', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-119) DRAGON_all_e1_4022_e1_1759.lus_support_info:
+119) DRAGON_all_e1_4022_e1_1759.lus:
     -- file size = 7.514 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'V74_erreur', 'OK', 'V71_shared_dirty', 'V185_First', 'V140_g01', 'V143_g04', 'V142_g03', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V151_g12'}
+    -- core set = {'V74_erreur', 'V140_g01', 'V75_env', 'V72_dirty', 'V151_g12', 'V143_g04', 'V69_exclusive', 'V144_g05', 'V73_invalid', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V142_g03', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-120) DRAGON_all_e1_4022_e2_267.lus_support_info:
+120) DRAGON_all_e1_4022_e2_267.lus:
     -- file size = 7.514 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'V74_erreur', 'OK', 'V71_shared_dirty', 'V185_First', 'V140_g01', 'V143_g04', 'V142_g03', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V151_g12'}
+    -- core set = {'V74_erreur', 'V140_g01', 'V75_env', 'V72_dirty', 'V151_g12', 'V143_g04', 'V69_exclusive', 'V144_g05', 'V73_invalid', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V142_g03', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-121) DRAGON_all_e1_4022_e3_3628.lus_support_info:
+121) DRAGON_all_e1_4022_e3_3628.lus:
     -- file size = 7.508 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'V74_erreur', 'OK', 'V71_shared_dirty', 'V185_First', 'V140_g01', 'V143_g04', 'V142_g03', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V151_g12'}
+    -- core set = {'V74_erreur', 'V140_g01', 'V75_env', 'V72_dirty', 'V151_g12', 'V143_g04', 'V69_exclusive', 'V144_g05', 'V73_invalid', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V142_g03', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-122) DRAGON_all_e2_1514.lus_support_info:
+122) DRAGON_all_e2_1514.lus:
     -- file size = 7.508 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'V74_erreur', 'OK', 'V71_shared_dirty', 'V185_First', 'V140_g01', 'V143_g04', 'V142_g03', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V151_g12'}
+    -- core set = {'V74_erreur', 'V140_g01', 'V75_env', 'V72_dirty', 'V151_g12', 'V143_g04', 'V69_exclusive', 'V144_g05', 'V73_invalid', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V142_g03', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-123) DRAGON_all_e2_6104_e1_6205.lus_support_info:
+123) DRAGON_all_e2_6104_e1_6205.lus:
     -- file size = 7.514 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'V74_erreur', 'OK', 'V71_shared_dirty', 'V185_First', 'V140_g01', 'V143_g04', 'V142_g03', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V151_g12'}
+    -- core set = {'V74_erreur', 'V140_g01', 'V75_env', 'V72_dirty', 'V151_g12', 'V143_g04', 'V69_exclusive', 'V144_g05', 'V73_invalid', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V142_g03', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-124) DRAGON_all_e2_6104_e2_3308.lus_support_info:
+124) DRAGON_all_e2_6104_e2_3308.lus:
     -- file size = 7.514 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'V74_erreur', 'OK', 'V71_shared_dirty', 'V185_First', 'V140_g01', 'V143_g04', 'V142_g03', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V151_g12'}
+    -- core set = {'V74_erreur', 'V140_g01', 'V75_env', 'V72_dirty', 'V151_g12', 'V143_g04', 'V69_exclusive', 'V144_g05', 'V73_invalid', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V142_g03', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-125) DRAGON_all_e2_6104_e3_2607.lus_support_info:
+125) DRAGON_all_e2_6104_e3_2607.lus:
     -- file size = 7.508 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'V74_erreur', 'OK', 'V71_shared_dirty', 'V185_First', 'V140_g01', 'V143_g04', 'V142_g03', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V151_g12'}
+    -- core set = {'V74_erreur', 'V140_g01', 'V75_env', 'V72_dirty', 'V151_g12', 'V143_g04', 'V69_exclusive', 'V144_g05', 'V73_invalid', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V142_g03', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-126) DRAGON_all_e3_4821.lus_support_info:
+126) DRAGON_all_e3_4821.lus:
     -- file size = 7.502 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'V74_erreur', 'OK', 'V71_shared_dirty', 'V185_First', 'V140_g01', 'V143_g04', 'V142_g03', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V151_g12'}
+    -- core set = {'V74_erreur', 'V140_g01', 'V75_env', 'V72_dirty', 'V151_g12', 'V143_g04', 'V69_exclusive', 'V144_g05', 'V73_invalid', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V142_g03', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-127) DRAGON_all_e3_4821_e1_1318.lus_support_info:
+127) DRAGON_all_e3_4821_e1_1318.lus:
     -- file size = 7.508 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'V74_erreur', 'OK', 'V71_shared_dirty', 'V185_First', 'V140_g01', 'V143_g04', 'V142_g03', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V151_g12'}
+    -- core set = {'V74_erreur', 'V140_g01', 'V75_env', 'V72_dirty', 'V151_g12', 'V143_g04', 'V69_exclusive', 'V144_g05', 'V73_invalid', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V142_g03', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-128) DRAGON_all_e3_4821_e2_1089.lus_support_info:
+128) DRAGON_all_e3_4821_e2_1089.lus:
     -- file size = 7.508 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'V74_erreur', 'OK', 'V71_shared_dirty', 'V185_First', 'V140_g01', 'V143_g04', 'V142_g03', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V151_g12'}
+    -- core set = {'V74_erreur', 'V140_g01', 'V75_env', 'V72_dirty', 'V151_g12', 'V143_g04', 'V69_exclusive', 'V144_g05', 'V73_invalid', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V142_g03', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-129) DRAGON_all_e3_4821_e4_1791.lus_support_info:
+129) DRAGON_all_e3_4821_e4_1791.lus:
     -- file size = 7.508 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'V74_erreur', 'OK', 'V71_shared_dirty', 'V185_First', 'V140_g01', 'V143_g04', 'V142_g03', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V151_g12'}
+    -- core set = {'V74_erreur', 'V140_g01', 'V75_env', 'V72_dirty', 'V151_g12', 'V143_g04', 'V69_exclusive', 'V144_g05', 'V73_invalid', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V142_g03', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-130) DRAGON_all_e3_4821_e5_1536.lus_support_info:
+130) DRAGON_all_e3_4821_e5_1536.lus:
     -- file size = 7.508 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'V74_erreur', 'OK', 'V71_shared_dirty', 'V185_First', 'V140_g01', 'V143_g04', 'V142_g03', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V151_g12'}
+    -- core set = {'V74_erreur', 'V140_g01', 'V75_env', 'V72_dirty', 'V151_g12', 'V143_g04', 'V69_exclusive', 'V144_g05', 'V73_invalid', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V142_g03', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-131) DRAGON_all_e3_4821_e6_2061.lus_support_info:
+131) DRAGON_all_e3_4821_e6_2061.lus:
     -- file size = 7.502 KB
-    -- core set = {'V73_invalid', 'V69_exclusive', 'V173_X', 'V74_erreur', 'OK', 'V71_shared_dirty', 'V185_First', 'V140_g01', 'V143_g04', 'V142_g03', 'V75_env', 'V144_g05', 'V70_shared', 'V72_dirty', 'V152_mem_init', 'V151_g12'}
+    -- core set = {'V74_erreur', 'V140_g01', 'V75_env', 'V72_dirty', 'V151_g12', 'V143_g04', 'V69_exclusive', 'V144_g05', 'V73_invalid', 'V185_First', 'V152_mem_init', 'OK', 'V70_shared', 'V173_X', 'V142_g03', 'V71_shared_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-132) durationThm_1_e2_305.lus_support_info:
+132) durationThm_1_e2_305.lus:
     -- file size = 0.809 KB
-    -- core set = {'V16_env', 'OK', 'V55_X', 'V68_age_of_p'}
+    -- core set = {'V68_age_of_p', 'V16_env', 'V55_X', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-133) durationThm_1_e2_3_e7_336.lus_support_info:
+133) durationThm_1_e2_3_e7_336.lus:
     -- file size = 0.808 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-134) durationThm_1_e3_173.lus_support_info:
+134) durationThm_1_e3_173.lus:
     -- file size = 0.791 KB
-    -- core set = {'V16_env', 'OK', 'V55_X', 'V68_age_of_p'}
+    -- core set = {'V68_age_of_p', 'V16_env', 'V55_X', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-135) durationThm_1_e3_389_e4_294.lus_support_info:
+135) durationThm_1_e3_389_e4_294.lus:
     -- file size = 0.809 KB
-    -- core set = {'V16_env', 'OK', 'V55_X', 'V68_age_of_p'}
+    -- core set = {'V68_age_of_p', 'V16_env', 'V55_X', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-136) durationThm_1_e3_389_e5_5.lus_support_info:
+136) durationThm_1_e3_389_e5_5.lus:
     -- file size = 0.809 KB
-    -- core set = {'V16_env', 'OK', 'V55_X', 'V68_age_of_p'}
+    -- core set = {'V68_age_of_p', 'V16_env', 'V55_X', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-137) durationThm_1_e3_389_e6_167.lus_support_info:
+137) durationThm_1_e3_389_e6_167.lus:
     -- file size = 0.791 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-138) durationThm_1_e3_389_e7_358.lus_support_info:
+138) durationThm_1_e3_389_e7_358.lus:
     -- file size = 0.79 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-139) durationThm_2_e1_118.lus_support_info:
+139) durationThm_2_e1_118.lus:
     -- file size = 0.739 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-140) durationThm_2_e2_206.lus_support_info:
+140) durationThm_2_e2_206.lus:
     -- file size = 0.739 KB
-    -- core set = {'V69_age_of_p', 'OK', 'V55_X', 'V15_env'}
+    -- core set = {'V69_age_of_p', 'V55_X', 'OK', 'V15_env'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-141) durationThm_2_e2_206_e7_33.lus_support_info:
+141) durationThm_2_e2_206_e7_33.lus:
     -- file size = 0.738 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-142) durationThm_2_e3_329.lus_support_info:
+142) durationThm_2_e3_329.lus:
     -- file size = 0.721 KB
-    -- core set = {'V69_age_of_p', 'OK', 'V55_X', 'V15_env'}
+    -- core set = {'V69_age_of_p', 'V55_X', 'OK', 'V15_env'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-143) durationThm_2_e3_329_e4_1.lus_support_info:
+143) durationThm_2_e3_329_e4_1.lus:
     -- file size = 0.739 KB
-    -- core set = {'V69_age_of_p', 'OK', 'V55_X', 'V15_env'}
+    -- core set = {'V69_age_of_p', 'V55_X', 'OK', 'V15_env'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-144) durationThm_2_e3_329_e5_124.lus_support_info:
+144) durationThm_2_e3_329_e5_124.lus:
     -- file size = 0.739 KB
-    -- core set = {'V69_age_of_p', 'OK', 'V55_X', 'V15_env'}
+    -- core set = {'V69_age_of_p', 'V55_X', 'OK', 'V15_env'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-145) durationThm_2_e3_329_e6_128.lus_support_info:
+145) durationThm_2_e3_329_e6_128.lus:
     -- file size = 0.721 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-146) durationThm_2_e3_329_e7_410.lus_support_info:
+146) durationThm_2_e3_329_e7_410.lus:
     -- file size = 0.72 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-147) durationThm_3_e2_148.lus_support_info:
+147) durationThm_3_e2_148.lus:
     -- file size = 0.773 KB
-    -- core set = {'V54_X', 'V68_age_of_p', 'OK', 'V15_env'}
+    -- core set = {'V68_age_of_p', 'OK', 'V54_X', 'V15_env'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.67
 
 
-148) durationThm_3_e2_63_e7_21.lus_support_info:
+148) durationThm_3_e2_63_e7_21.lus:
     -- file size = 0.772 KB
-    -- core set = {'V54_X', 'V14_m', 'OK', 'V68_age_of_p', 'V13_k', 'V15_env'}
+    -- core set = {'V13_k', 'V15_env', 'V14_m', 'V68_age_of_p', 'OK', 'V54_X'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-149) durationThm_3_e3_207.lus_support_info:
+149) durationThm_3_e3_207.lus:
     -- file size = 0.755 KB
-    -- core set = {'V54_X', 'V68_age_of_p', 'OK', 'V15_env'}
+    -- core set = {'V68_age_of_p', 'OK', 'V54_X', 'V15_env'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.67
 
 
-150) durationThm_3_e3_442_e4_165.lus_support_info:
+150) durationThm_3_e3_442_e4_165.lus:
     -- file size = 0.773 KB
-    -- core set = {'V54_X', 'V68_age_of_p', 'OK', 'V15_env'}
+    -- core set = {'V68_age_of_p', 'OK', 'V54_X', 'V15_env'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.67
 
 
-151) durationThm_3_e3_442_e5_260.lus_support_info:
+151) durationThm_3_e3_442_e5_260.lus:
     -- file size = 0.773 KB
-    -- core set = {'V54_X', 'V68_age_of_p', 'OK', 'V15_env'}
+    -- core set = {'V68_age_of_p', 'OK', 'V54_X', 'V15_env'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.67
 
 
-152) durationThm_3_e3_442_e6_113.lus_support_info:
+152) durationThm_3_e3_442_e6_113.lus:
     -- file size = 0.755 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-153) durationThm_3_e3_442_e7_394.lus_support_info:
+153) durationThm_3_e3_442_e7_394.lus:
     -- file size = 0.754 KB
-    -- core set = {'V54_X', 'V14_m', 'OK', 'V68_age_of_p', 'V13_k', 'V15_env'}
+    -- core set = {'V13_k', 'V15_env', 'V14_m', 'V68_age_of_p', 'OK', 'V54_X'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.75
 
 
-154) ex3_e7_590.lus_support_info:
+154) ex3_e7_590.lus:
     -- file size = 0.67 KB
-    -- core set = {'V63_diff', 'V64_incr', 'V65_PC', 'OK', 'V19_late'}
+    -- core set = {'V64_incr', 'OK', 'V65_PC', 'V19_late', 'V63_diff'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.83
 
 
-155) ex3_e7_590_e7_590.lus_support_info:
+155) ex3_e7_590_e7_590.lus:
     -- file size = 0.669 KB
-    -- core set = {'V63_diff', 'V64_incr', 'V65_PC', 'OK', 'V19_late'}
+    -- core set = {'V64_incr', 'OK', 'V65_PC', 'V19_late', 'V63_diff'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.83
 
 
-156) ex3_e7_590_e8_550.lus_support_info:
+156) ex3_e7_590_e8_550.lus:
     -- file size = 0.671 KB
-    -- core set = {'V63_diff', 'V64_incr', 'V65_PC', 'OK', 'V19_late'}
+    -- core set = {'V64_incr', 'OK', 'V65_PC', 'V19_late', 'V63_diff'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.83
 
 
-157) ex3_e8_120.lus_support_info:
+157) ex3_e8_120.lus:
     -- file size = 0.672 KB
-    -- core set = {'V63_diff', 'V20_early', 'V65_PC', 'V64_incr', 'OK'}
+    -- core set = {'V64_incr', 'OK', 'V65_PC', 'V20_early', 'V63_diff'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.83
 
 
-158) ex3_e8_381_e7_224.lus_support_info:
+158) ex3_e8_381_e7_224.lus:
     -- file size = 0.671 KB
-    -- core set = {'V63_diff', 'V64_incr', 'V65_PC', 'OK', 'V19_late'}
+    -- core set = {'V64_incr', 'OK', 'V65_PC', 'V19_late', 'V63_diff'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.83
 
 
-159) ex3_e8_381_e8_477.lus_support_info:
+159) ex3_e8_381_e8_477.lus:
     -- file size = 0.673 KB
-    -- core set = {'V20_early', 'OK', 'V63_diff', 'V65_PC', 'V19_late', 'V64_incr'}
+    -- core set = {'V65_PC', 'V20_early', 'V63_diff', 'V64_incr', 'V19_late', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-160) fast_1_e7_2044_e8_1396.lus_support_info:
+160) fast_1_e7_2044_e8_1396.lus:
     -- file size = 1.823 KB
-    -- core set = {'V295_pnb', 'V83_cca', 'OK', 'V294_ob'}
+    -- core set = {'V83_cca', 'OK', 'V295_pnb', 'V294_ob'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-161) fast_1_e8_747.lus_support_info:
+161) fast_1_e8_747.lus:
     -- file size = 1.824 KB
-    -- core set = {'V295_pnb', 'V83_cca', 'OK', 'V294_ob'}
+    -- core set = {'V83_cca', 'OK', 'V295_pnb', 'V294_ob'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-162) fast_1_e8_747_e8_1041.lus_support_info:
+162) fast_1_e8_747_e8_1041.lus:
     -- file size = 1.825 KB
-    -- core set = {'V295_pnb', 'V83_cca', 'OK', 'V294_ob'}
+    -- core set = {'V83_cca', 'OK', 'V295_pnb', 'V294_ob'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-163) fast_2_e7_2526_e8_1145.lus_support_info:
+163) fast_2_e7_2526_e8_1145.lus:
     -- file size = 2.621 KB
-    -- core set = {'V390_ob', 'OK', '~flatten0', 'V389_ccall', '~flatten1', 'V86_ccont', 'V87_cca', 'V85_p4', 'V84_p3', 'V83_p2', 'V391_pnb', 'V82_p1'}
+    -- core set = {'V391_pnb', 'V390_ob', 'V85_p4', '~flatten0', 'V389_ccall', 'V82_p1', '~flatten1', 'V83_p2', 'V86_ccont', 'V87_cca', 'OK', 'V84_p3'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-164) fast_2_e8_460.lus_support_info:
+164) fast_2_e8_460.lus:
     -- file size = 2.624 KB
-    -- core set = {'V390_ob', 'OK', '~flatten0', 'V389_ccall', '~flatten1', 'V86_ccont', 'V87_cca', 'V85_p4', 'V84_p3', 'V83_p2', 'V391_pnb', 'V82_p1'}
+    -- core set = {'V391_pnb', 'V390_ob', 'V85_p4', '~flatten0', 'V389_ccall', 'V82_p1', '~flatten1', 'V83_p2', 'V86_ccont', 'V87_cca', 'OK', 'V84_p3'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-165) fast_2_e8_460_e8_1920.lus_support_info:
+165) fast_2_e8_460_e8_1920.lus:
     -- file size = 2.625 KB
-    -- core set = {'V390_ob', 'OK', '~flatten0', 'V389_ccall', '~flatten1', 'V86_ccont', 'V87_cca', 'V85_p4', 'V84_p3', 'V83_p2', 'V391_pnb', 'V82_p1'}
+    -- core set = {'V391_pnb', 'V390_ob', 'V85_p4', '~flatten0', 'V389_ccall', 'V82_p1', '~flatten1', 'V83_p2', 'V86_ccont', 'V87_cca', 'OK', 'V84_p3'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-166) FIREFLY_1.lus_support_info:
+166) FIREFLY_1.lus:
     -- file size = 4.409 KB
-    -- core set = {'V52_env', 'OK', 'V107_garde6', 'V50_exclusive', 'V48_invalid', 'V51_shared', 'V49_dirty', 'V106_garde5', 'V128_X'}
+    -- core set = {'V48_invalid', 'V107_garde6', 'V51_shared', 'V128_X', 'V106_garde5', 'V49_dirty', 'V52_env', 'OK', 'V50_exclusive'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-167) FIREFLY_10.lus_support_info:
+167) FIREFLY_10.lus:
     -- file size = 4.315 KB
-    -- core set = {'V106_garde4', 'V50_exclusive', 'OK'}
+    -- core set = {'OK', 'V50_exclusive', 'V106_garde4'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.75
 
 
-168) FIREFLY_10_e7_919_e2_3192.lus_support_info:
+168) FIREFLY_10_e7_919_e2_3192.lus:
     -- file size = 4.32 KB
-    -- core set = {'V106_garde4', 'V50_exclusive', 'OK'}
+    -- core set = {'OK', 'V50_exclusive', 'V106_garde4'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-169) FIREFLY_11.lus_support_info:
+169) FIREFLY_11.lus:
     -- file size = 4.314 KB
-    -- core set = {'V108_garde5', 'V50_exclusive', 'OK', 'V51_shared', 'V104_garde1'}
+    -- core set = {'OK', 'V51_shared', 'V104_garde1', 'V108_garde5', 'V50_exclusive'}
     -- the size difference of the core set with the smallest support set  = 2
     -- similarity = 0.5
 
 
-170) FIREFLY_11_e1_3457.lus_support_info:
+170) FIREFLY_11_e1_3457.lus:
     -- file size = 4.32 KB
-    -- core set = {'OK', 'V50_exclusive', 'V51_shared', 'V111_garde8', 'V108_garde5', 'V104_garde1'}
+    -- core set = {'V51_shared', 'V104_garde1', 'V111_garde8', 'V108_garde5', 'OK', 'V50_exclusive'}
     -- the size difference of the core set with the smallest support set  = 1
     -- similarity = 0.6
 
 
-171) FIREFLY_11_e3_2076_e1_1270.lus_support_info:
+171) FIREFLY_11_e3_2076_e1_1270.lus:
     -- file size = 4.32 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-172) FIREFLY_1_e1_1092_e2_1853.lus_support_info:
+172) FIREFLY_1_e1_1092_e2_1853.lus:
     -- file size = 4.421 KB
-    -- core set = {'V52_env', 'OK', 'V107_garde6', 'V50_exclusive', 'V48_invalid', 'V51_shared', 'V49_dirty', 'V106_garde5', 'V128_X'}
+    -- core set = {'V48_invalid', 'V107_garde6', 'V51_shared', 'V128_X', 'V106_garde5', 'V49_dirty', 'V52_env', 'OK', 'V50_exclusive'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-173) FIREFLY_2.lus_support_info:
+173) FIREFLY_2.lus:
     -- file size = 4.415 KB
-    -- core set = {'V114_garde5', 'V54_shared', 'OK', 'V52_dirty', 'V53_exclusive', 'V51_invalid', 'V115_garde6', 'V137_X', 'V151_First', 'V55_env', 'V118_mem_invalid'}
+    -- core set = {'V118_mem_invalid', 'V53_exclusive', 'V52_dirty', 'V115_garde6', 'V51_invalid', 'V55_env', 'V137_X', 'V151_First', 'OK', 'V114_garde5', 'V54_shared'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-174) FIREFLY_2_e1_3099_e2_846.lus_support_info:
+174) FIREFLY_2_e1_3099_e2_846.lus:
     -- file size = 4.427 KB
-    -- core set = {'V114_garde5', 'V54_shared', 'OK', 'V52_dirty', 'V53_exclusive', 'V51_invalid', 'V115_garde6', 'V137_X', 'V151_First', 'V55_env', 'V118_mem_invalid'}
+    -- core set = {'V118_mem_invalid', 'V53_exclusive', 'V52_dirty', 'V115_garde6', 'V51_invalid', 'V55_env', 'V137_X', 'V151_First', 'OK', 'V114_garde5', 'V54_shared'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-175) FIREFLY_3.lus_support_info:
+175) FIREFLY_3.lus:
     -- file size = 4.312 KB
-    -- core set = {'V114_garde3', 'V54_shared', 'V119_garde8', 'OK'}
+    -- core set = {'OK', 'V114_garde3', 'V119_garde8', 'V54_shared'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.8
 
 
-176) FIREFLY_3_e2_2236.lus_support_info:
+176) FIREFLY_3_e2_2236.lus:
     -- file size = 4.318 KB
-    -- core set = {'V114_garde3', 'V54_shared', 'V119_garde8', 'OK'}
+    -- core set = {'OK', 'V114_garde3', 'V119_garde8', 'V54_shared'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.8
 
 
-177) FIREFLY_3_e2_2236_e1_2305.lus_support_info:
+177) FIREFLY_3_e2_2236_e1_2305.lus:
     -- file size = 4.324 KB
-    -- core set = {'V114_garde3', 'V54_shared', 'V119_garde8', 'OK'}
+    -- core set = {'OK', 'V114_garde3', 'V119_garde8', 'V54_shared'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.8
 
 
-178) FIREFLY_3_e2_2236_e2_1058.lus_support_info:
+178) FIREFLY_3_e2_2236_e2_1058.lus:
     -- file size = 4.324 KB
-    -- core set = {'V114_garde3', 'V54_shared', 'V119_garde8', 'OK'}
+    -- core set = {'OK', 'V114_garde3', 'V119_garde8', 'V54_shared'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.8
 
 
-179) FIREFLY_3_e2_2236_e7_3681.lus_support_info:
+179) FIREFLY_3_e2_2236_e7_3681.lus:
     -- file size = 4.317 KB
-    -- core set = {'V114_garde3', 'V54_shared', 'V119_garde8', 'OK'}
+    -- core set = {'OK', 'V114_garde3', 'V119_garde8', 'V54_shared'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-180) FIREFLY_4_e3_1713.lus_support_info:
+180) FIREFLY_4_e3_1713.lus:
     -- file size = 4.434 KB
-    -- core set = {'V117_garde6', 'V120_mem_invalid', 'V139_X', 'V54_shared', 'OK', 'V52_dirty', 'V51_invalid', 'V53_exclusive', 'V56_procs', 'V116_garde5', 'V115_garde4', 'V55_env'}
+    -- core set = {'V139_X', 'V53_exclusive', 'V115_garde4', 'V52_dirty', 'OK', 'V55_env', 'V117_garde6', 'V54_shared', 'V116_garde5', 'V51_invalid', 'V120_mem_invalid', 'V56_procs'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-181) FIREFLY_4_e3_3511_e2_1923.lus_support_info:
+181) FIREFLY_4_e3_3511_e2_1923.lus:
     -- file size = 4.44 KB
-    -- core set = {'V117_garde6', 'V120_mem_invalid', 'V139_X', 'V54_shared', 'OK', 'V52_dirty', 'V51_invalid', 'V53_exclusive', 'V56_procs', 'V116_garde5', 'V115_garde4', 'V55_env'}
+    -- core set = {'V139_X', 'V53_exclusive', 'V115_garde4', 'V52_dirty', 'OK', 'V55_env', 'V117_garde6', 'V54_shared', 'V116_garde5', 'V51_invalid', 'V120_mem_invalid', 'V56_procs'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-182) FIREFLY_4_e3_3511_e3_422.lus_support_info:
+182) FIREFLY_4_e3_3511_e3_422.lus:
     -- file size = 4.434 KB
-    -- core set = {'V120_mem_invalid', 'V139_X', 'V54_shared', 'OK', 'V52_dirty', 'V51_invalid', 'V53_exclusive', 'V56_procs', 'V116_garde5', 'V115_garde4', 'V55_env'}
+    -- core set = {'V139_X', 'V53_exclusive', 'V52_dirty', 'V115_garde4', 'V51_invalid', 'V55_env', 'V116_garde5', 'V56_procs', 'OK', 'V120_mem_invalid', 'V54_shared'}
     -- the size difference of the core set with the smallest support set  = 1
     -- similarity = 0.73
 
 
-183) FIREFLY_4_e3_3511_e5_3248.lus_support_info:
+183) FIREFLY_4_e3_3511_e5_3248.lus:
     -- file size = 4.44 KB
-    -- core set = {'V117_garde6', 'V120_mem_invalid', 'V139_X', 'V54_shared', 'OK', 'V52_dirty', 'V51_invalid', 'V53_exclusive', 'V56_procs', 'V116_garde5', 'V115_garde4', 'V55_env'}
+    -- core set = {'V139_X', 'V53_exclusive', 'V115_garde4', 'V52_dirty', 'OK', 'V55_env', 'V117_garde6', 'V54_shared', 'V116_garde5', 'V51_invalid', 'V120_mem_invalid', 'V56_procs'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-184) FIREFLY_4_e3_3511_e6_1826.lus_support_info:
+184) FIREFLY_4_e3_3511_e6_1826.lus:
     -- file size = 4.434 KB
-    -- core set = {'V117_garde6', 'V139_X', 'V120_mem_invalid', 'V54_shared', 'OK', 'V52_dirty', 'V53_exclusive', 'V51_invalid', 'V56_procs', 'V116_garde5', 'V55_env'}
+    -- core set = {'V139_X', 'V53_exclusive', 'V52_dirty', 'OK', 'V55_env', 'V117_garde6', 'V54_shared', 'V116_garde5', 'V51_invalid', 'V120_mem_invalid', 'V56_procs'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-185) FIREFLY_5.lus_support_info:
+185) FIREFLY_5.lus:
     -- file size = 4.311 KB
-    -- core set = {'V49_dirty', 'V109_garde7', 'OK', 'V104_garde2'}
+    -- core set = {'V104_garde2', 'OK', 'V109_garde7', 'V49_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.8
 
 
-186) FIREFLY_5_e1_2552_e7_1169.lus_support_info:
+186) FIREFLY_5_e1_2552_e7_1169.lus:
     -- file size = 4.316 KB
-    -- core set = {'V49_dirty', 'V109_garde7', 'OK', 'V104_garde2'}
+    -- core set = {'OK', 'V104_garde2', 'V109_garde7', 'V49_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-187) FIREFLY_5_e2_2229.lus_support_info:
+187) FIREFLY_5_e2_2229.lus:
     -- file size = 4.317 KB
-    -- core set = {'V49_dirty', 'V109_garde7', 'OK', 'V104_garde2'}
+    -- core set = {'V104_garde2', 'OK', 'V109_garde7', 'V49_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.8
 
 
-188) FIREFLY_5_e2_2884_e1_2678.lus_support_info:
+188) FIREFLY_5_e2_2884_e1_2678.lus:
     -- file size = 4.323 KB
-    -- core set = {'V49_dirty', 'V109_garde7', 'OK', 'V104_garde2'}
+    -- core set = {'V104_garde2', 'OK', 'V109_garde7', 'V49_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.8
 
 
-189) FIREFLY_5_e2_2884_e2_1492.lus_support_info:
+189) FIREFLY_5_e2_2884_e2_1492.lus:
     -- file size = 4.323 KB
-    -- core set = {'V49_dirty', 'V109_garde7', 'OK', 'V104_garde2'}
+    -- core set = {'V104_garde2', 'OK', 'V109_garde7', 'V49_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.8
 
 
-190) FIREFLY_5_e2_2884_e3_1882.lus_support_info:
+190) FIREFLY_5_e2_2884_e3_1882.lus:
     -- file size = 4.317 KB
-    -- core set = {'V49_dirty', 'V109_garde7', 'OK', 'V104_garde2'}
+    -- core set = {'V104_garde2', 'OK', 'V109_garde7', 'V49_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.8
 
 
-191) FIREFLY_5_e2_2884_e7_3594.lus_support_info:
+191) FIREFLY_5_e2_2884_e7_3594.lus:
     -- file size = 4.316 KB
-    -- core set = {'V49_dirty', 'V109_garde7', 'OK', 'V104_garde2'}
+    -- core set = {'OK', 'V104_garde2', 'V109_garde7', 'V49_dirty'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-192) FIREFLY_6_e2_3302.lus_support_info:
+192) FIREFLY_6_e2_3302.lus:
     -- file size = 4.317 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-193) FIREFLY_6_e3_686_e6_2964.lus_support_info:
+193) FIREFLY_6_e3_686_e6_2964.lus:
     -- file size = 4.311 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-194) FIREFLY_7.lus_support_info:
+194) FIREFLY_7.lus:
     -- file size = 4.386 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-195) FIREFLY_8.lus_support_info:
+195) FIREFLY_8.lus:
     -- file size = 4.313 KB
-    -- core set = {'V52_env', 'OK', 'V109_garde7', 'V110_garde8', 'V103_garde1', 'V48_invalid', 'V111_mem_invalid', 'V105_garde3', 'V104_garde2', 'V130_X', 'V108_garde6'}
+    -- core set = {'V48_invalid', 'V103_garde1', 'V130_X', 'V111_mem_invalid', 'V105_garde3', 'V104_garde2', 'V108_garde6', 'V110_garde8', 'V52_env', 'OK', 'V109_garde7'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-196) FIREFLY_8_e2_1692.lus_support_info:
+196) FIREFLY_8_e2_1692.lus:
     -- file size = 4.319 KB
-    -- core set = {'V52_env', 'OK', 'V109_garde7', 'V110_garde8', 'V103_garde1', 'V48_invalid', 'V111_mem_invalid', 'V105_garde3', 'V104_garde2', 'V130_X', 'V108_garde6'}
+    -- core set = {'V48_invalid', 'V103_garde1', 'V130_X', 'V111_mem_invalid', 'V105_garde3', 'V104_garde2', 'V108_garde6', 'V110_garde8', 'V52_env', 'OK', 'V109_garde7'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-197) FIREFLY_8_e2_1711_e1_1489.lus_support_info:
+197) FIREFLY_8_e2_1711_e1_1489.lus:
     -- file size = 4.325 KB
-    -- core set = {'V52_env', 'OK', 'V109_garde7', 'V110_garde8', 'V103_garde1', 'V48_invalid', 'V111_mem_invalid', 'V105_garde3', 'V104_garde2', 'V130_X', 'V108_garde6'}
+    -- core set = {'V48_invalid', 'V103_garde1', 'V130_X', 'V111_mem_invalid', 'V105_garde3', 'V104_garde2', 'V108_garde6', 'V110_garde8', 'V52_env', 'OK', 'V109_garde7'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-198) FIREFLY_8_e2_1711_e2_2673.lus_support_info:
+198) FIREFLY_8_e2_1711_e2_2673.lus:
     -- file size = 4.325 KB
-    -- core set = {'V52_env', 'OK', 'V109_garde7', 'V110_garde8', 'V103_garde1', 'V48_invalid', 'V111_mem_invalid', 'V105_garde3', 'V104_garde2', 'V130_X', 'V108_garde6'}
+    -- core set = {'V48_invalid', 'V103_garde1', 'V130_X', 'V111_mem_invalid', 'V105_garde3', 'V104_garde2', 'V108_garde6', 'V110_garde8', 'V52_env', 'OK', 'V109_garde7'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-199) FIREFLY_8_e2_1711_e3_1753.lus_support_info:
+199) FIREFLY_8_e2_1711_e3_1753.lus:
     -- file size = 4.319 KB
-    -- core set = {'V52_env', 'OK', 'V109_garde7', 'V110_garde8', 'V103_garde1', 'V48_invalid', 'V111_mem_invalid', 'V105_garde3', 'V104_garde2', 'V130_X', 'V108_garde6'}
+    -- core set = {'V48_invalid', 'V103_garde1', 'V130_X', 'V111_mem_invalid', 'V105_garde3', 'V104_garde2', 'V108_garde6', 'V110_garde8', 'V52_env', 'OK', 'V109_garde7'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-200) FIREFLY_9.lus_support_info:
+200) FIREFLY_9.lus:
     -- file size = 4.387 KB
-    -- core set = {'V51_invalid', 'V56_procs', 'OK', 'V120_mem_invalid'}
+    -- core set = {'OK', 'V120_mem_invalid', 'V51_invalid', 'V56_procs'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.8
 
 
-201) FIREFLY_9_e7_170_e3_3647.lus_support_info:
+201) FIREFLY_9_e7_170_e3_3647.lus:
     -- file size = 4.386 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-202) FIREFLY_a3.lus_support_info:
+202) FIREFLY_a3.lus:
     -- file size = 4.681 KB
-    -- core set = {'V54_shared', 'V55_R4', 'OK', 'V59_procs', 'V52_dirty', 'V51_invalid', 'V53_exclusive', 'V119_garde5', 'V116_garde2', 'V121_garde7', 'V56_A1', 'V123_mem_invalid', 'V57_A2', 'V117_garde3', 'V118_garde4', 'V142_X', 'V122_garde8', 'V58_A3', 'V60_env'}
+    -- core set = {'V123_mem_invalid', 'V53_exclusive', 'V52_dirty', 'V60_env', 'V59_procs', 'V121_garde7', 'V117_garde3', 'V55_R4', 'V51_invalid', 'V122_garde8', 'V57_A2', 'V119_garde5', 'V142_X', 'V116_garde2', 'OK', 'V118_garde4', 'V56_A1', 'V58_A3', 'V54_shared'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-203) FIREFLY_a3_e1_3233_e2_2392.lus_support_info:
+203) FIREFLY_a3_e1_3233_e2_2392.lus:
     -- file size = 4.693 KB
-    -- core set = {'V54_shared', 'V55_R4', 'OK', 'V59_procs', 'V52_dirty', 'V51_invalid', 'V53_exclusive', 'V119_garde5', 'V116_garde2', 'V121_garde7', 'V56_A1', 'V123_mem_invalid', 'V57_A2', 'V117_garde3', 'V118_garde4', 'V142_X', 'V122_garde8', 'V58_A3', 'V60_env'}
+    -- core set = {'V123_mem_invalid', 'V53_exclusive', 'V52_dirty', 'V60_env', 'V59_procs', 'V121_garde7', 'V117_garde3', 'V55_R4', 'V51_invalid', 'V122_garde8', 'V57_A2', 'V119_garde5', 'V142_X', 'V116_garde2', 'OK', 'V118_garde4', 'V56_A1', 'V58_A3', 'V54_shared'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-204) FIREFLY_a3_e1_3233_e3_2970.lus_support_info:
+204) FIREFLY_a3_e1_3233_e3_2970.lus:
     -- file size = 4.687 KB
-    -- core set = {'V54_shared', 'V55_R4', 'OK', 'V59_procs', 'V52_dirty', 'V51_invalid', 'V53_exclusive', 'V119_garde5', 'V116_garde2', 'V121_garde7', 'V56_A1', 'V123_mem_invalid', 'V57_A2', 'V117_garde3', 'V118_garde4', 'V142_X', 'V122_garde8', 'V58_A3', 'V60_env'}
+    -- core set = {'V123_mem_invalid', 'V53_exclusive', 'V52_dirty', 'V60_env', 'V59_procs', 'V121_garde7', 'V117_garde3', 'V55_R4', 'V51_invalid', 'V122_garde8', 'V57_A2', 'V119_garde5', 'V142_X', 'V116_garde2', 'OK', 'V118_garde4', 'V56_A1', 'V58_A3', 'V54_shared'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-205) FIREFLY_a3_e2_2086.lus_support_info:
+205) FIREFLY_a3_e2_2086.lus:
     -- file size = 4.687 KB
-    -- core set = {'V54_shared', 'V55_R4', 'OK', 'V59_procs', 'V52_dirty', 'V51_invalid', 'V53_exclusive', 'V119_garde5', 'V116_garde2', 'V121_garde7', 'V56_A1', 'V123_mem_invalid', 'V57_A2', 'V117_garde3', 'V118_garde4', 'V142_X', 'V122_garde8', 'V58_A3', 'V60_env'}
+    -- core set = {'V123_mem_invalid', 'V53_exclusive', 'V52_dirty', 'V60_env', 'V59_procs', 'V121_garde7', 'V117_garde3', 'V55_R4', 'V51_invalid', 'V122_garde8', 'V57_A2', 'V119_garde5', 'V142_X', 'V116_garde2', 'OK', 'V118_garde4', 'V56_A1', 'V58_A3', 'V54_shared'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-206) FIREFLY_a3_e2_2086_e1_3235.lus_support_info:
+206) FIREFLY_a3_e2_2086_e1_3235.lus:
     -- file size = 4.693 KB
-    -- core set = {'V54_shared', 'V55_R4', 'OK', 'V59_procs', 'V52_dirty', 'V51_invalid', 'V53_exclusive', 'V119_garde5', 'V116_garde2', 'V121_garde7', 'V56_A1', 'V123_mem_invalid', 'V57_A2', 'V117_garde3', 'V118_garde4', 'V142_X', 'V122_garde8', 'V58_A3', 'V60_env'}
+    -- core set = {'V123_mem_invalid', 'V53_exclusive', 'V52_dirty', 'V60_env', 'V59_procs', 'V121_garde7', 'V117_garde3', 'V55_R4', 'V51_invalid', 'V122_garde8', 'V57_A2', 'V119_garde5', 'V142_X', 'V116_garde2', 'OK', 'V118_garde4', 'V56_A1', 'V58_A3', 'V54_shared'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-207) FIREFLY_a3_e2_2086_e2_2689.lus_support_info:
+207) FIREFLY_a3_e2_2086_e2_2689.lus:
     -- file size = 4.693 KB
-    -- core set = {'V54_shared', 'V55_R4', 'OK', 'V59_procs', 'V52_dirty', 'V51_invalid', 'V53_exclusive', 'V119_garde5', 'V116_garde2', 'V121_garde7', 'V56_A1', 'V123_mem_invalid', 'V57_A2', 'V117_garde3', 'V118_garde4', 'V142_X', 'V122_garde8', 'V58_A3', 'V60_env'}
+    -- core set = {'V123_mem_invalid', 'V53_exclusive', 'V52_dirty', 'V60_env', 'V59_procs', 'V121_garde7', 'V117_garde3', 'V55_R4', 'V51_invalid', 'V122_garde8', 'V57_A2', 'V119_garde5', 'V142_X', 'V116_garde2', 'OK', 'V118_garde4', 'V56_A1', 'V58_A3', 'V54_shared'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-208) FIREFLY_a3_e2_2086_e3_2542.lus_support_info:
+208) FIREFLY_a3_e2_2086_e3_2542.lus:
     -- file size = 4.687 KB
-    -- core set = {'V54_shared', 'V55_R4', 'OK', 'V59_procs', 'V52_dirty', 'V51_invalid', 'V53_exclusive', 'V119_garde5', 'V116_garde2', 'V121_garde7', 'V56_A1', 'V123_mem_invalid', 'V57_A2', 'V117_garde3', 'V118_garde4', 'V142_X', 'V122_garde8', 'V58_A3', 'V60_env'}
+    -- core set = {'V123_mem_invalid', 'V53_exclusive', 'V52_dirty', 'V60_env', 'V59_procs', 'V121_garde7', 'V117_garde3', 'V55_R4', 'V51_invalid', 'V122_garde8', 'V57_A2', 'V119_garde5', 'V142_X', 'V116_garde2', 'OK', 'V118_garde4', 'V56_A1', 'V58_A3', 'V54_shared'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-209) FIREFLY_a3_e3_314_e2_2812.lus_support_info:
+209) FIREFLY_a3_e3_314_e2_2812.lus:
     -- file size = 4.687 KB
-    -- core set = {'V54_shared', 'V55_R4', 'OK', 'V59_procs', 'V52_dirty', 'V51_invalid', 'V53_exclusive', 'V119_garde5', 'V116_garde2', 'V121_garde7', 'V56_A1', 'V123_mem_invalid', 'V57_A2', 'V118_garde4', 'V142_X', 'V122_garde8', 'V58_A3', 'V60_env'}
+    -- core set = {'V123_mem_invalid', 'V53_exclusive', 'V52_dirty', 'V60_env', 'V59_procs', 'V121_garde7', 'V55_R4', 'V51_invalid', 'V122_garde8', 'V57_A2', 'V119_garde5', 'V54_shared', 'V142_X', 'V116_garde2', 'OK', 'V56_A1', 'V58_A3', 'V118_garde4'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-210) FIREFLY_all_e1_1207_e2_3220.lus_support_info:
+210) FIREFLY_all_e1_1207_e2_3220.lus:
     -- file size = 4.797 KB
-    -- core set = {'V119_garde7', 'V139_X', 'V54_shared', 'V118_garde6', 'OK', 'V52_dirty', 'V115_garde3', 'V51_invalid', 'V53_exclusive', 'V120_garde8', 'V56_procs', 'V121_mem_invalid', 'V160_First', 'V113_garde1', 'V117_garde5', 'V55_env', 'V114_garde2'}
+    -- core set = {'V121_mem_invalid', 'V139_X', 'V119_garde7', 'V52_dirty', 'V115_garde3', 'V118_garde6', 'V53_exclusive', 'V160_First', 'V51_invalid', 'V120_garde8', 'V55_env', 'V117_garde5', 'V54_shared', 'V114_garde2', 'V113_garde1', 'OK', 'V56_procs'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-211) FIREFLY_all_e2_2924_e1_768.lus_support_info:
+211) FIREFLY_all_e2_2924_e1_768.lus:
     -- file size = 4.797 KB
-    -- core set = {'V119_garde7', 'V139_X', 'V54_shared', 'V118_garde6', 'OK', 'V52_dirty', 'V115_garde3', 'V51_invalid', 'V53_exclusive', 'V120_garde8', 'V56_procs', 'V121_mem_invalid', 'V160_First', 'V113_garde1', 'V117_garde5', 'V55_env', 'V114_garde2'}
+    -- core set = {'V121_mem_invalid', 'V139_X', 'V119_garde7', 'V52_dirty', 'V115_garde3', 'V118_garde6', 'V53_exclusive', 'V160_First', 'V51_invalid', 'V120_garde8', 'V55_env', 'V117_garde5', 'V54_shared', 'V114_garde2', 'V113_garde1', 'OK', 'V56_procs'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-212) FIREFLY_all_e3_1600_e6_1569.lus_support_info:
+212) FIREFLY_all_e3_1600_e6_1569.lus:
     -- file size = 4.785 KB
-    -- core set = {'V119_garde7', 'V139_X', 'V54_shared', 'V118_garde6', 'OK', 'V52_dirty', 'V115_garde3', 'V51_invalid', 'V53_exclusive', 'V120_garde8', 'V56_procs', 'V121_mem_invalid', 'V160_First', 'V113_garde1', 'V117_garde5', 'V55_env', 'V114_garde2'}
+    -- core set = {'V121_mem_invalid', 'V139_X', 'V119_garde7', 'V52_dirty', 'V115_garde3', 'V118_garde6', 'V53_exclusive', 'V160_First', 'V51_invalid', 'V120_garde8', 'V55_env', 'V117_garde5', 'V54_shared', 'V114_garde2', 'V113_garde1', 'OK', 'V56_procs'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-213) FIREFLY_luke_1a.lus_support_info:
+213) FIREFLY_luke_1a.lus:
     -- file size = 4.292 KB
-    -- core set = {'OK', 'V50_exclusive', 'V110_garde8', 'V103_garde1', 'V51_shared', 'V105_garde3', 'V107_garde5'}
+    -- core set = {'V103_garde1', 'V51_shared', 'V105_garde3', 'V107_garde5', 'V110_garde8', 'OK', 'V50_exclusive'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.88
 
 
-214) FIREFLY_luke_1a_e2_284.lus_support_info:
+214) FIREFLY_luke_1a_e2_284.lus:
     -- file size = 4.298 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-215) FIREFLY_luke_1a_e2_284_e1_2924.lus_support_info:
+215) FIREFLY_luke_1a_e2_284_e1_2924.lus:
     -- file size = 4.304 KB
-    -- core set = {'OK', 'V50_exclusive', 'V110_garde8', 'V103_garde1', 'V51_shared', 'V105_garde3', 'V107_garde5'}
+    -- core set = {'V103_garde1', 'V51_shared', 'V105_garde3', 'V107_garde5', 'V110_garde8', 'OK', 'V50_exclusive'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.88
 
 
-216) FIREFLY_luke_1a_e2_284_e2_2755.lus_support_info:
+216) FIREFLY_luke_1a_e2_284_e2_2755.lus:
     -- file size = 4.304 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-217) FIREFLY_luke_1a_e2_284_e3_3091.lus_support_info:
+217) FIREFLY_luke_1a_e2_284_e3_3091.lus:
     -- file size = 4.298 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-218) FIREFLY_luke_1a_e7_3042_e3_1213.lus_support_info:
+218) FIREFLY_luke_1a_e7_3042_e3_1213.lus:
     -- file size = 4.291 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-219) FIREFLY_luke_1b_e1_1139_e2_2893.lus_support_info:
+219) FIREFLY_luke_1b_e1_1139_e2_2893.lus:
     -- file size = 4.422 KB
-    -- core set = {'V52_env', 'OK', 'V107_garde6', 'V50_exclusive', 'V48_invalid', 'V51_shared', 'V49_dirty', 'V106_garde5', 'V128_X'}
+    -- core set = {'V48_invalid', 'V107_garde6', 'V51_shared', 'V128_X', 'V106_garde5', 'V49_dirty', 'V52_env', 'OK', 'V50_exclusive'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-220) FIREFLY_luke_1b_e2_3049_e1_946.lus_support_info:
+220) FIREFLY_luke_1b_e2_3049_e1_946.lus:
     -- file size = 4.422 KB
-    -- core set = {'V52_env', 'OK', 'V107_garde6', 'V50_exclusive', 'V48_invalid', 'V51_shared', 'V49_dirty', 'V106_garde5', 'V128_X'}
+    -- core set = {'V48_invalid', 'V107_garde6', 'V51_shared', 'V128_X', 'V106_garde5', 'V49_dirty', 'V52_env', 'OK', 'V50_exclusive'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-221) FIREFLY_luke_1b_e3_671_e6_1974.lus_support_info:
+221) FIREFLY_luke_1b_e3_671_e6_1974.lus:
     -- file size = 4.41 KB
-    -- core set = {'V52_env', 'OK', 'V107_garde6', 'V50_exclusive', 'V48_invalid', 'V51_shared', 'V49_dirty', 'V106_garde5', 'V128_X'}
+    -- core set = {'V48_invalid', 'V107_garde6', 'V51_shared', 'V128_X', 'V106_garde5', 'V49_dirty', 'V52_env', 'OK', 'V50_exclusive'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-222) FIREFLY_luke_2_e2_1375_e1_418.lus_support_info:
+222) FIREFLY_luke_2_e2_1375_e1_418.lus:
     -- file size = 4.3 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-223) FIREFLY_luke_2_e7_1826_e8_126.lus_support_info:
+223) FIREFLY_luke_2_e7_1826_e8_126.lus:
     -- file size = 4.288 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-224) FIREFLY_luke_3.lus_support_info:
+224) FIREFLY_luke_3.lus:
     -- file size = 4.317 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-225) FIREFLY_luke_3_e1_2217_e3_1200.lus_support_info:
+225) FIREFLY_luke_3_e1_2217_e3_1200.lus:
     -- file size = 4.323 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-226) FIREFLY_luke_5.lus_support_info:
+226) FIREFLY_luke_5.lus:
     -- file size = 4.531 KB
-    -- core set = {'V119_garde7', 'V54_shared', 'V116_garde4', 'V56_RT', 'V55_R5', 'V52_dirty', 'V115_garde3', 'V51_invalid', 'V53_exclusive', 'OK', 'V57_procs', 'V121_mem_invalid', 'V140_X', 'V120_garde8', 'V58_env', 'V117_garde5', 'V114_garde2'}
+    -- core set = {'V121_mem_invalid', 'V53_exclusive', 'V119_garde7', 'V55_R5', 'V52_dirty', 'V115_garde3', 'V57_procs', 'V116_garde4', 'V58_env', 'V120_garde8', 'V117_garde5', 'V51_invalid', 'V54_shared', 'V114_garde2', 'V56_RT', 'OK', 'V140_X'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-227) FIREFLY_luke_rt_e2_3460_e1_1455.lus_support_info:
+227) FIREFLY_luke_rt_e2_3460_e1_1455.lus:
     -- file size = 4.427 KB
-    -- core set = {'V114_garde5', 'V54_shared', 'OK', 'V52_dirty', 'V53_exclusive', 'V51_invalid', 'V115_garde6', 'V137_X', 'V151_First', 'V55_env', 'V118_mem_invalid'}
+    -- core set = {'V118_mem_invalid', 'V53_exclusive', 'V52_dirty', 'V115_garde6', 'V51_invalid', 'V55_env', 'V137_X', 'V151_First', 'OK', 'V114_garde5', 'V54_shared'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-228) FIREFLY_rt_e3_1770_e2_637.lus_support_info:
+228) FIREFLY_rt_e3_1770_e2_637.lus:
     -- file size = 4.455 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-229) FIREFLY_rt_e7_346_e8_2183.lus_support_info:
+229) FIREFLY_rt_e7_346_e8_2183.lus:
     -- file size = 4.449 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-230) FIREFLY_u1.lus_support_info:
+230) FIREFLY_u1.lus:
     -- file size = 4.37 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-231) FIREFLY_u1_e2_3403_e2_957.lus_support_info:
+231) FIREFLY_u1_e2_3403_e2_957.lus:
     -- file size = 4.382 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-232) Gas_e7_435_e8_532.lus_support_info:
+232) Gas_e7_435_e8_532.lus:
     -- file size = 0.929 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = nan
 
 
-233) hysteresis_1.lus_support_info:
+233) hysteresis_1.lus:
     -- file size = 0.7 KB
-    -- core set = {'V20_early', 'OK', 'V19_late'}
+    -- core set = {'OK', 'V20_early', 'V19_late'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-234) hysteresis_2.lus_support_info:
+234) hysteresis_2.lus:
     -- file size = 0.716 KB
-    -- core set = {'V20_early', 'V71_diff', 'OK', 'V72_incr', 'V19_late', 'V73_pc'}
+    -- core set = {'OK', 'V72_incr', 'V20_early', 'V19_late', 'V73_pc', 'V71_diff'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-235) hysteresis_3.lus_support_info:
+235) hysteresis_3.lus:
     -- file size = 0.716 KB
-    -- core set = {'V20_early', 'V71_diff', 'OK', 'V72_incr', 'V19_late', 'V73_pc'}
+    -- core set = {'OK', 'V72_incr', 'V20_early', 'V19_late', 'V73_pc', 'V71_diff'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-236) hysteresis_all.lus_support_info:
+236) hysteresis_all.lus:
     -- file size = 0.806 KB
-    -- core set = {'V20_early', 'V71_diff', 'OK', 'V72_incr', 'V19_late', 'V73_pc'}
+    -- core set = {'OK', 'V72_incr', 'V20_early', 'V19_late', 'V73_pc', 'V71_diff'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-237) ILLINOIS_1.lus_support_info:
+237) ILLINOIS_1.lus:
     -- file size = 4.537 KB
-    -- core set = {'V53_exclusive', 'OK', 'V108_g1'}
+    -- core set = {'OK', 'V108_g1', 'V53_exclusive'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.75
 
 
-238) ILLINOIS_2_e1_834_e2_3395.lus_support_info:
+238) ILLINOIS_2_e1_834_e2_3395.lus:
     -- file size = 4.667 KB
-    -- core set = {'V54_shared', 'OK', 'V52_dirty', 'V53_exclusive', 'V51_invalid', 'V134_X', 'V55_env'}
+    -- core set = {'V53_exclusive', 'V52_dirty', 'V51_invalid', 'V55_env', 'V134_X', 'OK', 'V54_shared'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-239) ILLINOIS_2_e2_2367_e1_3182.lus_support_info:
+239) ILLINOIS_2_e2_2367_e1_3182.lus:
     -- file size = 4.667 KB
-    -- core set = {'V54_shared', 'OK', 'V52_dirty', 'V53_exclusive', 'V51_invalid', 'V134_X', 'V55_env'}
+    -- core set = {'V53_exclusive', 'V52_dirty', 'V51_invalid', 'V55_env', 'V134_X', 'OK', 'V54_shared'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-240) ILLINOIS_2_e3_1554_e6_2223.lus_support_info:
+240) ILLINOIS_2_e3_1554_e6_2223.lus:
     -- file size = 4.655 KB
-    -- core set = {'V54_shared', 'OK', 'V52_dirty', 'V53_exclusive', 'V51_invalid', 'V134_X', 'V55_env'}
+    -- core set = {'V53_exclusive', 'V52_dirty', 'V51_invalid', 'V55_env', 'V134_X', 'OK', 'V54_shared'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-241) ILLINOIS_3_e3_2581_e6_2476.lus_support_info:
+241) ILLINOIS_3_e3_2581_e6_2476.lus:
     -- file size = 4.688 KB
-    -- core set = {'V56_exclusive', 'V55_dirty', 'V143_X', 'OK', 'V57_shared', 'V58_env', 'V157_First', 'V54_invalid'}
+    -- core set = {'V55_dirty', 'V54_invalid', 'V143_X', 'V56_exclusive', 'V58_env', 'V157_First', 'OK', 'V57_shared'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-242) ILLINOIS_4.lus_support_info:
+242) ILLINOIS_4.lus:
     -- file size = 4.559 KB
-    -- core set = {'V52_dirty', 'V108_g2', 'V113_g7', 'OK'}
+    -- core set = {'V108_g2', 'OK', 'V52_dirty', 'V113_g7'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.8
 
 
-243) ILLINOIS_4_e7_2651_e7_2847.lus_support_info:
+243) ILLINOIS_4_e7_2651_e7_2847.lus:
     -- file size = 4.557 KB
-    -- core set = {'V52_dirty', 'V108_g2', 'V113_g7', 'OK'}
+    -- core set = {'V108_g2', 'OK', 'V52_dirty', 'V113_g7'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-244) ILLINOIS_5.lus_support_info:
+244) ILLINOIS_5.lus:
     -- file size = 4.563 KB
-    -- core set = {'V115_g9', 'V53_exclusive', 'OK', 'V110_g4'}
+    -- core set = {'V110_g4', 'OK', 'V53_exclusive', 'V115_g9'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.8
 
 
-245) ILLINOIS_5_e7_692_e7_2865.lus_support_info:
+245) ILLINOIS_5_e7_692_e7_2865.lus:
     -- file size = 4.561 KB
-    -- core set = {'V53_exclusive', 'V115_g9', 'OK', 'V110_g4'}
+    -- core set = {'V115_g9', 'OK', 'V110_g4', 'V53_exclusive'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-246) ILLINOIS_a1.lus_support_info:
+246) ILLINOIS_a1.lus:
     -- file size = 4.658 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-247) ILLINOIS_all_e3_2354_e6_993.lus_support_info:
+247) ILLINOIS_all_e3_2354_e6_993.lus:
     -- file size = 4.885 KB
-    -- core set = {'V119_g4', 'V56_exclusive', 'V55_dirty', 'V116_g1', 'V57_shared', 'OK', 'V155_First', 'V58_env', 'V142_X', 'V124_g9', 'V54_invalid'}
+    -- core set = {'V119_g4', 'V55_dirty', 'V54_invalid', 'V124_g9', 'V116_g1', 'V56_exclusive', 'V58_env', 'V155_First', 'OK', 'V142_X', 'V57_shared'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-248) ILLINOIS_r4a.lus_support_info:
+248) ILLINOIS_r4a.lus:
     -- file size = 4.562 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-249) MESI_1.lus_support_info:
+249) MESI_1.lus:
     -- file size = 2.701 KB
-    -- core set = {'V29_modified_me', 'OK'}
+    -- core set = {'OK', 'V29_modified_me'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.67
 
 
-250) MESI_1_e2_162_e7_1545.lus_support_info:
+250) MESI_1_e2_162_e7_1545.lus:
     -- file size = 2.706 KB
-    -- core set = {'V29_modified_me', 'OK'}
+    -- core set = {'OK', 'V29_modified_me'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-251) MESI_2.lus_support_info:
+251) MESI_2.lus:
     -- file size = 2.668 KB
-    -- core set = {'V30_exclusive_me', 'V74_garde_me2', 'OK'}
+    -- core set = {'V74_garde_me2', 'OK', 'V30_exclusive_me'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.75
 
 
-252) MESI_3.lus_support_info:
+252) MESI_3.lus:
     -- file size = 2.949 KB
-    -- core set = {'OK', 'V35_invalid_me', 'V32_modified_me', 'V88_garde_me4', 'V34_shared_me', 'V85_garde_me1', 'V86_garde_me2', 'V33_exclusive_me', 'V87_garde_me3'}
+    -- core set = {'V87_garde_me3', 'V86_garde_me2', 'V33_exclusive_me', 'V88_garde_me4', 'V85_garde_me1', 'V32_modified_me', 'V34_shared_me', 'OK', 'V35_invalid_me'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.9
 
 
-253) MESI_3_e1_2517_e8_2163.lus_support_info:
+253) MESI_3_e1_2517_e8_2163.lus:
     -- file size = 2.956 KB
-    -- core set = {'OK', 'V35_invalid_me', 'V32_modified_me', 'V88_garde_me4', 'V34_shared_me', 'V85_garde_me1', 'V86_garde_me2', 'V33_exclusive_me', 'V87_garde_me3'}
+    -- core set = {'V87_garde_me3', 'V86_garde_me2', 'V33_exclusive_me', 'V88_garde_me4', 'V85_garde_me1', 'V32_modified_me', 'V34_shared_me', 'OK', 'V35_invalid_me'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.9
 
 
-254) MESI_3_e2_819_e1_1145.lus_support_info:
+254) MESI_3_e2_819_e1_1145.lus:
     -- file size = 2.961 KB
-    -- core set = {'OK', 'V35_invalid_me', 'V32_modified_me', 'V88_garde_me4', 'V34_shared_me', 'V85_garde_me1', 'V86_garde_me2', 'V33_exclusive_me', 'V87_garde_me3'}
+    -- core set = {'V87_garde_me3', 'V86_garde_me2', 'V33_exclusive_me', 'V88_garde_me4', 'V85_garde_me1', 'V32_modified_me', 'V34_shared_me', 'OK', 'V35_invalid_me'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.9
 
 
-255) MESI_3_e2_819_e4_1595.lus_support_info:
+255) MESI_3_e2_819_e4_1595.lus:
     -- file size = 2.961 KB
-    -- core set = {'OK', 'V35_invalid_me', 'V32_modified_me', 'V88_garde_me4', 'V34_shared_me', 'V85_garde_me1', 'V86_garde_me2', 'V33_exclusive_me', 'V87_garde_me3'}
+    -- core set = {'V87_garde_me3', 'V86_garde_me2', 'V33_exclusive_me', 'V88_garde_me4', 'V85_garde_me1', 'V32_modified_me', 'V34_shared_me', 'OK', 'V35_invalid_me'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.9
 
 
-256) MESI_3_e2_819_e6_1459.lus_support_info:
+256) MESI_3_e2_819_e6_1459.lus:
     -- file size = 2.955 KB
-    -- core set = {'OK', 'V35_invalid_me', 'V32_modified_me', 'V88_garde_me4', 'V34_shared_me', 'V85_garde_me1', 'V86_garde_me2', 'V33_exclusive_me', 'V87_garde_me3'}
+    -- core set = {'V87_garde_me3', 'V86_garde_me2', 'V33_exclusive_me', 'V88_garde_me4', 'V85_garde_me1', 'V32_modified_me', 'V34_shared_me', 'OK', 'V35_invalid_me'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.9
 
 
-257) MESI_3_e3_2584.lus_support_info:
+257) MESI_3_e3_2584.lus:
     -- file size = 2.949 KB
-    -- core set = {'OK', 'V35_invalid_me', 'V32_modified_me', 'V88_garde_me4', 'V34_shared_me', 'V85_garde_me1', 'V86_garde_me2', 'V33_exclusive_me', 'V87_garde_me3'}
+    -- core set = {'V87_garde_me3', 'V86_garde_me2', 'V33_exclusive_me', 'V88_garde_me4', 'V85_garde_me1', 'V32_modified_me', 'V34_shared_me', 'OK', 'V35_invalid_me'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.9
 
 
-258) MESI_4.lus_support_info:
+258) MESI_4.lus:
     -- file size = 2.722 KB
-    -- core set = {'V29_modified_me', 'OK'}
+    -- core set = {'OK', 'V29_modified_me'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.5
 
 
-259) MESI_4_e7_1140_e7_433.lus_support_info:
+259) MESI_4_e7_1140_e7_433.lus:
     -- file size = 2.72 KB
-    -- core set = {'V29_modified_me', 'OK'}
+    -- core set = {'OK', 'V29_modified_me'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-260) MESI_all.lus_support_info:
+260) MESI_all.lus:
     -- file size = 2.786 KB
-    -- core set = {'V75_garde_me2', 'V30_exclusive_me', 'V29_modified_me', 'OK'}
+    -- core set = {'OK', 'V75_garde_me2', 'V30_exclusive_me', 'V29_modified_me'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.67
 
 
-261) MESI_all_e4_1147_e7_497.lus_support_info:
+261) MESI_all_e4_1147_e7_497.lus:
     -- file size = 2.791 KB
-    -- core set = {'V75_garde_me2', 'V30_exclusive_me', 'V29_modified_me', 'OK'}
+    -- core set = {'OK', 'V75_garde_me2', 'V30_exclusive_me', 'V29_modified_me'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-262) MESI_i3_e1_447_e1_1292.lus_support_info:
+262) MESI_i3_e1_447_e1_1292.lus:
     -- file size = 2.677 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-263) MESI_i3_e1_447_e3_1180.lus_support_info:
+263) MESI_i3_e1_447_e3_1180.lus:
     -- file size = 2.671 KB
-    -- core set = {'V31_shared_me', 'V30_exclusive_me', 'V29_modified_me', 'OK'}
+    -- core set = {'OK', 'V31_shared_me', 'V30_exclusive_me', 'V29_modified_me'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.67
 
 
-264) MESI_i3_e1_447_e6_2281.lus_support_info:
+264) MESI_i3_e1_447_e6_2281.lus:
     -- file size = 2.671 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-265) MESI_i4_e6_2175.lus_support_info:
+265) MESI_i4_e6_2175.lus:
     -- file size = 2.666 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-266) MESI_i4_e7_1017_e6_1132.lus_support_info:
+266) MESI_i4_e7_1017_e6_1132.lus:
     -- file size = 2.665 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-267) metros_1_e1_846_e1_1317.lus_support_info:
+267) metros_1_e1_846_e1_1317.lus:
     -- file size = 1.993 KB
-    -- core set = {'V41_diff0', 'V40_nS', 'V43_avance0', 'V47_pOK', 'OK'}
+    -- core set = {'V47_pOK', 'OK', 'V43_avance0', 'V40_nS', 'V41_diff0'}
     -- the size difference of the core set with the smallest support set  = 2
     -- similarity = 0.56
 
 
-268) metros_1_e1_846_e2_1394.lus_support_info:
+268) metros_1_e1_846_e2_1394.lus:
     -- file size = 1.993 KB
-    -- core set = {'V41_diff0', 'V40_nS', 'V43_avance0', 'V47_pOK', 'OK'}
+    -- core set = {'V47_pOK', 'OK', 'V43_avance0', 'V40_nS', 'V41_diff0'}
     -- the size difference of the core set with the smallest support set  = 2
     -- similarity = 0.56
 
 
-269) metros_1_e1_846_e3_1060.lus_support_info:
+269) metros_1_e1_846_e3_1060.lus:
     -- file size = 1.987 KB
-    -- core set = {'V41_diff0', 'V40_nS', 'V43_avance0', 'V47_pOK', 'OK'}
+    -- core set = {'V47_pOK', 'OK', 'V43_avance0', 'V40_nS', 'V41_diff0'}
     -- the size difference of the core set with the smallest support set  = 2
     -- similarity = 0.56
 
 
-270) metros_1_e1_846_e7_397.lus_support_info:
+270) metros_1_e1_846_e7_397.lus:
     -- file size = 1.986 KB
-    -- core set = {'OK', 'V38_nB0', 'V40_nS', 'V41_diff0', 'V43_avance0', 'V47_pOK', 'V45_retard0'}
+    -- core set = {'V40_nS', 'V47_pOK', 'V45_retard0', 'V38_nB0', 'V43_avance0', 'V41_diff0', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-271) metros_1_e1_846_e8_1253.lus_support_info:
+271) metros_1_e1_846_e8_1253.lus:
     -- file size = 1.988 KB
-    -- core set = {'V45_retard0', 'V43_avance0', 'V47_pOK', 'OK'}
+    -- core set = {'V47_pOK', 'OK', 'V43_avance0', 'V45_retard0'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-272) metros_1_e2_1102.lus_support_info:
+272) metros_1_e2_1102.lus:
     -- file size = 1.987 KB
-    -- core set = {'V41_diff0', 'V40_nS', 'V43_avance0', 'V47_pOK', 'OK'}
+    -- core set = {'V47_pOK', 'OK', 'V43_avance0', 'V40_nS', 'V41_diff0'}
     -- the size difference of the core set with the smallest support set  = 2
     -- similarity = 0.56
 
 
-273) metros_1_e2_1102_e1_317.lus_support_info:
+273) metros_1_e2_1102_e1_317.lus:
     -- file size = 1.993 KB
-    -- core set = {'V41_diff0', 'V40_nS', 'V43_avance0', 'V47_pOK', 'OK'}
+    -- core set = {'V47_pOK', 'OK', 'V43_avance0', 'V40_nS', 'V41_diff0'}
     -- the size difference of the core set with the smallest support set  = 2
     -- similarity = 0.56
 
 
-274) metros_1_e2_1102_e2_943.lus_support_info:
+274) metros_1_e2_1102_e2_943.lus:
     -- file size = 1.993 KB
-    -- core set = {'V41_diff0', 'V40_nS', 'V43_avance0', 'V47_pOK', 'OK'}
+    -- core set = {'V47_pOK', 'OK', 'V43_avance0', 'V40_nS', 'V41_diff0'}
     -- the size difference of the core set with the smallest support set  = 2
     -- similarity = 0.56
 
 
-275) metros_1_e2_1102_e3_961.lus_support_info:
+275) metros_1_e2_1102_e3_961.lus:
     -- file size = 1.987 KB
-    -- core set = {'V41_diff0', 'V40_nS', 'V43_avance0', 'V47_pOK', 'OK'}
+    -- core set = {'V47_pOK', 'OK', 'V43_avance0', 'V40_nS', 'V41_diff0'}
     -- the size difference of the core set with the smallest support set  = 2
     -- similarity = 0.56
 
 
-276) metros_1_e2_1102_e7_1163.lus_support_info:
+276) metros_1_e2_1102_e7_1163.lus:
     -- file size = 1.986 KB
-    -- core set = {'OK', 'V38_nB0', 'V40_nS', 'V41_diff0', 'V43_avance0', 'V47_pOK', 'V45_retard0'}
+    -- core set = {'V40_nS', 'V47_pOK', 'V45_retard0', 'V38_nB0', 'V43_avance0', 'V41_diff0', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-277) metros_1_e2_1102_e8_311.lus_support_info:
+277) metros_1_e2_1102_e8_311.lus:
     -- file size = 1.988 KB
-    -- core set = {'V45_retard0', 'V43_avance0', 'V47_pOK', 'OK'}
+    -- core set = {'V47_pOK', 'OK', 'V43_avance0', 'V45_retard0'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-278) metros_1_e7_1255_e7_12.lus_support_info:
+278) metros_1_e7_1255_e7_12.lus:
     -- file size = 1.972 KB
-    -- core set = {'OK', 'V38_nB0', 'V40_nS', 'V41_diff0', 'V43_avance0', 'V47_pOK', 'V45_retard0'}
+    -- core set = {'V40_nS', 'V47_pOK', 'V45_retard0', 'V38_nB0', 'V43_avance0', 'V41_diff0', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-279) metros_1_e7_1255_e8_598.lus_support_info:
+279) metros_1_e7_1255_e8_598.lus:
     -- file size = 1.975 KB
-    -- core set = {'V41_diff0', 'V40_nS', 'V43_avance0', 'V47_pOK', 'OK'}
+    -- core set = {'V47_pOK', 'OK', 'V43_avance0', 'V40_nS', 'V41_diff0'}
     -- the size difference of the core set with the smallest support set  = 2
     -- similarity = 0.56
 
 
-280) metros_1_e7_606.lus_support_info:
+280) metros_1_e7_606.lus:
     -- file size = 1.974 KB
-    -- core set = {'OK', 'V38_nB0', 'V40_nS', 'V41_diff0', 'V43_avance0', 'V47_pOK', 'V45_retard0'}
+    -- core set = {'V40_nS', 'V47_pOK', 'V45_retard0', 'V38_nB0', 'V43_avance0', 'V41_diff0', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-281) metros_1_e8_1567.lus_support_info:
+281) metros_1_e8_1567.lus:
     -- file size = 1.976 KB
-    -- core set = {'V45_retard0', 'V43_avance0', 'V47_pOK', 'OK'}
+    -- core set = {'V47_pOK', 'OK', 'V43_avance0', 'V45_retard0'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-282) metros_1_e8_725_e3_556.lus_support_info:
+282) metros_1_e8_725_e3_556.lus:
     -- file size = 1.976 KB
-    -- core set = {'V45_retard0', 'V43_avance0', 'V47_pOK', 'OK'}
+    -- core set = {'V47_pOK', 'OK', 'V43_avance0', 'V45_retard0'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-283) metros_2.lus_support_info:
+283) metros_2.lus:
     -- file size = 1.772 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-284) metros_2_e1_1116.lus_support_info:
+284) metros_2_e1_1116.lus:
     -- file size = 1.784 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-285) metros_2_e1_1116_e2_617.lus_support_info:
+285) metros_2_e1_1116_e2_617.lus:
     -- file size = 1.79 KB
-    -- core set = {'OK', 'V38_nB0', 'V40_nS', 'V47_ast', 'V41_diff0', 'V158_H0', 'V45_retard0', 'V170_Sofar'}
+    -- core set = {'V170_Sofar', 'V158_H0', 'V40_nS', 'V45_retard0', 'V38_nB0', 'V41_diff0', 'V47_ast', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-286) metros_2_e2_704_e2_13.lus_support_info:
+286) metros_2_e2_704_e2_13.lus:
     -- file size = 1.79 KB
-    -- core set = {'OK', 'V38_nB0', 'V40_nS', 'V47_ast', 'V41_diff0', 'V158_H0', 'V45_retard0', 'V170_Sofar'}
+    -- core set = {'V170_Sofar', 'V158_H0', 'V40_nS', 'V45_retard0', 'V38_nB0', 'V41_diff0', 'V47_ast', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-287) metros_3_e3_1275_e2_454.lus_support_info:
+287) metros_3_e3_1275_e2_454.lus:
     -- file size = 1.761 KB
-    -- core set = {'V38_nB0', 'OK', 'V39_nB1'}
+    -- core set = {'OK', 'V38_nB0', 'V39_nB1'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-288) metros_3_e3_1275_e3_640.lus_support_info:
+288) metros_3_e3_1275_e3_640.lus:
     -- file size = 1.755 KB
-    -- core set = {'V38_nB0', 'OK', 'V39_nB1'}
+    -- core set = {'OK', 'V38_nB0', 'V39_nB1'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-289) metros_4_e2_968_e2_1166.lus_support_info:
+289) metros_4_e2_968_e2_1166.lus:
     -- file size = 1.773 KB
-    -- core set = {'V38_nB0', 'OK', 'V39_nB1'}
+    -- core set = {'OK', 'V38_nB0', 'V39_nB1'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-290) metros_4_e2_968_e3_931.lus_support_info:
+290) metros_4_e2_968_e3_931.lus:
     -- file size = 1.767 KB
-    -- core set = {'V38_nB0', 'OK', 'V39_nB1'}
+    -- core set = {'OK', 'V38_nB0', 'V39_nB1'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-291) metros_4_e3_1091_e2_1317.lus_support_info:
+291) metros_4_e3_1091_e2_1317.lus:
     -- file size = 1.761 KB
-    -- core set = {'V38_nB0', 'OK', 'V39_nB1'}
+    -- core set = {'OK', 'V38_nB0', 'V39_nB1'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-292) metros_4_e3_1091_e3_522.lus_support_info:
+292) metros_4_e3_1091_e3_522.lus:
     -- file size = 1.755 KB
-    -- core set = {'V38_nB0', 'OK', 'V39_nB1'}
+    -- core set = {'OK', 'V38_nB0', 'V39_nB1'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-293) MOESI_1.lus_support_info:
+293) MOESI_1.lus:
     -- file size = 3.009 KB
     -- core set = {'V38_erreur_mo', 'OK', 'V34_exclusive_mo'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.75
 
 
-294) MOESI_1_e2_982_e7_492.lus_support_info:
+294) MOESI_1_e2_982_e7_492.lus:
     -- file size = 3.014 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-295) MOESI_1_e3_1884_e7_1875.lus_support_info:
+295) MOESI_1_e3_1884_e7_1875.lus:
     -- file size = 3.008 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-296) MOESI_2_e1_1121.lus_support_info:
+296) MOESI_2_e1_1121.lus:
     -- file size = 3.078 KB
-    -- core set = {'V39_env', 'OK', 'V37_owned_mo', 'V35_shared_mo', 'V34_exclusive_mo', 'V36_invalid_mo', 'V33_modified_mo', 'V99_X'}
+    -- core set = {'V39_env', 'V35_shared_mo', 'V36_invalid_mo', 'V99_X', 'V33_modified_mo', 'V34_exclusive_mo', 'V37_owned_mo', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-297) MOESI_2_e1_1753_e8_1769.lus_support_info:
+297) MOESI_2_e1_1753_e8_1769.lus:
     -- file size = 3.079 KB
-    -- core set = {'V39_env', 'OK', 'V37_owned_mo', 'V35_shared_mo', 'V34_exclusive_mo', 'V36_invalid_mo', 'V33_modified_mo', 'V99_X'}
+    -- core set = {'V39_env', 'V35_shared_mo', 'V36_invalid_mo', 'V99_X', 'V33_modified_mo', 'V34_exclusive_mo', 'V37_owned_mo', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-298) MOESI_2_e2_155.lus_support_info:
+298) MOESI_2_e2_155.lus:
     -- file size = 3.078 KB
-    -- core set = {'V39_env', 'OK', 'V37_owned_mo', 'V35_shared_mo', 'V34_exclusive_mo', 'V36_invalid_mo', 'V33_modified_mo', 'V99_X'}
+    -- core set = {'V39_env', 'V35_shared_mo', 'V36_invalid_mo', 'V99_X', 'V33_modified_mo', 'V34_exclusive_mo', 'V37_owned_mo', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-299) MOESI_2_e2_1599_e8_1334.lus_support_info:
+299) MOESI_2_e2_1599_e8_1334.lus:
     -- file size = 3.079 KB
-    -- core set = {'V39_env', 'OK', 'V37_owned_mo', 'V35_shared_mo', 'V34_exclusive_mo', 'V36_invalid_mo', 'V33_modified_mo', 'V99_X'}
+    -- core set = {'V39_env', 'V35_shared_mo', 'V36_invalid_mo', 'V99_X', 'V33_modified_mo', 'V34_exclusive_mo', 'V37_owned_mo', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-300) MOESI_2_e3_1523.lus_support_info:
+300) MOESI_2_e3_1523.lus:
     -- file size = 3.072 KB
-    -- core set = {'V39_env', 'OK', 'V37_owned_mo', 'V35_shared_mo', 'V34_exclusive_mo', 'V36_invalid_mo', 'V33_modified_mo', 'V99_X'}
+    -- core set = {'V39_env', 'V35_shared_mo', 'V36_invalid_mo', 'V99_X', 'V33_modified_mo', 'V34_exclusive_mo', 'V37_owned_mo', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-301) MOESI_2_e3_929_e4_578.lus_support_info:
+301) MOESI_2_e3_929_e4_578.lus:
     -- file size = 3.078 KB
-    -- core set = {'V39_env', 'OK', 'V37_owned_mo', 'V35_shared_mo', 'V34_exclusive_mo', 'V36_invalid_mo', 'V33_modified_mo', 'V99_X'}
+    -- core set = {'V39_env', 'V35_shared_mo', 'V36_invalid_mo', 'V99_X', 'V33_modified_mo', 'V34_exclusive_mo', 'V37_owned_mo', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-302) MOESI_2_e3_929_e5_1826.lus_support_info:
+302) MOESI_2_e3_929_e5_1826.lus:
     -- file size = 3.078 KB
-    -- core set = {'V39_env', 'OK', 'V37_owned_mo', 'V35_shared_mo', 'V34_exclusive_mo', 'V36_invalid_mo', 'V33_modified_mo', 'V99_X'}
+    -- core set = {'V39_env', 'V35_shared_mo', 'V36_invalid_mo', 'V99_X', 'V33_modified_mo', 'V34_exclusive_mo', 'V37_owned_mo', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-303) MOESI_2_e3_929_e6_2707.lus_support_info:
+303) MOESI_2_e3_929_e6_2707.lus:
     -- file size = 3.072 KB
-    -- core set = {'V39_env', 'OK', 'V37_owned_mo', 'V35_shared_mo', 'V34_exclusive_mo', 'V36_invalid_mo', 'V33_modified_mo', 'V99_X'}
+    -- core set = {'V39_env', 'V35_shared_mo', 'V36_invalid_mo', 'V99_X', 'V33_modified_mo', 'V34_exclusive_mo', 'V37_owned_mo', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-304) MOESI_2_e3_929_e8_1167.lus_support_info:
+304) MOESI_2_e3_929_e8_1167.lus:
     -- file size = 3.073 KB
-    -- core set = {'V39_env', 'OK', 'V37_owned_mo', 'V35_shared_mo', 'V34_exclusive_mo', 'V36_invalid_mo', 'V33_modified_mo', 'V99_X'}
+    -- core set = {'V39_env', 'V35_shared_mo', 'V36_invalid_mo', 'V99_X', 'V33_modified_mo', 'V34_exclusive_mo', 'V37_owned_mo', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-305) MOESI_2_e8_101.lus_support_info:
+305) MOESI_2_e8_101.lus:
     -- file size = 3.073 KB
-    -- core set = {'V39_env', 'OK', 'V37_owned_mo', 'V35_shared_mo', 'V34_exclusive_mo', 'V36_invalid_mo', 'V33_modified_mo', 'V99_X'}
+    -- core set = {'V39_env', 'V35_shared_mo', 'V36_invalid_mo', 'V99_X', 'V33_modified_mo', 'V34_exclusive_mo', 'V37_owned_mo', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-306) MOESI_2_e8_926_e8_2138.lus_support_info:
+306) MOESI_2_e8_926_e8_2138.lus:
     -- file size = 3.074 KB
-    -- core set = {'V39_env', 'OK', 'V37_owned_mo', 'V35_shared_mo', 'V34_exclusive_mo', 'V36_invalid_mo', 'V33_modified_mo', 'V99_X'}
+    -- core set = {'V39_env', 'V35_shared_mo', 'V36_invalid_mo', 'V99_X', 'V33_modified_mo', 'V34_exclusive_mo', 'V37_owned_mo', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-307) MOESI_all.lus_support_info:
+307) MOESI_all.lus:
     -- file size = 3.177 KB
-    -- core set = {'V39_env', 'OK', 'V37_owned_mo', 'V38_erreur_mo', 'V35_shared_mo', 'V34_exclusive_mo', 'V36_invalid_mo', 'V33_modified_mo', 'V99_X'}
+    -- core set = {'V39_env', 'V38_erreur_mo', 'V35_shared_mo', 'V36_invalid_mo', 'V99_X', 'V33_modified_mo', 'V34_exclusive_mo', 'V37_owned_mo', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-308) peterson_1.lus_support_info:
+308) peterson_1.lus:
     -- file size = 7.189 KB
-    -- core set = {'V71_x0', 'OK', 'V150_g01'}
+    -- core set = {'OK', 'V71_x0', 'V150_g01'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.75
 
 
-309) peterson_1_e7_4234.lus_support_info:
+309) peterson_1_e7_4234.lus:
     -- file size = 7.188 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-310) peterson_2.lus_support_info:
+310) peterson_2.lus:
     -- file size = 7.189 KB
-    -- core set = {'V151_g02', 'V72_x1', 'OK', 'V152_g03'}
+    -- core set = {'V151_g02', 'OK', 'V152_g03', 'V72_x1'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.8
 
 
-311) peterson_3.lus_support_info:
+311) peterson_3.lus:
     -- file size = 7.189 KB
-    -- core set = {'V73_x2', 'V153_g04', 'OK', 'V154_g05'}
+    -- core set = {'OK', 'V153_g04', 'V73_x2', 'V154_g05'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.8
 
 
-312) peterson_4.lus_support_info:
+312) peterson_4.lus:
     -- file size = 7.189 KB
-    -- core set = {'OK', 'V74_x3', 'V155_g06'}
+    -- core set = {'V155_g06', 'V74_x3', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.75
 
 
-313) peterson_all.lus_support_info:
+313) peterson_all.lus:
     -- file size = 7.318 KB
-    -- core set = {'OK', 'V151_g02', 'V154_g05', 'V152_g03', 'V73_x2', 'V71_x0', 'V74_x3', 'V150_g01', 'V153_g04', 'V155_g06', 'V72_x1'}
+    -- core set = {'V151_g02', 'V153_g04', 'V71_x0', 'V155_g06', 'V74_x3', 'V72_x1', 'V154_g05', 'OK', 'V152_g03', 'V150_g01', 'V73_x2'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.92
 
 
-314) PRODUCER_CONSUMER_1.lus_support_info:
+314) PRODUCER_CONSUMER_1.lus:
     -- file size = 1.432 KB
-    -- core set = {'V29_o1', 'OK'}
+    -- core set = {'OK', 'V29_o1'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.33
 
 
-315) PRODUCER_CONSUMER_2.lus_support_info:
+315) PRODUCER_CONSUMER_2.lus:
     -- file size = 0.683 KB
-    -- core set = {'OK', 'V70_garde1', 'V28_a', 'V87_First', 'V26_i', 'V31_env'}
+    -- core set = {'V87_First', 'V28_a', 'V26_i', 'OK', 'V31_env', 'V70_garde1'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.86
 
 
-316) PRODUCER_CONSUMER_3.lus_support_info:
+316) PRODUCER_CONSUMER_3.lus:
     -- file size = 1.434 KB
-    -- core set = {'V37_o1', 'OK'}
+    -- core set = {'OK', 'V37_o1'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-317) PRODUCER_CONSUMER_all.lus_support_info:
+317) PRODUCER_CONSUMER_all.lus:
     -- file size = 1.453 KB
-    -- core set = {'V36_a', 'V39_env', 'OK', 'V34_i', 'V88_garde1', 'V123_First', 'V37_o1'}
+    -- core set = {'V34_i', 'V39_env', 'V37_o1', 'V123_First', 'V36_a', 'V88_garde1', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.78
 
 
-318) PRODUCER_CONSUMER_vt_e2_1352.lus_support_info:
+318) PRODUCER_CONSUMER_vt_e2_1352.lus:
     -- file size = 1.569 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = nan
 
 
-319) PRODUCER_CONSUMER_vt_e3_507.lus_support_info:
+319) PRODUCER_CONSUMER_vt_e3_507.lus:
     -- file size = 1.563 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = nan
 
 
-320) PRODUCER_CONSUMER_vt_e7_1059_e8_1111.lus_support_info:
+320) PRODUCER_CONSUMER_vt_e7_1059_e8_1111.lus:
     -- file size = 1.563 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = nan
 
 
-321) PRODUCER_CONSUMMER_luke_2_e7_1068_e8_1019.lus_support_info:
+321) PRODUCER_CONSUMMER_luke_2_e7_1068_e8_1019.lus:
     -- file size = 1.339 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-322) production_cell_e7_207_e8_241.lus_support_info:
+322) production_cell_e7_207_e8_241.lus:
     -- file size = 1.493 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-323) production_cell_e8_6.lus_support_info:
+323) production_cell_e8_6.lus:
     -- file size = 1.494 KB
-    -- core set = {'V19_start2', 'V17_MayMove2', 'V21_moving', 'OK', 'V75_signal', 'V66_signal', 'V58_on', 'V86_signal', 'V90_signal', 'V18_start1', 'V16_MayMove1', 'V20_stop'}
+    -- core set = {'V90_signal', 'V75_signal', 'V18_start1', 'V58_on', 'V16_MayMove1', 'V86_signal', 'V17_MayMove2', 'V19_start2', 'V21_moving', 'V20_stop', 'OK', 'V66_signal'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-324) readwrit.lus_support_info:
+324) readwrit.lus:
     -- file size = 4.177 KB
-    -- core set = {'V133_garde1', 'V58_x0', 'OK'}
+    -- core set = {'V58_x0', 'OK', 'V133_garde1'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-325) rtp_1.lus_support_info:
+325) rtp_1.lus:
     -- file size = 3.049 KB
-    -- core set = {'V67_X1', 'V76_erreur', 'OK'}
+    -- core set = {'V76_erreur', 'OK', 'V67_X1'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.75
 
 
-326) rtp_10.lus_support_info:
+326) rtp_10.lus:
     -- file size = 5.69 KB
-    -- core set = {'V74_X8', 'V150_g11', 'OK'}
+    -- core set = {'OK', 'V150_g11', 'V74_X8'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.75
 
 
-327) rtp_10_e7_106_e7_2564.lus_support_info:
+327) rtp_10_e7_106_e7_2564.lus:
     -- file size = 5.688 KB
-    -- core set = {'V150_g11', 'OK', 'V74_X8'}
+    -- core set = {'OK', 'V150_g11', 'V74_X8'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-328) rtp_2.lus_support_info:
+328) rtp_2.lus:
     -- file size = 2.976 KB
-    -- core set = {'V67_X1', 'V139_g01', 'OK'}
+    -- core set = {'OK', 'V139_g01', 'V67_X1'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.75
 
 
-329) rtp_3.lus_support_info:
+329) rtp_3.lus:
     -- file size = 5.69 KB
-    -- core set = {'V151_g12', 'V75_X9', 'OK'}
+    -- core set = {'V151_g12', 'OK', 'V75_X9'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.75
 
 
-330) rtp_4.lus_support_info:
+330) rtp_4.lus:
     -- file size = 5.69 KB
-    -- core set = {'OK', 'V141_g02', 'V68_X2'}
+    -- core set = {'V141_g02', 'OK', 'V68_X2'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.75
 
 
-331) rtp_5.lus_support_info:
+331) rtp_5.lus:
     -- file size = 5.69 KB
-    -- core set = {'V69_X3', 'OK', 'V142_g03'}
+    -- core set = {'OK', 'V142_g03', 'V69_X3'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.75
 
 
-332) rtp_5_e7_3972.lus_support_info:
+332) rtp_5_e7_3972.lus:
     -- file size = 5.689 KB
-    -- core set = {'V69_X3', 'OK', 'V142_g03'}
+    -- core set = {'OK', 'V142_g03', 'V69_X3'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-333) rtp_6.lus_support_info:
+333) rtp_6.lus:
     -- file size = 5.69 KB
-    -- core set = {'V143_g04', 'V144_g05', 'OK', 'V70_X4'}
+    -- core set = {'V143_g04', 'OK', 'V70_X4', 'V144_g05'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.8
 
 
-334) rtp_7.lus_support_info:
+334) rtp_7.lus:
     -- file size = 5.69 KB
-    -- core set = {'V145_g06', 'OK', 'V71_X5'}
+    -- core set = {'V71_X5', 'OK', 'V145_g06'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.75
 
 
-335) rtp_8.lus_support_info:
+335) rtp_8.lus:
     -- file size = 5.69 KB
-    -- core set = {'V72_X6', 'V146_g07', 'V148_g09', 'OK', 'V147_g08'}
+    -- core set = {'OK', 'V147_g08', 'V72_X6', 'V146_g07', 'V148_g09'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.83
 
 
-336) rtp_9.lus_support_info:
+336) rtp_9.lus:
     -- file size = 5.69 KB
-    -- core set = {'V73_X7', 'V149_g10', 'OK'}
+    -- core set = {'V73_X7', 'OK', 'V149_g10'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.75
 
 
-337) rtp_all.lus_support_info:
+337) rtp_all.lus:
     -- file size = 6.155 KB
-    -- core set = {'V144_g05', 'V73_X7', 'V71_X5', 'V76_erreur', 'OK', 'V141_g02', 'V72_X6', 'V148_g09', 'V142_g03', 'V75_X9', 'V140_g01', 'V70_X4', 'V143_g04', 'V69_X3', 'V151_g12', 'V147_g08', 'V145_g06', 'V150_g11', 'V68_X2', 'V67_X1', 'V74_X8', 'V146_g07', 'V149_g10'}
+    -- core set = {'V68_X2', 'V144_g05', 'V73_X7', 'V74_X8', 'V146_g07', 'V142_g03', 'V69_X3', 'V71_X5', 'V148_g09', 'V143_g04', 'V75_X9', 'V145_g06', 'V150_g11', 'V140_g01', 'V67_X1', 'V151_g12', 'V147_g08', 'OK', 'V70_X4', 'V149_g10', 'V141_g02', 'V72_X6', 'V76_erreur'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.96
 
 
-338) rtp_all_e7_2500.lus_support_info:
+338) rtp_all_e7_2500.lus:
     -- file size = 6.154 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-339) rtp_vt.lus_support_info:
+339) rtp_vt.lus:
     -- file size = 5.981 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-340) speed_e7_207.lus_support_info:
+340) speed_e7_207.lus:
     -- file size = 0.649 KB
     -- core set = {'OK', 'V19_late'}
     -- the size difference of the core set with the smallest support set  = 1
     -- similarity = 0.33
 
 
-341) speed_e7_207_e7_538.lus_support_info:
+341) speed_e7_207_e7_538.lus:
     -- file size = 0.648 KB
     -- core set = {'OK', 'V19_late'}
     -- the size difference of the core set with the smallest support set  = 1
     -- similarity = 0.33
 
 
-342) speed_e7_207_e8_507.lus_support_info:
+342) speed_e7_207_e8_507.lus:
     -- file size = 0.65 KB
     -- core set = {'OK', 'V19_late'}
     -- the size difference of the core set with the smallest support set  = 1
     -- similarity = 0.33
 
 
-343) speed_e8_136.lus_support_info:
+343) speed_e8_136.lus:
     -- file size = 0.651 KB
-    -- core set = {'V20_early', 'OK'}
+    -- core set = {'OK', 'V20_early'}
     -- the size difference of the core set with the smallest support set  = 1
     -- similarity = 0.33
 
 
-344) speed_e8_649_e7_709.lus_support_info:
+344) speed_e8_649_e7_709.lus:
     -- file size = 0.65 KB
     -- core set = {'OK', 'V19_late'}
     -- the size difference of the core set with the smallest support set  = 1
     -- similarity = 0.33
 
 
-345) stalmark_e7_27.lus_support_info:
+345) stalmark_e7_27.lus:
     -- file size = 0.418 KB
-    -- core set = {'V6_c', 'V5_b', 'V4_a', 'OK'}
+    -- core set = {'V6_c', 'OK', 'V4_a', 'V5_b'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-346) stalmark_e7_27_e7_31.lus_support_info:
+346) stalmark_e7_27_e7_31.lus:
     -- file size = 0.417 KB
-    -- core set = {'V6_c', 'V5_b', 'V4_a', 'OK'}
+    -- core set = {'V6_c', 'OK', 'V4_a', 'V5_b'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-347) stalmark_e7_27_e8_261.lus_support_info:
+347) stalmark_e7_27_e8_261.lus:
     -- file size = 0.419 KB
-    -- core set = {'V6_c', 'V5_b', 'V4_a', 'OK'}
+    -- core set = {'V6_c', 'OK', 'V4_a', 'V5_b'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-348) SYNAPSE_1.lus_support_info:
+348) SYNAPSE_1.lus:
     -- file size = 1.689 KB
-    -- core set = {'V29_dirty_s', 'OK'}
+    -- core set = {'OK', 'V29_dirty_s'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.67
 
 
-349) SYNAPSE_123_e7_837_e8_12.lus_support_info:
+349) SYNAPSE_123_e7_837_e8_12.lus:
     -- file size = 2.085 KB
-    -- core set = {'V30_invalid_s', 'V34_R1', 'OK', 'V35_R2', 'V36_R3', 'V32_dirty_s', 'V33_mem_init_s', 'V108_First', 'V31_valid_s'}
+    -- core set = {'V36_R3', 'V30_invalid_s', 'V35_R2', 'V33_mem_init_s', 'V34_R1', 'V32_dirty_s', 'OK', 'V108_First', 'V31_valid_s'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.9
 
 
-350) SYNAPSE_123_e7_856.lus_support_info:
+350) SYNAPSE_123_e7_856.lus:
     -- file size = 2.084 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-351) SYNAPSE_123_e8_953_e7_1465.lus_support_info:
+351) SYNAPSE_123_e8_953_e7_1465.lus:
     -- file size = 2.085 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-352) SYNAPSE_123_e8_953_e8_941.lus_support_info:
+352) SYNAPSE_123_e8_953_e8_941.lus:
     -- file size = 2.087 KB
-    -- core set = {'V30_invalid_s', 'V34_R1', 'OK', 'V35_R2', 'V36_R3', 'V32_dirty_s', 'V33_mem_init_s', 'V108_First', 'V31_valid_s'}
+    -- core set = {'V36_R3', 'V30_invalid_s', 'V35_R2', 'V33_mem_init_s', 'V34_R1', 'V32_dirty_s', 'OK', 'V108_First', 'V31_valid_s'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.9
 
 
-353) SYNAPSE_2_e7_790_e8_1344.lus_support_info:
+353) SYNAPSE_2_e7_790_e8_1344.lus:
     -- file size = 1.783 KB
-    -- core set = {'V29_dirty_s', 'V28_valid_s', 'V27_invalid_s', 'OK'}
+    -- core set = {'V28_valid_s', 'OK', 'V29_dirty_s', 'V27_invalid_s'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-354) SYNAPSE_2_e8_1118.lus_support_info:
+354) SYNAPSE_2_e8_1118.lus:
     -- file size = 1.784 KB
-    -- core set = {'V29_dirty_s', 'V28_valid_s', 'V27_invalid_s', 'OK'}
+    -- core set = {'V28_valid_s', 'OK', 'V29_dirty_s', 'V27_invalid_s'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-355) SYNAPSE_2_e8_1118_e7_1043.lus_support_info:
+355) SYNAPSE_2_e8_1118_e7_1043.lus:
     -- file size = 1.783 KB
-    -- core set = {'V29_dirty_s', 'V28_valid_s', 'V27_invalid_s', 'OK'}
+    -- core set = {'V28_valid_s', 'OK', 'V29_dirty_s', 'V27_invalid_s'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-356) SYNAPSE_2_e8_1118_e8_1177.lus_support_info:
+356) SYNAPSE_2_e8_1118_e8_1177.lus:
     -- file size = 1.785 KB
-    -- core set = {'V29_dirty_s', 'V28_valid_s', 'V27_invalid_s', 'OK'}
+    -- core set = {'V28_valid_s', 'OK', 'V29_dirty_s', 'V27_invalid_s'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-357) SYNAPSE_3_e7_1444_e7_638.lus_support_info:
+357) SYNAPSE_3_e7_1444_e7_638.lus:
     -- file size = 1.804 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-358) SYNAPSE_3_e7_1444_e8_1581.lus_support_info:
+358) SYNAPSE_3_e7_1444_e8_1581.lus:
     -- file size = 1.806 KB
-    -- core set = {'V30_invalid_s', 'OK', 'V32_dirty_s', 'V33_mem_init_s', 'V31_valid_s', 'V106_First'}
+    -- core set = {'V30_invalid_s', 'V33_mem_init_s', 'V32_dirty_s', 'V106_First', 'OK', 'V31_valid_s'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.86
 
 
-359) SYNAPSE_3_e8_1329_e8_320.lus_support_info:
+359) SYNAPSE_3_e8_1329_e8_320.lus:
     -- file size = 1.808 KB
-    -- core set = {'V30_invalid_s', 'OK', 'V32_dirty_s', 'V33_mem_init_s', 'V31_valid_s', 'V106_First'}
+    -- core set = {'V30_invalid_s', 'V33_mem_init_s', 'V32_dirty_s', 'V106_First', 'OK', 'V31_valid_s'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.86
 
 
-360) SYNAPSE_4_e8_420_e8_1525.lus_support_info:
+360) SYNAPSE_4_e8_420_e8_1525.lus:
     -- file size = 1.714 KB
-    -- core set = {'V29_dirty_s', 'V28_valid_s', 'OK'}
+    -- core set = {'V28_valid_s', 'OK', 'V29_dirty_s'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.75
 
 
-361) SYNAPSE_4_e8_974.lus_support_info:
+361) SYNAPSE_4_e8_974.lus:
     -- file size = 1.713 KB
-    -- core set = {'V29_dirty_s', 'V28_valid_s', 'OK'}
+    -- core set = {'V28_valid_s', 'OK', 'V29_dirty_s'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.75
 
 
-362) SYNAPSE_5_e2_1525.lus_support_info:
+362) SYNAPSE_5_e2_1525.lus:
     -- file size = 1.779 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-363) SYNAPSE_5_e7_1138_e8_809.lus_support_info:
+363) SYNAPSE_5_e7_1138_e8_809.lus:
     -- file size = 1.773 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-364) SYNAPSE_6.lus_support_info:
+364) SYNAPSE_6.lus:
     -- file size = 1.775 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-365) SYNAPSE_6_e2_1439_e1_954.lus_support_info:
+365) SYNAPSE_6_e2_1439_e1_954.lus:
     -- file size = 1.787 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-366) SYNAPSE_6_e3_1666_e5_1558.lus_support_info:
+366) SYNAPSE_6_e3_1666_e5_1558.lus:
     -- file size = 1.781 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-367) SYNAPSE_6_e8_1147_e2_1326.lus_support_info:
+367) SYNAPSE_6_e8_1147_e2_1326.lus:
     -- file size = 1.782 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-368) SYNAPSE_all_e3_1864_e6_1336.lus_support_info:
+368) SYNAPSE_all_e3_1864_e6_1336.lus:
     -- file size = 1.995 KB
-    -- core set = {'V30_invalid_s', 'OK', 'V32_dirty_s', 'V33_mem_init_s', 'V105_First', 'V31_valid_s'}
+    -- core set = {'V30_invalid_s', 'V33_mem_init_s', 'V32_dirty_s', 'OK', 'V31_valid_s', 'V105_First'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.86
 
 
-369) SYNAPSE_all_e7_907.lus_support_info:
+369) SYNAPSE_all_e7_907.lus:
     -- file size = 1.994 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-370) SYNAPSE_all_e7_907_e7_1363.lus_support_info:
+370) SYNAPSE_all_e7_907_e7_1363.lus:
     -- file size = 1.993 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-371) SYNAPSE_all_e8_251.lus_support_info:
+371) SYNAPSE_all_e8_251.lus:
     -- file size = 1.996 KB
-    -- core set = {'V30_invalid_s', 'OK', 'V32_dirty_s', 'V33_mem_init_s', 'V105_First', 'V31_valid_s'}
+    -- core set = {'V30_invalid_s', 'V33_mem_init_s', 'V32_dirty_s', 'OK', 'V31_valid_s', 'V105_First'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.86
 
 
-372) ticket3i_1.lus_support_info:
+372) ticket3i_1.lus:
     -- file size = 4.0 KB
-    -- core set = {'V62_p1', 'V63_p2', 'V70_erreur_ticket3i', 'V64_p3', 'OK'}
+    -- core set = {'V70_erreur_ticket3i', 'V64_p3', 'OK', 'V63_p2', 'V62_p1'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.83
 
 
-373) ticket3i_1_e7_1669.lus_support_info:
+373) ticket3i_1_e7_1669.lus:
     -- file size = 3.999 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-374) ticket3i_2.lus_support_info:
+374) ticket3i_2.lus:
     -- file size = 3.841 KB
-    -- core set = {'V66_s', 'V71_env', 'V163_X', 'V65_t', 'OK'}
+    -- core set = {'OK', 'V65_t', 'V66_s', 'V71_env', 'V163_X'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-375) ticket3i_3_e7_1312_e8_1916.lus_support_info:
+375) ticket3i_3_e7_1312_e8_1916.lus:
     -- file size = 3.841 KB
-    -- core set = {'V71_env', 'V163_X', 'V65_t', 'OK'}
+    -- core set = {'OK', 'V65_t', 'V71_env', 'V163_X'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-376) ticket3i_4.lus_support_info:
+376) ticket3i_4.lus:
     -- file size = 3.862 KB
-    -- core set = {'V62_p1', 'OK'}
+    -- core set = {'OK', 'V62_p1'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.67
 
 
-377) ticket3i_4_e7_1775_e7_3320.lus_support_info:
+377) ticket3i_4_e7_1775_e7_3320.lus:
     -- file size = 3.86 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-378) ticket3i_5.lus_support_info:
+378) ticket3i_5.lus:
     -- file size = 3.862 KB
-    -- core set = {'V63_p2', 'OK'}
+    -- core set = {'OK', 'V63_p2'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.67
 
 
-379) ticket3i_5_e7_3307.lus_support_info:
+379) ticket3i_5_e7_3307.lus:
     -- file size = 3.861 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-380) ticket3i_6.lus_support_info:
+380) ticket3i_6.lus:
     -- file size = 3.862 KB
     -- core set = {'OK', 'V64_p3'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.67
 
 
-381) ticket3i_6_e7_1096_e7_2688.lus_support_info:
+381) ticket3i_6_e7_1096_e7_2688.lus:
     -- file size = 3.86 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-382) ticket3i_7.lus_support_info:
+382) ticket3i_7.lus:
     -- file size = 3.984 KB
-    -- core set = {'V62_p1', 'V63_p2', 'OK', 'V64_p3'}
+    -- core set = {'V64_p3', 'OK', 'V63_p2', 'V62_p1'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.8
 
 
-383) ticket3i_7_e1_2192_e1_1852.lus_support_info:
+383) ticket3i_7_e1_2192_e1_1852.lus:
     -- file size = 3.996 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-384) ticket3i_7_e1_2192_e7_3516.lus_support_info:
+384) ticket3i_7_e1_2192_e7_3516.lus:
     -- file size = 3.989 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-385) ticket3i_7_e2_2724_e7_524.lus_support_info:
+385) ticket3i_7_e2_2724_e7_524.lus:
     -- file size = 3.989 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-386) ticket3i_7_e3_59_e7_2122.lus_support_info:
+386) ticket3i_7_e3_59_e7_2122.lus:
     -- file size = 3.983 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-387) ticket3i_7_e7_3176.lus_support_info:
+387) ticket3i_7_e7_3176.lus:
     -- file size = 3.983 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-388) ticket3i_all.lus_support_info:
+388) ticket3i_all.lus:
     -- file size = 4.15 KB
-    -- core set = {'V62_p1', 'V63_p2', 'V70_erreur_ticket3i', 'V64_p3', 'OK'}
+    -- core set = {'V70_erreur_ticket3i', 'V64_p3', 'OK', 'V63_p2', 'V62_p1'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.83
 
 
-389) ticket3i_all_e1_2706_e7_1776.lus_support_info:
+389) ticket3i_all_e1_2706_e7_1776.lus:
     -- file size = 4.155 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-390) ticket3i_all_e2_1117_e7_553.lus_support_info:
+390) ticket3i_all_e2_1117_e7_553.lus:
     -- file size = 4.155 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-391) ticket3i_all_e3_557_e7_3464.lus_support_info:
+391) ticket3i_all_e3_557_e7_3464.lus:
     -- file size = 4.149 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-392) ticket3i_all_e7_1837.lus_support_info:
+392) ticket3i_all_e7_1837.lus:
     -- file size = 4.149 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-393) ticket3i_all_e8_505_e7_2450.lus_support_info:
+393) ticket3i_all_e8_505_e7_2450.lus:
     -- file size = 4.15 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-394) traffic_e7_46_e8_16.lus_support_info:
+394) traffic_e7_46_e8_16.lus:
     -- file size = 0.469 KB
-    -- core set = {'V39_Prev', 'V11_Total', 'OK', 'V47_Y'}
+    -- core set = {'V11_Total', 'OK', 'V39_Prev', 'V47_Y'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-395) tramway_e7_1834.lus_support_info:
+395) tramway_e7_1834.lus:
     -- file size = 3.292 KB
-    -- core set = {'OK', 'V250_door_doesnt_open_out_of_station', 'V264_env_ok', 'V58_env_always_ok', 'V272_warning_start_cant_become_true_when_door_is_opening', 'V265_door_doesnt_close_if_not_asked', 'V268_door_initially_closed', 'V59_prop_ok', 'V251_door_opens_before_leaving_station'}
+    -- core set = {'V251_door_opens_before_leaving_station', 'V58_env_always_ok', 'V268_door_initially_closed', 'V265_door_doesnt_close_if_not_asked', 'V264_env_ok', 'V272_warning_start_cant_become_true_when_door_is_opening', 'OK', 'V59_prop_ok', 'V250_door_doesnt_open_out_of_station'}
     -- the size difference of the core set with the smallest support set  = 2
     -- similarity = 0.6
 
 
-396) tramway_e7_1834_e7_2363.lus_support_info:
+396) tramway_e7_1834_e7_2363.lus:
     -- file size = 3.291 KB
-    -- core set = {'OK', 'V250_door_doesnt_open_out_of_station', 'V264_env_ok', 'V265_door_doesnt_close_if_not_asked', 'V272_warning_start_cant_become_true_when_door_is_opening', 'V269_initially_not_in_station', 'V58_env_always_ok', 'V268_door_initially_closed', 'V59_prop_ok', 'V253_between_A_and_X', 'V251_door_opens_before_leaving_station'}
+    -- core set = {'V269_initially_not_in_station', 'V251_door_opens_before_leaving_station', 'V58_env_always_ok', 'V268_door_initially_closed', 'V253_between_A_and_X', 'V265_door_doesnt_close_if_not_asked', 'V264_env_ok', 'V272_warning_start_cant_become_true_when_door_is_opening', 'OK', 'V59_prop_ok', 'V250_door_doesnt_open_out_of_station'}
     -- the size difference of the core set with the smallest support set  = 1
     -- similarity = 0.61
 
 
-397) tramway_e7_1834_e8_3192.lus_support_info:
+397) tramway_e7_1834_e8_3192.lus:
     -- file size = 3.299 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-398) twisted_counters.lus_support_info:
+398) twisted_counters.lus:
     -- file size = 0.708 KB
     -- core set = set()
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 0.0
 
 
-399) two_counters.lus_support_info:
+399) two_counters.lus:
     -- file size = 0.39 KB
-    -- core set = {'V13_b', 'OK', 'V14_d', 'V41_b', 'V51_time', 'V40_a'}
+    -- core set = {'V13_b', 'V41_b', 'V14_d', 'V40_a', 'V51_time', 'OK'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-400) ums.lus_support_info:
+400) ums.lus:
     -- file size = 4.35 KB
-    -- core set = {'V284_X', 'V56_env', 'OK', 'V54_empty_section'}
+    -- core set = {'V56_env', 'OK', 'V54_empty_section', 'V284_X'}
     -- the size difference of the core set with the smallest support set  = 1
     -- similarity = 0.12
 
 
-401) ums_e8_1032.lus_support_info:
+401) ums_e8_1032.lus:
     -- file size = 4.362 KB
-    -- core set = {'V284_X', 'V56_env', 'OK', 'V54_empty_section'}
+    -- core set = {'V56_env', 'OK', 'V284_X', 'V54_empty_section'}
     -- the size difference of the core set with the smallest support set  = 1
     -- similarity = 0.67
 
 
-402) _6counters_e3_140_e8_149.lus_support_info:
+402) _6counters_e3_140_e8_149.lus:
     -- file size = 0.59 KB
-    -- core set = {'V41_time', 'V14_a', 'V15_b', 'V52_c', 'OK'}
+    -- core set = {'V52_c', 'V14_a', 'V41_time', 'OK', 'V15_b'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-403) _6counters_e8_371_e1_448.lus_support_info:
+403) _6counters_e8_371_e1_448.lus:
     -- file size = 0.596 KB
-    -- core set = {'V41_time', 'V14_a', 'V15_b', 'V52_c', 'OK'}
+    -- core set = {'V52_c', 'V14_a', 'V41_time', 'OK', 'V15_b'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 
 
-404) _6counters_e8_371_e2_80.lus_support_info:
+404) _6counters_e8_371_e2_80.lus:
     -- file size = 0.596 KB
-    -- core set = {'V41_time', 'V14_a', 'V15_b', 'V52_c', 'OK'}
+    -- core set = {'V52_c', 'V14_a', 'V41_time', 'OK', 'V15_b'}
     -- the size difference of the core set with the smallest support set  = 0
     -- similarity = 1.0
 

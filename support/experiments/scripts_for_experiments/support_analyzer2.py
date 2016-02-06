@@ -75,9 +75,13 @@ for i in range(len(SETTINGS)):
 def find_sb_size(list_of_sets):
     sizes = []
     for item in list_of_sets:
-        if item != []:
+        if item != set([]):
             sizes.append(len(item))
-    return (min(sizes), max(sizes))
+    try:
+        return (min(sizes), max(sizes))
+    except:
+        return (float('nan'), float('nan'))
+        pass
 
 # will use this list in the next part
 smallest_set_size =[]
@@ -108,8 +112,13 @@ for item in all_models_sup_sets:
 core_elements_all_models = []
 
 for indx, item in enumerate(all_models_sup_sets):
-    intrsct = set.intersection(*[x for x in item if x != []])
-    core_elements_all_models.append({'dif': smallest_set_size[indx] - len(intrsct), 'core': intrsct})
+    try:
+        intrsct = set.intersection(*[x for x in item if x != set([])])
+        core_elements_all_models.append({'dif': smallest_set_size[indx] - len(intrsct), 'core': intrsct})
+    except:
+        core_elements_all_models.append({'dif': float('nan'), 'core': set([])})
+        pass
+    
     
     
 #
@@ -117,10 +126,10 @@ for indx, item in enumerate(all_models_sup_sets):
 #
 sim_all_models = []
 for indx, item in enumerate(all_models_sup_sets):
-    sets = [x for x in item if x != []]
+    sets = [x for x in item if x != set([])]
     try:
         sim_all_models.append(round(len(set.intersection(*sets))/ len(set.union(*sets)), 2))
-    except ZeroDivisionError:
+    except:
         sim_all_models.append(float('nan'))
         pass
  

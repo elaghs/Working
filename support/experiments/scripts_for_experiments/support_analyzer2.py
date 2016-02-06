@@ -108,7 +108,7 @@ for item in all_models_sup_sets:
 core_elements_all_models = []
 
 for indx, item in enumerate(all_models_sup_sets):
-    intrsct = set.intersection(*item)
+    intrsct = set.intersection(*[x for x in item if x != []])
     core_elements_all_models.append({'dif': smallest_set_size[indx] - len(intrsct), 'core': intrsct})
     
     

@@ -144,8 +144,8 @@ writer.write('\nthere are ' + str(len(interesting_models)) + ' models in the ben
 writer.write('\nfor each of these models, this file reports the following:\n\n')
 writer.write('\n    -- size of the model')
 writer.write('\n    -- min/max/mean/stdev Jaccard distance > 0.0')
-writer.write('\n    -- pairwise configurations with min/max Jaccard distances > 0.0')
-writer.write('\n    -- pairwise configurations with min/max Jaccard distances > 0.0')
+writer.write('\n    -- pairwise configurations with min Jaccard distances > 0.0')
+writer.write('\n    -- pairwise configurations with max Jaccard distances > 0.0')
 writer.write('\n-------------------------------------------------------------------------------------------------\n\n')
 for indx, model in enumerate(interesting_models):
     writer.write('\n'+ str(indx) +') '+ model + ' :')

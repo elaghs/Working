@@ -6,8 +6,8 @@ for each of these models, this file reports the following:
 
     -- size of the model
     -- min/max/mean/stdev Jaccard distance > 0.0
-    -- pairwise configurations with min/max Jaccard distances > 0.0
-    -- pairwise configurations with min/max Jaccard distances > 0.0
+    -- pairwise configurations with min Jaccard distances > 0.0
+    -- pairwise configurations with max Jaccard distances > 0.0
 -------------------------------------------------------------------------------------------------
 
 

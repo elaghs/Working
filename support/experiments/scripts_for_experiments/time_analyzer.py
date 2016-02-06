@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 from matplotlib.pyplot import cm
 import numpy as np
 
+TIMEOUT = 700.0
 SOLVERS = ['z3', 'yices', 'smtinterpol', 'mathsat']
 MINING_DIR = 'mining'
 ANALYSES_DIR = 'timing_analyses' 
@@ -56,7 +57,7 @@ all_timings = []
 for i in range(9):
     all_timings.append(reader[TIMINGS[i]])
     
-#add support computation time for _both setting
+# Add support computation time for _both setting
 sup_timings = []
 for solver in SOLVERS:
     sup_timings.append(reader[solver+'_both_sup'])
@@ -71,6 +72,10 @@ writer = open(os.path.join(ANALYSES_DIR, 'timing_analyses.txt'), 'a')
 for i, legend in enumerate(LEGENDS):
     writer.write('###################  timing report on the \"'+ legend + '\" setting  ###################\n')
     all_timings[i] = [float(x) for x in all_timings[i]]
+    # Clean unknown runtimes
+    for t, time in enumerate(all_timings[i]):
+        if time >= TIMEOUT:
+            all_timings[i][t] = float('nan')
     writer.write('\nminimum runtime is: ' + str(min(all_timings[i])))
     writer.write('\nmaximum runtime is: ' + str(max(all_timings[i])))
     writer.write('\npopulation standard deviation runtime is: ' + str(np.nanstd(all_timings[i])))

@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------------------------
+-- we computed the size of biggest and smallest set in each model and added them together
+-- the same calculation has been done for JSupport. And here is the result:
+
+
+the aggregate number of elements in the SMALLEST support sets is: 3263
+the aggregate number of elements in the BIGGEST support sets is: 3609
+the aggregate number of elements in support sets computed by JSUPPORT is: 3078

@@ -100,8 +100,11 @@ writer.write('\nthe aggregate number of elements in the SMALLEST support sets is
 writer.write('\nthe aggregate number of elements in the BIGGEST support sets is: '+ str(int(np.nansum([i for i in bigs_all_models]))))
 jsup = []
 for model in all_models_sup_sets:
-    jsup.append(len(model[0]))
-writer.write('\nthe aggregate number of elements in support sets computed by JSUPPORT is: '+ str(sum([i for i in jsup if i != float('nan')])))
+    if model[0] == set([]):
+        jsup.append(float('nan'))
+    else:
+        jsup.append(len(model[0]))
+writer.write('\nthe aggregate number of elements in support sets computed by JSUPPORT is: '+ str(int(np.nansum([i for i in jsup]))))
 writer.close()
 
 #
@@ -152,7 +155,10 @@ for i in range(1, len(SETTINGS)):
 # extracting        
 for model in all_models_sup_sets:
     for i in range(1, len(SETTINGS)):
-        size_in_settings_all_models[i-1].append(len(model[i]))
+        if model [i] != set([]):
+            size_in_settings_all_models[i-1].append(len(model[i]))
+        else:
+            size_in_settings_all_models[i-1].append(float('nan'))
 # sorting
 sorted_settings_all_models  = []
 for i in range(1, len(SETTINGS)):
@@ -169,7 +175,7 @@ for item in sorted_jsup:
     jsup_y.append(item['size'])
 
 # visualize minimality
-'''
+
 fig = plt.figure()
 ax = plt.subplot(111) 
  
@@ -204,12 +210,12 @@ for indx, setting in enumerate(sorted_settings_all_models):
     fig2.savefig(os.path.join(os.pardir, ANALYSES_DIR, 'min_alg_tool_'+SETTINGS[indx+1]+'.png'))
     plt.close(fig2)
     
-    '''
     
-fig2 = plt.figure()
+    
+'''fig2 = plt.figure()
 ax2 = plt.subplot(111) 
 for indx, setting in enumerate(sorted_settings_all_models):
-    if 'both' in SETTINGS[indx+1]:
+    if 'pdr' in SETTINGS[indx+1]:
         plt.plot(x_axis, setting, label='Size of the support sets in ' + SETTINGS[indx+1])
 plt.plot(x_axis, jsup_y, label='Size of the support sets obtained by Jsupport')
 plt.xlabel('LUS models')
@@ -220,4 +226,4 @@ ax2.set_position([box.x0, box.y0, box.width * 0.8, box.height])
 ax2.legend(loc=2, prop={'size':10}) 
 plt.show()
 fig2.savefig(os.path.join(os.pardir, ANALYSES_DIR, 'min_pdr_tool_'+SETTINGS[indx+1]+'.png'))
-plt.close(fig2)
+plt.close(fig2)'''

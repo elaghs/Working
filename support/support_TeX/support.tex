@@ -1,11 +1,6 @@
 \section{Set of Support}
 \label{sec:support}
 
-\marginpar{Andrew: I'm still wavering on the name ``set of support''
-  something like ``valid core'' or ``validity core'' might be more
-  suggestive and fit with the running text better. But changing the
-  name would also mean changing lots of code and text.}
-
 Given a transition system which satisfies a safety property $P$, we
 want to know which parts of the system are necessary for satisfying
 the safety property. One possible way of asking this is, ``What is the
@@ -65,7 +60,6 @@ transition systems.
 \end{proof}
 
 \begin{algorithm}
-\label{alg:naive}
   \SetKwInOut{Input}{input}
   \SetKwInOut{Output}{output}
   \Input{$(I, \bigwedge T)\vdash P$}
@@ -79,6 +73,7 @@ transition systems.
   }
   \Return{S}
 \caption{Simple algorithm for computing a minimal set of support}
+\label{alg:naive}
 \end{algorithm}
 
 This lemma gives us a simple, but inefficient algorithm for computing
@@ -126,7 +121,6 @@ to find a set of support. This is the basis for
 Algorithm~\ref{alg:support-top}.
 
 \begin{algorithm}
-\label{alg:support-top}
   \SetKwInOut{Input}{input}
   \SetKwInOut{Output}{output}
   \Input{$P$ with $Q_1, \ldots, Q_n$ is $k$-inductive for $(I,
@@ -140,6 +134,7 @@ Algorithm~\ref{alg:support-top}.
     \land \cdots \land R_m$ is $k$-inductive for $(I, \bigwedge S)$}$ \\
   \Return{S}
 \caption{Efficient algorithm for computing a nearly minimal set of support}
+\label{alg:support-top}
 \end{algorithm}
 
 The first step in Algorithm~\ref{alg:support-top} is to minimize the
@@ -176,6 +171,85 @@ TODO: Show how our conjunction restriction can be used with activation
 literals to target any part of a transition system?
 
 TODO: Rewrite background based on what we use in this section
+
+\newcommand{\bq}{\textsc{BaseQuery}\xspace}
+\newcommand{\iq}{\textsc{InductiveQuery}\xspace}
+\newcommand{\fq}{\textsc{FullQuery}\xspace}
+
+\newcommand{\mink}{\textsc{MinimizeK}\xspace}
+\newcommand{\reduceinv}{\textsc{ReduceInvariants}\xspace}
+\newcommand{\sos}{\textsc{SetOfSupport}\xspace}
+
+\newcommand{\checksat}{\textsc{CheckSat}\xspace}
+\newcommand{\unsatcore}{\textsc{UnsatCore}\xspace}
+\newcommand{\unsat}{\textsc{UNSAT}\xspace}
+\newcommand{\sat}{\textsc{SAT}\xspace}
+
+\begin{figure}
+\begin{align*}
+  &\bq_1(I, T, P) \equiv \forall s_0.~ I(s_0) \Rightarrow P(s_0) \\
+%%%
+  &\bq_{k+1}(I, T, P) \equiv \bq_k(I, T, P) \land~ \\
+%
+  &\hspace{10pt}\left(\forall s_0, \ldots, s_k.~ I(s_0) \land T(s_0,
+  s_1) \land \cdots \land T(s_{k-1}, s_k) \Rightarrow P(s_k)\right)
+  \\[5pt]
+%%%
+  &\iq_k(T, Q, P) \equiv \\
+%
+  &\hspace{10pt}\left(\forall s_0, \ldots, s_k.~ Q(s_0) \land T(s_0,
+  s_1) \land \cdots \land Q(s_{k-1}) \land T(s_{k-1}, s_k) \Rightarrow
+  P(s_k)\right) \\[5pt]
+%%%
+  &\fq_k(I, T, P) \equiv \bq_k(I, T, P) \land \iq_k(T, P, P)
+\end{align*}
+\caption{$k$-induction queries}
+\label{fig:queries}
+\end{figure}
+
+\begin{algorithm}
+  $k \leftarrow 1$ \\
+  \While{$true$} {
+    \If{$\checksat(\neg\iq_k(T, P, P)) = \unsat$} {
+      \Return{k} \\
+    }
+    $k \leftarrow k + 1$ \\
+  }
+\caption{$\mink(T, P)$}
+\label{alg:minimize-k}
+\end{algorithm}
+
+\begin{algorithm}
+  $R \leftarrow \{P\}$ \\
+  Create activation literals $a_1, \ldots, a_n$ \\
+  $C \leftarrow \{a_1 \Rightarrow Q_1, \ldots, a_n \Rightarrow Q_n\}$ \\
+  \While{$true$} {
+    $\checksat(\neg\iq_k(T, \bigwedge C, \bigwedge R))$ \\
+    \If{$\unsatcore() = \emptyset$}{
+      \Return{R}
+    }
+    \For{$a_i \in \unsatcore()$}{
+      $R \leftarrow R \cup \{Q_i\}$ \\
+      $C \leftarrow C \setminus \{a_i \Rightarrow Q_i\}$ \\
+    }
+  }
+\caption{$\reduceinv_k(T, \{Q_1, \ldots, Q_n\}, P)$}
+\label{alg:reduce-invariants}
+\end{algorithm}
+
+\begin{algorithm}
+  Create activation literals $a_1, \ldots, a_n$ \\
+  $T \leftarrow (a_1 \Rightarrow T_1) \land \cdots \land (a_n \Rightarrow T_n)$ \\
+  $\checksat(\neg\fq_k(I, T, P))$ \\
+  $R \leftarrow \emptyset$
+  \For{$a_i \in \unsatcore()$}{
+    $R \leftarrow R \cup \{T_i\}$
+  }
+  \Return{R}
+  }
+\caption{$\sos_k(I, T_1 \land \ldots \land T_n, P)$}
+\label{alg:set-of-support}
+\end{algorithm}
 
 %%% Local Variables:
 %%% mode: latex

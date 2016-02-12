@@ -1,69 +1,76 @@
 \section{Set of Support}
 \label{sec:support}
 
+\newcommand{\bq}{\textsc{BaseQuery}\xspace}
+\newcommand{\iq}{\textsc{InductiveQuery}\xspace}
+\newcommand{\fq}{\textsc{FullQuery}\xspace}
+
+\newcommand{\mink}{\textsc{MinimizeK}\xspace}
+\newcommand{\reduceinv}{\textsc{ReduceInvariants}\xspace}
+\newcommand{\minsupport}{\textsc{MinimizeSupport}\xspace}
+
+\newcommand{\checksat}{\textsc{CheckSat}\xspace}
+\newcommand{\unsatcore}{\textsc{UnsatCore}\xspace}
+\newcommand{\unsat}{\textsc{UNSAT}\xspace}
+\newcommand{\sat}{\textsc{SAT}\xspace}
+
 Given a transition system which satisfies a safety property $P$, we
 want to know which parts of the system are necessary for satisfying
 the safety property. One possible way of asking this is, ``What is the
 most general version of this transition system that still satisfies
-the property?'' It turns out this has a very uninteresting answer. The
-most general system is $I(s) = P(s)$ and $T(s, s') = P(s')$, i.e., you
-start in any state satisfying the property and can transition to any
-state that still satisfies the property. This answer gives no insight
-into the original system because it has no connection to the original
-system. In this section we introduce the notion of {\em set of
-  support} which looks generalizing the original transition system
-while preserving a safety property.
+the property?'' The answer is disappointing. The most general system is
+$I(s) = P(s)$ and $T(s, s') = P(s')$, i.e., you start in any state
+satisfying the property and can transition to any state that still
+satisfies the property. This answer gives no insight into the original
+system because it has no connection to the original system. In this
+section we introduce the notion of {\em set of support} which looks at
+generalizing the original transition system while preserving a safety
+property.
 
 In order to talk about generalizing a transition system, we assume the
 transition relation of the system has the structure of a top-level
 conjunction. This assumption gives us a structure that we can easily
-manipulate as we generalize the system. Moreover, we will see later
-that this restriction can be effectively relaxed by introducing new
-variables which act like activation literals for pieces of the
-transition relation. For easy of notation we will write the top-level
-of the transition system $T_1(s, s') \land \cdots \land T_n(s, s')$ as
-just $T_1 \land \cdots \land T_n$ or even $\bigwedge T$ where $T =
-\{T_1, \ldots, T_n\}$. We now define our notion of generalization for
-transition systems.
-
-\marginpar{We may want to simplify notation and allow $(I, T)$ where
-  $T$ is a set to mean the same as $(I, \bigwedge T)$.}
+manipulate as we generalize the system. For ease of notation we will
+write the transition system $T_1(s, s') \land \cdots \land T_n(s, s')$
+as just $T_1 \land \cdots \land T_n$ or for short $\bigwedge T$ or
+$\widehat T$ where $T = \{T_1, \ldots, T_n\}$. We will use a similar
+notation of sets of invariants. We now define our notion of
+generalization for transition systems.
 
 \begin{definition}[Set of support]
   \label{def:set-of-support}
-  Let $(I, \bigwedge T)$ be a transition system and let $P$ be a
-  safety property with $(I, \bigwedge T)\vdash P$. We say $S \subseteq
-  T$ is a {\em set of support} for $(I, \bigwedge T)\vdash P$ iff $(I,
-  \bigwedge S) \vdash P$. When $I$, $T$, and $P$ can be inferred from
+  Let $(I, \widehat T)$ be a transition system and let $P$ be a
+  safety property with $(I, \widehat T)\vdash P$. We say $S \subseteq
+  T$ is a {\em set of support} for $(I, \widehat T)\vdash P$ iff $(I,
+  \widehat S) \vdash P$. When $I$, $T$, and $P$ can be inferred from
   context we will simply say $S$ is a set of support.
 \end{definition}
 
 \begin{definition}[Minimal Set of support]
   \label{def:minimal-set-of-support}
-  A set of support $S$ for $(I, \bigwedge T)\vdash P$ is minimal iff
+  A set of support $S$ for $(I, \widehat T)\vdash P$ is minimal iff
   there does not exist $M \subset S$ such that $M$ is a set of support
-  for $(I, \bigwedge T)\vdash P$.
+  for $(I, \widehat T)\vdash P$.
 \end{definition}
 
 \begin{lemma}
   \label{lem:set-of-support-monotonic}
-  Let $(I, \bigwedge T)$ be a transition system and let $P$ be a
-  safety property with $(I, \bigwedge T)\vdash P$. Let $S_1 \subseteq
-  S_2 \subseteq T$. If $S_1$ is a set of support for $(I, \bigwedge
-  T)\vdash P$ then $S_2$ is a set of support for $(I, \bigwedge T)\vdash P$.
+  Let $(I, \widehat T)$ be a transition system and let $P$ be a
+  safety property with $(I, \widehat T)\vdash P$. Let $S_1 \subseteq
+  S_2 \subseteq T$. If $S_1$ is a set of support for $(I, \widehat
+  T)\vdash P$ then $S_2$ is a set of support for $(I, \widehat T)\vdash P$.
 \end{lemma}
 \begin{proof}
-  From $S_1 \subseteq S_2$ we have $\forall s, s'.~ \bigwedge
-  S_1(s,s') \Rightarrow \bigwedge S_2(s, s')$. Thus the reachable
-  states of $(I, \bigwedge S_1)$ are a subset of the reachable states
-  of $(I, \bigwedge S_2)$. \qed
+  From $S_1 \subseteq S_2$ we have $\widehat S_2 \Rightarrow \widehat
+  S_1$. Thus the reachable states of $(I, \widehat S_2)$ are a subset
+  of the reachable states of $(I, \widehat S_1)$. \qed
 \end{proof}
 
-\begin{algorithm}
+\begin{algorithm}[t]
   \SetKwInOut{Input}{input}
   \SetKwInOut{Output}{output}
-  \Input{$(I, \bigwedge T)\vdash P$}
-  \Output{Minimal set of support for $(I, \bigwedge T)\vdash P$}
+  \Input{$(I, \widehat T)\vdash P$}
+  \Output{Minimal set of support for $(I, \widehat T)\vdash P$}
   \BlankLine
   $S \leftarrow T$ \\
   \For{$x \in S$} {
@@ -77,113 +84,62 @@ transition systems.
 \end{algorithm}
 
 This lemma gives us a simple, but inefficient algorithm for computing
-a minimal set of support, Algorithm~\ref{alg:naive}
- The resulting set
-of this algorithm is obviously a set of support for $(I, \bigwedge
-T)\vdash P$. Minimality requires more work.
+a minimal set of support, Algorithm~\ref{alg:naive}. The resulting set
+of this algorithm is obviously a set of support for $(I, \widehat
+T)\vdash P$. The following lemma shows that it is also minimal.
 
 \begin{lemma}
   The result of Algorithm~\ref{alg:naive} is a minimal set of support
-  for $(I, \bigwedge T)\vdash P$.
+  for $(I, \widehat T)\vdash P$.
 \end{lemma}
 \begin{proof}
-  Let the result be $R$. Suppose towards contradiction that $M \subset
-  R$ is a set of support. Take $x \in R\setminus M$. Since $x \in R$
-  it must be that during the algorithm $(I,
-  \bigwedge(S\setminus\{x\})\vdash P$ is not true for some set $S$
-  where $R \subseteq S$. We have $M \subset R \subseteq S$ and
-  $x\not\in M$, thus $M \subseteq S\setminus \{x\}$. Since $M$ is a
-  set of support, Lemma~\ref{lem:set-of-support-monotonic} says that
-  $S\setminus \{x\}$ is a set of support, and so $(I, \bigwedge
+  Let the result be $R$. Suppose towards contradiction that $R$ is not
+  minimal. Then there a set of support $M$ with $M \subset R$. Take $x
+  \in R\setminus M$. Since $x \in R$ it must be that during the
+  algorithm $(I, \bigwedge(S\setminus\{x\}))\vdash P$ is not true for
+  some set $S$ where $R \subseteq S$. We have $M \subset R \subseteq
+  S$ and $x\not\in M$, thus $M \subseteq S\setminus \{x\}$. Since $M$
+  is a set of support, Lemma~\ref{lem:set-of-support-monotonic} says
+  that $S\setminus \{x\}$ is a set of support, and so $(I, \bigwedge
   (S\setminus\{x\}))\vdash P$. This is a contradiction, thus $R$ must
   be minimal.
 \end{proof}
 
 This algorithm has two problems in practice. First, checking if a
-safety property holds on a system is undecidable in general thus the
-algorithm may never terminate. This may be even when the safety
-problem is easily provable over the original Lustre specification.
-Second, this algorithm is very inefficient since it requires
-attempting to re-prove the property multiple times.
+safety property holds is undecidable in general thus the algorithm may
+never terminate even when the safety problem is easily provable over
+the original transition system. Second, this algorithm is very
+inefficient since it tries to re-prove the property multiple times.
 
-The key to a more efficient algorithm is to make better use of the
-information that comes out of checking that $P$ holds on a system $(I,
-\bigwedge T)$. Thus we suppose that we know something stronger: $P$
-with invariants $Q_1, \ldots, Q_n$ is $k$-inductive for $(I, \bigwedge
-T)$. This gives us the broad structure of a proof for $P$ which allows
-us to reconstruct the proof over a modified transition system.
-However, the proof itself may be unnecessarily large. If $k$ larger
-than needed reconstructing the proof is needlessly expensive. If more
-invariants are used than needed, additional parts of the transition system
-may become part of the set of support making the result less precise.
-Thus we should first reduce these elements of the proof before trying
-to find a set of support. This is the basis for
-Algorithm~\ref{alg:support-top}.
-
-\begin{algorithm}
+\begin{algorithm}[t]
   \SetKwInOut{Input}{input}
   \SetKwInOut{Output}{output}
-  \Input{$P$ with $Q_1, \ldots, Q_n$ is $k$-inductive for $(I,
-    \bigwedge T)$}
-  \Output{Nearly minimal set of support for $(I, \bigwedge T)\vdash P$}
+  \Input{$P$ with invariants $Q$ is $k$-inductive for $(I,
+    \widehat T)$}
+  \Output{Set of support for $(I, \widehat T)\vdash P$}
   \BlankLine
-  $k \leftarrow \mbox{compute minimal value of $k$}$ \\
-  $\{R_1, \ldots, R_m\} \leftarrow \mbox{reduce set of invariants
-    $\{Q_1, \ldots, Q_n\}$} \\
-  $S \leftarrow \mbox{compute minimal $S\subseteq T$ such that $P \land R_1
-    \land \cdots \land R_m$ is $k$-inductive for $(I, \bigwedge S)$}$ \\
-  \Return{S}
+  $k \leftarrow \mink(I, \widehat T, P \land \widehat Q)$ \\
+  $R \leftarrow \reduceinv_k(\widehat T, Q, P)$ \\
+  \Return{$\minsupport_k(I, T, R)$}\\
 \caption{Efficient algorithm for computing a nearly minimal set of support}
-\label{alg:support-top}
+\label{alg:set-of-support}
 \end{algorithm}
 
-The first step in Algorithm~\ref{alg:support-top} is to minimize the
-value of $k$ such that $P$ with $Q_1, \ldots, Q_n$ is $k$-inductive
-for $(I, \bigwedge T)$. That is, we want to find $k'$ such that
-$\widehat{P} = P \land Q_1 \land \cdots \land Q_n$ is $k'$-inductive
-for $(I, \bigwedge T)$. Naively this would require checking the base
-case formulas and the inductive case formulas for $k'$-induction.
-However, we are searching for $k' \leq k$ so we know that the base
-case formulas will already hold since $\widehat{P}$ is $k$-inductive.
-Thus it sufficies to check just the inductive step formula. We can do
-this by checking the inductive step formula starting at $k' = 0$ and
-increasing up to potentially $k$.
-
-The second step in Algorithm~\ref{alg:support-top} is to reduce the
-set of invariants such that $P$ together with the invariants is
-$k$-inductive for $(I, \bigwedge T)$. First, note that it is not
-effective to naively try to remove the invariants one by one. It may
-be that two invariants mutually depend on each other while still being
-unnecessary towards proving $P$. Also, it is not effective to start
-with no invariants and try adding them since $P$ most likely requires
-some of the invariants, but we do not know which. Instead, we take a
-hybrid approach.
-
-TODO: Explaining this requires something like UNSAT cores. We need to
-add that into our formalism.
-
-Unfortuently, we do not guaranteed minimal set of invariants in step 2
-of Algorithm~\ref{alg:support-top}. This means the result of algorithm
-may not be a minimal support. In Section~\ref{sec:exprm} we study how
-close the algorithm comes to minimality in practice.
-
-TODO: Show how our conjunction restriction can be used with activation
-literals to target any part of a transition system?
-
-TODO: Rewrite background based on what we use in this section
-
-\newcommand{\bq}{\textsc{BaseQuery}\xspace}
-\newcommand{\iq}{\textsc{InductiveQuery}\xspace}
-\newcommand{\fq}{\textsc{FullQuery}\xspace}
-
-\newcommand{\mink}{\textsc{MinimizeK}\xspace}
-\newcommand{\reduceinv}{\textsc{ReduceInvariants}\xspace}
-\newcommand{\sos}{\textsc{SetOfSupport}\xspace}
-
-\newcommand{\checksat}{\textsc{CheckSat}\xspace}
-\newcommand{\unsatcore}{\textsc{UnsatCore}\xspace}
-\newcommand{\unsat}{\textsc{UNSAT}\xspace}
-\newcommand{\sat}{\textsc{SAT}\xspace}
+The key to a more efficient algorithm is to make better use of the
+information that comes out of model checking. In addition to knowing
+that $P$ holds on a system $(I, \widehat T)$, suppose we also know
+something stronger: $P$ with the invariant set $Q$ is $k$-inductive
+for $(I, \widehat T)$. This gives us the broad structure of a proof
+for $P$ which allows us to reconstruct the proof over a modified
+transition system. However, we must be careful since this proof
+structure may be more than is actually needed to establish $P$. In
+particular, $Q$ may contain unneeded invariants which could cause the
+set of support for $P \land \widehat Q$ to be larger than the set of
+support for $P$. Thus before computing the set of support we first try
+to reduce the set of invariants to be as small as possible. This
+operation is expensive when $k$ is large so as a first step we
+minimize $k$. This is the motivation behind
+Algorithm~\ref{alg:set-of-support}.
 
 \begin{figure}
 \begin{align*}
@@ -207,24 +163,55 @@ TODO: Rewrite background based on what we use in this section
 \label{fig:queries}
 \end{figure}
 
-\begin{algorithm}
-  $k \leftarrow 1$ \\
+To describe the details of Algorithm~\ref{alg:set-of-support} we
+define queries for the base and inductive steps of $k$-induction
+(Figure~\ref{fig:queries}). Note, in $\iq(T, Q, P)$ we separate the
+assumptions made on each step, $Q$, from the property we try to show
+on the last step, $P$. We use this separation when reducing the set of
+invariants.
+
+We assume that our queries are checked by an SMT solver. That is, we
+assume we have a function \checksat which determines if an
+existentially quantified formula is satisfiable or not. In order to
+efficiently manipulate our queries, we assume the ability to create
+{\em activation literals} which are simply distinguished Boolean
+variables. These activation literals are automatically held true when
+calling \checksat. In the case when the formula is unsatisfiable we
+assume we have a function \unsatcore which returns a minimal set of
+the activation literals such that the formula is unsatisfiable with
+those activation literals held true. In practice, SMT solvers often
+return a non-minimal set, but we can minimize the set via repeated
+calls to \checksat.
+
+\begin{algorithm}[t]
+  $k' \leftarrow 1$ \\
   \While{$true$} {
-    \If{$\checksat(\neg\iq_k(T, P, P)) = \unsat$} {
-      \Return{k} \\
+    \If{$\checksat(\neg\iq_{k'}(T, P, P)) = \unsat$} {
+      \Return{$k'$} \\
     }
-    $k \leftarrow k + 1$ \\
+    $k' \leftarrow k' + 1$ \\
   }
 \caption{$\mink(T, P)$}
 \label{alg:minimize-k}
 \end{algorithm}
 
-\begin{algorithm}
+The function $\mink(T, P)$ is defined in
+Algorithm~\ref{alg:minimize-k}. This function assumes that $P$ is
+$k$-inductive for $(I, T)$. It returns the smallest $k'$ such that $P$
+is $k'$-inductive for $(I, T)$. We start checking at $k' = 1$ since
+smaller values of $k'$ are much quicker to check than larger ones. The
+checking must eventually terminate since $P$ is $k$-inductive. We also
+only check the inductive query since we know the base query will be
+true for all $k' \leq k$. Although we describe each query in
+Algorithm~\ref{alg:minimize-k} separately, in practice they can be done
+incrementally to improve efficiency.
+
+\begin{algorithm}[t]
   $R \leftarrow \{P\}$ \\
   Create activation literals $a_1, \ldots, a_n$ \\
   $C \leftarrow \{a_1 \Rightarrow Q_1, \ldots, a_n \Rightarrow Q_n\}$ \\
   \While{$true$} {
-    $\checksat(\neg\iq_k(T, \bigwedge C, \bigwedge R))$ \\
+    $\checksat(\neg\iq_k(T, \widehat C, \widehat R))$ \\
     \If{$\unsatcore() = \emptyset$}{
       \Return{R}
     }
@@ -237,23 +224,63 @@ TODO: Rewrite background based on what we use in this section
 \label{alg:reduce-invariants}
 \end{algorithm}
 
-\begin{algorithm}
+The function $\reduceinv_k(T, \{Q_1, \ldots, Q_n\}, P)$ is defined in
+Algorithm~\ref{alg:reduce-invariants}. This function assumes that $P
+\land Q_1 \land \cdots \land Q_n$ is $k$-inductive for $(I, T)$. It
+returns a set $R \subseteq \{P, Q_1, \ldots, Q_n\}$ such that
+$\widehat R$ is $k$-inductive for $(I, T)$. Like \mink, this function
+only checks the inductive query since each element of $R$ is an
+invariant and therefore will always pass the base query. A significant
+complication for reducing invariants is that some invariants may
+mutually need each other, even though none of them is needed to prove
+$P$. Thus in Algorithm~\ref{alg:reduce-invariants} we find a minimal
+set of invariants needed to prove $P$, then we find a minimal set of
+invariants to prove those invariants, and so on. We terminate when no
+more invariants are needed to prove the properties in $R$. Even still,
+this does not guarantee the result is minimal. For example, we may
+find $P$ requires just $Q_1$, that $Q_1$ requires just $Q_2$, and that
+$Q_2$ does not require any other invariants. This gives the result
+$\{P, Q_1, Q_2\}$, but it may be that $Q_2$ alone is enough to prove
+$P$ thus the original result is not minimal. Also note, we do not care
+about the result of \checksat, only the \unsatcore that comes out of
+it. Since $P \land Q_1 \land \cdots \land Q_n$ is $k$-inductive, we
+know the \checksat call will always return \unsat.
+
+\begin{algorithm}[t]
   Create activation literals $a_1, \ldots, a_n$ \\
   $T \leftarrow (a_1 \Rightarrow T_1) \land \cdots \land (a_n \Rightarrow T_n)$ \\
   $\checksat(\neg\fq_k(I, T, P))$ \\
-  $R \leftarrow \emptyset$
+  $R \leftarrow \emptyset$ \\
   \For{$a_i \in \unsatcore()$}{
     $R \leftarrow R \cup \{T_i\}$
   }
   \Return{R}
   }
-\caption{$\sos_k(I, T_1 \land \ldots \land T_n, P)$}
-\label{alg:set-of-support}
+\caption{$\minsupport_k(I, \{T_1, \ldots, T_n\}, P)$}
+\label{alg:minimize-support}
 \end{algorithm}
+
+The function $\minsupport_k(I, \{T_1, \ldots, T_n\}, P)$ is defined in
+Algorithm~\ref{alg:minimize-support}. This function assumes that $P$
+is $k$-inductive for $(I, \widehat T)$. It returns a minimal set of
+support $R \subseteq \{T_1, \ldots, T_n\}$ such that $P$ is
+$k$-inductive for $(I, \widehat R)$.
+
+Our complete of support algorithm in
+Algorithm~\ref{alg:set-of-support} does not guarantee a minimal set of
+support. One reason is that \reduceinv does not guarantee a minimal
+set of invariants. A larger reason is that we only consider the
+invariants that the algorithm is given at the outset. It is possible
+that there are other invariants which could lead to a smaller set of
+support, but we do not search for them. In Section~\ref{sec:exprm}, we
+show that in practice our algorithm is nearly minimal and much more
+efficient that the naive algorithm.
 
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "main.tex"
 %%% End
 
-%%  LocalWords:  Lustre iff TODO invariants Minimality
+%%  LocalWords:  Lustre iff TODO invariants Minimality BaseQuery
+%%  LocalWords:  InductiveQuery FullQuery MinimizeK ReduceInvariants
+%%  LocalWords:  MinimizeSupport CheckSat UnsatCore UNSAT

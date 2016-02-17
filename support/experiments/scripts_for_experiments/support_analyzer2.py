@@ -7,6 +7,7 @@ __date__ = "$Feb 5, 2016 9:03:27 AM$"
 
 import os, sys, shelve, glob 
 import matplotlib.pyplot as plt
+import numpy as np
 
 ANALYSES_DIR = 'support_analyses'
 MINING_DIR = 'mining'
@@ -144,6 +145,10 @@ writer.write('\nthis is to report, for each model:\n')
 writer.write('\n    -- core set: intersection of all support sets obtained from different configurations')
 writer.write('\n    -- how far is the core set from a minimal set? (in terms of size difference)') 
 writer.write('\n    -- similarity = |intersection(sup_sets)| / |union(sup_sets)|')
+writer.write('\nmin similarity among all models: ' + str(min(sim_all_models)))
+writer.write('\nmax similarity among all models: '+ str(max(sim_all_models)))
+writer.write('\navg similarity among all models: '+ str(np.nanmean(sim_all_models)))
+writer.write('\nstdev similarity among all models: '+ str(np.nanstd(sim_all_models)))
 writer.write('\n-------------------------------------------------------------------------------------------------\n\n')
 for indx, model in enumerate(all_sup_info):
     writer.write('\n'+ str(indx) + ') ' + model[0:len(model)-13] + ':')
@@ -161,6 +166,39 @@ writer.close()
 
 # Build a list for x-axis
 x_axis = []
+for i in range(405):
+    x_axis.append(i)
+    
+
+'''#core sets
+y_axis = []
+
+for indx in range(len(all_sup_info)):
+    y_axis.append(core_elements_all_models[indx]['dif'])
+    
+y_axis = list(np.sort(y_axis))
+ 
+fig1 = plt.figure()  
+plt.plot(x_axis, y_axis)
+plt.xlabel('LUS mosdels')
+plt.ylabel('Size difference')
+plt.title('Size difference of the core set with the smallest support set per model') 
+plt.show()
+fig1.savefig(os.path.join(os.pardir, ANALYSES_DIR, 'core.png'))    
+'''
+
+
+#similarity
+fig1 = plt.figure()  
+plt.plot(x_axis, list(np.sort(sim_all_models)))
+plt.xlabel('LUS mosdels')
+plt.ylabel('Similarity')
+plt.title('Similarity analyses') 
+plt.show()
+fig1.savefig(os.path.join(os.pardir, ANALYSES_DIR, 'similarity.png'))
+
+
+'''x_axis = []
 for i in range(len(SETTINGS)):
     x_axis.append(i+2)
     
@@ -188,4 +226,4 @@ plt.show()
 fig2.savefig(os.path.join(os.pardir, ANALYSES_DIR, 'big_conf.png'))
 
 plt.close(fig1)
-plt.close(fig2)
+plt.close(fig2)'''

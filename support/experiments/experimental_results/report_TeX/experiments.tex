@@ -2,18 +2,19 @@
 \label{sec:exprm}
 The idea of \emph{set of support} \cite{setofsupp} was implemented in the \texttt{JKind} model checker \cite{jkind}.
 \texttt{JKind} is a multi-engine model checker some of whose engines are solver-based,
-which means they interact with SMT solvers (such as \texttt{Z3}, \texttt{Yices}, etc.) using the interfaces provided by \texttt{JKind}. There are two important solver-based engines that can be considered as primary proof-engines of \texttt{JKind}: \texttt{PDR} and \texttt{K-induction}. Current version of \texttt{JKind} has a new solver-based engine called \texttt{reduce-support}, which computes a set of support for properties of a given model.
+which means they interact with SMT solvers (such as \texttt{Z3}, \texttt{Yices}, etc.) using the interfaces provided by \texttt{JKind}. There are two important solver-based engines that can be considered as primary proof-engines of \texttt{JKind}: \texttt{PDR} and \texttt{K-induction}. Current version of \texttt{JKind} has a new solver-based engine called \texttt{reduce-support}, which computes sets of support for properties of a given model.
 
 While verifying safety properties of synchronous systems, since many of the properties are not K-inductively provable, \texttt{JKind} employs another engine, \emph{invariant generator},
 which extracts additional lemmas to prove such properties by \texttt{K-induction}. 
-This technique causes that the minimization algorithm implemented in the \texttt{reduce-support} engine not to generate a minimal set although the minimization algorithm really reduces unsat-cores to a minimal set.
+This technique causes that the minimization algorithm implemented in the \texttt{reduce-support} engine not to generate a minimal support set although the minimization algorithm really reduces unsat-cores to a minimal set.
 For this reason, 
 one major goal of our experiments was to evaluate the minimality of the support sets computed by \texttt{reduce-support}. 
 To do so, we needed to compare the output of our algorithm with another algorithm 
 which computes a truly minimal support set. Hence, we extended \texttt{JKind} 
 with another support computing tool, called \texttt{JSupport}.
 
- Essentially, \texttt{JKind} accepts LUS models for verification. Such models are made of a set of Nodes each of which embodies a set of inputs, outputs, equations, assertions, and properties. At a very high level, the way that this process works is as follows; for each property, each equation can be considered as an element of an initial set called \textit{\%SUPPORT}. Given initial support set $\mathbb{S}$ for property $\mathbb{P}$, \texttt{JKind} finds which of the items in $\mathbb{S}$ are necessary to prove $\mathbb{P}$. The output of this computation will be a minimal set of support for $\mathbb{P}$. In light of this process, the extended version of \texttt{JKind} we used for the experiments includes:
+ Essentially, \texttt{JKind} accepts LUS models for verification. 
+ Such models are made of a set of nodes each of which embodies a set of inputs, outputs, equations, assertions, and properties. At a very high level, the way that this process works is as follows; for each property, each equation can be considered as an element of an initial set called \textit{\%SUPPORT}. Given initial support set $\mathbb{S}$ for property $\mathbb{P}$, \texttt{JKind} finds which of the items in $\mathbb{S}$ are necessary to prove $\mathbb{P}$. The output of this computation will be a (closely) minimal set of support for $\mathbb{P}$. In light of this process, the extended version of \texttt{JKind} we used for the experiments includes:
  
 \begin{itemize}
     \item an algorithm to compute a truly minimal set of support, i.e. \texttt{JSupport}.

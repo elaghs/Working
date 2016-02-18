@@ -76,15 +76,30 @@ def find_sb_size(list_of_sets):
         return (float('nan'), float('nan'))
         pass
 
+num_of_nans = 0
+# add sizes of all sets together
+def add_size_of_all_sets (list_of_sets):
+    sizes = []
+    num_of_nans = 0
+    for item in list_of_sets:
+        if item != set([]):
+            sizes.append(len(item))
+        else:
+            num_of_nans += 1
+    return (sum(sizes), num_of_nans)
  
 # size of the smallest and biggest sets in each model
 smalls_all_models = [] 
 bigs_all_models = []
+size_all_models = 0
 
 for item in all_models_sup_sets:
     (s, b) = find_sb_size(item)
     smalls_all_models.append(s)
     bigs_all_models.append(b)
+    (siz,n) = add_size_of_all_sets(item[1:len(item)])
+    size_all_models += siz
+    num_of_nans += n
     
 
 #
@@ -105,6 +120,9 @@ for model in all_models_sup_sets:
     else:
         jsup.append(len(model[0]))
 writer.write('\nthe aggregate number of elements in support sets computed by JSUPPORT is: '+ str(int(np.nansum([i for i in jsup]))))
+writer.write('\naverage size of sets computed by JKind is'+ 
+                '(size of all (12 * 405) computed support sets by JKind/ (12 * 405), excluding unknown results: ' +
+    str(size_all_models/(12*405 - num_of_nans)) +'\n')
 writer.close()
 
 #
@@ -210,6 +228,8 @@ for indx, setting in enumerate(sorted_settings_all_models):
     fig2.savefig(os.path.join(os.pardir, ANALYSES_DIR, 'min_alg_tool_'+SETTINGS[indx+1]+'.png'))
     plt.close(fig2)
     '''
+    
+'''    
 # the same analyses for k_ind, pdr, both...    
 writer = open(os.path.join(os.pardir, ANALYSES_DIR, 'minimality_summary.txt'), 'a') 
 writer.write('\ndifference of support sets computed by both PDR & K_induction and JSupport\n')
@@ -263,7 +283,7 @@ writer.write('\nstdev difference size between JSupport and sets computed by math
 writer.write('\n-------------------------------------------------------------------------------------------------\n')
 
 writer.close()
-
+'''
 
 '''fig2 = plt.figure()
 ax2 = plt.subplot(111) 

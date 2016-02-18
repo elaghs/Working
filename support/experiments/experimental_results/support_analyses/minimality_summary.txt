@@ -1,0 +1,83 @@
+difference of support sets computed by K-induction and JSupport-------------------------------------------------------------------------------------------------
+-- difference of support sets computed by K-induction and JSupport
+min difference size between JSupport and sets computed by k_induction: -2
+max difference size between JSupport and sets computed by k_induction: 28
+avg difference size between JSupport and sets computed by k_induction: 0.542402826855
+stdev difference size between JSupport and sets computed by k_induction: 1.83096758108
+
+min difference size between JSupport and sets computed by z3_k_ind: -2
+max difference size between JSupport and sets computed by z3_k_ind: 28
+avg difference size between JSupport and sets computed by z3_k_ind: 0.554770318021
+stdev difference size between JSupport and sets computed by z3_k_ind: 1.84170479104
+
+min difference size between JSupport and sets computed by yices_k_ind: -2
+max difference size between JSupport and sets computed by yices_k_ind: 28
+avg difference size between JSupport and sets computed by yices_k_ind: 0.544169611307
+stdev difference size between JSupport and sets computed by yices_k_ind: 1.83814882284
+
+min difference size between JSupport and sets computed by smtinterpol_k_ind: -2
+max difference size between JSupport and sets computed by smtinterpol_k_ind: 28
+avg difference size between JSupport and sets computed by smtinterpol_k_ind: 0.533568904594
+stdev difference size between JSupport and sets computed by smtinterpol_k_ind: 1.82099174568
+
+min difference size between JSupport and sets computed by mathsat_k_ind: -2
+max difference size between JSupport and sets computed by mathsat_k_ind: 28
+avg difference size between JSupport and sets computed by mathsat_k_ind: 0.537102473498
+stdev difference size between JSupport and sets computed by mathsat_k_ind: 1.82286268091
+-------------------------------------------------------------------------------------------------
+
+difference of support sets computed by PDR and JSupport
+
+min difference size between JSupport and sets computed by PDR: -2
+max difference size between JSupport and sets computed by PDR: 28
+avg difference size between JSupport and sets computed by PDR: 0.676813471503
+stdev difference size between JSupport and sets computed by PDR: 1.81917854303
+
+min difference size between JSupport and sets computed by z3_pdr: -2
+max difference size between JSupport and sets computed by z3_pdr: 28
+avg difference size between JSupport and sets computed by z3_pdr: 0.69689119171
+stdev difference size between JSupport and sets computed by z3_pdr: 1.85171553942
+
+min difference size between JSupport and sets computed by yices_pdr: -2
+max difference size between JSupport and sets computed by yices_pdr: 28
+avg difference size between JSupport and sets computed by yices_pdr: 0.668393782383
+stdev difference size between JSupport and sets computed by yices_pdr: 1.80783728759
+
+min difference size between JSupport and sets computed by smtinterpol_pdr: -2
+max difference size between JSupport and sets computed by smtinterpol_pdr: 28
+avg difference size between JSupport and sets computed by smtinterpol_pdr: 0.673575129534
+stdev difference size between JSupport and sets computed by smtinterpol_pdr: 1.81307175461
+
+min difference size between JSupport and sets computed by mathsat_pdr: -2
+max difference size between JSupport and sets computed by mathsat_pdr: 28
+avg difference size between JSupport and sets computed by mathsat_pdr: 0.668393782383
+stdev difference size between JSupport and sets computed by mathsat_pdr: 1.80353309284
+-------------------------------------------------------------------------------------------------
+
+difference of support sets computed by both PDR & K_induction and JSupport
+
+min difference size between JSupport and sets computed by both PDR & K_ind: -2
+max difference size between JSupport and sets computed by both PDR & K_ind: 28
+avg difference size between JSupport and sets computed by both PDR & K_ind: 0.660621761658
+stdev difference size between JSupport and sets computed by both PDR & K_ind: 1.75104813229
+
+min difference size between JSupport and sets computed by z3_both: -2
+max difference size between JSupport and sets computed by z3_both: 28
+avg difference size between JSupport and sets computed by z3_both: 0.663212435233
+stdev difference size between JSupport and sets computed by z3_both: 1.72921978916
+
+min difference size between JSupport and sets computed by yices_both: -2
+max difference size between JSupport and sets computed by yices_both: 28
+avg difference size between JSupport and sets computed by yices_both: 0.650259067358
+stdev difference size between JSupport and sets computed by yices_both: 1.72138708837
+
+min difference size between JSupport and sets computed by smtinterpol_both: -2
+max difference size between JSupport and sets computed by smtinterpol_both: 28
+avg difference size between JSupport and sets computed by smtinterpol_both: 0.637305699482
+stdev difference size between JSupport and sets computed by smtinterpol_both: 1.71342065977
+
+min difference size between JSupport and sets computed by mathsat_both: -2
+max difference size between JSupport and sets computed by mathsat_both: 28
+avg difference size between JSupport and sets computed by mathsat_both: 0.69170984456
+stdev difference size between JSupport and sets computed by mathsat_both: 1.83680948853
+-------------------------------------------------------------------------------------------------

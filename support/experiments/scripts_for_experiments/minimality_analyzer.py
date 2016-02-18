@@ -174,7 +174,7 @@ jsup_y = []
 for item in sorted_jsup:
     jsup_y.append(item['size'])
 
-# visualize minimality
+'''# visualize minimality
 
 fig = plt.figure()
 ax = plt.subplot(111) 
@@ -191,9 +191,9 @@ ax.legend(loc=2, prop={'size':10})
 plt.show()
 fig.savefig(os.path.join(os.pardir, ANALYSES_DIR, 'minimality_analyses.png'))
 plt.close(fig)
+'''
 
-
-# visualize set size of different settings vs JSupport
+'''# visualize set size of different settings vs JSupport
 
 for indx, setting in enumerate(sorted_settings_all_models):
     fig2 = plt.figure()
@@ -209,13 +209,67 @@ for indx, setting in enumerate(sorted_settings_all_models):
     plt.show()
     fig2.savefig(os.path.join(os.pardir, ANALYSES_DIR, 'min_alg_tool_'+SETTINGS[indx+1]+'.png'))
     plt.close(fig2)
-    
-    
-    
+    '''
+# the same analyses for k_ind, pdr, both...    
+writer = open(os.path.join(os.pardir, ANALYSES_DIR, 'minimality_summary.txt'), 'a') 
+writer.write('\ndifference of support sets computed by both PDR & K_induction and JSupport\n')
+
+sizes_eng = []
+all_differences = []
+z3_dif = []
+yices_dif = []
+smtinterpol_dif = []
+mathsat_dif = []
+
+for indx, setting in enumerate(sorted_settings_all_models):
+    if 'both' in SETTINGS[indx+1]:
+        sizes_eng.append(setting)
+for s, item in enumerate(sizes_eng):        
+    for i, model in enumerate(jsup_y):       
+        all_differences.append(item[i] - jsup_y[i])
+        if s == 0:
+            z3_dif.append(item[i] - jsup_y[i])
+        elif s == 1:
+            yices_dif.append(item[i] - jsup_y[i])
+        elif s == 2:
+            smtinterpol_dif.append(item[i] - jsup_y[i])
+        elif s == 3:
+            mathsat_dif.append(item[i] - jsup_y[i])
+            
+writer.write('\nmin difference size between JSupport and sets computed by both PDR & K_ind: ' + str(min(all_differences)))
+writer.write('\nmax difference size between JSupport and sets computed by both PDR & K_ind: '+ str(max(all_differences)))
+writer.write('\navg difference size between JSupport and sets computed by both PDR & K_ind: '+ str(np.nanmean(all_differences)))
+writer.write('\nstdev difference size between JSupport and sets computed by both PDR & K_ind: '+ str(np.nanstd(all_differences)))
+
+writer.write('\n\nmin difference size between JSupport and sets computed by z3_both: ' + str(min(z3_dif)))
+writer.write('\nmax difference size between JSupport and sets computed by z3_both: '+ str(max(z3_dif)))
+writer.write('\navg difference size between JSupport and sets computed by z3_both: '+ str(np.nanmean(z3_dif)))
+writer.write('\nstdev difference size between JSupport and sets computed by z3_both: '+ str(np.nanstd(z3_dif)))
+
+writer.write('\n\nmin difference size between JSupport and sets computed by yices_both: ' + str(min(yices_dif)))
+writer.write('\nmax difference size between JSupport and sets computed by yices_both: '+ str(max(yices_dif)))
+writer.write('\navg difference size between JSupport and sets computed by yices_both: '+ str(np.nanmean(yices_dif)))
+writer.write('\nstdev difference size between JSupport and sets computed by yices_both: '+ str(np.nanstd(yices_dif)))
+
+writer.write('\n\nmin difference size between JSupport and sets computed by smtinterpol_both: ' + str(min(smtinterpol_dif)))
+writer.write('\nmax difference size between JSupport and sets computed by smtinterpol_both: '+ str(max(smtinterpol_dif)))
+writer.write('\navg difference size between JSupport and sets computed by smtinterpol_both: '+ str(np.nanmean(smtinterpol_dif)))
+writer.write('\nstdev difference size between JSupport and sets computed by smtinterpol_both: '+ str(np.nanstd(smtinterpol_dif)))
+
+writer.write('\n\nmin difference size between JSupport and sets computed by mathsat_both: ' + str(min(mathsat_dif)))
+writer.write('\nmax difference size between JSupport and sets computed by mathsat_both: '+ str(max(mathsat_dif)))
+writer.write('\navg difference size between JSupport and sets computed by mathsat_both: '+ str(np.nanmean(mathsat_dif)))
+writer.write('\nstdev difference size between JSupport and sets computed by mathsat_both: '+ str(np.nanstd(mathsat_dif)))
+writer.write('\n-------------------------------------------------------------------------------------------------\n')
+
+writer.close()
+
+
 '''fig2 = plt.figure()
 ax2 = plt.subplot(111) 
+
 for indx, setting in enumerate(sorted_settings_all_models):
-    if 'pdr' in SETTINGS[indx+1]:
+    if 'k_ind' in SETTINGS[indx+1]:
         plt.plot(x_axis, setting, label='Size of the support sets in ' + SETTINGS[indx+1])
 plt.plot(x_axis, jsup_y, label='Size of the support sets obtained by Jsupport')
 plt.xlabel('LUS models')
@@ -225,5 +279,6 @@ box = ax2.get_position()
 ax2.set_position([box.x0, box.y0, box.width * 0.8, box.height])
 ax2.legend(loc=2, prop={'size':10}) 
 plt.show()
-fig2.savefig(os.path.join(os.pardir, ANALYSES_DIR, 'min_pdr_tool_'+SETTINGS[indx+1]+'.png'))
-plt.close(fig2)'''
+fig2.savefig(os.path.join(os.pardir, ANALYSES_DIR, 'min_kind_tool_'+SETTINGS[indx+1]+'.png'))
+plt.close(fig2)
+'''

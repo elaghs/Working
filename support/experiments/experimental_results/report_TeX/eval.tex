@@ -4,24 +4,24 @@ This section evaluates our approach by addressing the following research questio
 
 \ela{could you please rephrase these questions?! having hard time saying them clearly :-( }
 \begin{itemize}
-    \item \textbf{RQ1:} How much overhead does computation of set of support add to the proofs? 
-    \item \textbf{RQ2:} How dependent is our approach on different tools and proof engines? Does different solvers/ proof engines generate different support set? If so, to what extent are they different?
-    \item \textbf{RQ3:} Is there any relationship between the size of a computed support set and 
-    solvers/ proof engines? 
+    \item \textbf{RQ1:} How much overhead does computation of set of support add to the proofs?
+    \item \textbf{RQ2:} How dependent is our approach on different tools and proof engines? Do different solvers/ proof engines generate different support set? If so, to what extent are they different?
+    \item \textbf{RQ3:} Is there any relationship between the size of a computed support set and
+    solvers/ proof engines?
     \item \textbf{RQ4:} Is there any relationship between the size of the model and the variety of support sets?
     \item \textbf{RQ5:} How close to minimal are the support sets computed by our algorithm? For each model, we have 12 sets of support computed by \texttt{JKind}, and one \emph{minimal} set computed by \texttt{JSupport}; we would like to know which configurations generated sets that are very close or far to the minimal one.
     \item \textbf{RQ6:} How do different solvers perform on computing support? And, how efficient is it in comparison with \texttt{JSupport}?
-\end{itemize} 
+\end{itemize}
 
 \subsection{Analytical Results}
 \label{sec:res}
-This section answers the aforementioned research questions briefly describing the way the results are analyzed. Note that the results of 10 models with unprovable properties are omitted in calculations. In addition, while analyzing support sets, \texttt{K-induction} settings that timed out were not considered because they failed to prove the properties. 
+This section addresses the aforementioned research questions briefly describing the way the results were analyzed. Note that the results of 10 models with unprovable properties were omitted in calculations. In addition, while analyzing support sets, \texttt{K-induction} settings that timed out were not considered because they failed to prove the properties.
 
 In general, for timing analyses, from all 13 configurations, we only considered the settings where both \texttt{PDR} and \texttt{K-induction} engines were activated. Since this configuration is a default setting in \texttt{JKind}, we only care about timing while both engines are employed. Therefore, $(4 \times 405) = 1620$ of all 5265 runs have been analyzed to address time-efficiency questions.
 
 
 % RQ1: the overhead of support computation on different solvers
-\textbf{RQ1.} The overhead is defined as the percentage of the overall runtime is dedicated to support computation:
+\textbf{RQ1.} The overhead is defined as the percentage of the overall runtime that is dedicated to support computation:
 
 \mbox{$overhead\_percentage = 100 \times (support\_runtime \div overall\_runtime)$}
 
@@ -60,14 +60,14 @@ In general, for timing analyses, from all 13 configurations, we only considered 
 \begin{center}
 $d_J(\small{A}, \small{B}) = 1 - \frac{|A \cap B|}{|A \cup B|} ,\hspace{9pt} 0 \leq d_J(\small{A}, \small{B}) \leq 1$
 \end{center}
-\vspace{6pt} 
+\vspace{6pt}
 
-Therefore, we obtained $\binom{13}{2} = 78$ combinations of distances per model. Then, minimum, maximum, average, and standard deviation of the distances were calculated (Fig~\ref{fig:jacdis}), by which, again, we calculate these four measures among all 405 models. The following summarizes the result of this analysis:
+Therefore, we obtained $\binom{13}{2} = 78$ combinations of distances per model. Then, minimum, maximum, average, and standard deviation of the distances were calculated (Fig~\ref{fig:jacdis}), by which, again, we calculated these four measures among all 405 models. The following summarizes the result of this analysis:
 \begin{itemize}
-  \item Minimum Jaccard distance among all models is: 0.0 
-  \item Maximum Jaccard distance among all models is: 0.882 
-  \item Average Jaccard distance among all models is: 0.027 
-  \item Standard deviation of Jaccard distance among all models is: 0.062 
+  \item minimum Jaccard distance among all models is: 0.0
+  \item maximum Jaccard distance among all models is: 0.882
+  \item average Jaccard distance among all models is: 0.027
+  \item standard deviation of Jaccard distance among all models is: 0.062
 \end{itemize}
 
 
@@ -80,13 +80,14 @@ Therefore, we obtained $\binom{13}{2} = 78$ combinations of distances per model.
 \vspace{6pt}
 \noindent\fbox{%
     \parbox{\textwidth}{%
-        Support sets computed with different solvers and engines have an average Jaccard distance of 0.027, which implies our algorithm has very small dependency on tools and proof algorithms.
+        Support sets computed with different solvers and engines have an average Jaccard distance of 0.027, which implies our algorithm has very small dependency on tools and proof algorithms. 
+        In addition, it also implies the generated sets are very close to each other.
     }%
 }
  \vspace{9pt}
- 
-\textbf{(2)} Since one goal was to know to what extent computed support sets are different, and which configurations have generated more different/similar sets. We analyzed the results,
-and it turns out 174 models of 405 contain at least two different support sets (which means in 231 models, all 13 sets of support are the same). We analyzed those 174 models; for each of them, pairwise Jaccard distance between sets was compared, and configurations with maximum/ minimum distances were collected. Fig~\ref{fig:maxdis} and Fig~\ref{fig:mindis} show the results. For example, in Fig~\ref{fig:maxdis}, in 20 models out of 405, \texttt{JSupport} and the configuration where \texttt{Z3} and both proof engines were employed, Jaccard distance between support sets computed by them is maximum. As you can see, different configurations of \texttt{JKind} do not affect very much the variety of the generated sets. However, \texttt{JSupport} and \texttt{JKind} configurations have had maximum distances most of the time. Even so, the frequency of such maximum distances among 405 models is very low.
+
+\textbf{(2)} One of our goals was to know to what extent computed support sets are different, and which configurations have generated more different/similar sets. We analyzed the results,
+and it turns out 174 models of 405 contain at least two different support sets, which means in 231 models, all 13 sets of support are the same. For each of those 174 models, pairwise Jaccard distance between sets was compared, and configurations with maximum/ minimum distances were collected. Fig~\ref{fig:maxdis} and Fig~\ref{fig:mindis} show the results. For example, in Fig~\ref{fig:maxdis}, in 20 models out of 405, \texttt{JSupport} and the configuration where \texttt{Z3} and both proof engines were employed, Jaccard distance between support sets computed by them is maximum. As you can see, different configurations of \texttt{JKind} do not affect very much the variety of the generated sets. However, \texttt{JSupport} and \texttt{JKind} configurations have had maximum distances most of the time. Even so, the frequency of such maximum distances among 405 models is very low.
 
 
 \begin{figure}
@@ -110,14 +111,14 @@ and it turns out 174 models of 405 contain at least two different support sets (
 }
  \vspace{9pt}
 
-\textbf{(3)} In addition to Jaccard distance, we also measured the similarity among all sets computed in different configurations per model. Let $S_M$ be a set of all support sets computed for model $M$ (i.e. in our experiments, $S_M$ is a set of 13 sets).  We define similarity per model as follows:
+\textbf{(3)} In addition to Jaccard distance, we also measured similarity among all sets computed in different configurations per model. Let $S_M$ be a set of all support sets computed for model $M$ (i.e. in our experiments, $S_M$ is a set of 13 sets).  We define similarity per model as follows:
 
 \begin{center}
 $similarity = \frac{|\bigcap_{i=1}^{13} s_{Mi}|}{|\bigcup_{i=1}^{13} s_{Mi}|}, \hspace{9pt} s_{Mi} \in S_M$
 \end{center}
 \vspace{6pt} \ela{should see if this formula has any name in mathematics?!}
 
-Needless to say, $0 \leq similarity \leq 1$, and if all the sets in $S_M$ are the same, \textit{similarity} will be 1. So the closer to 1 it is, the more similar sets we have. Fig~\ref{fig:sim} shows similarity in all models. Here is also a summary of minimum, maximum, average, and standard deviation of similarity among all models:
+Needless to say, $0 \leq similarity \leq 1$, and if all the sets in $S_M$ are the same, \textit{similarity} will be 1. So the closer to 1 it is, the more similar sets $S_M$ has. Fig~\ref{fig:sim} shows similarity in all models. Here is also a summary of minimum, maximum, average, and standard deviation of similarity among all models:
 \begin{itemize}
   \item minimum similarity among all models is: 0.12
   \item maximum similarity among all models is: 1.0
@@ -135,14 +136,14 @@ Needless to say, $0 \leq similarity \leq 1$, and if all the sets in $S_M$ are th
 \vspace{6pt}
 \noindent\fbox{%
     \parbox{\textwidth}{%
-        An average \textit{similarity} of 0.884 shows that support sets computed in different 
+        An average \textit{similarity} of 0.884 shows that support sets computed in different
         configurations are very similar. So, the dependency of our algorithm to different solvers and proof engines is negligible.
     }%
 }
  \vspace{9pt}
 
 \textbf{(4)} We also calculated a \emph{core} support set for each model of the benchmark; A core set of model $M$ is defined as
-$\bigcap_{i=1}^{13} s_{Mi},   \hspace{9pt} s_{Mi} \in S_M$. Then, the size difference of the core set with the smallest support set of $M$ was calculated. The results are visualized in Fig~\ref{fig:core}
+$\bigcap_{i=1}^{13} s_{Mi},   \hspace{9pt} s_{Mi} \in S_M$. Then, the size difference of the core set with the smallest support set of $M$ was calculated. The results are visualized in Fig~\ref{fig:core}.
 
 
 \begin{figure}
@@ -160,10 +161,10 @@ $\bigcap_{i=1}^{13} s_{Mi},   \hspace{9pt} s_{Mi} \in S_M$. Then, the size diffe
  \vspace{9pt}
 
 % RQ3: Is there any relationship between the size of a computed support set and
-%solvers/ proof engines? 
+%solvers/ proof engines?
 \textbf{RQ3:} To address this question, we analyzed the raw data with two different approaches described in the following.
- 
-\textbf{(1)} We analyzed the sets of each 405 models. In each model, we looked for configurations that generated the biggest support set and ones that generated the smallest. Fig~\ref{fig:smallest} and Fig~\ref{fig:bigest} visualize the result of this analysis. For example, as you can see in Fig~\ref{fig:bigest}, \texttt{JSupport} generated biggest support sets in less than 10 models. Note that it implies there is at least one \texttt{JKind} configuration that generated the set with a smaller size.
+
+\textbf{(1)} We analyzed the sets of each 405 models. In each model, we looked for configurations that generated the biggest support set and ones that generated the smallest. Fig~\ref{fig:smallest} and Fig~\ref{fig:bigest} visualize the results of this analysis. For example, as you can see in Fig~\ref{fig:bigest}, \texttt{JSupport} generated biggest support sets in less than 10 models. Note that it implies there is at least one \texttt{JKind} configuration that generated the set with a smaller size.
 
 
 \begin{figure}
@@ -182,7 +183,7 @@ $\bigcap_{i=1}^{13} s_{Mi},   \hspace{9pt} s_{Mi} \in S_M$. Then, the size diffe
 \vspace{6pt}
 \noindent\fbox{%
     \parbox{\textwidth}{%
-    Solvers/ proof engines have negligible effects on the size of the support set computed by \texttt{JKind}.
+    Solvers/ proof engines have negligible effects on the size of the support sets computed by \texttt{JKind}.
     }%
 }
  \vspace{9pt}
@@ -235,7 +236,7 @@ $\bigcap_{i=1}^{13} s_{Mi},   \hspace{9pt} s_{Mi} \in S_M$. Then, the size diffe
      Yices, Both engines & -2 & 28 & 0.650 & 1.721 \\[0.5ex]
      SMTInterpol, Both engines & -2 & 28 & 0.637 & 1.713 \\[0.5ex]
      MathSAT, Both engines & -2 & 28 & 0.692 & 1.837 \\[0.5ex]
-     \hline     
+     \hline
    \end{tabular}
   \caption{\small{Summary of minimality analyses}}\label{tab:minimality}
 \end{table}
@@ -249,11 +250,11 @@ $\bigcap_{i=1}^{13} s_{Mi},   \hspace{9pt} s_{Mi} \in S_M$. Then, the size diffe
  \vspace{9pt}
 
 % RQ4: Is there any relationship between the model size and variety of its support sets?
-\textbf{RQ4.} The size of the models in our benchmark is between 0 KB and 10 KB. 
-We divided the models into 9 different categories based on their sizes such that $category_i$ contains
-all models whose sizes are between $(i - 1)$ KB and $i$ KB. Then, using the \textit{similarity} formula defined in RQ2, the similarity for each model in each category was calculated. After that, minimum, maximum, average, standard deviation of the data were obtained per category. Table~\ref{tab:modelsize} summarizes the result of this analysis; the column \emph{number} in the table shows the number of models in each category, which means the sum of the numbers in the column is 405 (for example, there are 6 models whose sizes are between 8 KB and 9 KB, and in all of them \textit{similarity} is 1.0).
- 
- 
+\textbf{RQ4.} The size of the models in our benchmark is between 0 KB and 10 KB.
+We divided the models into 9 different categories based on their size such that $category_i$ contains
+all models whose sizes are between $(i - 1)$ KB and $i$ KB. Then, using the \textit{similarity} formula defined in RQ2, similarity for each model in each category was calculated. After that, minimum, maximum, average, standard deviation of the data were obtained per category. Table~\ref{tab:modelsize} summarizes the result of this analysis; the column \emph{number} in the table shows the number of models in each category, which means the sum of the numbers in the column is 405 (for example, there are 6 models whose sizes are between 8 KB and 9 KB, and in all of them \textit{similarity} is 1.0).
+
+
 \begin{table}
   \centering
   \begin{tabular}{ |c||c|c|c|c|c|}
@@ -278,12 +279,12 @@ all models whose sizes are between $(i - 1)$ KB and $i$ KB. Then, using the \tex
 \vspace{6pt}
 \noindent\fbox{%
     \parbox{\textwidth}{%
-     The size of the model does not affect the stability of our algorithm; 
+     The size of the model does not affect the stability of our algorithm;
      if a model is large, it does not mean that it will have a lot of different minimal support sets. In other words, minimal support sets of a given property computed by \texttt{JKind} will be very similar to each other.
     }%
 }
  \vspace{9pt}
- 
+
 % RQ5: How close to minimal are the support sets computed by our algorithm? For each model, we have 12 sets of support computed by \texttt{JKind}, and one \emph{minimal} set computed by \texttt{JSupport}; we would like to know which configurations generated sets that are very close or far to the minimal one.
 
 \textbf{RQ5.} To address this question, we analyzed our experimental data from different viewpoints described in the following.
@@ -310,9 +311,9 @@ all models whose sizes are between $(i - 1)$ KB and $i$ KB. Then, using the \tex
     }%
 }
  \vspace{9pt}
- 
+
 \textbf{(2)} For 405 models, we calculated minimum, maximum, avgerage, and standard deviation of Jaccard distance between JSupport and each configuration
-to see which configuration generates support sets close to minimal. 
+to see which configuration generates support sets close to minimal.
 Table~\ref{tab:jsupconf} represents the result of this analysis; for example, configuration \emph{(Z3, Both)}, shows that \texttt{JKind} with \texttt{Z3} and both \texttt{K-induction} and \texttt{PDR} engines has an average Jaccard distance of 0.106 (in 405 models) from \texttt{JSupport}.
 
 
@@ -368,14 +369,14 @@ We computed the size of the biggest and smallest sets per model, then added them
 \vspace{6pt}
 \noindent\fbox{%
     \parbox{\textwidth}{%
-    Average size of sets computed by \texttt{JKind} is 8.55. And, average size of sets computed by \texttt{JSupport} is 7.60. 
+    Average size of sets computed by \texttt{JKind} is 8.55. And, average size of sets computed by \texttt{JSupport} is 7.60.
     Therefore, in average, support sets computed by \texttt{JKind} are 88\% close to minimal.
     %  (1 - ((8.55 - 7.6)/ 7.6))  * 100 = 87.5%
     }%
 }
  \vspace{9pt}
-  
- 
+
+
 % RQ6: overall runtime in JSupport and different solvers
 \textbf{RQ6.} In addition to overhead, it is also important to know how efficiently \texttt{JKind} performs on computing set of support in comparison with \texttt{JSupport}. Table~\ref{tab:eff-comp-jsup} compares overall runtime of support computation in different solvers and \texttt{JSupport}.
 
@@ -440,7 +441,7 @@ For 405 models, runtime of support computation in the configurations where both 
 \vspace{6pt}
 \noindent\fbox{%
     \parbox{\textwidth}{%
-        Time-efficiency of computing support set in \texttt{JKind} is not quite solver-dependent. However, SMTInterpol works less efficiently in comparison with others. 
+        Time-efficiency of computing support set in \texttt{JKind} is not quite solver-dependent. However, SMTInterpol works less efficiently in comparison with others.
     }%
 }
 \noindent\fbox{%
@@ -448,4 +449,4 @@ For 405 models, runtime of support computation in the configurations where both 
         Support computation by \texttt{JSupport} is much more time-consuming than \texttt{reduce-support} engine.
     }%
 }
- \vspace{9pt}
+ \vspace{9pt} 

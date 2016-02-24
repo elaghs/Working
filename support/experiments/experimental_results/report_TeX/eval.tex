@@ -1,16 +1,13 @@
 \section{Evaluation}
 \label{sec:eval}
 This section evaluates our approach by addressing the following research questions:
-
-\ela{could you please rephrase these questions?! having hard time saying them clearly :-( }
+ 
 \begin{itemize}
     \item \textbf{RQ1:} How much overhead does computation of set of support add to the proofs?
-    \item \textbf{RQ2:} How dependent is our approach on different tools and proof engines? Do different solvers/ proof engines generate different support set? If so, to what extent are they different?
-    \item \textbf{RQ3:} Is there any relationship between the size of a computed support set and
-    solvers/ proof engines?
-    \item \textbf{RQ4:} Is there any relationship between the size of the model and the variety of support sets?
-    \item \textbf{RQ5:} How close to minimal are the support sets computed by our algorithm? For each model, we have 12 sets of support computed by \texttt{JKind}, and one \emph{minimal} set computed by \texttt{JSupport}; we would like to know which configurations generated sets that are very close or far to the minimal one.
-    \item \textbf{RQ6:} How do different solvers perform on computing support? And, how efficient is it in comparison with \texttt{JSupport}?
+    \item \textbf{RQ2:} How close to minimal are the support sets computed by ALGO vs. jsupport?
+    \item \textbf{RQ3:} Does one solver/algorithm outperform others in terms of performance or minimality?
+    \item \textbf{RQ4:} How much {\em diversity} exists in the solutions produced by different configurations?
+    \item \textbf{RQ5:} How does model size affect minimality and diversity of solutions?
 \end{itemize}
 
 \subsection{Analytical Results}
@@ -80,7 +77,7 @@ Therefore, we obtained $\binom{13}{2} = 78$ combinations of distances per model.
 \vspace{6pt}
 \noindent\fbox{%
     \parbox{\textwidth}{%
-        Support sets computed with different solvers and engines have an average Jaccard distance of 0.027, which implies our algorithm has very small dependency on tools and proof algorithms. 
+        Support sets computed with different solvers and engines have an average Jaccard distance of 0.027, which implies our algorithm has very small dependency on tools and proof algorithms.
         In addition, it also implies the generated sets are very close to each other.
     }%
 }

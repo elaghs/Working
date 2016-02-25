@@ -14,7 +14,7 @@
 %\usepackage{float}
 \usepackage{graphics}
 \usepackage{graphicx}
-%\usepackage{enumitem}
+\usepackage{enumitem}
 \usepackage{comment}
 \usepackage{longtable}
 \usepackage{supertabular}
@@ -29,14 +29,14 @@
 
 %\theoremstyle{Definition}
 %\newtheorem{definition}{Definition}
-%
+%%
 %\theoremstyle{Theorem}
 %\newtheorem{theorem}{Theorem}
 
 
-\newcommand{\definition}{\noindent \textbf{Definition} \citation{}}
-\newcommand{\theorem}{\noindent \textbf{Theorem} \citation{}}
-\newcommand{\lemma}{\noindent \textbf{Lemma} \citation{}}
+%\newcommand{\definition}{\noindent \textbf{Definition} \citation{}}
+%\newcommand{\theorem}{\noindent \textbf{Theorem} \citation{}}
+%\newcommand{\lemma}{\noindent \textbf{Lemma} \citation{}}
 
 \newcommand{\mkeyword}[1]{\mbox{\texttt{#1}}}
 \DeclareMathOperator{\kuop}{uop}
@@ -77,6 +77,9 @@
 \newcommand{\cta}{\text{TA$_{C}$}}
 \newcommand{\tta}{\text{TA$_{T}$}}
 
+\newdef{lemma}{Lemma}
+\newdef{definition}{Definition}
+\newtheorem{theorem}{Theorem}
 %\newcommand{\TECHREPORT}{}
 
 \title{Efficient Generation of Set of Support for Safety Properties using UNSAT Cores and Induction\titlenote{This work has been supported by XXX}}
@@ -87,19 +90,18 @@
 Elaheh Ghassabani\\
        \affaddr{Department of Computer Science and Engineering}\\
        \affaddr{University of Minnesota}\\
-%       \affaddr{200 Union Street, Minneapolis, MN 55455,USA}\\
-       \affaddr{\small{Minneapolis, MN,USA}}\\
+       \affaddr{\small{200 Union Street\\Minneapolis, MN, 55455,USA}}\\
        \email{\texttt{\small{ghass013@umn.edu}}}
 \alignauthor 
 Andrew Gacek\\
        \affaddr{Rockwell Collins Advanced Technology Center}\\
-       \affaddr{\small{Cedar Rapids, IA, USA}}\\
+       \affaddr{\small{400 Collins Rd. NE\\Cedar Rapids, IA, 52498, USA}}\\
        \email{\texttt{\small{andrew.gacek@rockwellcollins.com}}}
-\alignauthor 
+\alignauthor
 Michael W. Whalen\\
        \affaddr{Department of Computer Science and Engineering}\\
        \affaddr{University of Minnesota}\\
-       \affaddr{\small{Minneapolis, MN,USA}}\\
+       \affaddr{\small{200 Union Street\\Minneapolis, MN, 55455,USA}}\\
        \email{\texttt{\small{whalen@cs.umn.edu}}}
 }
 

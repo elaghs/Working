@@ -37,7 +37,7 @@ $\widehat T$ where $T = \{T_1, \ldots, T_n\}$. We will use a similar
 notation of sets of invariants. We now define our notion of
 generalization for transition systems.
 
-\begin{definition}[Set of support]
+\begin{definition}{\emph{Set of support:}}
   \label{def:set-of-support}
   Let $(I, \widehat T)$ be a transition system and let $P$ be a
   safety property with $(I, \widehat T)\vdash P$. We say $S \subseteq
@@ -46,7 +46,7 @@ generalization for transition systems.
   context we will simply say $S$ is a set of support.
 \end{definition}
 
-\begin{definition}[Minimal Set of support]
+\begin{definition}{\emph{Minimal Set of support:}}
   \label{def:minimal-set-of-support}
   A set of support $S$ for $(I, \widehat T)\vdash P$ is minimal iff
   there does not exist $M \subset S$ such that $M$ is a set of support
@@ -151,13 +151,15 @@ Algorithm~\ref{alg:set-of-support}.
   s_1) \land \cdots \land T(s_{k-1}, s_k) \Rightarrow P(s_k)\right)
   \\[5pt]
 %%%
-  &\iq_k(T, Q, P) \equiv \\
+  &\iq_k(T, Q, P) \equiv (\forall s_0, \ldots, s_k.~\\
 %
-  &\hspace{10pt}\left(\forall s_0, \ldots, s_k.~ Q(s_0) \land T(s_0,
+  &\hspace{10pt} Q(s_0) \land T(s_0,
   s_1) \land \cdots \land Q(s_{k-1}) \land T(s_{k-1}, s_k) \Rightarrow
-  P(s_k)\right) \\[5pt]
+  P(s_k)) \\[5pt]
 %%%
-  &\fq_k(I, T, P) \equiv \bq_k(I, T, P) \land \iq_k(T, P, P)
+  &\fq_k(I, T, P) \equiv \\
+%
+  &\hspace{10pt}\bq_k(I, T, P) \land \iq_k(T, P, P)
 \end{align*}
 \caption{$k$-induction queries}
 \label{fig:queries}

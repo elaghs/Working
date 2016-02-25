@@ -1,4 +1,4 @@
-\documentclass {llncs}
+\documentclass{sig-alternate-05-2015}
 \usepackage{tabularx,colortbl}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{flushend}
@@ -34,9 +34,9 @@
 %\newtheorem{theorem}{Theorem}
 
 
-%\newcommand{\definition}{\noindent \textbf{Definition} \citation{}}
-%newcommand{\theorem}{\noindent \textbf{Theorem} \citation{}}
-
+\newcommand{\definition}{\noindent \textbf{Definition} \citation{}}
+\newcommand{\theorem}{\noindent \textbf{Theorem} \citation{}}
+\newcommand{\lemma}{\noindent \textbf{Lemma} \citation{}}
 
 \newcommand{\mkeyword}[1]{\mbox{\texttt{#1}}}
 \DeclareMathOperator{\kuop}{uop}
@@ -65,11 +65,12 @@
 \begin{document}
 
  % Add this to every tex file, so that you can comment with a diff color%
- \definecolor{gold}{rgb}{0.90,.66,0}
- \definecolor{dgreen}{rgb}{0,0.6,0}
- \newcommand{\mike}[1]{\textcolor{red}{}}
- \newcommand{\fixed}[1]{\textcolor{red}{#1}}
- \newcommand{\ela}[1]{\textcolor{purple}{}}
+\definecolor{gold}{rgb}{0.90,.66,0}
+\definecolor{dgreen}{rgb}{0,0.6,0}
+\newcommand{\mike}[1]{\textcolor{red}{}}
+\newcommand{\fixed}[1]{\textcolor{red}{#1}}
+\newcommand{\andrew}[1]{\textcolor{blue}{#1}}
+\newcommand{\ela}[1]{\textcolor{purple}{#1}}
 \newcommand{\stateequiv}{\equiv_{s}}
 \newcommand{\traceequiv}{\equiv_{\sigma}}
 \newcommand{\ta}{\text{TA}}
@@ -78,28 +79,28 @@
 
 %\newcommand{\TECHREPORT}{}
 
+\title{Efficient Generation of Set of Support for Safety Properties using UNSAT Cores and Induction\titlenote{This work has been supported by XXX}}
+\numberofauthors{3}
 
-\title{Efficient Generation of Set of Support for Safety Properties using UNSAT Cores and Induction \thanks{This work has been supported by XXX}}
-
-%\author{
-%\IEEEauthorblockN{Michael W. Whalen$^{\dag}$, Sanjai Rayadurgam$^{\dag}$, Elaheh Ghassabani$^{\dag}$, \\Anitha Murugesan$^{\dag}$, Oleg Sokolsky$^{*}$, Mats P.E. Heimdahl$^{\dag}$, Insup Lee$^{*}$}
-%\IEEEauthorblockA{
-%$^{\dag}$Department of Computer Science and Engineering,University of Minnesota\\
-%%200 Union Street, Minneapolis, MN 55455\\
-%\{whalen, rsanjai, ghassaba, anitha, heimdhal\}@cs.umn.edu\\
-%$^{*}$Department of Computer and Information Science, University of Pennsylvania, \\
-%%3330 Walnut St., Philadelphia, PA 19104\\
-%\{sokolsky, lee\}@cis.upenn.edu}
-
-\author{Elaheh Ghassabani\inst{1}, Andrew Gacek\inst{2}, and Michael W. Whalen\inst{1}}
-
-\institute{Department of Computer Science and Engineering\\
- University of Minnesota, 200 Union Street, Minneapolis, MN 55455,USA\\
-\email{\{whalen,ghassaba\}@cs.umn.edu}
- \and
-Rockwell Collins Advanced Technology Center\\
-400 Collins Rd. NE, Cedar Rapids, IA, 52498, USA\\
-\email{\{andrew.gacek\}@rockwellcollins.com}
+\author{
+\alignauthor 
+Elaheh Ghassabani\\
+       \affaddr{Department of Computer Science and Engineering}\\
+       \affaddr{University of Minnesota}\\
+%       \affaddr{200 Union Street, Minneapolis, MN 55455,USA}\\
+       \affaddr{\small{Minneapolis, MN,USA}}\\
+       \email{\texttt{\small{ghass013@umn.edu}}}
+\alignauthor 
+Andrew Gacek\\
+       \affaddr{Rockwell Collins Advanced Technology Center}\\
+       \affaddr{\small{Cedar Rapids, IA, USA}}\\
+       \email{\texttt{\small{andrew.gacek@rockwellcollins.com}}}
+\alignauthor 
+Michael W. Whalen\\
+       \affaddr{Department of Computer Science and Engineering}\\
+       \affaddr{University of Minnesota}\\
+       \affaddr{\small{Minneapolis, MN,USA}}\\
+       \email{\texttt{\small{whalen@cs.umn.edu}}}
 }
 
 \maketitle

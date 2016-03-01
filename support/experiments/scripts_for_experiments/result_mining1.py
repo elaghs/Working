@@ -32,8 +32,9 @@ models = []
 for dir in os.listdir(RESULTS_DIR):
     tree = ET.ElementTree(file = os.path.join(RESULTS_DIR, dir, SORT_BASE))
     for elem in tree.iter(tag = 'Runtime'):
-        models.append({'name': dir, 'time': float(elem.text)})
-        
+        for elem2 in tree.iter(tag = 'SupportRuntime'):
+            models.append({'name': dir, 'time': (float(elem.text) - float(elem2.text))})
+
 sorted_models = sorted(models, key=itemgetter('time')) 
 sorted_models_mem = []
 sorted_models_dsk = open (os.path.join(MINING_DIR, SORTED_MODELS), 'w')

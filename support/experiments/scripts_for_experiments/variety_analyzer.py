@@ -134,35 +134,6 @@ for c, elem in enumerate(min_lists):
         for i in elem:
             settings_min[i] = (settings_min[i][0], settings_min[i][1]+1)
     
-#
-# Report first results into 'support_variaty_analyses.txt'
-#
-
-writer = open(os.path.join(ANALYSES_DIR, 'support_variaty_analyses.txt'), 'w')
-writer.write('-------------------------------------------------------------------------------------------------')
-writer.write('\nthere are ' + str(len(interesting_models)) + ' models in the benchmarks with mean Jaccard distance > 0.0\n')
-writer.write('\nfor each of these models, this file reports the following:\n\n')
-writer.write('\n    -- size of the model')
-writer.write('\n    -- min/max/mean/stdev Jaccard distance > 0.0')
-writer.write('\n    -- pairwise configurations with min Jaccard distances > 0.0')
-writer.write('\n    -- pairwise configurations with max Jaccard distances > 0.0')
-writer.write('\n-------------------------------------------------------------------------------------------------\n\n')
-for indx, model in enumerate(interesting_models):
-    writer.write('\n'+ str(indx) +') '+ model + ' :')
-    writer.write('\n    Size: '+ str(sizes[indx]) + ' KB')
-    writer.write('\n    min distance: ' + str(round(all_min[indx], 2)))
-    writer.write('\n    max distance: ' + str(round(all_max[indx], 2)))
-    writer.write('\n    mean distance: ' + str(round(all_mean[indx], 2)))
-    writer.write('\n    stdev distance: ' + str(round(all_stdev[indx], 2)))
-    writer.write('\n    the following configurations have the minimum distance: \n')
-    for ind in min_lists[indx]:
-        writer.write(' '+ str(find_combination(ind)))
-    writer.write('\n\n    the following configurations have the maximum distance: \n')
-    for ind in max_lists[indx]:
-        writer.write(' '+ str(find_combination(ind)))
-    writer.write('\n\n')
-    
-writer.close()
 
 
 #
@@ -185,6 +156,8 @@ for i in range(len(settings_max)):
 # Build a list for y-axis  
 y_axis1 = [y for (x, y) in settings_max]
 
+
+'''
 fig1 = plt.figure()  
 
 plt.bar(x_axis1, y_axis1, align='center')
@@ -194,7 +167,7 @@ plt.xlabel('Pairwise Configurations')
 plt.ylabel('Frequency in 405 models')
 plt.title('Pairwise Configurations with maximum Jaccard distances') 
 plt.show()
-fig1.savefig(os.path.join(ANALYSES_DIR, 'max_settings_analyses.png'))
+fig1.savefig(os.path.join(ANALYSES_DIR, 'max_settings_analyses.png'))'''
 
 # Build a list for x-axis
 x_axis2 = []
@@ -204,7 +177,7 @@ for i in range(len(settings_min)):
 # Build a list for y-axis  
 y_axis2 = [y for (x, y) in settings_min]
 
-fig2 = plt.figure()  
+'''fig2 = plt.figure()  
 
 plt.bar(x_axis2, y_axis2, align='center')
 plt.xticks(x_axis2, min_labels, rotation='vertical')
@@ -216,4 +189,36 @@ plt.show()
 fig2.savefig(os.path.join(ANALYSES_DIR, 'min_settings_analyses.png'))
 
 plt.close(fig1)
-plt.close(fig2)
+plt.close(fig2)'''
+
+#
+# Report first results into 'support_variaty_analyses.txt'
+#
+
+writer = open(os.path.join(ANALYSES_DIR, 'support_variaty_analyses.txt'), 'w')
+writer.write('-------------------------------------------------------------------------------------------------')
+writer.write('\nthere are ' + str(len(interesting_models)) + ' models in the benchmarks with mean Jaccard distance > 0.0\n')
+writer.write('\nfor each of these models, this file reports the following:\n\n')
+writer.write('\n    -- size of the model')
+writer.write('\n    -- min/max/mean/stdev Jaccard distance > 0.0')
+writer.write('\n    -- pairwise configurations with min Jaccard distances > 0.0')
+writer.write('\n    -- pairwise configurations with max Jaccard distances > 0.0')
+writer.write('\n-------------------------------------------------------------------------------------------------\n\n')
+for il, l in enumerate(min_labels):
+    writer.write('\n    the following configurations have the minimum distance: \n')
+    writer.write('\n '+ str(l) +' with frequency of '+ str(y_axis2[il]) )
+writer.write('\n\n    the following configurations have the maximum distance: \n')
+for il, l in enumerate(max_labels):
+    writer.write('\n '+ str(l) +' with frequency of '+ str(y_axis1[il]) )
+  
+writer.write('\n-------------------------------------------------------------------------------------------------\n\n')
+for indx, model in enumerate(interesting_models):
+    writer.write('\n'+ str(indx) +') '+ model + ' :')
+    writer.write('\n    Size: '+ str(sizes[indx]) + ' KB')
+    writer.write('\n    min distance: ' + str(round(all_min[indx], 2)))
+    writer.write('\n    max distance: ' + str(round(all_max[indx], 2)))
+    writer.write('\n    mean distance: ' + str(round(all_mean[indx], 2)))
+    writer.write('\n    stdev distance: ' + str(round(all_stdev[indx], 2)))
+    writer.write('\n\n')
+  
+writer.close()

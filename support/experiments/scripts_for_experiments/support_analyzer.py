@@ -50,11 +50,15 @@ del all_mining_res
 analyses = []
 analyses_writer = shelve.open(os.path.join(os.pardir, ANALYSES_DIR, 'support_analyses'))        
 
+all_models_sup_sets = []    
+
 for sup_info in all_sup_info: 
     analysis_rec = []
     indx = 1
+    sup_sets = []
     support_info = shelve.open(sup_info) 
     for setting in SETTINGS: 
+        sup_sets.append(set(support_info [setting]))
         set1 = support_info [setting]
         for i in range(indx,len(SETTINGS)):
             set2 = support_info [SETTINGS[i]]
@@ -66,6 +70,7 @@ for sup_info in all_sup_info:
                 analysis_rec.append(float('nan'))
                 
         indx += 1
+    all_models_sup_sets.append(sup_sets)
     '''
         later, you can read the 'support_analyses' file with shelve
         For X.lus, the key() is X.lus
@@ -76,6 +81,45 @@ for sup_info in all_sup_info:
         analyses_writer [sup_info[0:len(sup_info)-13]] = analysis_rec
         analyses.append(analysis_rec)
     support_info.close()
+    
+
+
+# What is the core support elements for each model? (intersection of all sets per model)
+# How far is it from a minimal set? 
+# Is there any model whose support sets are totally different?
+#
+
+
+# core is the interesection of all 13 support sets
+core_elements_all_models = []
+
+for indx, item in enumerate(all_models_sup_sets):
+    try:
+        core_elements_all_models.append(set.intersection(*[x for x in item if x != set([])]))
+    except:
+        core_elements_all_models.append(set([]))
+        pass
+
+#
+# Calculate pairwise Jaccard distance of each configuration from core
+#
+overall_dist = []
+for indx, model in enumerate(all_models_sup_sets):
+    dist = []
+    denum = 12.0
+    for i, conf in enumerate(model):
+        if i > 0:
+            if core_elements_all_models[indx] != set([]):
+                if conf != set([]):
+                    dist.append(distance.jaccard(conf, core_elements_all_models[indx]))
+                else:
+                    denum -= 1.0
+            else:
+                dist.append(float('nan'))    
+    # overal_dist[i] is overall distance for model i           
+    overall_dist.append (sum(dist)/denum)
+   
+   
 
 #
 # Compute min, max, avg, std deviation of the distances for each model
@@ -121,6 +165,7 @@ analyses_writer ['min'] = min_all
 analyses_writer ['max'] = max_all
 analyses_writer ['pstdev'] = stdev_all
 analyses_writer ['mean'] = mean_all
+analyses_writer ['cores'] = core_elements_all_models
 
 #
 # Sort points for visualization
@@ -147,18 +192,20 @@ sorted_stdev = []
 sorted_mean = []
 sorted_max = []
 sorted_min = [] 
-
+sorted_dist = []
 
 for item in sorted_mean_list:
     sorted_stdev.append(stdev[item['id']])
     sorted_max.append(max_list[item['id']])
     sorted_min.append(min_list[item['id']])
     sorted_mean.append(mean[item['id']])
+    sorted_dist.append(overall_dist[item['id']])
  
 analyses_writer ['all_min'] = sorted_min   
 analyses_writer ['all_max'] = sorted_max
 analyses_writer ['all_pstdev'] = sorted_stdev
 analyses_writer ['all_mean'] = sorted_mean
+analyses_writer ['overall_dist'] = sorted_dist
 
 analyses_writer.close()
 

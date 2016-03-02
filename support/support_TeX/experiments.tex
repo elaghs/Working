@@ -1,7 +1,7 @@
-\section{Implementation and Experiments}
+\section{Implementation \& Experiments}
 \label{sec:exprm}
-There are two important solver-based engines in \texttt{JKind} that can be considered as its primary proof-engines: \texttt{PDR} and \texttt{K-induction}. Current version of \texttt{JKind} has a new solver-based engine called \texttt{ReduceSupport}, 
-which is an implementation of Algorithm~\ref{alg:set-of-support}. 
+There are two important solver-based engines in \texttt{JKind} that can be considered as its primary proof-engines: \texttt{PDR} and \texttt{K-induction}. Current version of \texttt{JKind} has a new solver-based engine called \texttt{ReduceSupport},
+which is an implementation of Algorithm~\ref{alg:set-of-support}.
 One major goal of our experiments was to evaluate the minimality of the support sets computed by \texttt{ReduceSupport}.
 To do so, we needed to compare the output of our algorithm with another algorithm
 which computes a truly minimal support set, i.e. Algorithm~\ref{alg:naive}. Hence, we extended \texttt{JKind}
@@ -23,7 +23,7 @@ To evaluate the dependency of our algorithm on different solvers and engines, fo
 \texttt{K-induction}, and both of them. In other words, the \texttt{ReduceSupport} engine was run with 12 combinations of those settings. And, one additional configuration is where \texttt{JSupport} computes a minimal support set. Therefore, experiments are based on these $405 \times 13 = 5265$ \texttt{JKind} runs. It is worth mentioning that we were to add randomness to the solvers and extend these 13 configurations. However, after performing some initial experiments and analyses, it turns out that random-seed in solvers does not affect the output of our algorithm; hence, it was not considered in the configurations.\footnote{The benchmarks and all the raw experimental results are available on \cite{expr}. The directory also contains mined data obtained from the raw results.}
 
 \subsection{Results}
-With a 700 seconds timeout, 10 models had unknown property. In other models with valid properties, for 112 models, all solvers with \texttt{K-induction} setting failed to prove the properties. That is to say, in $(112 \times 4) + (10 \times 13) = 578$ runs, \texttt{JKind} was unable to to prove the property, so the set of support in those runs remained unknown as well. As far as \texttt{JSupport} concerned, support computation in 18 models timed out (with 700 second limitation). 
+With a 700 seconds timeout, 10 models had unknown property. In other models with valid properties, for 112 models, all solvers with \texttt{K-induction} setting failed to prove the properties. That is to say, in $(112 \times 4) + (10 \times 13) = 578$ runs, \texttt{JKind} was unable to to prove the property, so the set of support in those runs remained unknown as well. As far as \texttt{JSupport} concerned, support computation in 18 models timed out (with 700 second limitation).
 
 \subsection{Evaluation}
 \label{subsec:eval}

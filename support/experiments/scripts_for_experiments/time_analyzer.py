@@ -16,7 +16,7 @@ SOLVERS = ['z3', 'yices', 'smtinterpol', 'mathsat']
 MINING_DIR = 'mining'
 ANALYSES_DIR = 'timing_analyses' 
 TIMING_INFO = 'timing_info'
-NUM_OF_MODELS = 405
+NUM_OF_MODELS = 395
 TIMINGS =  ['jsupport', 'z3_both', 'z3_both_no_sup',
             'yices_both',  'yices_both_no_sup',
             'smtinterpol_both', 'smtinterpol_both_no_sup', 
@@ -147,12 +147,18 @@ ax = plt.subplot(111)
 '''for indx, legend in enumerate(LEGENDS):
     #plt.scatter(x_axis, all_timings[indx], label=legend, color=colors[indx])
     plt.plot(x_axis, all_timings[indx], label=legend)'''
-for indx in range(3):
-    #plt.scatter(x_axis, all_timings[indx], label=legend, color=colors[indx])
-    plt.plot(x_axis, all_timings[indx], label=LEGENDS[indx])  
-    
 
-    
+'''for indx in range(3):
+    #plt.scatter(x_axis, all_timings[indx], label=legend, color=colors[indx])
+    plt.plot(x_axis, all_timings[indx], label=LEGENDS[indx])  '''
+'''    
+plt.plot(x_axis, all_timings[1], label=LEGENDS[1]) 
+plt.plot(x_axis, all_timings[3], label=LEGENDS[3]) 
+plt.plot(x_axis, all_timings[5], label=LEGENDS[5]) 
+plt.plot(x_axis, all_timings[7], label=LEGENDS[7]) 
+'''    
+plt.plot(x_axis, all_timings[1], label=LEGENDS[1]) 
+plt.plot(x_axis, all_timings[2], label=LEGENDS[2]) 
 plt.xlabel('LUS models')
 plt.ylabel('Runtime (sec)')
 plt.title('Computational runtime')
@@ -161,7 +167,7 @@ plt.tight_layout()
 #plt.subplots_adjust(left=0.125, bottom=0.5, right=0.9, top=0.9, wspace=0.2, hspace=0.2)
 box = ax.get_position()
 ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
-ax.legend(loc=2, prop={'size':10}) 
+ax.legend(loc=2, prop={'size':14}) 
 fig.savefig(os.path.join(ANALYSES_DIR, 'timing_analyses.png'))
 plt.show()
 plt.close(fig)

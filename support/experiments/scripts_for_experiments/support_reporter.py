@@ -62,7 +62,7 @@ writer.close()
 
 # Build a list for x-axis
 x_axis = []
-for i in range(NUM_OF_MODELS):
+for i in range(NUM_OF_MODELS-10):
     x_axis.append(i)
 
 fig = plt.figure()

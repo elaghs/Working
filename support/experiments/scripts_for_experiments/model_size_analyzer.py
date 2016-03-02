@@ -3,7 +3,7 @@
 __author__ = "Elaheh"
 __date__ = "$Feb 17, 2016 4:55:10 PM$"
 
-import os, sys, shelve, glob 
+import os, sys, shelve, distance, glob 
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -58,16 +58,36 @@ for sup_info in all_sup_info:
  
     
 #
-# Calculate      similarity = |intersection(sup_sets)| / |union(sup_sets)|      per model
+# Calculate overall distacne per model
 #
-sim_all_models = []
+core_elements_all_models = []
+
 for indx, item in enumerate(all_models_sup_sets):
-    sets = [x for x in item if x != set([])]
     try:
-        sim_all_models.append(round(len(set.intersection(*sets))/ len(set.union(*sets)), 2))
+        core_elements_all_models.append(set.intersection(*[x for x in item if x != set([])]))
     except:
-        sim_all_models.append(float('nan'))
+        core_elements_all_models.append(set([]))
         pass
+
+#
+# Calculate pairwise Jaccard distance of each configuration from core
+#
+overall_dist = []
+for indx, model in enumerate(all_models_sup_sets):
+    dist = []
+    denum = 12.0
+    for i, conf in enumerate(model):
+        if i > 0:
+            if core_elements_all_models[indx] != set([]):
+                if conf != set([]):
+                    dist.append(distance.jaccard(conf, core_elements_all_models[indx]))
+                else:
+                    denum -= 1.0
+            else:
+                dist.append(float('nan'))    
+    # overal_dist[i] is overall distance for model i           
+    overall_dist.append (sum(dist)/denum)
+   
     
     
 # a list of lists. sizes [i] shows the models whose size are between i and i+1 KB    
@@ -76,7 +96,7 @@ for i in range(9):
     sizes.append([])
     
 for indx, model in enumerate(all_sup_info):
-    sizes[int(os.path.getsize(os.path.join(os.pardir, BENCHMARKS, model[0:len(model)-13]))/1000)].append(sim_all_models[indx]) 
+    sizes[int(os.path.getsize(os.path.join(os.pardir, BENCHMARKS, model[0:len(model)-13]))/1000)].append(overall_dist[indx]) 
  
 #
 # Write results to "model_size_analyses" file
@@ -88,10 +108,10 @@ writer.write('------------------------------------------------------------------
 writer.write('\nthis is to find out if there is any relationship between the model size and variety of its support sets:\n')
 for i in range(9):
     writer.write('\n\nthere are ' + str(len(sizes[i])) + ' models whose sizes are less than ' + str(i+1) + ' KB')
-    writer.write('\nmin similarity among all these models: '+ str(min(sizes[i])))
-    writer.write('\nmax similarity among all these models: '+ str(max(sizes[i])))
-    writer.write('\navg similarity among all these models: '+ str(np.nanmean(sizes[i])))
-    writer.write('\nstdev similarity among all these models: '+ str(np.nanstd(sizes[i])))
+    writer.write('\nmin dissimilarity among all these models: '+ str(min(sizes[i])))
+    writer.write('\nmax dissimilarity among all these models: '+ str(max(sizes[i])))
+    writer.write('\navg dissimilarity among all these models: '+ str(np.nanmean(sizes[i])))
+    writer.write('\nstdev dissimilarity among all these models: '+ str(np.nanstd(sizes[i])))
     writer.write('\n-------------------------------------------------------------------------------------------------\n\n')
 
 writer.close()

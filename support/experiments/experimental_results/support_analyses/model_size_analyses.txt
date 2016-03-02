@@ -2,82 +2,82 @@
 this is to find out if there is any relationship between the model size and variety of its support sets:
 
 
-there are 49 models whose sizes are less than 1 KB
-min similarity among all these models: 0.33
-max similarity among all these models: 1.0
-avg similarity among all these models: 0.876875
-stdev similarity among all these models: 0.213064507544
+there are 48 models whose sizes are less than 1 KB
+min dissimilarity among all these models: 0.0
+max dissimilarity among all these models: 0.3333333333333334
+avg dissimilarity among all these models: 0.0837053571429
+stdev dissimilarity among all these models: 0.131078617962
 -------------------------------------------------------------------------------------------------
 
 
 
-there are 90 models whose sizes are less than 2 KB
-min similarity among all these models: 0.3
-max similarity among all these models: 1.0
-avg similarity among all these models: 0.834712643678
-stdev similarity among all these models: 0.192227350312
+there are 86 models whose sizes are less than 2 KB
+min dissimilarity among all these models: 0.0
+max dissimilarity among all these models: 0.6666666666666669
+avg dissimilarity among all these models: 0.139445430216
+stdev dissimilarity among all these models: 0.157017180769
 -------------------------------------------------------------------------------------------------
 
 
 
 there are 26 models whose sizes are less than 3 KB
-min similarity among all these models: 0.5
-max similarity among all these models: 1.0
-avg similarity among all these models: 0.875769230769
-stdev similarity among all these models: 0.131300391848
+min dissimilarity among all these models: 0.0
+max dissimilarity among all these models: 0.5
+avg dissimilarity among all these models: 0.124358974359
+stdev dissimilarity among all these models: 0.13182080958
 -------------------------------------------------------------------------------------------------
 
 
 
 there are 34 models whose sizes are less than 4 KB
-min similarity among all these models: 0.57
-max similarity among all these models: 1.0
-avg similarity among all these models: 0.895882352941
-stdev similarity among all these models: 0.157650351151
+min dissimilarity among all these models: 0.0
+max dissimilarity among all these models: 0.3333333333333334
+avg dissimilarity among all these models: 0.0764249591239
+stdev dissimilarity among all these models: 0.123740471177
 -------------------------------------------------------------------------------------------------
 
 
 
 there are 88 models whose sizes are less than 5 KB
-min similarity among all these models: 0.12
-max similarity among all these models: 1.0
-avg similarity among all these models: 0.895340909091
-stdev similarity among all these models: 0.153474523083
+min dissimilarity among all these models: 0.0
+max dissimilarity among all these models: 0.8787878787878788
+avg dissimilarity among all these models: 0.0902728007194
+stdev dissimilarity among all these models: 0.133678788828
 -------------------------------------------------------------------------------------------------
 
 
 
 there are 11 models whose sizes are less than 6 KB
-min similarity among all these models: 0.75
-max similarity among all these models: 1.0
-avg similarity among all these models: 0.83
-stdev similarity among all these models: 0.107025910202
+min dissimilarity among all these models: 0.0
+max dissimilarity among all these models: 0.25
+avg dissimilarity among all these models: 0.169696969697
+stdev dissimilarity among all these models: 0.107030200075
 -------------------------------------------------------------------------------------------------
 
 
 
 there are 2 models whose sizes are less than 7 KB
-min similarity among all these models: 0.96
-max similarity among all these models: 1.0
-avg similarity among all these models: 0.98
-stdev similarity among all these models: 0.02
+min dissimilarity among all these models: 0.0
+max dissimilarity among all these models: 0.04166666666666663
+avg dissimilarity among all these models: 0.0208333333333
+stdev dissimilarity among all these models: 0.0208333333333
 -------------------------------------------------------------------------------------------------
 
 
 
-there are 99 models whose sizes are less than 8 KB
-min similarity among all these models: 0.28
-max similarity among all these models: 1.0
-avg similarity among all these models: 0.916276595745
-stdev similarity among all these models: 0.124182296016
+there are 94 models whose sizes are less than 8 KB
+min dissimilarity among all these models: 0.0
+max dissimilarity among all these models: 0.39814814814814814
+avg dissimilarity among all these models: 0.0671421665633
+stdev dissimilarity among all these models: 0.0938347638756
 -------------------------------------------------------------------------------------------------
 
 
 
 there are 6 models whose sizes are less than 9 KB
-min similarity among all these models: 1.0
-max similarity among all these models: 1.0
-avg similarity among all these models: 1.0
-stdev similarity among all these models: 0.0
+min dissimilarity among all these models: 0.0
+max dissimilarity among all these models: 0.0
+avg dissimilarity among all these models: 0.0
+stdev dissimilarity among all these models: 0.0
 -------------------------------------------------------------------------------------------------
 

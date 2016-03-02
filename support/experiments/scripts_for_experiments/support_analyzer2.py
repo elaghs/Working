@@ -5,7 +5,7 @@
 __author__ = "Elaheh"
 __date__ = "$Feb 5, 2016 9:03:27 AM$"
 
-import os, sys, shelve, glob 
+import os, sys, shelve, distance, glob 
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -57,7 +57,30 @@ for sup_info in all_sup_info:
     all_models_sup_sets.append(sup_sets)
     support_info.close()
     
+#
+# Load data
+# 
+reader = shelve.open(os.path.join('..', ANALYSES_DIR, 'support_analyses'))
+mean_points = reader ['all_mean']
+min_points = reader ['all_min']
+max_points = reader ['all_max']
+stdev_points = reader ['all_pstdev']
+overall_dist = reader ['overall_dist']
+reader.close()   
+    
+# keeps {'dif','core'} items where 
+#            dif shows the 'dif' shows the size difference of core with the smallest support set
+#            core is the interesection of all 13 support sets
+core_elements_all_models = []
 
+for indx, item in enumerate(all_models_sup_sets):
+    try:
+        intrsct = set.intersection(*[x for x in item if x != set([])])
+        core_elements_all_models.append({'dif': smallest_set_size[indx] - len(intrsct), 'core': intrsct})
+    except:
+        core_elements_all_models.append({'dif': float('nan'), 'core': set([])})
+        pass
+    
 #
 # Which setting has the smallest support set?
 #
@@ -99,28 +122,7 @@ for item in all_models_sup_sets:
             settings_with_smallest[indx] += 1
         for indx in b_settings:
             settings_with_biggest[indx] += 1
-         
-        
-#
-# What is the core support elements for each model? (intersection of all sets per model)
-# How far is it from a minimal set? 
-# Is there any model whose support sets are totally different?
-#
-
-# keeps {'dif','core'} items where 
-#            dif shows the 'dif' shows the size difference of core with the smallest support set
-#            core is the interesection of all 13 support sets
-core_elements_all_models = []
-
-for indx, item in enumerate(all_models_sup_sets):
-    try:
-        intrsct = set.intersection(*[x for x in item if x != set([])])
-        core_elements_all_models.append({'dif': smallest_set_size[indx] - len(intrsct), 'core': intrsct})
-    except:
-        core_elements_all_models.append({'dif': float('nan'), 'core': set([])})
-        pass
-    
-    
+          
     
 #
 # Calculate      similarity = |intersection(sup_sets)| / |union(sup_sets)|      per model
@@ -161,13 +163,47 @@ for indx, model in enumerate(all_sup_info):
 writer.close()
 
 #
+# Write results to "overal_distance" file
+#
+
+writer = open(os.path.join(os.pardir, ANALYSES_DIR, 'overal_distance.txt'), 'w') 
+
+writer.write('-------------------------------------------------------------------------------------------------')
+writer.write('\nthis is to report, a summary of overall distances:\n')
+writer.write('\nmin overall distance among all models: ' + str(min(overall_dist)))
+writer.write('\nmax overall distance among all models: '+ str(max(overall_dist)))
+writer.write('\navg overall distance among all models: '+ str(np.nanmean(overall_dist)))
+writer.write('\nstdev overall distance among all models: '+ str(np.nanstd(overall_dist)))
+writer.write('\n-------------------------------------------------------------------------------------------------\n\n')
+writer.close()
+
+
+#
 # Visualize
 #
 
 # Build a list for x-axis
 x_axis = []
-for i in range(405):
+for i in range(395):
     x_axis.append(i)
+    
+#overal distance
+ 
+fig1 = plt.figure()
+ax = plt.subplot(111)
+plt.plot(x_axis, overall_dist, label='overall distance')
+plt.plot(x_axis, min_points, label='min')
+plt.plot(x_axis, max_points, label='max')
+plt.plot(x_axis, mean_points, label='mean')
+plt.plot(x_axis, stdev_points, label='standard deviation')
+plt.xlabel('LUS mosdels')
+plt.ylabel('Overall distance')
+plt.title('Similarity analyses') 
+box = ax.get_position()
+ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+ax.legend(loc=2, prop={'size':16}) 
+plt.show()
+fig1.savefig(os.path.join(os.pardir, ANALYSES_DIR, 'overall_dist.png'))    
     
 
 '''#core sets
@@ -187,7 +223,7 @@ plt.show()
 fig1.savefig(os.path.join(os.pardir, ANALYSES_DIR, 'core.png'))    
 '''
 
-
+'''
 #similarity
 fig1 = plt.figure()  
 plt.plot(x_axis, list(np.sort(sim_all_models)))
@@ -196,7 +232,7 @@ plt.ylabel('Similarity')
 plt.title('Similarity analyses') 
 plt.show()
 fig1.savefig(os.path.join(os.pardir, ANALYSES_DIR, 'similarity.png'))
-
+'''
 
 '''x_axis = []
 for i in range(len(SETTINGS)):

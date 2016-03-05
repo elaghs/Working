@@ -1,33 +1,41 @@
 \section{Experiment and Results}
 \label{sec:exprm}
 
+\begin{itemize}
+    \item an algorithm to compute a truly minimal set of support, i.e. \texttt{JSupport}.
+    \item given a LUS model, a static crawler which automatically marks all equations of a node in the initial support set of a property.
+    \item some trackers that measure the verification time with/ without support computation.
+   % \item some minor changes in the XML writers.
+\end{itemize}
+
+
 \mike{My thoughts on this section: mostly, it needs more structure: more information on the properties of the models: size, provenance, etc., a broken out subsection on the description of the experimental setup, etc}
 
 \mike{I think we want to split out the results in another top-level section}
 
-Experiment: 
+Experiment:
 \begin{itemize}
     \item (Overview) describe research questions and goals.
     \item Experimental setup: tell me about the models: how many, how big are they?  Then, tell me about the experiment: the tool configurations, the machine used for test.
     \item Data generation: Describe what you measured for each model analysis.
 \end{itemize}
 
-Results and Discussion: 
+Results and Discussion:
 \begin{itemize}
     \item (Overview) Give an overview of results, possibly referencing a graph or two.
     \item Statistical analysis: provide positive and null hypotheses for the research questions.
     \item Evaluation of research questions: statistical results and explanations of the graphs.  One subsection per research question?
     \item Threats to validity: what are our threats?
     Internal validity: not really necessary, I think.
-    External validity (how much can the results be generalized):  
-        1. currently all models are *very small*; 
-        2. Many programs were drawn from mutations of a relatively small number of ``seed'' programs; 
-        3. The models are written in Lustre rather than FOL.  This means that the 
-            top-level conjunctions are all over equations rather than general 
-            form;  
+    External validity (how much can the results be generalized):
+        1. currently all models are *very small*;
+        2. Many programs were drawn from mutations of a relatively small number of ``seed'' programs;
+        3. The models are written in Lustre rather than FOL.  This means that the
+            top-level conjunctions are all over equations rather than general
+            form;
         4. Others?!?
     Construct validity: we are measuring what we think we're measuring: IVC and minimality are reasonably defined.  For discussions of ``completeness'' and ``traceability'' we need to be clear about any claims (probably not in this paper).
-\end{itemize}    
+\end{itemize}
 
 \mike{In general, I do not think we are asking quite the right questions yet.  More feedback will come tomorrow}
 
@@ -37,7 +45,9 @@ To evaluate the dependency of our algorithm on different solvers and engines, fo
 \texttt{K-induction}, and both of them. In other words, the \texttt{ReduceSupport} engine was run with 12 combinations of those settings. And, one additional configuration is where \texttt{JSupport} computes a minimal support set. Therefore, experiments are based on these $405 \times 13 = 5265$ \texttt{JKind} runs. It is worth mentioning that we were to add randomness to the solvers and extend these 13 configurations. However, after performing some initial experiments and analyses, it turns out that random-seed in solvers does not affect the output of our algorithm; hence, it was not considered in the configurations.\footnote{The benchmarks and all the raw experimental results are available on \cite{expr}. The directory also contains mined data obtained from the raw results.}
 
 \subsection{Results}
-With a 700 seconds timeout, 10 models had unknown property. In other models with valid properties, for 112 models, all solvers with \texttt{K-induction} setting failed to prove the properties. That is to say, in $(112 \times 4) + (10 \times 13) = 578$ runs, \texttt{JKind} was unable to to prove the property, so the set of support in those runs remained unknown as well. As far as \texttt{JSupport} concerned, support computation in 18 models timed out (with 700 second limitation).
+\ela{we may want to remove this part}
+
+With a 700 second timeout, 10 models had unknown property. In other models with valid properties, for 112 models, all solvers with \texttt{K-induction} setting failed to prove the properties. That is to say, in $(112 \times 4) + (10 \times 13) = 578$ runs, \texttt{JKind} was unable to to prove the property, so the set of support in those runs remained unknown as well. As far as \texttt{JSupport} concerned, support computation in 18 models timed out (with 700 second limitation).
 
 \subsection{Evaluation}
 \label{subsec:eval}

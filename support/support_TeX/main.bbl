@@ -1,0 +1,73 @@
+\begin{thebibliography}{10}
+
+\bibitem{benchmarks}
+{BENCHMARKS??}
+\newblock \url{FILL OUT}.
+
+\bibitem{jkind}
+{JKind}.
+\newblock \url{http://loonwerks.com/tools/jkind.html}.
+
+\bibitem{expr}
+{Set of Support}.
+\newblock
+  \url{https://github.com/elaghs/Working/tree/master/support/experiments}.
+
+\bibitem{belov2012computing}
+A.~Belov, M.~Janota, I.~Lynce, and J.~Marques-Silva.
+\newblock On computing minimal equivalent subformulas.
+\newblock In {\em Principles and Practice of Constraint Programming}, pages
+  158--174. Springer, 2012.
+
+\bibitem{belov2012towards}
+A.~Belov, I.~Lynce, and J.~Marques-Silva.
+\newblock Towards efficient mus extraction.
+\newblock 2012.
+
+\bibitem{gupta2003iterative}
+A.~Gupta, M.~Ganai, Z.~Yang, and P.~Ashar.
+\newblock Iterative abstraction using sat-based bmc with proof analysis.
+\newblock In {\em Proceedings of the 2003 IEEE/ACM international conference on
+  Computer-aided design}, page 416. IEEE Computer Society, 2003.
+
+\bibitem{han2007frequent}
+J.~Han, H.~Cheng, D.~Xin, and X.~Yan.
+\newblock Frequent pattern mining: current status and future directions.
+\newblock {\em Data Mining and Knowledge Discovery}, 15(1):55--86, 2007.
+
+\bibitem{marques2010minimal}
+J.~Marques-Silva.
+\newblock Minimal unsatisfiability: Models, algorithms and applications.
+\newblock In {\em Multiple-Valued Logic (ISMVL), 2010 40th IEEE International
+  Symposium on}, pages 9--14. IEEE, 2010.
+
+\bibitem{mcmillan2003automatic}
+K.~L. McMillan and N.~Amla.
+\newblock Automatic abstraction without counterexamples.
+\newblock In {\em Tools and Algorithms for the Construction and Analysis of
+  Systems}, pages 2--17. Springer, 2003.
+
+\bibitem{nadel2010boosting}
+A.~Nadel.
+\newblock Boosting minimal unsatisfiable core extraction.
+\newblock In {\em Formal Methods in Computer-Aided Design (FMCAD), 2010}, pages
+  221--229. IEEE, 2010.
+
+\bibitem{ryvchin2011faster}
+V.~Ryvchin and O.~Strichman.
+\newblock Faster extraction of high-level minimal unsatisfiable cores.
+\newblock In {\em Theory and Applications of Satisfiability Testing-SAT 2011},
+  pages 174--187. Springer, 2011.
+
+\bibitem{torlak2008finding}
+E.~Torlak, F.~S.-H. Chang, and D.~Jackson.
+\newblock Finding minimal unsatisfiable cores of declarative specifications.
+\newblock In {\em FM 2008: Formal Methods}, pages 326--341. Springer, 2008.
+
+\bibitem{zhang2003extracting}
+L.~Zhang and S.~Malik.
+\newblock Extracting small unsatisfiable cores from unsatisfiable boolean
+  formula.
+\newblock {\em SAT}, 3, 2003.
+
+\end{thebibliography}

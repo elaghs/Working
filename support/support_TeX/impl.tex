@@ -1,6 +1,28 @@
 \section{Implementation}
 \label{sec:impl}
 
+\mike{My thoughts on this section:}
 \begin{itemize}
-    \item This section will probably be fairly short.
+    \item introduce (and shrink) explanation of Lustre
+    \item describe that $\widehat T$ is the set of equations in Lustre.
+    \item describe what it means to remove an equation (to make valid Lustre, 
+        turn assigned variable into input)?  I'm not sure this is necessary, and it 
+        gets messy.
+\end{itemize}
+
+There are two important solver-based engines in \texttt{JKind} that can be considered as its primary proof-engines: \texttt{PDR} and \texttt{K-induction}. Current version of \texttt{JKind} has a new solver-based engine called \texttt{ReduceSupport},
+which is an implementation of Algorithm~\ref{alg:set-of-support}.
+One major goal of our experiments was to evaluate the minimality of the support sets computed by \texttt{ReduceSupport}.
+To do so, we needed to compare the output of our algorithm with another algorithm
+which computes a truly minimal support set, i.e. Algorithm~\ref{alg:naive}. Hence, we extended \texttt{JKind}
+with another support computing tool, called \texttt{JSupport}, which is an implementation of Algorithm~\ref{alg:naive}.
+
+As described in~\ref{subsec:jkind}, \texttt{JKind} accepts LUS models for verification.
+Such models are made of a set of nodes each of which embodies a set of inputs, outputs, equations, assertions, and properties. For each property, each equation can be considered as an element of an initial set called \textit{\%SUPPORT}. Given initial support set $S$ for property $P$, \texttt{ReduceSupport} finds which of the items in $S$ are necessary to prove $P$. The output of this computation will be a (closely) minimal set of support for $P$. In light of this process, the extended version of \texttt{JKind} we used for the experiments includes:
+
+\begin{itemize}
+    \item an algorithm to compute a truly minimal set of support, i.e. \texttt{JSupport}.
+    \item given a LUS model, a static crawler which automatically marks all equations of a node in the initial support set of a property.
+    \item some trackers that measure the verification time with/ without support computation.
+    \item some minor changes in the XML writers.
 \end{itemize}

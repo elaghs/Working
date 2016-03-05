@@ -1,21 +1,34 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
-The style file: splncs03.bst
+The style file: abbrv.bst
 Database file #1: biblio.bib
+I was expecting a `,' or a `}'---line 92 of file biblio.bib
+ :  
+ :  year = {2015}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 160 of file biblio.bib
+ : @inproceedings{Whalen13:OMCDC
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 311 of file biblio.bib
+ : @inproceedings{marques2010minimal
+ :                                  ,
+I'm skipping whatever remains of this entry
+A bad cross reference---entry "SheeranSS00"
+refers to entry "DBLP:conf/fmcad/2000", which doesn't exist
 Warning--I didn't find a database entry for "Een"
-Warning--I didn't find a database entry for "Sheeran"
-Warning--I didn't find a database entry for "SoftwareModelCheckingTakesOff"
-Warning--I didn't find a database entry for "more"
-Warning--I didn't find a database entry for "Heimdahl"
-Warning--I didn't find a database entry for "Gargantini"
-Warning--I didn't find a database entry for "Kupferman"
-Warning--I didn't find a database entry for "WhoDidthis?"
 Warning--I didn't find a database entry for "Kodkodpaper"
-Warning--I didn't find a database entry for "Chockler"
-Warning--I didn't find a database entry for "DO178B"
-Warning--I didn't find a database entry for "MOD-0055"
 Warning--I didn't find a database entry for "Simulink"
-Warning--I didn't find a database entry for "Huang"
-Warning--I didn't find a database entry for "SimulinkDesignVerifier"
-Warning--I didn't find a database entry for "Ourwork"
-Warning--I didn't find a database entry for "jkind"
-(There were 17 warnings)
+Warning--I didn't find a database entry for "DBLP:conf/fmcad/2000"
+Name 1 in "D. You, S. Rayadurgam, M.W. Whalen, and M.P.E. Heimdahl" has a comma at the end for entry You15:dse
+while executing---line 1049 of file abbrv.bst
+Warning--to sort, need author or key in jkind
+Warning--to sort, need author or key in benchmarks
+Warning--to sort, need author or key in expr
+Warning--empty journal in belov2012towards
+Name 1 in "D. You, S. Rayadurgam, M.W. Whalen, and M.P.E. Heimdahl" has a comma at the end for entry You15:dse
+while executing---line 1090 of file abbrv.bst
+Warning--there's a month but no year in You15:dse
+Warning--empty year in McMillan99:compositional
+Warning--empty author and editor in MOD:00-55
+(There were 6 error messages)

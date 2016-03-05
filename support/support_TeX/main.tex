@@ -67,7 +67,7 @@
  % Add this to every tex file, so that you can comment with a diff color%
 \definecolor{gold}{rgb}{0.90,.66,0}
 \definecolor{dgreen}{rgb}{0,0.6,0}
-\newcommand{\mike}[1]{\textcolor{red}{}}
+\newcommand{\mike}[1]{\textcolor{red}{#1}}
 \newcommand{\fixed}[1]{\textcolor{red}{#1}}
 \newcommand{\andrew}[1]{\textcolor{blue}{#1}}
 \newcommand{\ela}[1]{\textcolor{purple}{Ela: #1}}
@@ -82,17 +82,17 @@
 \newtheorem{theorem}{Theorem}
 %\newcommand{\TECHREPORT}{}
 
-\title{Efficient Generation of Set of Support for Safety Properties using UNSAT Cores and Induction\titlenote{This work has been supported by XXX}}
+\title{Efficient Generation of Inductive Validity Cores for Safety Properties \titlenote{This work has been supported by XXX}}
 \numberofauthors{3}
 
 \author{
-\alignauthor 
+\alignauthor
 Elaheh Ghassabani\\
        \affaddr{Department of Computer Science and Engineering}\\
        \affaddr{University of Minnesota}\\
        \affaddr{\small{200 Union Street\\Minneapolis, MN, 55455,USA}}\\
        \email{\texttt{\small{ghass013@umn.edu}}}
-\alignauthor 
+\alignauthor
 Andrew Gacek\\
        \affaddr{Rockwell Collins Advanced Technology Center}\\
        \affaddr{\small{400 Collins Rd. NE\\Cedar Rapids, IA, 52498, USA}}\\
@@ -108,11 +108,11 @@ Michael W. Whalen\\
 \maketitle
 
 \begin{abstract}
-\input{abstract}
-\end{abstract}
+Symbolic model checkers can construct proofs of properties over very complex models.  However, the results reported by the tool when a proof succeeds do not generally provide much insight to the user.  It is often useful for users to have traceability information related to the proof: which portions of the model were necessary to construct it.  This traceability information can be used to diagnose a variety of modeling problems such as overconstrained axioms and underconstrained properties, and can also be used to measure {\em completeness} of a set of requirements over a model.  In this paper, we present a new algorithm to efficiently compute the {\em inductive validity core} (IVC) within a model necessary for inductive proofs of safety properties for sequential systems.  The algorithm is based on the UNSAT core support built into current SMT solvers and a novel encoding of the inductive problem to try to generate a minimal inductive validity core.  We prove our algorithm correct, and describe its implementation in the JKind model checker for Lustre models.  We then present an experiment in which we benchmark the algorithm in terms of speed, diversity of produced cores, and minimality, with promising results. \end{abstract}
 
-\keywords{Auto-traceability, Set of Support, Completeness, Requirement Engineering}
+\keywords{Auto-traceability, Inductive Validity Core, UNSAT Core, k-Induction, Requirement Engineering}
 
+\mike{Right now we are inconsistent with using ``inductive validity core'' vs. ``IVC''.  Should we stick with one or the other (after defining IVC, of course)?}
 \input{introduction}
 
 %\ifdefined\TECHREPORT
@@ -126,7 +126,7 @@ Michael W. Whalen\\
 
 \input{support}
 
-%\input{impl}
+\input{impl}
 
 \input{experiments}
 

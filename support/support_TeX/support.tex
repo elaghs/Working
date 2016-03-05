@@ -1,4 +1,4 @@
-\section{Set of Support}
+\section{Inductive Validity Cores}
 \label{sec:support}
 
 \newcommand{\bq}{\textsc{BaseQuery}\xspace}
@@ -14,6 +14,8 @@
 \newcommand{\unsat}{\textsc{UNSAT}\xspace}
 \newcommand{\sat}{\textsc{SAT}\xspace}
 
+\mike{In general, this is very nicely explained!}
+
 Given a transition system which satisfies a safety property $P$, we
 want to know which parts of the system are necessary for satisfying
 the safety property. One possible way of asking this is, ``What is the
@@ -23,33 +25,38 @@ $I(s) = P(s)$ and $T(s, s') = P(s')$, i.e., you start in any state
 satisfying the property and can transition to any state that still
 satisfies the property. This answer gives no insight into the original
 system because it has no connection to the original system. In this
-section we introduce the notion of {\em set of support} which looks at
-generalizing the original transition system while preserving a safety
-property.
+section we introduce the notion of {\em inductive validity cores} (IVC) 
+which looks at generalizing the original transition system while 
+preserving a safety property.
 
 In order to talk about generalizing a transition system, we assume the
 transition relation of the system has the structure of a top-level
 conjunction. This assumption gives us a structure that we can easily
 manipulate as we generalize the system. For ease of notation we will
 write the transition system $T_1(s, s') \land \cdots \land T_n(s, s')$
-as just $T_1 \land \cdots \land T_n$ or for short $\bigwedge T$ or
-$\widehat T$ where $T = \{T_1, \ldots, T_n\}$. We will use a similar
+as just $T_1 \land \cdots \land T_n$ or for short $\bigwedge T$ or %$\bigwedge_{k=1}^{n} T_{k}$ or
+$\widehat T$ where $T = \{T_1, \ldots, T_n\}$.  We will use a similar
 notation of sets of invariants. We now define our notion of
 generalization for transition systems.
 
-\begin{definition}{\emph{Set of support:}}
-  \label{def:set-of-support}
+\mike{The $\bigwedge T$ and $\bigwedge S$ notation is a little bit ambigious, because we have already defined $T$ to be the conjunction of its sub-elements.  Is there a slight modification to make this clear?  Do we need it?  For Algorithm 1, could we just say $x$ is a conjunct in $S$? Then use $\widehat S \ {x}$ as notation? }
+  
+%\mike{I have some questions about the definitions below.  $\bigwedge T$ is a finite unrolling of a transition system, not a transition relation itself - this has a 
+
+
+\begin{definition}{\emph{Inductive Validity Core:}}
+  \label{def:ivc}
   Let $(I, \widehat T)$ be a transition system and let $P$ be a
   safety property with $(I, \widehat T)\vdash P$. We say $S \subseteq
-  T$ is a {\em set of support} for $(I, \widehat T)\vdash P$ iff $(I,
+  T$ is a {\em inductive validity core} for $(I, \widehat T)\vdash P$ iff $(I,
   \widehat S) \vdash P$. When $I$, $T$, and $P$ can be inferred from
-  context we will simply say $S$ is a set of support.
+  context we will simply say $S$ is an inductive validity core.
 \end{definition}
 
-\begin{definition}{\emph{Minimal Set of support:}}
+\begin{definition}{\emph{Minimal Inductive Validity Core:}}
   \label{def:minimal-set-of-support}
-  A set of support $S$ for $(I, \widehat T)\vdash P$ is minimal iff
-  there does not exist $M \subset S$ such that $M$ is a set of support
+  An inductive validity core $S$ for $(I, \widehat T)\vdash P$ is minimal iff
+  there does not exist $M \subset S$ such that $M$ is an inductive validity core
   for $(I, \widehat T)\vdash P$.
 \end{definition}
 
@@ -57,8 +64,8 @@ generalization for transition systems.
   \label{lem:set-of-support-monotonic}
   Let $(I, \widehat T)$ be a transition system and let $P$ be a
   safety property with $(I, \widehat T)\vdash P$. Let $S_1 \subseteq
-  S_2 \subseteq T$. If $S_1$ is a set of support for $(I, \widehat
-  T)\vdash P$ then $S_2$ is a set of support for $(I, \widehat T)\vdash P$.
+  S_2 \subseteq T$. If $S_1$ is an inductive validity core for $(I, \widehat
+  T)\vdash P$ then $S_2$ is an inductive validity core for $(I, \widehat T)\vdash P$.
 \end{lemma}
 \begin{proof}
   From $S_1 \subseteq S_2$ we have $\widehat S_2 \Rightarrow \widehat
@@ -70,7 +77,7 @@ generalization for transition systems.
   \SetKwInOut{Input}{input}
   \SetKwInOut{Output}{output}
   \Input{$(I, \widehat T)\vdash P$}
-  \Output{Minimal set of support for $(I, \widehat T)\vdash P$}
+  \Output{Minimal inductive validity core for $(I, \widehat T)\vdash P$}
   \BlankLine
   $S \leftarrow T$ \\
   \For{$x \in S$} {
@@ -79,28 +86,28 @@ generalization for transition systems.
     }
   }
   \Return{S}
-\caption{Simple algorithm for computing a minimal set of support}
+\caption{Simple algorithm for computing a minimal inductive validity core}
 \label{alg:naive}
 \end{algorithm}
 
 This lemma gives us a simple, but inefficient algorithm for computing
-a minimal set of support, Algorithm~\ref{alg:naive}. The resulting set
-of this algorithm is obviously a set of support for $(I, \widehat
+a minimal inductive validity core, Algorithm~\ref{alg:naive}. The resulting set
+of this algorithm is obviously an inductive validity core for $(I, \widehat
 T)\vdash P$. The following lemma shows that it is also minimal.
 
 \begin{lemma}
-  The result of Algorithm~\ref{alg:naive} is a minimal set of support
+  The result of Algorithm~\ref{alg:naive} is a minimal inductive validity core
   for $(I, \widehat T)\vdash P$.
 \end{lemma}
 \begin{proof}
   Let the result be $R$. Suppose towards contradiction that $R$ is not
-  minimal. Then there a set of support $M$ with $M \subset R$. Take $x
+  minimal. Then there an inductive validity core $M$ with $M \subset R$. Take $x
   \in R\setminus M$. Since $x \in R$ it must be that during the
   algorithm $(I, \bigwedge(S\setminus\{x\}))\vdash P$ is not true for
   some set $S$ where $R \subseteq S$. We have $M \subset R \subseteq
   S$ and $x\not\in M$, thus $M \subseteq S\setminus \{x\}$. Since $M$
-  is a set of support, Lemma~\ref{lem:set-of-support-monotonic} says
-  that $S\setminus \{x\}$ is a set of support, and so $(I, \bigwedge
+  is an inductive validity core, Lemma~\ref{lem:set-of-support-monotonic} says
+  that $S\setminus \{x\}$ is an inductive validity core, and so $(I, \bigwedge
   (S\setminus\{x\}))\vdash P$. This is a contradiction, thus $R$ must
   be minimal.
 \end{proof}
@@ -116,12 +123,12 @@ inefficient since it tries to re-prove the property multiple times.
   \SetKwInOut{Output}{output}
   \Input{$P$ with invariants $Q$ is $k$-inductive for $(I,
     \widehat T)$}
-  \Output{Set of support for $(I, \widehat T)\vdash P$}
+  \Output{Inductive validity core for $(I, \widehat T)\vdash P$}
   \BlankLine
   $k \leftarrow \mink(I, \widehat T, P \land \widehat Q)$ \\
   $R \leftarrow \reduceinv_k(\widehat T, Q, P)$ \\
   \Return{$\minsupport_k(I, T, R)$}\\
-\caption{Efficient algorithm for computing a nearly minimal set of support}
+\caption{Efficient algorithm for computing a nearly minimal inductive validity core}
 \label{alg:set-of-support}
 \end{algorithm}
 
@@ -134,8 +141,7 @@ for $P$ which allows us to reconstruct the proof over a modified
 transition system. However, we must be careful since this proof
 structure may be more than is actually needed to establish $P$. In
 particular, $Q$ may contain unneeded invariants which could cause the
-set of support for $P \land \widehat Q$ to be larger than the set of
-support for $P$. Thus before computing the set of support we first try
+inductive validity core for $P \land \widehat Q$ to be larger than the inductive validity core for $P$. Thus before computing the inductive validity core we first try
 to reduce the set of invariants to be as small as possible. This
 operation is expensive when $k$ is large so as a first step we
 minimize $k$. This is the motivation behind
@@ -210,10 +216,10 @@ incrementally to improve efficiency.
 
 \begin{algorithm}[t]
   $R \leftarrow \{P\}$ \\
-  Create activation literals $a_1, \ldots, a_n$ \\
+  Create activation literals $A = \{a_1, \ldots, a_n\}$ \\
   $C \leftarrow \{a_1 \Rightarrow Q_1, \ldots, a_n \Rightarrow Q_n\}$ \\
   \While{$true$} {
-    $\checksat(\neg\iq_k(T, \widehat C, \widehat R))$ \\
+    $\checksat(A, \neg\iq_k(T, \widehat C, \widehat R))$ \\
     \If{$\unsatcore() = \emptyset$}{
       \Return{R}
     }
@@ -238,8 +244,9 @@ mutually need each other, even though none of them is needed to prove
 $P$. Thus in Algorithm~\ref{alg:reduce-invariants} we find a minimal
 set of invariants needed to prove $P$, then we find a minimal set of
 invariants to prove those invariants, and so on. We terminate when no
-more invariants are needed to prove the properties in $R$. Even still,
-this does not guarantee the result is minimal. For example, we may
+more invariants are needed to prove the properties in $R$. 
+
+This iterative lemma determination does not guarantee a minimal result. For example, we may
 find $P$ requires just $Q_1$, that $Q_1$ requires just $Q_2$, and that
 $Q_2$ does not require any other invariants. This gives the result
 $\{P, Q_1, Q_2\}$, but it may be that $Q_2$ alone is enough to prove
@@ -248,10 +255,12 @@ about the result of \checksat, only the \unsatcore that comes out of
 it. Since $P \land Q_1 \land \cdots \land Q_n$ is $k$-inductive, we
 know the \checksat call will always return \unsat.
 
+\mike{I think we want to be slightly more formal in our reasoning about these algorithms, defining soundness (and when possible, minimality) lemmas for each.}
+
 \begin{algorithm}[t]
-  Create activation literals $a_1, \ldots, a_n$ \\
+  Create activation literals $A = \{a_1, \ldots, a_n\}$ \\
   $T \leftarrow (a_1 \Rightarrow T_1) \land \cdots \land (a_n \Rightarrow T_n)$ \\
-  $\checksat(\neg\fq_k(I, T, P))$ \\
+  $\checksat(A, \neg\fq_k(I, T, P))$ \\
   $R \leftarrow \emptyset$ \\
   \For{$a_i \in \unsatcore()$}{
     $R \leftarrow R \cup \{T_i\}$
@@ -263,17 +272,14 @@ know the \checksat call will always return \unsat.
 
 The function $\minsupport_k(I, \{T_1, \ldots, T_n\}, P)$ is defined in
 Algorithm~\ref{alg:minimize-support}. This function assumes that $P$
-is $k$-inductive for $(I, \widehat T)$. It returns a minimal set of
-support $R \subseteq \{T_1, \ldots, T_n\}$ such that $P$ is
+is $k$-inductive for $(I, \widehat T)$. It returns a minimal inductive validity core $R \subseteq \{T_1, \ldots, T_n\}$ such that $P$ is
 $k$-inductive for $(I, \widehat R)$.
 
 Our complete of support algorithm in
-Algorithm~\ref{alg:set-of-support} does not guarantee a minimal set of
-support. One reason is that \reduceinv does not guarantee a minimal
+Algorithm~\ref{alg:set-of-support} does not guarantee a minimal inductive validity core. One reason is that \reduceinv does not guarantee a minimal
 set of invariants. A larger reason is that we only consider the
 invariants that the algorithm is given at the outset. It is possible
-that there are other invariants which could lead to a smaller set of
-support, but we do not search for them. In Section~\ref{sec:exprm}, we
+that there are other invariants which could lead to a smaller inductive validity core, but we do not search for them. In Section~\ref{sec:exprm}, we
 show that in practice our algorithm is nearly minimal and much more
 efficient that the naive algorithm.
 

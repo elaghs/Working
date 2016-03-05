@@ -10,13 +10,15 @@ This section evaluates our approach by addressing the following research questio
 
 \subsection{Analytical Results}
 \label{sec:res}
-This section addresses the aforementioned research questions briefly describing the way the results were analyzed. Note that the results of 10 models with unprovable properties were omitted in calculations. In addition, while analyzing support sets, \texttt{K-induction} settings that timed out were not considered because they failed to prove the properties.
-In general, for timing analyses, from all 13 configurations, we only considered the settings where both \texttt{PDR} and \texttt{K-induction} engines were activated. Since this configuration is a default setting in \texttt{JKind}, we only care about timing while both engines are employed. Therefore, $(4 \times 405) = 1620$ of all 5265 runs have been analyzed to address time-efficiency questions.
+This section addresses the aforementioned research questions briefly describing the way the results were analyzed. In general, for timing analyses, from all 13 configurations, we only considered the settings where both \texttt{PDR} and \texttt{K-induction} engines were activated. Since this configuration is a default setting in \texttt{JKind}, we only care about timing while both engines are employed. Therefore, $(4 \times 405) = 1620$ of all 5265 runs have been analyzed to address time-efficiency questions.
+\ela{remove this line if removing the Result section: }
+Note that  the results of 10 models with unprovable properties were omitted in calculations. In addition,
+ while analyzing support sets, \texttt{K-induction} settings that timed out were not considered because they failed to prove the properties.
 
-In the following, we will address the research questions from different perspectives, in most of which statistical hypothesis testing \cite{lehmann1986testing} has been used. Also, we used Jaccard distance to measure dissimilarity between sets:
+In the following, we will address the research questions from different perspectives, in most of which significance testing along with Cohen's $d$ effect size (ES), has been used. Also, dissimilarity between sets was measured using Jaccard distance:
 \begin{definition}{\emph{Jaccard distance:}}
   \label{def:dj}
-  $d_J(\small{A}, \small{B}) = 1 - \frac{|A \cap B|}{|A \cup B|} ,\\ \leq d_J(\small{A}, \small{B}) \leq 1$
+  $d_J(\small{A}, \small{B}) = 1 - \frac{|A \cap B|}{|A \cup B|} ,\\ 0 \leq d_J(\small{A}, \small{B}) \leq 1$
 \end{definition}
 
 % RQ1: the overhead of support computation on different solvers
@@ -65,6 +67,8 @@ In addition to overhead, it is also important to know how efficiently \texttt{Re
   \includegraphics[width=\columnwidth]{figs/runtimeAll.png}
   \caption{Runtime of support computation with all solvers compared to \texttt{JSupport}}\label{fig:runtimeall}
 \end{figure}
+
+ \vspace{6pt}
 \noindent\fbox{%
     \parbox{\columnwidth}{%
         Support computation by \texttt{JSupport} is much more time-consuming than \texttt{ReduceSupport}.
@@ -73,48 +77,48 @@ In addition to overhead, it is also important to know how efficiently \texttt{Re
  \vspace{6pt}
 
 %\item \textbf{RQ2:} How close to minimal are the support sets computed by \texttt{ReduceSupport} vs. \texttt{JSupport}?
-\textbf{RQ2.} To address this question, we begin by formulating the following statistical hypotheses:
-
+\textbf{RQ2.} To address this question,
+we begin by formulating the following statistical hypotheses:
 \begin{itemize}
-  \item H0: support sets computed by \texttt{ReduceSupport} are far away from minimal (i.e. an average Jaccard distance near 0.50, or an average size difference near 50\%).
-  \item H1: support sets computed by \texttt{ReduceSupport} are close to minimal.
+  \item H0: support sets computed by \texttt{ReduceSupport} are far away from minimal (i.e. an average Jaccard distance of 0.20, or an average size difference of 2).
+ \item H1: support sets computed by \texttt{ReduceSupport} are close to minimal (i.e. an average Jaccard distance less than 0.20, or an average size difference less than 2).
 \end{itemize}
+We calculated pairwise Jaccard distance between sets obtained from different configurations and \texttt{JSupport} per model. Then, minimum, maximum, mean, and standard deviation of the calculated data were obtained among all models. The results are summarized in Table~\ref{tab:jsupjac} based on one-tailed testing.
 
-We calculated pairwise Jaccard distance between sets obtained from different configurations and \texttt{JSupport} per model. Then, minimum, maximum, mean, and standard deviation of the calculated data were obtained among all models.
-The result are summarized as follows:
-\begin{itemize}
-  \item minimum of Jaccard distances from \texttt{JSupport} among all models is: 0.0
-  \item maximum of Jaccard distances from \texttt{JSupport} among all models is: 0.882
-  \item standard deviation for Jaccard distances from \texttt{JSupport} among all models is: 0.034
-  \item average of Jaccard distances from \texttt{JSupport} is: 0.103
-\end{itemize}
-%\begin{table}
-%  \centering
-%  \begin{tabular}{ |c|c|c|c|c|c| }
-%    \hline
-%     min & max & mean & stdev & sample size& p-value\\[0.5ex]
-%    \hline
-%     0.0   & 0.882 & 0.103 & 0.034 & 4196 & < 0.00001 \\[0.5ex]
-%    % mean H0 = 0.5
-%    % sample_size = (405-10-8)*12 - (112*4) = 4644 - 448 = 4196  ---> sqrt = 64.78
-%    % t-score =  mean - mean_H0 / (stdev / \sqrt{sample_zize}) = -756.40
-%    \hline
-%  \end{tabular}
-%  \caption{Jaccard distances from \texttt{JSupport} among all models}
-%  \label{tab:jsupjac}
-%\end{table}
+%\begin{itemize}
+%  \item minimum of Jaccard distances from \texttt{JSupport} among all models is: 0.0
+%  \item maximum of Jaccard distances from \texttt{JSupport} among all models is: 0.882
+%  \item standard deviation for Jaccard distances from \texttt{JSupport} among all models is: 0.034
+%  \item average of Jaccard distances from \texttt{JSupport} is: 0.103
+%\end{itemize}
+\begin{table}
+  \centering
+  \begin{tabular}{ |c|c|c|c|c|c| }
+    \hline
+     min & max & mean & stdev & ES & p-value\\[0.5ex]
+    \hline
+    %sample size = 4196
+     0.0   & 0.882 & 0.103 & 0.034 & 2.85 & < 0.00001 \\[0.5ex]
+    % mean H0 = 0.5
+    % sample_size = (405-10-8)*12 - (112*4) = 4644 - 448 = 4196  ---> sqrt = 64.78
+    % z-score =  mean - mean_H0 / (stdev / \sqrt{sample_zize}) = -756.40
+    \hline
+  \end{tabular}
+  \caption{Jaccard distances from \texttt{JSupport} among all models}
+  \label{tab:jsupjac}
+\end{table}
 
-In terms of size, we calculated the size of the biggest and smallest sets per model, then added them together for all models. The same calculation has been done for \texttt{JSupport}:
+\ela{I think this is not needed: \\In terms of size, we calculated the size of the biggest and smallest sets per model, then added them together for all models. The same calculation has been done for \texttt{JSupport}:
 \begin{itemize}
   \item $A\_JS$: the aggregate number of elements in support sets computed by \texttt{JSupport} = 3078
   \item $A\_Ss$: the aggregate number of elements in the \emph{smallest} support sets = 3474;
   this implies $A\_Ss$ is 12\% greater than $A\_JS$.
   \item $A\_Bs$: the aggregate number of elements in the \emph{biggest} support sets = 3586;
   this implies $A\_Bs$ is 16\% greater than $A\_JS$.
-\end{itemize}
+\end{itemize}}
 Average size of sets computed by \texttt{ReduceSupport} is 8.55. And, average size of sets computed by \texttt{JSupport} is 7.60. Therefore, in average, support sets computed by \texttt{ReduceSupport} are 88\% close to minimal, in terms of their size.  %  (1 - ((8.55 - 7.6)/ 7.6))  * 100 = 87.5%
-Since \texttt{JSupport}, with a great percentage, most of the time computed the smallest support set, we compared the size of the sets computed by \texttt{ReduceSupport} with \texttt{JSupport}. For each configuration, we collected the difference between its support size and \texttt{JSupport} per model.
-Then, minimum, maximum, average, and standard deviation of the collected data have been reported in Table~\ref{tab:minimality}. For example, -2 in the first column means that there was a case study where \texttt{ReduceSupport} generated sets that were smaller than the one computed by \texttt{JSupport} with a size difference of 2.
+Since \texttt{JSupport}, with a great percentage, most of the time computed the smallest support set, we compared the size of the sets computed by \texttt{ReduceSupport} with \texttt{JSupport}. For each configuration, we collected the difference between its support size and \texttt{JSupport} per model. Table~\ref{tab:minimality} shows the result of analysis.
+%Then, minimum, maximum, average, and standard deviation of the collected data have been reported in Table~\ref{tab:minimality}. For example, -2 in the first column means that there was a case study where \texttt{ReduceSupport} generated sets that were smaller than the one computed by \texttt{JSupport} with a size difference of 2.
 
 %
 %
@@ -139,35 +143,62 @@ Then, minimum, maximum, average, and standard deviation of the collected data ha
 %\end{figure}
 %
 %
+%\begin{table}
+%  \centering
+%  \begin{tabular}{|c|c|c|c|c|c|c|}
+%     \hline
+%     configuration & min & max & mean & stdev & effect size& p-value \\[0.5ex]
+%     \hline\hline
+%     K-induction & -2 & 28 & 0.542 & 1.831 & 0 & < 0.0\\[0.5ex]
+%     PDR & -2 & 28 & 0.677 & 1.819 & 0 & < 0.0\\[0.5ex]
+%     Both engines & -2 & 28 & 0.661 & 1.751 & 0 & < 0.0\\[0.5ex]
+%     \hline
+%     Z3, K-ind & -2 & 28 & 0.555 & 1.842 & 0 & < 0.0\\[0.5ex]
+%     Yices, K-ind & -2 & 28 & 0.544 & 1.838 & 0 & < 0.0\\[0.5ex]
+%     SMTInterpol, K-ind & -2 & 28 & 0.534 & 1.822 & 0 & < 0.0\\[0.5ex]
+%     MathSAT, K-ind & -2 & 28 & 0.537 & 1.823 & 0 & < 0.0\\[0.5ex]
+%     \hline
+%     Z3, PDR & -2 & 28 & 0.697 & 1.852 & 0 & < 0.0\\[0.5ex]
+%     Yices, PDR & -2 & 28 & 0.668 & 1.807 & 0 & < 0.0\\[0.5ex]
+%     SMTInterpol, PDR & -2 & 28 & 0.673 & 1.813 & 0 & < 0.0\\[0.5ex]
+%     MathSAT, PDR & -2 & 28 & 0.668 & 1.803 & 0 & < 0.0\\[0.5ex]
+%     \hline
+%     Z3, Both engines & -2 & 28 & 0.663 & 1.729 & 0 & < 0.0\\[0.5ex]
+%     Yices, Both engines & -2 & 28 & 0.650 & 1.721 & 0 & < 0.0\\[0.5ex]
+%     SMTInterpol, Both engines & -2 & 28 & 0.637 & 1.713 & 0 & < 0.0\\[0.5ex]
+%     MathSAT, Both engines & -2 & 28 & 0.692 & 1.837 & 0 & < 0.0\\[0.5ex]
+%     \hline
+%   \end{tabular}
+%  \caption{Size difference of support sets of different configurations from \texttt{JSupport}}\label{tab:minimality}
+%\end{table}
 \begin{table}
   \centering
   \begin{tabular}{|c|c|c|c|c|}
      \hline
-     configuration & min & max & mean & stdev \\[0.5ex]
+     configuration & mean & stdev & ES & p-value \\[0.5ex]
      \hline\hline
-     K-induction & -2 & 28 & 0.542 & 1.831 \\[0.5ex]
-     PDR & -2 & 28 & 0.677 & 1.819 \\[0.5ex]
-     Both engines & -2 & 28 & 0.661 & 1.751 \\[0.5ex]
+     K-induction  & 0.542 & 1.831 & 0.80 & < 0.00001\\[0.5ex] %sample_size = 1132 z = -8.03
+     PDR & 0.677 & 1.819 & 0.73 & < 0.00001\\[0.5ex] %sample_size = 1580 (39.74)  z = -28.9
+     Both engines & 0.661 & 1.751 & 0.76 & < 0.00001\\[0.5ex]
      \hline
-     Z3, K-ind & -2 & 28 & 0.555 & 1.842 \\[0.5ex]
-     Yices, K-ind & -2 & 28 & 0.544 & 1.838 \\[0.5ex]
-     SMTInterpol, K-ind & -2 & 28 & 0.534 & 1.822 \\[0.5ex]
-     MathSAT, K-ind & -2 & 28 & 0.537 & 1.823 \\[0.5ex]
+     Z3, K-ind & 0.555 & 1.842 & 0.78 & < 0.00001\\[0.5ex]%sample_size = 283(16.8) z = 13.18
+     Yices, K-ind  & 0.544 & 1.838 & 0.79 & < 0.00001\\[0.5ex]
+     SMTInterpol, K-ind & 0.534 & 1.822 & 0.80 & < 0.00001\\[0.5ex]
+     MathSAT, K-ind  & 0.537 & 1.823 & 0.80 & < 0.00001\\[0.5ex]
      \hline
-     Z3, PDR & -2 & 28 & 0.697 & 1.852 \\[0.5ex]
-     Yices, PDR & -2 & 28 & 0.668 & 1.807 \\[0.5ex]
-     SMTInterpol, PDR & -2 & 28 & 0.673 & 1.813 \\[0.5ex]
-     MathSAT, PDR & -2 & 28 & 0.668 & 1.803 \\[0.5ex]
+     Z3, PDR & 0.697 & 1.852 & 0.70 & < 0.00001\\[0.5ex]%sample = 395 z = 13.99
+     Yices, PDR  & 0.668 & 1.807 & 0.73 & < 0.00001\\[0.5ex]
+     SMTInterpol, PDR  & 0.673 & 1.813 & 0.73 & < 0.00001\\[0.5ex]
+     MathSAT, PDR  & 0.668 & 1.803 & 0.74 & < 0.00001\\[0.5ex]
      \hline
-     Z3, Both engines & -2 & 28 & 0.663 & 1.729 \\[0.5ex]
-     Yices, Both engines & -2 & 28 & 0.650 & 1.721 \\[0.5ex]
-     SMTInterpol, Both engines & -2 & 28 & 0.637 & 1.713 \\[0.5ex]
-     MathSAT, Both engines & -2 & 28 & 0.692 & 1.837 \\[0.5ex]
+     Z3, Both engines & 0.663 & 1.729 & 0.77 & < 0.00001\\[0.5ex]
+     Yices, Both engines  & 0.650 & 1.721 & 0.78 & < 0.00001\\[0.5ex]
+     SMTInterpol, Both engines  & 0.637 & 1.713 & 0.80 & < 0.00001\\[0.5ex]
+     MathSAT, Both engines & 0.692 & 1.837 & 0.71 & < 0.00001\\[0.5ex]
      \hline
    \end{tabular}
-  \caption{Summary of minimality analyses in different configurations}\label{tab:minimality}
+     \caption{Size difference of support sets of different configurations from \texttt{JSupport}}\label{tab:minimality}
 \end{table}
-
 %\begin{figure}
 %  \centering
 %  \includegraphics[width=\textwidth]{figs/minimality_analyses.png}
@@ -197,8 +228,8 @@ Then, minimum, maximum, average, and standard deviation of the collected data ha
 
 \textbf{(1)} For 405 models, we calculated minimum, maximum, avgerage, and standard deviation of Jaccard distance between \texttt{JSupport} and each configuration. To see if our computation is dependent on a particular solver/ proof engine, we formulate these hypotheses:
 \begin{itemize}
-  \item H0: \texttt{ReduceSupport} in some configurations generates support sets that are always far from minimal (with an average Jaccard distance near 0.5)
-  \item H1: \texttt{ReduceSupport} in all configurations computes sets that are very close to minimal.
+  \item H0: \texttt{ReduceSupport} in some configurations generates support sets that are always far from minimal (with an average Jaccard distance of 0.2)
+  \item H1: \texttt{ReduceSupport} in all configurations computes sets that are very close to minimal (with an average Jaccard distance less than 0.2).
 \end{itemize}
 
 Table~\ref{tab:jsupconf} represents the result of this analysis; for example, configuration \emph{(Z3, Both)}, shows that \texttt{JKind} with \texttt{Z3} and both \texttt{K-induction} and \texttt{PDR} engines has an average Jaccard distance of 0.106 (in 405 models) from \texttt{JSupport}.
@@ -208,25 +239,25 @@ Table~\ref{tab:jsupconf} represents the result of this analysis; for example, co
   \centering
   \begin{tabular}{|c|c|c|c|c|}
     \hline
-    configuration & min & max & mean & stdev  \\[0.5ex]
+    configuration & mean & stdev & ES & p-value \\[0.5ex]
     \hline\hline
     % sample size = 405 - 18 = 387    sample size for k_ind = 405 - 18 - 112 = 275
     %
-    Z3, Both & 0.0 & 0.882 & 0.106 & 0.155 \\[0.5ex]
-    Z3, K-induction & 0.0 & 0.882 & 0.116 & 0.168 \\[0.5ex]
-    z3, PDR & 0.0 & 0.882 & 0.102 & 0.151 \\[0.5ex]
+    Z3, Both  & 0.106 & 0.155 & 0.49 & < 0.00001\\[0.5ex] %z = 11.93
+    Z3, K-induction & 0.116 & 0.168 & 0.50 & < 0.00001\\[0.5ex]
+    z3, PDR  & 0.102 & 0.151 & 0.64 & < 0.00001\\[0.5ex]
     \hline
-    Yices, Both & 0.0 & 0.882 & 0.104 & 0.152 \\[0.5ex]
-    Yices, K-induction & 0.0 & 0.882 & 0.114 & 0.166 \\[0.5ex]
-    Yices, PDR & 0.0 & 0.882 & 0.098 & 0.147 \\[0.5ex]
+    Yices, Both & 0.104 & 0.152 & 0.63& < 0.00001 \\[0.5ex]
+    Yices, K-induction  & 0.114 & 0.166 & 0.52 & < 0.00001 \\[0.5ex]
+    Yices, PDR  & 0.098 & 0.147 & 0.69 & < 0.00001\\[0.5ex]
     \hline
-    SMTInterpol, Both & 0.0 & 0.882 & 0.103 & 0.152 \\[0.5ex]
-    SMTInterpol, K-induction & 0.0 & 0.882 & 0.115 & 0.167 \\[0.5ex]
-    SMTInterpol, PDR & 0.0 & 0.882 & 0.101 & 0.149 \\[0.5ex]
+    SMTInterpol, Both  & 0.103 & 0.152 & 0.63 & < 0.00001\\[0.5ex]
+    SMTInterpol, K-induction  & 0.115 & 0.167 & 0.49 & < 0.00001\\[0.5ex]
+    SMTInterpol, PDR  & 0.101 & 0.149 & 0.66 & < 0.00001\\[0.5ex]
     \hline
-    MathSAT, Both & 0.0 & 0.882 & 0.106 & 0.156 \\[0.5ex]
-    MathSAT, K-induction & 0.0 & 0.882 & 0.115 & 0.167 \\[0.5ex]
-    MathSAT, PDR & 0.0 & 0.882 & 0.100 & 0.148 \\[0.5ex]
+    MathSAT, Both  & 0.106 & 0.156 & 0.60 & < 0.00001\\[0.5ex]
+    MathSAT, K-induction & 0.115 & 0.167 &0.51 & < 0.00001\\[0.5ex]
+    MathSAT, PDR & 0.100 & 0.148 & 0.68  &< 0.00001\\[0.5ex]
     \hline
   \end{tabular}
   \caption{Jaccard distance between \texttt{JSupport} and each configuration}\label{tab:jsupconf}
@@ -235,26 +266,44 @@ Table~\ref{tab:jsupconf} represents the result of this analysis; for example, co
 \vspace{6pt}
 \noindent\fbox{%
     \parbox{\columnwidth}{%
-    \texttt{ReduceSupport}, regardless of solver/ proof engine, generated support sets that are very close to minimal sets computed by \texttt{JSupport}.
+    \texttt{ReduceSupport}, regardless of solver/ proof engine, generated support sets that are very close to minimal sets computed by \texttt{JSupport}. By comparing ES of different configurations, \texttt{PDR} generates more closely sets to \texttt{JSupport}.
     }%
 }
  \vspace{6pt}
 
 % H0: there are pairwise configurations that generate support sets that are very different (with an average Jaccard distance near 0.5)
-\textbf{(2)} For each model in the benchmark, the experiments generated 13 different sets of support.
-We used Jaccard distance to measure dissimilarity between pairwise of these sets
-Therefore, we obtained $\binom{13}{2} = 78$ combinations of distances per model. Then, minimum, maximum, average, and standard deviation of the distances were calculated (Fig~\ref{fig:jacdis}), by which, again, we calculated these four measures among all 405 models. The following summarizes the result of this analysis:
+\textbf{(2)} For each model in the benchmark, the experiments generated 13 different sets of support. Therefore, we obtained $\binom{13}{2} = 78$ combinations of pairwise distances per model. Then, minimum, maximum, average, and standard deviation of the distances were calculated (Fig~\ref{fig:jacdis}), by which, again, we calculated these four measures among all 405 models. The following hypotheses are used to evaluate the results shown in Table~\ref{tab:78com}:
 \begin{itemize}
-  \item minimum Jaccard distance among all models is: 0.0
-  \item maximum Jaccard distance among all models is: 0.882
-  \item average Jaccard distance among all models is: 0.027
-  \item standard deviation of Jaccard distance among all models is: 0.062
+  \item H0: there are pairwise configurations that generate very different support sets (with an average Jaccard distance of 0.2)
+  \item H1: each pair of configurations generates very similar support sets (with an average Jaccard distance less than 0.2)
 \end{itemize}
+
+\begin{table}
+  \centering
+  \begin{tabular}{ |c|c|c|c|c|c| }
+    \hline
+     min & max & mean & stdev & ES & p-value\\[0.5ex]
+    \hline
+    %sample size = 4196
+     0.0   & 0.882 & 0.027 & 0.062 & 2.79 & < 0.00001 \\[0.5ex]
+    \hline
+  \end{tabular}
+  \caption{Pairwise Jaccard distances among all models}
+  \label{tab:78com}
+\end{table}
+
+%summarizes the result of this analysis:
+%\begin{itemize}
+%  \item minimum Jaccard distance among all models is: 0.0
+%  \item maximum Jaccard distance among all models is: 0.882
+%  \item average Jaccard distance among all models is: 0.027
+%  \item standard deviation of Jaccard distance among all models is: 0.062
+%\end{itemize}
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{figs/jacdis2.png}
-  \caption{\small{Pairwise Jaccard distance between support sets}}\label{fig:jacdis}
+  \caption{Pairwise Jaccard distance between support sets}\label{fig:jacdis}
 \end{figure}
 
 
@@ -292,7 +341,7 @@ Therefore, we obtained $\binom{13}{2} = 78$ combinations of distances per model.
 % \vspace{6pt}
 
 \textbf{Timing analysis.} Table~\ref{tab:eff-comp-jsup} compares overall runtime of support computation in different solvers and \texttt{JSupport}, which helps to see if any solvers outperform others in terms of performance.
-
+\ela{will add hypotheses}
 \begin{table}
   \centering
   \begin{tabular}{ |c||c|c|c|c| }
@@ -390,13 +439,33 @@ Based on this notion, overall dissimilarity, denoted by $D_{J\{M\}}$, is defined
   $D_{J\{M\}} =  \frac{\sum_{i=1}^{12}d_J(s_{Mi}, C_M)}{12},   \hspace{9pt} s_{Mi} \in S_M$
 \end{definition}
 
-Since our goal is to measure the diversity or dissimilarity among sets computed by \texttt{ReduceSupport}, in \ref{def:dis}, we exclude the set generated by \texttt{JSupport}. In Fig~\ref{fig:jacdis}, the \emph{overall distance} line shows $D_{J\{M\}}$ per model, which can be summarized as follows:
+Since our goal is to measure the diversity or dissimilarity among sets computed by \texttt{ReduceSupport}, in \ref{def:dis}, we exclude the set generated by \texttt{JSupport}. In Fig~\ref{fig:jacdis}, the \emph{overall distance} line shows $D_{J\{M\}}$ per model, which can be analyzed from the following hypotheses:
 \begin{itemize}
-  \item minimum $D_{J\{M\}}$ among all models: 0.0
-  \item maximum $D_{J\{M\}}$ among all models: 0.879
-  \item average $D_{J\{M\}}$ among all models: 0.096
-  \item standard deviation of $D_{J\{M\}}$ among all models: 0.132
+  \item H0: variety of obtained sets of support is high (average $D_{J\{M\}}$ of 0.2)
+  \item H1: variety of obtained sets of support is small (average $D_{J\{M\}}$ less than 0.2)
 \end{itemize}
+Table~\ref{tab:variety} shows that, with an effect size of 0.79, H0 can be rejected.
+\begin{table}
+  \centering
+  \begin{tabular}{ |c|c|c|c|c|c| }
+    \hline
+     min & max & mean & stdev & ES & p-value\\[0.5ex]
+    \hline
+    %sample size = 395
+     0.0   & 0.879 & 0.096 & 0.132 & 0.79 & < 0.00001 \\[0.5ex]
+    \hline
+  \end{tabular}
+  \caption{$D_{J\{M\}}$ among all models}
+  \label{tab:variety}
+\end{table}
+
+%summarized as follows:
+%\begin{itemize}
+%  \item minimum $D_{J\{M\}}$ among all models: 0.0
+%  \item maximum $D_{J\{M\}}$ among all models: 0.879
+%  \item average $D_{J\{M\}}$ among all models: 0.096
+%  \item standard deviation of $D_{J\{M\}}$ among all models: 0.132
+%\end{itemize}
 
 \vspace{6pt}
 \noindent\fbox{%
@@ -432,7 +501,7 @@ Since our goal is to measure the diversity or dissimilarity among sets computed 
 %\noindent\fbox{%
 %    \parbox{\textwidth}{%
 %        An average \textit{similarity} of 0.884 shows that support sets computed in different
-%        configurations are very similar. So, the dependency of our algorithm to different solvers and proof engines is negligible.
+%        configurations are very similar. So, the dependency of our algorithm to different solvers and proof %engines is negligible.
 %    }%
 %}
 % \vspace{6pt}
@@ -443,7 +512,7 @@ Since our goal is to measure the diversity or dissimilarity among sets computed 
 %\begin{figure}
 %  \centering
 %  \includegraphics[width=\textwidth]{figs/core.png}
-%  \caption{\small{Size difference between the core set and the smallest support set per model}}\label{fig:core}
+%  \caption{\small{Size difference between the core set and the smallest support set per %model}}\label{fig:core}
 %\end{figure}
 %
 %\vspace{6pt}
@@ -459,25 +528,39 @@ Since our goal is to measure the diversity or dissimilarity among sets computed 
 %\item \textbf{RQ5:} How does model size affect minimality and diversity of solutions?
 \textbf{RQ5.} The size of the models in our benchmark is between 0 KB and 10 KB.
 We divided the models into 9 different categories based on their size such that $category_i$ contains
-all models whose sizes are between $(i - 1)$ KB and $i$ KB. Then, using Definition~\ref{def:dis}, distance for each model in each category was calculated. After that, minimum, maximum, average, standard deviation of the data were obtained per category. Table~\ref{tab:modelsize} summarizes the result of this analysis; the column \emph{number} in the table shows the number of models in each category, which means the sum of the numbers in the column is 405 (for example, there are 6 models whose sizes are between 8 KB and 9 KB, and in all of them \textit{similarity} is 1.0).
+all models whose sizes are between $(i - 1)$ KB and $i$ KB. Then, using Definition~\ref{def:dis}, distance for each model in each category was calculated. After that, minimum, maximum, average, standard deviation of the data were obtained per category. To analyze data, we use hypothesis testing; since in RQ4, we calculated average of $D_{J\{M\}}$ among all models, we consider it as population mean and formulate the following hypotheses:
+\begin{itemize}
+  \item H0: given $category_i$,
+  \begin{itemize}
+    \item if $i < 5$, mean of $D_{J\{M\}}$ in $i$ is less than population mean of $D_{J\{M\}}$
+    \item if $i \geq 5$, mean of $D_{J\{M\}}$ in $i$ is greater than population mean of $D_{J\{M\}}$
+  \end{itemize}
+  \item H1: given $category_i$, average $D_{J\{M\}}$ in $i$ could be less or
+  greater than equal to the population mean.
+\end{itemize}
+
+Table~\ref{tab:modelsize} summarizes the result of this analysis; the column \emph{n} in the table shows the number of models in each category (sample size), which means the sum of the numbers in the column is 405 (for example, there are 6 models whose sizes are between 8 KB and 9 KB, and in all of them \textit{similarity} is 1.0).
 
 
 \begin{table}
   \centering
-  \begin{tabular}{ |c||c|c|c|c|c|}
+  \begin{tabular}{ |c|c|c|c|c|c|c|c|}
     \hline
-    size (KB) & number&
-     min & max & mean & stdev \\[0.5ex]
+    size (KB) & n&
+     min & max & mean & stdev & ES & p-value \\[0.5ex]
     \hline\hline
-    [0-1] & 49 & 0.0 & 0.333 & 0.084 & 0.131 \\[0.5ex]
-    [1-2] & 90& 0.0 & 0.667 & 0.139 & 0.157 \\[0.5ex]
-    [2-3] & 26&0.0 & 0.5 & 0.124 & 0.132 \\[0.5ex]
-    [3-4] & 34&0.0 & 0.333 & 0.076 & 0.124 \\[0.5ex]
-    [4-5] & 88&0.0 & 0.879 & 0.090 & 0.134 \\[0.5ex]
-    [5-6] & 11&0.0 & 0.25 & 0.170 & 0.107 \\[0.5ex]
-    [6-7] & 2&0.0 & 0.042 & 0.021 & 0.021 \\[0.5ex]
-    [7-8] & 99&0.0 & 0.398 & 0.067 & 0.094 \\[0.5ex]
-    [8-9] & 6&0.0 & 0.0 & 0.0 & 0.0 \\[0.5ex]
+    % For p-value:
+    % mean_H0 = 0.096  std = 0.132 ---- obtained from RQ4
+    % t = (mean − mean_H0)/(stdev/sqrt(sample_size))
+    [0-1] & 49 & 0.0 & 0.333 & 0.084 & 0.131 & 0.09 & < 0.2626 \\[0.5ex] % t = -0.64
+    [1-2] & 90& 0.0 & 0.667 & 0.139 & 0.157 & 0.33 & < 0.00548 \\[0.5ex] % t= 2.598
+    [2-3] & 26&0.0 & 0.5 & 0.124 & 0.132 & 0.21 & < 0.1452 \\[0.5ex] % t = 1.08
+    [3-4] & 34&0.0 & 0.333 & 0.076 & 0.124 & 0.15 & < 0.1770\\[0.5ex] % t = -0.94
+    [4-5] & 88&0.0 & 0.879 & 0.090 & 0.134 & 0.05 & < 0.3377\\[0.5ex] % t = 0.4200
+    [5-6] & 11&0.0 & 0.25 & 0.170 & 0.107 & 0.56 & < 0.0225\\[0.5ex] % t = 2.2937
+    [6-7] & 2&0.0 & 0.042 & 0.021 & 0.021 & 0.57 & < 0.0622\\[0.5ex] % t = -5.051
+    [7-8] & 99&0.0 & 0.398 & 0.067 & 0.094 & 0.22 & < 0.00138\\[0.5ex]% t = 3.069
+    [8-9] & 6&0.0 & 0.0 & 0.0 & 0.0 & 0.72 & < 0.00001\\[0.5ex] %t = inf
     \hline
   \end{tabular}
   \caption{Model size vs similarity among its support sets}\label{tab:modelsize}
@@ -487,7 +570,7 @@ all models whose sizes are between $(i - 1)$ KB and $i$ KB. Then, using Definiti
 \noindent\fbox{%
     \parbox{\columnwidth}{%
      The size of the model does not affect the stability of our algorithm;
-     if a model is large, it does not mean that it will have a lot of different minimal support sets. In other words, minimal support sets of a given property computed by \texttt{JKind} will be very similar to each other.
+     if a model is large, it does not necessarily mean that it will have a lot of different minimal support sets.
     }%
 }
  \vspace{6pt}

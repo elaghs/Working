@@ -25,7 +25,8 @@ system $(I,T)$. \andrew{I don't think we use this anywhere}
 A safety property $P : S \to \bool$ is a state predicate. A safety
 property $P$ holds on a transition system $(I, T)$ if it holds on all
 reachable states, i.e., $\forall s.~ \reach(s) \Rightarrow P(s)$,
-written as $\reach \Rightarrow P$ for short.
+written as $\reach \Rightarrow P$ for short. When this is the case, we
+write $(I, T)\vdash P$.
 
 For an arbitrary transition system $(I, T)$, computing reachability
 can be very expensive or even impossible. Thus, we need a more
@@ -36,14 +37,12 @@ property must hold. Otherwise, the approximation needs to be refined.
 
 A good first approximation for reachability is the property itself.
 That is, we can check if the following formulas hold:
-\begin{equation}
+\begin{gather}
   \forall s.~ I(s) \Rightarrow P(s)
-  \label{eq:1-ind-base}
-\end{equation}
-\begin{equation}
+  \label{eq:1-ind-base} \\
   \forall s, s'.~ P(s) \land T(s, s') \Rightarrow P(s')
   \label{eq:1-ind-step}
-\end{equation}
+\end{gather}
 If both formulas hold then $P$ is {\em inductive} and holds over the
 system. If (\ref{eq:1-ind-base}) fails to hold, then $P$ is violated
 by an initial state of the system. If (\ref{eq:1-ind-step}) fails to
@@ -67,14 +66,12 @@ Another way to refine our over-approximation is to use use {\em
 transition system. For example, 1-induction consists of formulas
 (\ref{eq:1-ind-base}) and (\ref{eq:1-ind-step}) above, whereas
 2-induction consists of the following formulas:
-\begin{align*}
-  \forall s.~ I(s) \Rightarrow P(s)
-&&  \forall s, s'.~ I(s) \land T(s, s') \Rightarrow P(s')
-\end{align*}
-\begin{equation*}
-  \forall s, s', s''.~ P(s) \land T(s, s') \land P(s') \land T(s',
+\begin{gather*}
+\forall s.~ I(s) \Rightarrow P(s) \\
+\forall s, s'.~ I(s) \land T(s, s') \Rightarrow P(s') \\
+\forall s, s', s''.~ P(s) \land T(s, s') \land P(s') \land T(s',
   s'') \Rightarrow P(s'')
-\end{equation*}
+\end{gather*}
 That is, there are two base step checks and one inductive step check.
 In general, for an arbitrary $k$, $k$-induction consists of the $k$
 base step checks and one inductive step check as shown in

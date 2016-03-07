@@ -1,13 +1,13 @@
 \section{Inductive Validity Cores}
-\label{sec:support}
+\label{sec:ivc}
 
 \newcommand{\bq}{\textsc{BaseQuery}\xspace}
-\newcommand{\iq}{\textsc{InductiveQuery}\xspace}
+\newcommand{\iq}{\textsc{IndQuery}\xspace}
 \newcommand{\fq}{\textsc{FullQuery}\xspace}
 
 \newcommand{\mink}{\textsc{MinimizeK}\xspace}
 \newcommand{\reduceinv}{\textsc{ReduceInvariants}\xspace}
-\newcommand{\minsupport}{\textsc{MinimizeSupport}\xspace}
+\newcommand{\minivc}{\textsc{MinimizeIvc}\xspace}
 
 \newcommand{\checksat}{\textsc{CheckSat}\xspace}
 \newcommand{\unsatcore}{\textsc{UnsatCore}\xspace}
@@ -30,120 +30,125 @@ preserving a safety property.
 In order to talk about generalizing a transition system, we assume the
 transition relation of the system has the structure of a top-level
 conjunction. This assumption gives us a structure that we can easily
-manipulate as we generalize the system. For ease of notation we will
-write the transition system $T_1(s, s') \land \cdots \land T_n(s, s')$
-as just $T_1 \land \cdots \land T_n$ or for short $\bigwedge T$ or %$\bigwedge_{k=1}^{n} T_{k}$ or
-$\widehat T$ where $T = \{T_1, \ldots, T_n\}$.  We will use a similar
-notation of sets of invariants. We now define our notion of
-generalization for transition systems.
-
-\mike{The $\bigwedge T$ and $\bigwedge S$ notation is a little bit ambigious, because we have already defined $T$ to be the conjunction of its sub-elements.  Is there a slight modification to make this clear?  Do we need it?  For Algorithm 1, could we just say $x$ is a conjunct in $S$? Then use $\widehat S \ {x}$ as notation? }
-  
-%\mike{I have some questions about the definitions below.  $\bigwedge T$ is a finite unrolling of a transition system, not a transition relation itself - this has a 
-
+manipulate as we generalize the system. Given $T(s, s') = T_1(s, s')
+\land \cdots \land T_n(s, s')$ we will write $T = T_1 \land \cdots
+\land T_n$ for short. By further abuse of notation we will identify
+$T$ with the set of its top-level conjuncts. Thus we will write $x \in
+T$ to mean that $x$ is a top-level conjuct of $T$. We will write $S
+\subseteq T$ to mean that all top-level conjuncts of $S$ are top-level
+conjuncts of $T$. We will write $T \setminus \{x\}$ to mean that $T$
+with the top-level conjunct $x$ removed. We will use the same notation
+when working with sets of invariants.
 
 \begin{definition}{\emph{Inductive Validity Core:}}
   \label{def:ivc}
-  Let $(I, \widehat T)$ be a transition system and let $P$ be a
-  safety property with $(I, \widehat T)\vdash P$. We say $S \subseteq
-  T$ is a {\em inductive validity core} for $(I, \widehat T)\vdash P$ iff $(I,
-  \widehat S) \vdash P$. When $I$, $T$, and $P$ can be inferred from
+  Let $(I, T)$ be a transition system and let $P$ be a
+  safety property with $(I, T)\vdash P$. We say $S \subseteq
+  T$ is a {\em inductive validity core} for $(I, T)\vdash P$ iff $(I,
+  S) \vdash P$. When $I$, $T$, and $P$ can be inferred from
   context we will simply say $S$ is an inductive validity core.
 \end{definition}
 
 \begin{definition}{\emph{Minimal Inductive Validity Core:}}
-  \label{def:minimal-set-of-support}
-  An inductive validity core $S$ for $(I, \widehat T)\vdash P$ is minimal iff
+  \label{def:minimal-ivc}
+  An inductive validity core $S$ for $(I, T)\vdash P$ is minimal iff
   there does not exist $M \subset S$ such that $M$ is an inductive validity core
-  for $(I, \widehat T)\vdash P$.
+  for $(I, T)\vdash P$.
 \end{definition}
 
+Note that minimal inductive validity cores are not necessarily unique.
+For example, take $I = a \land b$, $T = a' \land b'$, and $P = a \lor
+b$. Then both $\{a'\}$ and $\{b'\}$ are minimal inductive validity
+cores for $(I, T)\vdash P$. However, inductive validity cores do have
+the following monotonicity property.
+
 \begin{lemma}
-  \label{lem:set-of-support-monotonic}
-  Let $(I, \widehat T)$ be a transition system and let $P$ be a
-  safety property with $(I, \widehat T)\vdash P$. Let $S_1 \subseteq
-  S_2 \subseteq T$. If $S_1$ is an inductive validity core for $(I, \widehat
-  T)\vdash P$ then $S_2$ is an inductive validity core for $(I, \widehat T)\vdash P$.
+  \label{lem:ivc-monotonic}
+  Let $(I, T)$ be a transition system and let $P$ be a safety property
+  with $(I, T)\vdash P$. Let $S_1 \subseteq S_2 \subseteq T$. If $S_1$
+  is an inductive validity core for $(I, T)\vdash P$ then $S_2$ is an
+  inductive validity core for $(I, T)\vdash P$.
 \end{lemma}
 \begin{proof}
-  From $S_1 \subseteq S_2$ we have $\widehat S_2 \Rightarrow \widehat
-  S_1$. Thus the reachable states of $(I, \widehat S_2)$ are a subset
-  of the reachable states of $(I, \widehat S_1)$. \qed
+  From $S_1 \subseteq S_2$ we have $S_2 \Rightarrow S_1$. Thus the
+  reachable states of $(I, S_2)$ are a subset of the reachable states
+  of $(I, S_1)$. \qed
 \end{proof}
 
 \begin{algorithm}[t]
   \SetKwInOut{Input}{input}
   \SetKwInOut{Output}{output}
-  \Input{$(I, \widehat T)\vdash P$}
-  \Output{Minimal inductive validity core for $(I, \widehat T)\vdash P$}
+  \Input{$(I, T)\vdash P$}
+  \Output{Minimal inductive validity core for $(I, T)\vdash P$}
   \BlankLine
   $S \leftarrow T$ \\
   \For{$x \in S$} {
-    \If{$(I, \bigwedge (S\setminus\{x\})) \vdash P$}{
+    \If{$(I, S\setminus\{x\}) \vdash P$}{
       $S \leftarrow S\setminus \{x\}$
     }
   }
   \Return{S}
-\caption{Simple algorithm for computing a minimal inductive validity core}
+\caption{Simple algorithm for computing a minimal IVC}
 \label{alg:naive}
 \end{algorithm}
 
 This lemma gives us a simple, but inefficient algorithm for computing
-a minimal inductive validity core, Algorithm~\ref{alg:naive}. The resulting set
-of this algorithm is obviously an inductive validity core for $(I, \widehat
-T)\vdash P$. The following lemma shows that it is also minimal.
+a minimal inductive validity core, Algorithm~\ref{alg:naive}. The
+resulting set of this algorithm is obviously an inductive validity
+core for $(I, T)\vdash P$. The following lemma shows that it is also
+minimal.
 
 \begin{lemma}
   The result of Algorithm~\ref{alg:naive} is a minimal inductive validity core
-  for $(I, \widehat T)\vdash P$.
+  for $(I, T)\vdash P$.
 \end{lemma}
 \begin{proof}
   Let the result be $R$. Suppose towards contradiction that $R$ is not
-  minimal. Then there an inductive validity core $M$ with $M \subset R$. Take $x
-  \in R\setminus M$. Since $x \in R$ it must be that during the
-  algorithm $(I, \bigwedge(S\setminus\{x\}))\vdash P$ is not true for
-  some set $S$ where $R \subseteq S$. We have $M \subset R \subseteq
-  S$ and $x\not\in M$, thus $M \subseteq S\setminus \{x\}$. Since $M$
-  is an inductive validity core, Lemma~\ref{lem:set-of-support-monotonic} says
-  that $S\setminus \{x\}$ is an inductive validity core, and so $(I, \bigwedge
-  (S\setminus\{x\}))\vdash P$. This is a contradiction, thus $R$ must
-  be minimal.
+  minimal. Then there is an inductive validity core $M$ with $M
+  \subset R$. Take $x \in R\setminus M$. Since $x \in R$ it must be
+  that during the algorithm $(I, S\setminus\{x\})\vdash P$ is not true
+  for some set $S$ where $R \subseteq S$. We have $M \subset R
+  \subseteq S$ and $x\not\in M$, thus $M \subseteq S\setminus \{x\}$.
+  Since $M$ is an inductive validity core,
+  Lemma~\ref{lem:ivc-monotonic} says that $S\setminus \{x\}$ is an
+  inductive validity core, and so $(I, S\setminus\{x\})\vdash P$. This
+  is a contradiction, thus $R$ must be minimal.
 \end{proof}
 
 This algorithm has two problems in practice. First, checking if a
 safety property holds is undecidable in general thus the algorithm may
-never terminate even when the safety problem is easily provable over
+never terminate even when the safety property is easily provable over
 the original transition system. Second, this algorithm is very
 inefficient since it tries to re-prove the property multiple times.
 
 \begin{algorithm}[t]
   \SetKwInOut{Input}{input}
   \SetKwInOut{Output}{output}
-  \Input{$P$ with invariants $Q$ is $k$-inductive for $(I,
-    \widehat T)$}
-  \Output{Inductive validity core for $(I, \widehat T)\vdash P$}
+  \Input{$P$ with invariants $Q$ is $k$-inductive for $(I, T)$}
+  \Output{Inductive validity core for $(I, T)\vdash P$}
   \BlankLine
-  $k \leftarrow \mink(I, \widehat T, P \land \widehat Q)$ \\
-  $R \leftarrow \reduceinv_k(\widehat T, Q, P)$ \\
-  \Return{$\minsupport_k(I, T, R)$}\\
+  $k \leftarrow \mink(T, P \land Q)$ \\
+  $R \leftarrow \reduceinv_k(T, Q, P)$ \\
+  \Return{$\minivc_k(I, T, R)$}\\
 \caption{Efficient algorithm for computing a nearly minimal inductive validity core}
-\label{alg:set-of-support}
+\label{alg:ivc}
 \end{algorithm}
 
 The key to a more efficient algorithm is to make better use of the
 information that comes out of model checking. In addition to knowing
-that $P$ holds on a system $(I, \widehat T)$, suppose we also know
-something stronger: $P$ with the invariant set $Q$ is $k$-inductive
-for $(I, \widehat T)$. This gives us the broad structure of a proof
-for $P$ which allows us to reconstruct the proof over a modified
-transition system. However, we must be careful since this proof
-structure may be more than is actually needed to establish $P$. In
-particular, $Q$ may contain unneeded invariants which could cause the
-inductive validity core for $P \land \widehat Q$ to be larger than the inductive validity core for $P$. Thus before computing the inductive validity core we first try
-to reduce the set of invariants to be as small as possible. This
+that $P$ holds on a system $(I, T)$, suppose we also know something
+stronger: $P$ with the invariant set $Q$ is $k$-inductive for $(I,
+T)$. This gives us the broad structure of a proof for $P$ which allows
+us to reconstruct the proof over a modified transition system.
+However, we must be careful since this proof structure may be more
+than is actually needed to establish $P$. In particular, $Q$ may
+contain unneeded invariants which could cause the inductive validity
+core for $P \land Q$ to be larger than the inductive validity core for
+$P$. Thus before computing the inductive validity core we first try to
+reduce the set of invariants to be as small as possible. This
 operation is expensive when $k$ is large so as a first step we
 minimize $k$. This is the motivation behind
-Algorithm~\ref{alg:set-of-support}.
+Algorithm~\ref{alg:ivc}.
 
 \begin{figure}
 \begin{align*}
@@ -169,34 +174,32 @@ Algorithm~\ref{alg:set-of-support}.
 \label{fig:queries}
 \end{figure}
 
-To describe the details of Algorithm~\ref{alg:set-of-support} we
-define queries for the base and inductive steps of $k$-induction
+To describe the details of Algorithm~\ref{alg:ivc} we define queries
+for the base and inductive steps of $k$-induction
 (Figure~\ref{fig:queries}). Note, in $\iq(T, Q, P)$ we separate the
 assumptions made on each step, $Q$, from the property we try to show
 on the last step, $P$. We use this separation when reducing the set of
 invariants.
 
 We assume that our queries are checked by an SMT solver. That is, we
-assume we have a function \checksat which determines if an
-existentially quantified formula is satisfiable or not. In order to
+assume we have a function $\checksat(F)$ which determines if $F$, an
+existentially quantified formula, is satisfiable or not. In order to
 efficiently manipulate our queries, we assume the ability to create
 {\em activation literals} which are simply distinguished Boolean
-variables. These activation literals are automatically held true when
-calling \checksat. In the case when the formula is unsatisfiable we
-assume we have a function \unsatcore which returns a minimal set of
-the activation literals such that the formula is unsatisfiable with
-those activation literals held true. In practice, SMT solvers often
-return a non-minimal set, but we can minimize the set via repeated
-calls to \checksat.
+variables. The call $\checksat(A, F)$ holds the activation literals in
+$A$ true while checking $F$. When $F$ is unsatisfiable, we assume we
+have a function $\unsatcore()$ which returns a minimal subset of the
+activation literals such that the formula is unsatisfiable with those
+activation literals held true. In practice, SMT solvers often return a
+non-minimal set, but we can minimize the set via repeated calls to
+\checksat.
 
 \begin{algorithm}[t]
   $k' \leftarrow 1$ \\
-  \While{$true$} {
-    \If{$\checksat(\neg\iq_{k'}(T, P, P)) = \unsat$} {
-      \Return{$k'$} \\
-    }
+  \While{$\checksat(\neg\iq_{k'}(T, P, P)) = \sat$} {
     $k' \leftarrow k' + 1$ \\
-  }
+    }
+  \Return{$k'$} \\
 \caption{$\mink(T, P)$}
 \label{alg:minimize-k}
 \end{algorithm}
@@ -209,15 +212,15 @@ smaller values of $k'$ are much quicker to check than larger ones. The
 checking must eventually terminate since $P$ is $k$-inductive. We also
 only check the inductive query since we know the base query will be
 true for all $k' \leq k$. Although we describe each query in
-Algorithm~\ref{alg:minimize-k} separately, in practice they can be done
-incrementally to improve efficiency.
+Algorithm~\ref{alg:minimize-k} separately, in practice they can be
+done incrementally to improve efficiency.
 
 \begin{algorithm}[t]
   $R \leftarrow \{P\}$ \\
   Create activation literals $A = \{a_1, \ldots, a_n\}$ \\
   $C \leftarrow \{a_1 \Rightarrow Q_1, \ldots, a_n \Rightarrow Q_n\}$ \\
   \While{$true$} {
-    $\checksat(A, \neg\iq_k(T, \widehat C, \widehat R))$ \\
+    $\checksat(A, \neg\iq_k(T, C, R))$ \\
     \If{$\unsatcore() = \emptyset$}{
       \Return{R}
     }
@@ -233,27 +236,33 @@ incrementally to improve efficiency.
 The function $\reduceinv_k(T, \{Q_1, \ldots, Q_n\}, P)$ is defined in
 Algorithm~\ref{alg:reduce-invariants}. This function assumes that $P
 \land Q_1 \land \cdots \land Q_n$ is $k$-inductive for $(I, T)$. It
-returns a set $R \subseteq \{P, Q_1, \ldots, Q_n\}$ such that
-$\widehat R$ is $k$-inductive for $(I, T)$. Like \mink, this function
-only checks the inductive query since each element of $R$ is an
-invariant and therefore will always pass the base query. A significant
-complication for reducing invariants is that some invariants may
-mutually need each other, even though none of them is needed to prove
-$P$. Thus in Algorithm~\ref{alg:reduce-invariants} we find a minimal
-set of invariants needed to prove $P$, then we find a minimal set of
+returns a set $R \subseteq \{P, Q_1, \ldots, Q_n\}$ such that $R$ is
+$k$-inductive for $(I, T)$. Like \mink, this function only checks the
+inductive query since each element of $R$ is an invariant and
+therefore will always pass the base query. A significant complication
+for reducing invariants is that some invariants may mutually need each
+other, even though none of them is needed to prove $P$. Thus in
+Algorithm~\ref{alg:reduce-invariants} we find a minimal set of
+invariants needed to prove $P$, then we find a minimal set of
 invariants to prove those invariants, and so on. We terminate when no
-more invariants are needed to prove the properties in $R$. 
+more invariants are needed to prove the properties in $R$.
 
-This iterative lemma determination does not guarantee a minimal result. For example, we may
-find $P$ requires just $Q_1$, that $Q_1$ requires just $Q_2$, and that
-$Q_2$ does not require any other invariants. This gives the result
-$\{P, Q_1, Q_2\}$, but it may be that $Q_2$ alone is enough to prove
-$P$ thus the original result is not minimal. Also note, we do not care
-about the result of \checksat, only the \unsatcore that comes out of
-it. Since $P \land Q_1 \land \cdots \land Q_n$ is $k$-inductive, we
-know the \checksat call will always return \unsat.
+This iterative lemma determination does not guarantee a minimal
+result. For example, we may find $P$ requires just $Q_1$, that $Q_1$
+requires just $Q_2$, and that $Q_2$ does not require any other
+invariants. This gives the result $\{P, Q_1, Q_2\}$, but it may be
+that $Q_2$ alone is enough to prove $P$ thus the original result is
+not minimal. Also note, we do not care about the result of \checksat,
+only the \unsatcore that comes out of it. Since $P \land Q_1 \land
+\cdots \land Q_n$ is $k$-inductive, we know the \checksat call will
+always return \unsat.
 
-\mike{I think we want to be slightly more formal in our reasoning about these algorithms, defining soundness (and when possible, minimality) lemmas for each.}
+\mike{I think we want to be slightly more formal in our reasoning
+  about these algorithms, defining soundness (and when possible,
+  minimality) lemmas for each.}
+\andrew{I'm happy with the level of detail, but I'm fine if we add
+  more. If you want to sketch out the outline of what you are
+  thinking, I'm happy to fill in the details.}
 
 \begin{algorithm}[t]
   Create activation literals $A = \{a_1, \ldots, a_n\}$ \\
@@ -264,22 +273,42 @@ know the \checksat call will always return \unsat.
     $R \leftarrow R \cup \{T_i\}$
   }
   \Return{R}
-\caption{$\minsupport_k(I, \{T_1, \ldots, T_n\}, P)$}
-\label{alg:minimize-support}
+\caption{$\minivc_k(I, \{T_1, \ldots, T_n\}, P)$}
+\label{alg:minimize-ivc}
 \end{algorithm}
 
-The function $\minsupport_k(I, \{T_1, \ldots, T_n\}, P)$ is defined in
-Algorithm~\ref{alg:minimize-support}. This function assumes that $P$
-is $k$-inductive for $(I, \widehat T)$. It returns a minimal inductive validity core $R \subseteq \{T_1, \ldots, T_n\}$ such that $P$ is
-$k$-inductive for $(I, \widehat R)$.
+The function $\minivc_k(I, \{T_1, \ldots, T_n\}, P)$ is defined in
+Algorithm~\ref{alg:minimize-ivc}. This function assumes that $P$ is
+$k$-inductive for $(I, T)$. It returns a minimal inductive validity
+core $R \subseteq \{T_1, \ldots, T_n\}$ such that $P$ is $k$-inductive
+for $(I, R)$.
 
-Our complete of support algorithm in
-Algorithm~\ref{alg:set-of-support} does not guarantee a minimal inductive validity core. One reason is that \reduceinv does not guarantee a minimal
-set of invariants. A larger reason is that we only consider the
-invariants that the algorithm is given at the outset. It is possible
-that there are other invariants which could lead to a smaller inductive validity core, but we do not search for them. In Section~\ref{sec:exprm}, we
-show that in practice our algorithm is nearly minimal and much more
-efficient that the naive algorithm.
+Our full inductive validity core algorithm in Algorithm~\ref{alg:ivc}
+does not guarantee a minimal inductive validity core. One reason is
+that \reduceinv does not guarantee a minimal set of invariants. A
+larger reason is that we only consider the invariants that the
+algorithm is given at the outset. It is possible that there are other
+invariants which could lead to a smaller inductive validity core, but
+we do not search for them. In Section~\ref{sec:exprm}, we show that in
+practice our algorithm is nearly minimal and much more efficient that
+the naive algorithm.
+
+\andrew{We should find a way to clean the following argument. I'm not
+  sure if it can be simplified, but perhaps we can present it better.}
+
+In general, determining if an inductive validity core is minimal is as
+hard the underlying model checking. Given a model checking question
+$(I, T)\vdash^? P$ consider adding fresh varaibles $e_1$ and $e_2$ to
+obtain a system with initial state predicate $I \land e_1 \land e_2$
+and transition predicate $(T \land (\neg P' \Rightarrow e_1')) \land
+(e_1' \Rightarrow e_2')$. This extended system has the property $P
+\lor e_2$. Thus $S = \{T \land (\neg P' \Rightarrow e_1'), e_1'
+\Rightarrow e_2'\}$ is an inductive validity core. Unless $P$ is a
+tautology, $\{e_1' \Rightarrow e_2'\}$ will not be an inductive
+validity core. The set $\{T \land (\neg P' \Rightarrow e_1')\}$ will
+be an inductive validity core if and only if $(I, T)\vdash P$. Thus
+decidability of minimality for inductive validity cores is as hard as
+model checking.
 
 %%% Local Variables:
 %%% mode: latex
@@ -288,4 +317,4 @@ efficient that the naive algorithm.
 
 %%  LocalWords:  Lustre iff TODO invariants Minimality BaseQuery
 %%  LocalWords:  InductiveQuery FullQuery MinimizeK ReduceInvariants
-%%  LocalWords:  MinimizeSupport CheckSat UnsatCore UNSAT
+%%  LocalWords:  MinimizeIVC CheckSat UnsatCore UNSAT

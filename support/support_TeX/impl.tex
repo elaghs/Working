@@ -26,3 +26,71 @@ Such models are made of a set of nodes each of which embodies a set of inputs, o
     \item some trackers that measure the verification time with/ without support computation.
     \item some minor changes in the XML writers.
 \end{itemize}
+
+
+\subsection{JKind and Lustre}
+\label{subsec:jkind}
+
+JKind is an infinite-state model checker for safety properties. JKind
+proves safety properties using multiple cooperative engines in
+parallel including $k$-induction, property directed reachability
+(PDR), and template-based lemma generation. JKind operates over
+expressions in the theory of linear integer and real arithmetic. In
+the back-end, JKind uses an SMT-solver such as Yices, Z3, CVC4,
+MathSAT, or SMTInterpol.
+
+\begin{figure}[t]
+\begin{verbatim}
+node main(x : int) returns (r : int; ok : bool);
+let
+  r = (0 -> pre r) + (if x > 0 then x else -x);
+  ok = (r >= 0);
+tel;
+\end{verbatim}
+  \caption{Example Lustre program}
+  \label{fig:lustre-ex}
+\end{figure}
+
+The input language to JKind is Lustre, a synchronous dataflow language.
+An example Lustre program is shown in Figure~\ref{fig:lustre-ex}. For
+our purposes, a Lustre program consists of 1) some input variables,
+{\tt x} in the example, 2) some output variables, {\tt r} and {\tt ok}
+in the example, and 3) an equation for each output variable. A Lustre
+program runs over discrete time steps. On each step, the input
+variables take on some values and are used to compute values for the
+output variables on the same step. In addition, equations may refer to
+the previous value of a variable using the {\tt pre} operator. This
+operator is undefined in the initial step, so the arrow operator, {\tt
+  ->}, is used to guard such the {\tt pre} operator. In the initial
+step the expression {\tt e1 -> e2} reduces to {\tt e1}, and it
+reduces to {\tt e2} in all other steps.
+
+We interpret a Lustre program as a model specification by considering
+the behavior of the program under all possible input traces. Safety
+properties over Lustre can then be expressed as Boolean output
+variables in Lustre. A safety property holds if the corresponding
+Boolean output variable is always true for all input traces. For
+example, the program in Figure~\ref{fig:lustre-ex} represents an
+integrator over the absolute value of the input variable. The output
+variable {\tt ok} is a safety property of the system expressing that
+the computed result is always non-negative. In this case, the property
+is true.
+
+It is easy to translate this interpretation of Lustre into the
+traditional initial and transition relations. We will show this by
+example using Figure~\ref{fig:lustre-ex}. First we introduce a new Boolean
+variable $init$ into the state space to denote when the system is in
+its initial step. Then we define,
+\begin{align*}
+  &I((x, r, \mathit{ok}, \mathit{init})) = \mathit{init} \\
+  &T((x, r, \mathit{ok}, \mathit{init}), (x', r', \mathit{ok'},
+  \mathit{init'})) = \\
+  &\hspace{1cm} (r' = (\ite{init}{0}{r})) \land (\mathit{ok'} =
+  (r' \geq 0)) \land \neg\mathit{init'}
+\end{align*}
+Each equation in the Lustre program is translated into a conjunct in
+the transition relation. A safety property such as {\tt ok} is
+translated into $\mathit{init} \lor \mathit{ok}$. Nested uses of arrow
+and pre operators are handled by introducing new output variables for
+nested expressions, though such details are unimportant for our
+purposes.

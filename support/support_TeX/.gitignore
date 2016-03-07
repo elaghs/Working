@@ -2,3 +2,5 @@
 *.synctex
 *.aux
 *.log
+*.bbl
+*.blg

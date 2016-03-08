@@ -245,7 +245,10 @@ other, even though none of them is needed to prove $P$. Thus in
 Algorithm~\ref{alg:reduce-invariants} we find a minimal set of
 invariants needed to prove $P$, then we find a minimal set of
 invariants to prove those invariants, and so on. We terminate when no
-more invariants are needed to prove the properties in $R$.
+more invariants are needed to prove the properties in $R$. As with
+Algorithm~\ref{alg:minimize-k}, we describe each query in
+Algorithm~\ref{alg:reduce-invariants} separately, though in practice
+large parts of the queries can be re-used to improve efficiency.
 
 This iterative lemma determination does not guarantee a minimal
 result. For example, we may find $P$ requires just $Q_1$, that $Q_1$

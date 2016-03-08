@@ -291,24 +291,30 @@ algorithm is given at the outset. It is possible that there are other
 invariants which could lead to a smaller inductive validity core, but
 we do not search for them. In Section~\ref{sec:exprm}, we show that in
 practice our algorithm is nearly minimal and much more efficient that
-the naive algorithm.
+the naive algorithm. The following theorem shows that minimality
+checking is at least as hard as model checking and therefore
+undecidable in most settings.
 
-\andrew{We should find a way to clean the following argument. I'm not
-  sure if it can be simplified, but perhaps we can present it better.}
-
-In general, determining if an inductive validity core is minimal is as
-hard the underlying model checking. Given a model checking question
-$(I, T)\vdash^? P$ consider adding fresh varaibles $e_1$ and $e_2$ to
-obtain a system with initial state predicate $I \land e_1 \land e_2$
-and transition predicate $(T \land (\neg P' \Rightarrow e_1')) \land
-(e_1' \Rightarrow e_2')$. This extended system has the property $P
-\lor e_2$. Thus $S = \{T \land (\neg P' \Rightarrow e_1'), e_1'
-\Rightarrow e_2'\}$ is an inductive validity core. Unless $P$ is a
-tautology, $\{e_1' \Rightarrow e_2'\}$ will not be an inductive
-validity core. The set $\{T \land (\neg P' \Rightarrow e_1')\}$ will
-be an inductive validity core if and only if $(I, T)\vdash P$. Thus
-decidability of minimality for inductive validity cores is as hard as
-model checking.
+\begin{theorem}
+\label{thm:minimal-hard}
+Determining if an IVC is minimal is as hard as model checking.
+\end{theorem}
+\begin{proof}
+Consider an arbitrary model checking problem $(I, T)\vdash^? P$ where
+$P$ is not a tautology. We will construct an IVC for a related model
+checking problem which will be minimal if and only if $(I, T)\nvdash
+P$. Let $x$ and $y$ be fresh variables. Construct a transition system
+with initial predicate $I\land \neg x$ and transition predicate $(x'
+\Rightarrow y') \land ((y' \Rightarrow P') \land T)$. The constructed
+system clearly satisfies the property $x \Rightarrow P$. Thus $S = \{x'
+\Rightarrow y', (y' \Rightarrow P') \land T\}$ is an IVC. $S$ is
+minimal if and only if neither $\{x' \Rightarrow y'\}$ nor $\{(y'
+\Rightarrow P') \land T\}$ is an IVC. Since $x$ and $y$ are fresh and
+$P$ is not a tautology, $\{x' \Rightarrow y'\}$ is not an IVC. Since
+$x$ and $y$ are fresh, $\{(y' \Rightarrow P') \land T\}$ is an IVC for
+the property $x \Rightarrow P$ if and only if $(I, T)\vdash P$.
+Therefore, $S$ is minimal if and only if $(I, T)\nvdash P$.
+\end{proof}
 
 %%% Local Variables:
 %%% mode: latex

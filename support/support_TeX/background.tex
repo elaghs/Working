@@ -3,7 +3,7 @@
 
 \newcommand{\bool}[0]{\mathit{bool}}
 \newcommand{\reach}[0]{\mathit{R}}
-\newcommand{\ite}[3]{\mathit{if}\ #1\ \mathit{then}\ #2\ \mathit{else}\ #3}
+\newcommand{\ite}[3]{\mathit{if}\ {#1}\ \mathit{then}\ {#2}\ \mathit{else}\ {#3}}
 
 %\subsection{Transition Systems and Safety Properties}
 
@@ -12,16 +12,10 @@ initial state predicate $I : S \to \bool$ and a transition step
 predicate $T : S \times S \to \bool$. We define the notion of
 reachability for $(I, T)$ as a the smallest predicate $\reach : S \to
 \bool$ which satisfies the following formulas:
-\begin{equation*}
-  \forall s.~ I(s) \Rightarrow \reach(s)
-\end{equation*}
-\begin{equation*}
+\begin{gather*}
+  \forall s.~ I(s) \Rightarrow \reach(s) \\
   \forall s, s'.~ \reach(s) \land T(s, s') \Rightarrow \reach(s')
-\end{equation*}
-When the transition system is not obvious from context we will write
-$\reach_{(I,T)}$ for the reachability predicate on the transition
-system $(I,T)$. \andrew{I don't think we use this anywhere}
-
+\end{gather*}
 A safety property $P : S \to \bool$ is a state predicate. A safety
 property $P$ holds on a transition system $(I, T)$ if it holds on all
 reachable states, i.e., $\forall s.~ \reach(s) \Rightarrow P(s)$,
@@ -82,20 +76,17 @@ The hope is that the additional formulas in the antecedent of the
 inductive step make it provable.
 
 \begin{figure}
-\begin{equation*}
-  I(s_0) \Rightarrow P(s_0)
-\end{equation*}
-\begin{center}
-$\vdots$
-\end{center}
-\begin{equation*}
-  I(s_0) \land T(s_0, s_1) \land \cdots
-  \land T(s_{k-2}, s_{k-1}) \Rightarrow P(s_{k-1})
-\end{equation*}
-\begin{equation*}
-  P(s_0) \land T(s_0, s_1) \land \cdots \land P(s_{k-1})
-  \land T(s_{k-1}, s_k) \Rightarrow P(s_k)
-\end{equation*}
+\begin{gather*}
+I(s_0) \Rightarrow P(s_0) \\[-2pt]
+%
+\vdots \\[2pt]
+%
+I(s_0) \land T(s_0, s_1) \land \cdots \land T(s_{k-2}, s_{k-1})
+\Rightarrow P(s_{k-1}) \\[2pt]
+%
+P(s_0) \land T(s_0, s_1) \land \cdots \land P(s_{k-1}) \land
+T(s_{k-1}, s_k) \Rightarrow P(s_k)
+\end{gather*}
 \caption{$k$-induction formulas: $k$ base cases and one inductive
   step}
 \label{fig:k-induction}

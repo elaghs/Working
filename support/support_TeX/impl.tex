@@ -51,52 +51,43 @@ its initial step. Then we define,
   &I((x, r, \mathit{ok}, \mathit{init})) = \mathit{init} \\
   &T((x, r, \mathit{ok}, \mathit{init}), (x', r', \mathit{ok'},
   \mathit{init'})) = \\
-  &\hspace{1cm} (r' = (\ite{init}{0}{r})) \land (\mathit{ok'} =
-  (r' \geq 0)) \land \neg\mathit{init'}
+  &\hspace{1cm} (r' = (\ite{init}{0}{r}) +~ \\
+  &\hspace{1cm} \phantom{(r' =\,\,}(\ite{x'>0}{x'}{-x'})) \land~\\
+  &\hspace{1cm} (\mathit{ok'} = (r' \geq 0)) \land \neg\mathit{init'}
 \end{align*}
-Each equation in the Lustre program is translated into a conjunct in
-the transition relation. A safety property such as {\tt ok} is
-translated into $\mathit{init} \lor \mathit{ok}$. Nested uses of arrow
-and pre operators are handled by introducing new output variables for
-nested expressions, though such details are unimportant for our
-purposes.
+A safety property such as {\tt ok} is translated into $\mathit{init}
+\lor \mathit{ok}$. Nested uses of arrow and pre operators are handled
+by introducing new output variables for nested expressions, though
+such details are unimportant for our purposes.
+
+Each equation in the Lustre program is translated into a single
+top-level conjunct in the transition relation. This is very convenient
+as the IVC of a Lustre property can be reported in terms of the output
+variables whose equations are part of the IVC. Equivalently, the
+interpretation of an IVC for a Lustre property is that any output
+variable that is not part of the IVC can be turned into an input
+variable, its equation thrown away, while preserving the truth of the
+property.
 
 \subsection{JKind}
 
 JKind is an infinite-state model checker for safety properties. JKind
 proves safety properties using multiple cooperative engines in
-parallel including $k$-induction, property directed reachability
-(PDR), and template-based lemma generation. JKind operates over
-expressions in the theory of linear integer and real arithmetic. In
-the back-end, JKind uses an SMT-solver such as Yices, Z3, CVC4,
-MathSAT, or SMTInterpol.
+parallel including $k$-induction, property directed reachability, and
+template-based lemma generation. JKind accepts Lustre programs written
+over the theory of linear integer and real arithmetic. In the back-end,
+JKind uses an SMT-solver such as Yices, Z3, CVC4, MathSAT, or
+SMTInterpol.
 
+JKind works on multiple properties simulatenously. When a property is
+proven and IVC generation is enabled, an additional parallel engine
+executes Algorithm~\ref{alg:ivc} to generate a near-minimal IVC.
 
-\subsection{Older}
-
-\mike{My thoughts on this section:}
-\begin{itemize}
-    \item introduce (and shrink) explanation of Lustre
-    \item describe that $\widehat T$ is the set of equations in Lustre.
-    \item describe what it means to remove an equation (to make valid Lustre, 
-        turn assigned variable into input)?  I'm not sure this is necessary, and it 
-        gets messy.
-\end{itemize}
-
-There are two important solver-based engines in \texttt{JKind} that can be considered as its primary proof-engines: \texttt{PDR} and \texttt{K-induction}. Current version of \texttt{JKind} has a new solver-based engine called \texttt{ReduceSupport},
-which is an implementation of Algorithm~\ref{alg:set-of-support}.
-One major goal of our experiments was to evaluate the minimality of the support sets computed by \texttt{ReduceSupport}.
-To do so, we needed to compare the output of our algorithm with another algorithm
-which computes a truly minimal support set, i.e. Algorithm~\ref{alg:naive}. Hence, we extended \texttt{JKind}
-with another support computing tool, called \texttt{JSupport}, which is an implementation of Algorithm~\ref{alg:naive}.
-
-As described in~\ref{subsec:jkind}, \texttt{JKind} accepts LUS models for verification.
-Such models are made of a set of nodes each of which embodies a set of inputs, outputs, equations, assertions, and properties. For each property, each equation can be considered as an element of an initial set called \textit{\%SUPPORT}. Given initial support set $S$ for property $P$, \texttt{ReduceSupport} finds which of the items in $S$ are necessary to prove $P$. The output of this computation will be a (closely) minimal set of support for $P$. In light of this process, the extended version of \texttt{JKind} we used for the experiments includes:
-
-\begin{itemize}
-    \item an algorithm to compute a truly minimal set of support, i.e. \texttt{JSupport}.
-    \item given a LUS model, a static crawler which automatically marks all equations of a node in the initial support set of a property.
-    \item some trackers that measure the verification time with/ without support computation.
-    \item some minor changes in the XML writers.
-\end{itemize}
-
+JKind accepts an annotation on its input Lustre program indicating
+which outputs variables to consider for IVC generation. Output
+variables not mentioned in the annotation are implicitly included in
+all IVCs. This allows the implementation focus on the variables
+important to the user and ignore, for example, administrative
+equations. This is even more important for tools which generate Lustre
+as they often create many such administrative equations which simply
+wire together more interesting expressions.

@@ -218,7 +218,7 @@ done incrementally to improve efficiency.
 \begin{algorithm}[t]
   $R \leftarrow \{P\}$ \\
   Create activation literals $A = \{a_1, \ldots, a_n\}$ \\
-  $C \leftarrow \{a_1 \Rightarrow Q_1, \ldots, a_n \Rightarrow Q_n\}$ \\
+  $C \leftarrow (a_1 \Rightarrow Q_1) \land \cdots \land (a_n \Rightarrow Q_n)$ \\
   \While{$true$} {
     $\checksat(A, \neg\iq_k(T, C, R))$ \\
     \If{$\unsatcore() = \emptyset$}{

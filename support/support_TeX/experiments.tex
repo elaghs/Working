@@ -1,13 +1,33 @@
 \section{Experiment and Results}
 \label{sec:exprm}
 
+We would like to investigate both the {\em efficiency} and {\em minimality} of the inductive validity core algorithm (Algorithm~\ref{alg:ivc}) as compared to the brute-force algorithm (Algorithm~\ref{alg:naive}).  Efficiency is computed in terms of wall-clock time: how much overhead does the IVC algorithm introduce?  Minimality is determined by the size of the IVC: cores with a smaller number of variables are preferred to cores with a larger number of variables.  Finally, we are interested in the {\em diversity} of solutions: how often is it possible to generate multiple minimal IVCs?
+
+The use of JKind allows additional dimensions to our investigation: it supports two different inductive algorithms: k-induction and PDR, and a ``fastest'' mode, that runs both algorithms in parallel.  In addition, JKind supports multiple back-end SMT solvers including Z3~\cite{}, yices~\cite{}, MathSAT~\cite{}, and SMTInterpol~\cite{}.  We would like to determine whether the choice of inductive algorithm affects the size of the IVC, whether different solvers are more or less efficient at producing IVCs, and whether running different solvers/algorithms leads to {\em diversity} of IVC solutions.
+
+Therefore, we investigate the following research questions:
+\begin{itemize}
+    \item \textbf{RQ1:} How expensive is it to compute IVC?
+    \item \textbf{RQ2:} How close to minimal are the support sets computed by Algorithm~\ref{alg:set-of-support}?
+    \item \textbf{RQ3:} Does one solver/algorithm outperform the others in terms of efficiency or minimality?
+    \item \textbf{RQ4:} How much {\em diversity} exists in the solutions produced by different configurations?
+    \item \textbf{RQ5:} Does model size affect minimality and diversity of solutions?
+\end{itemize}
+
+\subsection{Experimental Setup}
+In this study, we started from a suite of 700 Lustre models from a benchmark suite developed in~\cite{Hagen08:FMCAD}.  We augmented this suite with YYY additional models from recent verification projects on avionics and medical devices (~\cite{QFCS15:backes,hilt2013}).  \mike{MORE HERE...stats on size, reasons for add'l models.}
+
+Each benchmark model has a single property to analyze.  For our purposes, we are only interested in models with a {\em valid} property (though it is perhaps worth noting that there is no additional computation---and thus no overhead---using the JKind IVC options for {\em invalid} properties).  The benchmark suite contains 405\mike{+XXX} models with valid properties, which we use as our test subjects.  Size information for the models is shown in Figure~\mike{DEFINE FIGURE}.  
+
+For each test model, we computed IVC in 12+1 configurations: the twelve configurations were the cross product of all solvers {Z3, yices, MathSAT, SMTInterpol} and inductive algorithms {k-induction, PDR, fastest}, and the remaining (+1) configuration was an instance of Algorithm~\ref{alg:naive} run on Z3, which has, overall, been the best solver for model-checking problems in JKind.  In addition, for each of the 12 configurations, we ran an instance of JKind without IVC to examine overhead.  The experiments were run on an Intel(R) i5-2430M, 2.40GHz, 4GB memory machine.  The data gathered for each configuration of each model included the time required to check the model without IVC, with IVC, and also the set of elements in the computed IVC.
+
+\iffalse
 \begin{itemize}
     \item an algorithm to compute a truly minimal set of support, i.e. \texttt{JSupport}.
     \item given a LUS model, a static crawler which automatically marks all equations of a node in the initial support set of a property.
     \item some trackers that measure the verification time with/ without support computation.
    % \item some minor changes in the XML writers.
 \end{itemize}
-
 
 \mike{My thoughts on this section: mostly, it needs more structure: more information on the properties of the models: size, provenance, etc., a broken out subsection on the description of the experimental setup, etc}
 
@@ -19,36 +39,5 @@ Experiment:
     \item Experimental setup: tell me about the models: how many, how big are they?  Then, tell me about the experiment: the tool configurations, the machine used for test.
     \item Data generation: Describe what you measured for each model analysis.
 \end{itemize}
+\fi
 
-Results and Discussion:
-\begin{itemize}
-    \item (Overview) Give an overview of results, possibly referencing a graph or two.
-    \item Statistical analysis: provide positive and null hypotheses for the research questions.
-    \item Evaluation of research questions: statistical results and explanations of the graphs.  One subsection per research question?
-    \item Threats to validity: what are our threats?
-    Internal validity: not really necessary, I think.
-    External validity (how much can the results be generalized):
-        1. currently all models are *very small*;
-        2. Many programs were drawn from mutations of a relatively small number of ``seed'' programs;
-        3. The models are written in Lustre rather than FOL.  This means that the
-            top-level conjunctions are all over equations rather than general
-            form;
-        4. Others?!?
-    Construct validity: we are measuring what we think we're measuring: IVC and minimality are reasonably defined.  For discussions of ``completeness'' and ``traceability'' we need to be clear about any claims (probably not in this paper).
-\end{itemize}
-
-\mike{In general, I do not think we are asking quite the right questions yet.  More feedback will come tomorrow}
-
-Our Experiments were performed using the set of benchmarks drawn from the set of single-property benchmarks from \cite{benchmarks}. The benchmarks contain 700 LUS models with properties that are either valid, invalid, or unprovable. First thing we needed to do was to polish the benchmarks and exclude models with invalid properties because a set of support for an invalid property makes no sense. So, finally, experiments were performed on 405 LUS models in the polished benchmarks on an Intel(R) Core(TM) i5-2430M, 2.40GHz, 4GB memory machine.
-
-To evaluate the dependency of our algorithm on different solvers and engines, for each LUS model, \texttt{JKind} was run with 13 different configurations and a timeout of 700 seconds. We chose four SMT solvers: \texttt{Z3}, \texttt{Yices}, \texttt{MathSAT}, and \texttt{SMTInterpol} as well as three engine configurations: \texttt{PDR},
-\texttt{K-induction}, and both of them. In other words, the \texttt{ReduceSupport} engine was run with 12 combinations of those settings. And, one additional configuration is where \texttt{JSupport} computes a minimal support set. Therefore, experiments are based on these $405 \times 13 = 5265$ \texttt{JKind} runs. It is worth mentioning that we were to add randomness to the solvers and extend these 13 configurations. However, after performing some initial experiments and analyses, it turns out that random-seed in solvers does not affect the output of our algorithm; hence, it was not considered in the configurations.\footnote{The benchmarks and all the raw experimental results are available on \cite{expr}. The directory also contains mined data obtained from the raw results.}
-
-\subsection{Results}
-\ela{we may want to remove this part}
-
-With a 700 second timeout, 10 models had unknown property. In other models with valid properties, for 112 models, all solvers with \texttt{K-induction} setting failed to prove the properties. That is to say, in $(112 \times 4) + (10 \times 13) = 578$ runs, \texttt{JKind} was unable to to prove the property, so the set of support in those runs remained unknown as well. As far as \texttt{JSupport} concerned, support computation in 18 models timed out (with 700 second limitation).
-
-\subsection{Evaluation}
-\label{subsec:eval}
-\input{eval}

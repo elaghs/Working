@@ -1,6 +1,8 @@
 \section{Inductive Validity Cores}
 \label{sec:ivc}
 
+\newcommand{\bfalg}{BF\_IVC}
+\newcommand{\ucalg}{UC\_IVC}
 \newcommand{\bq}{\textsc{BaseQuery}\xspace}
 \newcommand{\iq}{\textsc{IndQuery}\xspace}
 \newcommand{\fq}{\textsc{FullQuery}\xspace}
@@ -23,8 +25,8 @@ $I(s) = P(s)$ and $T(s, s') = P(s')$, i.e., you start in any state
 satisfying the property and can transition to any state that still
 satisfies the property. This answer gives no insight into the original
 system because it has no connection to the original system. In this
-section we introduce the notion of {\em inductive validity cores} (IVC) 
-which looks at generalizing the original transition system while 
+section we introduce the notion of {\em inductive validity cores} (IVC)
+which looks at generalizing the original transition system while
 preserving a safety property.
 
 In order to talk about generalizing a transition system, we assume the
@@ -88,12 +90,12 @@ the following monotonicity property.
     }
   }
   \Return{S}
-\caption{Simple algorithm for computing a minimal IVC}
+\caption{\bfalg: Brute-force algorithm for computing a minimal IVC}
 \label{alg:naive}
 \end{algorithm}
 
-This lemma gives us a simple, but inefficient algorithm for computing
-a minimal inductive validity core, Algorithm~\ref{alg:naive}. The
+This lemma gives us a simple, brute-force algorithm for computing
+a minimal inductive validity core, Algorithm \bfalg~(\ref{alg:naive}). The
 resulting set of this algorithm is obviously an inductive validity
 core for $(I, T)\vdash P$. The following lemma shows that it is also
 minimal.
@@ -130,7 +132,7 @@ inefficient since it tries to re-prove the property multiple times.
   $k \leftarrow \mink(T, P \land Q)$ \\
   $R \leftarrow \reduceinv_k(T, Q, P)$ \\
   \Return{$\minivc_k(I, T, R)$}\\
-\caption{Efficient algorithm for computing a nearly minimal inductive validity core}
+\caption{\ucalg: Efficient algorithm for computing a nearly minimal inductive validity core from UNSAT cores}
 \label{alg:ivc}
 \end{algorithm}
 
@@ -148,7 +150,7 @@ $P$. Thus before computing the inductive validity core we first try to
 reduce the set of invariants to be as small as possible. This
 operation is expensive when $k$ is large so as a first step we
 minimize $k$. This is the motivation behind
-Algorithm~\ref{alg:ivc}.
+Algorithm \ucalg~(\ref{alg:ivc}).
 
 \begin{figure}
 \begin{align*}

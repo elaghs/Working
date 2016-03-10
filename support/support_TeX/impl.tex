@@ -1,6 +1,8 @@
 \section{Implementation}
 \label{sec:impl}
 
+We have implemented the inductive validity core algorithms in the previous section in two tools: {\em JKind}, which performs the \ucalg\ algorithm, and {\em JSupport}, which can compute either the \bfalg\ or (using the support in JKind) the \ucbfalg\ algorithm.  These tools operate over the Lustre language~\cite{Halbwachs91:lustre}, which we briefly illustrate below.
+
 \subsection{Lustre and IVCs}
 
 \begin{figure}[t]
@@ -17,10 +19,9 @@ tel;
   \label{fig:lustre-ex}
 \end{figure}
 
-Lustre is a synchronous dataflow language used as an input langauge
-for various model checkers. An example Lustre program is shown in
+Lustre~\cite{Halbwachs91:lustre} is a synchronous dataflow language used as an input language for various model checkers. An example Lustre program is shown in
 Figure~\ref{fig:lustre-ex}. For our purposes, a Lustre program
-consists of 1) some input variables, {\tt x} in the example, 2) some
+consists of 1) input variables, {\tt x} in the example, 2) 
 output variables, {\tt r} and {\tt ok} in the example, and 3) an
 equation for each output variable. A Lustre program runs over discrete
 time steps. On each step, the input variables take on some values and

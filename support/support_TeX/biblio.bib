@@ -548,3 +548,101 @@ keywords={computability;parallel programming;program verification;Lustre program
 doi={10.1109/FMCAD.2008.ECP.19},
 month={Nov}
 }
+
+
+@ARTICLE{Halbwachs91:lustre,
+  AUTHOR =   {N. Halbwachs and P. Caspi and P. Raymond and
+                  D. Pilaud},
+  TITLE =    {The {S}ynchronous {D}ataflow {P}rogramming {L}anguage
+                  {Lustre}},
+  JOURNAL =  {Proceedings of the IEEE},
+  VOLUME =   {79},
+  NUMBER =   {9},
+  PAGES =    {1305-1320},
+  MONTH =    {September},
+  YEAR =     {1991},
+  annote =   {\commentmike{
+              Lustre is a dataflow language that
+              provided many of the ideas that were used in the
+              formal semantics for RSML-e.  It is a dataflow
+              language that describes the interactions of a set of
+              {\em nodes} which describe a transformation from a
+              set of inputs to a set of outputs, {\em
+              variables} which are used as shorthands for
+              often used expressions, and {\em clocks} which describe
+              when nodes or variables are to be recomputed.
+
+              RSML-e = Lustre + hierarchies + interfaces +
+                 slightly more general arrays + built-in time +
+                 UNDEFINED values + more elaborate history lists
+                 - tuple types - clocks - modules.
+
+              In RSML-e, history information is maintained through value
+              traces for all variables.  In other words, we have a
+              list of all assignments to each variable since the
+              specification began execution.  In Lustre, history
+              information is maintained by a special kind of
+              expression, PRE, that maintains the value assigned
+              to the expression prior to the current execution.
+              These expressions are always of the form:
+              \[PRE(exp, initial)\]
+              \noindent where $exp$ is the expression whose previous value
+              is to be found, and $initial$ is the initial value
+              of the PRE expression.  Formally, the PRE-histories
+              are maintained by {\em changing the syntax}
+              of the PRE expression.  So, for example, if a PRE
+              expression is:
+              \[PRE(exp, initial)\]
+              \noindent and the value of $exp$ at evaluation is
+              $v$, then the syntax of the program becomes:
+              \[PRE(exp, v)\]
+              \noindent for the next evaluation.
+
+              Lustre does not have an internal notion of time,
+              which is both good and bad, compared to RSML-e.  In
+              order to keep track of assignment times or change
+              times, it is necessary to add extra variables to a
+              Lustre spec.  On the other hand, Lustre does not
+              require that the underlying hardware or
+              encapsulating C code have a notion of clock time,
+              where RSML-e requires it.  Therefore, there may be
+              platforms that cannot support certain RSML-e
+              specifications because there is no notion of time.
+              Most of the time, a clock can be created manually to
+              correspond to RSML-e's internal clock.  For example,
+              any of the Lustre clocks, represented by MILLISECOND
+              signals can be translated into RSML-e time.
+
+              RSML-e does more automatic bookkeeping for the history
+              lists for variables than does Lustre, but at the
+              cost of being more verbose.  The required size for
+              history lists for an RSML-e implementation is
+              automatically determined.
+
+              Lustre's concept of variables is much more
+              'lightweight' than RSML's.  One only need declare the
+              type (int, real, or bool), and declare an assignment
+              expression in Lustre.  For RSML-e, you must provide
+              units, min/max values, type, parent, and assignment
+              relation information.  Also, in Lustre, you can
+              group variable assignments by type, like any other
+              programming language:
+              \begin{verbatim}
+               a, b, c: int
+              \end{verbatim}
+              If we defaulted the PARENT: field to NONE and placed
+              the rest of the crap in strong types (containing
+              min/max values and units as well as basic type
+              information), then we would have similar conciseness
+              in declarations.
+
+              Lustre's nodes provide a good example of how we
+              should approach modules in RSML-e.  Nodes simply
+              have an externally visible interface and local
+              variables, much like they would in RSML-e.  Only
+              values can be passed through node interfaces, so
+              scoping of functions is not a concern.  It is the
+              lowest common denominator approach, but it appears
+              successful.
+  }}
+}

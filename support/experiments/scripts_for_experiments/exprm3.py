@@ -11,6 +11,7 @@ import os, subprocess, shutil, sys, glob
 
 EXPERIMENTS_DIR = 'benchmarks'
 RESULTS_DIR = 'results3'
+INPUT_DIR = 'input_for_expr3'
 TIMEOUT = 700
 TIMEDOUT_DIR = 'timedout3'
 
@@ -22,12 +23,22 @@ TIMEDOUT_DIR = 'timedout3'
 if not os.path.exists(EXPERIMENTS_DIR):
     print("'" + EXPERIMENTS_DIR + "' directory does not exist")
     sys.exit(-1)
+if not os.path.exists(EXPERIMENTS_DIR):
+    print("'" + INPUT_DIR + "' directory does not exist")
+    sys.exit(-1)    
 os.chdir(EXPERIMENTS_DIR)
 lus_files = glob.glob("*.lus")
 if len(lus_files) == 0:
     print("No Lustre files found in '" + EXPERIMENTS_DIR + "' directory")
     sys.exit(-1)
 os.chdir("..")
+
+#
+# Put xml files together with the lus files
+#
+
+for file in os.listdir(INPUT_DIR):
+    shutil.move (os.path.join(INPUT_DIR, file), os.path.join(EXPERIMENTS_DIR + file))
 
 
 #

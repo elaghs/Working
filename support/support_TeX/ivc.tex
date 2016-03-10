@@ -263,13 +263,6 @@ only the \unsatcore that comes out of it. Since $P \land Q_1 \land
 \cdots \land Q_n$ is $k$-inductive, we know the \checksat call will
 always return \unsat.
 
-\mike{I think we want to be slightly more formal in our reasoning
-  about these algorithms, defining soundness (and when possible,
-  minimality) lemmas for each.}
-\andrew{I'm happy with the level of detail, but I'm fine if we add
-  more. If you want to sketch out the outline of what you are
-  thinking, I'm happy to fill in the details.}
-
 \begin{algorithm}[t]
   Create activation literals $A = \{a_1, \ldots, a_n\}$ \\
   $T \leftarrow (a_1 \Rightarrow T_1) \land \cdots \land (a_n \Rightarrow T_n)$ \\

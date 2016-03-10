@@ -1,9 +1,9 @@
 \section{Inductive Validity Cores}
 \label{sec:ivc}
 
-\newcommand{\bfalg}{IVC\_BF}
-\newcommand{\ucalg}{IVC\_UC}
-\newcommand{\ucbfalg}{IVC\_UCBF}
+\newcommand{\bfalg}{IVC\_BF\xspace}
+\newcommand{\ucalg}{IVC\_UC\xspace}
+\newcommand{\ucbfalg}{IVC\_UCBF\xspace}
 \newcommand{\bq}{\textsc{BaseQuery}\xspace}
 \newcommand{\iq}{\textsc{IndQuery}\xspace}
 \newcommand{\fq}{\textsc{FullQuery}\xspace}
@@ -295,11 +295,11 @@ that \reduceinv does not guarantee a minimal set of invariants. A
 larger reason is that we only consider the invariants that the
 algorithm is given at the outset. It is possible that there are other
 invariants which could lead to a smaller inductive validity core, but
-we do not search for them. In Section~\ref{sec:exprm}, we show that in
-practice our algorithm is nearly minimal and much more efficient that
-the naive algorithm. The following theorem shows that minimality
-checking is at least as hard as model checking and therefore
-undecidable in most settings.
+we do not search for them. In Sections~\ref{sec:experiment} and
+\ref{sec:results}, we show that in practice our algorithm is nearly
+minimal and much more efficient that the naive algorithm. The
+following theorem shows that minimality checking is at least as hard
+as model checking and therefore undecidable in many settings.
 
 \begin{theorem}
 \label{thm:minimal-hard}
@@ -321,6 +321,12 @@ $x$ and $y$ are fresh, $\{(y' \Rightarrow P') \land T\}$ is an IVC for
 the property $x \Rightarrow P$ if and only if $(I, T)\vdash P$.
 Therefore, $S$ is minimal if and only if $(I, T)\nvdash P$.
 \end{proof}
+
+When minimality is a necessity, we can combine \bfalg and \ucalg into
+a single algorithm which is relatively efficient and guarantees
+minimality. The hybrid algorithm, \ucbfalg, consists of running \ucalg
+to generate an initial almost-minimal IVC which is then run through
+\bfalg to guarantee minimality.
 
 %%% Local Variables:
 %%% mode: latex

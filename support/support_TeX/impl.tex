@@ -1,7 +1,15 @@
 \section{Implementation}
 \label{sec:impl}
 
-We have implemented the inductive validity core algorithms in the previous section in two tools: {\em JKind}, which performs the \ucalg\ algorithm, and {\em JSupport}, which can compute either the \bfalg\ or (using the support in JKind) the \ucbfalg\ algorithm.  These tools operate over the Lustre language~\cite{Halbwachs91:lustre}, which we briefly illustrate below.
+We have implemented the inductive validity core algorithms in the
+previous section in two tools: {\em JKind}, which performs the \ucalg
+algorithm, and {\em JSupport}, which can compute either the \bfalg or
+the \ucbfalg algorithm (using JKind as a subprocess). Moreover, our
+implementation of \ucbfalg uses an additional feature of JKind to
+store and re-use discovered invariants between separate runs. This
+reduces some of the cost of attempting to re-prove a property multiple
+times. These tools operate over the Lustre
+language~\cite{Halbwachs91:lustre}, which we briefly illustrate below.
 
 \subsection{Lustre and IVCs}
 
@@ -19,18 +27,20 @@ tel;
   \label{fig:lustre-ex}
 \end{figure}
 
-Lustre~\cite{Halbwachs91:lustre} is a synchronous dataflow language used as an input language for various model checkers. An example Lustre program is shown in
-Figure~\ref{fig:lustre-ex}. For our purposes, a Lustre program
-consists of 1) input variables, {\tt x} in the example, 2) 
-output variables, {\tt r} and {\tt ok} in the example, and 3) an
-equation for each output variable. A Lustre program runs over discrete
-time steps. On each step, the input variables take on some values and
-are used to compute values for the output variables on the same step.
-In addition, equations may refer to the previous value of a variable
-using the {\tt pre} operator. This operator is underspecified in the
-initial step, so the arrow operator, {\tt ->}, is used to guard the
-{\tt pre} operator. In the initial step the expression {\tt e1 -> e2}
-reduces to {\tt e1}, and it reduces to {\tt e2} in all other steps.
+Lustre~\cite{Halbwachs91:lustre} is a synchronous dataflow language
+used as an input language for various model checkers. An example
+Lustre program is shown in Figure~\ref{fig:lustre-ex}. For our
+purposes, a Lustre program consists of 1) input variables, {\tt x} in
+the example, 2) output variables, {\tt r} and {\tt ok} in the example,
+and 3) an equation for each output variable. A Lustre program runs
+over discrete time steps. On each step, the input variables take on
+some values and are used to compute values for the output variables on
+the same step. In addition, equations may refer to the previous value
+of a variable using the {\tt pre} operator. This operator is
+underspecified in the initial step, so the arrow operator, {\tt ->},
+is used to guard the {\tt pre} operator. In the initial step the
+expression {\tt e1 -> e2} reduces to {\tt e1}, and it reduces to {\tt
+  e2} in all other steps.
 
 We interpret a Lustre program as a model specification by considering
 the behavior of the program under all possible input traces. Safety

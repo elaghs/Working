@@ -31,14 +31,14 @@ lus_files = glob.glob("*.lus")
 if len(lus_files) == 0:
     print("No Lustre files found in '" + EXPERIMENTS_DIR + "' directory")
     sys.exit(-1)
-os.chdir("..")
+#os.chdir("..")
 
 #
 # Put xml files together with the lus files
 #
 
 for file in os.listdir(INPUT_DIR):
-    shutil.move (os.path.join(INPUT_DIR, file), os.path.join(EXPERIMENTS_DIR, file))
+    shutil.move (os.path.join(INPUT_DIR, file), file)
 
 
 #
@@ -80,7 +80,7 @@ def run_single_jkind(file_path):
     args = ['java', '-jar', jkind_jar, '-jsupport',
             '-timeout', str(TIMEOUT),
             '-n', '1000000',
-            '-use_unsat_core', file_path + '.xml',
+            '-use_unsat_core', file_path[0:len(file_path)-4] + '.xml',
             file_path]
     with open("debug3.txt", "a") as debug:
         debug.write("Running jsupport with arguments: {}\n".format(args))
@@ -93,9 +93,8 @@ def run_single_jkind(file_path):
             shutil.move (file_path, TIMEDOUT_DIR)
             pass
 
-def run_all_jkind(lus_file): 
-    lus_path = os.path.join(EXPERIMENTS_DIR, lus_file)
-    run_single_jkind(lus_path)
+def run_all_jkind(lus_file):  
+    run_single_jkind(lus_file)
     sys.stdout.write(".")
     sys.stdout.flush()
  

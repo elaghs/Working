@@ -10,7 +10,7 @@ RESULTS_DIR = 'results1'
 TIMEOUT_DIR = os.path.join('timedout1', 'timedout_results')
 INFO = 'timeout_info.txt'
 OUTPUT_DIR = 'input_for_expr3'
-BASE_SET = 'z3_both.xml'
+BASE_SET = 'yices_both.xml'
 
 if not os.path.exists(RESULTS_DIR):
     print(RESULTS_DIR + " does not exists!")

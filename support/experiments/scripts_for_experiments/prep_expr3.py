@@ -27,7 +27,7 @@ os.mkdir(OUTPUT_DIR)
 #
 
 for dir in os.listdir(RESULTS_DIR):
-    shutil.copy (os.path.join(RESULTS_DIR, dir, BASE_SET), os.path.join(OUTPUT_DIR, dir + ".xml"))
+    shutil.copy (os.path.join(RESULTS_DIR, dir, BASE_SET), os.path.join(OUTPUT_DIR, dir[0:len(dir)-4] + ".xml"))
 
 for dir in os.listdir(TIMEOUT_DIR):
     t = 0
@@ -37,7 +37,7 @@ for dir in os.listdir(TIMEOUT_DIR):
             t += 1
     reader.close() 
     if t <= 4:
-        shutil.copy (os.path.join(TIMEOUT_DIR, dir, BASE_SET), os.path.join(OUTPUT_DIR, dir + ".xml"))
+        shutil.copy (os.path.join(TIMEOUT_DIR, dir, BASE_SET), os.path.join(OUTPUT_DIR, dir[0:len(dir)-4] + ".xml"))
 
     
 

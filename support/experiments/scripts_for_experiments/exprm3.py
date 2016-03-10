@@ -38,7 +38,7 @@ os.chdir("..")
 #
 
 for file in os.listdir(INPUT_DIR):
-    shutil.move (os.path.join(INPUT_DIR, file), os.path.join(EXPERIMENTS_DIR + file))
+    shutil.move (os.path.join(INPUT_DIR, file), os.path.join(EXPERIMENTS_DIR, file))
 
 
 #

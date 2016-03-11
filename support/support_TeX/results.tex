@@ -54,13 +54,8 @@ Finally, we consider the combined \ucbfalg algorithm, in which we first run the 
 %\mike{Fill in tables HERE!}
 \begin{figure*}
   \centering
-  \includegraphics[width=\textwidth]{figs/runtimeAll.png}
-  \mike{UPDATE TO INCLUDE ALL MODELS (MICROWAVE AND GPCA)}
-  \mike{There are 4 spelling errors in the key: `wihtout' rather than `without'.  Also, what provides the ordering in this figure?  Is it z3 running without IVC?}
-  \mike{Use logarithmic scale to better show differences!}
-  \mike{Compress height a little bit.}
-  \mike{Can we add \ucbfalg to this graph?}
-  \caption{Runtime of \ucalg computation for all solvers and \bfalg, \ucbfalg algorithm for Yices}\label{fig:runtimeall}
+  \includegraphics[width=\textwidth]{figs/timing_analyses.png}
+  \caption{Runtime of \ucalg, \bfalg, \ucbfalg algorithm for Yices}\label{fig:runtimeall}
 \end{figure*}
 
 
@@ -71,13 +66,13 @@ Finally, we consider the combined \ucbfalg algorithm, in which we first run the 
      runtime (sec) & min & max & mean & stdev \\[0.5ex]
     \hline\hline
  %   JSupport & 2.381 & 165.157 & 21.533 & 23.533 \\[0.5ex]
-    Z3   & 0.112 & 42.928 & 2.412 & 5.009 \\[0.5ex]
-    Yices &   0.111  & 39.657   & 2.464 & 5.224 \\[0.5ex]
-    SMTInterpol& 0.225 & 514.886 &  4.331 & 26.411 \\[0.5ex]
-    MathSAT & 0.111 & 43.623 &  2.765 & 5.157 \\[0.5ex]
+    Z3   & 0.005 & 2.335 & 0.192 & 0.355 \\[0.5ex]
+    Yices &   0.014  & 13.297   & 0.589 & 1.473 \\[0.5ex]
+    SMTInterpol& 0.029 & 19.254 &  1.396 & 2.991 \\[0.5ex]
+    MathSAT & 0.011 & 86.421 &  3.071 & 10.403 \\[0.5ex]
     \hline
-  \end{tabular} \\ 
-  \mike{Is this the time for performing both the proof and performing the \ucalg algorithm or is it just the time for the \ucalg algorithm?}
+  \end{tabular} \\
+  \mike{Is this the time for performing both the proof and performing the \ucalg algorithm or is it just the time for the \ucalg algorithm?}\ela{ it wasn't: NOW, it's only for \ucalg excluding proof time}
   \caption{\ucalg runtime with different solvers}
   \label{tab:runtime-ucalg}
 \end{table}
@@ -88,10 +83,10 @@ Finally, we consider the combined \ucbfalg algorithm, in which we first run the 
     \hline
      solver & min & max & mean & stdev \\[0.5ex]
     \hline
-    Z3   & 0.726\% & 45.396\% & 13.414\% & 11.369\% \\[0.5ex]
-    Yices &   0.200\%  & 262.254\%   & 47.264\% & 51.193\% \\[0.5ex]
-    SMTInterpol& 0.930\% & 268.571\% &  70.500\% & 58.541\%\\[0.5ex]
-    MathSAT & 0.502\% & 396.124\% &  71.007\% & 79.990\%\\[0.5ex]
+    Z3   & 0.73\% & 45.69\% & 13.272\% & 10.78\% \\[0.5ex]
+    Yices &   0.20\%  & 419.65\%   & 47.92\% & 51.61\% \\[0.5ex]
+    SMTInterpol& 0.93\% & 268.57\% &  70.86\% & 54.18\%\\[0.5ex]
+    MathSAT & 0.50\% & 268.57\% &  71.01\% & 79.99\%\\[0.5ex]
     \hline
   \end{tabular}
   \caption{Overhead of \ucalg computations using different solvers}
@@ -105,7 +100,7 @@ Finally, we consider the combined \ucbfalg algorithm, in which we first run the 
      runtime (sec) & min & max & mean & stdev \\[0.5ex]
     \hline\hline
     Z3   & ??? & ??? & ??? & ??? \\[0.5ex]
-    Yices &   ???  & ???   & ??? & ??? \\[0.5ex]
+    Yices &   0.847  & 469.953   & 26.584 & 56.773 \\[0.5ex]
     \hline
   \end{tabular}
   \caption{\ucbfalg runtime with Z3 and Yices}
@@ -119,7 +114,7 @@ Finally, we consider the combined \ucbfalg algorithm, in which we first run the 
      solver & min & max & mean & stdev \\[0.5ex]
     \hline
     Z3   & XXX\% & XXX\% & XXX\% & XXX\% \\[0.5ex]
-    Yices &   XXX\%  & XXX\%   & XXX\% & XXX\% \\[0.5ex]
+    Yices &   18.37\%  & 99.67\%   & 87.43\% & 16.13\% \\[0.5ex]
     \hline
   \end{tabular}
   \caption{Overhead of \ucbfalg algorithm using Z3 and Yices}
@@ -161,7 +156,7 @@ Finally, we consider the combined \ucbfalg algorithm, in which we first run the 
   \centering
   \includegraphics[width=\textwidth]{figs/runtimeAll.png}
   \mike{REPLACE WITH CORRECT FIGURE}
-  \caption{IVC sizes produced by \ucalg vs. \ucbfalg for yices solver}
+  \caption{IVC sizes produced by \ucalg vs. \ucbfalg for Yices}
   \label{fig:minimality-all}
 \end{figure*}
 
@@ -204,7 +199,7 @@ Since \texttt{JSupport}, with a great percentage, most of the time computed the 
      min & max & mean & stdev & ES & p-value\\[0.5ex]
     \hline
     %sample size = 4196
-     0.0   & 0.882 & 0.027 & 0.062 & 2.79 & < 0.00001 \\[0.5ex]
+     0.0   & 0.878 & 0.024 & 0.062 & 2.83 & < 0.00001 \\[0.5ex]
     \hline
   \end{tabular}
   \caption{Pairwise Jaccard distances among all models}
@@ -213,7 +208,7 @@ Since \texttt{JSupport}, with a great percentage, most of the time computed the 
 
 \begin{figure*}
   \centering
-  \includegraphics[width=0.75\textwidth]{figs/jacdis2.png} \\ 
+  \includegraphics[width=0.75\textwidth]{figs/jacdis2.png} \\
   \mike{Add new models, and fix spelling error (mosdels) !}
   \caption{Pairwise Jaccard distance between support sets}\label{fig:jacdis}
 \end{figure*}
@@ -252,7 +247,7 @@ Since our goal is to measure the diversity or dissimilarity among sets computed 
   \item H0: variety of obtained sets of support is high (average $D_{J\{M\}}$ of 0.2)
   \item H1: variety of obtained sets of support is small (average $D_{J\{M\}}$ less than 0.2)
 \end{itemize}
-Table~\ref{tab:variety} shows that, with an effect size of 0.79, H0 can be rejected.
+Table~\ref{tab:variety} shows that, with an effect size of 0.72, H0 can be rejected.
 \begin{table}
   \centering
   \begin{tabular}{ |c|c|c|c|c|c| }
@@ -260,7 +255,7 @@ Table~\ref{tab:variety} shows that, with an effect size of 0.79, H0 can be rejec
      min & max & mean & stdev & ES & p-value\\[0.5ex]
     \hline
     %sample size = 395
-     0.0   & 0.879 & 0.096 & 0.132 & 0.79 & < 0.00001 \\[0.5ex]
+     0.0   & 0.879 & 0.099 & 0.141 & 0.72 & < 0.00001 \\[0.5ex]
     \hline
   \end{tabular}
   \caption{$D_{J\{M\}}$ among all models}

@@ -34,6 +34,25 @@ Once generated, the IVC can be used for many purposes in the software verificati
 process must be efficient and the generated IVC must be
 accurate and precise (that is, sound and close to minimal).
 
+%% We put the image here so it shows up side-by-side with fig:ex-after
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figs/simulink.png}
+{\smaller
+\begin{verbatim}
+node filter(x : real) returns (y : real);
+var
+  a, b : real;
+let
+  a = f(x, 0.0 -> pre y);
+  b = if a >= 0.0 then a else -a;
+  y = b + (0.0 -> pre y);
+tel;
+\end{verbatim}
+}
+\caption{Model with property $y \geq 0$, before IVC analysis}
+\label{fig:ex-before}
+\end{figure}
 
 In the remainder of this paper, we present an algorithm for efficient generation of IVCs for induction-based model checkers.  Our contributions, as detailed in the remainder of the paper, are as follows:
 

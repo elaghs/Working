@@ -129,32 +129,20 @@ Finally, we consider the combined \ucbfalg algorithm, in which we first run the 
 
 \begin{table}
   \centering
-  \begin{tabular}{ |c|c|c| }
+  \begin{tabular}{ |c|c|c|c| }
     \hline
-     brute-force & PDR & k-induction \\
+     solver & PDR & k-induction & \textbf{total} \\
     \hline
-      XX & XX & XX  \\
+      z3 & XX & XX & XX \\
+      yices & XX & XX & XX \\ 
+      MathSAT & XX & XX & XX \\ 
+      SMTInterpol & XX & XX & XX \\
     \hline
-  \end{tabular}
-  \caption{Aggregate IVC sizes produced by \ucalg using different inductive algorithms}
-  \label{tab:minimality-algorithm}
-\end{table}
-
-\begin{table}
-  \centering
-  \begin{tabular}{ |c|c|c| }
-    \hline
-     solver & aggregate & \% increase over minimal \\
-    \hline
-    brute-force & 3078 & * \\
-    z3 & ?? & XX\% \\
-    yices & ?? & YY\% \\
-    MathSAT & ?? & ZZ\% \\
-    SMTInterpol & ?? & AA\% \\
+      \textbf{total} & XX & XX & XX \\ 
     \hline
   \end{tabular}
-  \caption{Aggregate IVC sizes produced by \ucalg using different solvers}
-  \label{tab:minimality-solver}
+  \caption{Aggregate IVC sizes produced by \ucalg\ using different inductive algorithms and solvers}
+  \label{tab:minimality-algorithm-solvers}
 \end{table}
 
 \begin{figure*}
@@ -167,21 +155,25 @@ Finally, we consider the combined \ucbfalg algorithm, in which we first run the 
 
 \subsection{Minimality}
 \label{sec:minimality}
-In this section, we examine the minimality of the cores computed by the \ucalg algorithm using different inductive proof methods and compare it to the cores produced by the brute-force algorithm (\textbf{RQ2}).  There are three interesting aspects to be examined related to this research question.  First (\textbf{RQ2.1}), does the choice of algorithm used to produce a proof (k-induction or PDR) matter in terms of the minimality of the inductive core?   As mentioned in Section~\ref{sec:ivc}, the \ucalg algorithm is not guaranteed to produce a minimal core due to the role of invariants used in producing a proof; as k-induction and PDR use different invariant generation algorithms, it is possible that one or the other is more likely to yield smaller invariant sets.  In addition, as discussed in Section~\ref{sec:experiment}, k-induction is unable to solve all of the analysis problems; therefore we include only models that are solvable using both k-induction and PDR.  Examining the aggregate data in Table~\ref{tab:minimality-algorithm}, if we sum all elements of all cores together, that PDR has an smaller core size in aggregate than k-induction.  However, the data is noisy, and to examine \textbf{RQ2.1} systematically, we construct a hypothesis that PDR will, in general, equal or outperform k-induction on an arbitrary model:
+In this section, we examine the minimality of the cores computed by the \ucalg algorithm using different inductive proof methods and compare it to the cores produced by the brute-force algorithm (\textbf{RQ2}).  There are three interesting aspects to be examined related to this research question.  First (\textbf{RQ2.1}), does the choice of SMT solver or algorithm used to produce a proof (k-induction or PDR) matter in terms of the minimality of the inductive core?   As mentioned in Section~\ref{sec:ivc}, the \ucalg algorithm is not guaranteed to produce a minimal core due to the role of invariants used in producing a proof; as k-induction and PDR use different invariant generation algorithms, it is possible that one or the other is more likely to yield smaller invariant sets.  In addition, differences in the choice of the UNSAT-core algorithms in the different tools could affect the size of the generated core.  However, our algorithm {\em already} does a minimization step...\mike{Andrew, please add an appropriate reference back to the ivc section here}.
 
-\mike{ADD HYPOTHESIS/NULL HYPOTHESIS HERE}
+As discussed in Section~\ref{sec:experiment}, k-induction is unable to solve all of the analysis problems; therefore we include only models that are solvable using {\em both} k-induction and PDR by {\em all tools}, \mike{YYY} models in all.  Examining the aggregate data in Table~\ref{tab:minimality-algorithm-solvers}, we can see the sizes of cores produced by different algorithms and tools.
 
-Although the aggregate data suggests that PDR will yield a smaller core (on average) than k-induction, this claim is not supported for a given model with significance.
+%if we sum all elements of all cores together, that PDR has an smaller core size in aggregate than k-induction.  
+%However, the data is noisy, and to examine \textbf{RQ2.1} systematically, we construct a hypothesis that PDR will, in general, equal or outperform k-induction on an arbitrary model:
 
-\takeaway{Neither PDR nor k-induction yields a smaller inductive validity core with statistical significance.}
+%\mike{ADD HYPOTHESIS/NULL HYPOTHESIS HERE}
 
-Second (\textbf{RQ2.2}), does the choice of solver used to produce a proof matter in terms of the minimality of the inductive core?   As previously mentioned in Section~\ref{sec:performance}, since the \ucalg algorithm is reliant on the UNSAT-core facilities of the underlying SMT solver, differences in the choice of the UNSAT-core algorithms could affect the size of the generated core.  However, in our current tool, to address known inaccuracies in UNSAT-core generation in all tools, we do an additional step of post-processing the returned cores to ensure that they are minimal through the simple expedient of removing activation literals one by one from the core and checking to see if the query is still UNSAT.  This step is not described in the algorithms in Section~\ref{sec:ivc}, but is performed by our implementation in JKind.  Therefore, the differences in minimality of solutions from solvers is dealt with directly in the implementation algorithm, and so we do not discuss it further here.
+%Although the aggregate data suggests that PDR will yield a smaller core (on average) than k-induction, this claim is not supported for a given model with significance.
+
+\takeaway{Neither PDR nor k-induction yields a smaller inductive validity core in general.}
+
 
 %we already perform a linear scan of the cores generated by the SMT solver to remove unnecessary conjuncts
 
-The final relevant question (\textbf{RQ2.3}) asks how close to minimal are the cores produced by \ucalg vs. the (guaranteed minimal) cores produced by the \bfalg algorithm?  Note that we cannot measure the distance on all models because the brute-force algorithm times out on many of the larger models.  We therefore examine the distance from minimal cores produced by the brute force algorithm for models in which it completes within the one hour timeout.  For comparison, we run the \ucalg algorithm in each tool with the default {\em fastest} algorithm, which will use the result of either k-induction or PDR.  The aggregate results are shown in Table~\ref{tab:minimality-solver}, and a graph showing the performance on each model, ranked along the x-axis by the size of the core produced by \bfalg is shown in Figure~\ref{fig:minimality-all}.  The figure demonstrates that while on average there is a modest change in minimality that there can be substantial variance on the sizes of the cores produced by the \ucalg algorithm.
+The next question (\textbf{RQ2.2}) asks how close to minimal are the cores produced by \ucalg\ vs. the (guaranteed minimal) cores produced by the \ucbfalg\ algorithm?  Note that we cannot measure the distance on all models because the brute-force algorithm times out on many of the larger models.  We therefore examine the distance from minimal cores produced by the brute force algorithm for models in which it completes within the one hour timeout.  For comparison, we run the \ucalg\ algorithm in each tool with the default {\em fastest} algorithm, which will use the result of either k-induction or PDR.  A graph showing the size of the IVCs for each model produced by the yices solver is shown in Figure~\ref{fig:minimality-all}.  In the figure, the models are ranked along the x-axis by the size of the core produced by \ucbfalg.  The figure demonstrates that while on average there is a modest change in minimality that there can be substantial variance on the sizes of the cores produced by the \ucalg\ algorithm.
 
-\takeaway{The \ucalg algorithm computes cores that are XX\% to YY\% larger than those produced by \ucbfalg, with substantial variance in the results.}
+\takeaway{The \ucalg algorithm computes cores that are \mike{XX}\% to \mike{YY}\% larger than those produced by \ucbfalg, with substantial variance in the results.}
 
 
 \iffalse

@@ -154,7 +154,24 @@ Finally, we consider the combined \ucbfalg algorithm, in which we first run the 
 
 \subsection{Minimality}
 \label{sec:minimality}
-In this section, we examine the minimality of the cores computed by the \ucalg algorithm using different inductive proof methods and compare it to the cores produced by the brute-force algorithm (\textbf{RQ2}).  There are three interesting aspects to be examined related to this research question.  First (\textbf{RQ2.1}), does the choice of SMT solver or algorithm used to produce a proof (k-induction or PDR) matter in terms of the minimality of the inductive core?   As mentioned in Section~\ref{sec:ivc}, the \ucalg algorithm is not guaranteed to produce a minimal core due to the role of invariants used in producing a proof; as k-induction and PDR use different invariant generation algorithms, it is possible that one or the other is more likely to yield smaller invariant sets.  In addition, differences in the choice of the UNSAT-core algorithms in the different tools could affect the size of the generated core.  However, our algorithm {\em already} does a minimization step...\mike{Andrew, please add an appropriate reference back to the ivc section here}.
+
+In this section, we examine the minimality of the cores computed by
+the \ucalg algorithm using different inductive proof methods and
+compare it to the cores produced by the brute-force algorithm
+(\textbf{RQ2}). There are three interesting aspects to be examined
+related to this research question. First (\textbf{RQ2.1}), does the
+choice of SMT solver or algorithm used to produce a proof (k-induction
+or PDR) matter in terms of the minimality of the inductive core? As
+mentioned in Section~\ref{sec:ivc}, the \ucalg algorithm is not
+guaranteed to produce a minimal core due in part to the role of
+invariants used in producing a proof; as k-induction and PDR use
+different invariant generation algorithms, it is possible that one or
+the other is more likely to yield smaller invariant sets. In addition,
+differences in the choice of the UNSAT-core algorithms in the
+different tools could affect the size of the generated core. However,
+our algorithm {\em already} does a minimization step on UNSAT-cores,
+thus the only differences would be due to one algorithm leading to a
+different minimal core than another.
 
 As discussed in Section~\ref{sec:experiment}, k-induction is unable to solve all of the analysis problems; therefore we include only models that are solvable using {\em both} k-induction and PDR by {\em all tools}, \mike{YYY} models in all.  Examining the aggregate data in Table~\ref{tab:minimality-algorithm-solvers}, we can see the sizes of cores produced by different algorithms and tools.
 

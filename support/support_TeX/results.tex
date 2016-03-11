@@ -132,12 +132,12 @@ Finally, we consider the combined \ucbfalg algorithm, in which we first run the 
     \hline
      solver & PDR & k-induction & \textbf{total} \\
     \hline
-      z3 & XX & XX & XX \\
-      yices & XX & XX & XX \\
-      MathSAT & XX & XX & XX \\
-      SMTInterpol & XX & XX & XX \\
+      z3 & 2384 & 2379 & 4757 \\
+      yices & 2384 & 2376 & 4760 \\
+      MathSAT & 2375 & 2369 & 4744 \\
+      SMTInterpol & 2378 & 2368 & 4746 \\
     \hline
-      \textbf{total} & XX & XX & XX \\
+      \textbf{total} & 9515 & 9492 & XX \\
     \hline
   \end{tabular}
   \caption{Aggregate IVC sizes produced by \ucalg\ using different inductive algorithms and solvers}
@@ -148,7 +148,7 @@ Finally, we consider the combined \ucbfalg algorithm, in which we first run the 
   \centering
   \includegraphics[width=\textwidth]{figs/runtimeAll.png}
   \mike{REPLACE WITH CORRECT FIGURE}
-  \caption{IVC sizes produced by \ucalg vs. \ucbfalg for yices solver}
+  \caption{IVC sizes produced by \ucalg vs. \ucbfalg for Yices}
   \label{fig:minimality-all}
 \end{figure*}
 

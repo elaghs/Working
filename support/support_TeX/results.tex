@@ -205,7 +205,7 @@ Since \texttt{JSupport}, with a great percentage, most of the time computed the 
 \begin{figure*}
   \centering
   \includegraphics[width=\textwidth]{figs/jacdis2.png} \\
-  \caption{Pairwise Jaccard distance between IVCs}\label{fig:jacdis2}
+  \caption{Pairwise Jaccard distance between IVCs}\label{fig:jacdis}
 \end{figure*}
 
 \subsection{Diversity}
@@ -219,7 +219,7 @@ To measure diversity of IVCs, we use Jaccard distance~\mike{citation?}:
   \label{def:dj}
   $d_J(\small{A}, \small{B}) = 1 - \frac{|A \cap B|}{|A \cup B|} ,\\ 0 \leq d_J(\small{A}, \small{B}) \leq 1$
 \end{definition}
-\noindent Jaccard distance is a standard metric for comparing finite sets (assuming that both sets are non-empty) by comparing the size of the intersection of two sets over its union.  For each model in the benchmark, the experiments generated 13 different sets of support. Therefore, we obtained $\binom{13}{2} = 78$ combinations of pairwise distances per model. Then, minimum, maximum, average, and standard deviation of the distances were calculated (Fig~\ref{fig:jacdis}), by which, again, we calculated these four measures among all 405 models.  As seen in Table~\ref{tab:jaccard-avg}, on average, the Jaccard distance between different solutions is small, but the maximum is close to 1, which indicates that even for our exploratory analysis, there are models for which the tools yield substantially diverse solutions.  The diversity between solutions is represented graphically in Figure~\ref{fig:jacdis}, where for each model, we present the min, max, and mean pairwise distance of the solutions produced by algorithm \ucalg for each model, ranked by the mean distance.
+\noindent Jaccard distance is a standard metric for comparing finite sets (assuming that both sets are non-empty) by comparing the size of the intersection of two sets over its union.  For each model in the benchmark, the experiments generated 13 different sets of support. Therefore, we obtained $\binom{13}{2} = 78$ combinations of pairwise distances per model. Then, minimum, maximum, average, and standard deviation of the distances were calculated (Fig~\ref{fig:jacdis}), by which, again, we calculated these four measures among all models.  As seen in Table~\ref{tab:jaccard-avg}, on average, the Jaccard distance between different solutions is small, but the maximum is close to 1, which indicates that even for our exploratory analysis, there are models for which the tools yield substantially diverse solutions.  The diversity between solutions is represented graphically in Figure~\ref{fig:jacdis}, where for each model, we present the min, max, and mean pairwise distance of the solutions produced by algorithm \ucalg for each model, ranked by the mean distance.
 
 \iffalse
 \mike{Do we want the discussion below?  I am not sure that it adds much}

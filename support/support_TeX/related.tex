@@ -1,58 +1,32 @@
 \section{Related work}
 \label{sec:related}
 
-\andrew{This section seems a bit strange since it focuses on MUS more
-  than IVC. Are people doing this for SAT/SMT solving or for model
-  checking?}
+%\andrew{This section seems a bit strange since it focuses on MUS more
+%  than IVC. Are people doing this for SAT/SMT solving or for model
+%  checking?}
 
-In recent years, extraction of Minimally Unsatisfiable Subformulas
-(MUSes) has been the focus of a lot of research work
-\cite{marques2010minimal, belov2012towards, ryvchin2011faster,
-  belov2012computing, nadel2010boosting}. Although algorithms proposed
-by such work can handle very large problems, computing MUSes is still
-very resource-intensive task. While some work aimed to provide a set
-of minimal unsatisfiable formulae, they define minimality in a way
-that given a set of clauses $\mathbb{M}$, removing every member of
-$\mathbb{M}$ makes it satisfiable \cite{belov2012computing}. Such
-algorithms are often compared with each other. In this work, we
-compare a regular computation of minimal unsat-core against
-\emph{minimum} unsat-core extraction. In addition, our focus is not to
-provide a novel way of computing minimal unsat-core. Instead, we make
-use of MUSes to efficiently compute a set of support of the model
-necessary for inductive proofs.
+Our work builds on top of a substantial foundation building Minimally Unsatisfiable Subformulas
+(MUSes) from UNSAT cores~\cite{Cimatti2007:UNSAT}, including \cite{marques2010minimal, belov2012towards, ryvchin2011faster, belov2012computing, nadel2010boosting}.  Recent algorithms can handle very large problems, but computing MUSes is still a resource-intensive task.  While some work is aimed at providing a set of minimal unsatisfiable formulae, minimality is usually defined such that given a set of clauses $\mathbb{M}$, removing any member of $\mathbb{M}$ makes it satisfiable \cite{belov2012computing}. 
 
-Gupta et al. \cite{gupta2003iterative} and McMillan and Amla
-\cite{mcmillan2003automatic} introduced the use of unsatisfiable cores
-in proof-based abstraction engines. Their goal is to shrink the
-abstraction size by omitting the parts of the design that are
-irrelevant to the proof of the property under verification. However,
-\cite{gupta2003iterative, mcmillan2003automatic} do not consider core
-minimization. In another work \cite{nadel2010boosting}, Nadel
-discusses a number of applications of MUSes extraction in formal
-verification. To our knowledge, none of the existing work has used
-MUSes to provide support information that explains the correctness of
-proofs provided by different inductive techniques including PDR and
-k-induction.
+UNSAT cores and MUSes are used for many different activities within formal verification.  Gupta et al. \cite{gupta2003iterative} and McMillan and Amla \cite{mcmillan2003automatic} introduced the use of unsatisfiable cores in proof-based abstraction engines. Their goal is to shrink the abstraction size by omitting the parts of the design that are irrelevant to the proof of the property under verification. \mike{More purposes here?!? There must be many}.  Torlak et al. in~\cite{torlak2008finding} finds MUSes of Alloy specifications, and considers semantic vacuity, which we consider in Section~\ref{sec:intro}.  Alloy models are only analyzed up to certain size bounds, however, and in general are unable to prove properties for arbitrary models.  In our work, we extract the inductive validity core from information from several bounded model checking executions.  Also, because we are extracting information from proofs, it is possible to use IVCs for additional purposes (proof explanation and completeness checking).
 
-Torlak et al. in \cite{torlak2008finding} proposed an algorithm for
-finding MUSes of declarative specification implemented for the Alloy
-language. Alloy is a framework for describing high-level design of
-various systems, whose analyzer is a fully automatic constraint
-solver. Constraints are translated into propositional logic solved by
-a SAT solver; hence, the analysis considers only a finite number of
-values for each type. For this reason, even for a set of simple
-constraints, the analyzer is never able to prove the correctness of a
-property. Another major difference between \cite{torlak2008finding}
-and ours is that we extract UNSAT cores from an inductive proof over a
-sequential model involving lemmas. Besides, Alloy mostly works based
-on SAT solving, instead of SMT solving. In our implementation, JKind
-supports a variety of powerful SMT solvers (such as Z3, Yices, Yices2,
-etc.).
+%[SLICING]
+If we view Lustre as a programming language, our work can be viewed as a more accurate form of program slicing~\cite{Tip95asurvey}.  We perform {\em backwards slicing} from the formula that defines the property of interest of the model.  The slice produced is smaller and more accurate than a static slice of the formula~\cite{Weiser:1981:slicing}, but guaranteed to be a sound slice for the formula for all program executions, unlike dynamic slicing~\cite{Agrawal:1990:slicing}.  Predicate-based slicing has been used~\cite{Li04:slicing} to try to minimize the size of a dynamic slice.  Our approach may have utility for some concerns of program slicing (such as model understanding) by constructing simple ``requirements'' of a model and using the tool to find the relevant portions of the model.
 
+Another potential use of our work is for ``semantic'' vacuity detection.  A standard definition of vacuity is syntactic and defined as follows~\cite{Kupferman:2006:SCF}: {\em A system K satisfies a formula $\phi$ vacuously iff $K \vdash \phi$ and there is some subformula $\psi$ of $\phi$ such that $\psi$ does not affect $\phi$ in K}.  Vacuity has been extensively studied~\cite{Gurfinkel:2012:RVB,Chockler2008,DBLP:Ben-DavidK13,Kupferman:2006:SCF,Chockler:2007,Beer1997} considering a range of different temporal logics and definitions of ``affect''.  On the other hand, our work can be used to consider a broader definition of vacuity.  Even if all subformulae are required (the property is not syntactically vacuous), it may not require substantial portions of the model, and so may be provable for vacuous reasons.  The problem is exacerbated when the modeling and property language are the same (as in JKind), because whether a subformula is considered part of the model or part of the property, from the perspective of checking tools, can be unclear.
+
+Determining completeness of properties has also been extensively studied. Certification standards such as DO178C~\cite{DO178C} require that requirements-derived tests achieve some level of structural coverage (\{MC/DC, decision, statement \} depending on the criticality level of the software, in order to approximate completeness.  If coverage is not achieved, then additional requirements and tests are added until coverage is achieved.  Chockler~\cite{Chockler2003} defined the first completeness metrics directly on formal properties based on mutation coverage.  Later work by Kupferman, Chockler and Vardi~\cite{Kupferman:2006:SCF} defines completeness as an extension of vacuity to elements in the model.  We present an alternative approach that uses the proof directly, which we expect to be considerably less expensive to compute.  Recent work by Murugesan~\cite{murugesan2015we} and Schuller~\cite{schuler_assessing_2011} attempts to combine test coverage metrics with requirements to determine completeness.
+
+
+%[DETERMINING VACUITY]
+%- Vardi and Kupferman's work
+
+
+\iffalse
 \begin{itemize}
     \item MUS's : checked
     \item Work on Alloy: checked
     \item Work that Teme pointed us to : will be added
     \item Anything else Elaheh has found : \%60 checked
 \end{itemize}
-
+\fi

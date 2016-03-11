@@ -45,7 +45,7 @@ Since the \ucalg algorithm uses the UNSAT-core facilities of the underlying SMT 
 
 \takeaway{The \ucalg algorithm using the Z3 and yices SMT solvers adds a modest performance penalty to the time required for inductive proofs.}
 
-Next, we consider the overhead of \ucalg vs. \bfalg.  Recall from Section~\ref{sec:ivc} that \bfalg requires $n$ model checking runs, where $n$ is the number of conjuncts in the transition relation. As expected, the performance is approximately a linear multiple of the size of the model, so larger models yield substantially lower performance.\footnote{for Lustre models, the number of conjuncts is equivalent to the number of equations in the Lustre model.}  We run the brute-force algorithm using yices as it is the default solver for JKind and is very close to z3 in terms of computation time.  For \mike{YYY} models, \bfalg times out after 1 hour.   Figure~\ref{fig:runtimeall} shows the overhead of \bfalg in comparison to \ucalg with multiple solvers.
+Next, we consider the overhead of \ucalg vs. \bfalg.  Recall from Section~\ref{sec:ivc} that \bfalg requires $n$ model checking runs, where $n$ is the number of conjuncts in the transition relation. As expected, the performance is approximately a linear multiple of the size of the model, so larger models yield substantially lower performance.\footnote{for Lustre models, the number of conjuncts is equivalent to the number of equations in the Lustre model.}  We run the brute-force algorithm using yices as it is the default solver for JKind and is close to z3 in terms of computation time.  For 19 models, \bfalg times out after 1 hour.   Figure~\ref{fig:runtimeall} shows the overhead of \bfalg in comparison to \ucalg with multiple solvers.
 
 \takeaway{The brute-force algorithm \bfalg adds a substantial performance penalty to inductive proofs in all cases and is not scalable enough to compute a minimal core for large analysis problems.}
 
@@ -141,6 +141,20 @@ Finally, we consider the combined \ucbfalg algorithm, in which we first run the 
   \label{tab:minimality-algorithm-solvers}
 \end{table}
 
+\begin{table}
+  \centering
+  \begin{tabular}{ |c||c|c|c|c| }
+    \hline
+     solver & min & max & mean & stdev \\[0.5ex]
+    \hline
+    Yices &   0\%  & \mike{XX}\%   & \mike{YY}\% & \mike{ZZ}\% \\[0.5ex]
+    \hline
+  \end{tabular}
+  \caption{Increase in IVC Size for \ucalg\ vs. \ucbfalg}
+  \label{tab:overhead-ucbfalg}
+\end{table}
+
+
 \begin{figure*}
   \centering
   \includegraphics[width=\textwidth]{figs/runtimeAll.png}
@@ -151,7 +165,7 @@ Finally, we consider the combined \ucbfalg algorithm, in which we first run the 
 
 \subsection{Minimality}
 \label{sec:minimality}
-In this section, we examine the minimality of the cores computed by the \ucalg algorithm using different inductive proof methods and compare it to the cores produced by the brute-force algorithm (\textbf{RQ2}).  There are three interesting aspects to be examined related to this research question.  First (\textbf{RQ2.1}), does the choice of SMT solver or algorithm used to produce a proof (k-induction or PDR) matter in terms of the minimality of the inductive core?   As mentioned in Section~\ref{sec:ivc}, the \ucalg algorithm is not guaranteed to produce a minimal core due to the role of invariants used in producing a proof; as k-induction and PDR use different invariant generation algorithms, it is possible that one or the other is more likely to yield smaller invariant sets.  In addition, differences in the choice of the UNSAT-core algorithms in the different tools could affect the size of the generated core.  However, our algorithm {\em already} does a minimization step...\mike{Andrew, please add an appropriate reference back to the ivc section here}.
+In this section, we examine the minimality of the cores computed by the \ucalg algorithm using different inductive proof methods and compare it to the cores produced by the combined algorithm (\textbf{RQ2}).  There are three interesting aspects to be examined related to this research question.  First (\textbf{RQ2.1}), does the choice of SMT solver or algorithm used to produce a proof (k-induction or PDR) matter in terms of the minimality of the inductive core?   As mentioned in Section~\ref{sec:ivc}, the \ucalg algorithm is not guaranteed to produce a minimal core due to the role of invariants used in producing a proof; as k-induction and PDR use different invariant generation algorithms, it is possible that one or the other is more likely to yield smaller invariant sets.  In addition, differences in the choice of the UNSAT-core algorithms in the different tools could affect the size of the generated core.  However, our algorithm {\em already} does a minimization step...\mike{Andrew, please add an appropriate reference back to the ivc section here}.
 
 As discussed in Section~\ref{sec:experiment}, k-induction is unable to solve all of the analysis problems; therefore we include only models that are solvable using {\em both} k-induction and PDR by {\em all tools}, 304 models in all.  Examining the aggregate data in Table~\ref{tab:minimality-algorithm-solvers}, we can see the sizes of cores produced by different algorithms and tools.
 
@@ -167,9 +181,9 @@ As discussed in Section~\ref{sec:experiment}, k-induction is unable to solve all
 
 %we already perform a linear scan of the cores generated by the SMT solver to remove unnecessary conjuncts
 
-The next question (\textbf{RQ2.2}) asks how close to minimal are the cores produced by \ucalg\ vs. the (guaranteed minimal) cores produced by the \ucbfalg\ algorithm?  Note that we cannot measure the distance on all models because the brute-force algorithm times out on many of the larger models.  We therefore examine the distance from minimal cores produced by the brute force algorithm for models in which it completes within the one hour timeout.  For comparison, we run the \ucalg\ algorithm in each tool with the default {\em fastest} algorithm, which will use the result of either k-induction or PDR.  A graph showing the size of the IVCs for each model produced by the yices solver is shown in Figure~\ref{fig:minimality-all}.  In the figure, the models are ranked along the x-axis by the size of the core produced by \ucbfalg.  The figure demonstrates that while on average there is a modest change in minimality that there can be substantial variance on the sizes of the cores produced by the \ucalg\ algorithm.
+The next question (\textbf{RQ2.2}) asks how close to minimal are the cores produced by \ucalg\ vs. the (guaranteed minimal) cores produced by the \ucbfalg\ algorithm?  Note that we cannot measure the distance on all models because the combined algorithm times out on 9 of the larger models.  We therefore examine the distance from minimal cores produced by the combined algorithm for models in which it completes within the one hour timeout.  For comparison, we run the \ucalg\ algorithm in each tool with the default {\em fastest} algorithm, which will use the result of either k-induction or PDR.  A graph showing the size of the IVCs for each model produced by the yices solver is shown in Figure~\ref{fig:minimality-all}.  In the figure, the models are ranked along the x-axis by the size of the core produced by \ucbfalg.  The figure demonstrates that while on average there is a modest change in minimality that there can be substantial variance on the sizes of the cores produced by the \ucalg\ algorithm.
 
-\takeaway{The \ucalg algorithm computes cores that are \mike{XX}\% to \mike{YY}\% larger than those produced by \ucbfalg, with substantial variance in the results.}
+\takeaway{The \ucalg algorithm computes cores that are 0\% to \mike{YY}\% larger than those produced by \ucbfalg, with substantial variance in the results.}
 
 
 \iffalse
@@ -187,12 +201,12 @@ Since \texttt{JSupport}, with a great percentage, most of the time computed the 
 
 \begin{table}
   \centering
-  \begin{tabular}{ |c|c|c|c|c|c| }
+  \begin{tabular}{ |c|c|c|c| }
     \hline
-     min & max & mean & stdev & ES & p-value\\[0.5ex]
+     min & max & mean & stdev \\[0.5ex]
     \hline
     %sample size = 4196
-     0.0   & 0.878 & 0.024 & 0.062 & 2.83 & < 0.00001 \\[0.5ex]
+     0.0   & 0.878 & 0.024 & 0.062 \\[0.5ex]
     \hline
   \end{tabular}
   \caption{Pairwise Jaccard distances among all models}
@@ -211,7 +225,7 @@ Recall from Section~\ref{sec:ivc} that a {\em minimal} core is any core leading 
 
 Our exploration in this case is not exhaustive, but only exploratory.  The reason it is considered is that it has substantial relevance to some of the uses of the tool: e.g., for constructing traceability matrices from proofs.  Given diversity of results, we may wish to distinguish {\em must} traceability elements from {\em may} traceability elements across a set of diverse solutions, and consider more systematic explorations of diversity in future work.
 
-To measure diversity of IVCs, we use Jaccard distance~\mike{citation?}:
+To measure diversity of IVCs, we use Jaccard distance:
 \begin{definition}{\emph{Jaccard distance:}}
   \label{def:dj}
   $d_J(\small{A}, \small{B}) = 1 - \frac{|A \cap B|}{|A \cup B|} ,\\ 0 \leq d_J(\small{A}, \small{B}) \leq 1$
@@ -267,7 +281,8 @@ Table~\ref{tab:variety} shows that, with an effect size of 0.79, H0 can be rejec
 
 In the previous section, we presented three algorithms for determining inductive validity cores.  The brute-force algorithm is guaranteed minimal, but is too slow for reasonable systems.  The other two algorithms: the UNSAT-core algorithm \ucalg\ and the combined algorithm \ucbfalg, represent interesting trade-offs.  The \ucalg\ algorithm is much faster, but is not guaranteed to be minimal; the result of this algorithm can be further, and often quite quickly, refined by the combined algorithm.  Thus, we can choose to trade off speed for guaranteed minimality using these two algorithms; the combined algorithm can be viewed as a refinement algorithm that we can terminate either at completion or after a fixed time bound.
 
-One question that arises is: why is the refinement so much quicker than the brute-force approach?  In our preliminary examination, it appears to be because of the actions performed by JKind on the sub-problems.  When the cores produced by \ucalg\ are minimal or close to minimal, it tends to be the case that removing conjuncts from the core leads to short counterexamples.  When performing the brute-force algorithm, removing the irrelevant pieces of the model require repeated proof search.
 
-Although our experiment does not ask statistical questions, it is still worth examining threats towards generalizing our results.  First, are the models and properties that we chose representative?  We started from an existing benchmark from another research group suite to try to assuage this concern, but most of these models were small, so we extended the benchmark suite with \mike{YYY} of our own models.  It is possible that our additions skew the results, though these models are immediately derived from previously published work and not modified for our analysis here.  Second, our models and tools use the Lustre language, which is equational, rather than conjuncted transition systems; it is possible (though, in our opinion, unlikely) that arbitrary conjuncts rather than equations will yield different performance or minimality characteristics.
+%One question that arises is: why is the refinement so much quicker than the brute-force approach?  In our preliminary examination, it appears to be because of the actions performed by JKind on the sub-problems.  When the cores produced by \ucalg\ are minimal or close to minimal, it tends to be the case that removing conjuncts from the core leads to short counterexamples.  When performing the brute-force algorithm, removing the irrelevant pieces of the model require repeated proof search.
+
+Although our experiment does not ask statistical questions, it is still worth examining threats towards generalizing our results.  First, are the models and properties that we chose representative?  We started from an existing benchmark from another research group suite to try to assuage this concern, but most of these models were small, so we extended the benchmark suite with 81 of our own models.  It is possible that our additions skew the results, though these models are immediately derived from previously published work and not modified for our analysis here.  Second, our models and tools use the Lustre language, which is equational, rather than conjuncted transition systems; it is possible (though, in our opinion, unlikely) that arbitrary conjuncts rather than equations will yield different performance or minimality characteristics.
 

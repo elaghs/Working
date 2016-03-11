@@ -76,7 +76,6 @@ Finally, we consider the combined \ucbfalg algorithm, in which we first run the 
     MathSAT & 0.011 & 86.421 &  3.071 & 10.403 \\[0.5ex]
     \hline
   \end{tabular} \\
-  \mike{Is this the time for performing both the proof and performing the \ucalg algorithm or is it just the time for the \ucalg algorithm?}\ela{ it wasn't: NOW, it's only for \ucalg excluding proof time}
   \caption{\ucalg runtime with different solvers}
   \label{tab:runtime-ucalg}
 \end{table}
@@ -90,7 +89,7 @@ Finally, we consider the combined \ucbfalg algorithm, in which we first run the 
     Z3   & 0.73\% & 45.69\% & 13.272\% & 10.78\% \\[0.5ex]
     Yices &   0.20\%  & 419.65\%   & 47.92\% & 51.61\% \\[0.5ex]
     SMTInterpol& 0.93\% & 268.57\% &  70.86\% & 54.18\%\\[0.5ex]
-    MathSAT & 0.50\% & 268.57\% &  71.01\% & 79.99\%\\[0.5ex]
+    MathSAT & 0.50\% & 798.92\% &  71.01\% & 79.99\%\\[0.5ex]
     \hline
   \end{tabular}
   \caption{Overhead of \ucalg computations using different solvers}
@@ -102,12 +101,11 @@ Finally, we consider the combined \ucbfalg algorithm, in which we first run the 
   \begin{tabular}{ |c||c|c|c|c| }
     \hline
      runtime (sec) & min & max & mean & stdev \\[0.5ex]
-    \hline\hline
-    Z3   & ??? & ??? & ??? & ??? \\[0.5ex]
+    \hline
     Yices &   0.847  & 469.953   & 26.584 & 56.773 \\[0.5ex]
     \hline
   \end{tabular}
-  \caption{\ucbfalg runtime with Z3 and Yices}
+  \caption{\ucbfalg runtime with Yices}
   \label{tab:runtime-ucbfalg}
 \end{table}
 
@@ -117,11 +115,10 @@ Finally, we consider the combined \ucbfalg algorithm, in which we first run the 
     \hline
      solver & min & max & mean & stdev \\[0.5ex]
     \hline
-    Z3   & XXX\% & XXX\% & XXX\% & XXX\% \\[0.5ex]
     Yices &   18.37\%  & 99.67\%   & 87.43\% & 16.13\% \\[0.5ex]
     \hline
   \end{tabular}
-  \caption{Overhead of \ucbfalg algorithm using Z3 and Yices}
+  \caption{Overhead of \ucbfalg algorithm using Yices}
   \label{tab:overhead-ucbfalg}
 \end{table}
 
@@ -156,7 +153,7 @@ Finally, we consider the combined \ucbfalg algorithm, in which we first run the 
 \label{sec:minimality}
 In this section, we examine the minimality of the cores computed by the \ucalg algorithm using different inductive proof methods and compare it to the cores produced by the brute-force algorithm (\textbf{RQ2}).  There are three interesting aspects to be examined related to this research question.  First (\textbf{RQ2.1}), does the choice of SMT solver or algorithm used to produce a proof (k-induction or PDR) matter in terms of the minimality of the inductive core?   As mentioned in Section~\ref{sec:ivc}, the \ucalg algorithm is not guaranteed to produce a minimal core due to the role of invariants used in producing a proof; as k-induction and PDR use different invariant generation algorithms, it is possible that one or the other is more likely to yield smaller invariant sets.  In addition, differences in the choice of the UNSAT-core algorithms in the different tools could affect the size of the generated core.  However, our algorithm {\em already} does a minimization step...\mike{Andrew, please add an appropriate reference back to the ivc section here}.
 
-As discussed in Section~\ref{sec:experiment}, k-induction is unable to solve all of the analysis problems; therefore we include only models that are solvable using {\em both} k-induction and PDR by {\em all tools}, \mike{YYY} models in all.  Examining the aggregate data in Table~\ref{tab:minimality-algorithm-solvers}, we can see the sizes of cores produced by different algorithms and tools.
+As discussed in Section~\ref{sec:experiment}, k-induction is unable to solve all of the analysis problems; therefore we include only models that are solvable using {\em both} k-induction and PDR by {\em all tools}, 304 models in all.  Examining the aggregate data in Table~\ref{tab:minimality-algorithm-solvers}, we can see the sizes of cores produced by different algorithms and tools.
 
 %if we sum all elements of all cores together, that PDR has an smaller core size in aggregate than k-induction.
 %However, the data is noisy, and to examine \textbf{RQ2.1} systematically, we construct a hypothesis that PDR will, in general, equal or outperform k-induction on an arbitrary model:

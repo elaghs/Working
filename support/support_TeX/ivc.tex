@@ -118,11 +118,11 @@ minimal.
   is a contradiction, thus $R$ must be minimal.
 \end{proof}
 
-This algorithm has two problems in practice. First, checking if a
-safety property holds is undecidable in general thus the algorithm may
-never terminate even when the safety property is easily provable over
-the original transition system. Second, this algorithm is very
-inefficient since it tries to re-prove the property multiple times.
+This algorithm has two problems. First, checking if a safety property
+holds is undecidable in general thus the algorithm may never terminate
+even when the safety property is easily provable over the original
+transition system. Second, this algorithm is very inefficient since it
+tries to re-prove the property multiple times.
 
 \begin{algorithm}[t]
   \SetKwInOut{Input}{input}
@@ -195,7 +195,8 @@ have a function $\unsatcore()$ which returns a minimal subset of the
 activation literals such that the formula is unsatisfiable with those
 activation literals held true. In practice, SMT solvers often return a
 non-minimal set, but we can minimize the set via repeated calls to
-\checksat.
+\checksat. We assume both \checksat and \unsatcore are always
+terminating.
 
 \begin{algorithm}[t]
   $k' \leftarrow 1$ \\
@@ -240,15 +241,18 @@ The function $\reduceinv_k(T, \{Q_1, \ldots, Q_n\}, P)$ is defined in
 Algorithm~\ref{alg:reduce-invariants}. This function assumes that $P
 \land Q_1 \land \cdots \land Q_n$ is $k$-inductive for $(I, T)$. It
 returns a set $R \subseteq \{P, Q_1, \ldots, Q_n\}$ such that $R$ is
-$k$-inductive for $(I, T)$. Like \mink, this function only checks the
-inductive query since each element of $R$ is an invariant and
-therefore will always pass the base query. A significant complication
-for reducing invariants is that some invariants may mutually need each
-other, even though none of them is needed to prove $P$. Thus in
-Algorithm~\ref{alg:reduce-invariants} we find a minimal set of
-invariants needed to prove $P$, then we find a minimal set of
+$k$-inductive for $(I, T)$ and $P \in R$. Like \mink, this function
+only checks the inductive query since each element of $R$ is an
+invariant and therefore will always pass the base query. A significant
+complication for reducing invariants is that some invariants may
+mutually need each other, even though none of them are needed to prove
+$P$. Thus in Algorithm~\ref{alg:reduce-invariants} we find a minimal
+set of invariants needed to prove $P$, then we find a minimal set of
 invariants to prove those invariants, and so on. We terminate when no
-more invariants are needed to prove the properties in $R$. As with
+more invariants are needed to prove the properties in $R$.
+Algorithm~\ref{alg:reduce-invariants} is guaranteed to terminate since
+$R$ gets larger in every iteration of the outer loop and it is bounded
+above by $\{P, Q_1, \ldots, Q_n\}$. As with
 Algorithm~\ref{alg:minimize-k}, we describe each query in
 Algorithm~\ref{alg:reduce-invariants} separately, though in practice
 large parts of the queries can be re-used to improve efficiency.
@@ -280,7 +284,10 @@ The function $\minivc_k(I, \{T_1, \ldots, T_n\}, P)$ is defined in
 Algorithm~\ref{alg:minimize-ivc}. This function assumes that $P$ is
 $k$-inductive for $(I, T)$. It returns a minimal inductive validity
 core $R \subseteq \{T_1, \ldots, T_n\}$ such that $P$ is $k$-inductive
-for $(I, R)$.
+for $(I, R)$. It is trivially terminating. Since
+Algorithms~\ref{alg:minimize-k}, \ref{alg:reduce-invariants}, and
+\ref{alg:minimize-ivc} are terminating, Algorithm~\ref{alg:ivc} is
+always terminating.
 
 Our full inductive validity core algorithm in Algorithm~\ref{alg:ivc}
 does not guarantee a minimal inductive validity core. One reason is
@@ -290,7 +297,7 @@ algorithm is given at the outset. It is possible that there are other
 invariants which could lead to a smaller inductive validity core, but
 we do not search for them. In Sections~\ref{sec:experiment} and
 \ref{sec:results}, we show that in practice our algorithm is nearly
-minimal and much more efficient that the naive algorithm. The
+minimal and much more efficient than the naive algorithm. The
 following theorem shows that minimality checking is at least as hard
 as model checking and therefore undecidable in many settings.
 
@@ -316,10 +323,11 @@ Therefore, $S$ is minimal if and only if $(I, T)\nvdash P$.
 \end{proof}
 
 When minimality is a necessity, we can combine \bfalg and \ucalg into
-a single algorithm which is relatively efficient and guarantees
-minimality. The hybrid algorithm, \ucbfalg, consists of running \ucalg
-to generate an initial almost-minimal IVC which is then run through
-\bfalg to guarantee minimality.
+a single algorithm which aims efficiently guarantee minimality. The
+hybrid algorithm, \ucbfalg, consists of running \ucalg to generate an
+initial almost-minimal IVC which is then run through \bfalg to
+guarantee minimality. The resulting algorithm is not guaranteed to
+terminate since \bfalg is not guaranteed to terminate.
 
 %%% Local Variables:
 %%% mode: latex

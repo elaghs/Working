@@ -8,7 +8,7 @@ In the event that a property is proved, however, it is not always clear what lev
 At issue is the level of feedback provided by the tool to the user. In
 most tools, when the answer to a correctness query is positive, no
 further information is provided. What we would like to provide is
-traceability information, e.g., an {\em inductive validity core} (IVC), that explains
+traceability information, an {\em inductive validity core} (IVC), that explains
 the proof, in much the same way that a counterexample explains the
 negative result. This is not a new idea: UNSAT cores~\cite{zhang2003extracting}
 provide the same kind of information for individual SAT or
@@ -16,7 +16,7 @@ SMT queries, and this approach has been lifted to bounded analysis
 for Alloy in~\cite{Torlak08:cores}. What we propose is a generic and efficient
 mechanism for extracting supporting information, similar to an UNSAT
 core, from the proofs of safety properties using inductive techniques
-such as PDR~\cite{Een2011:PDR} and $k$-induction~\cite{SheeranSS00}. Because many
+such as PDR and $k$-induction. Because many
 properties are not themselves inductive, these proof techniques
 introduce lemmas as part of the solving process in order to strengthen
 the properties and make them inductive. Our technique allows
@@ -57,11 +57,19 @@ In the remainder of this paper, we present an algorithm for efficient generation
 \begin{itemize}
     \item We present a technique for extracting inductive validity
       cores from an inductive verification of a safety property over a sequential model involving lemmas.
-    \item We formalize this technique and present an implementation of it in the JKind model checker~\cite{jkind}
+    \item We formalize this technique and present an implementation of it in the JKind model checker~\cite{jkind}.
     \item We present an experiment over our implementation and measure the efficiency, minimality, and robustness of the IVC generation process.
 \end{itemize}
 
-The rest of this article is organized as follows. In Section~\ref{sec:exmpl}, we present a running example for the paper.  In Section~\ref{sec:background}, we present the required background for our approach.  In Sections~\ref{sec:ivc} and~\ref{sec:impl}, we present our approach and our implementation in JKind.  Sections~\ref{sec:experiment} and~\ref{sec:results} present an evaluation of our approach on a set of benchmark examples.  Finally, Section~\ref{sec:related} discusses related work and Section~\ref{sec:conc} concludes.
+The rest of this article is organized as follows. In
+Section~\ref{sec:exmpl}, we present a motivating example. In
+Section~\ref{sec:background}, we present the required background for
+our approach. In Sections~\ref{sec:ivc} and~\ref{sec:impl}, we present
+our approach and our implementation in JKind.
+Sections~\ref{sec:experiment} and~\ref{sec:results} present an
+evaluation of our approach on a set of benchmark examples. Finally,
+Section~\ref{sec:related} discusses related work and
+Section~\ref{sec:conc} concludes.
 
 \iffalse
 \begin{itemize}

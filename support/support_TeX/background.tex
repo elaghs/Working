@@ -10,7 +10,7 @@
 Given a state space $S$, a transition system $(I,T)$ consists of an
 initial state predicate $I : S \to \bool$ and a transition step
 predicate $T : S \times S \to \bool$. We define the notion of
-reachability for $(I, T)$ as a the smallest predicate $\reach : S \to
+reachability for $(I, T)$ as the smallest predicate $\reach : S \to
 \bool$ which satisfies the following formulas:
 \begin{gather*}
   \forall s.~ I(s) \Rightarrow \reach(s) \\
@@ -71,7 +71,7 @@ In general, for an arbitrary $k$, $k$-induction consists of the $k$
 base step checks and one inductive step check as shown in
 Figure~\ref{fig:k-induction} (the universal quantifiers on $s_i$ have
 been elided for space). We say that a property is $k$-inductive if it
-satisfies the $k$-induction constraints for a the given value of $k$.
+satisfies the $k$-induction constraints for the given value of $k$.
 The hope is that the additional formulas in the antecedent of the
 inductive step make it provable.
 

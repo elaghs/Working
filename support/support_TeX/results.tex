@@ -89,10 +89,10 @@ Finally, we consider the combined \ucbfalg algorithm, in which we first run the 
     \hline
      solver & min & max & mean & stdev \\[0.5ex]
     \hline
-    Z3   & 0.73\% & 45.69\% & 13.272\% & 10.78\% \\[0.5ex]
-    Yices &   0.20\%  & 419.65\%   & 47.92\% & 51.61\% \\[0.5ex]
-    SMTInterpol& 0.93\% & 268.57\% &  70.86\% & 54.18\%\\[0.5ex]
-    MathSAT & 0.50\% & 798.92\% &  71.01\% & 79.99\%\\[0.5ex]
+    Z3   & 0.73\% & 84.13\% & 17.38\% & 16.92\% \\[0.5ex]
+    Yices &   0.17\%  & 351.47\%   & 52.20\% & 54.50\% \\[0.5ex]
+    SMTInterpol& 1.46\% & 175.75\% &  46.81\% & 37.35\%\\[0.5ex]
+    MathSAT & 0.78\% & 955.52\% &  80.21\% & 112.92\%\\[0.5ex]
     \hline
   \end{tabular}
   \caption{Overhead of \ucalg computations using different solvers}
@@ -105,7 +105,7 @@ Finally, we consider the combined \ucbfalg algorithm, in which we first run the 
     \hline
      runtime (sec) & min & max & mean & stdev \\[0.5ex]
     \hline
-    Yices &   0.847  & 469.953   & 26.584 & 56.773 \\[0.5ex]
+    Yices &   0.678  & 3600.0   & 91.594 & 490.008 \\[0.5ex]
     \hline
   \end{tabular}
   \caption{\ucbfalg runtime with Yices}
@@ -118,7 +118,7 @@ Finally, we consider the combined \ucbfalg algorithm, in which we first run the 
     \hline
      solver & min & max & mean & stdev \\[0.5ex]
     \hline
-    Yices &   18.37\%  & 99.67\%   & 87.43\% & 16.13\% \\[0.5ex]
+    Yices & 122.50\%  & 30092.78\%   & 3195.90\% & 3896.05\% \\[0.5ex]
     \hline
   \end{tabular}
   \caption{Overhead of \ucbfalg algorithm using Yices}
@@ -160,8 +160,7 @@ Finally, we consider the combined \ucbfalg algorithm, in which we first run the 
 
 \begin{figure*}
   \centering
-  \includegraphics[width=\textwidth]{figs/minimality.png}
-  \mike{REPLACE WITH CORRECT FIGURE}
+  \includegraphics[width=\textwidth]{figs/minimality.png} 
   \caption{IVC sizes produced by \ucalg vs. \ucbfalg for Yices}
   \label{fig:minimality-all}
 \end{figure*}
@@ -285,7 +284,7 @@ Table~\ref{tab:variety} shows that, with an effect size of 0.79, H0 can be rejec
 
 \subsection{Discussion}
 
-In the previous section, we presented three algorithms for determining inductive validity cores.  The brute-force algorithm is guaranteed minimal, but is often very slow.  The other two algorithms: the UNSAT-core algorithm \ucalg\ and the combined algorithm \ucbfalg, represent interesting trade-offs.  The \ucalg\ algorithm is much faster, but is not guaranteed to be minimal; the result of this algorithm can be further, and often quite quickly, refined by the combined algorithm.  Thus, we can choose to trade off speed for guaranteed minimality using these two algorithms; the combined algorithm can be viewed as a refinement algorithm that we can terminate either at completion or after a fixed time bound.  
+In the previous section, we presented three algorithms for determining inductive validity cores.  The brute-force algorithm is guaranteed minimal, but is often very slow.  The other two algorithms: the UNSAT-core algorithm \ucalg\ and the combined algorithm \ucbfalg, represent interesting trade-offs.  The \ucalg\ algorithm is much faster, but is not guaranteed to be minimal; the result of this algorithm can be further, and often quite quickly, refined by the combined algorithm.  Thus, we can choose to trade off speed for guaranteed minimality using these two algorithms; the combined algorithm can be viewed as a refinement algorithm that we can terminate either at completion or after a fixed time bound.
 
 
 %One question that arises is: why is the refinement so much quicker than the brute-force approach?  In our preliminary examination, it appears to be because of the actions performed by JKind on the sub-problems.  When the cores produced by \ucalg\ are minimal or close to minimal, it tends to be the case that removing conjuncts from the core leads to short counterexamples.  When performing the brute-force algorithm, removing the irrelevant pieces of the model require repeated proof search.

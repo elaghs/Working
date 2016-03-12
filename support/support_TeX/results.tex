@@ -167,7 +167,7 @@ this approach can still be used for reasonably sized models.
 
 \begin{table}
   \centering
-  \andrew{Is this table ever referenced in the text?}
+  \andrew{Is this table ever referenced in the text?} \ela{Mike should know}
   \begin{tabular}{ |c||c|c|c|c| }
     \hline
      solver & min & max & mean & stdev \\[0.5ex]
@@ -242,7 +242,8 @@ cores produced by the \ucalg algorithm.
 \takeaway{The \ucalg algorithm computes cores that are 0\% to 725.0\%
   larger than those produced by \ucbfalg, with substantial variance in
   the results. \andrew{This takeaway sounds more depressing than the
-    figure implies. Could we say something better?}}
+    figure implies. Could we say something better?}} \ela{Ela: I think we can say: the \ucalg algorithm computes cores that are averagely 20\%
+  larger than those produced by \ucbfalg.  because that 725\% is just for one model (I think)}
 
 
 \iffalse
@@ -285,6 +286,8 @@ Since \texttt{JSupport}, with a great percentage, most of the time computed the 
 \andrew{We talk a lot about minimality here, but we are computing
   jaccard distance among the sets returned by \ucalg which does not
   guarantee minimality.}
+  \ela{That's right. we also had a definition/ table of overall distance based on the minimal pattern.
+  but Maybe this one could show how much diversity exists between sets. They don't have to be minimal. but, we wanted to know how similar they are...}
 
 Recall from Section~\ref{sec:ivc} that a {\em minimal} core is any
 core leading to a proof such that if you remove any of the conjuncts

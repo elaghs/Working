@@ -42,16 +42,15 @@ For each test model, we computed \ucalg in 12+1 configurations: the
 twelve configurations were the cross product of all solvers \{Z3,
 Yices, MathSAT, SMTInterpol\} and inductive algorithms
 \{$k$-induction, PDR, fastest\}, and the remaining (+1) configuration
-was an instance of \bfalg run on Z3 \andrew{Didn't we use Yices?},
-which has, overall, been the best solver for model-checking problems
-in JKind. In addition, for each of the 12 configurations, we ran an
+was an instance of \bfalg run on Yices, which is the default solver in
+JKind. In addition, for each of the 12 configurations, we ran an
 instance of JKind without IVC to examine overhead. The experiments
 were run on an Intel(R) i5-2430M, 2.40GHz, 4GB memory machine, with a
 1 hour timeout for each analysis on any model. The data gathered for
 each configuration of each model included the time required to check
 the model without IVC, with IVC, and also the set of elements in the
-computed IVC.\footnote{The benchmarks, all raw experimental
-  results, and computed data are available on \cite{expr}.}
+computed IVC.\footnote{The benchmarks, all raw experimental results,
+  and computed data are available on \cite{expr}.}
 
 Note that not all analysis problems were solvable with all algorithms: for all solvers, $k$-induction (without IVC) was unable to solve 172 of the examples.  When comparing minimality of different solving algorithms, we only considered cases where both algorithms provided a solution (as will be discussed in more detail in Section~\ref{sec:minimality}).
 

@@ -25,8 +25,8 @@ time steps. On each step, the input variables take on some values and
 are used to compute values for the output variables on the same step.
 In addition, equations may refer to the previous value of a variable
 using the {\tt pre} operator. This operator is underspecified in the
-initial step, so the arrow operator, {\tt ->}, is used to guard the
-{\tt pre} operator. In the initial step the expression {\tt e1 -> e2}
+first step, so the arrow operator, {\tt ->}, is used to guard the
+{\tt pre} operator. In the first step the expression {\tt e1 -> e2}
 evaluates to {\tt e1}, and it evaluates to {\tt e2} in all other steps.
 
 We interpret a Lustre program as a model specification by considering
@@ -40,7 +40,10 @@ It is straightforward to translate this interpretation of Lustre into
 the traditional initial and transition relations. We will show this by
 continuing with the example in Figure~\ref{fig:ex-before}. First we
 introduce a new Boolean variable $init$ into the state space to denote
-when the system is in its initial step. Then we define,
+when the system is in its initial state, the state of the system prior
+to initialization. In the initial state, all other variables are
+completely unconstrained which models the underspecification of the pre
+operator during the first step. Then we define,
 \begin{align*}
   &I((x, a, b, y, \mathit{init})) = \mathit{init} \\
   &T((x, a, b, y, \mathit{init}), (x', a', b', y', \mathit{init'})) = \\
@@ -49,13 +52,12 @@ when the system is in its initial step. Then we define,
   &\hspace{1.5cm} (y' = b' + (\ite{init}{0}{y})) \land ~\\
   &\hspace{1.5cm} \neg\mathit{init'}
 \end{align*}
-Note that $f$ is unspecified in Figure~\ref{fig:ex-before}. In a real
-system, $f$ would be defined in the Lustre model and expanded in the
-translation relation. A safety property such as {\tt y >= 0} is
-translated into $\mathit{init} \lor (y \geq 0)$. Nested uses of arrow
-and pre operators are handled by introducing new output variables for
-nested expressions, though such details are unimportant for our
-purposes.
+Note that $f$ is unspecified in Figure~\ref{fig:ex-before} and so also
+in $T$. In a real system, $f$ would be defined in the Lustre model and
+expanded in $T$. A safety property such as {\tt y >= 0} is translated
+into $\mathit{init} \lor (y \geq 0)$. Nested uses of arrow and pre
+operators are handled by introducing new output variables for nested
+expressions, though such details are unimportant for our purposes.
 
 Each equation in the Lustre program is translated into a single
 top-level conjunct in the transition relation. This is very convenient
@@ -70,17 +72,19 @@ introducing auxiliary variables for subexpressions if desired.
 
 \subsection{JKind}
 
-JKind is an infinite-state model checker for safety properties. JKind
-proves safety properties using multiple cooperative engines in
-parallel including $k$-induction, property directed reachability, and
-template-based lemma generation. JKind accepts Lustre programs written
-over the theory of linear integer and real arithmetic. In the
-back-end, JKind uses an SMT solver such as Yices, Z3, MathSAT, or
-SMTInterpol.
+JKind~\cite{jkind} is an infinite-state model checker for safety
+properties. JKind proves safety properties using multiple cooperative
+engines in parallel including $k$-induction~\cite{SheeranSS00},
+property directed reachability~\cite{Een2011:PDR}, and template-based
+lemma generation~\cite{Kahsai2011}. JKind accepts Lustre programs
+written over the theory of linear integer and real arithmetic. In the
+back-end, JKind uses an SMT solver such as Z3~\cite{DeMoura08:z3},
+Yices~\cite{Dutertre06:yices}, MathSAT~\cite{Cimatti2013:MathSAT}, or
+SMTInterpol~\cite{Christ2012:SMTInterpol}.
 
 JKind works on multiple properties simultaneously. When a property is
 proven and IVC generation is enabled, an additional parallel engine
-executes Algorithm~\ref{alg:ivc} to generate a near-minimal IVC.
+executes Algorithm~\ref{alg:ivc} to generate a nearly minimal IVC.
 
 JKind accepts an annotation on its input Lustre program indicating
 which outputs variables to consider for IVC generation. Output
@@ -93,3 +97,4 @@ wire together more interesting expressions.
 
 %%  LocalWords:  JSupport subprocess IVCs dataflow underspecified IVC
 %%  LocalWords:  init Yices MathSAT SMTInterpol subexpressions
+%%  LocalWords:  underspecification

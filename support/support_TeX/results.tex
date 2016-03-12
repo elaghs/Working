@@ -188,7 +188,7 @@ As discussed in Section~\ref{sec:experiment}, k-induction is unable to solve all
 
 The next question (\textbf{RQ2.2}) asks how close to minimal are the cores produced by \ucalg\ vs. the (guaranteed minimal) cores produced by the \ucbfalg\ algorithm?  Note that we cannot measure the distance on all models because the combined algorithm times out on 9 of the larger models.  We therefore examine the distance from minimal cores produced by the combined algorithm for models in which it completes within the one hour timeout.  For comparison, we run the \ucalg\ algorithm in each tool with the default {\em fastest} algorithm, which will use the result of either k-induction or PDR.  A graph showing the size of the IVCs for each model produced by the yices solver is shown in Figure~\ref{fig:minimality-all}.  In the figure, the models are ranked along the x-axis by the size of the core produced by \ucbfalg.  The figure demonstrates that while on average there is a modest change in minimality that there can be substantial variance on the sizes of the cores produced by the \ucalg\ algorithm.
 
-\takeaway{The \ucalg algorithm computes cores that are 0\% to \% larger than those produced by \ucbfalg, with substantial variance in the results.}
+\takeaway{The \ucalg algorithm computes cores that are 0\% to 7.25\% larger than those produced by \ucbfalg, with substantial variance in the results.}
 
 
 \iffalse

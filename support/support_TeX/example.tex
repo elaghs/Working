@@ -5,9 +5,7 @@
 \includegraphics[width=\columnwidth]{figs/simulink-ivc.png}
 {\smaller
 \begin{verbatim}
-node filter(x, a : real) returns (y : real);
-var
-  b : real;
+node filter(x, a : real) returns (b, y : real);
 let
   b = if a >= 0.0 then a else -a;
   y = b + (0.0 -> pre y);

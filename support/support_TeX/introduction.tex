@@ -40,9 +40,7 @@ accurate and precise (that is, sound and close to minimal).
 \includegraphics[width=\columnwidth]{figs/simulink.png}
 {\smaller
 \begin{verbatim}
-node filter(x : real) returns (y : real);
-var
-  a, b : real;
+node filter(x : real) returns (a, b, y : real);
 let
   a = f(x, 0.0 -> pre y);
   b = if a >= 0.0 then a else -a;
@@ -63,7 +61,7 @@ In the remainder of this paper, we present an algorithm for efficient generation
     \item We present an experiment over our implementation and measure the efficiency, minimality, and robustness of the IVC generation process.
 \end{itemize}
 
-The rest of this article is organized as follows. In Section~\ref{sec:exmpl}, we present a running example for the paper.  In Section~\ref{sec:background}, we present the required background for our approach.  In Sections~\ref{sec:ivc} and~\ref{sec:impl}, we present our approach and our implementation in JKind.  Sections~\ref{sec:expriment} and~\ref{sec:results} present an evaluation of our approach on a set of benchmark examples.  Finally, Section~\ref{sec:related} discusses related work and Section~\ref{sec:conc} concludes.
+The rest of this article is organized as follows. In Section~\ref{sec:exmpl}, we present a running example for the paper.  In Section~\ref{sec:background}, we present the required background for our approach.  In Sections~\ref{sec:ivc} and~\ref{sec:impl}, we present our approach and our implementation in JKind.  Sections~\ref{sec:experiment} and~\ref{sec:results} present an evaluation of our approach on a set of benchmark examples.  Finally, Section~\ref{sec:related} discusses related work and Section~\ref{sec:conc} concludes.
 
 \iffalse
 \begin{itemize}

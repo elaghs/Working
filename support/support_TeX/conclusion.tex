@@ -2,19 +2,19 @@
 \label{sec:conc}
 
 We have defined the notion of an inductive validity core (IVC) which
-appears to be a useful measure in relation to a valid property in
-inductive model checking. We have presented a novel algorithm for
+appears to be a useful measure in relation to a valid safety property
+in inductive model checking. We have presented a novel algorithm for
 computing IVCs that are nearly minimal and have shown that full
 minimality is undecidable in many settings. Our algorithm is
 applicable to all forms of inductive SAT/SMT-based model checking
-including k-induction, property directed reachability (PDR), and
+including $k$-induction, property directed reachability (PDR), and
 interpolation-based model checking.
 
 We have implemented our IVC algorithm as part of the open source model
 checker JKind. We have shown that the algorithm requires only a
 moderate overhead and produces nearly minimal IVCs in practice.
 Moreover, the produced IVCs are fairly stable with respect to
-underlying proof engines (k-induction and PDR) and back-end SMT
+underlying proof engines ($k$-induction and PDR) and back-end SMT
 solvers (Yices, Z3, MathSAT, SMTInterpol).
 
 In ongoing work, we are using the notion of IVCs to perform vacuity
@@ -23,7 +23,7 @@ generation failure analysis. We plan to investigate algorithms for
 exploring the space of IVCs such as finding distinct minimal IVCs or
 finding minimum (rather than minimal) IVCs. Such algorithms could be
 used to automatically measure the redundancy of systems with respect
-to their properties.
+to their safety properties.
 
 %% \begin{itemize}
 %%     \item Write this at the end.

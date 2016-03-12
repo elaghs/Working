@@ -27,7 +27,7 @@ In addition, equations may refer to the previous value of a variable
 using the {\tt pre} operator. This operator is underspecified in the
 initial step, so the arrow operator, {\tt ->}, is used to guard the
 {\tt pre} operator. In the initial step the expression {\tt e1 -> e2}
-evalutes to {\tt e1}, and it evaluates to {\tt e2} in all other steps.
+evaluates to {\tt e1}, and it evaluates to {\tt e2} in all other steps.
 
 We interpret a Lustre program as a model specification by considering
 the behavior of the program under all possible input traces. Safety
@@ -49,10 +49,13 @@ when the system is in its initial step. Then we define,
   &\hspace{1.5cm} (y' = b' + (\ite{init}{0}{y})) \land ~\\
   &\hspace{1.5cm} \neg\mathit{init'}
 \end{align*}
-A safety property such as {\tt y >= 0} is translated into
-$\mathit{init} \lor (y \geq 0)$. Nested uses of arrow and pre
-operators are handled by introducing new output variables for nested
-expressions, though such details are unimportant for our purposes.
+Note that $f$ is unspecified in Figure~\ref{fig:ex-before}. In a real
+system, $f$ would be defined in the Lustre model and expanded in the
+translation relation. A safety property such as {\tt y >= 0} is
+translated into $\mathit{init} \lor (y \geq 0)$. Nested uses of arrow
+and pre operators are handled by introducing new output variables for
+nested expressions, though such details are unimportant for our
+purposes.
 
 Each equation in the Lustre program is translated into a single
 top-level conjunct in the transition relation. This is very convenient
@@ -61,7 +64,9 @@ variables whose equations are part of the IVC. Equivalently, the
 interpretation of an IVC for a Lustre property is that any output
 variable that is not part of the IVC can be turned into an input
 variable, its equation thrown away, while preserving the validity of
-the property.
+the property. Thus the granularity of the IVC analysis is determined
+by the granularity of the Lustre equations and can be adjusted by
+introducing auxiliary variables for subexpressions if desired.
 
 \subsection{JKind}
 
@@ -69,11 +74,11 @@ JKind is an infinite-state model checker for safety properties. JKind
 proves safety properties using multiple cooperative engines in
 parallel including $k$-induction, property directed reachability, and
 template-based lemma generation. JKind accepts Lustre programs written
-over the theory of linear integer and real arithmetic. In the back-end,
-JKind uses an SMT-solver such as Yices, Z3, CVC4, MathSAT, or
+over the theory of linear integer and real arithmetic. In the
+back-end, JKind uses an SMT-solver such as Yices, Z3, MathSAT, or
 SMTInterpol.
 
-JKind works on multiple properties simulatenously. When a property is
+JKind works on multiple properties simultaneously. When a property is
 proven and IVC generation is enabled, an additional parallel engine
 executes Algorithm~\ref{alg:ivc} to generate a near-minimal IVC.
 
@@ -85,3 +90,6 @@ important to the user and ignore, for example, administrative
 equations. This is even more important for tools which generate Lustre
 as they often create many such administrative equations which simply
 wire together more interesting expressions.
+
+%%  LocalWords:  JSupport subprocess IVCs dataflow underspecified IVC
+%%  LocalWords:  init Yices MathSAT SMTInterpol subexpressions

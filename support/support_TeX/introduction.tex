@@ -2,7 +2,7 @@
 \label{sec:intro}
 
 
-Symbolic model checking using induction-based techniques such as IC3/PDR~\cite{Een2011:PDR} and k-induction~\cite{SheeranSS00} can often determine whether safety properties hold of complex finite or infinite-state systems.  Model checking tools are attractive both because they are automated, requiring little or no interaction with the user and, if the answer to a correctness query is negative, they provide a counterexample to the satisfaction of the property.  These counterexamples can be used both to illustrate subtle errors in complex hardware and software designs~\cite{hilt2013,McMillan99:compositional, Miller10:CACM} and to support automated test case generation~\cite{Whalen13:OMCDC, You15:dse}.
+Symbolic model checking using induction-based techniques such as IC3/PDR~\cite{Een2011:PDR} and $k$-induction~\cite{SheeranSS00} can often determine whether safety properties hold of complex finite or infinite-state systems.  Model checking tools are attractive both because they are automated, requiring little or no interaction with the user and, if the answer to a correctness query is negative, they provide a counterexample to the satisfaction of the property.  These counterexamples can be used both to illustrate subtle errors in complex hardware and software designs~\cite{hilt2013,McMillan99:compositional, Miller10:CACM} and to support automated test case generation~\cite{Whalen13:OMCDC, You15:dse}.
 In the event that a property is proved, however, it is not always clear what level of assurance should be invested in the result.  Given that these kinds of analyses are performed for safety- and security-critical software, this can lead to overconfidence in the behavior of the fielded system.  It is well known that issues such as vacuity~\cite{Kupferman03:Vacuity} can cause verification to succeed despite errors in a property specification or in the model. Even for non-vacuous specifications, it is possible to over-constrain the specification of the {\em environment} in the model such that the implementation will not work in the actual operating environment.
 
 At issue is the level of feedback provided by the tool to the user. In
@@ -14,9 +14,9 @@ negative result. This is not a new idea: UNSAT cores~\cite{zhang2003extracting}
 provide the same kind of information for individual SAT or
 SMT queries, and this approach has been lifted to bounded analysis
 for Alloy in~\cite{Torlak08:cores}. What we propose is a generic and efficient
-mechanism for extracting supporting information, similiar to an UNSAT
+mechanism for extracting supporting information, similar to an UNSAT
 core, from the proofs of safety properties using inductive techniques
-such as PDR~\cite{Een2011:PDR} and k-induction~\cite{SheeranSS00}. Because many
+such as PDR~\cite{Een2011:PDR} and $k$-induction~\cite{SheeranSS00}. Because many
 properties are not themselves inductive, these proof techniques
 introduce lemmas as part of the solving process in order to strengthen
 the properties and make them inductive. Our technique allows
@@ -77,3 +77,5 @@ The rest of this article is organized as follows. In Section~\ref{sec:exmpl}, we
 %%% mode: latex
 %%% TeX-master: "main.tex"
 %%% End
+
+%%  LocalWords:  IC PDR IVC UNSAT subformulae mis IVCs Torlak et al

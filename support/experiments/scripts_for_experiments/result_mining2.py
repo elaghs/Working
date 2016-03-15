@@ -10,7 +10,7 @@ import os, sys, shelve
 RESULTS_DIR = 'results2'
 MINING_DIR = 'mining'
 SORTED_MODELS = 'list_of_sorted_models.txt'
-TIMEOUT = 700.00
+TIMEOUT = 3600.00
 
 
 if not os.path.exists(RESULTS_DIR):
@@ -35,6 +35,7 @@ models_name.close()
 # Extract JSupport results
 #
 jsup = []
+num = 0
 for file in models:
     time = ''
     try:
@@ -44,11 +45,15 @@ for file in models:
         sup_set = []
         for sup in tree.iter(tag = 'Support'):
             sup_set.append(sup.text)
-        jsup.append({'sup': sup_set, 'time': float(time)})
+        if float(time) >= 3600.0 :    
+            jsup.append({'sup': sup_set, 'time': 3600.0})
+            num += 1
+        else:
+            jsup.append({'sup': sup_set, 'time': float(time)})
     except OSError:
         jsup.append({'sup': [], 'time': float('nan')})
         pass
-
+print(str(num))
 #
 # Store support results
 #

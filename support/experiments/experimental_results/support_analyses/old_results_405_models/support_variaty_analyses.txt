@@ -1,0 +1,1593 @@
+-------------------------------------------------------------------------------------------------
+there are 174 models in the benchmarks with mean Jaccard distance > 0.0
+
+for each of these models, this file reports the following:
+
+
+    -- size of the model
+    -- min/max/mean/stdev Jaccard distance > 0.0
+    -- pairwise configurations with min Jaccard distances > 0.0
+    -- pairwise configurations with max Jaccard distances > 0.0
+-------------------------------------------------------------------------------------------------
+
+
+    the following configurations have the minimum distance: 
+
+ ('jsupport', 'z3_both') with frequency of 5
+    the following configurations have the minimum distance: 
+
+ ('jsupport', 'z3_k_ind') with frequency of 4
+    the following configurations have the minimum distance: 
+
+ ('jsupport', 'z3_pdr') with frequency of 5
+    the following configurations have the minimum distance: 
+
+ ('jsupport', 'yices_both') with frequency of 6
+    the following configurations have the minimum distance: 
+
+ ('jsupport', 'yices_k_ind') with frequency of 6
+    the following configurations have the minimum distance: 
+
+ ('jsupport', 'yices_pdr') with frequency of 6
+    the following configurations have the minimum distance: 
+
+ ('jsupport', 'smtinterpol_both') with frequency of 5
+    the following configurations have the minimum distance: 
+
+ ('jsupport', 'smtinterpol_k_ind') with frequency of 7
+    the following configurations have the minimum distance: 
+
+ ('jsupport', 'smtinterpol_pdr') with frequency of 19
+    the following configurations have the minimum distance: 
+
+ ('jsupport', 'mathsat_both') with frequency of 17
+    the following configurations have the minimum distance: 
+
+ ('jsupport', 'mathsat_k_ind') with frequency of 18
+    the following configurations have the minimum distance: 
+
+ ('jsupport', 'mathsat_pdr') with frequency of 16
+    the following configurations have the minimum distance: 
+
+ ('z3_both', 'z3_k_ind') with frequency of 23
+    the following configurations have the minimum distance: 
+
+ ('z3_both', 'z3_pdr') with frequency of 19
+    the following configurations have the minimum distance: 
+
+ ('z3_both', 'yices_both') with frequency of 22
+    the following configurations have the minimum distance: 
+
+ ('z3_both', 'yices_k_ind') with frequency of 21
+    the following configurations have the minimum distance: 
+
+ ('z3_both', 'yices_pdr') with frequency of 20
+    the following configurations have the minimum distance: 
+
+ ('z3_both', 'smtinterpol_both') with frequency of 18
+    the following configurations have the minimum distance: 
+
+ ('z3_both', 'smtinterpol_k_ind') with frequency of 18
+    the following configurations have the minimum distance: 
+
+ ('z3_both', 'smtinterpol_pdr') with frequency of 20
+    the following configurations have the minimum distance: 
+
+ ('z3_both', 'mathsat_both') with frequency of 16
+    the following configurations have the minimum distance: 
+
+ ('z3_both', 'mathsat_k_ind') with frequency of 15
+    the following configurations have the minimum distance: 
+
+ ('z3_both', 'mathsat_pdr') with frequency of 15
+    the following configurations have the minimum distance: 
+
+ ('z3_k_ind', 'z3_pdr') with frequency of 9
+    the following configurations have the minimum distance: 
+
+ ('z3_k_ind', 'yices_both') with frequency of 10
+    the following configurations have the minimum distance: 
+
+ ('z3_k_ind', 'yices_k_ind') with frequency of 11
+    the following configurations have the minimum distance: 
+
+ ('z3_k_ind', 'yices_pdr') with frequency of 10
+    the following configurations have the minimum distance: 
+
+ ('z3_k_ind', 'smtinterpol_both') with frequency of 7
+    the following configurations have the minimum distance: 
+
+ ('z3_k_ind', 'smtinterpol_k_ind') with frequency of 7
+    the following configurations have the minimum distance: 
+
+ ('z3_k_ind', 'smtinterpol_pdr') with frequency of 8
+    the following configurations have the minimum distance: 
+
+ ('z3_k_ind', 'mathsat_both') with frequency of 7
+    the following configurations have the minimum distance: 
+
+ ('z3_k_ind', 'mathsat_k_ind') with frequency of 7
+    the following configurations have the minimum distance: 
+
+ ('z3_k_ind', 'mathsat_pdr') with frequency of 5
+    the following configurations have the minimum distance: 
+
+ ('z3_pdr', 'yices_both') with frequency of 5
+    the following configurations have the minimum distance: 
+
+ ('z3_pdr', 'yices_k_ind') with frequency of 5
+    the following configurations have the minimum distance: 
+
+ ('z3_pdr', 'yices_pdr') with frequency of 6
+    the following configurations have the minimum distance: 
+
+ ('z3_pdr', 'smtinterpol_both') with frequency of 5
+    the following configurations have the minimum distance: 
+
+ ('z3_pdr', 'smtinterpol_k_ind') with frequency of 5
+    the following configurations have the minimum distance: 
+
+ ('z3_pdr', 'smtinterpol_pdr') with frequency of 6
+    the following configurations have the minimum distance: 
+
+ ('z3_pdr', 'mathsat_both') with frequency of 5
+    the following configurations have the minimum distance: 
+
+ ('z3_pdr', 'mathsat_k_ind') with frequency of 5
+    the following configurations have the minimum distance: 
+
+ ('z3_pdr', 'mathsat_pdr') with frequency of 5
+    the following configurations have the minimum distance: 
+
+ ('yices_both', 'yices_k_ind') with frequency of 5
+    the following configurations have the minimum distance: 
+
+ ('yices_both', 'yices_pdr') with frequency of 5
+    the following configurations have the minimum distance: 
+
+ ('yices_both', 'smtinterpol_both') with frequency of 1
+
+    the following configurations have the maximum distance: 
+
+ ('jsupport', 'z3_both') with frequency of 20
+ ('jsupport', 'z3_k_ind') with frequency of 22
+ ('jsupport', 'z3_pdr') with frequency of 13
+ ('jsupport', 'yices_both') with frequency of 18
+ ('jsupport', 'yices_k_ind') with frequency of 18
+ ('jsupport', 'yices_pdr') with frequency of 15
+ ('jsupport', 'smtinterpol_both') with frequency of 22
+ ('jsupport', 'smtinterpol_k_ind') with frequency of 16
+ ('jsupport', 'smtinterpol_pdr') with frequency of 4
+ ('jsupport', 'mathsat_both') with frequency of 12
+ ('jsupport', 'mathsat_k_ind') with frequency of 10
+ ('jsupport', 'mathsat_pdr') with frequency of 4
+ ('z3_both', 'z3_k_ind') with frequency of 2
+ ('z3_both', 'z3_pdr') with frequency of 3
+ ('z3_both', 'yices_both') with frequency of 3
+ ('z3_both', 'yices_k_ind') with frequency of 2
+ ('z3_both', 'yices_pdr') with frequency of 2
+ ('z3_both', 'smtinterpol_both') with frequency of 3
+ ('z3_both', 'smtinterpol_k_ind') with frequency of 2
+ ('z3_both', 'smtinterpol_pdr') with frequency of 2
+ ('z3_both', 'mathsat_both') with frequency of 2
+ ('z3_both', 'mathsat_k_ind') with frequency of 1
+ ('z3_both', 'mathsat_pdr') with frequency of 1
+ ('z3_k_ind', 'z3_pdr') with frequency of 3
+ ('z3_k_ind', 'yices_both') with frequency of 1
+ ('z3_k_ind', 'yices_k_ind') with frequency of 2
+ ('z3_k_ind', 'yices_pdr') with frequency of 1
+ ('z3_k_ind', 'smtinterpol_both') with frequency of 1
+ ('z3_k_ind', 'smtinterpol_k_ind') with frequency of 1
+ ('z3_k_ind', 'smtinterpol_pdr') with frequency of 1
+ ('z3_k_ind', 'mathsat_both') with frequency of 1
+ ('z3_k_ind', 'mathsat_k_ind') with frequency of 1
+ ('z3_k_ind', 'mathsat_pdr') with frequency of 1
+ ('z3_pdr', 'yices_both') with frequency of 1
+ ('z3_pdr', 'yices_k_ind') with frequency of 1
+ ('z3_pdr', 'yices_pdr') with frequency of 1
+ ('z3_pdr', 'smtinterpol_both') with frequency of 1
+ ('z3_pdr', 'smtinterpol_k_ind') with frequency of 1
+ ('z3_pdr', 'smtinterpol_pdr') with frequency of 1
+ ('z3_pdr', 'mathsat_both') with frequency of 1
+ ('z3_pdr', 'mathsat_k_ind') with frequency of 1
+ ('z3_pdr', 'mathsat_pdr') with frequency of 1
+ ('yices_both', 'yices_k_ind') with frequency of 1
+ ('yices_both', 'yices_pdr') with frequency of 1
+ ('yices_both', 'smtinterpol_both') with frequency of 1
+ ('yices_both', 'smtinterpol_k_ind') with frequency of 1
+ ('yices_both', 'smtinterpol_pdr') with frequency of 1
+ ('yices_both', 'mathsat_both') with frequency of 1
+-------------------------------------------------------------------------------------------------
+
+
+0) ticket3i_7_e1_2192_e7_3516.lus :
+    Size: 3.989 KB
+    min distance: 0.43
+    max distance: 0.43
+    mean distance: 0.43
+    stdev distance: 0.0
+
+
+1) FIREFLY_3_e2_2236_e1_2305.lus :
+    Size: 4.324 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+2) DRAGON_1_e2_1997.lus :
+    Size: 7.134 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+3) DRAGON_4_e1_4312.lus :
+    Size: 7.037 KB
+    min distance: 0.07
+    max distance: 0.25
+    mean distance: 0.12
+    stdev distance: 0.05
+
+
+4) DRAGON_4_e2_2799.lus :
+    Size: 7.037 KB
+    min distance: 0.06
+    max distance: 0.25
+    mean distance: 0.15
+    stdev distance: 0.06
+
+
+5) FIREFLY_11.lus :
+    Size: 4.314 KB
+    min distance: 0.12
+    max distance: 0.5
+    mean distance: 0.27
+    stdev distance: 0.14
+
+
+6) speed_e7_207_e7_538.lus :
+    Size: 0.648 KB
+    min distance: 0.67
+    max distance: 0.67
+    mean distance: 0.67
+    stdev distance: 0.0
+
+
+7) car_all_e8_856.lus :
+    Size: 1.117 KB
+    min distance: 0.29
+    max distance: 0.29
+    mean distance: 0.29
+    stdev distance: 0.0
+
+
+8) MESI_all.lus :
+    Size: 2.786 KB
+    min distance: 0.33
+    max distance: 0.33
+    mean distance: 0.33
+    stdev distance: 0.0
+
+
+9) metros_1_e2_1102.lus :
+    Size: 1.987 KB
+    min distance: 0.11
+    max distance: 0.44
+    mean distance: 0.24
+    stdev distance: 0.1
+
+
+10) durationThm_3_e2_148.lus :
+    Size: 0.773 KB
+    min distance: 0.33
+    max distance: 0.33
+    mean distance: 0.33
+    stdev distance: 0.0
+
+
+11) SYNAPSE_5_e2_1525.lus :
+    Size: 1.779 KB
+    min distance: 0.18
+    max distance: 0.18
+    mean distance: 0.18
+    stdev distance: 0.0
+
+
+12) ums_e8_1032.lus :
+    Size: 4.362 KB
+    min distance: 0.33
+    max distance: 0.33
+    mean distance: 0.33
+    stdev distance: 0.0
+
+
+13) FIREFLY_5_e2_2884_e2_1492.lus :
+    Size: 4.323 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+14) ex3_e8_381_e7_224.lus :
+    Size: 0.671 KB
+    min distance: 0.17
+    max distance: 0.17
+    mean distance: 0.17
+    stdev distance: 0.0
+
+
+15) tramway_e7_1834_e7_2363.lus :
+    Size: 3.291 KB
+    min distance: 0.14
+    max distance: 0.39
+    mean distance: 0.27
+    stdev distance: 0.06
+
+
+16) DRAGON_13_e7_2336_e8_1940.lus :
+    Size: 7.112 KB
+    min distance: 0.07
+    max distance: 0.19
+    mean distance: 0.1
+    stdev distance: 0.03
+
+
+17) rtp_all.lus :
+    Size: 6.155 KB
+    min distance: 0.04
+    max distance: 0.04
+    mean distance: 0.04
+    stdev distance: 0.0
+
+
+18) ums.lus :
+    Size: 4.35 KB
+    min distance: 0.88
+    max distance: 0.88
+    mean distance: 0.88
+    stdev distance: 0.0
+
+
+19) ex3_e7_590_e8_550.lus :
+    Size: 0.671 KB
+    min distance: 0.17
+    max distance: 0.17
+    mean distance: 0.17
+    stdev distance: 0.0
+
+
+20) speed_e7_207_e8_507.lus :
+    Size: 0.65 KB
+    min distance: 0.67
+    max distance: 0.67
+    mean distance: 0.67
+    stdev distance: 0.0
+
+
+21) SYNAPSE_3_e8_1329_e8_320.lus :
+    Size: 1.808 KB
+    min distance: 0.14
+    max distance: 0.14
+    mean distance: 0.14
+    stdev distance: 0.0
+
+
+22) MESI_3_e1_2517_e8_2163.lus :
+    Size: 2.956 KB
+    min distance: 0.1
+    max distance: 0.1
+    mean distance: 0.1
+    stdev distance: 0.0
+
+
+23) MESI_i3_e1_447_e6_2281.lus :
+    Size: 2.671 KB
+    min distance: 0.17
+    max distance: 0.17
+    mean distance: 0.17
+    stdev distance: 0.0
+
+
+24) car_all_e3_1068_e4_275.lus :
+    Size: 1.122 KB
+    min distance: 0.17
+    max distance: 0.17
+    mean distance: 0.17
+    stdev distance: 0.0
+
+
+25) SYNAPSE_all_e8_251.lus :
+    Size: 1.996 KB
+    min distance: 0.14
+    max distance: 0.14
+    mean distance: 0.14
+    stdev distance: 0.0
+
+
+26) DRAGON_8_e3_786.lus :
+    Size: 7.038 KB
+    min distance: 0.17
+    max distance: 0.17
+    mean distance: 0.17
+    stdev distance: 0.0
+
+
+27) FIREFLY_u1_e2_3403_e2_957.lus :
+    Size: 4.382 KB
+    min distance: 0.07
+    max distance: 0.21
+    mean distance: 0.11
+    stdev distance: 0.05
+
+
+28) FIREFLY_luke_1a_e2_284_e1_2924.lus :
+    Size: 4.304 KB
+    min distance: 0.12
+    max distance: 0.12
+    mean distance: 0.12
+    stdev distance: 0.0
+
+
+29) rtp_4.lus :
+    Size: 5.69 KB
+    min distance: 0.25
+    max distance: 0.25
+    mean distance: 0.25
+    stdev distance: 0.0
+
+
+30) DRAGON_7_e2_2872_e2_5844.lus :
+    Size: 7.071 KB
+    min distance: 0.11
+    max distance: 0.11
+    mean distance: 0.11
+    stdev distance: 0.0
+
+
+31) car_3_e8_33_e2_1010.lus :
+    Size: 1.031 KB
+    min distance: 0.33
+    max distance: 0.33
+    mean distance: 0.33
+    stdev distance: 0.0
+
+
+32) MESI_i4_e6_2175.lus :
+    Size: 2.666 KB
+    min distance: 0.1
+    max distance: 0.1
+    mean distance: 0.1
+    stdev distance: 0.0
+
+
+33) MOESI_1.lus :
+    Size: 3.009 KB
+    min distance: 0.25
+    max distance: 0.25
+    mean distance: 0.25
+    stdev distance: 0.0
+
+
+34) DRAGON_11_e1_2450_e3_2330.lus :
+    Size: 7.119 KB
+    min distance: 0.05
+    max distance: 0.05
+    mean distance: 0.05
+    stdev distance: 0.0
+
+
+35) ticket3i_all.lus :
+    Size: 4.15 KB
+    min distance: 0.17
+    max distance: 0.17
+    mean distance: 0.17
+    stdev distance: 0.0
+
+
+36) MESI_i3_e1_447_e1_1292.lus :
+    Size: 2.677 KB
+    min distance: 0.17
+    max distance: 0.17
+    mean distance: 0.17
+    stdev distance: 0.0
+
+
+37) FIREFLY_luke_3.lus :
+    Size: 4.317 KB
+    min distance: 0.14
+    max distance: 0.14
+    mean distance: 0.14
+    stdev distance: 0.0
+
+
+38) peterson_3.lus :
+    Size: 7.189 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+39) car_3_e8_33_e7_220.lus :
+    Size: 1.024 KB
+    min distance: 0.43
+    max distance: 0.43
+    mean distance: 0.43
+    stdev distance: 0.0
+
+
+40) DRAGON_8.lus :
+    Size: 7.038 KB
+    min distance: 0.17
+    max distance: 0.17
+    mean distance: 0.17
+    stdev distance: 0.0
+
+
+41) DRAGON_4_e7_2329_e8_3915.lus :
+    Size: 7.031 KB
+    min distance: 0.07
+    max distance: 0.2
+    mean distance: 0.1
+    stdev distance: 0.05
+
+
+42) ticket3i_7.lus :
+    Size: 3.984 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+43) FIREFLY_luke_1a_e2_284_e2_2755.lus :
+    Size: 4.304 KB
+    min distance: 0.07
+    max distance: 0.5
+    mean distance: 0.28
+    stdev distance: 0.2
+
+
+44) peterson_1.lus :
+    Size: 7.189 KB
+    min distance: 0.25
+    max distance: 0.25
+    mean distance: 0.25
+    stdev distance: 0.0
+
+
+45) rtp_6.lus :
+    Size: 5.69 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+46) peterson_2.lus :
+    Size: 7.189 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+47) DRAGON_5_e1_1835.lus :
+    Size: 7.058 KB
+    min distance: 0.07
+    max distance: 0.2
+    mean distance: 0.1
+    stdev distance: 0.05
+
+
+48) car_4_e7_592.lus :
+    Size: 1.024 KB
+    min distance: 0.6
+    max distance: 0.6
+    mean distance: 0.6
+    stdev distance: 0.0
+
+
+49) ex3_e7_590.lus :
+    Size: 0.67 KB
+    min distance: 0.17
+    max distance: 0.17
+    mean distance: 0.17
+    stdev distance: 0.0
+
+
+50) car_6_e1_152.lus :
+    Size: 1.045 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+51) speed_e8_136.lus :
+    Size: 0.651 KB
+    min distance: 0.67
+    max distance: 0.67
+    mean distance: 0.67
+    stdev distance: 0.0
+
+
+52) car_4_e3_57_e6_784.lus :
+    Size: 1.025 KB
+    min distance: 0.33
+    max distance: 0.33
+    mean distance: 0.33
+    stdev distance: 0.0
+
+
+53) FIREFLY_10.lus :
+    Size: 4.315 KB
+    min distance: 0.25
+    max distance: 0.25
+    mean distance: 0.25
+    stdev distance: 0.0
+
+
+54) DRAGON_4_e3_1540_e1_5048.lus :
+    Size: 7.037 KB
+    min distance: 0.06
+    max distance: 0.25
+    mean distance: 0.14
+    stdev distance: 0.06
+
+
+55) SYNAPSE_6_e2_1439_e1_954.lus :
+    Size: 1.787 KB
+    min distance: 0.12
+    max distance: 0.12
+    mean distance: 0.12
+    stdev distance: 0.0
+
+
+56) DRAGON_8_e2_3896_e3_3125.lus :
+    Size: 7.044 KB
+    min distance: 0.17
+    max distance: 0.72
+    mean distance: 0.6
+    stdev distance: 0.18
+
+
+57) tramway_e7_1834.lus :
+    Size: 3.292 KB
+    min distance: 0.15
+    max distance: 0.4
+    mean distance: 0.25
+    stdev distance: 0.06
+
+
+58) SYNAPSE_5_e7_1138_e8_809.lus :
+    Size: 1.773 KB
+    min distance: 0.18
+    max distance: 0.18
+    mean distance: 0.18
+    stdev distance: 0.0
+
+
+59) DRAGON_1.lus :
+    Size: 7.128 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+60) ticket3i_7_e1_2192_e1_1852.lus :
+    Size: 3.996 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+61) DRAGON_7.lus :
+    Size: 7.059 KB
+    min distance: 0.11
+    max distance: 0.11
+    mean distance: 0.11
+    stdev distance: 0.0
+
+
+62) FIREFLY_9.lus :
+    Size: 4.387 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+63) PRODUCER_CONSUMER_1.lus :
+    Size: 1.432 KB
+    min distance: 0.67
+    max distance: 0.67
+    mean distance: 0.67
+    stdev distance: 0.0
+
+
+64) car_2.lus :
+    Size: 1.024 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+65) rtp_5.lus :
+    Size: 5.69 KB
+    min distance: 0.25
+    max distance: 0.25
+    mean distance: 0.25
+    stdev distance: 0.0
+
+
+66) SYNAPSE_4_e8_974.lus :
+    Size: 1.713 KB
+    min distance: 0.25
+    max distance: 0.25
+    mean distance: 0.25
+    stdev distance: 0.0
+
+
+67) PRODUCER_CONSUMER_2.lus :
+    Size: 0.683 KB
+    min distance: 0.14
+    max distance: 0.14
+    mean distance: 0.14
+    stdev distance: 0.0
+
+
+68) rtp_7.lus :
+    Size: 5.69 KB
+    min distance: 0.25
+    max distance: 0.25
+    mean distance: 0.25
+    stdev distance: 0.0
+
+
+69) MESI_2.lus :
+    Size: 2.668 KB
+    min distance: 0.25
+    max distance: 0.25
+    mean distance: 0.25
+    stdev distance: 0.0
+
+
+70) ex3_e7_590_e7_590.lus :
+    Size: 0.669 KB
+    min distance: 0.17
+    max distance: 0.17
+    mean distance: 0.17
+    stdev distance: 0.0
+
+
+71) SYNAPSE_6_e8_1147_e2_1326.lus :
+    Size: 1.782 KB
+    min distance: 0.14
+    max distance: 0.14
+    mean distance: 0.14
+    stdev distance: 0.0
+
+
+72) FIREFLY_luke_1a_e2_284_e3_3091.lus :
+    Size: 4.298 KB
+    min distance: 0.12
+    max distance: 0.5
+    mean distance: 0.29
+    stdev distance: 0.16
+
+
+73) FIREFLY_5_e2_2229.lus :
+    Size: 4.317 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+74) DRAGON_12_e2_1618.lus :
+    Size: 7.125 KB
+    min distance: 0.06
+    max distance: 0.22
+    mean distance: 0.14
+    stdev distance: 0.08
+
+
+75) FIREFLY_3.lus :
+    Size: 4.312 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+76) FIREFLY_11_e1_3457.lus :
+    Size: 4.32 KB
+    min distance: 0.11
+    max distance: 0.4
+    mean distance: 0.2
+    stdev distance: 0.11
+
+
+77) DRAGON_13_e3_1418_e3_2761.lus :
+    Size: 7.112 KB
+    min distance: 0.06
+    max distance: 0.19
+    mean distance: 0.11
+    stdev distance: 0.04
+
+
+78) ticket3i_1.lus :
+    Size: 4.0 KB
+    min distance: 0.17
+    max distance: 0.17
+    mean distance: 0.17
+    stdev distance: 0.0
+
+
+79) DRAGON_4_e2_2799_e1_1303.lus :
+    Size: 7.043 KB
+    min distance: 0.07
+    max distance: 0.2
+    mean distance: 0.1
+    stdev distance: 0.04
+
+
+80) SYNAPSE_1.lus :
+    Size: 1.689 KB
+    min distance: 0.33
+    max distance: 0.33
+    mean distance: 0.33
+    stdev distance: 0.0
+
+
+81) car_all_e2_108.lus :
+    Size: 1.122 KB
+    min distance: 0.17
+    max distance: 0.17
+    mean distance: 0.17
+    stdev distance: 0.0
+
+
+82) metros_1_e1_846_e2_1394.lus :
+    Size: 1.993 KB
+    min distance: 0.12
+    max distance: 0.44
+    mean distance: 0.2
+    stdev distance: 0.13
+
+
+83) ex3_e8_120.lus :
+    Size: 0.672 KB
+    min distance: 0.17
+    max distance: 0.17
+    mean distance: 0.17
+    stdev distance: 0.0
+
+
+84) durationThm_3_e3_207.lus :
+    Size: 0.755 KB
+    min distance: 0.33
+    max distance: 0.33
+    mean distance: 0.33
+    stdev distance: 0.0
+
+
+85) FIREFLY_5.lus :
+    Size: 4.311 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+86) DRAGON_11.lus :
+    Size: 7.113 KB
+    min distance: 0.05
+    max distance: 0.05
+    mean distance: 0.05
+    stdev distance: 0.0
+
+
+87) car_5_e7_244_e1_823.lus :
+    Size: 1.064 KB
+    min distance: 0.22
+    max distance: 0.22
+    mean distance: 0.22
+    stdev distance: 0.0
+
+
+88) car_all_e2_142_e7_209.lus :
+    Size: 1.121 KB
+    min distance: 0.11
+    max distance: 0.44
+    mean distance: 0.2
+    stdev distance: 0.14
+
+
+89) FIREFLY_5_e2_2884_e1_2678.lus :
+    Size: 4.323 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+90) DRAGON_4_e2_2799_e3_1915.lus :
+    Size: 7.037 KB
+    min distance: 0.06
+    max distance: 0.29
+    mean distance: 0.14
+    stdev distance: 0.1
+
+
+91) FIREFLY_7.lus :
+    Size: 4.386 KB
+    min distance: 0.12
+    max distance: 0.12
+    mean distance: 0.12
+    stdev distance: 0.0
+
+
+92) DRAGON_1_e1_3184.lus :
+    Size: 7.134 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+93) MESI_3_e2_819_e6_1459.lus :
+    Size: 2.955 KB
+    min distance: 0.1
+    max distance: 0.1
+    mean distance: 0.1
+    stdev distance: 0.0
+
+
+94) FIREFLY_3_e2_2236_e2_1058.lus :
+    Size: 4.324 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+95) durationThm_3_e3_442_e5_260.lus :
+    Size: 0.773 KB
+    min distance: 0.33
+    max distance: 0.33
+    mean distance: 0.33
+    stdev distance: 0.0
+
+
+96) ILLINOIS_r4a.lus :
+    Size: 4.562 KB
+    min distance: 0.07
+    max distance: 0.29
+    mean distance: 0.14
+    stdev distance: 0.06
+
+
+97) DRAGON_9_e7_1843_e8_3031.lus :
+    Size: 7.031 KB
+    min distance: 0.25
+    max distance: 0.25
+    mean distance: 0.25
+    stdev distance: 0.0
+
+
+98) peterson_all.lus :
+    Size: 7.318 KB
+    min distance: 0.08
+    max distance: 0.08
+    mean distance: 0.08
+    stdev distance: 0.0
+
+
+99) FIREFLY_luke_1a_e2_284.lus :
+    Size: 4.298 KB
+    min distance: 0.1
+    max distance: 0.3
+    mean distance: 0.23
+    stdev distance: 0.08
+
+
+100) ticket3i_6.lus :
+    Size: 3.862 KB
+    min distance: 0.33
+    max distance: 0.33
+    mean distance: 0.33
+    stdev distance: 0.0
+
+
+101) FIREFLY_luke_2_e7_1826_e8_126.lus :
+    Size: 4.288 KB
+    min distance: 0.14
+    max distance: 0.14
+    mean distance: 0.14
+    stdev distance: 0.0
+
+
+102) ILLINOIS_5.lus :
+    Size: 4.563 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+103) MESI_3.lus :
+    Size: 2.949 KB
+    min distance: 0.1
+    max distance: 0.1
+    mean distance: 0.1
+    stdev distance: 0.0
+
+
+104) car_3_e2_695.lus :
+    Size: 1.03 KB
+    min distance: 0.33
+    max distance: 0.6
+    mean distance: 0.55
+    stdev distance: 0.09
+
+
+105) speed_e8_649_e7_709.lus :
+    Size: 0.65 KB
+    min distance: 0.67
+    max distance: 0.67
+    mean distance: 0.67
+    stdev distance: 0.0
+
+
+106) peterson_4.lus :
+    Size: 7.189 KB
+    min distance: 0.25
+    max distance: 0.25
+    mean distance: 0.25
+    stdev distance: 0.0
+
+
+107) metros_1_e2_1102_e1_317.lus :
+    Size: 1.993 KB
+    min distance: 0.11
+    max distance: 0.44
+    mean distance: 0.25
+    stdev distance: 0.11
+
+
+108) rtp_10.lus :
+    Size: 5.69 KB
+    min distance: 0.25
+    max distance: 0.25
+    mean distance: 0.25
+    stdev distance: 0.0
+
+
+109) FIREFLY_6_e2_3302.lus :
+    Size: 4.317 KB
+    min distance: 0.07
+    max distance: 0.21
+    mean distance: 0.14
+    stdev distance: 0.07
+
+
+110) ILLINOIS_a1.lus :
+    Size: 4.658 KB
+    min distance: 0.13
+    max distance: 0.13
+    mean distance: 0.13
+    stdev distance: 0.0
+
+
+111) FIREFLY_6_e3_686_e6_2964.lus :
+    Size: 4.311 KB
+    min distance: 0.14
+    max distance: 0.14
+    mean distance: 0.14
+    stdev distance: 0.0
+
+
+112) ILLINOIS_4.lus :
+    Size: 4.559 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+113) ticket3i_5.lus :
+    Size: 3.862 KB
+    min distance: 0.33
+    max distance: 0.33
+    mean distance: 0.33
+    stdev distance: 0.0
+
+
+114) durationThm_3_e3_442_e7_394.lus :
+    Size: 0.754 KB
+    min distance: 0.25
+    max distance: 0.25
+    mean distance: 0.25
+    stdev distance: 0.0
+
+
+115) FIREFLY_5_e2_2884_e3_1882.lus :
+    Size: 4.317 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+116) FIREFLY_luke_3_e1_2217_e3_1200.lus :
+    Size: 4.323 KB
+    min distance: 0.07
+    max distance: 0.21
+    mean distance: 0.11
+    stdev distance: 0.05
+
+
+117) metros_1_e7_1255_e8_598.lus :
+    Size: 1.975 KB
+    min distance: 0.12
+    max distance: 0.44
+    mean distance: 0.2
+    stdev distance: 0.13
+
+
+118) DRAGON_11_e2_5396_e3_282.lus :
+    Size: 7.119 KB
+    min distance: 0.05
+    max distance: 0.05
+    mean distance: 0.05
+    stdev distance: 0.0
+
+
+119) DRAGON_4_e3_4133.lus :
+    Size: 7.031 KB
+    min distance: 0.07
+    max distance: 0.2
+    mean distance: 0.12
+    stdev distance: 0.05
+
+
+120) SYNAPSE_3_e7_1444_e8_1581.lus :
+    Size: 1.806 KB
+    min distance: 0.14
+    max distance: 0.14
+    mean distance: 0.14
+    stdev distance: 0.0
+
+
+121) MESI_i3_e1_447_e3_1180.lus :
+    Size: 2.671 KB
+    min distance: 0.33
+    max distance: 0.33
+    mean distance: 0.33
+    stdev distance: 0.0
+
+
+122) SYNAPSE_123_e8_953_e8_941.lus :
+    Size: 2.087 KB
+    min distance: 0.1
+    max distance: 0.1
+    mean distance: 0.1
+    stdev distance: 0.0
+
+
+123) MESI_1.lus :
+    Size: 2.701 KB
+    min distance: 0.33
+    max distance: 0.33
+    mean distance: 0.33
+    stdev distance: 0.0
+
+
+124) rtp_3.lus :
+    Size: 5.69 KB
+    min distance: 0.25
+    max distance: 0.25
+    mean distance: 0.25
+    stdev distance: 0.0
+
+
+125) FIREFLY_4_e3_3511_e3_422.lus :
+    Size: 4.434 KB
+    min distance: 0.27
+    max distance: 0.27
+    mean distance: 0.27
+    stdev distance: 0.0
+
+
+126) DRAGON_5_e7_2017_e8_4841.lus :
+    Size: 7.052 KB
+    min distance: 0.07
+    max distance: 0.2
+    mean distance: 0.11
+    stdev distance: 0.05
+
+
+127) car_6_e1_152_e1_391.lus :
+    Size: 1.051 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+128) rtp_9.lus :
+    Size: 5.69 KB
+    min distance: 0.25
+    max distance: 0.25
+    mean distance: 0.25
+    stdev distance: 0.0
+
+
+129) DRAGON_6.lus :
+    Size: 7.035 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+130) durationThm_3_e3_442_e4_165.lus :
+    Size: 0.773 KB
+    min distance: 0.33
+    max distance: 0.33
+    mean distance: 0.33
+    stdev distance: 0.0
+
+
+131) car_4_e8_118.lus :
+    Size: 1.026 KB
+    min distance: 0.33
+    max distance: 0.33
+    mean distance: 0.33
+    stdev distance: 0.0
+
+
+132) car_all_e3_1068_e6_790.lus :
+    Size: 1.116 KB
+    min distance: 0.14
+    max distance: 0.14
+    mean distance: 0.14
+    stdev distance: 0.0
+
+
+133) ILLINOIS_1.lus :
+    Size: 4.537 KB
+    min distance: 0.25
+    max distance: 0.25
+    mean distance: 0.25
+    stdev distance: 0.0
+
+
+134) SYNAPSE_6_e3_1666_e5_1558.lus :
+    Size: 1.781 KB
+    min distance: 0.14
+    max distance: 0.14
+    mean distance: 0.14
+    stdev distance: 0.0
+
+
+135) DRAGON_12_e2_1618_e2_138.lus :
+    Size: 7.131 KB
+    min distance: 0.06
+    max distance: 0.22
+    mean distance: 0.13
+    stdev distance: 0.06
+
+
+136) metros_1_e2_1102_e2_943.lus :
+    Size: 1.993 KB
+    min distance: 0.12
+    max distance: 0.44
+    mean distance: 0.2
+    stdev distance: 0.13
+
+
+137) MESI_4.lus :
+    Size: 2.722 KB
+    min distance: 0.5
+    max distance: 0.5
+    mean distance: 0.5
+    stdev distance: 0.0
+
+
+138) metros_1_e1_846_e1_1317.lus :
+    Size: 1.993 KB
+    min distance: 0.12
+    max distance: 0.44
+    mean distance: 0.2
+    stdev distance: 0.13
+
+
+139) MESI_3_e3_2584.lus :
+    Size: 2.949 KB
+    min distance: 0.1
+    max distance: 0.1
+    mean distance: 0.1
+    stdev distance: 0.0
+
+
+140) speed_e7_207.lus :
+    Size: 0.649 KB
+    min distance: 0.67
+    max distance: 0.67
+    mean distance: 0.67
+    stdev distance: 0.0
+
+
+141) DRAGON_12_e2_1618_e3_2012.lus :
+    Size: 7.125 KB
+    min distance: 0.06
+    max distance: 0.22
+    mean distance: 0.11
+    stdev distance: 0.07
+
+
+142) SYNAPSE_all_e3_1864_e6_1336.lus :
+    Size: 1.995 KB
+    min distance: 0.14
+    max distance: 0.14
+    mean distance: 0.14
+    stdev distance: 0.0
+
+
+143) MESI_3_e2_819_e4_1595.lus :
+    Size: 2.961 KB
+    min distance: 0.1
+    max distance: 0.1
+    mean distance: 0.1
+    stdev distance: 0.0
+
+
+144) car_4_e3_57_e4_1047.lus :
+    Size: 1.031 KB
+    min distance: 0.33
+    max distance: 0.33
+    mean distance: 0.33
+    stdev distance: 0.0
+
+
+145) car_1.lus :
+    Size: 1.049 KB
+    min distance: 0.33
+    max distance: 0.33
+    mean distance: 0.33
+    stdev distance: 0.0
+
+
+146) rtp_2.lus :
+    Size: 2.976 KB
+    min distance: 0.25
+    max distance: 0.25
+    mean distance: 0.25
+    stdev distance: 0.0
+
+
+147) car_2_e7_1027_e1_1047.lus :
+    Size: 1.029 KB
+    min distance: 0.43
+    max distance: 0.43
+    mean distance: 0.43
+    stdev distance: 0.0
+
+
+148) FIREFLY_11_e3_2076_e1_1270.lus :
+    Size: 4.32 KB
+    min distance: 0.12
+    max distance: 0.12
+    mean distance: 0.12
+    stdev distance: 0.0
+
+
+149) FIREFLY_luke_1a.lus :
+    Size: 4.292 KB
+    min distance: 0.12
+    max distance: 0.12
+    mean distance: 0.12
+    stdev distance: 0.0
+
+
+150) DRAGON_12_e7_4611_e8_5145.lus :
+    Size: 7.119 KB
+    min distance: 0.05
+    max distance: 0.26
+    mean distance: 0.11
+    stdev distance: 0.06
+
+
+151) rtp_1.lus :
+    Size: 3.049 KB
+    min distance: 0.25
+    max distance: 0.25
+    mean distance: 0.25
+    stdev distance: 0.0
+
+
+152) ticket3i_7_e2_2724_e7_524.lus :
+    Size: 3.989 KB
+    min distance: 0.43
+    max distance: 0.43
+    mean distance: 0.43
+    stdev distance: 0.0
+
+
+153) rtp_8.lus :
+    Size: 5.69 KB
+    min distance: 0.17
+    max distance: 0.17
+    mean distance: 0.17
+    stdev distance: 0.0
+
+
+154) DRAGON_12_e2_1618_e1_6030.lus :
+    Size: 7.131 KB
+    min distance: 0.06
+    max distance: 0.3
+    mean distance: 0.12
+    stdev distance: 0.06
+
+
+155) SYNAPSE_123_e7_837_e8_12.lus :
+    Size: 2.085 KB
+    min distance: 0.1
+    max distance: 0.1
+    mean distance: 0.1
+    stdev distance: 0.0
+
+
+156) FIREFLY_luke_2_e2_1375_e1_418.lus :
+    Size: 4.3 KB
+    min distance: 0.14
+    max distance: 0.14
+    mean distance: 0.14
+    stdev distance: 0.0
+
+
+157) FIREFLY_3_e2_2236.lus :
+    Size: 4.318 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+158) metros_1_e2_1102_e3_961.lus :
+    Size: 1.987 KB
+    min distance: 0.12
+    max distance: 0.44
+    mean distance: 0.29
+    stdev distance: 0.16
+
+
+159) SYNAPSE_4_e8_420_e8_1525.lus :
+    Size: 1.714 KB
+    min distance: 0.25
+    max distance: 0.25
+    mean distance: 0.25
+    stdev distance: 0.0
+
+
+160) MESI_3_e2_819_e1_1145.lus :
+    Size: 2.961 KB
+    min distance: 0.1
+    max distance: 0.1
+    mean distance: 0.1
+    stdev distance: 0.0
+
+
+161) metros_1_e1_846_e3_1060.lus :
+    Size: 1.987 KB
+    min distance: 0.12
+    max distance: 0.44
+    mean distance: 0.29
+    stdev distance: 0.16
+
+
+162) car_all_e2_142_e8_194.lus :
+    Size: 1.123 KB
+    min distance: 0.17
+    max distance: 0.17
+    mean distance: 0.17
+    stdev distance: 0.0
+
+
+163) DRAGON_7_e2_2872_e3_2640.lus :
+    Size: 7.065 KB
+    min distance: 0.11
+    max distance: 0.11
+    mean distance: 0.11
+    stdev distance: 0.0
+
+
+164) car_3_e8_33.lus :
+    Size: 1.025 KB
+    min distance: 0.2
+    max distance: 0.2
+    mean distance: 0.2
+    stdev distance: 0.0
+
+
+165) SYNAPSE_6.lus :
+    Size: 1.775 KB
+    min distance: 0.14
+    max distance: 0.14
+    mean distance: 0.14
+    stdev distance: 0.0
+
+
+166) PRODUCER_CONSUMER_all.lus :
+    Size: 1.453 KB
+    min distance: 0.22
+    max distance: 0.22
+    mean distance: 0.22
+    stdev distance: 0.0
+
+
+167) car_2_e8_491_e7_826.lus :
+    Size: 1.024 KB
+    min distance: 0.43
+    max distance: 0.43
+    mean distance: 0.43
+    stdev distance: 0.0
+
+
+168) car_2_e7_1027_e7_359.lus :
+    Size: 1.022 KB
+    min distance: 0.7
+    max distance: 0.7
+    mean distance: 0.7
+    stdev distance: 0.0
+
+
+169) ticket3i_4.lus :
+    Size: 3.862 KB
+    min distance: 0.33
+    max distance: 0.33
+    mean distance: 0.33
+    stdev distance: 0.0
+
+
+170) DRAGON_5_e2_3018_e2_936.lus :
+    Size: 7.064 KB
+    min distance: 0.07
+    max distance: 0.2
+    mean distance: 0.12
+    stdev distance: 0.05
+
+
+171) FIREFLY_u1.lus :
+    Size: 4.37 KB
+    min distance: 0.14
+    max distance: 0.14
+    mean distance: 0.14
+    stdev distance: 0.0
+
+
+172) DRAGON_4_e2_2799_e2_2251.lus :
+    Size: 7.043 KB
+    min distance: 0.07
+    max distance: 0.2
+    mean distance: 0.11
+    stdev distance: 0.06
+
+
+173) car_all_e8_856_e7_578.lus :
+    Size: 1.116 KB
+    min distance: 0.17
+    max distance: 0.44
+    mean distance: 0.34
+    stdev distance: 0.07
+

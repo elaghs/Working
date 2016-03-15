@@ -15,7 +15,7 @@ from operator import itemgetter
 
 ANALYSES_DIR = 'support_analyses'
 MINING_DIR = 'mining'
-SETTINGS = ['jsupport', 'z3_both', 'z3_k_ind', 'z3_pdr',
+SETTINGS = ['UCBF', 'z3_both', 'z3_k_ind', 'z3_pdr',
             'yices_both', 'yices_k_ind', 'yices_pdr',
             'smtinterpol_both', 'smtinterpol_k_ind', 'smtinterpol_pdr',
             'mathsat_both', 'mathsat_k_ind', 'mathsat_pdr']
@@ -64,10 +64,11 @@ for sup_info in all_sup_info:
             set2 = support_info [SETTINGS[i]]
             if not (set2 == [] or set1 == []):
                 analysis_rec.append(distance.jaccard(set1, set2))
-            
+
             # UNKNOWN results:    
             else:
                 analysis_rec.append(float('nan'))
+                
                 
         indx += 1
     all_models_sup_sets.append(sup_sets)
@@ -155,16 +156,24 @@ for result in analyses:
 #
 # Compute min, max, avg, std deviation of the distances among all models
 #
-
+ 
 mean_all = np.nanmean(mean)
 min_all = min(min_list)
 max_all = max(max_list)
 stdev_all = np.nanstd(stdev)
-
+mean_no_jsup = np.nanmean(mean[12:len(mean)])
+min_no_jsup = min(min_list[12:len(min_list)])
+max_no_jsup = max(max_list[12:len(max_list)])
+stdev_no_jsup = np.nanstd(stdev[12:len(stdev)])
+ 
 analyses_writer ['min'] = min_all   
 analyses_writer ['max'] = max_all
 analyses_writer ['pstdev'] = stdev_all
 analyses_writer ['mean'] = mean_all
+analyses_writer ['min_no_jsup'] = min_no_jsup   
+analyses_writer ['max_no_jsup'] = max_no_jsup
+analyses_writer ['pstdev_no_jsup'] = stdev_no_jsup
+analyses_writer ['mean_no_jsup'] = mean_no_jsup
 analyses_writer ['cores'] = core_elements_all_models
 
 #
@@ -184,15 +193,18 @@ for indx, val in enumerate(mean):
 
 sorted_mean_list = sorted(mean_dic, key=itemgetter('val')) 
 sorted_mean_list += nan_dic
-
 del nan_dic
 del mean_dic
-
 sorted_stdev = []
 sorted_mean = []
 sorted_max = []
 sorted_min = [] 
+sorted_stdev2 = []
+sorted_mean2 = []
+sorted_max2 = []
+sorted_min2 = []
 sorted_dist = []
+sorted_dist2 = []
 
 for item in sorted_mean_list:
     sorted_stdev.append(stdev[item['id']])
@@ -200,15 +212,40 @@ for item in sorted_mean_list:
     sorted_min.append(min_list[item['id']])
     sorted_mean.append(mean[item['id']])
     sorted_dist.append(overall_dist[item['id']])
+    
+    
+mean_dic2 = []
+nan_dic2 = []
+for indx, val in enumerate(mean[12:len(mean)]):
+    if str(val) == 'nan':
+        nan_dic2.append({'id': indx, 'val': float('nan')})
+    else:
+        mean_dic2.append({'id': indx, 'val': float(val)})
+
+sorted_mean2_list = sorted(mean_dic2, key=itemgetter('val')) 
+sorted_mean2_list += nan_dic2
+
+for item in sorted_mean2_list:
+    sorted_stdev2.append(stdev[item['id']])
+    sorted_max2.append(max_list[item['id']])
+    sorted_min2.append(min_list[item['id']])
+    sorted_mean2.append(mean[item['id']])
+    sorted_dist2.append(overall_dist[item['id']-12])  
  
 analyses_writer ['all_min'] = sorted_min   
 analyses_writer ['all_max'] = sorted_max
 analyses_writer ['all_pstdev'] = sorted_stdev
 analyses_writer ['all_mean'] = sorted_mean
 analyses_writer ['overall_dist'] = sorted_dist
+analyses_writer ['all_min_no_jsup'] = sorted_min2 
+analyses_writer ['all_max_no_jsup'] = sorted_max2
+analyses_writer ['all_pstdev_no_jsup'] = sorted_stdev2
+analyses_writer ['all_mean_no_jsup'] = sorted_mean2
+analyses_writer ['overall_dist_no_jsup'] = sorted_dist2
 
 analyses_writer.close()
-
+print(str(sorted_mean))
+print(str(sorted_mean2))
 print('Done!')
 print('to get a report on analyses, run support.reporter.py')
 print('for detailed info, read \'support_analyses\' in the ' + ANALYSES_DIR + ' directory.')

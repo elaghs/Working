@@ -1,0 +1,20 @@
+# instructions:
+# 1- in the current directory, wherever you have this script, create a folder under the name of benchmarks
+# 2- copy all of the .lus models in the benchmarks folder
+#    --> you need to get the polished benchmarks from here: 
+#            https://github.com/elaghs/Working/blob/master/support/experiments/polished_benchmark/polished_benchmarks.zip
+#    --> make sure you DON'T change the directory to the benchmarks folder. 
+#    --> stay in the current directory, NOT in the benchmarks
+# 3- get the latest jkind .jar files from here: https://github.com/elaghs/jkind/tree/support-paper/JAR-files
+# 4- install jkind and set the path for it.
+#    --> in Linux you should use the environment variable "JKIND_HOME" for it
+#    --> in Windows you can put it in "path"
+# 5- don't forget to install all the solvers that jkind needs (especially, z3, yices, mathsat)
+
+# Here is the order that scripts should be run:
+# 1- exprm1.py, exprm2.py
+# 2- result_mining1.py
+# 3- result_mining2.py
+# 4- support_analyzer.py
+# 5- support_reporter.py
+# 6- time_analyzer.py, jsupport_analyzer.py, variaty_analyzer.py, support_analyzer2.py

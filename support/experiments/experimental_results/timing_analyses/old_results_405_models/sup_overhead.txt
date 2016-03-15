@@ -1,0 +1,36 @@
+this is to report the overhead of support computation on different solvers
+This report is based on the results when both k_induction and PDR were activated.
+
+This shows what percentage of the overal runtime is because of support comutation:
+         Formula:  overhead_percentage = 100 * (SupportRuntime/ Runtime)
+
+
+
+
+###################  runtime overhead on "z3"  ###################
+
+average overhead is: 13.4143365049%
+population standard deviation overhead is: 11.3696192189%
+minimum overhead is: 0.7262996941896024%
+maximum overhead is: 45.39682539682539%
+
+###################  runtime overhead on "yices"  ###################
+
+average overhead is: 47.2637342053%
+population standard deviation overhead is: 51.1932837291%
+minimum overhead is: 0.20048538567057086%
+maximum overhead is: 262.2549019607843%
+
+###################  runtime overhead on "smtinterpol"  ###################
+
+average overhead is: 70.5000836457%
+population standard deviation overhead is: 58.5409457621%
+minimum overhead is: 0.929639081297849%
+maximum overhead is: 268.57142857142856%
+
+###################  runtime overhead on "mathsat"  ###################
+
+average overhead is: 71.0071351056%
+population standard deviation overhead is: 79.9897715058%
+minimum overhead is: 0.502145530904775%
+maximum overhead is: 396.1240310077519%

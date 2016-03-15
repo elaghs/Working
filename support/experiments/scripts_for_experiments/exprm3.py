@@ -1,5 +1,8 @@
 # This is for running the third experiment with the combined algorithm
-
+# put this script in the directory where you have lus models and execute it there
+# instruction:
+#	1- Put the script in the same directory that you have the models
+#	2- chdr to the directory and run the script
 __author__ = "Elaheh"
 __date__ = "$Mar 10, 2016 9:40:12 AM$"
 
@@ -8,8 +11,7 @@ import os, subprocess, shutil, sys, glob
 #
 # Configuration
 #
-
-EXPERIMENTS_DIR = 'benchmarks'
+ 
 RESULTS_DIR = 'results3'
 INPUT_DIR = 'input_for_expr3'
 TIMEOUT = 700
@@ -19,17 +21,10 @@ TIMEDOUT_DIR = 'timedout3'
 #
 # Gather Lustre files
 #
-
-if not os.path.exists(EXPERIMENTS_DIR):
-    print("'" + EXPERIMENTS_DIR + "' directory does not exist")
-    sys.exit(-1)
-if not os.path.exists(EXPERIMENTS_DIR):
-    print("'" + INPUT_DIR + "' directory does not exist")
-    sys.exit(-1)    
-os.chdir(EXPERIMENTS_DIR)
+    
 lus_files = glob.glob("*.lus")
 if len(lus_files) == 0:
-    print("No Lustre files found in '" + EXPERIMENTS_DIR + "' directory")
+    print("No Lustre files found")
     sys.exit(-1)
 #os.chdir("..")
 
@@ -88,9 +83,9 @@ def run_single_jkind(file_path):
         proc.wait()
         debug.write("\n")
         try:
-            shutil.move (file_path + "_jsup2.xml", RESULTS_DIR)
+            shutil.move (file_path + "_jsup.xml", RESULTS_DIR)
         except:
-            shutil.move (file_path, TIMEDOUT_DIR)
+            shutil.move (file_path + "_jsup.xml", TIMEDOUT_DIR)
             pass
 
 def run_all_jkind(lus_file):  

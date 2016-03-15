@@ -1,0 +1,33 @@
+-------------------------------------------------------------------------------------------------
+Number of models for this analyses:  304
+Aggregate IVC sizes produced by IVC_UC using PDR:  9515
+Aggregate IVC sizes produced by IVC_UC using K_induction: 9492
+-------------------------------------------------------------------------------------------------
+Aggregate IVC sizes produced by IVC_UC using (z3):  4757
+Aggregate IVC sizes produced by IVC_UC using (yices):  4760
+Aggregate IVC sizes produced by IVC_UC using (smtinterpol):  4746
+Aggregate IVC sizes produced by IVC_UC using (mathsat):  4744
+Aggregate IVC sizes produced by IVC_UC using (z3_k_ind):  2379
+Aggregate IVC sizes produced by IVC_UC using (z3_pdr):  2378
+Aggregate IVC sizes produced by IVC_UC using (yices_k_ind):  2376
+Aggregate IVC sizes produced by IVC_UC using (yices_pdr):  2384
+Aggregate IVC sizes produced by IVC_UC using (smtinterpol_k_ind):  2368
+Aggregate IVC sizes produced by IVC_UC using (smtinterpol_pdr):  2378
+Aggregate IVC sizes produced by IVC_UC using (mathsat_k_ind):  2369
+Aggregate IVC sizes produced by IVC_UC using (mathsat_pdr):  2375-------------------------------------------------------------------------------------------------
+Number of models for this analyses:  304
+Aggregate IVC sizes produced by IVC_UC using PDR:  9515
+Aggregate IVC sizes produced by IVC_UC using K_induction: 9492
+-------------------------------------------------------------------------------------------------
+Aggregate IVC sizes produced by IVC_UC using (z3):  4757
+Aggregate IVC sizes produced by IVC_UC using (yices):  4760
+Aggregate IVC sizes produced by IVC_UC using (smtinterpol):  4746
+Aggregate IVC sizes produced by IVC_UC using (mathsat):  4744
+Aggregate IVC sizes produced by IVC_UC using (z3_k_ind):  2379
+Aggregate IVC sizes produced by IVC_UC using (z3_pdr):  2378
+Aggregate IVC sizes produced by IVC_UC using (yices_k_ind):  2376
+Aggregate IVC sizes produced by IVC_UC using (yices_pdr):  2384
+Aggregate IVC sizes produced by IVC_UC using (smtinterpol_k_ind):  2368
+Aggregate IVC sizes produced by IVC_UC using (smtinterpol_pdr):  2378
+Aggregate IVC sizes produced by IVC_UC using (mathsat_k_ind):  2369
+Aggregate IVC sizes produced by IVC_UC using (mathsat_pdr):  2375

@@ -31,6 +31,7 @@ mean_points = reader ['all_mean']
 min_points = reader ['all_min']
 max_points = reader ['all_max']
 stdev_points = reader ['all_pstdev']
+overall_dist = reader ['overall_dist']
  
 # we can load more statistical results here if we want
 reader.close()
@@ -62,22 +63,24 @@ writer.close()
 
 # Build a list for x-axis
 x_axis = []
-for i in range(NUM_OF_MODELS-10):
+for i in range(len(min_points)):
     x_axis.append(i)
 
 fig = plt.figure()
 ax = plt.subplot(111) 
  
-plt.plot(x_axis, min_points, label='min')
-plt.plot(x_axis, max_points, label='max')
-plt.plot(x_axis, mean_points, label='mean')
-plt.plot(x_axis, stdev_points, label='standard deviation')
-plt.xlabel('LUS models')
-plt.ylabel('Jaccard distance')
-plt.title('Pairwise Jaccard distance between Support sets')
+plt.plot(x_axis, min_points,'-.rs', markersize=7,  label='min')
+plt.plot(x_axis, max_points, '-.mx', markersize=12, label='max')
+plt.plot(x_axis, mean_points, '-k.', markersize=8,label='mean')
+plt.plot(x_axis, stdev_points, ':b+', markersize=8, label='standard deviation')
+#plt.plot(x_axis, overall_dist, label='overall')
+plt.grid(True)
+plt.xlabel('Models')
+plt.ylabel('Distance')
+plt.title('Pairwise Jaccard distance between IVCs')
 box = ax.get_position()
-ax.set_position([box.x0, box.y0 + box.height * 0.1, box.width, box.height * 0.9]) 
-ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05), fancybox=True, shadow=True, ncol=5)
+ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+ax.legend(loc=2, prop={'size':14}) 
 plt.show()
 fig.savefig(os.path.join(ANALYSES_DIR, 'support_analyses.png'))
 plt.close(fig)

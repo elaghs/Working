@@ -12,13 +12,17 @@ from operator import itemgetter
 
 RESULTS_DIR = 'results1'
 MINING_DIR = 'mining'
-SORT_BASE = 'z3_both.xml'
+SORT_BASE = 'yices_both.xml'
 SORTED_MODELS = 'list_of_sorted_models.txt'
-SETTINGS = ['z3_both', 'z3_k_ind', 'z3_pdr',
+SETTINGS = ['z3_both', 
+            'yices_both', 
+            'smtinterpol_both', 
+            'mathsat_both']
+
+SUP_CONF = ['z3_both', 'z3_k_ind', 'z3_pdr',
             'yices_both', 'yices_k_ind', 'yices_pdr',
             'smtinterpol_both', 'smtinterpol_k_ind', 'smtinterpol_pdr',
             'mathsat_both', 'mathsat_k_ind', 'mathsat_pdr']
-
 
 if not os.path.exists(RESULTS_DIR):
     print(RESULTS_DIR + " does not exists!")
@@ -56,113 +60,78 @@ del sorted_models
 # Extract timing & support info from xml files
 # 
 
-z3_both = []   
-z3_k_ind = [] 
-z3_pdr = []
+z3_both = [] 
 yices_both = []
-yices_k_ind = [] 
-yices_pdr = []
-smtinterpol_both = [] 
-smtinterpol_k_ind = [] 
-smtinterpol_pdr = []
-mathsat_both = [] 
-mathsat_k_ind = []
-mathsat_pdr = []
+smtinterpol_both = []
+mathsat_both = []
 
-z3_both_sup = [] 
-z3_k_ind_sup = [] 
-z3_pdr_sup = []
+z3_both_sup = []  
 yices_both_sup = []
-yices_k_ind_sup = [] 
-yices_pdr_sup = []
-smtinterpol_both_sup = [] 
-smtinterpol_k_ind_sup = [] 
-smtinterpol_pdr_sup = []
-mathsat_both_sup = [] 
-mathsat_k_ind_sup = []
-mathsat_pdr_sup = []
+smtinterpol_both_sup = []  
+mathsat_both_sup = []  
 
 z3_both_no_sup = [] 
-z3_k_ind_no_sup = [] 
-z3_pdr_no_sup = []
 yices_both_no_sup = []
-yices_k_ind_no_sup = [] 
-yices_pdr_no_sup = []
-smtinterpol_both_no_sup = [] 
-smtinterpol_k_ind_no_sup = [] 
-smtinterpol_pdr_no_sup = []
+smtinterpol_both_no_sup = []  
 mathsat_both_no_sup = [] 
-mathsat_k_ind_no_sup = []
-mathsat_pdr_no_sup = []
 
-all_timings = [z3_both, z3_both_sup, z3_both_no_sup,
-               z3_k_ind, z3_k_ind_sup, z3_k_ind_no_sup, 
-               z3_pdr, z3_pdr_sup, z3_pdr_no_sup,
-               yices_both, yices_both_sup,  yices_both_no_sup, 
-               yices_k_ind, yices_k_ind_sup, yices_k_ind_no_sup, 
-               yices_pdr, yices_pdr_sup, yices_pdr_no_sup,
-               smtinterpol_both, smtinterpol_both_sup, smtinterpol_both_no_sup, 
-               smtinterpol_k_ind, smtinterpol_k_ind_sup, smtinterpol_k_ind_no_sup, 
-               smtinterpol_pdr, smtinterpol_pdr_sup, smtinterpol_pdr_no_sup,
-               mathsat_both, mathsat_both_sup, mathsat_both_no_sup, 
-               mathsat_k_ind, mathsat_k_ind_sup, mathsat_k_ind_no_sup, 
-               mathsat_pdr, mathsat_pdr_sup, mathsat_pdr_no_sup]
+proof_and_uc = [z3_both, yices_both, smtinterpol_both, mathsat_both]
+uc = [z3_both_sup, yices_both_sup, smtinterpol_both_sup, mathsat_both_sup]
+proof = [z3_both_no_sup, yices_both_no_sup, smtinterpol_both_no_sup, mathsat_both_no_sup]
+
                
 # while gathering timing info, support info will be written in to a file
 
-for dir in sorted_models_mem:
-    support_info = shelve.open(os.path.join(MINING_DIR, dir + '_support_info'), 'c')
-    indx = 0
+for indx,dir in enumerate(sorted_models_mem):
     rt = 0
     srt = 0
-    for setting in SETTINGS:
+    for s, setting in enumerate(SETTINGS):
         tree = ET.ElementTree(file = os.path.join(RESULTS_DIR, dir, setting + '.xml'))
         for elem in tree.iter(tag = 'Runtime'): 
             rt = elem.text
-            all_timings [indx].append (rt)
-        indx += 1
+            proof_and_uc[s].append(rt)
         
         for elem in tree.iter(tag = 'Answer'):
             if (elem.text == 'unknown'): 
+                uc [s].append (float('nan')) 
+                proof[s].append(float('nan')) 
+            else:
+                for elem in tree.iter(tag = 'SupportRuntime'):
+                    srt = elem.text
+                    uc[s].append (srt)
+                    proof[s].append(float(rt) - float(srt)) 
+    
+    
+   
+for dir in sorted_models_mem:
+    support_info = shelve.open(os.path.join(MINING_DIR, dir + '_support_info'), 'c')
+    for setting in SUP_CONF:
+        tree = ET.ElementTree(file = os.path.join(RESULTS_DIR, dir, setting + '.xml'))
+        for elem in tree.iter(tag = 'Answer'):
+            if (elem.text == 'unknown'): 
                 support_info[setting] = []
-                all_timings [indx].append (float('nan'))
-                indx += 1
-                all_timings [indx].append(float('nan'))
-                indx += 1
             else:
                 sup_set = []
                 for sup in tree.iter(tag = 'Support'):
                     sup_set.append(sup.text)
                 support_info[setting] = sup_set
-                for elem in tree.iter(tag = 'SupportRuntime'):
-                    srt = elem.text
-                    all_timings [indx].append (srt)
-                    indx += 1
-                    all_timings [indx].append(float(rt) - float(srt))
-                    indx += 1
     support_info.close()
+
+    
+    
                 
-        
         
 #
 # Store timing info on disk for visualization
 #        
 
 timing_info = shelve.open(os.path.join(MINING_DIR, 'timing_info')) 
-rec_sufx = ['_sup', '_no_sup']
-flag = -1
-indx = 0
-for i in range (len(all_timings)):
-    if flag == -1:
-        timing_info[SETTINGS[indx]] = all_timings[i] 
-        flag += 1
-    elif flag == 0:
-        timing_info[SETTINGS[indx] + rec_sufx[flag]] = all_timings[i]
-        flag += 1
-    elif flag == 1:
-        timing_info[SETTINGS[indx] + rec_sufx[flag]] = all_timings[i]
-        flag = -1
-        indx += 1
+
+
+for i in range (len(proof)):
+    timing_info[SETTINGS[i]] = proof_and_uc[i]
+    timing_info[SETTINGS[i] +'_sup'] = uc[i]
+    timing_info[SETTINGS[i] +'_no_sup'] = proof[i]
 
         
 timing_info.close()

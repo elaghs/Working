@@ -1,0 +1,43 @@
+this is to report the overhead of IVC computation on different solvers
+This report is based on the results when both k_induction and PDR were activated.
+
+This shows what percentage of the overal runtime is because of support comutation:
+         Formula:  overhead_percentage = 100 * (SupportRuntime/ Runtime)
+
+
+
+
+ overhead of IVC_UCBF:
+
+average overhead is: 3190.18586679%
+population standard deviation overhead is: 4119.13770057%
+minimum overhead is: 101.70471841704718%
+maximum overhead is: 28114.076952973188%
+
+###################  runtime overhead on "z3"  ###################
+
+average overhead is: 17.3800442267%
+population standard deviation overhead is: 16.9213032973%
+minimum overhead is: 0.7316134000770119%
+maximum overhead is: 84.13098236775821%
+
+###################  runtime overhead on "yices"  ###################
+
+average overhead is: 52.2048706296%
+population standard deviation overhead is: 54.502607777%
+minimum overhead is: 0.17346845613074044%
+maximum overhead is: 351.47679324894494%
+
+###################  runtime overhead on "smtinterpol"  ###################
+
+average overhead is: 46.8114141288%
+population standard deviation overhead is: 37.3500709981%
+minimum overhead is: 1.465306708806206%
+maximum overhead is: 175.7543103448276%
+
+###################  runtime overhead on "mathsat"  ###################
+
+average overhead is: 80.210872289%
+population standard deviation overhead is: 112.922732796%
+minimum overhead is: 0.7816941444002273%
+maximum overhead is: 955.5205047318607%

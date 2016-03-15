@@ -12,9 +12,15 @@
 # 5- don't forget to install all the solvers that jkind needs (especially, z3, yices, mathsat)
 
 # Here is the order that scripts should be run:
-# 1- exprm1.py, exprm2.py
+# 1- exprm1.py, exprm2.py, prep_expr3.py, 
+#      1-1 put input_for_exprm3 into the folder you have benchmarks and exprm3.py
 # 2- result_mining1.py
 # 3- result_mining2.py
-# 4- support_analyzer.py
+# 4- result_mining3.py
+# 5- support_analyzer.py
+# 6- support_reporter.py
+# 7- agg_size_ivcs.py
+# 8- time_analyzer.py
+# 9- new_timing.py
 # 5- support_reporter.py
 # 6- time_analyzer.py, jsupport_analyzer.py, variaty_analyzer.py, support_analyzer2.py

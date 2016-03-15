@@ -1,9 +1,0 @@
--------------------------------------------------------------------------------------------------
-this is to report, a summary of overall distances:
-
-min overall distance among all models: 0.0
-max overall distance among all models: 0.8787878787878788
-avg overall distance among all models: 0.0962168342748
-stdev overall distance among all models: 0.131741036776
--------------------------------------------------------------------------------------------------
-

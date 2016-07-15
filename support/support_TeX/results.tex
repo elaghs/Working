@@ -243,6 +243,9 @@ in Table~\ref{tab:increase-ucalg-ucbfalg}.
   larger than those produced by \ucbfalg, with substantial variance in
   some cases.}
 
+The IVC idea can be considered as the main improvement over backward static slicing, which provides a much coarser approximation.  In our implementation,  backward static slicing is applied as a preprocessing step prior to model checking to speed up analysis in the baseline model checker JKind.  However, in order to provide some insight into the granularity of the IVC sets verses slicing, some analyses on the slices have been performed showing slices are (mean) 406\% larger than the IVCs produced by our \ucalg algorithm and 465\% larger than those produced by \ucbfalg algorithm.  It should be mention that some of the benchmark models come \emph{pre-sliced}, but for those that are not, the number of equations is (mean) 2500\% larger than the \ucalg IVCs. Figure~\ref{fig:minimality-all} compares the sliced sizes with the IVCs.
+
+
 \iffalse
 \ela{I think this is not needed: \\In terms of size, we calculated the size of the biggest and smallest sets per model, then added them together for all models. The same calculation has been done for \texttt{JSupport}:
 \begin{itemize}

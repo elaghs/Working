@@ -183,7 +183,7 @@ this approach can still be used for reasonably sized models.
 \begin{figure*}
   \centering
   \includegraphics[width=0.75\textwidth]{figs/minimality.png}
-  \caption{IVC sizes produced by \ucalg vs.\ \ucbfalg for Yices}
+  \caption{IVC sizes produced by \ucalg, \ucbfalg for Yices vs. static slices}
   \vspace{-0.1in}
   \label{fig:minimality-all}
 \end{figure*}
@@ -191,10 +191,9 @@ this approach can still be used for reasonably sized models.
 \subsection{Minimality}
 \label{sec:minimality}
 In this section, we examine the minimality of the cores computed by
-the \ucalg algorithm using different inductive proof methods and
-compare it to the cores produced by the combined algorithm
-(\textbf{RQ2}). There are two interesting aspects to be examined
-related to this research question. First (\textbf{RQ2.1}), does the
+the \ucalg\ and \ucbfalg\ algorithms using different inductive proof methods, and we compare both algorithms against a {\em backward static slice}~\cite{Tip95asurvey} of the Lustre program starting with the property of interest.
+There are three interesting aspects to be examined
+related to this research question.  First (\textbf{RQ2.1}), does the
 choice of SMT solver or algorithm used to produce a proof
 ($k$-induction or PDR) matter in terms of the minimality of the
 inductive core? As mentioned in Section~\ref{sec:ivc}, the \ucalg
@@ -243,7 +242,7 @@ in Table~\ref{tab:increase-ucalg-ucbfalg}.
   larger than those produced by \ucbfalg, with substantial variance in
   some cases.}
 
-The IVC idea can be considered as the main improvement over backward static slicing, which provides a much coarser approximation.  In our implementation,  backward static slicing is applied as a preprocessing step prior to model checking to speed up analysis in the baseline model checker JKind.  However, in order to provide some insight into the granularity of the IVC sets verses slicing, some analyses on the slices have been performed showing slices are (mean) 406\% larger than the IVCs produced by our \ucalg algorithm and 465\% larger than those produced by \ucbfalg algorithm.  It should be mention that some of the benchmark models come \emph{pre-sliced}, but for those that are not, the number of equations is (mean) 2500\% larger than the \ucalg IVCs. Figure~\ref{fig:minimality-all} compares the sliced sizes with the IVCs.
+The final question (\textbf{RQ2.3}) asks how well the approach compares to {\em backwards static slicing}~\cite{Tip95asurvey}, since slicing also reduces the set of model elements necessary to construct a proof.  We start the slice from the equation defining the property of interest, and use the usual approach~\cite{Gaucher03:slicing} that performs an iterative backward traversal from the variables used within an equation to their defining equations.  We expect the IVC mechanism to be more precise, because the slice overapproximates of the set of equations necessary for {\em any} proof.  This intuition is bourne out in Figure~\ref{fig:minimality-all}; slices are (mean) 406\% larger than the IVCs produced by our \ucalg algorithm and 465\% larger than those produced by \ucbfalg algorithm.  %It should be mention that some of the benchmark models come \emph{pre-sliced}, but for those that are not, the number of equations is (mean) 2500\% larger than the \ucalg IVCs. Figure~\ref{fig:minimality-all} compares the sliced sizes with the IVCs.
 
 
 \iffalse

@@ -33,7 +33,9 @@ Once generated, the IVC can be used for many purposes in the software verificati
 \end{description}
 \noindent Nevertheless, to be useful for these tasks, the generation
 process must be efficient and the generated IVC must be
-accurate and precise (that is, sound and close to minimal).
+accurate and precise (that is, sound and close to minimal).  The requirement for accuracy is obvious; otherwise the ``minimal'' set of model elements is no longer sufficient to produce a proof, so it no longer meets our IVC definition.  Minimality is important because (for traceability) we do not want unnecessary model elements in the trace matrix, and (for completeness) it may give us a false level of confidence that we have enough requirements.  
+
+In addition, we are also interested in {\em diversity}:  how many different IVCs can be computed for a given property and model?  Requirements engineers often talk about ``the traceability matrix'' or ``the satisfaction argument''.  If proofs are regularly diverse, then there are potentially many equally valid traceability matrices, and this may lead to changes in traceability research.  
 
 %% We put the image here so it shows up side-by-side with fig:ex-after
 \begin{figure}[t]

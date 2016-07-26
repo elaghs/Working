@@ -199,14 +199,14 @@ choice of SMT solver or algorithm used to produce a proof
 inductive core?  As mentioned in Section~\ref{sec:ivc}, the \ucalg
 algorithm is not guaranteed to produce a minimal core due in part to
 the role of invariants used in producing a proof; as $k$-induction and
-PDR use substantially different invariant generation algorithms, it is 
-likely that the set of necessary invariants for proofs are dissimilar, 
-and that this would in turn affect the number of model elements required for 
-the proof.  It is possible that one or the other algorithm is more likely 
-to yield smaller invariant sets.  In addition, differences in the choice of the 
-UNSAT core algorithms in the different tools could affect the size of the 
-generated core. However, our algorithm already performs a minimization 
-step on UNSAT cores, and thus the only differences would be due to one 
+PDR use substantially different invariant generation algorithms, it is
+likely that the set of necessary invariants for proofs are dissimilar,
+and that this would in turn affect the number of model elements required for
+the proof.  It is possible that one or the other algorithm is more likely
+to yield smaller invariant sets.  In addition, differences in the choice of the
+UNSAT core algorithms in the different tools could affect the size of the
+generated core. However, our algorithm already performs a minimization
+step on UNSAT cores, and thus the only differences would be due to one
 algorithm leading to a different minimal core than another.
 
 As discussed in Section~\ref{sec:experiment}, $k$-induction is unable to solve all of the analysis problems; therefore we include only models that are solvable using {\em both} $k$-induction and PDR by {\em all tools}, 304 models in all.  Examining the aggregate data in Table~\ref{tab:minimality-algorithm-solvers}, we can see the sizes of cores produced by different algorithms and tools.
@@ -244,9 +244,9 @@ in Table~\ref{tab:increase-ucalg-ucbfalg}.
   larger than those produced by \ucbfalg, with substantial variance in
   some cases.}
 
-The final question (\textbf{RQ2.3}) asks how well the approach compares to {\em backwards static slicing}~\cite{Tip95asurvey}, since slicing also reduces the set of model elements necessary to construct a proof.  We start the slice from the equation defining the property of interest, and use the usual approach~\cite{Gaucher03:slicing} that performs an iterative backward traversal from the variables used within an equation to their defining equations.  We expect the IVC mechanism to be more precise, because the slice overapproximates of the set of equations necessary for {\em any} proof.  This intuition is bourne out in Figure~\ref{fig:minimality-all}; slices are (mean) 406\% larger than the IVCs produced by our \ucalg algorithm and 465\% larger than those produced by \ucbfalg algorithm.  
+The final question (\textbf{RQ2.3}) asks how well the approach compares to {\em backwards static slicing}~\cite{Tip95asurvey}, since slicing also reduces the set of model elements necessary to construct a proof.  We start the slice from the equation defining the property of interest, and use the usual approach~\cite{Gaucher03:slicing} that performs an iterative backward traversal from the variables used within an equation to their defining equations.  We expect the IVC mechanism to be more precise, because the slice overapproximates of the set of equations necessary for {\em any} proof.  This intuition is bourne out in Figure~\ref{fig:minimality-all}; slices are (mean) 406\% larger than the IVCs produced by our \ucalg algorithm and 465\% larger than those produced by \ucbfalg algorithm.
 
-Comparing to the sizes of the \ucalg IVCs to the original models, the original 395 benchmark models from~\cite{Hagen08:FMCAD} already had applied slicing, so there is no difference between the sliced size and the original model size.  For the remaining 81 benchmarks that we contributed, the number of equations is (mean) 2500\% larger than the \ucalg\ IVCs.  We note, however, that comparison of IVC size against the original model size can be misleading, as the improvement can easily be ``gamed'' by adding additional equations that are irrelevant to the property. For this reason, we prefer comparison to the sliced models. 
+Comparing to the sizes of the \ucalg IVCs to the original models, the original 395 benchmark models from~\cite{Hagen08:FMCAD} already had applied slicing, so there is no difference between the sliced size and the original model size.  For the remaining 81 benchmarks that we contributed, the number of equations is (mean) 2500\% larger than the \ucalg\ IVCs.  We note, however, that comparison of IVC size against the original model size can be misleading, as the improvement can easily be ``gamed'' by adding additional equations that are irrelevant to the property. For this reason, we prefer comparison to the sliced models.
 %It should be mention that some of the benchmark models come \emph{pre-sliced}, but for those that are not, the number of equations is (mean) 2500\% larger than the \ucalg IVCs. Figure~\ref{fig:minimality-all} compares the sliced sizes with the IVCs.
 
 
@@ -296,15 +296,14 @@ Since \texttt{JSupport}, with a great percentage, most of the time computed the 
 %%   diversity exists between sets. They don't have to be minimal. but,
 %%   we wanted to know how similar they are...}
 
-Recall from Section~\ref{sec:ivc} that a {\em minimal} core is any
-core leading to a proof such that if you remove any of the conjuncts
-from the core, it no longer produces a proof. For certain models and
+Recall from Section~\ref{sec:ivc} that a {\em minimal} \ela{I think using \emph{a core} to refer to a set of cores could be confusing} \fixed{IVC set} is any
+\fixed{set} leading to a proof such that if you remove any of \fixed{its elements}, it no longer produces a proof. For certain models and
 properties, it is possible that there are many minimal cores that will
 lead to a proof. In this section, we examine the issue of diversity:
 do different tools and algorithms lead to {\em different} minimal
 cores? This is both a function of the models and the solution
 algorithms: for certain models, there is only one possible minimal
-core, whereas other models might have many. Given that there are
+\fixed{IVC set}, whereas other models might have many. Given that there are
 multiple solutions, the interesting question is whether using
 different tools and algorithms will lead to different solutions. Note
 that this question is closely tied to that of {\em minimality}, which
@@ -337,7 +336,7 @@ indicates that even for our exploratory analysis, there are models for
 which the tools yield substantially diverse solutions. The diversity
 between solutions is represented graphically in
 Figure~\ref{fig:jacdis}, where for each model, we present the min,
-max, and mean pairwise distance of the solutions produced by algorithm
+max, and mean pairwise Jaccard distance of the solutions produced by algorithm
 \ucalg for each model, ranked by the mean distance.
 
 \iffalse
@@ -404,7 +403,7 @@ after a fixed time bound.
 
 Although our experiment does not ask statistical questions, it is still worth examining threats towards generalizing our results.  First, are the models and properties that we chose representative?  We started from an existing benchmark from another research group suite to try to assuage this concern, but most of these models were small, so we extended the benchmark suite with 81 of our own models.  It is possible that our additions skew the results, though these models are immediately derived from previously published work and not modified for our analysis here.  Second, our models and tools use the Lustre language, which is equational, rather than conjuncted transition systems; it is possible (though, in our opinion, unlikely) that arbitrary conjuncts rather than equations will yield different performance or minimality characteristics.
 
-Our approach is limited by the capabilities of the SMT solvers and inductive model checking algorithms that are used.  For example, it is difficult, given state of the art SMT solvers, to produce proofs involving complex models involving non-linear floating-point arithmetic.  However, given an inductive proof produced by an UNSAT-core producing SMT solver, we feel confident that the \ucalg\ algorithm can produce an IVC.  Our approach is theory- and invariant-generator agnostic, so as inductive model checking algorithms evolve and SMT solvers add support for new theories, the IVC algorithm should be able to work without modification.
+Our approach is limited by the capabilities of the SMT solvers and inductive model checking algorithms that are used.  For example, it is difficult, given state of the art SMT solvers, to produce proofs involving complex models involving non-linear floating-point arithmetic.  However, given an inductive proof produced by an UNSAT-core-producing SMT solver, we feel confident that the \ucalg\ algorithm can produce an IVC.  Our approach is theory- and invariant-generator agnostic, so as inductive model checking algorithms evolve and SMT solvers add support for new theories, the IVC algorithm should be able to work without modification.
 
 %%  LocalWords:  IVC RQ PDR UNSAT Yices stdev JSupport JS Ss Bs
 %%  LocalWords:  ReduceSupport Jaccard conjuncted

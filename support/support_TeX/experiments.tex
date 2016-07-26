@@ -4,7 +4,7 @@
 %\mike{What do we want to call our efficient algorithm: IVC?}
 
 We would like to investigate both the {\em efficiency} and {\em
-  minimality} of our three algorithms: the n{\"a}ive brute-force
+  minimality} of our three algorithms: the naive brute-force
 algorithm (\bfalg), the UNSAT core-based algorithm (\ucalg), and the
 combined UNSAT core followed by brute-force minimization algorithm
 (\ucbfalg). Efficiency is computed in terms of wall-clock time: how
@@ -19,7 +19,7 @@ The use of JKind allows additional dimensions to our investigation: it supports 
 Therefore, we investigate the following research questions:
 \begin{itemize}
     \item \textbf{RQ1:} How expensive is it to compute inductive validity cores using the \bfalg, \ucalg, and \ucbfalg algorithms?
-    \item \textbf{RQ2:} How close to minimal are the support sets computed by \ucalg as opposed to the (guaranteed minimal) \ucbfalg?  How do the sizes of IVCs compare to static slices of the model?
+    \item \textbf{RQ2:} How close to minimal are the IVC sets computed by \ucalg as opposed to the (guaranteed minimal) \ucbfalg?  How do the sizes of IVCs compare to static slices of the model?
     \item \textbf{RQ3:} How much {\em diversity} exists in the solutions produced by different solver/induction algorithm configurations?
 \end{itemize}
 

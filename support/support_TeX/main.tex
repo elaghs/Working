@@ -67,10 +67,10 @@
  % Add this to every tex file, so that you can comment with a diff color%
 \definecolor{gold}{rgb}{0.90,.66,0}
 \definecolor{dgreen}{rgb}{0,0.6,0}
-\newcommand{\mike}[1]{\textcolor{red}{}}
-\newcommand{\fixed}[1]{\textcolor{red}{}}
-\newcommand{\andrew}[1]{\textcolor{blue}{}}
-\newcommand{\ela}[1]{\textcolor{purple}{}}
+\newcommand{\mike}[1]{\textcolor{red}{#1}}
+\newcommand{\fixed}[1]{\textcolor{purple}{#1}}
+\newcommand{\andrew}[1]{\textcolor{green}{#1}}
+\newcommand{\ela}[1]{\textcolor{blue}{#1}}
 \newcommand{\stateequiv}{\equiv_{s}}
 \newcommand{\traceequiv}{\equiv_{\sigma}}
 \newcommand{\ta}{\text{TA}}
@@ -83,7 +83,7 @@
 \newdef{note}{Note}
 %\newcommand{\TECHREPORT}{}
 
-\title{Efficient Generation of Inductive Validity Cores for Safety Properties}
+\title{Efficient Generation of Inductive Validity Cores for Safety Properties\titlenote{\ela{PLEASE FILL IN...}}}
 \numberofauthors{3}
 
 \author{
@@ -109,11 +109,12 @@ Michael W. Whalen\\
 \maketitle
 
 \begin{abstract}
-Symbolic model checkers can construct proofs of properties over very complex models.  However, the results reported by the tool when a proof succeeds do not generally provide much insight to the user.  It is often useful for users to have traceability information related to the proof: which portions of the model were necessary to construct it.  This traceability information can be used to diagnose a variety of modeling problems such as overconstrained axioms and underconstrained properties, and can also be used to measure {\em completeness} of a set of requirements over a model.  In this paper, we present a new algorithm to efficiently compute the {\em inductive validity core} (IVC) within a model necessary for inductive proofs of safety properties for sequential systems.  The algorithm is based on the UNSAT core support built into current SMT solvers and a novel encoding of the inductive problem to try to generate a minimal inductive validity core.  We prove our algorithm correct, and describe its implementation in the JKind model checker for Lustre models.  We then present an experiment in which we benchmark the algorithm in terms of speed, diversity of produced cores, and minimality, with promising results. \end{abstract}
+Symbolic model checkers can construct proofs of properties over very complex models.  However, the results reported by the tool when a proof succeeds do not generally provide much insight to the user.  It is often useful for users to have traceability information related to the proof: which portions of the model were necessary to construct it.  This traceability information can be used to diagnose a variety of modeling problems such as overconstrained axioms and underconstrained properties, and can also be used to measure {\em completeness} of a set of requirements over a model.  In this paper, we present a new algorithm to efficiently compute the {\em inductive validity core} (IVC) within a model necessary for inductive proofs of safety properties for sequential systems.  The algorithm is based on the UNSAT core support built into current SMT solvers and a novel encoding of the inductive problem to try to generate a minimal inductive validity core.  We prove our algorithm is correct, and describe its implementation in the JKind model checker for Lustre models.  We then present an experiment in which we benchmark the algorithm in terms of speed, diversity of produced cores, and minimality, with promising results. 
+\end{abstract}
 
 \keywords{Auto-traceability, Inductive Validity Core, UNSAT Core, $k$-Induction, Requirement Engineering}
 
-%\mike{Right now we are inconsistent with using ``inductive validity core'' vs. ``IVC''.  Should we stick with one or the other (after defining IVC, of course)?}
+%\mike{Right now we are inconsistent with using ``inductive validity core'' vs. ``IVC''.  Should we stick with %one or the other (after defining IVC, of course)?}
 
 \input{introduction}
 
@@ -140,7 +141,7 @@ Symbolic model checkers can construct proofs of properties over very complex mod
 %ACKNOWLEDGMENTS are optional
 %TODO: Fill in for final version
 %\vspace{0.05in}
-%\textbf{Acknowledgments:}
+\textbf{Acknowledgments:}
 %We thank XXXX
 
 \bibliographystyle{abbrv}

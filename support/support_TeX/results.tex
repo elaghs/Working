@@ -7,7 +7,7 @@
 \vspace{6pt}
 }
 
-In this section, we examine our experimental results from three perspectives: performance, minimality of \ucalg results and diversity.
+In this section, we examine our experimental results from three perspectives: performance, minimality of \ucalg results, and diversity.
 
 \iffalse
 \mike{Results and Discussion:}
@@ -35,17 +35,14 @@ In this subsection, we examine the performance of our inductive validity core al
 
 Since the \ucalg algorithm uses the UNSAT core facilities of the
 underlying SMT solver, the performance is dependent on the efficiency
-of this part of the solver. Examining Tables~\ref{tab:runtime-ucalg}
+of this part of the solver. Looking at Tables~\ref{tab:runtime-ucalg}
 and~\ref{tab:overhead-ucalg}, it is possible to examine both the
-aggregate computation time for analysis using the four solvers under
-evaluation and the overhead imposed by the \ucalg algorithm. The data
-suggests that Yices (the default solver in JKind) and Z3 are the most
-performant solvers both in terms of computation time and overhead.
-Figure~\ref{fig:runtimeall} allows a visualization of the overhead for
-the \ucalg algorithm running different tools (as well as the \bfalg
-algorithm, discussed below). For this figure, models are ranked on the
-x-axis in terms of their analysis time using the Yices solver to perform
-the proof without performing IVC.
+computation time for analysis using the four solvers under evaluation
+and the overhead imposed by the \ucalg algorithm.
+Figure~\ref{fig:performance} allows a visualization of the runtime for
+the \ucalg algorithm running different solvers. The data suggests that
+Yices (the default solver in JKind) and Z3 are the most performant
+solvers both in terms of computation time and overhead.
 
 %Figure~\ref{fig:runtimez3} allows a visualization of the overhead for the Z3 solver, where the models are ranked on the x axis in terms of their analysis time without performing \ucalg, and the y-axis describes analysis time with and without \ucalg.
 
@@ -68,19 +65,19 @@ considered in Tables~\ref{tab:runtime-ucbfalg}
 and~\ref{tab:overhead-ucbfalg}. While considerably slower than \ucalg,
 this approach can still be used for reasonably sized models.
 
-\begin{figure*}
-  \centering
-  \includegraphics[width=0.75\textwidth]{figs/timing_analyses.png}
-  \vspace{-0.1in}
-  \caption{Runtime of \bfalg, \ucbfalg, \ucalg algorithms for Yices}\label{fig:runtimeall}
-\end{figure*}
-
 %\vspace{-0.5in}
 \begin{figure*}
   \centering
   \includegraphics[width=0.75\textwidth]{figs/performance.png}
   \vspace{-0.1in}
   \caption{\ucalg performance on different solvers}\label{fig:performance}
+\end{figure*}
+
+\begin{figure*}
+  \centering
+  \includegraphics[width=0.75\textwidth]{figs/timing_analyses.png}
+  \vspace{-0.1in}
+  \caption{Runtime of \bfalg, \ucbfalg, \ucalg algorithms for Yices}\label{fig:runtimeall}
 \end{figure*}
 
 \begin{table}
@@ -204,12 +201,12 @@ likely that the set of necessary invariants for proofs are dissimilar,
 and that this would in turn affect the number of model elements required for
 the proof.  It is possible that one or the other algorithm is more likely
 to yield smaller invariant sets.  In addition, differences in the choice of the
-UNSAT core algorithms in the different tools could affect the size of the
+UNSAT core algorithms in the different solvers could affect the size of the
 generated core. However, our algorithm already performs a minimization
 step on UNSAT cores, and thus the only differences would be due to one
 algorithm leading to a different minimal core than another.
 
-As discussed in Section~\ref{sec:experiment}, $k$-induction is unable to solve all of the analysis problems; therefore we include only models that are solvable using {\em both} $k$-induction and PDR by {\em all tools}, 304 models in all.  Examining the aggregate data in Table~\ref{tab:minimality-algorithm-solvers}, we can see the sizes of cores produced by different algorithms and tools.
+As discussed in Section~\ref{sec:experiment}, $k$-induction is unable to solve all of the analysis problems; therefore we include only models that are solvable using {\em both} $k$-induction and PDR by {\em all solvers}, 304 models in all.  Examining the aggregate data in Table~\ref{tab:minimality-algorithm-solvers}, we can see the sizes of cores produced by different algorithms and solvers.
 
 %if we sum all elements of all cores together, that PDR has an smaller core size in aggregate than $k$-induction.
 %However, the data is noisy, and to examine \textbf{RQ2.1} systematically, we construct a hypothesis that PDR will, in general, equal or outperform $k$-induction on an arbitrary model:
@@ -218,7 +215,9 @@ As discussed in Section~\ref{sec:experiment}, $k$-induction is unable to solve a
 
 %Although the aggregate data suggests that PDR will yield a smaller core (on average) than $k$-induction, this claim is not supported for a given model with significance.
 
-\takeaway{Neither PDR nor $k$-induction yields a smaller inductive validity core in general.}
+\takeaway{Neither PDR nor $k$-induction yields a smaller inductive
+  validity core in general. The choice of underlying SMT solver does
+  not substatially affect the size of the inductive validity cores.}
 
 
 %we already perform a linear scan of the cores generated by the SMT solver to remove unnecessary conjuncts
@@ -229,8 +228,8 @@ by the \ucbfalg algorithm? Note that we cannot measure the distance on
 all models because the combined algorithm times out on 9 of the larger
 models. We therefore examine the distance from minimal cores produced
 by the combined algorithm for models in which it completes within the
-one hour timeout. For comparison, we run the \ucalg algorithm in each
-tool with the default {\em fastest} algorithm, which will use the
+one hour timeout. For comparison, we run the \ucalg algorithm using Z3
+and Yices with JKind's default {\em fastest} algorithm, which will use the
 result of either $k$-induction or PDR. A graph showing the size of the
 IVCs for each model produced using the Yices solver is shown in
 Figure~\ref{fig:minimality-all}. In the figure, the models are ranked
@@ -240,13 +239,13 @@ minimality, there can be substantial variance on the sizes of the
 cores produced by the \ucalg algorithm. Summary statistics are shown
 in Table~\ref{tab:increase-ucalg-ucbfalg}.
 
-\takeaway{The \ucalg algorithm computes cores that on average 21\%
+\takeaway{The \ucalg algorithm computes cores that are on average 21\%
   larger than those produced by \ucbfalg, with substantial variance in
   some cases.}
 
 The final question (\textbf{RQ2.3}) asks how well the approach compares to {\em backwards static slicing}~\cite{Tip95asurvey}, since slicing also reduces the set of model elements necessary to construct a proof.  We start the slice from the equation defining the property of interest, and use the usual approach~\cite{Gaucher03:slicing} that performs an iterative backward traversal from the variables used within an equation to their defining equations.  We expect the IVC mechanism to be more precise, because the slice overapproximates of the set of equations necessary for {\em any} proof.  This intuition is bourne out in Figure~\ref{fig:minimality-all}; slices are (mean) 406\% larger than the IVCs produced by our \ucalg algorithm and 465\% larger than those produced by \ucbfalg algorithm.
 
-Comparing to the sizes of the \ucalg IVCs to the original models, the original 395 benchmark models from~\cite{Hagen08:FMCAD} already had applied slicing, so there is no difference between the sliced size and the original model size.  For the remaining 81 benchmarks that we contributed, the number of equations is (mean) 2500\% larger than the \ucalg\ IVCs.  We note, however, that comparison of IVC size against the original model size can be misleading, as the improvement can easily be ``gamed'' by adding additional equations that are irrelevant to the property. For this reason, we prefer comparison to the sliced models.
+Comparing the sizes of the \ucalg IVCs to the original models, the original 395 benchmark models from~\cite{Hagen08:FMCAD} already had applied slicing, so there is no difference between the sliced size and the original model size.  For the remaining 81 benchmarks that we contributed, the number of equations is (mean) 2500\% larger than the \ucalg\ IVCs.  We note, however, that comparison of IVC size against the original model size can be misleading, as the improvement can easily be ``gamed'' by adding additional equations that are irrelevant to the property. For this reason, we prefer comparison to the sliced models.
 %It should be mention that some of the benchmark models come \emph{pre-sliced}, but for those that are not, the number of equations is (mean) 2500\% larger than the \ucalg IVCs. Figure~\ref{fig:minimality-all} compares the sliced sizes with the IVCs.
 
 
@@ -296,18 +295,20 @@ Since \texttt{JSupport}, with a great percentage, most of the time computed the 
 %%   diversity exists between sets. They don't have to be minimal. but,
 %%   we wanted to know how similar they are...}
 
-Recall from Section~\ref{sec:ivc} that a {\em minimal} \ela{I think using \emph{a core} to refer to a set of cores could be confusing} \fixed{IVC set} is any
-\fixed{set} leading to a proof such that if you remove any of \fixed{its elements}, it no longer produces a proof. For certain models and
+Recall from Section~\ref{sec:ivc} that a {\em minimal} 
+%\ela{I think using \emph{a core} to refer to a set of cores could be confusing}
+IVC set is any set leading to a proof such that if you remove any of
+its elements, it no longer produces a proof. For certain models and
 properties, it is possible that there are many minimal cores that will
 lead to a proof. In this section, we examine the issue of diversity:
-do different tools and algorithms lead to {\em different} minimal
+do different solvers and algorithms lead to {\em different} minimal
 cores? This is both a function of the models and the solution
-algorithms: for certain models, there is only one possible minimal
-\fixed{IVC set}, whereas other models might have many. Given that there are
+algorithms: for certain models, there is only one possible minimal IVC
+set, whereas other models might have many. Given that there are
 multiple solutions, the interesting question is whether using
-different tools and algorithms will lead to different solutions. Note
-that this question is closely tied to that of {\em minimality}, which
-we examined in the previous section.
+different solvers and algorithms will lead to different solutions.
+Note that this question is closely tied to that of {\em minimality},
+which we examined in the previous section.
 
 Our exploration in this case is not exhaustive, but only exploratory.
 The reason it is considered is that it has substantial relevance to
@@ -325,7 +326,7 @@ To measure diversity of IVCs, we use Jaccard distance:
 \noindent Jaccard distance is a standard metric for comparing finite
 sets (assuming that both sets are non-empty) by comparing the size of
 the intersection of two sets over its union. For each model in the
-benchmark, the experiments generated 13 different IVCs. Therefore, we
+benchmark, the experiments generated 13 potentially different IVCs. Therefore, we
 obtained $\binom{13}{2} = 78$ combinations of pairwise distances per
 model. Then, minimum, maximum, average, and standard deviation of the
 distances were calculated (Figure~\ref{fig:jacdis}), by which, again,
@@ -388,7 +389,7 @@ Table~\ref{tab:variety} shows that, with an effect size of 0.79, H0 can be rejec
 
 In the previous section, we presented three algorithms for determining
 inductive validity cores. The brute-force algorithm is guaranteed
-minimal, but is often very slow. The other two algorithms: the UNSAT
+minimal, but is often very slow. The other two algorithms, the UNSAT
 core algorithm \ucalg and the combined algorithm \ucbfalg, represent
 interesting trade-offs. The \ucalg algorithm is much faster, but is
 not guaranteed to be minimal; the result of this algorithm can be
@@ -403,7 +404,7 @@ after a fixed time bound.
 
 Although our experiment does not ask statistical questions, it is still worth examining threats towards generalizing our results.  First, are the models and properties that we chose representative?  We started from an existing benchmark from another research group suite to try to assuage this concern, but most of these models were small, so we extended the benchmark suite with 81 of our own models.  It is possible that our additions skew the results, though these models are immediately derived from previously published work and not modified for our analysis here.  Second, our models and tools use the Lustre language, which is equational, rather than conjuncted transition systems; it is possible (though, in our opinion, unlikely) that arbitrary conjuncts rather than equations will yield different performance or minimality characteristics.
 
-Our approach is limited by the capabilities of the SMT solvers and inductive model checking algorithms that are used.  For example, it is difficult, given state of the art SMT solvers, to produce proofs involving complex models involving non-linear floating-point arithmetic.  However, given an inductive proof produced by an UNSAT-core-producing SMT solver, we feel confident that the \ucalg\ algorithm can produce an IVC.  Our approach is theory- and invariant-generator agnostic, so as inductive model checking algorithms evolve and SMT solvers add support for new theories, the IVC algorithm should be able to work without modification.
+Our approach is limited by the capabilities of the SMT solvers and inductive model checking algorithms that are used.  For example, it is difficult, given state of the art SMT solvers, to produce proofs involving complex models involving non-linear floating-point arithmetic.  However, given an inductive proof produced by an UNSAT-core-producing SMT solver, we feel confident that the \ucalg\ algorithm can produce an IVC.  Our approach is theory and invariant-generator agnostic, so as inductive model checking algorithms evolve and SMT solvers add support for new theories, the IVC algorithm should be able to work without modification.
 
 %%  LocalWords:  IVC RQ PDR UNSAT Yices stdev JSupport JS Ss Bs
 %%  LocalWords:  ReduceSupport Jaccard conjuncted

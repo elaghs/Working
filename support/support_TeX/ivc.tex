@@ -39,7 +39,7 @@ manipulate as we generalize the system. Given $T(s, s') = T_1(s, s')
 $T$ with the set of its top-level conjuncts. Thus we will write $x \in
 T$ to mean that $x$ is a top-level conjunct of $T$. We will write $S
 \subseteq T$ to mean that all top-level conjuncts of $S$ are top-level
-conjuncts of $T$. We will write $T \setminus \{x\}$ to mean that $T$
+conjuncts of $T$. We will write $T \setminus \{x\}$ to mean $T$
 with the top-level conjunct $x$ removed. We will use the same notation
 when working with sets of invariants.
 
@@ -323,7 +323,7 @@ Therefore, $S$ is minimal if and only if $(I, T)\nvdash P$.
 \end{proof}
 
 When minimality is a necessity, we can combine \bfalg and \ucalg into
-a single algorithm which aims efficiently guarantee minimality. The
+a single algorithm which aims to efficiently guarantee minimality. The
 hybrid algorithm, \ucbfalg, consists of running \ucalg to generate an
 initial nearly minimal IVC which is then run through \bfalg to
 guarantee minimality. The resulting algorithm is not guaranteed to

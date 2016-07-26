@@ -56,7 +56,7 @@ lemmas is the means by which property directed reachability (PDR)
 strengthens and proves a safety property.
 
 Another way to refine our over-approximation is to use use {\em
-  $k$-induction} which to unrolls the property over $k$ steps of the
+  $k$-induction} which unrolls the property over $k$ steps of the
 transition system. For example, 1-induction consists of formulas
 (\ref{eq:1-ind-base}) and (\ref{eq:1-ind-step}) above, whereas
 2-induction consists of the following formulas:
@@ -67,7 +67,7 @@ transition system. For example, 1-induction consists of formulas
   s'') \Rightarrow P(s'')
 \end{gather*}
 That is, there are two base step checks and one inductive step check.
-In general, for an arbitrary $k$, $k$-induction consists of the $k$
+In general, for an arbitrary $k$, $k$-induction consists of $k$
 base step checks and one inductive step check as shown in
 Figure~\ref{fig:k-induction} (the universal quantifiers on $s_i$ have
 been elided for space). We say that a property is $k$-inductive if it

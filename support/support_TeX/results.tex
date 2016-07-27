@@ -243,9 +243,9 @@ in Table~\ref{tab:increase-ucalg-ucbfalg}.
   larger than those produced by \ucbfalg, with substantial variance in
   some cases.}
 
-The final question (\textbf{RQ2.3}) asks how well the approach compares to {\em backwards static slicing}~\cite{Tip95asurvey}, since slicing also reduces the set of model elements necessary to construct a proof.  We start the slice from the equation defining the property of interest, and use the usual approach~\cite{Gaucher03:slicing} that performs an iterative backward traversal from the variables used within an equation to their defining equations.  We expect the IVC mechanism to be more precise, because the slice overapproximates of the set of equations necessary for {\em any} proof.  This intuition is bourne out in Figure~\ref{fig:minimality-all}; slices are (mean) 406\% larger than the IVCs produced by our \ucalg algorithm and 465\% larger than those produced by \ucbfalg algorithm.
+The final question (\textbf{RQ2.3}) asks how well the approach compares to {\em backwards static slicing}~\cite{Tip95asurvey}, since slicing also reduces the set of model elements necessary to construct a proof.  We start the slice from the equation defining the property of interest, and use the usual approach~\cite{Gaucher03:slicing} that performs an iterative backward traversal from the variables used within an equation to their defining equations.  We expect the IVC mechanism to be more precise, because the slice overapproximates of the set of equations necessary for {\em any} proof.  This claim is demonstrated in Figure~\ref{fig:minimality-all}; slices are (mean) 406\% larger than the IVCs produced by our \ucalg algorithm and 465\% larger than those produced by \ucbfalg algorithm.
 
-Comparing the sizes of the \ucalg IVCs to the original models, the original 395 benchmark models from~\cite{Hagen08:FMCAD} already had applied slicing, so there is no difference between the sliced size and the original model size.  For the remaining 81 benchmarks that we contributed, the number of equations is (mean) 2500\% larger than the \ucalg\ IVCs.  We note, however, that comparison of IVC size against the original model size can be misleading, as the improvement can easily be ``gamed'' by adding additional equations that are irrelevant to the property. For this reason, we prefer comparison to the sliced models.
+Comparing the sizes of the \ucalg IVCs to the original models, the original 395 benchmark models from~\cite{Hagen08:FMCAD} already had applied slicing, so there is no difference between the sliced size and the original model size.  For the remaining 81 benchmarks, the number of equations is (mean) 2500\% larger than the \ucalg\ IVCs.  We note, however, that comparison of IVC size against the original model size can be misleading, as the improvement can easily be ``gamed'' by adding equations that are irrelevant to the property. %    For this reason, we prefer comparison to the sliced models.
 %It should be mention that some of the benchmark models come \emph{pre-sliced}, but for those that are not, the number of equations is (mean) 2500\% larger than the \ucalg IVCs. Figure~\ref{fig:minimality-all} compares the sliced sizes with the IVCs.
 
 
@@ -295,7 +295,7 @@ Since \texttt{JSupport}, with a great percentage, most of the time computed the 
 %%   diversity exists between sets. They don't have to be minimal. but,
 %%   we wanted to know how similar they are...}
 
-Recall from Section~\ref{sec:ivc} that a {\em minimal} 
+Recall from Section~\ref{sec:ivc} that a {\em minimal}
 %\ela{I think using \emph{a core} to refer to a set of cores could be confusing}
 IVC set is any set leading to a proof such that if you remove any of
 its elements, it no longer produces a proof. For certain models and

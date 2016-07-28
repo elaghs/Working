@@ -23,6 +23,8 @@
 \usepackage{subfigure}
 \usepackage{color}
 \usepackage{balance}
+\usepackage{floatrow}
+\floatsetup[table]{capposition=top}
 \usepackage[ruled, vlined, linesnumbered]{algorithm2e}
 
 
@@ -63,7 +65,7 @@
 
 
 \begin{document}
-
+\toappear{}
  % Add this to every tex file, so that you can comment with a diff color%
 \definecolor{gold}{rgb}{0.90,.66,0}
 \definecolor{dgreen}{rgb}{0,0.6,0}
@@ -114,7 +116,37 @@ Michael W. Whalen\\
 Symbolic model checkers can construct proofs of properties over very complex models.  However, the results reported by the tool when a proof succeeds do not generally provide much insight to the user.  It is often useful for users to have traceability information related to the proof: which portions of the model were necessary to construct it.  This traceability information can be used to diagnose a variety of modeling problems such as overconstrained axioms and underconstrained properties, and can also be used to measure {\em completeness} of a set of requirements over a model.  In this paper, we present a new algorithm to efficiently compute the {\em inductive validity core} (IVC) within a model necessary for inductive proofs of safety properties for sequential systems.  The algorithm is based on the UNSAT core support built into current SMT solvers and a novel encoding of the inductive problem to try to generate a minimal inductive validity core.  We prove our algorithm is correct, and describe its implementation in the JKind model checker for Lustre models.  We then present an experiment in which we benchmark the algorithm in terms of speed, diversity of produced cores, and minimality, with promising results.
 \end{abstract}
 
-\keywords{Auto-traceability, Inductive Validity Core, UNSAT Core, $k$-Induction, Requirement Engineering}
+\begin{CCSXML}
+<ccs2012>
+<concept>
+<concept_id>10003752.10003790.10003794</concept_id>
+<concept_desc>Theory of computation~Automated reasoning</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10003752.10003790.10011192</concept_id>
+<concept_desc>Theory of computation~Verification by model checking</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10011007.10011074.10011075.10011076</concept_id>
+<concept_desc>Software and its engineering~Requirements analysis</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10011007.10011074.10011099.10011692</concept_id>
+<concept_desc>Software and its engineering~Formal software verification</concept_desc>
+<concept_significance>300</concept_significance>
+</concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Theory of computation~Verification by model checking}
+\ccsdesc[500]{Theory of computation~Automated reasoning}
+\ccsdesc[500]{Software and its engineering~Requirements analysis}
+\ccsdesc[500]{Software and its engineering~Formal software verification}
+\printccsdesc 
+\keywords{Auto-traceability, Inductive Validity Core, UNSAT Core, $k$-Induction}
 
 %\mike{Right now we are inconsistent with using ``inductive validity core'' vs. ``IVC''.  Should we stick with %one or the other (after defining IVC, of course)?}
 
@@ -143,7 +175,7 @@ Symbolic model checkers can construct proofs of properties over very complex mod
 %ACKNOWLEDGMENTS are optional
 %TODO: Fill in for final version
 %\vspace{0.05in}
-%\textbf{Acknowledgments:} 
+%\textbf{Acknowledgments:}
 %We thank XXXX
 
 \bibliographystyle{abbrv}

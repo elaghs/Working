@@ -11,7 +11,6 @@
 \usepackage{url}
 \usepackage{multirow}
 \usepackage{latexsym}
-%\usepackage{float}
 \usepackage{graphics}
 \usepackage{graphicx}
 \usepackage{enumitem}
@@ -23,8 +22,6 @@
 \usepackage{subfigure}
 \usepackage{color}
 \usepackage{balance}
-\usepackage{floatrow}
-\floatsetup[table]{capposition=top}
 \usepackage[ruled, vlined, linesnumbered]{algorithm2e}
 
 
@@ -85,9 +82,8 @@
 \newdef{note}{Note}
 %\newcommand{\TECHREPORT}{}
 
-\title{Efficient Generation of Inductive Validity Cores for Safety Properties\titlenote{This work was funded by DARPA under contract
-FA8750-12-9-0179 (Secure Mathematically-Assured Composition of Control
-Models) and by NASA under contract NNA13AA21C (Compositional Verification of Flight Critical Systems).}}
+\title{Efficient Generation of Inductive Validity Cores for Safety Properties}
+
 \numberofauthors{3}
 
 \author{
@@ -145,8 +141,8 @@ Symbolic model checkers can construct proofs of properties over very complex mod
 \ccsdesc[500]{Theory of computation~Automated reasoning}
 \ccsdesc[500]{Software and its engineering~Requirements analysis}
 \ccsdesc[500]{Software and its engineering~Formal software verification}
-\printccsdesc 
-\keywords{Auto-traceability, Inductive Validity Core, UNSAT Core, $k$-Induction}
+\printccsdesc
+\keywords{Traceability, Requirements Completeness, $k$-Induction, IC3/PDR}
 
 %\mike{Right now we are inconsistent with using ``inductive validity core'' vs. ``IVC''.  Should we stick with %one or the other (after defining IVC, of course)?}
 
@@ -175,7 +171,9 @@ Symbolic model checkers can construct proofs of properties over very complex mod
 %ACKNOWLEDGMENTS are optional
 %TODO: Fill in for final version
 %\vspace{0.05in}
-%\textbf{Acknowledgments:}
+\textbf{Acknowledgments:}
+This work was supported by DARPA under contract FA8750-12-9-0179 (Secure Mathematically-Assured Composition of Control Models) and by NASA under contract NNA13AA21C (Compositional Verification of Flight Critical Systems).
+
 %We thank XXXX
 
 \bibliographystyle{abbrv}

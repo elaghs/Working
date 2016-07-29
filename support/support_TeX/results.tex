@@ -69,8 +69,9 @@ this approach can still be used for reasonably sized models.
 \begin{figure*}
   \centering
   \includegraphics[width=0.75\textwidth]{figs/performance.png}
+  \label{fig:performance}
   \vspace{-0.1in}
-  \caption{\ucalg performance on different solvers}\label{fig:performance}
+  \caption{\ucalg performance on different solvers}
 \end{figure*}
 
 \begin{figure*}
@@ -81,6 +82,7 @@ this approach can still be used for reasonably sized models.
 \end{figure*}
 
 \begin{table}
+  \caption{\ucalg runtime with different solvers}
   \centering
   \begin{tabular}{ |c||c|c|c|c| }
     \hline
@@ -93,11 +95,11 @@ this approach can still be used for reasonably sized models.
     MathSAT & 0.011 & 86.421 &  3.071 & 10.403 \\[0.5ex]
     \hline
   \end{tabular} \\
-  \caption{\ucalg runtime with different solvers}
   \label{tab:runtime-ucalg}
 \end{table}
 
 \begin{table}
+  \caption{Overhead of \ucalg computations using different solvers}
   \centering
   \begin{tabular}{ |c||c|c|c|c| }
     \hline
@@ -109,11 +111,11 @@ this approach can still be used for reasonably sized models.
     MathSAT & 0.78\% & 955.52\% &  80.21\% & 112.92\%\\[0.5ex]
     \hline
   \end{tabular}
-  \caption{Overhead of \ucalg computations using different solvers}
   \label{tab:overhead-ucalg}
 \end{table}
 
 \begin{table}
+  \caption{\ucbfalg runtime}
   \centering
   \begin{tabular}{ |c||c|c|c|c| }
     \hline
@@ -124,11 +126,11 @@ this approach can still be used for reasonably sized models.
     Z3 &   0.66  & 3600.0   & 93.01 & 490.27 \\[0.5ex]
     \hline
   \end{tabular}
-  \caption{\ucbfalg runtime}
   \label{tab:runtime-ucbfalg}
 \end{table}
 
 \begin{table}
+  \caption{Overhead of \ucbfalg algorithm}
   \centering
   \begin{tabular}{ |c||c|c|c|c| }
     \hline
@@ -139,12 +141,12 @@ this approach can still be used for reasonably sized models.
     Z3 & 101.70\%  & 28114.07\%   & 3190.18\% & 4119.14\% \\[0.5ex]
     \hline
   \end{tabular}
-  \caption{Overhead of \ucbfalg algorithm}
   \label{tab:overhead-ucbfalg}
 \end{table}
 % over = in
 
 \begin{table}
+  \caption{Aggregate IVC sizes produced by \ucalg\ using different inductive algorithms and solvers}
   \centering
   \begin{tabular}{ |c|c|c|c| }
     \hline
@@ -158,11 +160,11 @@ this approach can still be used for reasonably sized models.
       \textbf{total} & 9515 & 9492 &   \\
     \hline
   \end{tabular}
-  \caption{Aggregate IVC sizes produced by \ucalg\ using different inductive algorithms and solvers}
   \label{tab:minimality-algorithm-solvers}
 \end{table}
 
 \begin{table}
+  \caption{Increase in IVC Size for \ucalg\ vs.\ \ucbfalg}
   \centering
   \begin{tabular}{ |c||c|c|c|c| }
     \hline
@@ -172,7 +174,6 @@ this approach can still be used for reasonably sized models.
     Z3 &   0.0\%   & 725.0\% & 20.81\% & 50.34\% \\[0.5ex]
     \hline
   \end{tabular}
-  \caption{Increase in IVC Size for \ucalg\ vs.\ \ucbfalg}
   \label{tab:increase-ucalg-ucbfalg}
 \end{table}
 
@@ -180,8 +181,8 @@ this approach can still be used for reasonably sized models.
 \begin{figure*}
   \centering
   \includegraphics[width=0.75\textwidth]{figs/minimality.png}
-  \caption{IVC sizes produced by \ucalg, \ucbfalg for Yices vs. static slices}
   \vspace{-0.1in}
+  \caption{IVC sizes produced by \ucalg, \ucbfalg for Yices vs. static slices}
   \label{fig:minimality-all}
 \end{figure*}
 
@@ -266,6 +267,7 @@ Since \texttt{JSupport}, with a great percentage, most of the time computed the 
 \fi
 
 \begin{table}
+  \caption{Pairwise Jaccard distances among all models}
   \centering
   \begin{tabular}{ |c|c|c|c| }
     \hline
@@ -275,7 +277,6 @@ Since \texttt{JSupport}, with a great percentage, most of the time computed the 
      0.0   & 0.878 & 0.026 & 0.059 \\[0.5ex]
     \hline
   \end{tabular}
-  \caption{Pairwise Jaccard distances among all models}
   \label{tab:jaccard-avg}
 \end{table}
 
@@ -368,6 +369,7 @@ Since our goal is to measure the diversity or dissimilarity among sets computed 
 \end{itemize}
 Table~\ref{tab:variety} shows that, with an effect size of 0.79, H0 can be rejected.
 \begin{table}
+  \caption{$D_{J\{M\}}$ among all models}
   \centering
   \begin{tabular}{ |c|c|c|c|c|c| }
     \hline
@@ -377,7 +379,6 @@ Table~\ref{tab:variety} shows that, with an effect size of 0.79, H0 can be rejec
      0.0   & 0.879 & 0.099 & 0.141 & 0.72 & < 0.00001 \\[0.5ex]
     \hline
   \end{tabular}
-  \caption{$D_{J\{M\}}$ among all models}
   \label{tab:variety}
 \end{table}
 \fi

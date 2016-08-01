@@ -89,15 +89,50 @@
 \usepackage{eqparbox}
 \usepackage[tight,footnotesize]{subfigure}
 \usepackage{caption}
+\usepackage{tabularx,colortbl}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{flushend}
+\usepackage{cite}
+\usepackage{amsmath}
 %\usepackage[font=footnotesize]{subfig}
 %\usepackage[caption=false,font=footnotesize]{subfig}
 \usepackage{fixltx2e}
 \usepackage{stfloats}
 \usepackage{url}
 \hyphenation{op-tical net-works semi-conduc-tor}
-
+\newcommand{\mkeyword}[1]{\mbox{\texttt{#1}}}
+\DeclareMathOperator{\kuop}{uop}
+\DeclareMathOperator{\kbop}{bop}
+\DeclareMathOperator{\kite}{ite}
+\DeclareMathOperator{\kpre}{pre}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\ktrue}{true}
+\DeclareMathOperator{\kfalse}{false}
+\DeclareMathOperator{\kselect}{select}
+\DeclareMathOperator{\ran}{range}
+\newcommand{\lbb}{[\![}
+\newcommand{\rbb}{]\!]}
+\newcommand{\expr}{\phi}
+\newcommand{\exprS}{\Phi}
 
 \begin{document}
+
+\definecolor{gold}{rgb}{0.90,.66,0}
+\definecolor{dgreen}{rgb}{0,0.6,0}
+\newcommand{\mike}[1]{\textcolor{red}{#1}}
+\newcommand{\fixed}[1]{\textcolor{purple}{#1}}
+\newcommand{\andrew}[1]{\textcolor{green}{#1}}
+\newcommand{\ela}[1]{\textcolor{blue}{#1}}
+\newcommand{\stateequiv}{\equiv_{s}}
+\newcommand{\traceequiv}{\equiv_{\sigma}}
+\newcommand{\ta}{\text{TA}}
+\newcommand{\cta}{\text{TA$_{C}$}}
+\newcommand{\tta}{\text{TA$_{T}$}}
+
+%\newdef{lemma}{Lemma}
+%\newdef{definition}{Definition}
+%\newdef{theorem}{Theorem}
+%\newdef{note}{Note}
 %
 % paper title
 % can use linebreaks \\ within to get better formatting as desired

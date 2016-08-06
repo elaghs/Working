@@ -1,4 +1,17 @@
 # These models have been removed from the original benchmarks
+
+# There are models with unknown properties
+DRAGON_14_e1_2392.lus
+DRAGON_14_e2_3606.lus
+DRAGON_14_e3_1259_e1_5798.lus
+DRAGON_14_e3_5120.lus
+DRAGON_14_e7_3162_e8_5719.lus
+Gas_e7_435_e8_532.lus
+PRODUCER_CONSUMER_vt_e2_1352.lus
+PRODUCER_CONSUMER_vt_e3_507.lus
+PRODUCER_CONSUMER_vt_e7_1059_e8_1111.lus
+PRODUCER_CONSUMMER_luke_2_e7_1068_e8_1019.lus
+
 # These are models with invalid properties
 
 deleting car_3_e7_626_e1_305.lus

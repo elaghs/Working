@@ -1,0 +1,46 @@
+
+min runtime of all-ivcs: 0.125
+max runtime of all-ivcs: 631.5160000000001
+stdev runtime of all-ivcs: 70.5186232819
+average runtime of all-ivcs: 19.3787668067
+###############################################################
+
+min overall runtime of all-ivcs + minimization: 0.203
+max overall runtime of all-ivcs + minimization: 650.1640000000001
+stdev overall runtime of all-ivcs + minimization: 73.4194728427
+average overall runtime of all-ivcs + minimization: 21.1734978992
+###############################################################
+
+min overall runtime of all-ivcs - minimization: 0.203
+max overall runtime of all-ivcs - minimization: 650.1640000000001
+stdev overall runtime of all-ivcs - minimization: 72.1058385064
+average overall runtime of all-ivcs  minimization: 20.7201869748
+###############################################################
+
+min overall runtime of  minimization: 0.0
+max overall runtime of minimization: 20.212
+stdev overall runtime of  minimization: 2.182084161
+average overall runtime of minimization: 0.45331092437
+###############################################################
+
+min runtime of UCBF: 0.203
+max runtime of UCBF: 604.455
+stdev runtime of UCBF: 60.1231767217
+average runtime of UCBF: 14.0490609244
+###############################################################
+
+min runtime of proof_time + UC: 0.062
+max runtime of proof_time + UC: 22.86
+stdev runtime of proof_time + UC: 3.01668188585
+average runtime of proof_time + UC: 1.6900210084
+-----------------------------------------------------------------
+min runtime of proof_time: 0.047
+max runtime of proof_time: 18.648
+stdev runtime of proof_time: 2.18595492948
+average runtime of proof_time: 1.34142016807
+------------------------------------------------------------------
+minimum runtime of  UC: 0.0
+maximum runtime of UC: 11.97
+population standard deviation runtime of UC: 1.24196983867
+average runtime of UC: 0.348600840336
+-------------------------------------------------------------------

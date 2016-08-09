@@ -14,7 +14,7 @@ EXPERIMENTS_DIR = 'benchmarks'
 OUTPUT_DIR = 'input_for_ucbf' 
 
 if not os.path.exists(RESULTS_DIR):
-    print(RESULTS_DIR + " does not exists!")
+    print(RESULTS_DIR + " does not exist!")
     sys.exit(-1)
       
     

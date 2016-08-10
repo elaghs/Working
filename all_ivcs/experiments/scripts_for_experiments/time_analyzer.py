@@ -114,8 +114,8 @@ overhead_minimization = []
 for i in range(len(ucbf)): 
     overhead_ucbf.append(100.0 * ((ucbf[i]-proof_time[i])/ proof_time[i]))
     overhead_uc.append(100.0 * (uc_time[i]/ proof_time[i])) 
-    overhead_all_ivcs.append(100.0 * (all_ivcs_timing[i]/ (overall_runtime_no_minimization[i] - all_ivcs_timing[i]))) 
-    overhead_minimization.append(100.0 * (minimization_timing[i]/ (overall_runtime[i] - minimization_timing[i])))  
+    overhead_all_ivcs.append(100.0 * (all_ivcs_timing[i]/ proof_time[i])) 
+    overhead_minimization.append(100.0 * (minimization_timing[i]/ proof_time[i]))  
         
 
 #
@@ -178,17 +178,17 @@ LEGENDS =  ['JKind verification (no IVC computation)',
             'JKind verification + ALL_IVCs + minimization']
  
 '''plt.plot(x_axis, overall_runtime_no_minimization, '--rx', markersize=5, label=LEGENDS[3]) 
+plt.plot(x_axis, ucbf , '-b' , markersize=30, label=LEGENDS[2])  
 plt.plot(x_axis,  ucpr_time, ':og', markersize=5, label=LEGENDS[1])  
 plt.plot(x_axis, proof_time, ':k+' , markersize=8, label=LEGENDS[0])
-plt.plot(x_axis, ucbf , '-b' , markersize=30, label=LEGENDS[2])  
-#plt.plot(x_axis, overall_runtime, '-m4' , markersize=4, label=LEGENDS[4])  '''  
+#plt.plot(x_axis, overall_runtime, '-m4' , markersize=4, label=LEGENDS[4])   '''
 
-########################################################################################3
+########################################################################################
 plt.plot(x_axis, sorted(overall_runtime_no_minimization), '--rx', markersize=5, label=LEGENDS[3]) 
-plt.plot(x_axis,  sorted(ucpr_time), '--k', markersize=15, label=LEGENDS[1])  
-plt.plot(x_axis, proof_time, ':og' , markersize=5, label=LEGENDS[0])
 plt.plot(x_axis, sorted(ucbf) , '-b' , markersize=30, label=LEGENDS[2]) 
-########################################################################################3
+plt.plot(x_axis,  sorted(ucpr_time), '--k', markersize=20, label=LEGENDS[1])  
+plt.plot(x_axis, proof_time, ':og' , markersize=3, label=LEGENDS[0])
+########################################################################################
 
 plt.xlabel('Models')
 plt.ylabel('Runtime (sec)')
@@ -255,7 +255,7 @@ sorted_num = []
 for item in sorted_dic:
     sorted_ucbf.append(item['val'])
     '''if minimization_timing[item['id']] == 0.0:
-        sorted_mini.append(0.0002)
+        sorted_mini.append(float('nan'))
     else:
         sorted_mini.append(minimization_timing[item['id']])'''
     #sorted_all_ivcs.append(all_ivcs_timing[item['id']])
@@ -271,11 +271,11 @@ ax1 = plt.subplot(111)
 #plt.plot(x_axis,  sorted_mini, '-.+g', markersize=5, label=LEGENDS[1])  
 plt.plot(x_axis, sorted_ucbf, '-b' , markersize=11, label=LEGENDS[2]) 
 plt.plot(x_axis, sorted_num, ':ko' , markersize=4, label=LEGENDS[3]) '''
-########################################################################################3
+########################################################################################
 plt.plot(x_axis, sorted(sorted_all_ivcs), ':rx', markersize=10, label=LEGENDS[0])
 plt.plot(x_axis, sorted_ucbf, '-b' , markersize=11, label=LEGENDS[2]) 
 plt.plot(x_axis, sorted(sorted_num), ':ko' , markersize=4, label=LEGENDS[3])
-########################################################################################3
+########################################################################################
 plt.xlabel('Models')
 plt.ylabel('Runtime (sec)')
 #ax.set_yscale("log", nonposy='clip')
@@ -317,7 +317,7 @@ sorted_all_ivcs = []
 sorted_uc = []
 for item in sorted_dic:
     if item['val'] == 0.0:
-        sorted_uc.append(0.0001)
+        sorted_uc.append(float('nan'))
     else:
         sorted_uc.append(item['val'])
     sorted_all_ivcs.append(all_ivcs_timing[item['id']])
@@ -327,8 +327,9 @@ del sorted_dic
 fig2 = plt.figure()
 plt.subplots_adjust(hspace=0.1)
 ax2 = plt.subplot(111)
-#plt.plot(x_axis, sorted_all_ivcs, ':go', markersize=5, label=LEGENDS[0]) 
 
+
+#plt.plot(x_axis, sorted_all_ivcs, ':go', markersize=5, label=LEGENDS[0]) 
 ########################################################################################3
 plt.plot(x_axis, sorted(all_ivcs_timing), ':go', markersize=5, label=LEGENDS[0]) 
 ########################################################################################3

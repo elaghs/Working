@@ -66,6 +66,7 @@ for model in models:
         elif run['status'] == "INVALID":
             i.append(float(run['time']))
         else:
+            #print(model)
             u.append(float(run['time']))
     reader.close()
     stdev_all.append(np.nanstd(all))
@@ -128,21 +129,26 @@ LEGENDS =  ['stdev of minimization runs',
             'stdev of UNKNOWN runs',
             'mean of UNKNOWN runs']
            
-'''plt.plot(x_axis, np.sort(stdev_all), ':rx', markersize=8, label=LEGENDS[0])  
-plt.plot(x_axis, np.sort(stdev_valid), ':g+', markersize=12, label=LEGENDS[2])  
-plt.plot(x_axis, np.sort(stdev_invalid), '-bo', markersize=2, label=LEGENDS[4])   
-plt.plot(x_axis, np.sort(stdev_unknown), '--k', markersize=6, label=LEGENDS[6])    '''
-plt.plot(x_axis, np.sort(avg_all), ':rx', markersize=8, label=LEGENDS[1]) 
-#plt.plot(x_axis,  stdev_all, '-.or', markersize=5, label=LEGENDS[0])   
+ 
+plt.plot(x_axis, np.sort(stdev_unknown), '--k', markersize=6, label=LEGENDS[6])
+plt.plot(x_axis, np.sort(stdev_valid), ':g+', markersize=12, label=LEGENDS[2])
+plt.plot(x_axis, np.sort(stdev_all), ':rx', markersize=8, label=LEGENDS[0]) 
+plt.plot(x_axis, np.sort(stdev_invalid), '-bo', markersize=2, label=LEGENDS[4])      
+ 
+
+'''plt.plot(x_axis, np.sort(avg_unknown), '--k', markersize=6, label=LEGENDS[7]) 
+#plt.plot(x_axis,  stdev_unknown, '-.ok', markersize=5, label=LEGENDS[6])
 
 plt.plot(x_axis, np.sort(avg_valid), ':g+', markersize=12, label=LEGENDS[3]) 
 #plt.plot(x_axis,  stdev_valid, '-.og', markersize=5, label=LEGENDS[2])  
 
-plt.plot(x_axis, np.sort(avg_invalid), '-bo', markersize=2, label=LEGENDS[5]) 
-#plt.plot(x_axis,  stdev_invalid, '-.ob', markersize=5, label=LEGENDS[4])  
+plt.plot(x_axis, np.sort(avg_all), ':rx', markersize=8, label=LEGENDS[1]) 
+#plt.plot(x_axis,  stdev_all, '-.or', markersize=5, label=LEGENDS[0])  
 
-plt.plot(x_axis, np.sort(avg_unknown), '--k', markersize=6, label=LEGENDS[7]) 
-#plt.plot(x_axis,  stdev_unknown, '-.ok', markersize=5, label=LEGENDS[6])
+plt.plot(x_axis, np.sort(avg_invalid), '-bo', markersize=2, label=LEGENDS[5]) 
+#plt.plot(x_axis,  stdev_invalid, '-.ob', markersize=5, label=LEGENDS[4])  '''
+
+
 
 plt.xlabel('Models')
 plt.ylabel('Runtime (sec)')
@@ -154,7 +160,7 @@ plt.grid(True)
 #plt.subplots_adjust(left=0.125, bottom=0.5, right=0.9, top=0.9, wspace=0.2, hspace=0.2)
 box = ax.get_position()
 ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
-ax.legend(loc=2, prop={'size':14}) 
+ax.legend(loc=4, prop={'size':14}) 
 fig.savefig(os.path.join(ANALYSES_DIR, 'ucbf_runs_analyses.png'))
 plt.show()
 plt.close(fig)

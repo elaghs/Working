@@ -82,8 +82,9 @@ for file in sorted_models_mem:
         proof = float(elem.text)
         proof_time.append(proof)
     uc = 0.0
-    for elem in tree.iter(tag = 'UcRuntime'):
-        uc = float(elem.text)
+    tree2 = ET.ElementTree(file = os.path.join(RESULTS_DIR, file + '_uc.xml'))
+    for elem2 in tree2.iter(tag = 'Runtime'):
+        uc = float(elem2.text)
         uc_time.append(uc)
         uc_w_proof.append(uc + proof)
     for elem in tree.iter(tag = 'AllIvcRuntime'):

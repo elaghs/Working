@@ -1,0 +1,33 @@
+
+min IVC sizes in UC: 1
+max IVC sizes in UC: 141
+stdev IVC sizes in UC: 15.9919779151
+average IVC sizes in UC: 12.7205882353
+-----------------------------------------------------------------
+min IVC sizes in UCBF: 1
+max IVC sizes in UCBF: 129
+stdev IVC sizes in UCBF: 15.0572588086
+average IVC sizes in UCBF: 11.6701680672
+------------------------------------------------------------------
+min sizes of MUST sets: 1
+max sizes of MUST sets: 129
+stdev sizes of MUST sets: 15.0296911792
+average sizes of MUST sets: 11.6491596639
+=====================================================================
+ratio of IVC sizes in IVC_UC to UCBF:
+min : 1.0
+max : 8.25
+stdev : 0.450783613867
+average : 1.17916245957
+------------------------------------------------------------------
+ratio of IVC sizes in MUST sets to UCBF:
+min : 0.5
+max : 4.0
+stdev : 0.196019801433
+average : 1.00491878147
+------------------------------------------------------------------
+ratio of IVC sizes in UC to MUST sets:
+min : 1.0
+max : 8.25
+stdev : 0.456056020812
+average : 1.18842132428

@@ -23,10 +23,10 @@ stdev overall runtime of  minimization: 5.32141716603
 average overall runtime of minimization: 0.68981512605
 ###############################################################
 
-min runtime of UCBF: 0.203
-max runtime of UCBF: 1286.307
-stdev runtime of UCBF: 108.600479497
-average runtime of UCBF: 20.6923928571
+min runtime of UCBF: 0.219
+max runtime of UCBF: 1286.479
+stdev runtime of UCBF: 108.626429994
+average runtime of UCBF: 20.7762731092
 ###############################################################
 
 min runtime of proof_time + UC: 0.046

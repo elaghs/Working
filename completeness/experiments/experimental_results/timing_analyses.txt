@@ -1,0 +1,30 @@
+
+min runtime of proof_time + UC: 0.047
+max runtime of proof_time + UC: 19.537
+stdev runtime of proof_time + UC: 2.29143145682
+average runtime of proof_time + UC: 1.41424369748
+-----------------------------------------------------------------
+min runtime of proof_time: 0.046
+max runtime of proof_time: 19.287
+stdev runtime of proof_time: 2.19516679607
+average runtime of proof_time: 1.33156512605
+------------------------------------------------------------------
+minimum runtime of  UC: 0.0
+maximum runtime of UC: 1.175
+population standard deviation runtime of UC: 0.17545316968
+average runtime of UC: 0.0826785714286
+-------------------------------------------------------------------
+min runtime of proof_time + Must computation: 0.203
+max runtime of proof_time + Must computation: 1058.299
+stdev runtime of proof_time + Must computation: 98.2547523371
+average runtime of proof_time + Must computation: 20.3933235294
+------------------------------------------------------------------
+minimum runtime of  Must computation: 0.11499999999999999
+maximum runtime of Must computation: 1039.012
+population standard deviation runtime of Must computation: 96.7858738979
+average runtime of Must computation: 19.0617584034
+-------------------------------------------------------------------
+min runtime of UCBF: 0.2190000000000002
+max runtime of UCBF: 1286.479
+stdev runtime of UCBF: 108.626429994
+average runtime of UCBF: 20.7762731092

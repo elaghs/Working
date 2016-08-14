@@ -1,12 +1,12 @@
 
-stdev runtime of *ALL* runs among all models: 7.83
-average runtime of *ALL* among all models: 0.88---------------------------------------------------------------------------
+stdev runtime of *ALL* runs among all models: 7.91
+average runtime of *ALL* among all models: 0.78---------------------------------------------------------------------------
 
-stdev runtime of *VALID* runs among all models: 2.69
-average runtime of *VALID* runs among all models: 2.07---------------------------------------------------------------------------
+stdev runtime of *VALID* runs among all models: 2.95
+average runtime of *VALID* runs among all models: 3.3---------------------------------------------------------------------------
 
 stdev runtime of *INVALID* runs among all models: 0.41
-average runtime of *INVALID* runs among all models: 0.17---------------------------------------------------------------------------
+average runtime of *INVALID* runs among all models: 0.16---------------------------------------------------------------------------
 
-stdev runtime of *UNKNOWN* runs among all models: 0.49
-average runtime of *UNKNOWN* runs among all models: 115.52
+stdev runtime of *UNKNOWN* runs among all models: 0.81
+average runtime of *UNKNOWN* runs among all models: 141.07

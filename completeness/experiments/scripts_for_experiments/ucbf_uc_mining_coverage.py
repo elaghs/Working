@@ -33,7 +33,7 @@ models_name.close()
 # Extract basic info of the UCBF
 #
 reader = shelve.open(os.path.join(MINING_DIR, 'timing_info')) 
-proof_time = reader['uc_base_for_ucbf']
+proof_time = reader['uc_time_w_proof']
 reader.close()
   
 timing_info = shelve.open(os.path.join(MINING_DIR, 'timing_info'), 'c')  

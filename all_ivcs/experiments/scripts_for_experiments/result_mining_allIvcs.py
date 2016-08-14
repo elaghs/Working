@@ -10,8 +10,7 @@ from operator import itemgetter
 RESULTS_DIR = 'all_ivcs_results' 
 MINING_DIR = 'mining'
 EXPERIMENTS_DIR = 'benchmarks'
-SORTED_MODELS = 'list_of_sorted_models.txt'
-TIMEOUT = 3600.0
+SORTED_MODELS = 'list_of_sorted_models.txt' 
 
     
 if not os.path.exists(RESULTS_DIR):
@@ -43,7 +42,7 @@ os.chdir("..")
 #
 models = [] 
 for file in lus_files: 
-    tree = ET.ElementTree(file = os.path.join(RESULTS_DIR, file + '_runtimeAllIvcs.xml'))
+    tree = ET.ElementTree(file = os.path.join(RESULTS_DIR, file + '_uc.xml'))
     for elem in tree.iter(tag = 'ProofTime'):
         models.append({'name': file, 'time': float(elem.text)})
 
@@ -76,18 +75,19 @@ all_ivcs_w_proof = []
 uc_w_proof = []
 
 for file in sorted_models_mem:
-    tree = ET.ElementTree(file = os.path.join(RESULTS_DIR, file + '_runtimeAllIvcs.xml'))
+    tree = ET.ElementTree(file = os.path.join(RESULTS_DIR, file + '_uc.xml'))
     proof = 0.0
     for elem in tree.iter(tag = 'ProofTime'):
         proof = float(elem.text)
         proof_time.append(proof)
+    for elem in tree.iter(tag = 'Runtime'):
+        uc_w_proof.append(float(elem.text))
     uc = 0.0
-    tree2 = ET.ElementTree(file = os.path.join(RESULTS_DIR, file + '_uc.xml'))
-    for elem2 in tree2.iter(tag = 'Runtime'):
-        uc = float(elem2.text)
-        uc_time.append(uc)
-        uc_w_proof.append(uc + proof)
-    for elem in tree.iter(tag = 'AllIvcRuntime'):
+    for elem in tree.iter(tag = 'UcRuntime'):
+        uc = float(elem.text)
+        uc_time.append(uc)    
+    tree2 = ET.ElementTree(file = os.path.join(RESULTS_DIR, file + '_runtimeAllIvcs.xml'))
+    for elem in tree2.iter(tag = 'AllIvcRuntime'):
         all = (float(elem.text) + uc)
         all_ivcs_time.append(all)
         all_ivcs_w_proof.append(all + proof)

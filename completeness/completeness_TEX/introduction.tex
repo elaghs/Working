@@ -1,7 +1,38 @@
 \section{Introduction}
 \label{sec:intro}
 
-Different notions of coverage have been well defined in software testing, however, in formal verification, it is very complex to define and compute this notion. 
-Usually, coverage techniques in the property-based verification try to measure the quality of the specification with regards to the completeness of a set of properties. 
-In fact, the goal is to point out unspecified behaviors, hence the idea behind most of the existing work is to address the question of `have we specified enough properties (requirements)?' 
-Since the coverage notions are usually  and over-approximation, achieving a high coverage does not guarantee there will be no missing behavior. However, when the coverage is low, techniques will definitely reveal some unspecified cases \cite{claessen2007coverage}. 
+\mike{THIS IS WAY TOO LONG AND WORDY.  I FIRST NEED TO DEFINE ATTRIBUTES OF ``GOOD'' COMPLETENESS NOTIONS.  LOOK AT INTRO FOR OMCDC PAPER}
+
+For several decades, requirements engineering has been an important topic in software engineering.  In order to build software, one usually starts with a rough idea of what the software is intended to do, which is refined either prior to, or in tandem with, the software being developed.  Requirements are necessary to software both for shaping its develop and for determining its adequacy when performing verification activities.  Therefore, determinining the {\em adequacy} of requirements is of critical importance to the eventual quality of the software.  
+
+Zowghi and Gervasi~\cite{} define adequacy of requirements in terms of the ``three Cs'': Consistency, Completeness, and Correctness.  \mike{[MOST OF THE REST OF THIS PARAGRAPH IS BLATANTLY STOLEN FROM GERVASI - REWRITE]} Davis states that completeness is the most difficult of the specification attributes to
+define and incompleteness of specification is the most difficult violation to detect~\cite{}.
+According to Boehm~\cite{}, to be considered complete, the requirements document must exhibit three fundamental characteristics: (1) No information is left unstated or ``to be determined'', (2) The information does not contain any undefined objects or entities, (3) No information is missing from this document. The first two properties imply a closure of the existing information and are typically referred to as internal completeness.  The third property, however, concerns the external completeness of the document
+\cite{}. External completeness ensures that all of the information required for problem definition is found within the specification. \mike{[BACK TO MY TEXT]}  The definition for external completeness demonstrates why it is not possible to define and measure external completeness of specification with absolute precision: it is not possible that analysts know with certainty what is missing from the specification when there is no external reference with which to measure the completeness of the requirements.
+
+Instead, to measure completeness, several surrogate models to measure completeness have been proposed.  Zowghi and Gervasi use refinement to show {\em relative completeness} with respect to a {\em domain} model, which describes the behavior of the real world, irrespective of change induced by software.  In their model, each iteration of refinement of requirements and domain models must be sufficient to prove the requirements of the previous iteration.  However, this idea has two problems: first it provides no notion of absolute completeness, and second, it requires construction of a domain model, which is often difficult and/or expensive to construct.
+
+In a different direction, a substantial literature has been created that measures completeness of requirements with respect to a more concrete {\em implementation}.  An implementation may be source or object code, or a relatively abstract model of implementation behavior, such as a refinement from higher-level to lower-level requirements.  A benefit of this approach is that in order to have working software, some implementation must be created, so it is always possible to perform this assessment of requirements prior to deployment of the software.  In this approach, some mechanism to measure the adequacy of requirements against the implementation must be created.  Often this mechanism is testing: in the civil avionics standard (DO-178B/C), tests are derived from requirements and if they do not achieve adequate coverage of the implementation code, then new tests and new requirements must be constructed.  More recent work by Zeller~\cite{} and Murugesan~\cite{} have attempted to adapt these measure towards automated test generation.
+
+A drawback of the approach is that an implementation must exist prior to performing this analysis; if the implementation is only available late in the development process, then incompletenesses in requirements are not exposed until late in the development cycle.  In addition, the test metrics that are often used for measurement tend to significantly overapproximate the portions of a program that are necessary to demonstrate a requirement~\cite{} \mike{cite MCDC and OMCDC work here}.  Because of these drawbacks, techniques have been devised for analyzing completeness of requirements against formal implementation models, specified as transition systems or Kripke structures~\cite{}\mike{Chockler, Kupferman, Vardi, Kroening, etc.}.  These models are agnostic to the ``abstraction level'' of the implementation: they can represent lower-level requirements, software architectures, or concrete implementations of system behavior.  The mechanism used is a combination of {\em proof} and {\em mutation}: is it possible to prove that the requirements still hold of the system after mutating the model in some way?  If so, then the requirements are {\em incomplete} with respect to that model element.
+
+In this work, we propose a simpler notion of completeness that examines {\em minimal proofs}.  That is, we measure the completeness of a set of requirements by examining a minimal set of model elements necessary to construct a {\em proof} of all the requirements.  Like earlier proof-based approaches, this idea is implementation agnostic.  However, it is much less computationally expensive than previous proof-based approaches, and it has an important additional formal property that is not preserved by other approaches: if the model is simplified to contain only the ``necessary'' model elements defined by the technique, the requirements are still provable.
+
+[MORE HERE on COMPUTATION TIME and SIZE OF REMAINING ELEMENTS]
+
+The contributions of this work are: 
+\begin{enumerate}
+\item A new notion of completeness based on proof that is a.) cheap to compute, given the proof, b.) more accurate than test-based methods, and c.) preserves the ``provability'' property from the residual model.
+\item An implementation that computes this notion of completeness
+\item An experiment that examines our notion of requirements completeness against other notions of completeness.
+\end{enumerate}
+
+In the rest of the paper ...\mike{fill in!}.
+
+
+
+
+Different notions of coverage have been well defined in software testing, however, in formal verification, it is very complex to define and compute this notion.
+Usually, coverage techniques in the property-based verification try to measure the quality of the specification with regards to the completeness of a set of properties.
+In fact, the goal is to point out unspecified behaviors, hence the idea behind most of the existing work is to address the question of `have we specified enough properties (requirements)?'
+Since the coverage notions are usually  and over-approximation, achieving a high coverage does not guarantee there will be no missing behavior. However, when the coverage is low, techniques will definitely reveal some unspecified cases \cite{claessen2007coverage}.

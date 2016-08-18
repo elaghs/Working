@@ -1,0 +1,17 @@
+
+\section{Minimal Support Sets}
+\label{sec:motivation}
+\newcommand{\satisfies}{\vdash_{\!\!s}}
+\newcommand{\nsatisfies}{\nvdash_{\!\!s}}
+
+We define provability abstractly from a set of model elements.  We represent the implementation model as a set of formulas $\Sigma$  and the set of requirements $\Delta$.  Then given $T \subseteq \Sigma$ and $e \in \Delta$, we use the notation $T \vdash e$ to mean that $e$ is provable given the set $T$.  We assume that the provability relation $\vdash$ is monotonic on the subset relation over $\Sigma$, that is, if $S \subseteq S' \subseteq \Sigma$ and $S \vdash r$, then $S' \vdash r$.  The monotonicity of the satisfaction relation means that, unless {\em all} elements of the implementation $\Sigma$ are required for a proof, there are multiple implementation sets $S \subset S' \subset \ldots \subset \Sigma$ that can satisfy a given requirement $r$.  However, we are primarily interested in {\em minimal} sets that satisfy $r$; tracing a requirement to the entire implementation is not particularly enlightening.  We call a minimal set of model elements a \emph{support set} for that requirement, and define the $SOS$ relation to associate support sets to requirements.
+
+$$ \ SOS(r, S) \equiv S \vdash r~ \land   (\neg\exists S'\ .\ S' \subset S \wedge S' \vdash r) $$
+
+$SOS$ maps support sets to a requirement. As mentioned earlier, there could be many support sets for a requirement. To capture that notion, we define, \emph{all support sets ($ASOS$)} for a requirement as an association to all its sets of support.
+
+
+$$ ASOS(r) \equiv  \{\ S | S \subseteq \Sigma \land (r,S) \in SOS\ \} $$
+
+The set of $ASOS$-es for all requirements represents the complete traceability of the system.
+

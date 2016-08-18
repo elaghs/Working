@@ -1,6 +1,10 @@
 \section{Related work}
 \label{sec:related}
 
+\mike{integrate into related work!}
+Instead, to measure completeness, several surrogate models to measure completeness have been proposed.  Zowghi and Gervasi use refinement to show {\em relative completeness} with respect to a {\em domain} model, which describes the behavior of the real world, irrespective of change induced by software.  In their model, each iteration of refinement of requirements and domain models must be sufficient to prove the requirements of the previous iteration.  However, this idea has two problems: first it provides no notion of absolute completeness, and second, it requires construction of a domain model, which is often difficult and/or expensive to construct.
+
+
 The notion of coverage has been defined in different ways in the context of property-based verification \cite{chockler2008causes, chockler2006coverage, chockler_coverage_2003, katz1999have, grosse2007estimating, claessen2007coverage}.
 Coverage in verification was introduced in \cite{hoskote1999coverage, katz1999have}. Hoskote et al. \cite{hoskote1999coverage} suggested a state-based metric in model checking based on FSM mutations, which are small atomic changes to the design. Then, the method for measuring coverage is to model check a given property for each mutant design.
 Later in \cite{chockler_coverage_2003}, Chockler et al. provided corresponding notions of metrics used in simulation-based verification for formal verification. In fact, they improved the same idea of mutation-based coverage where each mutation is generated to check if a specific

@@ -99,6 +99,8 @@
 \usepackage{fixltx2e}
 \usepackage{stfloats}
 \usepackage{url}
+
+
 \hyphenation{op-tical net-works semi-conduc-tor}
 \newcommand{\mkeyword}[1]{\mbox{\texttt{#1}}}
 \DeclareMathOperator{\kuop}{uop}
@@ -203,15 +205,24 @@ component; formatting; style; styling;
 
 \IEEEpeerreviewmaketitle
 
+\mike{Note: start with a quote on requirements completeness by Boehm or other eminence}
+
+\mike{Note: mine traceability paper for ideas: abstract notion of proof?   Distinction between proof and entailment?  }
+
+\mike{Start from (a variant of) the formalism from the RE paper.  Then use inductive validity cores as an {\em implementation} of this idea, again just like the RE paper.  Bring in the IVC formalism only when we describe it as an ``implementation'' of our general idea.} 
+
 
 \input{introduction}
 
 %\ifdefined\TECHREPORT
 %\input{description}
 %\fi
-%\section{Illustrative Example}
+\input{example}
 
-\input{background}
+%\input{background}
+
+\input{traceability}
+
 
 \input{method}
 

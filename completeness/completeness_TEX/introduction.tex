@@ -3,7 +3,7 @@
 
 \mike{THIS IS WAY TOO LONG AND WORDY.  I FIRST NEED TO DEFINE ATTRIBUTES OF ``GOOD'' COMPLETENESS NOTIONS.  LOOK AT INTRO FOR OMCDC PAPER}
 
-For several decades, requirements engineering has been an important topic in software engineering.  In order to build software, one usually starts with a rough idea of what the software is intended to do, which is refined either prior to, or in tandem with, the software being developed.  Requirements are necessary to software both for shaping its develop and for determining its adequacy when performing verification activities.  Therefore, determinining the {\em adequacy} of requirements is of critical importance to the eventual quality of the software.  
+For several decades, requirements engineering has been an important topic in software engineering.  In order to build software, one usually starts with a rough idea of what the software is intended to do, which is refined either prior to, or in tandem with, the software being developed.  Requirements are necessary to software both for shaping its development and for determining its adequacy when performing verification activities.  Therefore, determinining the {\em adequacy} of requirements is of critical importance to the eventual quality of the software.
 
 Zowghi and Gervasi~\cite{} define adequacy of requirements in terms of the ``three Cs'': Consistency, Completeness, and Correctness.  \mike{[MOST OF THE REST OF THIS PARAGRAPH IS BLATANTLY STOLEN FROM GERVASI - REWRITE]} Davis states that completeness is the most difficult of the specification attributes to
 define and incompleteness of specification is the most difficult violation to detect~\cite{}.
@@ -20,7 +20,7 @@ In this work, we propose a simpler notion of completeness that examines {\em min
 
 [MORE HERE on COMPUTATION TIME and SIZE OF REMAINING ELEMENTS]
 
-The contributions of this work are: 
+The contributions of this work are:
 \begin{enumerate}
 \item A new notion of completeness based on proof that is a.) cheap to compute, given the proof, b.) more accurate than test-based methods, and c.) preserves the ``provability'' property from the residual model.
 \item An implementation that computes this notion of completeness
@@ -29,10 +29,3 @@ The contributions of this work are:
 
 In the rest of the paper ...\mike{fill in!}.
 
-
-
-
-Different notions of coverage have been well defined in software testing, however, in formal verification, it is very complex to define and compute this notion.
-Usually, coverage techniques in the property-based verification try to measure the quality of the specification with regards to the completeness of a set of properties.
-In fact, the goal is to point out unspecified behaviors, hence the idea behind most of the existing work is to address the question of `have we specified enough properties (requirements)?'
-Since the coverage notions are usually  and over-approximation, achieving a high coverage does not guarantee there will be no missing behavior. However, when the coverage is low, techniques will definitely reveal some unspecified cases \cite{claessen2007coverage}.

@@ -1,2 +1,102 @@
 \section{Method}
 \label{sec:method}
+
+We believe Definition \ref{def:coverage1} characterizes coverage in a way which is both expensive to compute and difficult to satisfy (i.e. it usually leads to low coverage scores). This section proposes a novel notion of coverage which is not only more efficient and practical to compute but also  is an immediate guidance of what is necessary for specification. 
+
+First, let state the relationship between the most recent coverage notions in formal verification and the idea of support sets.
+
+\begin{lemma}
+  \label{lem:sos-must-may}
+ $\forall S \in SOS(r)$, $S$ can be partitioned into two disjoint sets $S_1$ and $S_2$
+  such that $S_1 = MUST(r)$ and $S_2 \subseteq MAY(r)$.
+\end{lemma}
+\begin{proof}
+ From the definition of $ASOS$ and $MUST$, $MUST(r) \subseteq S$, for $(r, S) \in SOS$. And
+ by definition, $MUST(r) \cap MAY(r) = \varnothing$. Following the definition of $SOS$
+ and $MAY$, $S = (MAY(r) \cap S) \cup MUST(r)$.
+\end{proof}
+\vspace{2mm}
+
+\begin{lemma}
+  \label{lem:must-not-enough}
+  If $MAY(r) \neq \varnothing$, then $MUST(r) \nvdash r$.
+\end{lemma}
+\begin{proof}
+ Immediate from Lemma \ref{lem:sos-must-may}, and the definition of $SOS$ and provability.
+\end{proof}
+\vspace{2mm}
+
+\begin{lemma}
+  \label{lem:must-coverage}
+  Given function $\psi_{sm}(r, \varphi)$, $\forall \varphi \in \Gamma$ iff
+  $\psi_{sm} (r) \preccurlyeq \varphi$ then  $\varphi \in MUST(r)$.
+
+\end{lemma}
+\begin{proof}
+ From the definition of $MUST(r), \forall \varphi \in MUST (r)$, $\forall S \subseteq \Gamma$. $(r, S) \in SOS \Rightarrow \varphi \in SOS(r, S)$,
+ which implies $f_m (S \setminus \{ \varphi \}) \nvdash r$.
+ On the other hand, considering the definition of $\psi_{sm}$, if
+ $f_m (S \setminus \{ \varphi \}) \nvdash r$ then $\varphi$ is necessary to prove $r$ (Lemma \ref{lem:must-not-enough}), which means $\varphi \in MUST(r)$.
+\end{proof}
+\vspace{2mm}
+
+In light of Lemma \ref{lem:must-coverage}, the coverage score of specification $r$ obtained based on $\psi_{sm}$ can be also calculated by 
+$$\frac{|MUST(r)|}{|\Gamma|}$$
+Therefore, for set of requirements $\Delta$, the coverage score is computed by $$\frac{|MUST(R)|}{|\Gamma|},\xspace  R = \bigwedge_{i} {r_i \in \Delta}$$
+
+\begin{definition} {\emph{Justifiable notion of coverage:}} \\
+  \label{def:coverage-ivc}
+  Given $R = \bigwedge_{i} {r_i \in \Delta}$ and $S \in ASOS(R)$, justifiable coverage is formalized with function $\psi$ such that  $\forall \varphi \in S$. $\psi (R) \preccurlyeq \varphi$
+  and $\forall \lambda \notin S$. $\psi (R) \nprec \lambda$.
+\end{definition}
+\vspace{2mm}
+
+For the sake of simplicity, we refer to the coverage function
+formalized in Definition \ref{def:coverage-ivc} as $\psi_{sos}$.
+
+We call Definition \ref{def:coverage-ivc} \emph{justifiable} because, with a set of the model elements marked as covered by $\psi_{sos}$, every $r \in \Delta$ is provable, whereas a set of covered elements obtained from $\psi_{sm}$ is not sufficient to reconstruct the proofs of requirements in $\Delta$.\footnote{Throughout the paper, when a coverage function is justifiable, like $\psi_{sos}$, we say it preserves provability of the requirement.}
+This leads the coverage score for $\psi_{sos}$ to be usually higher than the score for $\psi_{sm}$. Coverage score for $\psi_{sos}$ can be calculated as $$\frac{|S|}{|\Gamma|}$$.
+
+\begin{theorem}
+\label{thm:cov-must}
+Given $C = \{\varphi | \varphi \in \Gamma \wedge \psi_{sm} \preccurlyeq \varphi \}$ \\ 
+and $R = \bigwedge_{i} {r_i \in \Delta}$, $C \nvdash R$.
+\end{theorem}
+\begin{proof}
+Immediate from Lemma \ref{lem:must-not-enough} and Lemma \ref{lem:must-coverage}.
+\end{proof}
+\vspace{2mm}
+
+\begin{theorem}
+\label{thm:cov-sos}
+Given $C = \{\varphi | \varphi \in \Gamma \wedge  \psi_{sos} \preccurlyeq \varphi \}$ \\
+and $R = \bigwedge_{i} {r_i \in \Delta}$, $C \vdash R$.
+\end{theorem}
+\begin{proof}
+By Definition, $\psi_{sos} \preccurlyeq \varphi_i$ implies that $\exists S_i \in ASOS(R)$. $\varphi_i \in S_i$. 
+In addition, since $(R, S_i) \in SOS \Rightarrow S_i \vdash R$, and the union of such $S_i$ sets 
+forms $C$, 
+$C \vdash R$. 
+\end{proof}
+\vspace{2mm}
+
+\begin{coroll}
+\label{cor:cov-sos}
+Given $C = \{\varphi | \varphi \in \Gamma \wedge  \psi_{sos} \preccurlyeq \varphi \}$, \\
+$\forall r_i \in \Delta$. $C \vdash r_i$.
+\end{coroll}
+\begin{proof}
+Immediate from Theorem \ref{thm:cov-sos}.
+\end{proof}
+\vspace{2mm}
+
+\begin{theorem}
+\label{thm:sos-r}
+If $\psi_{sos} \preccurlyeq \varphi$ then $\exists r \in \Delta$ and $S \in ASOS(r)$. 
+$S \setminus \{\varphi \} \nvdash r$.
+\end{theorem}
+\begin{proof}
+Immediate from Corollary \ref{cor:cov-sos} and the definition of $ASOS$ and provability.
+\end{proof}
+\vspace{2mm}
+

@@ -82,13 +82,16 @@
 % *** MATH PACKAGES ***
 %
 \usepackage[cmex10]{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{amsthm}
 \usepackage{algorithmic}
 \usepackage{array}
 \usepackage{mdwmath}
 \usepackage{mdwtab}
 \usepackage{eqparbox}
-\usepackage[tight,footnotesize]{subfigure}
-\usepackage{caption}
+\usepackage[tight,normalsize]{subfigure}
+\usepackage[font=normalsize]{caption}
 \usepackage{tabularx,colortbl}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{flushend}
@@ -97,9 +100,10 @@
 %\usepackage[font=footnotesize]{subfig}
 %\usepackage[caption=false,font=footnotesize]{subfig}
 \usepackage{fixltx2e}
+\usepackage[ruled, vlined, linesnumbered]{algorithm2e}
 \usepackage{stfloats}
-\usepackage{url}
-
+\usepackage{url} 
+\usepackage{xspace}
 
 \hyphenation{op-tical net-works semi-conduc-tor}
 \newcommand{\mkeyword}[1]{\mbox{\texttt{#1}}}
@@ -131,11 +135,15 @@
 \newcommand{\cta}{\text{TA$_{C}$}}
 \newcommand{\tta}{\text{TA$_{T}$}}
 
-\newcommand{\mustalg}{IVC\_MUST\xspace}
-\newcommand{\bfalg}{IVC\_BF\xspace}
-\newcommand{\ucalg}{IVC\_UC\xspace}
-\newcommand{\ucbfalg}{IVC\_UCBF\xspace}
+\newcommand{\bfalg}{{IVC\_BF}\xspace}
+\newcommand{\ucalg}{{IVC\_UC}\xspace}
+\newcommand{\ucbfalg}{{IVC\_UCBF}\xspace}
+\newcommand{\mustalg}{{IVC\_MUST}\xspace}
 
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{coroll}{Corollary}
 %\newdef{lemma}{Lemma}
 %\newdef{definition}{Definition}
 %\newdef{theorem}{Theorem}
@@ -143,7 +151,7 @@
 %
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
-\title{Bare Demo of IEEEtran.cls for IEEECS Conferences}
+\title{A Justifiable Notion of Coverage in Formal Verification}
 
 
 % author names and affiliations
@@ -204,17 +212,16 @@ The abstract goes here. DO NOT USE SPECIAL CHARACTERS, SYMBOLS, OR MATH IN YOUR 
 \end{abstract}
 
 \begin{IEEEkeywords}
-component; formatting; style; styling;
-
+  coverage; requirement completeness; formal verification; traceability; support set;
 \end{IEEEkeywords}
 
 \IEEEpeerreviewmaketitle
 
 \mike{Note: start with a quote on requirements completeness by Boehm or other eminence}
 
-\mike{Note: mine traceability paper for ideas: abstract notion of proof?   Distinction between proof and entailment?  }
-
-\mike{Start from (a variant of) the formalism from the RE paper.  Then use inductive validity cores as an {\em implementation} of this idea, again just like the RE paper.  Bring in the IVC formalism only when we describe it as an ``implementation'' of our general idea.} 
+%\mike{Note: mine traceability paper for ideas: abstract notion of proof?   Distinction between proof and entailment?  }
+%
+%\mike{Start from (a variant of) the formalism from the RE paper.  Then use inductive validity cores as an {\em implementation} of this idea, again just like the RE paper.  Bring in the IVC formalism only when we describe it as an ``implementation'' of our general idea.}
 
 
 \input{introduction}
@@ -236,6 +243,8 @@ component; formatting; style; styling;
 \input{experiments}
 
 \input{results}
+
+\input{discussion}
 
 \input{related}
 

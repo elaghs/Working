@@ -1,0 +1,19 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{benchmarks}
+{BENCHMARKS??} \url{FILL OUT}
+
+\bibitem{jkind}
+{JKind}. \url{http://loonwerks.com/tools/jkind.html}
+
+\bibitem{expr}
+{Set of Support}.
+  \url{https://github.com/elaghs/Working/tree/master/support/experiments}
+
+\bibitem{setofsupp}
+Ghassabani, E., Gacek, A., W.~Whalen, M.: Efficient generation of set of
+  support for safety properties using unsat cores and induction  (Feb 2016)
+
+\end{thebibliography}

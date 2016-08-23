@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 from matplotlib.pyplot import cm
 from operator import itemgetter
 import numpy as np
+import xml.etree.cElementTree as ET
   
 MINING_DIR = 'mining'
 ANALYSES_DIR = 'ivc_analyses' 
@@ -65,10 +66,54 @@ for i, item in enumerate(uc_ivcs):
 must_to_ucbf = []
 for i, item in enumerate(must_sets):
     must_to_ucbf.append(float(item)/float(ucbf_ivcs[i]))
+    
+    
+    
+    
+#
+# Extract results
+#
+initial = [] 
+for file in models: 
+    t = ''
+    tree = ET.ElementTree(file = os.path.join('numOfEq', file + '_NUMEQ.xml'))
+    for elem in tree.iter(tag = 'InitialNumberOfEqs'):
+        initial.append(float(elem.text))  
+
+cs_uc = []
+for i, item in enumerate(uc_ivcs):
+    cs_uc.append(float(item)/initial[i])
+    
+cs_ucbf = []
+for i, item in enumerate(ucbf_ivcs):
+    cs_ucbf.append(float(item)/initial[i])
+    
+cs_must = []
+for i, item in enumerate(must_sets):
+    cs_must.append(float(item)/initial[i])    
 
 #
 # Compute min, max, avg, std deviation
 # 
+
+
+writer = open(os.path.join(ANALYSES_DIR, 'coverage_score.txt'), 'a')
+writer.write('\nmin in UC: ' + str(min(cs_uc)))
+writer.write('\nmax in UC: ' + str(max(cs_uc)))
+writer.write('\nstdev in UC: ' + str(np.nanstd(cs_uc)))
+writer.write('\naverage  in UC: ' + str(np.nanmean(cs_uc))) 
+writer.write('\n-----------------------------------------------------------------') 
+writer.write('\nmin in UCBF: ' + str(min(cs_ucbf)))
+writer.write('\nmax in UCBF: ' + str(max(cs_ucbf)))
+writer.write('\nstdev in UCBF: ' + str(np.nanstd(cs_ucbf)))
+writer.write('\naverage in UCBF: ' + str(np.nanmean(cs_ucbf))) 
+writer.write('\n------------------------------------------------------------------') 
+writer.write('\nmin in IVC_MUST: ' + str(min(cs_must)))
+writer.write('\nmax in IVC_MUST: ' + str(max(cs_must)))
+writer.write('\nstdev in IVC_MUST: ' + str(np.nanstd(cs_must)))
+writer.write('\naverage in IVC_MUST: ' + str(np.nanmean(cs_must)))  
+writer.close() 
+
 
 
 writer = open(os.path.join(ANALYSES_DIR, 'coverage_analyses.txt'), 'a')

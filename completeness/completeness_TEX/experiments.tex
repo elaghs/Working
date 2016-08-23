@@ -1,2 +1,33 @@
 \section{Experiments}
 \label{sec:experiments}
+
+We would like to evaluate both the {\em efficiency} and {\em
+  effectiveness} of the three described algorithms: \ucbfalg, \ucalg, and \mustalg. Therefore, we investigate the following research questions:
+\begin{itemize}
+    \item \textbf{RQ1:} How expensive is the coverage analysis using the \ucalg, \mustalg, and \ucbfalg algorithms?
+    \item \textbf{RQ2:} How hard are different metrics to satisfy ($\psi_{sos}$ vs $\psi_{sm}$)?  And, what is the relationship between the coverage scores obtained from different notions and provability.
+\end{itemize}
+
+\subsection{Experimental Setup}
+
+In order to compare our new coverage notion ($\psi_{sos}$) with the previous one ($\psi_{sm}$), we designed an experiment from a suite of 700 Lustre models developed
+as a benchmark suite for~\cite{Hagen08:FMCAD}. Besides, we augmented this suite
+with 81 additional models from recent verification projects including
+avionics and medical devices~\cite{QFCS15:backes,hilt2013}. Most of
+the benchmark models from~\cite{Hagen08:FMCAD} are small (10kB or less,
+with 6-40 equations) and contain a range of hardware benchmarks and
+software problems involving counters. The additional models are much
+larger: around 80kB with over 500 equations. We added the new
+benchmarks to better check the scalability for the tools. Efficiency is computed in terms of wall-clock time: how
+much overhead does the different algorithms introduce? Minimality is
+determined by the size of the IVC sets: sets with a smaller number of
+elements are preferred to sets with a larger number of artifacts. 
+
+Each benchmark model has a single property to analyze.  For our purposes, we are only interested in models with a {\em valid} property (though it is perhaps worth noting that there is no additional computation---and thus no overhead---using the JKind IVC options for {\em invalid} properties).  In our benchmark set, 295 models yield counterexamples, and 10 additional models are neither provable nor yield counterexamples in our test configuration.  The benchmark suite therefore contains 476 models with valid properties, which we use as our test subjects.
+
+JKind supports two different inductive algorithms: $k$-induction and PDR, and a ``fastest'' mode, that runs both algorithms in parallel and terminates when any of them finds a proof. For each test model, we computed \ucalg, \ucbfalg, and \mustalg in a configuration with
+the Z3 solver and the fastest mode of JKind. The experiments
+were run on an  Intel(R) Core(TM) i5-4690, 3.50GHz,
+16 GB memory machine.\footnote{The benchmarks, all raw experimental results,
+  and computed data are available on \cite{expr}.}
+

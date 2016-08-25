@@ -4,7 +4,9 @@
 \newcommand{\satisfies}{\vdash_{\!\!s}}
 \newcommand{\nsatisfies}{\nvdash_{\!\!s}}
 
-To start formalization, we define \emph{provability} abstractly from a set of model elements.  We represent the implementation model as a set of formulas $\Gamma$  and the set of requirements $\Delta$.  Then given $T \subseteq \Gamma$ and $e \in \Delta$, we use the notation $T \vdash e$ to mean that $e$ is \emph{provable} given the set $T$.  We assume that the provability relation $\vdash$ is monotonic on the subset relation over $\Gamma$, that is, if $S \subseteq S' \subseteq \Gamma$ and $S \vdash r$, then $S' \vdash r$.  The monotonicity of the satisfaction relation means that, unless {\em all} elements of the implementation $\Gamma$ are required for a proof, there are multiple implementation sets $S \subset S' \subset \ldots \subset \Gamma$ that can satisfy a given requirement $r$.  However, we are primarily interested in {\em minimal} sets that satisfy $r$; tracing a requirement to the entire implementation is not particularly enlightening.  We call a minimal set of model elements a \emph{support set} for that requirement, and define the $SOS$ relation to associate support sets to requirements.
+To start formalization, we define \emph{provability} abstractly from a set of model elements.  We represent the implementation model as a set of formulas $\Gamma$  and the set of requirements $\Delta$.
+\footnote{In the example in Section \ref{sec:example}, $\Gamma = \{{\tt P}, {\tt x}, {\tt c1}, {\tt c2}, {\tt c3}, {\tt r1}, {\tt r2}\}$ and $\Delta = \{{\tt P}\}$.}
+Then given $T \subseteq \Gamma$ and $e \in \Delta$, we use the notation $T \vdash e$ to mean that $e$ is \emph{provable} given the set $T$.  We assume that the provability relation $\vdash$ is monotonic on the subset relation over $\Gamma$, that is, if $S \subseteq S' \subseteq \Gamma$ and $S \vdash r$, then $S' \vdash r$.  The monotonicity of the satisfaction relation means that, unless {\em all} elements of the implementation $\Gamma$ are required for a proof, there are multiple implementation sets $S \subset S' \subset \ldots \subset \Gamma$ that can satisfy a given requirement $r$.  However, we are primarily interested in {\em minimal} sets that satisfy $r$; tracing a requirement to the entire implementation is not particularly enlightening.  We call a minimal set of model elements a \emph{support set} for that requirement, and define the $SOS$ relation to associate support sets to requirements.
 
 $$ \ SOS(r, S) \equiv S \vdash r~ \land   (\neg\exists S'\ .\ S' \subset S \wedge S' \vdash r) $$
 
@@ -13,7 +15,7 @@ $SOS$ maps a requirement to a support set. However, there could be many support 
 
 $$ ASOS(r) \equiv  \{\ S | S \subseteq \Gamma \land (r,S) \in SOS\ \} $$
 
-In the example in Fig. \ref{fig:ex}, as visualized in part (b), 
+In the example in Fig. \ref{fig:ex}, as visualized in part (b),
 $ASOS ({\tt P}) = \{\{{\tt P}, {\tt c2}, {\tt c3}\}, \{{\tt P}, {\tt x}, {\tt c3}\}\}$. The set of $ASOS$-es for all requirements represents the complete traceability of the system. Establishing $ASOS$ for a requirement, one gets a clear picture of the all possible ways that requirement is satisfied. This information helps categorize each target artifact into one of the following groups for that requirement:
 
 \begin{itemize}
@@ -27,7 +29,7 @@ $ASOS ({\tt P}) = \{\{{\tt P}, {\tt c2}, {\tt c3}\}, \{{\tt P}, {\tt x}, {\tt c3
   \item \textbf{IRRELEVANT} elements - target artifacts that are not in any of the support sets. $$IRR(r) = \Gamma \setminus (\bigcup ASOS (r))$$
 \end{itemize}
 
-Given requirement $r$, functions MUST, MAY, and IRR partition set $\Gamma$ into three disjoint sets \emph{must}, \emph{may}, and \emph{irrelevant}, respectively. This categorization helps to identify the role and relevance of each target artifact in satisfying a requirement. The \emph{must} set contains those target artifacts that are absolutely necessary for the requirement satisfaction. Hence, any change to these elements will most likely impact on each other. On the other hand, elements in the \emph{may} set indicate those target artifacts that satisfy the requirement in one of the possible ways.  Any change to just one of these elements will not affect the satisfaction of that requirement. The IRR function maps a requirement to the elements that never affect the satisfaction of the requirement \cite{Murugesan16:renext}. As an example, the relationships are illustrated graphically in Fig.~\ref{fig:ex} (b). As you can see, in this example, 
+Given requirement $r$, functions MUST, MAY, and IRR partition set $\Gamma$ into three disjoint sets \emph{must}, \emph{may}, and \emph{irrelevant}, respectively. This categorization helps to identify the role and relevance of each target artifact in satisfying a requirement. The \emph{must} set contains those target artifacts that are absolutely necessary for the requirement satisfaction. Hence, any change to these elements will most likely impact on each other. On the other hand, elements in the \emph{may} set indicate those target artifacts that satisfy the requirement in one of the possible ways.  Any change to just one of these elements will not affect the satisfaction of that requirement. The IRR function maps a requirement to the elements that never affect the satisfaction of the requirement \cite{Murugesan16:renext}. As an example, the relationships are illustrated graphically in Fig.~\ref{fig:ex} (b). As you can see, in this example,
 \emph{must} $= \{ {\tt P}, {\tt c3}\}$ ,
 \emph{may} $= \{ {\tt x}, {\tt c2}\}$, and \emph{irrelevant} $= \{ {\tt c1}, {\tt r1}, {\tt r2}\}$.
 
@@ -58,22 +60,22 @@ In general, requirements completeness can be defined with regard to the notion o
 \end{definition}
 
 For the sake of simplicity, we refer to the coverage function
-formalized in Definition \ref{def:coverage1} as $\psi_{sm}$. 
+formalized in Definition \ref{def:coverage1} as $\psi_{sm}$.
 Back to our example, $\psi_{sm}$ only considers {\tt P} and {\tt c3} as covered in the model shown in Fig. \ref{fig:ex}.
 
 Using $\psi_{sm}$, the coverage score of specification $r$ is computed by $$\frac{\sum_{\varphi \in \Gamma} f_m (\Gamma \setminus \{ \varphi \}) \nvdash r}{|\Gamma|}$$
-Usually, a mutation is an atomic change to the design whose effect is not masked by other modifications, which means simultaneous mutations may lead to masking the changes. However,
+Usually, a mutation is an atomic change to the design whose effect is not masked by other modifications, which means simultaneous mutations may result in masking the changes. However,
 it is possible to define the coverage notion with regard to all possible mutations, although it would be also very expensive and impractical \cite{chockler2001practical}. \ela{Mike, is the citation correct?}.
 For a coverage function based on all mutations, the coverage score is calculated by
 $$ \frac{\sum_{S \in M} f_m (S) \nvdash r}{|\Gamma| |M|}$$
 
-Since coverage is quite well-studied in testing, to compare it against the corresponding notions in formal verification, it is worth pointing out one of the most common coverage notions in testing known as \emph{decision coverage (DC)}, where a decision is considered as a boolean expression.  Given a test suit $T$, DC checks if every decision has taken all possible outcomes (i.e. $true$ and $false$) at least once. In testing, user has to furnish each requirement with some test cases, which is formalized as $R_m : \Delta \rightarrow 2^T$. Then coverage is measured using an over-approximation $T_m : T \times 2^\Gamma \times 2^\Delta \rightarrow 2^\Gamma$ as follows: $$\frac{|\bigcup_{t \in T} T_m (t, \Gamma)|}{|\Gamma|}$$ \ela{cite the paper Mike told. Also I'm not so sure of what I wrote. please verify.}
+Since coverage is quite well-studied in testing, to compare it against the corresponding notions in formal verification, it is worth pointing out one of the most common coverage metrics known as \emph{decision coverage (DC)}, where a decision is considered as a boolean expression.  Given a test suit $T$, DC checks if every decision has taken all possible outcomes (i.e. $true$ and $false$) at least once. In testing, user has to furnish each requirement with some test cases, which is formalized as $R_m : \Delta \rightarrow 2^T$. Then coverage is measured using an over-approximation $T_m : T \times 2^\Gamma \times 2^\Delta \rightarrow 2^\Gamma$ as follows \cite{chelenski1994oapplicability, schuler_assessing_2011, murugesan2015we}: $$\frac{|\bigcup_{t \in T} T_m (t, \Gamma)|}{|\Gamma|}$$
 
-A common problem with this notion of coverage is masking: 
+A common problem with this metric is masking:
 the effect of a change in a variable cannot be observed in the output. To illustrate, consider the example in Fig. \ref{fig:ex}; suppose we are provided with
-test suite \{\{{\tt in1} = \emph{true}, {\tt in2} = \emph{false}\}, 
-\{{\tt in1} = \emph{false}, {\tt in2} = \emph{false}\}\}. The change in the value of 
-{\tt in1} is masked by {\tt c1}. This problem causes the coverage method reports something covered 
+test suite \{\{{\tt in1} = \emph{true}, {\tt in2} = \emph{false}\},
+\{{\tt in1} = \emph{false}, {\tt in2} = \emph{false}\}\}. The change in the value of
+{\tt in1} is masked by {\tt c1}. This problem causes the coverage method reports something covered
 while it actually does not affect the output at all.
 
 

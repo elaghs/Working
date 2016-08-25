@@ -33,18 +33,6 @@ And, the output of \mustalg represents covered design artifacts according to Def
 \label{alg:uc}
 \end{algorithm}
 
-We have implemented the three algorithms introduced in this section in JKind \cite{jkind}, which is an infinite-state model checker for safety properties. JKind proves safety properties using multiple cooperative engines in parallel including k-induction \cite{SheeranSS00}, property directed reachability \cite{Een2011:PDR}, and template-based lemma generation \cite{Kahsai2011}. JKind accepts
-Lustre programs written over the theory of linear integer and real
-arithmetic. In the back-end, JKind uses an SMT solver such as
-Z3 \cite{DeMoura08:z3}, Yices \cite{Dutertre06:yices},
-MathSAT \cite{Cimatti2013:MathSAT}, or SMTInterpol \cite{Christ2012:SMTInterpol}.
-JKind works on multiple properties simultaneously. When a
-property is proven and IVC generation is enabled, an additional
-parallel engine executes Algorithm \ref{alg:uc} to generate a nearly minimal
-IVC (or support) set.
-
-
-
 \begin{algorithm}
   \SetKwInOut{Input}{input}
   \SetKwInOut{Output}{output}
@@ -80,3 +68,13 @@ IVC (or support) set.
 \caption{\mustalg: an algorithm to compute $MUST(r)$ for a given $r$}
 \label{alg:must}
 \end{algorithm} 
+
+We have implemented the three algorithms introduced in this section in JKind \cite{jkind}, which is an infinite-state model checker for safety properties. JKind proves safety properties using multiple cooperative engines in parallel including k-induction \cite{SheeranSS00}, property directed reachability \cite{Een2011:PDR}, and template-based lemma generation \cite{Kahsai2011}. JKind accepts
+Lustre programs written over the theory of linear integer and real
+arithmetic. In the back-end, JKind uses an SMT solver such as
+Z3 \cite{DeMoura08:z3}, Yices \cite{Dutertre06:yices},
+MathSAT \cite{Cimatti2013:MathSAT}, or SMTInterpol \cite{Christ2012:SMTInterpol}.
+JKind works on multiple properties simultaneously. When a
+property is proven and IVC generation is enabled, an additional
+parallel engine executes Algorithm \ref{alg:uc} to generate a nearly minimal
+IVC (or support) set.

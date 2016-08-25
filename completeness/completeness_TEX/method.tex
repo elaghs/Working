@@ -55,7 +55,7 @@ For the sake of simplicity, we refer to the coverage function
 formalized in Definition \ref{def:coverage-ivc} as $\psi_{sos}$.
 
 We call Definition \ref{def:coverage-ivc} \emph{justifiable} because, with a set of the model elements marked as covered by $\psi_{sos}$, every $r \in \Delta$ is provable, whereas a set of covered elements obtained from $\psi_{sm}$ is not sufficient to reconstruct the proofs of requirements in $\Delta$.\footnote{Throughout the paper, when a coverage function is justifiable, like $\psi_{sos}$, it is said that it preserves provability of the requirement.}
-This leads the coverage score for $\psi_{sos}$ to be usually higher than the score for $\psi_{sm}$. Coverage score for $\psi_{sos}$ can be calculated as $$\frac{|S|}{|\Gamma|}$$.
+This leads the coverage score for $\psi_{sos}$ to be usually higher than the score for $\psi_{sm}$. Coverage score for $\psi_{sos}$ can be calculated with $$\frac{|S|}{|\Gamma|}$$
 
 \begin{theorem}
 \label{thm:cov-must}
@@ -66,11 +66,13 @@ and \\ $R = \bigwedge_{i} {r_i \in \Delta}$, $C \nvdash R$.
 Immediate from Lemma \ref{lem:must-not-enough} and Lemma \ref{lem:must-coverage}.
 \end{proof}
 \vspace{2mm}
-Theorem \ref{thm:cov-must} demonstrates that $\psi_{sm}$ does not preserve provability. 
-With Theorem \ref{thm:cov-sos} and Corollary \ref{cor:cov-sos}, 
-we show $\psi_{sos}$ maintains provability of all the requirements. 
-Theorem \ref{thm:sos-r} proves the sound relationship 
-between $\psi_{sos}$ and minimal support sets.
+Theorem \ref{thm:cov-must} demonstrates that $\psi_{sm}$ does not preserve provability.
+With Theorem \ref{thm:cov-sos} and Corollary \ref{cor:cov-sos},
+we show $\psi_{sos}$ maintains provability of all the requirements.
+Theorem \ref{thm:sos-r} proves the sound relationship
+between $\psi_{sos}$ and minimal support sets. 
+It emphasizes that $\psi_{sos}$ is accurate meaning that it does not result in false positives 
+(i.e. does not assign \emph{actual} uncovered elements to covered) because $SOS$ is \emph{minimal}.
 
 \begin{theorem}
 \label{thm:cov-sos}
@@ -104,14 +106,14 @@ $S \setminus \{\varphi \} \nvdash r$.
 Immediate from Corollary \ref{cor:cov-sos} and the definition of $ASOS$ and provability.
 \end{proof}
 \vspace{2mm}
-To illustrate concepts described in this section, we use the the example in Fig. \ref{fig:ex}; 
+To illustrate concepts described in this section, we use the the example in Fig. \ref{fig:ex};
 using $\psi_{sos}$, either \{{\tt P}, {\tt c2}, {\tt c3}\} or
  \{{\tt P}, {\tt x}, {\tt c3}\} will be considered as covered. Note that
- $\psi_{sos}$ cannot detect {\tt c2} and {\tt x} as covered simultaneously. 
- The fact that which of them will be marked as covered depends on 
- the path chosen by the solver to prove {\tt P}. In other words, 
- if the proof of {\tt P} is established through the elements of \{{\tt P}, {\tt x}, {\tt c3}\}, 
- then {\tt x} is covered. Otherwise, since there are only two proof paths (or $SOS({\tt P})$-es) 
+ $\psi_{sos}$ cannot detect {\tt c2} and {\tt x} as covered simultaneously.
+ The fact that which of them will be marked as covered depends on
+ the path chosen by the solver to prove {\tt P}. In other words,
+ if the proof of {\tt P} is established through the elements of \{{\tt P}, {\tt x}, {\tt c3}\},
+ then {\tt x} is covered. Otherwise, since there are only two proof paths (or $SOS({\tt P})$-es)
  here, {\tt c2} would be considered covered. However, this is less restrictive than $\psi_{sm}$ whereby only $MSUT({\tt P})$ is covered. In Section \ref{sec:discussion}, we will provide some other coverage notions to address this issue.
  Another important difference between $\psi_{sm}$ and $\psi_{sos}$ is that, unlike $\psi_{sm}$,
  $\psi_{sos}$ preserves provability. In our example, no matter which $SOS$ will be used;

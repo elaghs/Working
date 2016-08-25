@@ -28,8 +28,9 @@ always true for all input traces. For example, the property for
 Figure~\ref{fig:ex} is {\tt P}, which is a valid property.
 
 In the example, the structure of the model allows property {\tt P} to be proved in two ways.
-note that {\tt c1}, {\tt r1}, and {\tt r2} do not affect the validity of {\tt P}, which means 
+note that {\tt c1}, {\tt r1}, and {\tt r2} do not affect the validity of {\tt P}, which means
 if we remove these equations making {\tt c1}, {\tt r1}, and {\tt r2} input, still {\tt P} will be valid. 
+In other words, no matter what value these equations have, the change in their value is not observable in {\tt P}.
 However, we always need equation {\tt c3} to prove {\tt P}. In addition to {\tt c3}, in order for {\tt P} to be valid either {\tt c2} or {\tt x} is required.
 
 In the rest of the paper, we will refer to this example while explaining different coverage notions.

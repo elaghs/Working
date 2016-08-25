@@ -5,7 +5,7 @@ We would like to evaluate both the {\em efficiency} and {\em
   effectiveness} of the three described algorithms: \ucbfalg, \ucalg, and \mustalg. Therefore, we investigate the following research questions:
 \begin{itemize}
     \item \textbf{RQ1:} How expensive is the coverage analysis using the \ucalg, \mustalg, and \ucbfalg algorithms?
-    \item \textbf{RQ2:} How hard are different metrics to satisfy ($\psi_{sos}$ vs $\psi_{sm}$)?  And, what is the relationship between the coverage scores obtained from different notions and provability.
+    \item \textbf{RQ2:} How hard are different metrics to satisfy ($\psi_{sos}$ vs $\psi_{sm}$)?  And, what is the relationship between the coverage scores obtained from different notions and provability?
 \end{itemize}
 
 \subsection{Experimental Setup}
@@ -21,7 +21,7 @@ larger: around 80kB with over 500 equations. We added the new
 benchmarks to better check the scalability for the tools. Efficiency is computed in terms of wall-clock time: how
 much overhead does the different algorithms introduce? Minimality is
 determined by the size of the IVC sets: sets with a smaller number of
-elements are preferred to sets with a larger number of artifacts. 
+elements are preferred to sets with a larger number of artifacts.
 
 Each benchmark model has a single property to analyze.  For our purposes, we are only interested in models with a {\em valid} property (though it is perhaps worth noting that there is no additional computation---and thus no overhead---using the JKind IVC options for {\em invalid} properties).  In our benchmark set, 295 models yield counterexamples, and 10 additional models are neither provable nor yield counterexamples in our test configuration.  The benchmark suite therefore contains 476 models with valid properties, which we use as our test subjects.
 

@@ -2,8 +2,8 @@
 \label{sec:discussion}
 
 In Section \ref{sec:method}, we have proposed a new coverage notion that
-is more practical to use. Although the minimality of $SOS$ makes $\psi_{sos}$ accurate
- both in terms of preserving provability and not having false positives, as discussed, the exact implementation of $\psi_{sos}$ is based on the \ucbfalg algorithm, which is as nearly expensive as the \mustalg algorithm for $\psi_{sm}$.
+is more practical to use. Although the minimality of $SOS$ makes $\psi_{sos}$ accurate 
+in terms of both preserving provability and not having false positives, as discussed, the exact implementation of $\psi_{sos}$ is based on the \ucbfalg algorithm, which is as nearly expensive as the \mustalg algorithm for $\psi_{sm}$.
  To alleviate this issue, we came up with an efficient implementation for $\psi_{sos}$, i.e. \ucalg \cite{Ghass16}, 
  which is an over-approximation and might not be always accurate in terms of minimality. 
  However, the idea of IVCs or support sets makes
@@ -12,7 +12,7 @@ coverage notion is an over-approximation, when the coverage
  is high, it does not necessarily mean the quality of
  the specification (or test suite) is high, or when it is an under-approximation, a low coverage does not always mean the specification is of poor quality.
 
- As mentioned in Section \ref{sec:impl}, support sets are derived from an inductive invariant; in other words, they are built upon the proof of the validity of a given property. One interesting fact about proofs
+ As mentioned in Section \ref{sec:impl}, support sets are derived from inductive invariants; in other words, they are built upon the proof of the validity of a given property. One interesting fact about proofs
   is that a given property could be proved from different proof paths. That's why we defined $ASOS(r)$ in Section \ref{sec:background}. The $ASOS$ set gives a clear picture of various ways a property is satisfied. By getting all the support sets for all requirements of the system and categorizing them, one can find if there are target artifacts that do not trace to any requirement: set $\bigcap \{IRR (r) | r \in \Delta \}$.  If this set is non-empty, it is a possible indication of ``gold plating" or missing requirements. That is to say, it helps to assess if the requirements of the system describe all the behaviors of the system. Being able to measure the coverage of requirements over the model is crucial in the safety critical system domain.
 
 Very recent, as yet unpublished, work has focused on the

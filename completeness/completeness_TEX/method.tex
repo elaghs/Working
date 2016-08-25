@@ -1,7 +1,7 @@
 \section{Method}
 \label{sec:method}
 
-We believe Definition \ref{def:coverage1} characterizes coverage in a way which is both expensive to compute and difficult to satisfy (i.e. it usually leads to low coverage scores). This section proposes a novel notion of coverage which is not only more efficient and practical to compute but also  is an immediate guidance of what is necessary for specification. 
+We believe Definition \ref{def:coverage1} characterizes coverage in a way which is both expensive to compute and difficult to satisfy (i.e. it usually leads to low coverage scores). This section proposes a novel notion of coverage which is not only more efficient and practical to compute but also  is an immediate guidance of what is necessary for specification.
 
 First, let state the relationship between the most recent coverage notions in formal verification and the idea of support sets.
 
@@ -40,7 +40,7 @@ First, let state the relationship between the most recent coverage notions in fo
 \end{proof}
 \vspace{2mm}
 
-In light of Lemma \ref{lem:must-coverage}, the coverage score of specification $r$ obtained based on $\psi_{sm}$ can be also calculated by 
+In light of Lemma \ref{lem:must-coverage}, the coverage score of specification $r$ obtained based on $\psi_{sm}$ can be also calculated by
 $$\frac{|MUST(r)|}{|\Gamma|}$$
 Therefore, for set of requirements $\Delta$, the coverage score is computed by $$\frac{|MUST(R)|}{|\Gamma|},\xspace  R = \bigwedge_{i} {r_i \in \Delta}$$
 
@@ -54,13 +54,13 @@ Therefore, for set of requirements $\Delta$, the coverage score is computed by $
 For the sake of simplicity, we refer to the coverage function
 formalized in Definition \ref{def:coverage-ivc} as $\psi_{sos}$.
 
-We call Definition \ref{def:coverage-ivc} \emph{justifiable} because, with a set of the model elements marked as covered by $\psi_{sos}$, every $r \in \Delta$ is provable, whereas a set of covered elements obtained from $\psi_{sm}$ is not sufficient to reconstruct the proofs of requirements in $\Delta$.\footnote{Throughout the paper, when a coverage function is justifiable, like $\psi_{sos}$, we say it preserves provability of the requirement.}
+We call Definition \ref{def:coverage-ivc} \emph{justifiable} because, with a set of the model elements marked as covered by $\psi_{sos}$, every $r \in \Delta$ is provable, whereas a set of covered elements obtained from $\psi_{sm}$ is not sufficient to reconstruct the proofs of requirements in $\Delta$.\footnote{Throughout the paper, when a coverage function is justifiable, like $\psi_{sos}$, it is said that it preserves provability of the requirement.}
 This leads the coverage score for $\psi_{sos}$ to be usually higher than the score for $\psi_{sm}$. Coverage score for $\psi_{sos}$ can be calculated as $$\frac{|S|}{|\Gamma|}$$.
 
 \begin{theorem}
 \label{thm:cov-must}
-Given $C = \{\varphi | \varphi \in \Gamma \wedge \psi_{sm} \preccurlyeq \varphi \}$ \\ 
-and $R = \bigwedge_{i} {r_i \in \Delta}$, $C \nvdash R$.
+Given $C = \{\varphi | \varphi \in \Gamma \wedge \psi_{sm} \preccurlyeq \varphi \}$
+and \\ $R = \bigwedge_{i} {r_i \in \Delta}$, $C \nvdash R$.
 \end{theorem}
 \begin{proof}
 Immediate from Lemma \ref{lem:must-not-enough} and Lemma \ref{lem:must-coverage}.
@@ -69,14 +69,14 @@ Immediate from Lemma \ref{lem:must-not-enough} and Lemma \ref{lem:must-coverage}
 
 \begin{theorem}
 \label{thm:cov-sos}
-Given $C = \{\varphi | \varphi \in \Gamma \wedge  \psi_{sos} \preccurlyeq \varphi \}$ \\
-and $R = \bigwedge_{i} {r_i \in \Delta}$, $C \vdash R$.
+Given $C = \{\varphi | \varphi \in \Gamma \wedge  \psi_{sos} \preccurlyeq \varphi \}$
+and \\ $R = \bigwedge_{i} {r_i \in \Delta}$, $C \vdash R$.
 \end{theorem}
 \begin{proof}
-By Definition, $\psi_{sos} \preccurlyeq \varphi_i$ implies that $\exists S_i \in ASOS(R)$. $\varphi_i \in S_i$. 
-In addition, since $(R, S_i) \in SOS \Rightarrow S_i \vdash R$, and the union of such $S_i$ sets 
-forms $C$, 
-$C \vdash R$. 
+By Definition, $\psi_{sos} \preccurlyeq \varphi_i$ implies that $\exists S_i \in ASOS(R)$. $\varphi_i \in S_i$.
+In addition, since $(R, S_i) \in SOS \Rightarrow S_i \vdash R$, and the union of such $S_i$ sets
+forms $C$,
+$C \vdash R$.
 \end{proof}
 \vspace{2mm}
 
@@ -92,7 +92,7 @@ Immediate from Theorem \ref{thm:cov-sos}.
 
 \begin{theorem}
 \label{thm:sos-r}
-If $\psi_{sos} \preccurlyeq \varphi$ then $\exists r \in \Delta$ and $S \in ASOS(r)$. 
+If $\psi_{sos} \preccurlyeq \varphi$ then $\exists r \in \Delta$, $S \in ASOS(r)$.
 $S \setminus \{\varphi \} \nvdash r$.
 \end{theorem}
 \begin{proof}

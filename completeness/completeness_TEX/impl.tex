@@ -1,15 +1,15 @@
 \section{Implementation}
-\label{sec:impl} 
+\label{sec:impl}
 
 To implement our method, we have made use of the technique proposed in \cite{Ghass16} for the efficient computation of IVCs, which are the same as elements of a support set. In \cite{Ghass16}, there are two detailed algorithms for computing minimal support sets: (1) Algorithm \ucbfalg that computes a truly minimal support set for a given property, which is expensive. (2) Algorithm \ucalg that computes support sets fairly close to minimal much more efficiently. In this section, we provide a high-level representation of these algorithms. Intuitively, Algorithms \ref{alg:uc},
-first obtains an inductive invariant from the inductive proof of 
-property $r$ (line 1 in Algorithm \ref{alg:uc}). Then, using function $map\_to\_design$, it 
-computes the support set of $r$ \footnote{The way that support set
-(or inductive validity cores) can be produced is described in \cite{Ghass16}. Here we abstract away the details.}. 
+first obtains an inductive invariant from the inductive proof of
+property $r$ (line 1 in Algorithm \ref{alg:uc}). Then, using function $map\_to\_design$, it
+computes the (closely) minimal support set of $r$ \footnote{The way that support set
+(or inductive validity cores) can be produced is described in \cite{Ghass16}. Here we abstract away the details.}.
 
-Since \ucalg might not produce a truly minimal support set, 
-Algorithm \ref{alg:ucbf}, \ucbfalg, includes a minimization process that 
-operates on the result of \ucalg. 
+Since \ucalg might not produce a truly minimal support set,
+Algorithm \ref{alg:ucbf}, \ucbfalg, includes a minimization process that
+operates on the result of \ucalg.
 
 Algorithm \ref{alg:must} is also an efficient way of computing the \emph{must} set of a given property using \ucalg. Note that, as discussed in Section \ref{sec:method}, the
 output of \ucalg (as well as \ucbfalg) for $\Gamma \vdash R$ pinpoints the covered design elements
@@ -77,4 +77,4 @@ IVC (or support) set.
   \Return{M}
 \caption{\mustalg: an algorithm to compute $MUST(r)$ for a given $r$}
 \label{alg:must}
-\end{algorithm}
+\end{algorithm} 

@@ -102,7 +102,7 @@
 \usepackage{fixltx2e}
 \usepackage[ruled, vlined, linesnumbered]{algorithm2e}
 \usepackage{stfloats}
-\usepackage{url} 
+\usepackage{url}
 \usepackage{xspace}
 
 \hyphenation{op-tical net-works semi-conduc-tor}
@@ -207,12 +207,27 @@ line 4: Email: name@xyz.com}
 
 
 \begin{abstract}
-The abstract goes here. DO NOT USE SPECIAL CHARACTERS, SYMBOLS, OR MATH IN YOUR TITLE OR ABSTRACT.
+Requirements are the key part of any system design. And, the common goal in formal 
+verification is to verify the validity of the requirements. 
+Once the verification process is done, one perennial question is that have we specified enough requirements? In other words, oftentimes, we are in need of a method for judgment on the quality of a system
+specification. This question is akin to the problem of
+test suite adequacy in testing well-addressed by different coverage metrics. 
+However, in the context of property-based verification, coverage is more difficult to define and compute. 
+This paper proposes a novel coverage notion that determines 
+which parts of a design are necessary to establish the proof of a given specification, 
+whereby requirement adequacy is achieved when all the design artifacts are 
+essential in the satisfaction proof of the conjunction of all requirements.
+We present and implement an efficient algorithm for doing so based
+on inductive proofs of
+safety properties for sequential systems integrated into state-of-the-art SAT-based Model Checking. We compare/ benchmark
+ our method against the existing techniques in the literature. Besides, based on the idea of inductive validity cores, we sketch
+more complementary coverage notions. 
 
 \end{abstract}
 
 \begin{IEEEkeywords}
-  coverage; requirement completeness; formal verification; traceability; support set;
+  coverage; requirement completeness; formal verification; SAT-based model checking; 
+  inductive proofs; inductive validity cores;
 \end{IEEEkeywords}
 
 \IEEEpeerreviewmaketitle

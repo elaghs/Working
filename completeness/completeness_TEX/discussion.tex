@@ -3,10 +3,10 @@
 
 In Section \ref{sec:method}, we have proposed a new coverage notion that
 is more practical to use. Although the minimality of $SOS$ makes $\psi_{sos}$ accurate
- both in terms of preserving provability and not having false positives. However, as discussed, the exact implementation of $\psi_{sos}$ is based on the \ucbfalg algorithm, which is as nearly expensive as the \mustalg algorithm for $\psi_{sm}$. 
- To alleviate this issue, we came up with an efficient implementation for $\psi_{sos}$, i.e. the \ucalg algorithm \cite{Ghass16}, 
+ both in terms of preserving provability and not having false positives, as discussed, the exact implementation of $\psi_{sos}$ is based on the \ucbfalg algorithm, which is as nearly expensive as the \mustalg algorithm for $\psi_{sm}$.
+ To alleviate this issue, we came up with an efficient implementation for $\psi_{sos}$, i.e. \ucalg \cite{Ghass16}, 
  which is an over-approximation and might not be always accurate in terms of minimality. 
- However, the idea of IVCs or support sets make
+ However, the idea of IVCs or support sets makes
 it possible to have other coverage metrics in formal verification, which is beneficial, as with testing, because if a
 coverage notion is an over-approximation, when the coverage
  is high, it does not necessarily mean the quality of

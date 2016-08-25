@@ -9,7 +9,7 @@
 \end{center}
 \end{figure*}
 
-We will use the model in Figure~\ref{fig:ex} (a) as
+We will use the model in Fig.~\ref{fig:ex} (a) as
 a running example throughout the paper. This model is written in Lustre~\cite{Halbwachs91:lustre}, which is a synchronous dataflow language used as an input language for various model checkers. For our purposes, a Lustre program
 consists of 1) input variables, {\tt in1} and {\tt in2} in the example, 2) output
 variables, {\tt P} in the example, and 3) an
@@ -25,12 +25,12 @@ the behavior of the program under all possible input traces. Safety
 properties over Lustre can then be expressed as Boolean expressions in
 Lustre. A safety property holds if the corresponding expression is
 always true for all input traces. For example, the property for
-Figure~\ref{fig:ex} is {\tt P}, which is a valid property.
+Fig.~\ref{fig:ex} is {\tt P}, which is a valid property.
 
 In the example, the structure of the model allows property {\tt P} to be proved in two ways.
-note that {\tt c1}, {\tt r1}, and {\tt r2} do not affect the validity of {\tt P}, which means
+Note that {\tt c1}, {\tt r1}, and {\tt r2} do not affect the validity of {\tt P}, which means
 if we remove these equations making {\tt c1}, {\tt r1}, and {\tt r2} input, still {\tt P} will be valid. 
-In other words, no matter what value these equations have, the change in their value is not observable in {\tt P}.
+In other words, no matter what value these equations have, any change in their value is not observable in the value of {\tt P}.
 However, we always need equation {\tt c3} to prove {\tt P}. In addition to {\tt c3}, in order for {\tt P} to be valid either {\tt c2} or {\tt x} is required.
 
 In the rest of the paper, we will refer to this example while explaining different coverage notions.

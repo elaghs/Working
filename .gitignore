@@ -45,3 +45,27 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+all_ivcs/experiments/experimental_results/first_run_with_smaller_timeout/all_ivcs_overhead.txt
+*.synctex
+*.log
+*.blg
+*.aux
+*.pdf
+*.bbl
+all_ivcs/experiments/experimental_results/first_run_with_smaller_timeout/all_ivcs_results_raw_data.zip
+all_ivcs/experiments/experimental_results/first_run_with_smaller_timeout/all_ivcs_timing_analyses.txt
+all_ivcs/experiments/experimental_results/first_run_with_smaller_timeout/all_ivcs_timing_analyses.png
+all_ivcs/experiments/experimental_results/first_run_with_smaller_timeout/all_ivcs_timing_analyses_all_sorted.png
+all_ivcs/allIvcs.pptx
+all_ivcs/experiments/experimental_results/first_run_with_smaller_timeout/Experimental Results_fist_run_with_smaller_timeout.pptx
+all_ivcs/experiments/experimental_results/first_run_with_smaller_timeout/all_minimization_info.txt
+all_ivcs/experiments/experimental_results/first_run_with_smaller_timeout/minimization_analyses_stdev_comparison.png
+all_ivcs/experiments/experimental_results/first_run_with_smaller_timeout/scaled_all_ivcs_timing.png
+all_ivcs/experiments/experimental_results/first_run_with_smaller_timeout/mining.zip
+support/support_TeX/source.zip
+support/support_TeX/figs/num_of_EQ_all_effective_slices.png
+support/support_TeX/figs/num_of_EQ_all.png
+support/presentations/jkind-support-set.pptx
+support/presentations/support-set.pptx
+support/support_TeX/figs/num_of_EQ_withoutAGREE.png
+completeness/completeness_TEX/README

@@ -99,4 +99,17 @@ $S \setminus \{\varphi \} \nvdash r$.
 Immediate from Corollary \ref{cor:cov-sos} and the definition of $ASOS$ and provability.
 \end{proof}
 \vspace{2mm}
-
+To illustrate concepts described in this section, we use the the example in Fig. \ref{fig:ex}; 
+using $\psi_{sos}$, either \{{\tt P}, {\tt c2}, {\tt c3}\} or
+ \{{\tt P}, {\tt x}, {\tt c3}\} will be considered as covered. Note that
+ $\psi_{sos}$ cannot detect {\tt c2} and {\tt x} as covered simultaneously. 
+ The fact that which of them will be marked as covered depends on 
+ the path chosen by the solver to prove {\tt P}. In other words, 
+ if the proof of {\tt P} is established through the elements of \{{\tt P}, {\tt x}, {\tt c3}\}, 
+ then {\tt x} is covered. Otherwise, since there are only two proof paths (or $SOS({\tt P})$-es) 
+ here, {\tt c2} would be considered covered. However, this is less restrictive than $\psi_{sm}$ whereby only $MSUT({\tt P})$ is covered. In Section \ref{sec:discussion}, we will provide some other coverage notions to address this issue.
+ Another important difference between $\psi_{sm}$ and $\psi_{sos}$ is that, unlike $\psi_{sm}$,
+ $\psi_{sos}$ preserves provability. In our example, no matter which $SOS$ will be used;
+ in both cases, the set of covered elements by $\psi_{sos}$ is sufficient to re-construct a proof of {\tt P}.
+ However, as you can see, the covered set of elements obtained from $\psi_{sm}$ is not
+ enough to establish a proof for the validity of {\tt P}.

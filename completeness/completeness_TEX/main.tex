@@ -211,13 +211,13 @@ Requirements are the key part of any system design. And, the common goal in form
 verification is to verify the validity of the requirements. 
 Once the verification process is done, one perennial question is that have we specified enough requirements? In other words, oftentimes, we are in need of a method for judgment on the quality of a system
 specification. This question is akin to the problem of
-test suite adequacy in testing well-addressed by different coverage metrics. 
+test suite adequacy in testing well-addressed with different coverage metrics. 
 However, in the context of property-based verification, coverage is more difficult to define and compute. 
 This paper proposes a novel coverage notion that determines 
 which parts of a design are necessary to establish the proof of a given specification, 
 whereby requirement adequacy is achieved when all the design artifacts are 
 essential in the satisfaction proof of the conjunction of all requirements.
-We present and implement an efficient algorithm for doing so based
+We present and implemented an efficient algorithm for quantifying requirements completeness based
 on inductive proofs of
 safety properties for sequential systems integrated into state-of-the-art SAT-based Model Checking. We compare/ benchmark
  our method against the existing techniques in the literature. Besides, based on the idea of inductive validity cores, we sketch
@@ -226,7 +226,7 @@ more complementary coverage notions.
 \end{abstract}
 
 \begin{IEEEkeywords}
-  coverage; requirement completeness; formal verification; SAT-based model checking; 
+  coverage; requirements completeness; formal verification; SAT-based model checking; 
   inductive proofs; inductive validity cores;
 \end{IEEEkeywords}
 
@@ -265,11 +265,11 @@ more complementary coverage notions.
 
 \input{conclusion}
 
-\section*{Acknowledgment}
-
-
-The authors would like to thank...
-more thanks here
+%\section*{Acknowledgment}
+%
+%
+%The authors would like to thank...
+%more thanks here
 
 
 \bibliographystyle{IEEEtran}

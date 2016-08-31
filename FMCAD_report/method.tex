@@ -1,0 +1,41 @@
+\section{Method}
+\label{sec:method}
+
+\newcommand{\bool}[0]{\mathit{bool}}
+\newcommand{\reach}[0]{\mathit{R}}
+\newcommand{\ite}[3]{\mathit{if}\ {#1}\ \mathit{then}\ {#2}\ \mathit{else}\ {#3}}
+
+%\subsection{Transition Systems and Safety Properties}
+
+Given a state space $S$, a transition system $(I,T)$ consists of an
+initial state predicate $I : S \to \bool$ and a transition step
+predicate $T : S \times S \to \bool$. Reachability for $(I, T)$ is defined as the smallest predicate $\reach : S \to \bool$ which satisfies the following formulas:
+\begin{gather*}
+  \forall s.~ I(s) \Rightarrow \reach(s) \\
+  \forall s, s'.~ \reach(s) \land T(s, s') \Rightarrow \reach(s')
+\end{gather*}
+A safety
+property $P : S \to \bool$ holds on a transition system if it holds on all
+reachable states, i.e., $\forall s.~ \reach(s) \Rightarrow P(s)$,
+written as $\reach \Rightarrow P$ for short. When this is the case, we
+write $(I, T)\vdash P$. Given $(I, T)\vdash P$, we
+want to know which parts of the system are necessary for satisfying
+the safety property. This is where the notion of {\em inductive validity cores} (IVC) comes to play; it looks at generalizing the original transition system while
+preserving a safety property.
+
+\begin{definition}{\emph{Inductive Validity Core:}}
+  \label{def:ivc}
+  Let $(I, T)\vdash P$. We say $S \subseteq
+  T$ is an {\em inductive validity core} set for $(I, T)\vdash P$ iff $(I,
+  S) \vdash P$.
+\end{definition}
+
+\begin{definition}{\emph{Minimal Inductive Validity Core:}}
+  \label{def:minimal-ivc}
+  An IVC set $S$ for $(I, T)\vdash P$ is minimal iff
+  there does not exist $M \subset S$ such that $M$ is an inductive validity core
+  for $(I, T)\vdash P$.
+\end{definition}
+
+Note that minimal inductive validity cores are not necessarily unique. However, inductive validity cores do have the monotonicity property: if $S_1 \subseteq S_2$ is a set of IVCs for $(I, T)\vdash P$ then $S_2$ is a
+  IVC set for $(I, T)\vdash P$. A minimal IVC set can be considered not only as a proof certificate that can be verified further by anyone, but also as an over-approximation of the model which abstracts away the parts that are not related to the proof.

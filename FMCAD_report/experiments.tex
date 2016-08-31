@@ -1,0 +1,32 @@
+\section{Discussion}
+\label{sec:disc} 	
+
+As earlier research, we designed and implemented an algorithm to efficiently derive a minimal IVC set for a given property \cite{Ghass16}. Recently we have been exploring the applications of this idea to different problem domains:
+\begin{itemize}
+  \item Vacuity Detection: The idea of syntactic vacuity detection (checking whether all subformulae within a property are necessary for its satisfaction) has been well studied.   However, even if a property is not syntactically vacuous, it may not require substantial portions of the model.  This in turn may indicate that either a.) the model is incorrectly constructed or b.) the property is weaker than expected.  We have seen several examples of this mis-specification in our verification work, especially when variables computed by the model are used as part of antecedents to implications. 
+  \item Completeness checking: Closely related to vacuity detection is the idea of completeness checking, which tries to quantify the quality of a set of requirements.  Based on the IVC idea, we have explored a novel technique for completeness checking and measuring coverage in formal verification, not yet published but available on \cite{expr}. 
+  \item Traceability: Certification standards for safety-critical systems such as DO-178C and MOD:00-55 usually require traceability matrices that map high-level requirements to lower-level requirements and (eventually) leaf-level requirements to code or models.  Using our proof-based approach, we are able to provide this information accurately and for free. Our work on this area, recently, has been published in \cite{Murugesan16:renext}.
+  \item Symbolic Simulation / Test Case Generation:  Model checkers are now often used for symbolic simulation and structural-coverage-based test case generation.  For either of these purposes, the model checker is supposed to produce a witness trace for a given coverage obligation using a ``trap property'' which is expected to be falsifiable.  In systems of sufficient size, there is often ``dead code'' that cannot ever be reached.  In this case, a proof of non-reachability is produced, and the IVC provides the reason why this code is unreachable.
+  \item Explanation of Inconsistency: One of the more difficult problems in applying formal verification involves inconsistency.  An inconsistent model is one in which the transition relation reaches a point of “deadlock”, where it is not possible to transition from some state.  Given a large model that is known to be inconsistent (e.g., it proves a syntactically invalid property), given all IVCs, we can isolate the portions of the model that are inconsistent. We are exploring the techniques that make use of the IVCs to address this issue.
+\end{itemize}
+
+We are examining the impact of multiple distinct IVCs on traceability
+research.  An initial paper on this work, which we call {\em complete traceability},
+has been accepted to~\cite{Murugesan16:renext}.  We are interested in diversity both
+in terms of regression analysis for testing and proof, as well as examining
+the underlying sources of diversity in our analysis models.  We suspect that
+in some cases, it indicates fault tolerance in the architecture under analysis,
+and in other cases it may indicate redundancy in requirements specifications
+for subcomponents.  To support a systematic investigation of diversity, we
+have investigated algorithms for exploring the space of IVCs, e.g., finding
+a minimum, rather than minimal IVC, or finding all IVCs. Very recent, as yet unpublished, work has focused on the
+generation of all distinct IVC sets, whose preliminary evaluation
+shows the overhead in discovering all IVC sets is a linear in the
+number of unique IVC set in the problem multiplied by the cost
+for finding a proof for a single IVC set \cite{allIvcs}. For complex models, such
+as the ones described in \cite {QFCS15:backes} and \cite{hilt2013}, it has been possible to
+find all IVCs for individual properties in a matter of minutes.
+Based on our preliminary results we expect computing all IVCs to be computationally feasible for complex models. In
+addition, we believe that it is possible to use the information
+from the set of all IVCs to more efficiently produce minimal
+IVCs.

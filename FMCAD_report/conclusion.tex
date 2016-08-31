@@ -1,0 +1,26 @@
+\section{Conclusions}
+\label{sec:conclusion}
+This paper has introduced the notion of inductive validity core (IVC), which
+appears to be a useful measure in relation to a valid safety property
+for inductive model checking. We have presented a novel algorithm for
+computing IVCs, published in \cite{Ghass16} and
+applicable to all forms of inductive SAT/SMT-based model checking
+including $k$-induction, PDR, and interpolation. We have implemented our IVC algorithm as part of the open source model
+checker JKind, and shown the algorithm requires only a
+small overhead in practice \cite{Ghass16, expr}. Our work has recently been integrated into the AADL/AGREE tool
+suite~\cite{QFCS15:backes, hilt2013}, which supports compositional
+reasoning about system architectures. A pilot project at Rockwell
+Collins is using the traceability information produced by the IVC
+support in the AGREE tool. Finally, We are in the process of
+comparing our approach against other approaches measuring completeness of
+requirements \cite{expr}.
+%
+
+%% \begin{itemize}
+%%     \item Write this at the end.
+%%     \ela{We can add something about fault tolerance for future work.
+%%     if we have all sets of support, and their intersection is empty, we have redundancy.
+%%     we can talk about algorithm for minimum support set...}
+%% \end{itemize}
+
+%%  LocalWords:  IVC IVCs PDR Yices MathSAT SMTInterpol

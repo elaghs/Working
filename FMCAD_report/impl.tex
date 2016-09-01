@@ -1,12 +1,12 @@
 \section{Implementation}
 \label{sec:impl}
 
-We have implemented our technique in JKind \cite{jkind}, as precisely described in \cite{Ghass16}. JKind is an infinite-state model checker for safety properties. It proves safety properties using multiple cooperative engines in parallel including k-induction, PDR, and template-based lemma generation. JKind accepts
+The algorithm for efficiently computing IVCs can be found in a forthcoming FSE paper~\cite{Ghass16} and is implemented in the JKind \cite{jkind}, which is an infinite-state model checker for safety properties using multiple cooperative engines in parallel (such as k-induction and PDR). JKind accepts
 Lustre programs written over the theory of linear integer and real
 arithmetic. In the back-end, JKind uses an SMT solver such as
 Z3, Yices, MathSAT, or SMTInterpol.
 JKind works on multiple properties simultaneously. When a
 property is proven and IVC generation is enabled, an additional
 parallel engine executes the IVC generation algorithm to compute a minimal
-IVC. In order to benchmark, we designed an experiment from a suite Lustre models developed
-as a benchmark suite for~\cite{Hagen08:FMCAD} and augmented with additional models from industrial projects like~\cite{QFCS15:backes,hilt2013}. The results show that our algorithm for computing IVCs is quite efficient even for industrial models with an average overhead of ~10\%.
+IVC. We demonstrated the efficiency and precision of the approach using a set of Lustre models developed
+as a benchmark suite for~\cite{Hagen08:FMCAD}, augmented with additional models from industrial projects (~\cite{QFCS15:backes,hilt2013}). The results show that our algorithm for computing IVCs is quite efficient even for industrial models with an average overhead of ~10\%. 

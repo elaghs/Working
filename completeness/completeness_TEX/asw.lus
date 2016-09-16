@@ -1,7 +1,7 @@
 const THRESHOLD = 10000; 
 const THRESHOLD_HYST = THRESHOLD + 500; 
 
-node asw(alt1, alt2: int; inhibit: bool) returns (sw_on: bool);
+node asw(alt1, alt2: int; inhibit: bool; r1, r2: bool) returns (sw_on: bool);
 var
    alt1_below, alt2_below, alt1_above, alt2_above: bool;
    one_below_alt, all_above_hyst: bool;
@@ -9,9 +9,11 @@ var
 let
    --%MAIN
    alt1_below = (alt1 < THRESHOLD); 
+   -- alt1_below = r1;
    alt2_below = (alt2 < THRESHOLD);
    alt1_above = (alt1 >= THRESHOLD_HYST); 
    alt2_above = (alt2 >= THRESHOLD_HYST);    
+   -- alt2_above = r1;
    one_below_alt = alt1_below or alt2_below ;
    all_above_hyst = alt1_above and alt2_above;   
    sw_on = 
@@ -20,21 +22,22 @@ let
 	 else if (all_above_hyst) then false
 	 else (false -> pre(sw_on)); 
 	
-   prop1 = (alt1_above and alt2_above) or inhibit => sw_on = false;
+   prop1 = (alt1_above and alt2_above) => sw_on = false;
    prop2 = (alt1_below or alt2_below) and not inhibit => sw_on = true;
    prop3 = inhibit => sw_on = false;
+   prop4 = ((alt1 < THRESHOLD) and (alt2 < THRESHOLD)) => alt1_below ;
    --%PROPERTY prop1;
    --%PROPERTY prop2;
    --%PROPERTY prop3;
+   --%PROPERTY prop4;
    --%IVC sw_on, alt1_below, alt2_below, alt1_above, alt2_above, one_below_alt, all_above_hyst;
 tel;
+
 
 -- Things to note: IVC for prop2 contains 'all_above_hyst' even though this declaration is not explicitly
 -- referenced in the property;
 
 -- requirements:
---  	(alt1_below or alt2_below) and (!one_below_alt) => sw_on = false;
---  	inhibit => sw_on = false;
 
 -- test cases:
 -- 

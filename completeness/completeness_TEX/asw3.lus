@@ -26,6 +26,7 @@ let
    prop2 = ((alt1 < THRESHOLD) or (alt2 < THRESHOLD)) => sw_on = true;   
    -- Note: this weakens the property.
    prop2_1 = (alt1 < THRESHOLD) => sw_on = true;
+   prop3 = 
    
    
    --%PROPERTY prop1;

@@ -4,19 +4,63 @@
 \newcommand{\satisfies}{\vdash_{\!\!s}}
 \newcommand{\nsatisfies}{\nvdash_{\!\!s}}
 
-To start formalization, we define \emph{provability} abstractly from a set of model elements.  We represent the implementation model as a set of formulas $\Gamma$  and the set of requirements $\Delta$.
+\subsection{Models, Requirements, and Provability}
+
+We define \emph{provability} of a requirement with respect to a model independent of a particular proof system.  We define the implementation model as a set of formulas $\Gamma$  and the set of requirements $\Delta$.
 \footnote{In the example in Section \ref{sec:example}, $\Gamma = \{{\tt P}, {\tt x}, {\tt c1}, {\tt c2}, {\tt c3}, {\tt r1}, {\tt r2}\}$ and $\Delta = \{{\tt P}\}$.}
-Then given $T \subseteq \Gamma$ and $e \in \Delta$, we use the notation $T \vdash e$ to mean that $e$ is \emph{provable} given the set $T$. For example, in Fig.~\ref{fig:ex}, with $T = \{{\tt P}, {\tt c2}, {\tt c3}, {\tt r1}, {\tt r2}\}$, {\tt P} is provable. We assume that the provability relation $\vdash$ is monotonic on the subset relation over $\Gamma$, that is, if $S \subseteq S' \subseteq \Gamma$ and $S \vdash r$, then $S' \vdash r$.  The monotonicity of the satisfaction relation means that, unless {\em all} elements of the implementation $\Gamma$ are required for a proof, there are multiple implementation sets $S \subset S' \subset \ldots \subset \Gamma$ that can satisfy a given requirement $r$.  However, we are primarily interested in {\em minimal} sets that satisfy $r$; tracing a requirement to the entire implementation is not particularly enlightening.  We call a minimal set of model elements a \emph{support set} for that requirement, and define the $SOS$ relation to associate support sets to requirements.
+Then given $T \subseteq \Gamma$ and $e \in \Delta$, we use the notation $T \vdash e$ to mean that $e$ is \emph{provable} given the set $T$. For example, in Fig.~\ref{fig:ex}, with $T = \{{\tt P}, {\tt c2}, {\tt c3}, {\tt r1}, {\tt r2}\}$, {\tt P} is provable. We assume that the provability relation $\vdash$ is monotonic on the subset relation over $\Gamma$, that is, if $S \subseteq S' \subseteq \Gamma$ and $S \vdash r$, then $S' \vdash r$.  The monotonicity of the satisfaction relation means that, unless {\em all} elements of the implementation $\Gamma$ are required for a proof, there are multiple implementation sets $S \subset S' \subset \ldots \subset \Gamma$ that can satisfy a given requirement $r$.  In an abuse of notation, we sometimes write $T \vdash \Delta$ to mean the conjunction of all requirements in $\Delta$: $T \vdash \bigwedge \Delta$.
+
+\mike{To do: add a few paragraphs on instantiating the formal model for transition systems and model checking (a la IVCs), then further elaborate it for Netlists (a la Chockler and Kroening).}
+
+
+\subsection{Coverage and Mutations}
+The goal of a coverage metric is usually to assign a numeric score that describes how well requirements cover the design.  The majority of the work in requirements coverage metrics has focused on {\em mutations}, which are ``atomic'' changes to the design.  A mutant is ``killed'' if one of the requirements that is satisfied by the original design is violated by the mutated design.~\cite{chockler_coverage_2003,chockler2001practical,chockler2010coverage,Kupferman:2006:SCF,kupferman_theory_2008}.  For our abstract model, each element $\gamma \in \Gamma$ has a set of possible mutations associated with it.  Depending on the modeling formalism used, this may be the value of a gate or signal (for hardware verification) or an expression within a statement in a program.  
+
+\mike{MORE STUFF HERE ABOUT MUTATIONS - why we use single mutant; reasonableness of mutations as a device} 
+
+For our abstract model, we will assume the existence of a mutation function $f_{m}$ that, given a model element, will return a finite set of mutations for that element.  We can then define the set of mutant models $M$ as follows:
+\[ 
+    M(\Gamma) = \{ \gamma \in \Gamma, m \in f_{m}(\gamma)\ |\ \Gamma - \{\gamma\} \cup \{m\} \} 
+\]
+
+\noindent and then define the mutation score for a set of requirements $\Gamma$ in the standard way: 
+\[
+   Sc_{M}(\Gamma, \Delta) = \frac{ | \{m \in M(\Gamma)~|~ m \nvdash \Delta\} |}{|M(\Gamma)|}
+\]
+
+\mike{Do we want these parameterized?  We could just assume Gamma and Delta}
+
+
+Of particular interest is the mutation that replaces a computed quantity with a ``fresh'' input; this is often referred to as {\em vacuity coverage} and is discussed in~\cite{chockler2010coverage,Kupferman:2006:SCF,kupferman_theory_2008}.\mike{Double check this!}.  
+
+\mike{modify explanation once we have described formal model into netlists}.  If the elements of our abstract model are equations that define these computed quantities, then an isomorphic operation is to remove the equation from the set $\Gamma$.  Thus, there is a straightforward analogue between {\em vacuity coverage} and {\em model subsetting} where we remove elements from $T \subseteq \Gamma$ and check whether provability is preserved.  In this case, we can dispense with the set $M$ and compute a mutation score much more simply: 
+\[
+   Sc_{V}(\Gamma, \Delta) = \frac{ | \{\gamma \in \Gamma~|~ \Gamma - \{\gamma\} \nvdash \Delta\} |}{|\Gamma|}
+\]
+
+
+
+\mike{There is a very close analogue between our notion of SOS (finding minimal model elements) and the notion of mutual vacuity for requirements (maximal strengthenings of requirements); we need to look into this. } 
+
+\mike{One interesting question: is there an analogue to the ``strongest passing formula'' work by Chockler as explored in Form Methods Syst Des (2013) 43:552–571 DOI 10.1007/s10703-013-0192-6, and a maximal model weakening?  Such a thing would involve changing logical operators within the model rather than simply removing equations.}
+
+
+\subsection{Coverage and Minimal Proofs} 
+Alternatively, we can consider using the proofs themselves as a mechanism for determining adequacy of requirements.  In this case, we are interested in {\em minimal} sets that satisfy $r$; tracing a requirement to the entire implementation is not particularly enlightening.  We call a minimal set of model elements a \emph{support set} for that requirement, and define the $SOS$ relation to associate support sets to requirements.
 
 $$ \ SOS(r, S) \equiv S \vdash r~ \land   (\neg\exists S'\ .\ S' \subset S \wedge S' \vdash r) $$
 
 $SOS$ maps a requirement to a support set. However, there could be many support sets for a requirement. To capture that notion, we define, \emph{all support sets ($ASOS$)} for a requirement as an association to all its sets of support.
 
 
-$$ ASOS(r) \equiv  \{\ S | S \subseteq \Gamma \land (r,S) \in SOS\ \} $$
+$$ ASOS(r) \equiv  \{\ S~|~S \subseteq \Gamma \land (r,S) \in SOS\ \} $$
 
 In the example in Fig. \ref{fig:ex}, as visualized in part (b),
-$ASOS ({\tt P}) = \{\{{\tt P}, {\tt c2}, {\tt c3}\}, \{{\tt P}, {\tt x}, {\tt c3}\}\}$. The set of $ASOS$-es for all requirements represents the complete traceability of the system. Establishing $ASOS$ for a requirement, one gets a clear picture of the all possible ways that requirement is satisfied. This information helps categorize each target artifact into one of the following groups for that requirement:
+$ASOS ({\tt P}) = \{\{{\tt P}, {\tt c2}, {\tt c3}\}, \{{\tt P}, {\tt x}, {\tt c3}\}\}$. The set of $ASOS$-es for all requirements represents the complete traceability of the system. Establishing $ASOS$ for a requirement, one gets a clear picture of the all possible ways that requirement is satisfied. 
+
+\mike{Do we want to move this later?  It works here, but it is a little bit distracting from the metrics discussion that follows...probably needs a general re-org once we get everything written down}
+
+This information helps categorize each target artifact into one of the following groups for that requirement:
 
 \begin{itemize}
   \item \textbf{MUST} elements - target artifacts that are present in all the support sets for a requirement.
@@ -33,6 +77,14 @@ Given requirement $r$, functions MUST, MAY, and IRR partition set $\Gamma$ into 
 \emph{must} $= \{ {\tt P}, {\tt c3}\}$ ,
 \emph{may} $= \{ {\tt x}, {\tt c2}\}$, and \emph{irrelevant} $= \{ {\tt c1}, {\tt r1}, {\tt r2}\}$.
 
+This view of coverage-as-proof induces several possible coverage scores.  For the moment, we take the parsimonious view: we return the set of different coverage scores induced by the $ASOS$es of all requirements
+
+\[
+   Sc_{\vdash 1}(\Gamma, \Delta) = \{~T \in ASOS(\Gamma)~|~\frac{ | T |}{|\Gamma|}~\}
+\]
+
+\noindent In the following sections, we will examine other possible scoring mechanisms based on minimal provability, and contrast them against testing and vacuity-based metrics.
+
 %\begin{figure}[htb]
 %\begin{center}
 %\includegraphics[width=\columnwidth]{figs/may_must.png}
@@ -40,6 +92,7 @@ Given requirement $r$, functions MUST, MAY, and IRR partition set $\Gamma$ into 
 %\end{center}
 %\end{figure}
 
+\iffalse
 In light of this intuition, we define existing coverage notions in the literature, which are based on the idea of \emph{mutation}. Then, later, we explore some novel notions of coverage based on the idea of support sets.  More formally, mutation, denoted by $f_m$, is a relation that maps $\Gamma$ to set $S \subset \Gamma$ (written as $f_m (S)$). The range of $f_m$ for $\Gamma$ is denoted by $M$.
 
 In general, requirements completeness can be defined with regard to the notion of \emph{coverage}. In fact, the way that coverage is formalized plays a key part in the strength/ effectiveness of a method for the assessment of completeness. Requirements completeness can be judged on a fraction called \emph{coverage score}, the closer to 1 the score is, the more complete the specification is.
@@ -68,6 +121,9 @@ Usually, a mutation is an atomic change to the design whose effect is not masked
 it is possible to define the coverage notion with regard to all possible mutations, although it would be also very expensive and impractical \cite{chockler2001practical}. \ela{Mike, is the citation correct?}.
 For a coverage function based on all mutations, the coverage score is calculated by
 $$ \frac{\sum_{S \in M} f_m (S) \nvdash r}{|\Gamma| |M|}$$
+\fi
+
+\subsection{Coverage and Testing}
 
 Since coverage is quite well-studied in testing, to compare it against the corresponding notions in formal verification, it is worth pointing out one of the most common coverage metrics known as \emph{decision coverage (DC)}, where a decision is considered as a boolean expression.  Given a test suit $T$, DC checks if every decision has taken all possible outcomes (i.e. $true$ and $false$) at least once. In testing, user has to furnish each requirement with some test cases, which is formalized as $R_m : \Delta \rightarrow 2^T$. Then coverage is measured using an over-approximation $T_m : T \times 2^\Gamma \times 2^\Delta \rightarrow 2^\Gamma$ as follows \cite{chelenski1994oapplicability, schuler_assessing_2011, murugesan2015we}: $$\frac{|\bigcup_{t \in T} T_m (t, \Gamma)|}{|\Gamma|}$$
 

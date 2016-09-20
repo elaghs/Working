@@ -3,87 +3,88 @@
 \label{sec:background}
 \newcommand{\satisfies}{\vdash_{\!\!s}}
 \newcommand{\nsatisfies}{\nvdash_{\!\!s}}
+\newcommand{\bool}[0]{\mathit{bool}}
+\newcommand{\reach}[0]{\mathit{R}}
+\newcommand{\ite}[3]{\mathit{if}\ {#1}\ \mathit{then}\ {#2}\ \mathit{else}\ {#3}}
 
 \subsection{Models, Requirements, and Provability}
 
-We define \emph{provability} of a requirement with respect to a model independent of a particular proof system.  We define the implementation model as a set of formulas $\Gamma$  and the set of requirements $\Delta$.
-\footnote{In the example in Section \ref{sec:example}, $\Gamma = \{{\tt P}, {\tt x}, {\tt c1}, {\tt c2}, {\tt c3}, {\tt r1}, {\tt r2}\}$ and $\Delta = \{{\tt P}\}$.}
-Then given $T \subseteq \Gamma$ and $e \in \Delta$, we use the notation $T \vdash e$ to mean that $e$ is \emph{provable} given the set $T$. For example, in Fig.~\ref{fig:ex}, with $T = \{{\tt P}, {\tt c2}, {\tt c3}, {\tt r1}, {\tt r2}\}$, {\tt P} is provable. We assume that the provability relation $\vdash$ is monotonic on the subset relation over $\Gamma$, that is, if $S \subseteq S' \subseteq \Gamma$ and $S \vdash r$, then $S' \vdash r$.  The monotonicity of the satisfaction relation means that, unless {\em all} elements of the implementation $\Gamma$ are required for a proof, there are multiple implementation sets $S \subset S' \subset \ldots \subset \Gamma$ that can satisfy a given requirement $r$.  In an abuse of notation, we sometimes write $T \vdash \Delta$ to mean the conjunction of all requirements in $\Delta$: $T \vdash \bigwedge \Delta$.
+We define \emph{provability} of a requirement with respect to a model independent of a particular proof system.  We define the implementation model as a set of formulas $\Gamma$  and the set of requirements $\Delta$.  
+Then given $\Gamma' \subseteq \Gamma$ and $\delta \in \Delta$, we use the notation $\Gamma' \vdash \delta$ to mean that $\delta$ is \emph{provable} given the set $\Gamma'$.  We assume that the provability relation $\vdash$ is monotonic on the subset relation over $\Gamma$, that is, if $\Gamma'' \subseteq \Gamma' \subseteq \Gamma$ and $\Gamma'' \vdash \delta$, then $\Gamma' \vdash \delta$.  The monotonicity of the satisfaction relation means that, unless {\em all} elements of the implementation $\Gamma$ are required for a proof, there are multiple implementation sets $\Gamma'' \subset \Gamma' \subset \ldots \subset \Gamma$ that can satisfy a given requirement $\delta$.  In an abuse of notation, we sometimes write $\Gamma' \vdash \Delta$ to mean the conjunction of all requirements in $\Delta$: $\Gamma' \vdash \bigwedge \Delta$.
 
-\mike{To do: add a few paragraphs on instantiating the formal model for transition systems and model checking (a la IVCs), then further elaborate it for Netlists (a la Chockler and Kroening).}
+{\em Example: Transition Systems} We can straightforwardly instantiate our abstract model over a transition system for proving safety properties.  Given a state space $S$, a transition system $(I,T)$ consists of an initial state predicate $I : S \to \bool$ and a transition step predicate $T : S \times S \to \bool$. We define the notion of reachability for $(I, T)$ as the smallest predicate $\reach : S \to \bool$ which satisfies the following formulas:
+\begin{gather*}
+  \forall s.~ I(s) \Rightarrow \reach(s) \\
+  \forall s, s'.~ \reach(s) \land T(s, s') \Rightarrow \reach(s')
+\end{gather*}
+A safety property $P : S \to \bool$ is a state predicate. A safety property $P$ holds on a transition system $(I, T)$ if it holds on all reachable states, i.e., $\forall s.~ \reach(s) \Rightarrow P(s)$, written as $\reach \Rightarrow P$ for short. When this is the case, we write $(I, T)\vdash_{T} P$, for provability within the transition system.  We assume the transition relation of the system has the structure of a top-level conjunction. This assumption gives us a structure that we can easily manipulate. Given $T(s, s') = T_1(s, s') \land \cdots \land T_n(s, s')$ we will write $T = T_1 \land \cdots \land T_n$ for short. By further abuse of notation we will identify $T$ with the set of its top-level conjuncts. Thus we will write $x \in T$ to mean that $x$ is a top-level conjunct of $T$; or, equivalently, $\Gamma = \{T_1, T_2, \ldots, T_n\}$ and $\Delta = \{P\}$ in our abstract model.  
+
+Such a transition system can easily encode our example model in Section~\ref{sec:example}.  We assume each equation defines a conjunct within the transition system which we will denote by the variable assigned, so $\Gamma = \{$ {\small \texttt{a1\_below, a2\_below, a1\_above, a2\_above, below, above\_hyst}} $\}$.
+%\footnote{In the example in Section \ref{sec:example}, $\Gamma = \{{\tt P}, {\tt x}, {\tt c1}, {\tt c2}, {\tt c3}, {\tt r1}, {\tt r2}\}$ and $\Delta = \{{\tt P}\}$.}
+
+%Such transition systems can represent either finite or infinite state systems, depending on the state space $S$.
+
+%We will write $S \subseteq T$ to mean that all top-level conjuncts of $S$ are top-level conjuncts of $T$. We will write $T \setminus \{x\}$ to mean $T$ with the top-level conjunct $x$ removed.
 
 
-\subsection{Coverage and Mutations}
-The goal of a coverage metric is usually to assign a numeric score that describes how well requirements cover the design.  The majority of the work in requirements coverage metrics has focused on {\em mutations}, which are ``atomic'' changes to the design.  A mutant is ``killed'' if one of the requirements that is satisfied by the original design is violated by the mutated design.~\cite{chockler_coverage_2003,chockler2001practical,chockler2010coverage,Kupferman:2006:SCF,kupferman_theory_2008}.  For our abstract model, each element $\gamma \in \Gamma$ has a set of possible mutations associated with it.  Depending on the modeling formalism used, this may be the value of a gate or signal (for hardware verification) or an expression within a statement in a program.  
+%\paragraph{Applying Provability to Transition Relations and Safety Properties}
 
-\mike{MORE STUFF HERE ABOUT MUTATIONS - why we use single mutant; reasonableness of mutations as a device} 
+%\mike{To do: add a few paragraphs on instantiating the formal model for transition systems and model checking (a la IVCs), then further elaborate it for Netlists (a la Chockler and Kroening).}
+
+
+\subsection{Requirements Coverage and Mutations}
+The goal of a coverage metric is usually to assign a numeric score that describes how well requirements cover the design.  The majority of the work in requirements coverage metrics has focused on {\em mutations}, which are ``atomic'' changes to the design.  A mutant is ``killed'' if one of the requirements that is satisfied by the original design is violated by the mutated design.~\cite{chockler_coverage_2003,chockler2001practical,chockler2010coverage,Kupferman:2006:SCF,kupferman_theory_2008}.  For our abstract model, each element $\gamma \in \Gamma$ has a set of possible mutations associated with it.  Depending on the modeling formalism used, this may be the value of a gate or signal (for hardware verification) or an expression within a statement in a program.
+
+\mike{MORE STUFF HERE ABOUT MUTATIONS - why we use single mutant; reasonableness of mutations as a device}
 
 For our abstract model, we will assume the existence of a mutation function $f_{m}$ that, given a model element, will return a finite set of mutations for that element.  We can then define the set of mutant models $M$ as follows:
-\[ 
-    M(\Gamma) = \{ \gamma \in \Gamma, m \in f_{m}(\gamma)\ |\ \Gamma - \{\gamma\} \cup \{m\} \} 
-\]
-
-\noindent and then define the mutation score for a set of requirements $\Gamma$ in the standard way: 
 \[
-   Sc_{M}(\Gamma, \Delta) = \frac{ | \{m \in M(\Gamma)~|~ m \nvdash \Delta\} |}{|M(\Gamma)|}
+    M = \{ \gamma \in \Gamma, m \in f_{m}(\gamma)\ |\ \Gamma - \{\gamma\} \cup \{m\} \}
 \]
 
-\mike{Do we want these parameterized?  We could just assume Gamma and Delta}
-
-
-Of particular interest is the mutation that replaces a computed quantity with a ``fresh'' input; this is often referred to as {\em vacuity coverage} and is discussed in~\cite{chockler2010coverage,Kupferman:2006:SCF,kupferman_theory_2008}.\mike{Double check this!}.  
-
-\mike{modify explanation once we have described formal model into netlists}.  If the elements of our abstract model are equations that define these computed quantities, then an isomorphic operation is to remove the equation from the set $\Gamma$.  Thus, there is a straightforward analogue between {\em vacuity coverage} and {\em model subsetting} where we remove elements from $T \subseteq \Gamma$ and check whether provability is preserved.  In this case, we can dispense with the set $M$ and compute a mutation score much more simply: 
+\noindent and then define the mutation score for a set of requirements $\Gamma$ in the standard way:
 \[
-   Sc_{V}(\Gamma, \Delta) = \frac{ | \{\gamma \in \Gamma~|~ \Gamma - \{\gamma\} \nvdash \Delta\} |}{|\Gamma|}
+   Sc_{M} = \frac{ | \{m \in M(\Gamma)~|~ m \nvdash \Delta\} |}{|M(\Gamma)|}
 \]
 
+%\mike{Do we want these parameterized?  We could just assume Gamma and Delta}
 
-
-\mike{There is a very close analogue between our notion of SOS (finding minimal model elements) and the notion of mutual vacuity for requirements (maximal strengthenings of requirements); we need to look into this. } 
-
-\mike{One interesting question: is there an analogue to the ``strongest passing formula'' work by Chockler as explored in Form Methods Syst Des (2013) 43:552–571 DOI 10.1007/s10703-013-0192-6, and a maximal model weakening?  Such a thing would involve changing logical operators within the model rather than simply removing equations.}
-
-
-\subsection{Coverage and Minimal Proofs} 
-Alternatively, we can consider using the proofs themselves as a mechanism for determining adequacy of requirements.  In this case, we are interested in {\em minimal} sets that satisfy $r$; tracing a requirement to the entire implementation is not particularly enlightening.  We call a minimal set of model elements a \emph{support set} for that requirement, and define the $SOS$ relation to associate support sets to requirements.
-
-$$ \ SOS(r, S) \equiv S \vdash r~ \land   (\neg\exists S'\ .\ S' \subset S \wedge S' \vdash r) $$
-
-$SOS$ maps a requirement to a support set. However, there could be many support sets for a requirement. To capture that notion, we define, \emph{all support sets ($ASOS$)} for a requirement as an association to all its sets of support.
-
-
-$$ ASOS(r) \equiv  \{\ S~|~S \subseteq \Gamma \land (r,S) \in SOS\ \} $$
-
-In the example in Fig. \ref{fig:ex}, as visualized in part (b),
-$ASOS ({\tt P}) = \{\{{\tt P}, {\tt c2}, {\tt c3}\}, \{{\tt P}, {\tt x}, {\tt c3}\}\}$. The set of $ASOS$-es for all requirements represents the complete traceability of the system. Establishing $ASOS$ for a requirement, one gets a clear picture of the all possible ways that requirement is satisfied. 
-
-\mike{Do we want to move this later?  It works here, but it is a little bit distracting from the metrics discussion that follows...probably needs a general re-org once we get everything written down}
-
-This information helps categorize each target artifact into one of the following groups for that requirement:
-
-\begin{itemize}
-  \item \textbf{MUST} elements - target artifacts that are present in all the support sets for a requirement.
-      %$$ MUST_x = \{\forall i (S_xi \in \Sigma_x) \mid \bigcap S_xi \}$$
-      $$ MUST (r) = \bigcap \ ASOS(r) $$
-
-  \item \textbf{MAY} elements - target artifacts that are used in some, but not all, support sets.
-      $$MAY(r) = (\bigcup ASOS (r)) \setminus MUST (r) $$
-
-  \item \textbf{IRRELEVANT} elements - target artifacts that are not in any of the support sets. $$IRR(r) = \Gamma \setminus (\bigcup ASOS (r))$$
-\end{itemize}
-
-Given requirement $r$, functions MUST, MAY, and IRR partition set $\Gamma$ into three disjoint sets \emph{must}, \emph{may}, and \emph{irrelevant}, respectively. This categorization helps to identify the role and relevance of each target artifact in satisfying a requirement. The \emph{must} set contains those target artifacts that are absolutely necessary for the requirement satisfaction. Hence, any change to these elements will most likely impact on each other. On the other hand, elements in the \emph{may} set indicate those target artifacts that satisfy the requirement in one of the possible ways.  Any change to just one of these elements will not affect the satisfaction of that requirement. The IRR function maps a requirement to the elements that never affect the satisfaction of the requirement \cite{Murugesan16:renext}. As an example, the relationships are illustrated graphically in Fig.~\ref{fig:ex} (b). As you can see, in this example,
-\emph{must} $= \{ {\tt P}, {\tt c3}\}$ ,
-\emph{may} $= \{ {\tt x}, {\tt c2}\}$, and \emph{irrelevant} $= \{ {\tt c1}, {\tt r1}, {\tt r2}\}$.
-
-This view of coverage-as-proof induces several possible coverage scores.  For the moment, we take the parsimonious view: we return the set of different coverage scores induced by the $ASOS$es of all requirements
-
+Of particular interest is the mutation that replaces a computed variable ({\em signal} in hardware) with a ``fresh'' input; this is often referred to as {\em vacuity coverage} and is discussed in~\cite{chockler2010coverage,Kupferman:2006:SCF,kupferman_theory_2008}.\mike{Double check this!}.  If we use an equational transition system to assign the variables (as in our ASW example), then performing vacuity coverage an isomorphic operation to removing the defining equation from the set $\Gamma$ and checking whether provability is preserved.  In this case, we can dispense with the set $M$ and compute a mutation score much more simply:
 \[
-   Sc_{\vdash 1}(\Gamma, \Delta) = \{~T \in ASOS(\Gamma)~|~\frac{ | T |}{|\Gamma|}~\}
+   Sc_{V} = \frac{ | \{\gamma \in \Gamma~|~ \Gamma - \{\gamma\} \nvdash \Delta\} |}{|\Gamma|}
 \]
 
-\noindent In the following sections, we will examine other possible scoring mechanisms based on minimal provability, and contrast them against testing and vacuity-based metrics.
+
+
+\subsection{Requirements Coverage and Structural Testing}
+\mike{not sure we need this...if so, we need to accurately characterize test obligations as a function from elements in $\Gamma$}
+In {\em black-box} testing, one is interested in creating a suite of tests from requirements that adequately exercise the behavior
+of a software system without regard to the internal structure of the implementation.  This is the preferred style of testing in
+safety-critical domains and is advocated by standards such as DO-178B~\cite{RTCA:DO-178B}.  The adequacy of such test suites are usually inferred by examining different coverage metrics on an executable artifact, either source code~\cite{Bezier90:TestingBook,MCDCPaper} or software models~\cite{Ammann99:SpecBasedCoverageMetric,Sanjai03:dissertation}.  If the tests are not sufficient to cover the structure of the code, then either additional tests are derived from existing requirements, or (often) additional requirements are created to describe the additional functionality that is not covered by any tests.  
+
+Common metrics used for test coverage measurement are {\em statement}, {\em decision}, and {\em modified condition/decision coverage (MCDC)}.  In this section, we use the rigorous MCDC metric to measure coverage.  \mike{Define MCDC}.  
+
+It is straightforward to define coverage in a way that is parametric to the particular test metric that is used.  Given a set $\Theta$ of all possible tests, we define two functions.  The first, $R_m : \Delta \rightarrow 2^\Theta$, defines the set of tests furnished for each requirement.  The second, $T_m : \Theta \times 2^\Gamma \times 2^\Delta \rightarrow 2^\Gamma$, defines the model elements that are covered by the test.  The $T_m$ function depends on the coverage metric that is used.
+
+Formally, irrespective of the metric used, given $T$ the set of all tests, and the user furnishes test cases associated with each requirement: . Coverage for a given test is measured using a function that maps tests to model elements  as follows \cite{chelenski1994oapplicability, schuler_assessing_2011, murugesan2015we}: $$\frac{|\bigcup_{t \in T} T_m (t, \Gamma)|}{|\Gamma|}$$
+
+
+
+
+%
+%\mike{revise}
+%
+
+A common problem with this metric is masking:
+the effect of a change in a variable cannot be observed in the output. To illustrate, consider the example in Fig. \ref{fig:ex}; suppose we are provided with
+test suite \{\{{\tt in1} = \emph{true}, {\tt in2} = \emph{false}\},
+\{{\tt in1} = \emph{false}, {\tt in2} = \emph{false}\}\}. The change in the value of
+{\tt in1} is masked by {\tt c1}. This problem causes the coverage method reports something covered
+while it actually does not affect the output at all.
+
+
+
+%\noindent In the following sections, we will examine other possible scoring mechanisms based on minimal provability, and contrast them against testing and vacuity-based metrics.
 
 %\begin{figure}[htb]
 %\begin{center}
@@ -122,17 +123,6 @@ it is possible to define the coverage notion with regard to all possible mutatio
 For a coverage function based on all mutations, the coverage score is calculated by
 $$ \frac{\sum_{S \in M} f_m (S) \nvdash r}{|\Gamma| |M|}$$
 \fi
-
-\subsection{Coverage and Testing}
-
-Since coverage is quite well-studied in testing, to compare it against the corresponding notions in formal verification, it is worth pointing out one of the most common coverage metrics known as \emph{decision coverage (DC)}, where a decision is considered as a boolean expression.  Given a test suit $T$, DC checks if every decision has taken all possible outcomes (i.e. $true$ and $false$) at least once. In testing, user has to furnish each requirement with some test cases, which is formalized as $R_m : \Delta \rightarrow 2^T$. Then coverage is measured using an over-approximation $T_m : T \times 2^\Gamma \times 2^\Delta \rightarrow 2^\Gamma$ as follows \cite{chelenski1994oapplicability, schuler_assessing_2011, murugesan2015we}: $$\frac{|\bigcup_{t \in T} T_m (t, \Gamma)|}{|\Gamma|}$$
-
-A common problem with this metric is masking:
-the effect of a change in a variable cannot be observed in the output. To illustrate, consider the example in Fig. \ref{fig:ex}; suppose we are provided with
-test suite \{\{{\tt in1} = \emph{true}, {\tt in2} = \emph{false}\},
-\{{\tt in1} = \emph{false}, {\tt in2} = \emph{false}\}\}. The change in the value of
-{\tt in1} is masked by {\tt c1}. This problem causes the coverage method reports something covered
-while it actually does not affect the output at all.
 
 
 

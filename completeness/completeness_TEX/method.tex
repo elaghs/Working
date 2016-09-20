@@ -1,6 +1,50 @@
 \section{Method}
 \label{sec:method}
 
+\mike{There is a very close analogue between our notion of SOS (finding minimal model elements) and the notion of mutual vacuity for requirements (maximal strengthenings of requirements); we need to look into this. }
+
+\mike{One interesting question: is there an analogue to the ``strongest passing formula'' work by Chockler as explored in Form Methods Syst Des (2013) 43:552–571 DOI 10.1007/s10703-013-0192-6, and a maximal model weakening?  Such a thing would involve changing logical operators within the model rather than simply removing equations.}
+
+[New Intro Here...]
+
+%\subsection{Coverage and Minimal Proofs}
+Alternatively, we can consider using the proofs themselves as a mechanism for determining adequacy of requirements.  In this case, we are interested in {\em minimal} sets that satisfy $r$; tracing a requirement to the entire implementation is not particularly enlightening.  We call a minimal set of model elements a \emph{support set} for that requirement, and define the $SOS$ relation to associate support sets to requirements.
+
+$$ \ SOS(r, S) \equiv S \vdash r~ \land   (\neg\exists S'\ .\ S' \subset S \wedge S' \vdash r) $$
+
+$SOS$ maps a requirement to a support set. However, there could be many support sets for a requirement. To capture that notion, we define, \emph{all support sets ($ASOS$)} for a requirement as an association to all its sets of support.
+
+
+$$ ASOS(r) \equiv  \{\ S~|~S \subseteq \Gamma \land (r,S) \in SOS\ \} $$
+
+In the example in Fig. \ref{fig:ex}, as visualized in part (b),
+$ASOS ({\tt P}) = \{\{{\tt P}, {\tt c2}, {\tt c3}\}, \{{\tt P}, {\tt x}, {\tt c3}\}\}$. The set of $ASOS$-es for all requirements represents the complete traceability of the system. Establishing $ASOS$ for a requirement, one gets a clear picture of the all possible ways that requirement is satisfied.
+
+\mike{Do we want to move this later?  It works here, but it is a little bit distracting from the metrics discussion that follows...probably needs a general re-org once we get everything written down}
+
+This information helps categorize each target artifact into one of the following groups for that requirement:
+
+\begin{itemize}
+  \item \textbf{MUST} elements - target artifacts that are present in all the support sets for a requirement.
+      %$$ MUST_x = \{\forall i (S_xi \in \Sigma_x) \mid \bigcap S_xi \}$$
+      $$ MUST (r) = \bigcap \ ASOS(r) $$
+
+  \item \textbf{MAY} elements - target artifacts that are used in some, but not all, support sets.
+      $$MAY(r) = (\bigcup ASOS (r)) \setminus MUST (r) $$
+
+  \item \textbf{IRRELEVANT} elements - target artifacts that are not in any of the support sets. $$IRR(r) = \Gamma \setminus (\bigcup ASOS (r))$$
+\end{itemize}
+
+Given requirement $r$, functions MUST, MAY, and IRR partition set $\Gamma$ into three disjoint sets \emph{must}, \emph{may}, and \emph{irrelevant}, respectively. This categorization helps to identify the role and relevance of each target artifact in satisfying a requirement. The \emph{must} set contains those target artifacts that are absolutely necessary for the requirement satisfaction. Hence, any change to these elements will most likely impact on each other. On the other hand, elements in the \emph{may} set indicate those target artifacts that satisfy the requirement in one of the possible ways.  Any change to just one of these elements will not affect the satisfaction of that requirement. The IRR function maps a requirement to the elements that never affect the satisfaction of the requirement \cite{Murugesan16:renext}. As an example, the relationships are illustrated graphically in Fig.~\ref{fig:ex} (b). As you can see, in this example,
+\emph{must} $= \{ {\tt P}, {\tt c3}\}$ ,
+\emph{may} $= \{ {\tt x}, {\tt c2}\}$, and \emph{irrelevant} $= \{ {\tt c1}, {\tt r1}, {\tt r2}\}$.
+
+This view of coverage-as-proof induces several possible coverage scores.  For the moment, we take the parsimonious view: we return the set of different coverage scores induced by the $ASOS$es of all requirements
+
+\[
+   Sc_{\vdash 1}(\Gamma, \Delta) = \{~T \in ASOS(\Gamma)~|~\frac{ | T |}{|\Gamma|}~\}
+\]
+
 We believe Definition \ref{def:coverage1} characterizes coverage in a way which is both expensive to compute and difficult to satisfy (i.e. it usually leads to low coverage scores). This section proposes a novel notion of coverage which is not only more efficient and practical to compute but also  is an immediate guidance of what is necessary for specification.
 
 First, let state the relationship between the most recent coverage notions in formal verification and the idea of support sets.
@@ -70,8 +114,8 @@ Theorem \ref{thm:cov-must} demonstrates that $\psi_{sm}$ does not preserve prova
 With Theorem \ref{thm:cov-sos} and Corollary \ref{cor:cov-sos},
 we show $\psi_{sos}$ maintains provability of all the requirements.
 Theorem \ref{thm:sos-r} proves the sound relationship
-between $\psi_{sos}$ and minimal support sets. 
-It emphasizes that $\psi_{sos}$ is accurate meaning that it does not result in false positives 
+between $\psi_{sos}$ and minimal support sets.
+It emphasizes that $\psi_{sos}$ is accurate meaning that it does not result in false positives
 (i.e. does not assign \emph{actual} uncovered elements to covered) because $SOS$ is \emph{minimal}.
 
 \begin{theorem}

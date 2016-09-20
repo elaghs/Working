@@ -22,9 +22,9 @@ let
 	 else if (all_above_hyst) then false
 	 else (false -> pre(sw_on)); 
 	
-   prop1 = (alt1_above and alt2_above) => sw_on = false;
-   prop2 = (alt1_below or alt2_below) and not inhibit => sw_on = true;
-   prop3 = inhibit => sw_on = false;
+   prop1 = inhibit => sw_on = false;
+   prop2 = (alt1_above and alt2_above) => sw_on = false;
+   prop3 = (alt1_below or alt2_below) and not inhibit => sw_on = true;
    prop4 = ((alt1 < THRESHOLD) and (alt2 < THRESHOLD)) => alt1_below ;
    --%PROPERTY prop1;
    --%PROPERTY prop2;

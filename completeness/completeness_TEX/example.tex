@@ -16,22 +16,22 @@
 %\includegraphics[width=\columnwidth]{figs/simulink.png}
 {\smaller
 \begin{verbatim}
-node asw(alt1, alt2: int; inhibit: bool) 
+node asw(alt1, alt2: int; inhibit: bool)
         returns (doi_on: bool);
 var
-   a1_below, a2_below, a1_above, a2_above, 
+   a1_below, a2_below, a1_above, a2_above,
    below, above_hyst, d1, d2, d3: bool;
 let
-   a1_below = (alt1 < THRESHOLD); 
+   a1_below = (alt1 < THRESHOLD);
    a2_below = (alt2 < THRESHOLD);
-   a1_above = (alt1 >= THRESHOLD + HYST); 
-   a2_above = (alt2 >= THRESHOLD + HYST);    
+   a1_above = (alt1 >= THRESHOLD + HYST);
+   a2_above = (alt2 >= THRESHOLD + HYST);
    below = a1_below or a2_below ;
-   above_hyst = a1_above and a2_above;   
+   above_hyst = a1_above and a2_above;
    doi_on = if (inhibit) then false else d1;
-   d1 = if (below) then true else d2; 
+   d1 = if (below) then true else d2;
    d2 = if (above_hyst) then false else d3;
-   d3 = (false -> pre(doi_on)); 
+   d3 = (false -> pre(doi_on));
 tel;
 \end{verbatim}
 }
@@ -40,22 +40,26 @@ tel;
 \label{fig:asw}
 \end{figure}
 
-We will use a very simple system from the avionics domain to illustrate our approach. An Altitude Switch (ASW) is a hypothetical device that turns power on to another subsystem, the Device of Interest (DOI), when the aircraft descends below a threshold altitude and turns the power off again after we ascend over the threshold plus some hysteresis factor.  An implementation of an ASW containing two altimeters written in the Lustre language (simplified and adapted from~\cite{HCW02:ase-deviation}) is shown in Figure~\ref{fig:asw}.  If the system is `inhibited' by the user, then it does not turn on the DOI; otherwise, if either altimeter is below the constant THRESHOLD, then the DOI is turned on, else if both altimeters are above the threshold plus the hysteresis factor (THRESHOLD + HYST), then the DOI is turned off, and otherwise in the initial computation it is false and thereafter retains the previous value.  The notation \texttt{(false -> pre(doi\_on))} describes an initialized register in Lustre: in the initial state, the expression is \texttt{false}, and thereafter it is the previous value of \texttt{doi\_on}.
+We will use a very simple system from the avionics domain to illustrate our approach. An Altitude Switch (ASW) is a hypothetical device that turns power on to another subsystem, the Device of Interest (DOI), when the aircraft descends below a threshold altitude and turns the power off again after we ascend over the threshold plus some hysteresis factor.  An implementation of an ASW containing two altimeters written in the Lustre language (simplified and adapted from~\cite{HCW02:ase-deviation}) is shown in Figure~\ref{fig:asw}.  If the system is `inhibited' by the user, then it does not turn on the DOI; otherwise, if either altimeter is below the constant THRESHOLD, then the DOI is turned on, else if both altimeters are above the threshold plus the hysteresis factor (THRESHOLD + HYST), then the DOI is turned off, and otherwise in the initial computation it is false and thereafter retains the previous value.  The notation \texttt{(false -> pre(doi\_on))} describes an initialized register in Lustre: in the initial state, the expression is \texttt{false}, and thereafter it is the previous value of \texttt{doi\_on}.  The model has a set of requirements that we will present in Section XXX.
 
 %\vspace{0.05in}
-The initial set of requirements for the model is provided as properties below: 
+\mike{Move later...immediately after the presentation of coverage metrics, to contrast them}
+The initial set of requirements for the model is provided as properties below:
 
 \begin{smaller}
 \begin{verbatim}
-   prop1 = inhibit => doi_on = false;
-   prop2 = (alt1_above and alt2_above) => 
+   prop_off = (inhibit and (alt1_above and alt2_above)) =>
              doi_on = false;
-   prop3 = ((alt1_below or alt2_below) and 
+   prop_on = ((alt1_below or alt2_below) and
             not inhibit) => doi_on = true;
+%   prop3 =  inhibit => doi_on = false;
 \end{verbatim}
 \end{smaller}
 
-\noindent Each of these properties is provable given the implementation in Figure~\ref{fig:asw}.  
+\mike{Note: prop_off intentionally has a mistake, which causes it to have two satisfaction paths.  It allows us to explain the characteristics of different algorithms.}
+
+\noindent Each of these properties is provable given the implementation in Figure~\ref{fig:asw}.
+
 
 \iffalse
 \mike{replace with altitude switch example!}

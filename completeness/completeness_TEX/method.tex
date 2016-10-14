@@ -4,194 +4,188 @@
 \section{Proof-Based Metrics}
 \label{sec:method}
 
-In this section, we propose a new approach for requirements completeness measurement based on proof rather than mutation.  We first define notation, then describe different possible metrics given a set of {\em minimal proofs}.  In this section, we do not describe how these proofs are discovered, but define an implementation for transition systems in Section~\ref{sec:impl}.
+In this section, we propose a new approach for    \ela{specification instead of requirements? }   requirements completeness measurement based on proof rather than mutation.  We first define notation, then describe different possible metrics given a set of {\em minimal proofs}.  In this section, we do not describe how these proofs are discovered, but define an implementation for transition systems in Section~\ref{sec:impl}.
 %\subsection{Coverage and Minimal Proofs}
-%Alternatively, we can consider using the proofs themselves as a mechanism for determining adequacy of requirements.  
-
-In examining provability, we are interested in {\em minimal} sets that satisfy a requirement $r$; tracing a requirement to the entire implementation is not particularly enlightening.  We call a minimal set of model elements a \emph{support set} for that requirement, and define the $SOS$ relation to associate support sets to requirements:
-
-$$ \ SOS(r, S) \equiv S \vdash r~ \land   (\neg\exists S'\ .\ S' \subset S \wedge S' \vdash r) $$
-
-\noindent $SOS$ maps a requirement to a support set. Note that there could be many support sets for a given requirement, corresponding to different proofs. To capture that notion, we define \emph{all support sets ($ASOS$)} for a requirement as an association to all its sets of support.
+%Alternatively, we can consider using the proofs themselves as a mechanism for determining adequacy of requirements.
 
 
-$$ ASOS(r) \equiv  \{\ S~|~S \subseteq \Gamma \land (r,S) \in SOS\ \} $$
-
-%In the example in Fig. \ref{fig:asw}, as visualized in part (b),
-%$ASOS ({\tt P}) = \{\{{\tt P}, {\tt c2}, {\tt c3}\}, \{{\tt P}, {\tt x}, {\tt c3}\}\}$. 
-\noindent The set of $ASOS$-es for all requirements represents the complete traceability of the system. Establishing the $ASOS$ for a requirement, one gets a clear picture of the all the model elements that are necessary to prove the requirement.
-
-%\mike{Do we want to move this later?  It works here, but it is a little bit distracting from the metrics discussion that follows...probably needs a general re-org once we get everything written down}
-
-
-
-Given this information, we can categorize each target artifact into one of the following groups:
+Considering $IVC$ and $AIVC$ relations for a set of properties $Delta$, we categorize target artifacts into one of the following groups:
 
 \begin{itemize}
-  \item \textbf{MUST} elements - target artifacts that are present in all the support sets for a requirement.
+  \item \textbf{MUST} elements - target artifacts that are present in all the IVC sets of a specification.
       %$$ MUST_x = \{\forall i (S_xi \in \Sigma_x) \mid \bigcap S_xi \}$$
-      $$ MUST (r) = \bigcap \ ASOS(r) $$
+      \[
+      \forall r \in \Delta.\quad MUST (r) = \bigcap \ AIVC(r)
+      \]
 
-  \item \textbf{MAY} elements - target artifacts that are used in some, but not all, support sets.
-      $$MAY(r) = (\bigcup ASOS (r)) \setminus MUST (r) $$
+  \item \textbf{MAY} elements - target artifacts that are used in some, but not all, IVC sets.
+      \[
+      \forall r \in \Delta .\quad MAY(r) = (\bigcup AIVC (r)) \setminus MUST (r)
+      \]
 
-  \item \textbf{IRRELEVANT} elements - target artifacts that are not in any of the support sets. $$IRR(r) = \Gamma \setminus (\bigcup ASOS (r))$$
+  \item \textbf{IRRELEVANT} elements - target artifacts that are not in any of the IVC sets.
+  $$IRR(r) = T \setminus (\bigcup AIVC (r)$$
 \end{itemize}
 
-Given requirement $r$, functions MUST, MAY, and IRR partition set $\Gamma$ into three disjoint sets \emph{must}, \emph{may}, and \emph{irrelevant}, respectively. This categorization helps to identify the role and relevance of each target artifact in satisfying a requirement. The \emph{must} set contains those target artifacts that are absolutely necessary for the requirement satisfaction.  Any change to these elements will affect provability of the requirement. On the other hand, any single element in the \emph{may} set may be modified without affecting provability of the requirement (though modifying multiple elements may require re-proof).   The \emph{irrelevant} requirements never affect the satisfaction of the requirement \cite{Murugesan16:renext}. 
+Given property $r$, functions MUST, MAY, and IRR partition the target artifacts (set $T$) into three disjoint sets \emph{must}, \emph{may}, and \emph{irrelevant}, respectively. This categorization helps to identify the role and relevance of each target artifact in satisfying a requirement. The \emph{must} set contains those target artifacts that are absolutely necessary for the property satisfaction.  Any change to these elements will affect provability of the property. On the other hand, any single element in the \emph{may} set may be modified without affecting provability of the property (though modifying multiple elements may require re-proof).   The \emph{irrelevant} artifacts never affect the satisfaction of the property \cite{Murugesan16:renext}.
 
-Next we will state some relationships about support sets.
+Next we will state some relationships about IVC sets.
 
 \begin{lemma}
-  \label{lem:sos-must-may}
-  \mike{note: this makes SOS(r) a function and is therefore incorrect; can you rewrite it with SOS a relation?  Also, do you really need this lemma?}
- $\forall S \in SOS(r)$, $S$ can be partitioned into two disjoint sets $S_1$ and $S_2$
+  \label{lem:ivc-must-may}
+ $\forall (r, S) \in IVC$, $S$ can be partitioned into two disjoint sets $S_1$ and $S_2$
   such that $S_1 = MUST(r)$ and $S_2 \subseteq MAY(r)$.
 \end{lemma}
 \begin{proof}
- From the definition of $ASOS$ and $MUST$, $MUST(r) \subseteq S$, for $(r, S) \in SOS$. And
- by definition, $MUST(r) \cap MAY(r) = \varnothing$. Following the definition of $SOS$
+ From the definition of $AIVC$ and $MUST$, $MUST(r) \subseteq S$, for $(r, S) \in IVC$. And
+ by definition, $MUST(r) \cap MAY(r) = \varnothing$. Following the definition of $IVC$
  and $MAY$, $S = (MAY(r) \cap S) \cup MUST(r)$.
 \end{proof}
 \vspace{2mm}
 
 \begin{lemma}
   \label{lem:must-not-enough}
-  If $MAY(r) \neq \varnothing$, then $MUST(r) \nvdash r$.
+  If $MAY(r) \neq \varnothing$, then $r$ is not provable by $MUST(r)$.
 \end{lemma}
 \begin{proof}
-  \mike{Could you do this simply by contradiction not involving Lemma 1?}
- Immediate from Lemma \ref{lem:sos-must-may}, and the definition of $SOS$ and provability.
+  Proof by contradiction. If $(I, MUST(r)) \vdash r$, then $MUST(r)$
+  would be a set of inductive validity cores for $r$ based on Definition \ref{def:ivc},
+  which contradicts the fact that $\forall (r, S) \in IVC. \quad MUST(r) \subseteq S$ (Lemma \ref{lem:ivc-must-may}).
 \end{proof}
 \vspace{2mm}
 
 \begin{lemma}
   \label{lem:must-coverage}
-  \mike{I think that this lemma is describing nondeterministic coverage; let's move it just a bit later when we show connections to existing cov. metrics}
-  Given function $\psi_{sm}(r, \varphi)$, $\forall \varphi \in \Gamma$ iff
-  $\psi_{sm} (r) \preccurlyeq \varphi$ then  $\varphi \in MUST(r)$.
-
+  \mike{I think that this lemma is describing nondeterministic coverage; let's move it just a bit later when we show connections to existing cov. metrics} \ela{check this}
+  Given function $\zeta_{sm}(r, T_i)$, $\forall T_i \in T$ iff
+  $r \rightarrow_{\zeta_{sm}} T_i$ then $T_i \in MUST(r)$.
 \end{lemma}
 \begin{proof}
- From the definition of $MUST(r), \forall \varphi \in MUST (r)$, $\forall S \subseteq \Gamma$. $(r, S) \in SOS \Rightarrow \varphi \in SOS(r, S)$,
- which implies $f_m (S \setminus \{ \varphi \}) \nvdash r$.
- On the other hand, considering the definition of $\psi_{sm}$, if
- $f_m (S \setminus \{ \varphi \}) \nvdash r$ then $\varphi$ is necessary to prove $r$ (Lemma \ref{lem:must-not-enough}), which means $\varphi \in MUST(r)$.
+ From the definition of $MUST(r), \forall T_i \in MUST (r)$, $\forall S \subseteq T$. $(r, S) \in IVC \Rightarrow T_i \in IVC(r, S)$,
+ which implies (I, $S \setminus \{ T_i \}) \nvdash r$.
+ On the other hand, considering the definition of $\zeta_{sm}$, if
+ $(I, S \setminus \{ T_i \}) \nvdash r$ then $T_i$ is necessary to prove $r$ (Lemma \ref{lem:must-not-enough}), which means $T_i \in MUST(r)$.
 \end{proof}
 \vspace{2mm}
 
-
-
 In light of Lemma \ref{lem:must-coverage}, the \nondetcov\ coverage score of specification $r$ can be also calculated by
-$$\frac{|MUST(r)|}{|\Gamma|}$$
-Therefore, for set of requirements $\Delta$, the coverage score is computed by $$\frac{|MUST(R)|}{|\Gamma|},\xspace  R = \bigwedge_{i} {r_i \in \Delta}$$
+$$\frac{|MUST(r)|}{|T|}$$
+Therefore, for set of requirements $\Delta$, the coverage score is computed by $$\frac{|MUST(R)|}{|T|},\xspace  R = \bigwedge_{i} {r_i \in \Delta}$$
 
 \vspace{0.2in}
 
-\mike{expand this with all notions of proof coverage HERE (moved from discussion).  We can then narrow down when we get to the implementation discussion}
-
-This view of coverage-as-proof induces several possible coverage scores.  To begin with, we define a metric that examines minimal proofs.  Because 
-there can be more than one minimal proof, this metric actually returns a range of scores: 
-
+This view of coverage-as-proof induces several possible coverage scores.  To begin with, we define a metric that examines minimal proofs.  Because
+there can be more than one minimal proof, this metric actually returns a range of scores:
+\ela{check this:}
 \begin{definition} {\emph{Minimal proof coverage:}} \\
   \label{def:coverage-ivc}
 \[
-   \minproofcov(\Gamma, \Delta) = \{~T \in ASOS(\Gamma)~|~\frac{ | T |}{|\Gamma|}~\}
+   \minproofcov(T, \Delta) = \{~S \in AIVC(\bigwedge_{i} {r_i \in \Delta})~|~\frac{ |S|}{|T|}~\}
 \]
 \end{definition}
 
-\noindent Note that any of the scores in the set have equal justification.  
+\noindent Note that any of the scores in the set have equal justification.
 
-%For the moment, we take the parsimonious view: we return the set of different coverage scores induced by the $ASOS$es of all requirements
+%For the moment, we take the parsimonious view: we return the set of different coverage scores induced by the $AIVC$es of all requirements
+%\mike{after all metrics presented, contrast them on the example.  Introduce the properties HERE and then discuss the coverage sets}
+%
+%\mike{Then, you can talk about justification, etc.}
 
-\iffalse
-  Given $R = \bigwedge_{i} {r_i \in \Delta}$ and $S \in ASOS(R)$, justifiable coverage is formalized with function $\psi$ such that  $\forall \varphi \in S$. $\psi (R) \preccurlyeq \varphi$
-  and $\forall \lambda \notin S$. $\psi (R) \nprec \lambda$.
+We believe $\zeta_{sm}$ characterizes coverage in a way which is both expensive to compute and difficult to satisfy (i.e. it usually leads to low coverage scores). This section proposes a novel notion of coverage which is not only more efficient and practical to compute but also is an immediate guidance of what is necessary for specification.
+
+\begin{definition} {\emph{Justifiable coverage:}} \\
+  \label{def:coverage-justi}
+Given $R = \bigwedge_{i} {r_i \in \Delta}$ and $S \in AIVC(R)$, justifiable coverage is formalized with function $\zeta$ such that  $\forall T_i \in S$. $R \rightarrow_\zeta T_i$
+  and $\forall \lambda \notin S$. $R \nrightarrow_{\zeta} \lambda$.
 \end{definition}
 \vspace{2mm}
 
-
-\[
-   Sc_{\vdash 1}(\Gamma, \Delta) = \{~T \in ASOS(\Gamma)~|~\frac{ | T |}{|\Gamma|}~\}
-\]
-
-\fi
-
-\mike{after all metrics presented, contrast them on the example.  Introduce the properties HERE and then discuss the coverage sets}
-
-\mike{Then, you can talk about justification, etc.}
-
-We believe Definition \ref{def:coverage1} characterizes coverage in a way which is both expensive to compute and difficult to satisfy (i.e. it usually leads to low coverage scores). This section proposes a novel notion of coverage which is not only more efficient and practical to compute but also  is an immediate guidance of what is necessary for specification.
-
-
-
-
 For the sake of simplicity, we refer to the coverage function
-formalized in Definition \ref{def:coverage-ivc} as $\psi_{sos}$.
+formalized in Definition \ref{def:coverage-ivc} as $\zeta_{ivc}$.
 
-We call Definition \ref{def:coverage-ivc} \emph{justifiable} because, with a set of the model elements marked as covered by $\psi_{sos}$, every $r \in \Delta$ is provable, whereas a set of covered elements obtained from $\psi_{sm}$ is not sufficient to reconstruct the proofs of requirements in $\Delta$.\footnote{Throughout the paper, when a coverage function is justifiable, like $\psi_{sos}$, it is said that it preserves provability of the requirement.}
-This leads the coverage score for $\psi_{sos}$ to be usually higher than the score for $\psi_{sm}$. Coverage score for $\psi_{sos}$ can be calculated with $$\frac{|S|}{|\Gamma|}$$
+We call Definition \ref{def:coverage-justi} \emph{justifiable} because, with a set of the model elements marked as covered by $\zeta_{ivc}$, every $r \in \Delta$ is provable, whereas a set of covered elements obtained from $\zeta_{sm}$ is not sufficient to reconstruct the proofs of requirements in $\Delta$.\footnote{Throughout the paper, when a coverage function is justifiable, like $\zeta_{ivc}$, it is said that it preserves provability of the requirement.}
+This leads the coverage score for $\zeta_{ivc}$ to be usually higher than the score for $\zeta_{sm}$. Coverage score for $\zeta_{ivc}$ can be calculated with $$\frac{|S|}{|T|}$$
 
 \begin{theorem}
 \label{thm:cov-must}
-Given $C = \{\varphi | \varphi \in \Gamma \wedge \psi_{sm} \preccurlyeq \varphi \}$
-and \\ $R = \bigwedge_{i} {r_i \in \Delta}$, $C \nvdash R$.
+Given $R = \bigwedge_{i} {r_i \in \Delta}$ and 
+$C = \{T_i |\quad T_i \in T \wedge R \rightarrow_{\zeta_{sm}}T_i \}$, 
+$R$ may not be provable by $C$.
 \end{theorem}
 \begin{proof}
 Immediate from Lemma \ref{lem:must-not-enough} and Lemma \ref{lem:must-coverage}.
 \end{proof}
 \vspace{2mm}
-Theorem \ref{thm:cov-must} demonstrates that $\psi_{sm}$ does not preserve provability.
-With Theorem \ref{thm:cov-sos} and Corollary \ref{cor:cov-sos},
-we show $\psi_{sos}$ maintains provability of all the requirements.
-Theorem \ref{thm:sos-r} proves the sound relationship
-between $\psi_{sos}$ and minimal support sets.
-It emphasizes that $\psi_{sos}$ is accurate meaning that it does not result in false positives
-(i.e. does not assign \emph{actual} uncovered elements to covered) because $SOS$ is \emph{minimal}.
+Theorem \ref{thm:cov-must} demonstrates that $\zeta_{sm}$ does not preserve provability.
+With Theorem \ref{thm:cov-ivc} and Corollary \ref{cor:cov-ivc},
+we show $\zeta_{ivc}$ maintains provability of all the properties.
+Theorem \ref{thm:ivc-r} proves the sound relationship
+between $\zeta_{ivc}$ and minimal IVC sets.
+It emphasizes that $\zeta_{ivc}$ is accurate meaning that it does not result in false positives
+(i.e. does not assign \emph{actual} uncovered elements to covered) because $IVC$ is \emph{minimal}.
 
 \begin{theorem}
-\label{thm:cov-sos}
-Given $C = \{\varphi | \varphi \in \Gamma \wedge  \psi_{sos} \preccurlyeq \varphi \}$
-and \\ $R = \bigwedge_{i} {r_i \in \Delta}$, $C \vdash R$.
+\label{thm:cov-ivc}
+Given $R = \bigwedge_{i} {r_i \in \Delta}$ and
+$C = \{T_i |\quad T_i \in T \wedge R \rightarrow_{\zeta_{ivc}} T_i \}$,
+$R$ is provable by $C$.
 \end{theorem}
 \begin{proof}
-By Definition, $\psi_{sos} \preccurlyeq \varphi_i$ implies that $\exists S_i \in ASOS(R)$. $\varphi_i \in S_i$.
-In addition, since $(R, S_i) \in SOS \Rightarrow S_i \vdash R$, and the union of such $S_i$ sets
+By Definition, $R \rightarrow_{\zeta_{ivc}} T_i$ implies that $\exists S_i \in AIVC(R)$. $T_i \in S_i$.
+In addition, since $(R, S_i) \in IVC$, $R$ is provable by $S_i$, and the union of such $S_i$ sets
 forms $C$,
-$C \vdash R$.
+therefore $R$ is provable by $C$.
 \end{proof}
 \vspace{2mm}
 
 \begin{coroll}
-\label{cor:cov-sos}
-Given $C = \{\varphi | \varphi \in \Gamma \wedge  \psi_{sos} \preccurlyeq \varphi \}$, \\
+\label{cor:cov-ivc}
+Given $R = \bigwedge_{i} {r_i \in \Delta}$ and 
+$C = \{T_i |\quad T_i \in T \wedge  R  \rightarrow_{\zeta_{ivc}} T_i \}$,
 $\forall r_i \in \Delta$. $C \vdash r_i$.
 \end{coroll}
 \begin{proof}
-Immediate from Theorem \ref{thm:cov-sos}.
+Immediate from Theorem \ref{thm:cov-ivc}.
 \end{proof}
 \vspace{2mm}
 
 \begin{theorem}
-\label{thm:sos-r}
-If $\psi_{sos} \preccurlyeq \varphi$ then $\exists r \in \Delta$, $S \in ASOS(r)$.
-$S \setminus \{\varphi \} \nvdash r$.
+\label{thm:ivc-r}
+If $R = \bigwedge_{i} {r_i \in \Delta}  \rightarrow_{\zeta_{ivc}} T_i$ then $\exists r \in \Delta$ and $\exists S \in AIVC(r)$ such that $r$ is not provable by $S \setminus \{T_i \}$.
 \end{theorem}
 \begin{proof}
-Immediate from Corollary \ref{cor:cov-sos} and the definition of $ASOS$ and provability.
+Immediate from Corollary \ref{cor:cov-ivc} and the definition of $AIVC$ and provability.
 \end{proof}
 \vspace{2mm}
-To illustrate concepts described in this section, we use the the example in Fig. \ref{fig:ex};
-using $\psi_{sos}$, either \{{\tt P}, {\tt c2}, {\tt c3}\} or
- \{{\tt P}, {\tt x}, {\tt c3}\} will be considered as covered. Note that
- $\psi_{sos}$ cannot detect {\tt c2} and {\tt x} as covered simultaneously.
- The fact that which of them will be marked as covered depends on
- the path chosen by the solver to prove {\tt P}. In other words,
- if the proof of {\tt P} is established through the elements of \{{\tt P}, {\tt x}, {\tt c3}\},
- then {\tt x} is covered. Otherwise, since there are only two proof paths (or $SOS({\tt P})$-es)
- here, {\tt c2} would be considered covered. However, this is less restrictive than $\psi_{sm}$ whereby only $MSUT({\tt P})$ is covered. In Section \ref{sec:discussion}, we will provide some other coverage notions to address this issue.
- Another important difference between $\psi_{sm}$ and $\psi_{sos}$ is that, unlike $\psi_{sm}$,
- $\psi_{sos}$ preserves provability. In our example, no matter which $SOS$ will be used;
- in both cases, the set of covered elements by $\psi_{sos}$ is sufficient to re-construct a proof of {\tt P}.
- However, as you can see, the covered set of elements obtained from $\psi_{sm}$ is not
- enough to establish a proof for the validity of {\tt P}.
+
+ %Another important difference between $\zeta_{sm}$ and $\zeta_{ivc}$ is that, unlike $\zeta_{sm}$,
+% $\zeta_{ivc}$ preserves provability. In our example, no matter which $IVC$ will be used;
+% in both cases, the set of covered elements by $\zeta_{ivc}$ is sufficient to re-construct a proof of {\tt P}.
+% However, as you can see, the covered set of elements obtained from $\zeta_{sm}$ is not
+% enough to establish a proof for the validity of {\tt P}.
+
+Since the primary goal of
+ this paper has been to provide a complementary coverage notion in
+  formal verification, it is worth exploring other possible notions based on the idea of provability and $AIVC$, which is beneficial, as with testing, because if a coverage notion is an over-approximation, when the coverage
+ is high, it does not necessarily mean the quality of
+ the specification (or test suite) is high, or when it is an under-approximation, a low coverage does not always mean the specification is of poor quality.
+
+\begin{definition} {\emph{Complementary coverage notion 1:}}
+  \label{def:comp-1}
+   Given $ R = \bigwedge_{i} {r_i \in \Delta} and \quad T_i \in T,  R \rightarrow_\zeta T_i$ iff $ \exists S
+   \in AIVC(R)$. $T_i \in S$.
+\end{definition}
+
+\begin{definition} {\emph{Complementary coverage notion 2:}}
+  \label{def:comp-2}
+   $\forall T_i \in T,  R \rightarrow_\zeta T_i$ iff $\exists r \in \Delta$. $T_i \in AIVC(r)$.
+\end{definition}
+
+Note that, based on the categorization proposed in this section, one can define many more proof-based coverage metrics. However, the complementary metrics that make use of $AIVC$ relation are computationally much more expensive than $\zeta_{ivc}$ although they might be easier to satisfy. Based on our preliminary evaluation, we believe such metrics are as nearly expensive as $\zeta_{sm}$. It should be mentioned that, in terms of preserving provability, a set of design elements marked as covered by Definition \ref{def:comp-1} and \ref{def:comp-2} are
+sufficient to reconstruct the proof of any property in $\Delta$.
+
+\ela{I basically don't like to introduce them here because even in the implementation we don't propose any algorithm for AIVC. At least we should say that since these are expensive like the must one, we only consider the first one.}
+
+\ela{do we want to add more lemmas on justifiability of the complementary definitions?}
+
+\ela{should I talk about the example after each definition, or we want to have a whole section dedicated to the example? because right now we have a section as ``running example'', and then another as ``illustrative example'' }

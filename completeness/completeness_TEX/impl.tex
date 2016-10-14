@@ -17,8 +17,8 @@ Algorithm \ref{alg:must} is also an efficient way of computing the \emph{must} s
 output of \ucalg (as well as \ucbfalg) for $\Gamma \vdash R$ pinpoints the covered design elements
 based on Definition \ref{def:coverage-ivc}.
 In other words, it is equal to
-$C = \{\varphi | \varphi \in \Gamma \wedge  \psi_{sos} \preccurlyeq \varphi \}$.
-And, the output of \mustalg represents covered design artifacts according to Definition \ref{def:coverage1}, which is the same as $C = \{\varphi | \varphi \in \Gamma \wedge \psi_{sm} \preccurlyeq \varphi \}$.
+$C = \{\varphi | \varphi \in \Gamma \wedge  \zeta_{ivc} \preccurlyeq \varphi \}$.
+And, the output of \mustalg represents covered design artifacts according to Definition \ref{def:coverage1}, which is the same as $C = \{\varphi | \varphi \in \Gamma \wedge \zeta_{sm} \preccurlyeq \varphi \}$.
 
 \begin{algorithm}
   \SetKwInOut{Input}{input}
@@ -67,7 +67,7 @@ And, the output of \mustalg represents covered design artifacts according to Def
   \Return{M}
 \caption{\mustalg: an algorithm to compute $MUST(r)$ for a given $r$}
 \label{alg:must}
-\end{algorithm} 
+\end{algorithm}
 
 We have implemented the three algorithms introduced in this section in JKind \cite{jkind}, which is an infinite-state model checker for safety properties. JKind proves safety properties using multiple cooperative engines in parallel including k-induction \cite{SheeranSS00}, property directed reachability \cite{Een2011:PDR}, and template-based lemma generation \cite{Kahsai2011}. JKind accepts
 Lustre programs written over the theory of linear integer and real
@@ -78,3 +78,22 @@ JKind works on multiple properties simultaneously. When a
 property is proven and IVC generation is enabled, an additional
 parallel engine executes Algorithm \ref{alg:uc} to generate a nearly minimal
 IVC (or support) set.
+
+Although the minimality of $IVC$ sets makes $\zeta_{ivc}$ accurate
+in terms of both preserving provability and not having false positives, the exact implementation of $\zeta_{ivc}$ is based on the \ucbfalg algorithm, which is as nearly expensive as the \mustalg algorithm for $\zeta_{sm}$. To alleviate this issue, we came up with an efficient implementation for $\zeta_{ivc}$, i.e. \ucalg \cite{Ghass16},
+ which is an over-approximation and might not be always accurate in terms of minimality.
+
+ As mentioned in Section \ref{sec:impl}, IVC sets are derived from inductive invariants; in other words, they are built upon the proof of the validity of a given property. One interesting fact about proofs
+  is that a given property could be proved from different proof paths. That's why we defined $AIVC(r)$ in Section \ref{sec:background}. The $AIVC$ set gives a clear picture of various ways a property is satisfied. By getting all the IVC sets for all requirements of the system and categorizing them, one can find if there are target artifacts that do not trace to any requirement: set $\bigcap \{IRR (r) | r \in \Delta \}$.  If this set is non-empty, it is a possible indication of ``gold plating" or missing requirements. That is to say, it helps to assess if the requirements of the system describe all the behaviors of the system. Being able to measure the coverage of requirements over the model is crucial in the safety critical system domain.
+
+Very recent, as yet unpublished, work has focused on the
+generation of all IVC sets (IVC sets), whose preliminary evaluation
+shows the overhead in discovering all IVC sets is a linear in the
+number of unique IVC set in the problem multiplied by the cost
+for finding a proof for a single IVC set. For complex models, such
+as the ones described in \cite {QFCS15:backes} and \cite{hilt2013}, it has been possible to
+find $AIVC$ for individual properties in a matter of minutes.
+Based on our preliminary results we expect computing $AIVC$ to be computationally feasible for complex models. In
+addition, we believe that it is possible to use the information
+from the set of all IVCs to more efficiently produce minimal
+IVCs than the \ucbfalg algorithm.

@@ -20,7 +20,7 @@ means of quantifying requirements completeness.
  have introduced and discussed some other complementary coverage notions in the context of formal verification. Finally, we are in the process of developing some efficient algorithms for exploring the space of IVCs, e.g., finding a
 minimum, rather than minimal support set, or finding all support sets. Having such algorithms makes the utilization of other proposed coverage practical.
 
-We are also investigating the relationship among the size of $SOS$-es, coverage score of $\psi_{sos}$, and vacuity. We believe in most of the cases that the $\ucalg$ algorithm results in a coverage score much higher
-than the $\ucbfalg$ (i.e., the real score that $\psi_{sos}$ is intended to report), the problem
+We are also investigating the relationship among the size of $IVC$-es, coverage score of $\zeta_{ivc}$, and vacuity. We believe in most of the cases that the $\ucalg$ algorithm results in a coverage score much higher
+than the $\ucbfalg$ (i.e., the real score that $\zeta_{ivc}$ is intended to report), the problem
 could have roots in some vacuous properties. This intuition helps us to decrease the error rate of the \ucalg algorithm significantly by having some fast techniques to detect vacuity. We have already developed a  fast property-directed vacuity check
 algorithm with the help of the IVC idea. So, we believe the overhead induced by that would be small and it would be worthwhile to explore such perspectives. 

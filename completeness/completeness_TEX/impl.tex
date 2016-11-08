@@ -18,7 +18,7 @@ output of \ucalg (as well as \ucbfalg) for $\Gamma \vdash R$ pinpoints the cover
 based on Definition \ref{def:coverage-ivc}.
 In other words, it is equal to
 $C = \{\varphi | \varphi \in \Gamma \wedge  \zeta_{ivc} \preccurlyeq \varphi \}$.
-And, the output of \mustalg represents covered design artifacts according to Definition \ref{def:coverage1}, which is the same as $C = \{\varphi | \varphi \in \Gamma \wedge \zeta_{sm} \preccurlyeq \varphi \}$.
+And, the output of \mustalg represents covered design artifacts according to Definition \ref{def:coverage1}, which is the same as $C = \{\varphi | \varphi \in \Gamma \wedge \zeta_{nc} \preccurlyeq \varphi \}$.
 
 \begin{algorithm}
   \SetKwInOut{Input}{input}
@@ -80,7 +80,7 @@ parallel engine executes Algorithm \ref{alg:uc} to generate a nearly minimal
 IVC (or support) set.
 
 Although the minimality of $IVC$ sets makes $\zeta_{ivc}$ accurate
-in terms of both preserving provability and not having false positives, the exact implementation of $\zeta_{ivc}$ is based on the \ucbfalg algorithm, which is as nearly expensive as the \mustalg algorithm for $\zeta_{sm}$. To alleviate this issue, we came up with an efficient implementation for $\zeta_{ivc}$, i.e. \ucalg \cite{Ghass16},
+in terms of both preserving provability and not having false positives, the exact implementation of $\zeta_{ivc}$ is based on the \ucbfalg algorithm, which is as nearly expensive as the \mustalg algorithm for $\zeta_{nc}$. To alleviate this issue, we came up with an efficient implementation for $\zeta_{ivc}$, i.e. \ucalg \cite{Ghass16},
  which is an over-approximation and might not be always accurate in terms of minimality.
 
  As mentioned in Section \ref{sec:impl}, IVC sets are derived from inductive invariants; in other words, they are built upon the proof of the validity of a given property. One interesting fact about proofs

@@ -37,29 +37,29 @@ with the top-level conjunct $x$ removed. Such a transition system can easily enc
 \ela{since we are going to submit this paper to a HW oriented community, I think using properties or specification instead of requirements would be better?}
 
 \begin{definition}{\emph{Provability:}}
-Let $(I, T)$ be a transition system; given a set of safety properties $\Delta$ and $S \subseteq T$, $r \in \Delta$ is \emph{provable} by $S$ iff
-$(I, S) \vdash r$.
+Let $(I, T)$ be a transition system; given a set of safety properties $\Delta$ and $S \subseteq T$, $P \in \Delta$ is \emph{provable} by $S$ iff
+$(I, S) \vdash P$.
 \end{definition}
 
 \begin{definition}{\emph{Inductive Validity Cores:}}
   \label{def:ivc}
-  Given $(I, T)\vdash r$, $S \subseteq
-  T$ is a set of {\em inductive validity cores} for $r$
-  iff $r$ is provable by $S$;
+  Given $(I, T)\vdash P$, $S \subseteq
+  T$ is a set of {\em inductive validity cores} for $P$
+  iff $P$ is provable by $S$;
 \end{definition}
 
 In examining provability, we are interested in {\em minimal} sets that satisfy a property $r$; tracing a property to the entire implementation     \ela{should we say target artifacts instead of implementation?}   is not particularly enlightening.
 
 \begin{definition}{\emph{Minimal Inductive Validity Cores (IVC):}}
   \label{def:minimal-ivc}
-  A set of inductive validity cores $S$ for $(I, T)\vdash r$ is minimal, denoted $IVC(r, S)$, iff
-  $\neg\exists S' \subset S .\quad (I, S') \vdash r $
+  A set of inductive validity cores $S$ for $(I, T)\vdash P$ is minimal, denoted $IVC(P, S)$, iff
+  $\neg\exists S' \subset S .\quad (I, S') \vdash P $.
 \end{definition}
 
-For the sake of simplicity, hereafter, we refer a minimal set of inductive validity cores as an "IVC" set.
+For the sake of simplicity, hereafter, we refer a minimal set of inductive validity cores as an "IVC" set. 
 Note that there could be many IVC sets for a given property, corresponding to different proofs. To capture that notion, we define \emph{all IVC sets ($AIVC$)} for a property as an association to all its IVC sets.
 
-$$ AIVC(r) \equiv  \{\ S~|~S \subseteq T \land  IVC(r, S)\} $$
+$$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  IVC(P, S)\} $$
 
 %In the example in Fig. \ref{fig:asw}, as visualized in part (b),
 %$AIVC ({\tt P}) = \{\{{\tt P}, {\tt c2}, {\tt c3}\}, \{{\tt P}, {\tt x}, {\tt c3}\}\}$.
@@ -95,29 +95,20 @@ In our example in Figure~\ref{fig:asw}, applying the software mutations from~\ci
 
 Of particular interest is the mutation that replaces a computed variable ({\em signal} in hardware) with a ``fresh'' input; this mutation is called a {\em nondeterminism mutation} with a coverage metric called (\nondetcov)~\cite{chockler2010coverage} and is discussed in~\cite{Kupferman:2006:SCF,kupferman_theory_2008,chockler2010coverage}.  If we use an equational transition system to assign the variables, then performing \nondetcov\ coverage an isomorphic operation to removing the defining equation from the set $T$ and checking whether provability is preserved.  In this case, we can dispense with the set $M$ and compute a mutation score much more simply. In one sense, the nondeterminism mutation is the {\em strongest} mutation because it introduces the most additional behaviors into the model, that is, any execution sequence constructed by modifying the assigning equation is also an execution sequence for a nondeterministic mutation.  Equivalently, given a set of universal properties, it is the easiest mutation to ``kill''.  For our example in Figure~\ref{fig:asw}, this mutation would lead to 10 mutations, one for each equation in the model.
 
-\begin{definition} {\emph{Nondeterministic coverage.} }
+We use the set membership notation to define different coverage functions. We define coverage notions in terms of a function $\zeta$ that maps a property $P$ to $S \subseteq T$. Given $\zeta(P)$, $\forall P \in \Delta,\quad T_i \in T$, we say $T_i \in \zeta(P)$ \emph{iff} $P$ covers $T_i$ according to $\zeta$,
+ otherwise $T_i \notin \zeta(P)$.
+ 
+\begin{definition} {\emph{Nondeterministic coverage ($\zeta_{nc}$) ~\cite{chockler2010coverage}.} }
 \label{def:non-det}
-$\forall r \in \Delta,\quad T_i \in T$, a nondeterministic coverage can be formalized as a boolean function $\zeta(r, T_i)$. This function maps $r$ and $T_i$ to $true$ iff $r$ covers $T_i$, denoted by $r \rightarrow_{\zeta} T_i$,
- otherwise it returns $false$, denoted by $r \nrightarrow_{\zeta} T_i$.
-\end{definition}
-\ela{check the above def. I think the notation that Mike said,
-$T_i \in \zeta(r)$, makes $zeta$ a relation. but, it's actually a
-boolean function with 2 arguments that only returns true or false: $T_i$ is either covered by $r$ or not}
-
-\ela{I want this definition because it makes further formalizations and notations easier and simpler}
-
-\ela{I call the following single mutation, because in addition to be non-det,
-each time only one design element gets unconstrained}
-\begin{definition} {\emph{Single mutation coverage ~\cite{chockler2010coverage}.} }
-\label{def:single-mut}
-$\forall r \in \Delta$, $T_i \in T$, $r$ covers $T_i$ iff
-$(I, T) \vdash r$ and $(I, T \setminus \{T_i\}) \nvdash r$.
+$\forall P \in \Delta$, $T_i \in T$, $T_i \in \zeta_{nc}(P)$ iff
+$(I, T) \vdash P$ and $(I, T \setminus \{T_i\}) \nvdash P$.
 \end{definition}
 
-For the sake of simplicity, we refer to the coverage function
-formalized in Definition \ref{def:single-mut} as $\zeta_{sm}$. Using  $\zeta_{sm}$, the coverage score of specification $r$ is computed by
+%For the sake of simplicity, we refer to the coverage function
+%formalized in Definition \ref{def:single-mut} as $\zeta_{nc}$. 
+Using  $\zeta_{nc}$, the coverage score of specification $r$ is computed by
 \[
-   \frac{ | \{T_i \in T~|~ T \setminus \{T_i\} \nvdash r\} |}{|T|}
+   \frac{ | \{T_i \in T~|~ T \setminus \{T_i\} \nvdash P\} |}{|T|}
 \]
 
 

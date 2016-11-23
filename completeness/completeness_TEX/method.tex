@@ -52,7 +52,7 @@ Next we will state some relationships about IVC sets.
 \vspace{2mm}
 
 \begin{lemma}
-  \label{lem:must-coverage} 
+  \label{lem:must-coverage}
   Given function $\zeta_{nc}$, $\forall T_i \in T$ iff
   $T_i \in \zeta_{nc}(P)$ then $T_i \in MUST(r)$.
 \end{lemma}
@@ -172,7 +172,7 @@ Since the primary goal of
 
 \begin{definition} {\emph{Complementary coverage notion 2:}}
   \label{def:comp-2}
-   $\forall T_i \in T,  T_i \in \zeta(\P)$ iff $\exists P \in \Delta$. $T_i \in AIVC(P)$.
+   $\forall T_i \in T,  T_i \in \zeta(P)$ iff $\exists P \in \Delta$. $T_i \in AIVC(P)$.
 \end{definition}
 
 Note that, based on the categorization proposed in this section, one can define many more proof-based coverage metrics. However, the complementary metrics that make use of $AIVC$ relation are computationally much more expensive than $\zeta_{ivc}$ although they might be easier to satisfy. Based on our preliminary evaluation, we believe such metrics are as nearly expensive as $\zeta_{nc}$. It should be mentioned that, in terms of preserving provability, a set of design elements marked as covered by Definition \ref{def:comp-1} and \ref{def:comp-2} are

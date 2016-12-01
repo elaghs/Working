@@ -166,7 +166,7 @@ Since the primary goal of
 
 \begin{definition} {\emph{Complementary coverage notion 1:}}
   \label{def:comp-1}
-   Given $ \Pi and \quad T_i \in T,  T_i \in \zeta(\Pi)$ iff $ \exists S
+   Given $ \Pi \quad and \quad T_i \in T,  T_i \in \zeta(\Pi)$ iff $ \exists S
    \in AIVC(R)$. $T_i \in S$.
 \end{definition}
 
@@ -178,8 +178,3 @@ Since the primary goal of
 Note that, based on the categorization proposed in this section, one can define many more proof-based coverage metrics. However, the complementary metrics that make use of $AIVC$ relation are computationally much more expensive than $\zeta_{ivc}$ although they might be easier to satisfy. Based on our preliminary evaluation, we believe such metrics are as nearly expensive as $\zeta_{nc}$. It should be mentioned that, in terms of preserving provability, a set of design elements marked as covered by Definition \ref{def:comp-1} and \ref{def:comp-2} are
 sufficient to reconstruct the proof of any property in $\Delta$.
 
-\ela{I basically don't like to introduce them here because even in the implementation we don't propose any algorithm for AIVC. At least we should say that since these are expensive like the must one, we only consider the first one.}
-
-\ela{do we want to add more lemmas on justifiability of the complementary definitions?}
-
-\ela{should I talk about the example after each definition, or we want to have a whole section dedicated to the example? because right now we have a section as ``running example'', and then another as ``illustrative example'' }

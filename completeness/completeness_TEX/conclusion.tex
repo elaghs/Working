@@ -1,7 +1,7 @@
 \section{Conclusions \& Future Work}
 \label{sec:conclusion}
 
-In this paper, we have defined a novel coverage notion for formal verification using
+In this paper, we have the idea of proof-based coverage notions for formal verification using
 the IVC concept, a useful measure in relation to
 a valid safety property for inductive model checking. We have shown that our method
  is computationally efficient while
@@ -16,11 +16,7 @@ our algorithm as part of the open source model checker JKind. Using our approach
  The experiments show that the computation imposes a small overhead to the verification process. We have described how the justifiable notion of coverage proposed in this paper can be used as a
 means of quantifying requirements completeness.
 
- In addition, based on the idea of multiple support sets for a specification, we
- have introduced and discussed some other complementary coverage notions in the context of formal verification. Finally, we are in the process of developing some efficient algorithms for exploring the space of IVCs, e.g., finding a
-minimum, rather than minimal support set, or finding all support sets. Having such algorithms makes the utilization of other proposed coverage practical.
-
-We are also investigating the relationship among the size of $IVC$-es, coverage score of $\zeta_{ivc}$, and vacuity. We believe in most of the cases that the $\ucalg$ algorithm results in a coverage score much higher
-than the $\ucbfalg$ (i.e., the real score that $\zeta_{ivc}$ is intended to report), the problem
+Finally, we are in the process of developing some efficient algorithms for exploring the space of IVCs, e.g., finding a minimum, rather than minimal support set, or finding all support sets. Having such algorithms makes the utilization of other proposed coverage practical. We are also investigating the relationship among the size of $IVC$-es, coverage score of \ivccov\, and vacuity. We believe in most of the cases that the $\ucalg$ algorithm results in a coverage score much higher
+than the $\ucbfalg$ (i.e., the real score that \ivccov\ is intended to report), the problem
 could have roots in some vacuous properties. This intuition helps us to decrease the error rate of the \ucalg algorithm significantly by having some fast techniques to detect vacuity. We have already developed a  fast property-directed vacuity check
 algorithm with the help of the IVC idea. So, we believe the overhead induced by that would be small and it would be worthwhile to explore such perspectives. 

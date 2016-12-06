@@ -1,33 +1,30 @@
 \section{Implementation}
 \label{sec:impl}
 
-To implement our method, we have made use of the technique proposed in \cite{Ghass16} for the efficient computation of IVCs, which are the same as elements of a support set. In \cite{Ghass16}, there are two detailed algorithms for computing minimal support sets: (1) Algorithm \ucbfalg that computes a truly minimal support set for a given property, which is expensive. (2) Algorithm \ucalg that computes support sets fairly close to minimal much more efficiently. In this section, we provide a high-level representation of these algorithms.
+To implement our method, we have made use of the technique proposed in \cite{Ghass16} for the efficient computation of IVCs. In \cite{Ghass16}, there are two detailed algorithms for computing minimal support sets: (1) Algorithm \ucbfalg that computes a truly minimal IVC set for a given property, which is expensive. (2) Algorithm \ucalg that computes an IVC set fairly close to minimal in a much more efficient way. This section provides a high-level representation of these algorithms.
 
-Intuitively, Algorithms \ref{alg:uc},
-first obtains an inductive invariant from the inductive proof of
-property $r$ (line 1 in Algorithm \ref{alg:uc}). Then, using function $map\_to\_design$, it
-computes the (closely) minimal support set of $r$ \footnote{The way that support set
-(or inductive validity cores) can be produced is described in \cite{Ghass16}. Here we abstract away the details.}.
-
-Since \ucalg might not produce an \emph{exact} minimal support set,
-Algorithm \ref{alg:ucbf}, \ucbfalg, includes a minimization process that
-operates on the result of \ucalg.
+IVCs are built upon inductive proofs. In order to prove a property, inductive proof methods employ some heuristics to derive additional lemmas (or invariants) about the problem so to strengthen the property and prove it inductively. Intuitively, to extract IVCs, Algorithm \ref{alg:uc}
+first proves the property and obtains all the invariants generated for the proof (line 1). Since not all these invariants are essential for the proof, it performs some minimization to keep a minimal set of necessary invariants (line 2). The proofs of these invariants themselves are dependent on the structure of the model or design elements that we called inductive validity core (Definition \ref{def:ivc}).
+So, using function $map\_to\_design$, Algorithm \ref{alg:uc}
+computes design elements those design elements. And finally, it minimizes these computed elements so to obtain a minimal IVC set (line 4). Although Algorithm \ref{alg:uc} performs minimization, because of the structure of the inductive proofs, \ucalg might still not produce an \emph{exact} minimal IVC set \footnote{for more information, see \cite{Ghass16}. Here we abstract away the details.}.
+Therefore, Algorithm \ref{alg:ucbf}, \ucbfalg, includes a post-minimization process that
+operates on the result of \ucalg. The results by this algorithm are guaranteed to be minimal.
 
 Algorithm \ref{alg:must} is also an efficient way of computing the \emph{must} set of a given property using \ucalg. Note that, as discussed in Section \ref{sec:method}, the
-output of \ucalg (as well as \ucbfalg) for $\Gamma \vdash R$ pinpoints the covered design elements
-based on Definition \ref{def:coverage-ivc}.
-In other words, it is equal to
-$C = \{\varphi | \varphi \in \Gamma \wedge  \zeta_{ivc} \preccurlyeq \varphi \}$.
-And, the output of \mustalg represents covered design artifacts according to Definition \ref{def:coverage1}, which is the same as $C = \{\varphi | \varphi \in \Gamma \wedge \zeta_{nc} \preccurlyeq \varphi \}$.
+output of \ucalg (as well as \ucbfalg) for $(I, T) \vdash P$ pinpoints the covered design elements
+based on Definition \ref{def:coverage-justi}.
+And, the output of \mustalg represents covered design elements according to Definition \ref{def:non-det}, which is the same as $MUST(P)$.
 
 \begin{algorithm}
   \SetKwInOut{Input}{input}
   \SetKwInOut{Output}{output}
-  \Input{$\Gamma \vdash r$}
-  \Output{Support set for $\Gamma \vdash r$}
+  \Input{$(I, T) \vdash P$}
+  \Output{(Closely) minimal IVC for $(I, T) \vdash P$}
   \BlankLine
-  $Inv \leftarrow get\_inductive\_invariant(\Gamma, r)$ \\
-  $S \leftarrow map\_to\_design (\Gamma, Inv)$ \\
+  $Invs \leftarrow get\_inductive\_invariants((I, T), P)$ \\
+  $Invs \leftarrow minimize(Invs)$ \\
+  $S \leftarrow map\_to\_design (T, Invs)$ \\
+  $S \leftarrow minimize(S)$ \\
   \Return{S}
 \caption{An abstract representation of \ucalg \cite{Ghass16}}
 \label{alg:uc}
@@ -36,12 +33,12 @@ And, the output of \mustalg represents covered design artifacts according to Def
 \begin{algorithm}
   \SetKwInOut{Input}{input}
   \SetKwInOut{Output}{output}
-  \Input{$\Gamma \vdash r$}
-  \Output{Minimal support set for $\Gamma \vdash r$}
+  \Input{$(I, T) \vdash P$}
+  \Output{Minimal IVC set for $(I, T) \vdash P$}
   \BlankLine
-  $S \leftarrow \ucalg(\Gamma \vdash r)$ \\
+  $S \leftarrow \ucalg((I, T) \vdash P)$ \\
   \For{$x \in S$} {
-    \If{$S\setminus\{x\} \vdash r$}{
+    \If{$(I, S\setminus\{x\}) \vdash P$}{
       $S \leftarrow S\setminus \{x\}$
     }
   }
@@ -54,37 +51,38 @@ And, the output of \mustalg represents covered design artifacts according to Def
 \begin{algorithm}
   \SetKwInOut{Input}{input}
   \SetKwInOut{Output}{output}
-  \Input{$\Gamma \vdash r$}
-  \Output{Must set for $\Gamma \vdash r$}
+  \Input{$(I, T) \vdash P$}
+  \Output{Must set for $(I, T) \vdash P$}
   \BlankLine
-  $S \leftarrow \ucalg(\Gamma \vdash r)$ \\
+  $S \leftarrow \ucalg((I, T) \vdash P)$ \\
   $M \leftarrow \varnothing$ \\
   \For{$x \in S$} {
-    \If{$S\setminus\{x\} \nvdash r$}{
+    \If{$(I, S\setminus\{x\}) \nvdash P$}{
       $M = M \cup \{x\}$
     }
   }
   \Return{M}
-\caption{\mustalg: an algorithm to compute $MUST(r)$ for a given $r$}
+\caption{\mustalg: an algorithm to compute $MUST(P)$ for a given $P$}
 \label{alg:must}
 \end{algorithm}
 
-We have implemented the three algorithms introduced in this section in JKind \cite{jkind}, which is an infinite-state model checker for safety properties. JKind proves safety properties using multiple cooperative engines in parallel including k-induction \cite{SheeranSS00}, property directed reachability \cite{Een2011:PDR}, and template-based lemma generation \cite{Kahsai2011}. JKind accepts
+We have implemented the three algorithms introduced in this section in JKind \cite{jkind}, which is an infinite-state industrial model checker. JKind proves safety properties using multiple cooperative engines in parallel including k-induction \cite{SheeranSS00}, property directed reachability (PDR) \cite{Een2011:PDR}, and template-based lemma generation \cite{Kahsai2011}. It accepts
 Lustre programs written over the theory of linear integer and real
-arithmetic. In the back-end, JKind uses an SMT solver such as
+arithmetic. In the back-end, it uses an SMT solver such as
 Z3 \cite{DeMoura08:z3}, Yices \cite{Dutertre06:yices},
 MathSAT \cite{Cimatti2013:MathSAT}, or SMTInterpol \cite{Christ2012:SMTInterpol}.
 JKind works on multiple properties simultaneously. When a
 property is proven and IVC generation is enabled, an additional
 parallel engine executes Algorithm \ref{alg:uc} to generate a nearly minimal
-IVC (or support) set.
+IVC set.
 
-Although the minimality of $IVC$ sets makes $\zeta_{ivc}$ accurate
-in terms of both preserving provability and not having false positives, the exact implementation of $\zeta_{ivc}$ is based on the \ucbfalg algorithm, which is as nearly expensive as the \mustalg algorithm for $\zeta_{nc}$. To alleviate this issue, we came up with an efficient implementation for $\zeta_{ivc}$, i.e. \ucalg \cite{Ghass16},
+Although the minimality of $IVC$ sets makes \ivccov\ accurate
+in terms of both preserving provability and not having false positives, the exact implementation of \ivccov\ is based on the \ucbfalg algorithm, which is as nearly expensive as the \mustalg algorithm for \nondetcov\. To alleviate this issue, we came up with an efficient implementation for \ivccov\, i.e. \ucalg \cite{Ghass16},
  which is an over-approximation and might not be always accurate in terms of minimality.
 
- As mentioned in Section \ref{sec:impl}, IVC sets are derived from inductive invariants; in other words, they are built upon the proof of the validity of a given property. One interesting fact about proofs
-  is that a given property could be proved from different proof paths. That's why we defined $AIVC(r)$ in Section \ref{sec:background}. The $AIVC$ set gives a clear picture of various ways a property is satisfied. By getting all the IVC sets for all requirements of the system and categorizing them, one can find if there are target artifacts that do not trace to any requirement: set $\bigcap \{IRR (r) | r \in \Delta \}$.  If this set is non-empty, it is a possible indication of ``gold plating" or missing requirements. That is to say, it helps to assess if the requirements of the system describe all the behaviors of the system. Being able to measure the coverage of requirements over the model is crucial in the safety critical system domain.
+\subsection{Discussion}
+As mentioned, IVC sets are derived from inductive invariants; in other words, they are built upon the proof of the validity of a given property. One interesting fact about proofs
+  is that a given property could be proved from different proof paths. That's why we defined $AIVC(r)$ in Section \ref{sec:background}. The $AIVC$ set gives a clear picture of various ways a property is satisfied. By getting all the IVC sets for all the properties of the system and categorizing them, one can find if there are target artifacts that do not trace to any property: set $\bigcap \{IRR (P) | P \in \Delta \}$.  If this set is non-empty, it is a possible indication of ``gold plating" or missing properties. That is to say, it helps to assess if the specification describe all the behaviors of the system. Being able to measure the coverage of properties over the model is crucial in the safety critical system domain.
 
 Very recent, as yet unpublished, work has focused on the
 generation of all IVC sets (IVC sets), whose preliminary evaluation

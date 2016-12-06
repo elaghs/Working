@@ -1,0 +1,175 @@
+
+\documentclass{sig-alternate-05-2015}
+
+\usepackage{tabularx,colortbl}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{flushend}
+\usepackage{cite}
+\usepackage{amsmath}
+%\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{epsfig}
+\usepackage{stmaryrd}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{latexsym}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{comment}
+\usepackage{longtable}
+\usepackage{supertabular}
+\usepackage{times}
+\usepackage{listings}
+\usepackage{subfigure}
+\usepackage{color}
+\usepackage{balance}
+\usepackage[ruled, vlined, linesnumbered]{algorithm2e}
+\usepackage[english]{babel} 
+\renewcommand{\abstract}{\noindent \sc{\large \textbf{Proof-based Coverage Metrics for\\Formal Verification}}\\}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\newcommand{\mkeyword}[1]{\mbox{\texttt{#1}}}
+\DeclareMathOperator{\kuop}{uop}
+\DeclareMathOperator{\kbop}{bop}
+\DeclareMathOperator{\kite}{ite}
+\DeclareMathOperator{\kpre}{pre}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\ktrue}{true}
+\DeclareMathOperator{\kfalse}{false}
+\DeclareMathOperator{\kselect}{select}
+\DeclareMathOperator{\ran}{range}
+\newcommand{\lbb}{[\![}
+\newcommand{\rbb}{]\!]}
+\newcommand{\expr}{\phi}
+\newcommand{\exprS}{\Phi}
+\newcommand{\nondetcov}{\text{\sc Nondet-Cov}}
+\newcommand{\ivccov}{\text{\sc IVC-Cov}}
+\newcommand{\maycov}{\text{\sc MAY-Cov}}
+\newcommand{\allcov}{\text{\sc MODEL-Cov}}
+\newcommand{\mutcov}{\text{\sc Mutant-Cov}}
+
+ 
+
+\begin{document} 
+\definecolor{gold}{rgb}{0.90,.66,0}
+\definecolor{dgreen}{rgb}{0,0.6,0}
+\newcommand{\mike}[1]{\textcolor{red}{#1}}
+\newcommand{\fixed}[1]{\textcolor{purple}{#1}}
+\newcommand{\andrew}[1]{\textcolor{green}{#1}}
+\newcommand{\ela}[1]{\textcolor{blue}{#1}}
+\newcommand{\stateequiv}{\equiv_{s}}
+\newcommand{\traceequiv}{\equiv_{\sigma}}
+\newcommand{\ta}{\text{TA}}
+\newcommand{\cta}{\text{TA$_{C}$}}
+\newcommand{\tta}{\text{TA$_{T}$}}
+
+\newcommand{\bfalg}{{IVC\_BF}\xspace}
+\newcommand{\ucalg}{{IVC\_UC}\xspace}
+\newcommand{\ucbfalg}{{IVC\_UCBF}\xspace}
+\newcommand{\mustalg}{{IVC\_MUST}\xspace}
+
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{coroll}{Corollary}
+%\newdef{lemma}{Lemma}
+%\newdef{definition}{Definition}
+%\newdef{theorem}{Theorem}
+%\newdef{note}{Note}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired 
+\title{Written Preliminary Examination Report}
+%\subtitle{[subtitle]
+%\titlenote{A full version of this paper is available as
+%\textit{Author's Guide to Preparing ACM SIG Proceedings Using
+%\LaTeX$2_\epsilon$\ and BibTeX} at
+%\texttt{www.acm.org/eaddress.htm}}}
+\numberofauthors{1} %  in this sample file, there are a *total*
+% of EIGHT authors. SIX appear on the 'first-page' (for formatting
+% reasons) and the remaining two appear in the \additionalauthors section.
+%
+\author{
+% You can go ahead and credit any number of authors here,
+% e.g. one 'row of three' or two rows (consisting of one row of three
+% and a second row of one, two or three).
+%
+% The command \alignauthor (no curly braces needed) should
+% precede each author name, affiliation/snail-mail address and
+% e-mail address. Additionally, tag each line of
+% affiliation/address with \affaddr, and tag the
+% e-mail address with \email.
+%
+% 1st. author
+\alignauthor
+Elaheh Ghassabani\\ 
+       \affaddr{Department of Computer Science \& Engineering}\\
+       \affaddr{University of Minnesota}\\
+       \affaddr{MN, USA}\\
+       \email{ghass013@umn.edu}
+       }
+  
+ 
+ 
+\maketitle
+
+
+\begin{abstract} 
+ An important question while using formal verification is whether we have we specified enough properties for a given implementation model.  To address this question, we need coverage metrics for property-based formal verification. Existing metrics are usually based on mutation, in which the implementation model is modified and re-analyzed to determine whether the properties hold over the mutated model.  Unfortunately, these checks are computationally expensive (involving many additional proofs), and have the issue that the residual model after removing the ``unnecessary'' parts is often inadequate to prove the original property. This paper proposes an alternate characterization of completeness based on the proofs themselves.   We have previously investigated algorithms for determining minimal sets of model elements necessary to construct safety-property proofs called inductive validity cores (IVCs).  In this paper, we examine a family of coverage metrics that can be computed from IVCs.  One of the proposed metrics is substantially cheaper to compute than previous metrics and is guaranteed to preserve a residual model that leads to proof.  Other possible metrics are more expensive to compute and provide  more- or less-rigorous definitions.  We demonstrate the metrics on a large corpus of examples.
+
+\end{abstract}
+
+\keywords {coverage; requirements completeness; formal verification; SAT-based model checking;
+  inductive proofs; inductive validity cores}
+ 
+ 
+%\mike{Note: mine traceability paper for ideas: abstract notion of proof?   Distinction between proof and entailment?  }
+%
+%\mike{Start from (a variant of) the formalism from the RE paper.  Then use inductive validity cores as an {\em implementation} of this idea, again just like the RE paper.  Bring in the IVC formalism only when we describe it as an ``implementation'' of our general idea.}
+
+
+\mike{There is a very close analogue between our notion of IVC (finding minimal model elements) and the notion of mutual vacuity for requirements (maximal strengthenings of requirements); we need to look into this. }
+
+\mike{One interesting question: is there an analogue to the ``strongest passing formula'' work by Chockler as explored in Form Methods Syst Des (2013) 43:552–571 DOI 10.1007/s10703-013-0192-6, and a maximal model weakening?  Such a thing would involve changing logical operators within the model rather than simply removing equations.}
+
+\mike{Our running example does not have many illustrations of multiple satisfactions...should I add a "mistake" to one of the requirements?  I did this to show differences between requirements }
+
+\mike{We could have a better example if we did some kind of sensor fusion in the model - we could have a 'pick 2 of 3' kind of thing; lots of different satisfaction paths}
+
+\input{introduction}
+
+%\ifdefined\TECHREPORT
+%\input{description}
+%\fi
+\input{example}
+
+%\input{background}
+
+\input{formalization}
+
+\input{method}
+
+\input{Illustration}
+
+\input{impl}
+
+\input{experiments}
+
+
+\input{related}
+
+\input{conclusion}
+
+%\section*{Acknowledgment}
+%
+%
+%The authors would like to thank...
+%more thanks here
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{biblio}
+\end{document}
+
+

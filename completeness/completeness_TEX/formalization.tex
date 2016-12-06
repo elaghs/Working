@@ -18,8 +18,7 @@ reachability for $(I, T)$ as the smallest predicate $\reach : S \to
   \forall s.~ I(s) \Rightarrow \reach(s) \\
   \forall s, s'.~ \reach(s) \land T(s, s') \Rightarrow \reach(s')
 \end{gather*}
-A safety property $P : S \to \bool$ is a state predicate. A safety
-property $P$ holds on a transition system $(I, T)$ if it holds on all
+A safety property $P : S \to \bool$ is a state predicate that holds on a transition system $(I, T)$ if it holds on all
 reachable states, i.e., $\forall s.~ \reach(s) \Rightarrow P(s)$,
 written as $\reach \Rightarrow P$ for short. When this is the case, we
 write $(I, T)\vdash P$. To generalize the notion of transition system, especially in SMT-based model checking, it is assumed that the transition relation has the structure of a top-level conjunction. This assumption gives us a structure that we can easily manipulate. Given $T(s, s') = T_1(s, s') \land \cdots \land T_n(s, s')$ we will write $T = T_1 \land \cdots \land T_n$ for short.

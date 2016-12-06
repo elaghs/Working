@@ -18,12 +18,10 @@ Given $S \in AIVC(P)$, $T_i \in T$ is covered by $P$ iff  $T_i \in S$.
 %formalized in Definition \ref{def:coverage-justi} as \ivccov\.
 %
 We call Definition \ref{def:coverage-justi} \emph{justifiable} because, with a set of the model elements marked as covered by \ivccov, $P$ is provable, whereas a set of covered elements obtained from \nondetcov\ may not be sufficient to reconstruct the proof of the property.\footnote{Throughout the paper, when a coverage metric is justifiable, like \ivccov, it is said that it preserves provability of the property.}
-This leads the coverage score for \ivccov\ to be usually higher than the score for \nondetcov. Coverage score for \ivccov\ can be calculated with $\frac{|S|}{|T|}$. Note that this view of coverage-as-proof induces several possible coverage scores. Because $P$ may have multiple IVCs, there can be a range of scores for the \ivccov\ metric, which is shown by \minproofcov:
+This leads the coverage score for \ivccov\ to be usually higher than the score for \nondetcov. Coverage score for \ivccov\ can be calculated with $\frac{|S|}{|T|}$. Note that this view of coverage-as-proof induces several possible coverage scores. Because $P$ may have multiple IVCs, there can be a range of scores (with equal justification) for the \ivccov\ metric, which is shown by \minproofcov:
 \[
    \minproofcov(T, P) = \{~\frac{ |S|}{|T|}~|~S \in AIVC(P)~\}
 \]
-
-\noindent Note that any of the scores in the set have equal justification.
 
 Since the primary goal of
  this paper has been to provide a complementary coverage notion in
@@ -34,7 +32,7 @@ Since the primary goal of
 \begin{definition} {\emph{Complementary coverage notion 1:}}
   \label{def:comp-1}
    $T_i \in T$ is covered by $P$ iff $ \exists S
-   \in AIVC(R)$. $T_i \in S$.
+   \in AIVC(P)$. $T_i \in S$.
 \end{definition}
 
 \begin{definition} {\emph{Complementary coverage notion 2:}}
@@ -42,7 +40,7 @@ Since the primary goal of
    Given a set of properties $\Delta$ over $T$, $T_i \in T$ is covered iff $\exists P \in \Delta$. $T_i \in AIVC(P)$.
 \end{definition}
 
-Note that, one can define many more proof-based coverage metrics based on the IVC notion. However, the complementary metrics that make use of $AIVC$ relation are computationally much more expensive than \ivccov\ although they might be easier to satisfy. Based on our preliminary evaluation, we believe such metrics are as nearly expensive as \nondetcov. It should be mentioned that, in terms of preserving provability, a set of design elements marked as covered by the complementary notions are
+It should be pointed out that one can define many more proof-based coverage metrics based on the IVC notion. However, the complementary metrics that make use of $AIVC$ relation are computationally much more expensive than \ivccov\ although they might be easier to satisfy. Based on our preliminary evaluation, we believe such metrics are as nearly expensive as \nondetcov. However, in terms of preserving provability, a set of design elements marked as covered by the complementary notions are
 sufficient to reconstruct the proof of the properties.
 
 %For the moment, we take the parsimonious view: we return the set of different coverage scores induced by the $AIVC$es of all requirements
@@ -87,7 +85,7 @@ Based on the above categorization, we will state some relationships about IVCs s
 \end{lemma}
 \begin{proof}
   Proof by contradiction. If $(I, MUST(P)) \vdash P$, then $MUST(P)$
-  would be a set of inductive validity cores for $P$ based on Definition \ref{def:ivc},
+  would be an IVC for $P$ based on Definition \ref{def:ivc},
   which contradicts Lemma \ref{lem:ivc-must-may}.
 \end{proof}
 \vspace{2mm}
@@ -116,10 +114,10 @@ $$\frac{|MUST(P)|}{|T|}$$
 %\mike{Then, you can talk about justification, etc.}
 \begin{coroll}
 \label{cor:must-not-provable}
-\nondetcov\ does not preserve provability. 
+\nondetcov\ does not preserve provability.
 \end{coroll}
 \begin{proof}
-Immediate from Lemma \ref{lem:must-not-enough} and Lemma \ref{lem:must-coverage} 
+Immediate from Lemma \ref{lem:must-not-enough} and Lemma \ref{lem:must-coverage}
 \end{proof}
 \vspace{2mm}
 \begin{coroll}
@@ -131,7 +129,7 @@ Immediate from Definition~\ref{def:minimal-ivc} and Definition \ref{def:coverage
 \end{proof}
 \vspace{2mm}
 We believe \nondetcov\ characterizes coverage in a way which is both expensive to compute and difficult to satisfy (i.e. it usually leads to low coverage scores). However, justifiable coverage notions are not only more efficient and practical to compute but also are an immediate guidance of what is necessary for specification.
-Besides, \ivccov\ is accurate meaning that it does not result in false positives (i.e. does not assign \emph{actual} uncovered elements to covered) because $IVC$ is \emph{minimal}.
+Besides, \ivccov\ is accurate meaning that it does not result in false positives (i.e. does not assign \emph{actual} uncovered elements to covered) because IVCs are \emph{minimal}.
 
 %\begin{theorem}
 %\label{thm:cov-must}

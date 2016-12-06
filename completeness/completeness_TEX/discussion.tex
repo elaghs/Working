@@ -1,9 +1,9 @@
 \subsection{Discussion}
 \label{sec:discussion}
 
-As we described in Section \ref{sec:background}, transition relation is considered 
-as the conjunction of a collection of terms, where each term itself is a 
-boolean expression; it means that each term (or design element) may be of the conjunctive form by itself. 
+As we described in Section \ref{sec:background}, transition relation is considered
+as the conjunction of a collection of terms, where each term itself is a
+boolean expression; it means that each term (or design element) may be of the conjunctive form by itself.
 Elements of an IVC set for property $P$ are essentially design elements that are necessary for the proof of $P$. However, depending on the structure of the model, each design element can be either a complex or simple boolean expression.
 As an example, consider $T = T_1 \wedge T_2 \wedge T_3$; in this example, the model is structured with 3 elements. This model can be transformed into its equivalents such as
 \begin{itemize}
@@ -12,15 +12,15 @@ As an example, consider $T = T_1 \wedge T_2 \wedge T_3$; in this example, the mo
   \item etc.
 \end{itemize}
 This introduces the issue of \emph{granularity} of the elements in boolean-valued models, which is important to consider when interpreting coverage scores.
-In order to have more accurate results, design elements need to be atomic. 
-Obviously, models with coarse-grained elements result in higher coverage scores. 
+In order to have more accurate results, design elements need to be atomic.
+Obviously, models with coarse-grained elements result in higher coverage scores.
 
 In experiments in Section~\ref{sec:results}, we did not change the structure of the models in the benchmark suite.
-But, we have done some analyses over the models, and noticed most of 
-them contain complex (coarse-grained) elements. 
-To see how granularity affects coverage, we tore down each model into its equivalent 
+But, we have done some analyses over the models, and noticed most of
+them contain complex (coarse-grained) elements.
+To see how granularity affects coverage, we tore down each model into its equivalent
 with completely atomic elements, and redid the previous experiments.
 It turns out that for some cases, the time we need for \nondetcov\ has significantly increased from minutes to the order several hours. However, the performance of \ivccov\ has not changed much; the only thing
-has affected its performance is the initial proof time; 
-Since models have become a lot larger, it takes more time to prove a property over them. 
-But, after having proofs (line 1 in \ucalg), the overhead for finding IVCs has not changed much. In addition, in this new set of experiments, all the algorithms result in much lower coverage scores compared to the original experiments. 
+has affected its performance is the initial proof time;
+Since models have become a lot larger, it takes more time to prove properties over them.
+But, after having proofs (line 1 in \ucalg), the overhead of finding IVCs has not changed much. In addition, in this new set of experiments, all the algorithms result in much lower coverage scores compared to the original experiments. 

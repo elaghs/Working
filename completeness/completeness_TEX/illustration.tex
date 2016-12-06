@@ -1,4 +1,5 @@
 \section{Illustration}
+\label{sec:illust}
 
 \newcommand{\allp}{\texttt{all\_p}}
 \newcommand{\onp}{\texttt{on\_p}}
@@ -80,7 +81,7 @@ all_p = on_p and off_p and hyst_p;
 %\end{definition}
 \noindent The final property states that if the antecedent conditions hold, then in the initial state, the \doion\ variable is assigned false, and in subsequent steps, it retains the same value as it previously had.
 
-Now all model variables are required for the IVC, so the measures coincide, and we have a reasonably complete specification, so the measures appear to be useful.  However, the measures are certainly not foolproof; it turns out that using {\em only} the hysteresis property \hystp\ will {\em also} yield a ``complete'' result for all of the metrics.  
+Now all model variables are required for the IVC, so the measures coincide, and we have a reasonably complete specification, so the measures appear to be useful.  However, the measures are certainly not foolproof; it turns out that using {\em only} the hysteresis property \hystp\ will {\em also} yield a ``complete'' result for all of the metrics.
 %We will examine this situation further in the discussion section~\mike{add this!}.
 %
 %\mike{How would we define a metric that would flag the model as incomplete?  Model transformation would do it: if we added separate variables for each assignment of doi\_on, then any of the metrics would flag the \hystp\ spec as incomplete.}

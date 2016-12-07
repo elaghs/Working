@@ -25,8 +25,8 @@
 \usepackage{color}
 \usepackage{balance}
 \usepackage[ruled, vlined, linesnumbered]{algorithm2e}
-\usepackage[english]{babel} 
-\renewcommand{\abstract}{\noindent \sc{\large \textbf{Proof-based Coverage Metrics for\\Formal Verification}}\\}
+\usepackage[english]{babel}
+\renewcommand{\abstract}{\noindent {\sc \textbf{\large {Proof-based Coverage Metrics for\\Formal Verification}}}\\}
 
 \hyphenation{op-tical net-works semi-conduc-tor}
 \newcommand{\mkeyword}[1]{\mbox{\texttt{#1}}}
@@ -49,9 +49,9 @@
 \newcommand{\allcov}{\text{\sc MODEL-Cov}}
 \newcommand{\mutcov}{\text{\sc Mutant-Cov}}
 
- 
 
-\begin{document} 
+
+\begin{document}
 \definecolor{gold}{rgb}{0.90,.66,0}
 \definecolor{dgreen}{rgb}{0,0.6,0}
 \newcommand{\mike}[1]{\textcolor{red}{#1}}
@@ -79,7 +79,7 @@
 %\newdef{note}{Note}
 %
 % paper title
-% can use linebreaks \\ within to get better formatting as desired 
+% can use linebreaks \\ within to get better formatting as desired
 \title{Written Preliminary Examination Report}
 %\subtitle{[subtitle]
 %\titlenote{A full version of this paper is available as
@@ -103,27 +103,27 @@
 %
 % 1st. author
 \alignauthor
-Elaheh Ghassabani\\ 
+Elaheh Ghassabani\\
        \affaddr{Department of Computer Science \& Engineering}\\
        \affaddr{University of Minnesota}\\
        \affaddr{MN, USA}\\
        \email{ghass013@umn.edu}
        }
-  
- 
- 
+
+
+
 \maketitle
 
 
-\begin{abstract} 
+\begin{abstract}
  An important question while using formal verification is whether we have we specified enough properties for a given implementation model.  To address this question, we need coverage metrics for property-based formal verification. Existing metrics are usually based on mutation, in which the implementation model is modified and re-analyzed to determine whether the properties hold over the mutated model.  Unfortunately, these checks are computationally expensive (involving many additional proofs), and have the issue that the residual model after removing the ``unnecessary'' parts is often inadequate to prove the original property. This paper proposes an alternate characterization of completeness based on the proofs themselves.   We have previously investigated algorithms for determining minimal sets of model elements necessary to construct safety-property proofs called inductive validity cores (IVCs).  In this paper, we examine a family of coverage metrics that can be computed from IVCs.  One of the proposed metrics is substantially cheaper to compute than previous metrics and is guaranteed to preserve a residual model that leads to proof.  Other possible metrics are more expensive to compute and provide  more- or less-rigorous definitions.  We demonstrate the metrics on a large corpus of examples.
 
 \end{abstract}
 
 \keywords {coverage; requirements completeness; formal verification; SAT-based model checking;
   inductive proofs; inductive validity cores}
- 
- 
+
+
 %\mike{Note: mine traceability paper for ideas: abstract notion of proof?   Distinction between proof and entailment?  }
 %
 %\mike{Start from (a variant of) the formalism from the RE paper.  Then use inductive validity cores as an {\em implementation} of this idea, again just like the RE paper.  Bring in the IVC formalism only when we describe it as an ``implementation'' of our general idea.}
@@ -160,6 +160,8 @@ Elaheh Ghassabani\\
 \input{related}
 
 \input{conclusion}
+
+\input{contr}
 
 %\section*{Acknowledgment}
 %

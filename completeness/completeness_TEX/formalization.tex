@@ -81,7 +81,8 @@ We assume each element $T_i \in T$ has a set of possible mutations associated wi
    \mutcov = \frac{ | \{m \in M(T)~|~ m \nvdash P\} |}{|M(T)|}
 \]
 \end{definition}
-Note that without loss of generality, the formalization considers a single property P, which can be viewed as the conjunction of all the properties of the model\footnote{Besides, the notions provided in this paper can be easily applied to a set of properties.}.
+Note that without loss of generality, the formalization considers a single property P, which can be viewed as the conjunction of all the properties of the model.
+%\footnote{Besides, the notions provided in this paper can be easily applied to a set of properties.}.
 
 In our example in Figure~\ref{fig:asw}, applying the software mutations from~\cite{Andrews06:mutation} would involve manipulating the constants used in the definitions of \texttt{a1\_below, a2\_below, a1\_above, a2\_above}, swapping 'or' and 'and' in the definition of \texttt{below, above\_hyst}, or negating the conditions in the if/then/else statements.  Even for this small model, note that there are a large number of possible mutations: 57 given the set defined above, and that this number increases rapidly with the size of the program and the chosen set of mutations.
 
@@ -89,15 +90,15 @@ Of particular interest is the mutation that replaces a computed variable ({\em s
 
 \begin{definition} {\emph{Nondeterministic coverage (\nondetcov) ~\cite{chockler2010coverage}.} }
 \label{def:non-det}
-$T_i \in T$ is covered by property $P$ iff
-$(I, T) \vdash P$ and\\ $(I, T \setminus \{T_i\}) \nvdash P$.
+$T_i \in T$ is covered by property $P$ iff $T_i \in \nondetcov (P)$, where
+$\nondetcov (P) = \{T_i \in T~|~ (I, T) \vdash P \wedge (I, T \setminus \{T_i\}) \nvdash P\}$.
 \end{definition}
 
 %For the sake of simplicity, we refer to the coverage function
 %formalized in Definition \ref{def:single-mut} as \nondetcov\.
 Using  $\nondetcov$, the coverage score of specification $P$ is computed by
 \[
-   \frac{ | \{T_i \in T~|~ T \setminus \{T_i\} \nvdash P\} |}{|T|}
+   \frac{ | \nondetcov (P)|}{|T|}
 \]
 
 

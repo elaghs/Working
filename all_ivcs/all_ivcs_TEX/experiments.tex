@@ -1,2 +1,79 @@
-\section{Experiments}
-\label{sec:expr}
+\section{Experiment}
+\label{sec:experiment}
+
+%\mike{What do we want to call our efficient algorithm: IVC?}
+
+We would like to investigate both the {\em efficiency} and {\em
+  minimality} of our three algorithms: the naive brute-force
+algorithm (\bfalg), the UNSAT core-based algorithm (\ucalg), and the
+combined UNSAT core followed by brute-force minimization algorithm
+(\ucbfalg). Efficiency is computed in terms of wall-clock time: how
+much overhead does the IVC algorithm introduce? Minimality is
+determined by the size of the IVC: cores with a smaller number of
+variables are preferred to cores with a larger number of variables.
+Finally, we are interested in the {\em diversity} of solutions: how
+often do different tools/algorithms generate different minimal IVCs?
+
+The use of JKind allows additional dimensions to our investigation: it supports two different inductive algorithms: $k$-induction and PDR, and a ``fastest'' mode, that runs both algorithms in parallel.  In addition, JKind supports multiple back-end SMT solvers including Z3~\cite{DeMoura08:z3}, Yices~\cite{Dutertre06:yices}, MathSAT~\cite{Cimatti2013:MathSAT}, and SMTInterpol~\cite{Christ2012:SMTInterpol}.  We would like to determine whether the choice of inductive algorithm affects the size of the IVC, whether different solvers are more or less efficient at producing IVCs, and whether running different solvers/algorithms leads to {\em diversity} of IVC solutions.
+
+Therefore, we investigate the following research questions:
+\begin{itemize}
+    \item \textbf{RQ1:} How expensive is it to compute inductive validity cores using the \bfalg, \ucalg, and \ucbfalg algorithms?
+    \item \textbf{RQ2:} How close to minimal are the IVC sets computed by \ucalg as opposed to the (guaranteed minimal) \ucbfalg?  How do the sizes of IVCs compare to static slices of the model?
+    \item \textbf{RQ3:} How much {\em diversity} exists in the solutions produced by different solver/induction algorithm configurations?
+\end{itemize}
+
+\subsection{Experimental Setup}
+In this study, we started from a suite of 700 Lustre models developed
+as a benchmark suite for~\cite{Hagen08:FMCAD}. We augmented this suite
+with 81 additional models from recent verification projects including
+avionics and medical devices~\cite{QFCS15:backes,hilt2013}. Most of
+the benchmark models from~\cite{Hagen08:FMCAD} are small (10kB or less,
+with 6-40 equations) and contain a range of hardware benchmarks and
+software problems involving counters. The additional models are much
+larger: around 80kB with over 300 equations. We added the new
+benchmarks to better check the scalability for the tools, especially
+with respect to the brute force algorithm.
+%
+%\mike{MORE HERE...stats on size, reasons for add'l models.}
+Each benchmark model has a single property to analyze.  For our purposes, we are only interested in models with a {\em valid} property (though it is perhaps worth noting that there is no additional computation---and thus no overhead---using the JKind IVC options for {\em invalid} properties).  In our benchmark set, 295 models yield counterexamples, and 10 additional models are neither provable nor yield counterexamples in our test configuration (see next paragraph for configuration information).  The benchmark suite therefore contains 476 models with valid properties, which we use as our test subjects.
+
+For each test model, we computed \ucalg in 12+1 configurations: the
+twelve configurations were the cross product of all solvers \{Z3,
+Yices, MathSAT, SMTInterpol\} and inductive algorithms
+\{$k$-induction, PDR, fastest\}, and the remaining (+1) configuration
+was an instance of \bfalg run on Yices, which is the default solver in
+JKind. In addition, for each of the 12 configurations, we ran an
+instance of JKind without IVC to examine overhead. The experiments
+were run on an Intel(R) i5-2430M, 2.40GHz, 4GB memory machine, with a
+1 hour timeout for each analysis on any model. The data gathered for
+each configuration of each model included the time required to check
+the model without IVC, with IVC, and also the set of elements in the
+computed IVC.\footnote{The benchmarks, all raw experimental results,
+  and computed data are available on \cite{expr}.}
+
+Note that not all analysis problems were solvable with all algorithms: for all solvers, $k$-induction (without IVC) was unable to solve 172 of the examples.  When comparing minimality of different solving algorithms, we only considered cases where both algorithms provided a solution (as will be discussed in more detail in Section~\ref{sec:minimality}).
+
+\iffalse
+\begin{itemize}
+    \item an algorithm to compute a truly minimal set of support, i.e. \texttt{JSupport}.
+    \item given a LUS model, a static crawler which automatically marks all equations of a node in the initial support set of a property.
+    \item some trackers that measure the verification time with/ without support computation.
+   % \item some minor changes in the XML writers.
+\end{itemize}
+
+\mike{My thoughts on this section: mostly, it needs more structure: more information on the properties of the models: size, provenance, etc., a broken out subsection on the description of the experimental setup, etc}
+
+\mike{I think we want to split out the results in another top-level section}
+
+Experiment:
+\begin{itemize}
+    \item (Overview) describe research questions and goals.
+    \item Experimental setup: tell me about the models: how many, how big are they?  Then, tell me about the experiment: the tool configurations, the machine used for test.
+    \item Data generation: Describe what you measured for each model analysis.
+\end{itemize}
+\fi
+
+
+%%  LocalWords:  minimality ive UNSAT IVC Minimality IVCs PDR Yices
+%%  LocalWords:  MathSAT SMTInterpol RQ JSupport

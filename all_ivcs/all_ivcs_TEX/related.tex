@@ -1,27 +1,48 @@
 \section{Related work}
 \label{sec:related}
 
-The notion of coverage has been defined in different ways in the context of property-based verification \cite{chockler2008causes, chockler2006coverage, chockler_coverage_2003, katz1999have, grosse2007estimating, claessen2007coverage}.
-Coverage in verification was introduced in \cite{hoskote1999coverage, katz1999have}. Hoskote et al. \cite{hoskote1999coverage} suggested a state-based metric in model checking based on FSM mutations, which are small atomic changes to the design. Then, the method for measuring coverage is to model check a given property for each mutant design.
-Later in \cite{chockler_coverage_2003}, Chockler et al. provided corresponding notions of metrics used in simulation-based verification for formal verification. In fact, they improved the same idea of mutation-based coverage where each mutation is generated to check if a specific
-design element is necessary for the proof of the property.
- However, the proposed metric is not only very computationally expensive, but also is not able to identify \emph{may} elements of the design. That is, if the proof requires a set of IVC made of two disjoint sets of \emph{may} and \emph{must}, which both play a part in the validity of the property, their technique can only specified the \emph{must} set. It should be pointed out that most of the mutation-based metrics, including \cite{kupferman_theory_2008, chockler2001practical}, are focused on finite state systems.
+%\andrew{This section seems a bit strange since it focuses on MUS more
+%  than IVC. Are people doing this for SAT/SMT solving or for model
+%  checking?}
 
- MORE ON \cite{Kupferman:2006:SCF} fill in later...
+Our work builds on top of a substantial foundation building Minimally Unsatisfiable Subformulas
+(MUSes) from UNSAT cores~\cite{Cimatti2007:UNSAT}, including \cite{marques2010minimal, belov2012towards, ryvchin2011faster, belov2012computing, nadel2010boosting}.  Recent algorithms can handle very large problems, but computing MUSes is still a resource-intensive task.  While some work is aimed at providing a set of minimal unsatisfiable formulae, minimality is usually defined such that given a set of clauses $\mathbb{M}$, removing any member of $\mathbb{M}$ makes it satisfiable \cite{belov2012computing}.  The step of producing minimal invariants for proofs has been investigated in depth by Ivrii et al. in~\cite{Ivrii14:invariants}.
 
-A more recent work in \cite{chockler2010coverage} performs coverage analysis through interpolation \cite{mcmillan2003interpolation}. This work is also based on design-dependent mutations \cite{chockler_coverage_2003}, where a design is considered as a net-list with nodes of types \{AND, INVERTER, REGISTER, INPUT\}. Each mutant design changes the type of a single node to INPUT. When property $\phi$ satisfied by the original net-list fails on the mutant design, it is said that a mutant is discovered for $\phi$, which is the same as a \emph{must} element.
-Then, the coverage metric for $\phi$ is defined as the fraction of the discovered mutants, based on which the coverage of a set of properties is measured as the fraction of mutants discovered by at least one property.
-In order to decrease the cost of computation, the check is performed at several stages; first, all the nodes that do not appear in the resolution proof of a given property are marked as \emph{not-covered}, and the rest of the nodes are marked as \emph{unknown}. Then, for the unknown nodes, the basic mutation check is performed: if a corresponding mutant design violates the property, it will be considered as \emph{covered}. Otherwise, the algorithm tries to drive an inductive invariant to prove that the node is not covered. Finally, an interpolant-based model checking is applied to the nodes that are still unknown.
+UNSAT cores and MUSes are used for many different activities within
+formal verification. Gupta et al. \cite{gupta2003iterative} and
+McMillan and Amla \cite{mcmillan2003automatic} introduced the use of
+unsatisfiable cores in proof-based abstraction engines. Their goal is
+to shrink the abstraction size by omitting the parts of the design
+that are irrelevant to the proof of the property under verification.
+Torlak et al. in~\cite{Torlak08:cores} finds MUSes of Alloy
+specifications, and considers semantic vacuity, which we consider in
+Section~\ref{sec:intro}. Alloy models are only analyzed up to certain
+size bounds, however, and in general are unable to prove properties
+for arbitrary models. Also, because we are extracting information from
+proofs, it is possible to use IVCs for additional purposes (proof
+explanation and completeness checking).
 
-A Different approach to measure coverage in formal verification is to check each output signal is fully constrained by the specification \cite{das2005formal, claessen2007coverage, grosse2007estimating}, which is not related to the mutation coverage. For example, in In \cite{claessen2007coverage}, authors proposed a design-independent coverage analysis where a forgotten property is identified by an uncovered output signal. This method investigates, given a property list and a specific output signal $s$, if there is a trace with a point in time when a particular $s$ is not constrained by any properties. Another work in \cite{haedicke2012guiding} defines a coverage metric that computes a numerical value to describe how much of the circuit behavior is constrained by a given set of properties.
-%This methods investigates, given property $\phi$ and a specific output $s$, if there exist two traces $\sigma_{1}$ and $\sigma_{2}$ that: (1) $\sigma_{1} \vDash \phi$ and $\sigma_{2} \vDash \phi$ (2) $\forall$ signals &s' \neq s, \forall t. \sigma_{1}(t, s') = \sigma_{2}(t, s')& (3) &\exists t. \sigma_{1}(t, s) \neq \sigma_{2}(t, s)&. This method was implemented in SMV model checker \cite{smv}.
+%[SLICING]
+If we view Lustre as a programming language, our work can be viewed as a more accurate form of program slicing~\cite{Tip95asurvey}.  We perform {\em backwards slicing} from the formula that defines the property of interest of the model.  The slice produced is smaller and more accurate than a static slice of the formula~\cite{Weiser:1981:slicing}, but guaranteed to be a sound slice for the formula for all program executions, unlike dynamic slicing~\cite{Agrawal:1990:slicing}.  Predicate-based slicing has been used~\cite{Li04:slicing} to try to minimize the size of a dynamic slice.  Our approach may have utility for some concerns of program slicing (such as model understanding) by constructing simple ``requirements'' of a model and using the tool to find the relevant portions of the model.
 
-MORE RECENT: \cite{yang2013minimal} \cite{chockler2011incremental} \cite{brillout2009mutation} \cite{bao2014coverage}
+Another potential use of our work is for ``semantic'' vacuity detection.  A standard definition of vacuity is syntactic and defined as follows~\cite{Kupferman:2006:SCF}: {\em A system K satisfies a formula $\phi$ vacuously iff $K \vdash \phi$ and there is some subformula $\psi$ of $\phi$ such that $\psi$ does not affect $\phi$ in K}.  Vacuity has been extensively studied~\cite{Gurfinkel:2012:RVB,Chockler2008,DBLP:Ben-DavidK13,Kupferman:2006:SCF,Chockler:2007,Beer1997} considering a range of different temporal logics and definitions of ``affect''.  On the other hand, our work can be used to consider a broader definition of vacuity.  Even if all subformulae are required (the property is not syntactically vacuous), it may not require substantial portions of the model, and so may be provable for vacuous reasons.  The problem is exacerbated when the modeling and property language are the same (as in JKind), because whether a subformula is considered part of the model or part of the property, from the perspective of checking tools, can be unclear.
 
-MORE:
+Determining completeness of properties has also been extensively studied. Certification standards such as DO-178C~\cite{DO178C} require that requirements-derived tests achieve some level of structural coverage (MC/DC, decision, statement) depending on the criticality level of the software, in order to approximate completeness.  If coverage is not achieved, then additional requirements and tests are added until coverage is achieved.  Chockler~\cite{chockler_coverage_2003} defined the first completeness metrics directly on formal properties based on mutation coverage.  Later work by Kupferman et al.~\cite{Kupferman:2006:SCF} defines completeness as an extension of vacuity to elements in the model.  We present an alternative approach that uses the proof directly, which we expect to be considerably less expensive to compute.  Recent work by Murugesan~\cite{murugesan2015we} and Schuller~\cite{schuler_assessing_2011} attempts to combine test coverage metrics with requirements to determine completeness.
 
-Espana et al. \cite{espana2009evaluating} also studied the granularity and completeness of specification by defining some metrics to measure completeness. However, their approach is empirical and not in the context of formal verification.
 
-\cite{drechsler2012completeness, firesmith2005your, chang2007finding,katta2013investigating, zowghi2002three} : not in the model checking area
+%[DETERMINING VACUITY]
+%- Vardi and Kupferman's work
 
-\cite{Whalen07:FMICS} ...
+
+\iffalse
+\begin{itemize}
+    \item MUS's : checked
+    \item Work on Alloy: checked
+    \item Work that Teme pointed us to : will be added
+    \item Anything else Elaheh has found : \%60 checked
+\end{itemize}
+\fi
+
+%%  LocalWords:  Subformulas MUSes UNSAT formulae et al Amla Torlak
+%%  LocalWords:  IVCs iff subformula subformulae criticality Chockler
+%%  LocalWords:  Kupferman Vardi Murugesan Schuller MUS's Teme Elaheh

@@ -1,105 +1,42 @@
-
-\documentclass[10pt, conference]{IEEEtran}
-% Add the compsocconf option for Computer Society conferences.
-%
-% If IEEEtran.cls has not been installed into the LaTeX system files,
-% manually specify the path to it like:
-% \documentclass[conference]{../sty/IEEEtran}
-
-
-
-
-
-% Some very useful LaTeX packages include:
-% (uncomment the ones you want to load)
-
-
-% *** MISC UTILITY PACKAGES ***
-%
-%\usepackage{ifpdf}
-% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
-% compilation based on whether the output is pdf or dvi.
-% usage:
-% \ifpdf
-%   % pdf code
-% \else
-%   % dvi code
-% \fi
-% The latest version of ifpdf.sty can be obtained from:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
-% Also, note that IEEEtran.cls V1.7 and later provides a builtin
-% \ifCLASSINFOpdf conditional that works the same way.
-% When switching from latex to pdflatex and vice-versa, the compiler may
-% have to be run twice to clear warning/error messages.
-
-
-
-
-\usepackage{cite}
-
-\ifCLASSINFOpdf
-\usepackage[pdftex]{graphicx}
-  % declare the path(s) where your graphic files are
-  % \graphicspath{{../pdf/}{../jpeg/}}
-  % and their extensions so you won't have to specify these with
-  % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
-\else
-  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
-  % will default to the driver specified in the system graphics.cfg if no
-  % driver is specified.
-\usepackage[dvips]{graphicx}
-  % declare the path(s) where your graphic files are
-  % \graphicspath{{../eps/}}
-  % and their extensions so you won't have to specify these with
-  % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.eps}
-\fi
-% graphicx was written by David Carlisle and Sebastian Rahtz. It is
-% required if you want graphics, photos, etc. graphicx.sty is already
-% installed on most LaTeX systems. The latest version and documentation can
-% be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
-% Another good source of documentation is "Using Imported Graphics in
-% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
-% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
-%
-% latex, and pdflatex in dvi mode, support graphics in encapsulated
-% postscript (.eps) format. pdflatex in pdf mode supports graphics
-% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
-% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
-% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
-% which can result in "jaggedy"/blurry rendering of lines and letters as
-% well as large increases in file sizes.
-%
-% You can find documentation about the pdfTeX application at:
-% http://www.tug.org/applications/pdftex
-
-
-
-
-
-% *** MATH PACKAGES ***
-%
-\usepackage[cmex10]{amsmath}
-\usepackage{algorithmic}
-\usepackage{array}
-\usepackage{mdwmath}
-\usepackage{mdwtab}
-\usepackage{eqparbox}
-\usepackage[tight,footnotesize]{subfigure}
-\usepackage{caption}
+\documentclass{sig-alternate-05-2015}
 \usepackage{tabularx,colortbl}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{flushend}
 \usepackage{cite}
 \usepackage{amsmath}
-%\usepackage[font=footnotesize]{subfig}
-%\usepackage[caption=false,font=footnotesize]{subfig}
-\usepackage{fixltx2e}
-\usepackage{stfloats}
+%\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{epsfig}
+\usepackage{stmaryrd}
 \usepackage{url}
-\hyphenation{op-tical net-works semi-conduc-tor}
+\usepackage{multirow}
+\usepackage{latexsym}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{comment}
+\usepackage{longtable}
+\usepackage{supertabular}
+\usepackage{times}
+\usepackage{listings}
+\usepackage{subfigure}
+\usepackage{color}
+\usepackage{balance}
+\usepackage[ruled, vlined, linesnumbered]{algorithm2e}
+
+
+
+%\theoremstyle{Definition}
+%\newtheorem{definition}{Definition}
+%%
+%\theoremstyle{Theorem}
+%\newtheorem{theorem}{Theorem}
+
+
+%\newcommand{\definition}{\noindent \textbf{Definition} \citation{}}
+%\newcommand{\theorem}{\noindent \textbf{Theorem} \citation{}}
+%\newcommand{\lemma}{\noindent \textbf{Lemma} \citation{}}
+
 \newcommand{\mkeyword}[1]{\mbox{\texttt{#1}}}
 \DeclareMathOperator{\kuop}{uop}
 \DeclareMathOperator{\kbop}{bop}
@@ -114,9 +51,23 @@
 \newcommand{\rbb}{]\!]}
 \newcommand{\expr}{\phi}
 \newcommand{\exprS}{\Phi}
+% this toggles between a tech-report version of the paper and the MEMOCODE version
+%\newcommand{\TECHREPORT}{}
+%\tolerance=1
+%\emergencystretch=\maxdimen
+%\hyphenpenalty=10000
+%\hbadness=10000
+\sloppypar
+
+
 
 \begin{document}
-
+\CopyrightYear{2016}
+\setcopyright{acmcopyright}
+\conferenceinfo{FSE'16,}{November 13-19, 2016, Seattle, WA, USA}
+\isbn{978-1-4503-4218-6/16/11}\acmPrice{\$15.00}
+\doi{http://dx.doi.org/10.1145/2950290.2950346}
+ % Add this to every tex file, so that you can comment with a diff color%
 \definecolor{gold}{rgb}{0.90,.66,0}
 \definecolor{dgreen}{rgb}{0,0.6,0}
 \newcommand{\mike}[1]{\textcolor{red}{#1}}
@@ -129,80 +80,73 @@
 \newcommand{\cta}{\text{TA$_{C}$}}
 \newcommand{\tta}{\text{TA$_{T}$}}
 
-%\newdef{lemma}{Lemma}
-%\newdef{definition}{Definition}
-%\newdef{theorem}{Theorem}
-%\newdef{note}{Note}
-%
-% paper title
-% can use linebreaks \\ within to get better formatting as desired
-\title{Bare Demo of IEEEtran.cls for IEEECS Conferences}
+\newdef{lemma}{Lemma}
+\newdef{definition}{Definition}
+\newdef{theorem}{Theorem}
+\newdef{note}{Note}
+%\newcommand{\TECHREPORT}{}
 
+\title{Efficient Generation of All Inductive Validity Cores (IVCs)}
 
-% author names and affiliations
-% use a multiple column layout for up to two different
-% affiliations
+\numberofauthors{3}
 
-\author{\IEEEauthorblockN{Authors Name/s per 1st Affiliation (Author)}
-\IEEEauthorblockA{line 1 (of Affiliation): dept. name of organization\\
-line 2: name of organization, acronyms acceptable\\
-line 3: City, Country\\
-line 4: Email: name@xyz.com}
-\and
-\IEEEauthorblockN{Authors Name/s per 2nd Affiliation (Author)}
-\IEEEauthorblockA{line 1 (of Affiliation): dept. name of organization\\
-line 2: name of organization, acronyms acceptable\\
-line 3: City, Country\\
-line 4: Email: name@xyz.com}
+\author{
+\alignauthor
+Elaheh Ghassabani\\
+       \affaddr{Department of Computer Science and Engineering}\\
+       \affaddr{University of Minnesota}\\
+       \affaddr{\small{200 Union Street\\Minneapolis, MN, 55455, USA}}\\
+       \email{\texttt{\small{ghass013@umn.edu}}}
+\alignauthor
+Andrew Gacek\\
+       \affaddr{Rockwell Collins\\ Advanced Technology Center}\\
+       \affaddr{\small{400 Collins Rd. NE\\Cedar Rapids, IA, 52498, USA}}\\
+       \email{\texttt{\small{andrew.gacek@rockwellcollins.com}}}
+\alignauthor
+Michael W. Whalen\\
+       \affaddr{Department of Computer Science and Engineering}\\
+       \affaddr{University of Minnesota}\\
+       \affaddr{\small{200 Union Street\\Minneapolis, MN, 55455, USA}}\\
+       \email{\texttt{\small{whalen@cs.umn.edu}}}
 }
 
-% conference papers do not typically use \thanks and this command
-% is locked out in conference mode. If really needed, such as for
-% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
-% after \documentclass
-
-% for over three affiliations, or if they all won't fit within the width
-% of the page, use this alternative format:
-%
-%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
-%Homer Simpson\IEEEauthorrefmark{2},
-%James Kirk\IEEEauthorrefmark{3},
-%Montgomery Scott\IEEEauthorrefmark{3} and
-%Eldon Tyrell\IEEEauthorrefmark{4}}
-%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
-%Georgia Institute of Technology,
-%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
-%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
-%Email: homer@thesimpsons.com}
-%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
-%Telephone: (800) 555--1212, Fax: (888) 555--1212}
-%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
-
-
-
-
-% use for special paper notices
-%\IEEEspecialpapernotice{(Invited Paper)}
-
-
-
-
-% make the title area
 \maketitle
 
-
 \begin{abstract}
-The abstract goes here. DO NOT USE SPECIAL CHARACTERS, SYMBOLS, OR MATH IN YOUR TITLE OR ABSTRACT.
-
+All IVCs method is awesome!!!! :-)
 \end{abstract}
 
-\begin{IEEEkeywords}
-component; formatting; style; styling;
-
-\end{IEEEkeywords}
-
-\IEEEpeerreviewmaketitle
-
+%\begin{CCSXML}
+%<ccs2012>
+%<concept>
+%<concept_id>10003752.10003790.10003794</concept_id>
+%<concept_desc>Theory of computation~Automated reasoning</concept_desc>
+%<concept_significance>500</concept_significance>
+%</concept>
+%<concept>
+%<concept_id>10003752.10003790.10011192</concept_id>
+%<concept_desc>Theory of computation~Verification by model checking</concept_desc>
+%<concept_significance>500</concept_significance>
+%</concept>
+%<concept>
+%<concept_id>10011007.10011074.10011075.10011076</concept_id>
+%<concept_desc>Software and its engineering~Requirements analysis</concept_desc>
+%<concept_significance>500</concept_significance>
+%</concept>
+%<concept>
+%<concept_id>10011007.10011074.10011099.10011692</concept_id>
+%<concept_desc>Software and its engineering~Formal software verification</concept_desc>
+%<concept_significance>500</concept_significance>
+%</concept>
+%</ccs2012>
+%\end{CCSXML}
+%
+%\ccsdesc[500]{Theory of computation~Verification by model checking}
+%\ccsdesc[500]{Theory of computation~Automated reasoning}
+%\ccsdesc[500]{Software and its engineering~Requirements analysis}
+%\ccsdesc[500]{Software and its engineering~Formal software verification}
+%\printccsdesc
+\keywords{Inductive validity cores, UNSAT-core generation, SMT-based model checking, Inductive proofs}
 
 \input{introduction}
 
@@ -211,9 +155,11 @@ component; formatting; style; styling;
 %\fi
 %\section{Illustrative Example}
 
+\input{example}
+
 \input{background}
 
-\input{method}
+\input{ivc}
 
 \input{impl}
 
@@ -224,16 +170,36 @@ component; formatting; style; styling;
 \input{related}
 
 \input{conclusion}
+%ACKNOWLEDGMENTS are optional
+%TODO: Fill in for final version
+%\vspace{0.05in}
+\textbf{Acknowledgments:}
+This work was supported by
 
-\section*{Acknowledgment}
+%We thank XXXX
 
-
-The authors would like to thank...
-more thanks here
-
-
-\bibliographystyle{IEEEtran}
+\bibliographystyle{abbrv}
 \bibliography{biblio}
+
+% This ~ seems to fix an odd bibliography alignment issue
+~
+
+%\ifdefined\TECHREPORT
+%\appendix
+%
+%\section{Appendix: Proof of Equivalence}
+%\input{appendix}
+%\fi
+
+%\section{Appendix: GPCA CENTA Model}
+%\label{appendix:gpcacenta}
+%\begin{figure}[!ht]
+%\begin{center}
+%\includegraphics[scale=0.6]{images/sampled_pca.PNG} %[trim = 0 2 0 0, clip=true]{Comp}
+%\caption{GPCA AGREE Properties modeled as a Timed Automata} \label{fig:samplepca}
+%\end{center}
+%\end{figure}
+
+%\balancecolumns
+
 \end{document}
-
-

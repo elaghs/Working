@@ -78,7 +78,7 @@ IVC set.
 
 Although the minimality of $IVC$ sets makes \ivccov\ accurate
 in terms of both preserving provability and not having false positives, the exact implementation of \ivccov\ is based on the \ucbfalg algorithm, which is as nearly expensive as the \mustalg algorithm for \nondetcov\ . To alleviate this issue, we have used the efficient implementation for \ivccov\ proposed in \cite{Ghass16}, i.e. \ucalg,
- which is an over-approximation and might not be always accurate in terms of minimality.
+ which is an over-approximation and might not be always accurate in terms of minimality. In general, \nondetcov\ characterizes coverage in a way which is both expensive to compute and difficult to satisfy (i.e. it usually leads to low coverage scores). However, justifiable coverage is more efficient and practical to compute, which is also an immediate guidance of what is necessary for specification.
 
 \subsection{Discussion}
 As mentioned, IVC sets are derived from inductive invariants; in other words, they are built upon the proof of the validity of a given property. One interesting fact about proofs

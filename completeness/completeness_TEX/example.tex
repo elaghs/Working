@@ -23,16 +23,17 @@ var
    below, above_hyst, d1, d2: bool;
 let
    --%MAIN
-   a1_below = (alt1 < THRESHOLD);
-   a2_below = (alt2 < THRESHOLD);
-   a1_above = (alt1 >= T_HYST);
-   a2_above = (alt2 >= T_HYST);
-   below = a1_below or a2_below ;
-   above_hyst = a1_above and a2_above;
-   doi_on = if (below and not inhibit)
-      then true else d1;
-   d1 = if (inhibit or above_hyst) then false else d2;
-   d2 = (false -> pre(doi_on));
+(1)   a1_below = (alt1 < THRESHOLD);
+(2)   a2_below = (alt2 < THRESHOLD);
+(3)   a1_above = (alt1 >= T_HYST);
+(4)   a2_above = (alt2 >= T_HYST);
+(5)   below = a1_below or a2_below ;
+(6)   above_hyst = a1_above and a2_above;
+(7)   doi_on = if (below and not inhibit)
+        then true else d1;
+(8)   d1 = if (inhibit or above_hyst) 
+         then false else d2;
+(9)   d2 = (false -> pre(doi_on));
 tel;
 \end{verbatim}
 }

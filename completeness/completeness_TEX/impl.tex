@@ -1,12 +1,13 @@
 \section{Implementation}
 \label{sec:impl}
 
-To implement our method, we have made use of the technique proposed in \cite{Ghass16} for the efficient computation of IVCs. In \cite{Ghass16}, there are two detailed algorithms for computing minimal IVCs: (1) Algorithm \ucbfalg that computes a truly minimal IVC set for a given property, which is expensive. (2) Algorithm \ucalg that computes an IVC set fairly close to minimal in a much more efficient way. This section provides a high-level representation of these algorithms.
+To implement our method, we have made use of the technique proposed in \cite{Ghass16} for the efficient computation of IVCs.
+In \cite{Ghass16}, there are two detailed algorithms for computing minimal IVCs: (1) Algorithm \ucbfalg that computes a truly minimal IVC set for a given property, which is expensive. (2) Algorithm \ucalg that computes an IVC set fairly close to minimal in a much more efficient way. This section provides a high-level representation of these algorithms. 
 
 IVCs are built upon inductive proofs. In order to prove a property, inductive proof methods employ some heuristics to derive additional lemmas (or invariants) about the problem so to strengthen the property and prove it inductively. Intuitively, to extract IVCs, Algorithm \ref{alg:uc}
 first proves the property and obtains all the invariants generated for the proof (line 1). Since not all these invariants are essential for the proof, it performs some minimization to keep a minimal set of necessary invariants (line 2). The proofs of these invariants themselves are dependent on the structure of the model or design elements that we have defined them as inductive validity core (Definition \ref{def:ivc}).
 So, using function $map\_to\_design$, Algorithm \ref{alg:uc}
-computes those design elements. And finally, it minimizes the computed elements so to obtain a minimal IVC set (line 4). Although Algorithm \ref{alg:uc} performs minimization, because of the structure of the inductive proofs, \ucalg might still not produce an \emph{exact} minimal IVC set \footnote{for more information, see \cite{Ghass16}. Here we abstract away the details.}.
+computes those design elements. And finally, it minimizes the computed elements so to obtain a minimal IVC set (line 4). Although Algorithm \ref{alg:uc} performs minimization, because of the structure of the inductive proofs, \ucalg might still not produce an \emph{exact} minimal IVC set \footnote{\noindent ~for more information, see \cite{Ghass16}. Here we abstract away the details.}.
 Therefore, Algorithm \ref{alg:ucbf}, \ucbfalg, includes a post-minimization process that
 operates on the result of \ucalg. The results by this algorithm are guaranteed to be minimal.
 

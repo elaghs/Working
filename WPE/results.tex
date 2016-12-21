@@ -53,7 +53,7 @@ and the overhead imposed by the algorithms.
     \hline
     \small{\ucalg} &   0.0\%  & 100\%  & 10.23\% & 11.72\% \\[0.5ex]
     \small{\mustalg} & 13.73\% & 10530.77\% &  1081.10\% & 1613.26\% \\[0.5ex]
-    \small{\ucbfalg}& 14.09\% & 11124.43\% &  882.09\% & 1512.07\% \\[0.5ex]
+    \small{\ucbfalg}& 14.09\% & 11124.43\% &  882.02\% & 1512.07\% \\[0.5ex]
     \hline
   \end{tabular}
   \label{tab:overhead-ucalg}
@@ -62,7 +62,7 @@ and the overhead imposed by the algorithms.
 Fig.~\ref{fig:runtimeall} allows a visualization of the runtime of different coverage analyses
 in comparison with the proof time, which indicates the overhead induced by each algorithm.
 
-\takeaway{Coverage analysis using \ucalg is quite efficient with a low overhead, compared to \mustalg .}
+\takeaway{Coverage analysis using \ucalg is much more efficient than coverage analysis using \mustalg.}
 
 \begin{table}
   \caption{Coverage score of different algorithms}
@@ -90,8 +90,10 @@ we were interested in the number of models in the benchmark for which $\mustalg 
 Obviously properties are provable by 100\% of the IVCs computed by \ucalg (and \ucbfalg).
 As for the \mustalg algorithm, the properties of 84 models in the benchmarks were not provable by the output of \mustalg.
 
-\takeaway{On average, coverage analysis using \ucalg is 115\% easier to satisfy,
-compared to \mustalg. In the assessment of completeness, \ucalg has an average error rate of $+8\%$,
+\takeaway{In average, coverage analysis using \ucalg is easier to satisfy,
+compared to \mustalg.
+
+In the assessment of completeness, \ucalg has an average error rate of $+8\%$,
 while the average error rate of \mustalg is $-3\%$.}
 
 \takeaway{\mustalg failed to maintain provability on 18\% of the benchmarks.} 

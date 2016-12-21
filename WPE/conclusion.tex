@@ -1,22 +1,19 @@
 \section{Conclusions \& Future Work}
 \label{sec:conclusion}
 
-In this paper, we have the idea of proof-based coverage notions for formal verification using
-the IVC concept, a useful measure in relation to
-a valid safety property for inductive model checking. We have shown that our method
- is computationally efficient while
- being accurate about the covered parts of a given design.
- We have referred to this accuracy as preserving provability, which means
- that a set of elements considered covered by our algorithm is sufficient
- to establish the validity proof for every requirement in the set of specifications.
+In this paper, we have examined the use of proof-based coverage notions for formal verification. 
+Further we have implemented these notions in terms of checking safety properties using inductive model checking tools through inductive validity cores (IVCs).  We have shown that this approach
+is computationally efficient while providing accurate information about the covered parts of a given design.  Our approach preserves provability, which means that a set of elements considered covered by our algorithm is sufficient to establish the validity proof for every requirement in the set of specifications.
+%
+We have implemented our algorithm as part of the open source model checker JKind, and experimented with our approach comparing it to another recent approach from the literature.  Our results show that the \ucalg\ computation imposes a small overhead to the verification process and so it is reasonable to measure completeness as part of the normal analysis process.  
 
- We have implemented
-our algorithm as part of the open source model checker JKind. Using our approach, measuring coverage is quite possible as we have shown in our experiments.
- We also benchmarked our implementation and compared it with other techniques in the literature.
- The experiments show that the computation imposes a small overhead to the verification process. We have described how the justifiable notion of coverage proposed in this paper can be used as a
-means of quantifying requirements completeness.
+We are now in the process of developing some efficient algorithms for exploring the space of IVCs, e.g., finding a minimum, rather than minimal support set, or finding all support sets.  Having such algorithms, if they are performant, will allow a useful range of coverage metrics.  As part of this process, we are also investigating the relationship among the size of $IVC$s, coverage score of \ivccov\, and vacuity metrics for models and properties.  
 
-Finally, we are in the process of developing some efficient algorithms for exploring the space of IVCs, e.g., finding a minimum, rather than minimal support set, or finding all support sets. Having such algorithms makes the utilization of other proposed coverage practical. We are also investigating the relationship among the size of $IVC$-es, coverage score of \ivccov\, and vacuity. We believe in most of the cases that the $\ucalg$ algorithm results in a coverage score much higher
-than the $\ucbfalg$ (i.e., the real score that \ivccov\ is intended to report), the problem
-could have roots in some vacuous properties. This intuition helps us to decrease the error rate of the \ucalg algorithm significantly by having some fast techniques to detect vacuity. We have already developed a  fast property-directed vacuity check
-algorithm with the help of the IVC idea. So, we believe the overhead induced by that would be small and it would be worthwhile to explore such perspectives. 
+We will also more closely examine the {\em granularity} of models.  We hope to construct algorithms that can create models that are sufficiently granular and maximally efficient in terms of verification time.  In addition, we will properly formalize these notions and construct proofs that our algorithms establish sufficient granularity.
+
+Finally, we plan to investigate completeness results for bounded verification runs (bounded verification cores, or BVCs), to provide information as to the completeness of the analysis even when an inductive proof cannot be established (due to the lack of suitable inductive invariant or the complexity of the model).
+
+%We believe in most of the cases that the $\ucalg$ algorithm results in a coverage score much higher
+%than the $\ucbfalg$ (i.e., the real score that \ivccov\ is intended to report), the problem
+%could have roots in some vacuous properties. This intuition helps us to decrease the error rate of the \ucalg algorithm significantly by having some fast techniques to detect vacuity. We have already developed a  fast property-directed vacuity check
+%algorithm with the help of the IVC idea. So, we believe the overhead induced by that would be small and it would be worthwhile to explore such perspectives. 

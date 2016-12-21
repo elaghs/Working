@@ -37,7 +37,7 @@ $(I, S) \vdash P$.
   \label{def:ivc}
   Given $(I, T)\vdash P$, $S \subseteq
   T$ is an {\em inductive validity core} set for $P$
-  iff $P$ is provable by $S$.
+  \emph{iff} $P$ is provable by $S$.
 \end{definition}
 
 In examining provability, we are interested in {\em minimal} sets that satisfy a property $P$; tracing a property to the entire model is not particularly enlightening.
@@ -90,7 +90,7 @@ Of particular interest is the mutation that replaces a computed variable ({\em s
 
 \begin{definition} {\emph{Nondeterministic coverage (\nondetcov) ~\cite{chockler2010coverage}.} }
 \label{def:non-det}
-$T_i \in T$ is covered by property $P$ iff $T_i \in \nondetcov (P)$, where
+$T_i \in T$ is covered by property $P$ \emph{iff} $T_i \in \nondetcov (P)$, where
 $\nondetcov (P) = \{T_i \in T~|~ (I, T) \vdash P \wedge (I, T \setminus \{T_i\}) \nvdash P\}$.
 \end{definition}
 

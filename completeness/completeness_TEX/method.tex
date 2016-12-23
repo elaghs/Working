@@ -10,7 +10,7 @@ In this section, we propose a new approach for measuring property completeness b
 
 \begin{definition} {\emph{Justifiable coverage (\ivccov):}} \\
 \label{def:coverage-justi}
-Given $S \in AIVC(P)$, $T$ is covered by $P$ \emph{iff} $T_i \in \ivccov (P, S)$, where
+Given $S \in AIVC(P)$, $T_i$ is covered by $P$ via $S$ \emph{iff} $T_i \in \ivccov (P, S)$, where
 $\ivccov (P, S) = \{ T_i \in T ~|~ T_i \in S \}$.
 %Given $S \in AIVC(P)$, $T_i \in T$ is covered by $P$ \emph{iff} $T_i \in S$,
 %denoted by $T_i \in \ivccov (P, S)$
@@ -35,18 +35,18 @@ Given {\em all} proofs of a particular property, it is possible to define additi
 Considering $IVC$ and $AIVC$ relations for $P$, model elements can be categorized into one of the following groups:
 
 \begin{itemize}
-  \item \textbf{MUST} elements - target artifacts that are present in all the IVC sets of a specification.
+  \item \textbf{MUST} elements - target artifacts that are present in all the IVCs of a specification.
       %$$ MUST_x = \{\forall i (S_xi \in \Sigma_x) \mid \bigcap S_xi \}$$
       \[
       MUST (P) = \bigcap AIVC(P)
       \]
 
-  \item \textbf{MAY} elements - target artifacts that are used in some, but not all, IVC sets.
+  \item \textbf{MAY} elements - target artifacts that are used in some, but not all, IVCs.
       \[
       MAY(P) = (\bigcup AIVC (P)) \setminus MUST (P))
       \]
 
-  \item \textbf{IRRELEVANT} elements - target artifacts that are not in any of the IVC sets.
+  \item \textbf{IRRELEVANT} elements - target artifacts that are not in any of the IVCs.
   $$IRR(P) = T \setminus (\bigcup AIVC (P))$$
 \end{itemize}
 
@@ -69,7 +69,7 @@ Using the notions of $MAY$ and $MUST$, we can introduce additional coverage metr
 The $\maycov$ notion aims to deal with the fact that a property $P$ may have
 several distinct IVCs. In such cases, \ivccov\ only looks at an arbitrary IVC set
 that may contain a subset of $MAY(P)$, which means, depending on
-which IVC set it considers, every time it may report a different part of $MAY(P)$
+which IVC it considers, every time it may report a different part of $MAY(P)$
 as uncovered. However, \maycov\ resolves this issue reporting the entire set of $MAY(P)$ as covered, which also leads to higher coverage scores.
 We could even go beyond that and build more relaxed metrics where coverage
 is captured by looking at individual properties, rather than their conjunction;

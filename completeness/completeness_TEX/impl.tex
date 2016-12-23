@@ -2,12 +2,12 @@
 \label{sec:impl}
 
 To implement our method, we have made use of the technique proposed in \cite{Ghass16} for the efficient computation of IVCs.
-In \cite{Ghass16}, there are two detailed algorithms for computing minimal IVCs: (1) Algorithm \ucbfalg that computes a truly minimal IVC set for a given property, which is expensive. (2) Algorithm \ucalg that computes an IVC set fairly close to minimal in a much more efficient way. This section provides a high-level representation of these algorithms. 
+In \cite{Ghass16}, there are two detailed algorithms for computing minimal IVCs: (1) Algorithm \ucbfalg that computes a truly minimal IVC for a given property, which is expensive. (2) Algorithm \ucalg that computes an IVC fairly close to minimal in a much more efficient way. This section provides a high-level representation of these algorithms.
 
 IVCs are built upon inductive proofs. In order to prove a property, inductive proof methods employ some heuristics to derive additional lemmas (or invariants) about the problem so to strengthen the property and prove it inductively. Intuitively, to extract IVCs, Algorithm \ref{alg:uc}
 first proves the property and obtains all the invariants generated for the proof (line 1). Since not all these invariants are essential for the proof, it performs some minimization to keep a minimal set of necessary invariants (line 2). The proofs of these invariants themselves are dependent on the structure of the model or design elements that we have defined them as inductive validity core (Definition \ref{def:ivc}).
 So, using function $map\_to\_design$, Algorithm \ref{alg:uc}
-computes those design elements. And finally, it minimizes the computed elements so to obtain a minimal IVC set (line 4). Although Algorithm \ref{alg:uc} performs minimization, because of the structure of the inductive proofs, \ucalg might still not produce an \emph{exact} minimal IVC set \footnote{\noindent ~for more information, see \cite{Ghass16}. Here we abstract away the details.}.
+computes those design elements. And finally, it minimizes the computed elements so to obtain a minimal IVC (line 4). Although Algorithm \ref{alg:uc} performs minimization, because of the structure of the inductive proofs, \ucalg might still not produce an \emph{exact} minimal IVC \footnote{\noindent ~for more information, see \cite{Ghass16}. Here we abstract away the details.}.
 Therefore, Algorithm \ref{alg:ucbf}, \ucbfalg, includes a post-minimization process that
 operates on the result of \ucalg. The results by this algorithm are guaranteed to be minimal.
 
@@ -35,7 +35,7 @@ And, the output of \mustalg represents covered design elements according to \non
   \SetKwInOut{Input}{input}
   \SetKwInOut{Output}{output}
   \Input{$(I, T) \vdash P$}
-  \Output{Minimal IVC set for $(I, T) \vdash P$}
+  \Output{Minimal IVC for $(I, T) \vdash P$}
   \BlankLine
   $S \leftarrow \ucalg((I, T) \vdash P)$ \\
   \For{$x \in S$} {
@@ -75,21 +75,21 @@ MathSAT \cite{Cimatti2013:MathSAT}, or SMTInterpol \cite{Christ2012:SMTInterpol}
 JKind works on multiple properties simultaneously. When a
 property is proven and IVC generation is enabled, an additional
 parallel engine executes Algorithm \ref{alg:uc} to generate a nearly minimal
-IVC set.
+IVC.
 
 Although the minimality of $IVC$ sets makes \ivccov\ accurate
 in terms of both preserving provability and not having false positives, the exact implementation of \ivccov\ is based on the \ucbfalg algorithm, which is as nearly expensive as the \mustalg algorithm for \nondetcov\ . To alleviate this issue, we have used the efficient implementation for \ivccov\ proposed in \cite{Ghass16}, i.e. \ucalg,
  which is an over-approximation and might not be always accurate in terms of minimality. In general, \nondetcov\ characterizes coverage in a way which is both expensive to compute and difficult to satisfy (i.e. it usually leads to low coverage scores). However, justifiable coverage is more efficient and practical to compute, which is also an immediate guidance of what is necessary for specification.
 
 \subsection{Discussion}
-As mentioned, IVC sets are derived from inductive invariants; in other words, they are built upon the proof of the validity of a given property. One interesting fact about proofs
-  is that a given property could be proved from different proof paths. That's why we defined $AIVC(P)$ in Section \ref{sec:background}. The $AIVC$ set gives a clear picture of various ways a property is satisfied. By getting all the IVC sets for all the properties of the system and categorizing them, one can find if there are design artifacts that do not trace to any property: set $\bigcap \{IRR (P) | P \in \Delta \}$.  If this set is non-empty, it is a possible indication of ``gold plating" or missing properties. That is to say, it helps to assess if the specification describe all the behaviors of the system. Being able to measure the coverage of properties over the model is crucial in the safety critical system domain.
+As mentioned, IVCs are derived from inductive invariants; in other words, they are built upon the proof of the validity of a given property. One interesting fact about proofs
+  is that a given property could be proved from different proof paths. That's why we defined $AIVC(P)$ in Section \ref{sec:background}. The $AIVC$ set gives a clear picture of various ways a property is satisfied. By getting all the IVCs for all the properties of the system and categorizing them, one can find if there are design artifacts that do not trace to any property: set $\bigcap \{IRR (P) | P \in \Delta \}$.  If this set is non-empty, it is a possible indication of ``gold plating" or missing properties. That is to say, it helps to assess if the specification describe all the behaviors of the system. Being able to measure the coverage of properties over the model is crucial in the safety critical system domain.
 
 Very recent, as yet unpublished, work has focused on the
-generation of all IVC sets (IVC sets), whose preliminary evaluation
-shows the overhead in discovering all IVC sets is a linear in the
-number of unique IVC set in the problem multiplied by the cost
-for finding a proof for a single IVC set. For complex models, such
+generation of all IVCs, whose preliminary evaluation
+shows the overhead in discovering all IVCs is a linear in the
+number of unique IVC in the problem multiplied by the cost
+for finding a proof for a single IVC. For complex models, such
 as the ones described in \cite {QFCS15:backes} and \cite{hilt2013}, it has been possible to
 find $AIVC$ for individual properties in a matter of minutes.
 Based on our preliminary results we expect computing $AIVC$ to be computationally feasible for complex models. In

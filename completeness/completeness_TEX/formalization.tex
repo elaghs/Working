@@ -9,47 +9,46 @@
 
 \subsection{Models, Requirements, and Provability}
 
-Given a state space $S$, a transition system $(I,T)$ consists of an
-initial state predicate $I : S \to \bool$ and a transition step
-predicate $T : S \times S \to \bool$. We define the notion of
-reachability for $(I, T)$ as the smallest predicate $\reach : S \to
+Given a state space $U$, a transition system $(I,T)$ consists of an
+initial state predicate $I : U \to \bool$ and a transition step
+predicate $T : U \times U \to \bool$. We define the notion of
+reachability for $(I, T)$ as the smallest predicate $\reach : U \to
 \bool$ which satisfies the following formulas:
 \begin{gather*}
-  \forall s.~ I(s) \Rightarrow \reach(s) \\
-  \forall s, s'.~ \reach(s) \land T(s, s') \Rightarrow \reach(s')
+  \forall s.~ I(u) \Rightarrow \reach(u) \\
+  \forall u, u'.~ \reach(u) \land T(u, u') \Rightarrow \reach(u')
 \end{gather*}
-A safety property $P : S \to \bool$ is a state predicate that holds on a transition system $(I, T)$ if it holds on all
-reachable states, i.e., $\forall s.~ \reach(s) \Rightarrow P(s)$,
+A safety property $P : U \to \bool$ is a state predicate that holds on a transition system $(I, T)$ if it holds on all
+reachable states, i.e., $\forall u.~ \reach(u) \Rightarrow P(u)$,
 written as $\reach \Rightarrow P$ for short. When this is the case, we
-write $(I, T)\vdash P$. To generalize the notion of transition system, especially in SMT-based model checking, it is assumed that the transition relation has the structure of a top-level conjunction. This assumption gives us a structure that we can easily manipulate. Given $T(s, s') = T_1(s, s') \land \cdots \land T_n(s, s')$ we will write $T = T_1 \land \cdots \land T_n$ for short.
+write $(I, T)\vdash P$. To generalize the notion of transition system, especially in SMT-based model checking, it is assumed that the transition relation has the structure of a top-level conjunction. This assumption gives us a structure that we can easily manipulate. Given $T(u, u') = T_1(u, u') \land \cdots \land T_n(u, u')$ we will write $T = T_1 \land \cdots \land T_n$ for short.
 By further abuse of notation,
 $T$ is identified with the set of its top-level conjuncts. Thus, $x \in
 T$ means that $x$ is a top-level conjunct of $T$, and $S
 \subseteq T$ means all top-level conjuncts of $S$ are top-level
 conjuncts of $T$. When a top-level conjunct $x$ is removed from $T$, it is written as $T \setminus \{x\}$. Such a transition system can easily encode our example model in Section~\ref{sec:example}.  We assume each equation defines a conjunct within the transition system which we will denote by the variable assigned, so $T = \{$ {\small \texttt{a1\_below, a2\_below, a1\_above, a2\_above, below, above\_hyst}} $\}$.
 
-\begin{definition}{\emph{Provability:}}
-Let $(I, T)$ be a transition system; given a set of safety properties $\Delta$ and $S \subseteq T$, $P \in \Delta$ is \emph{provable} by $S$ iff
-$(I, S) \vdash P$.
-\end{definition}
 
 \begin{definition}{\emph{Inductive Validity Core:}}
   \label{def:ivc}
   Given $(I, T)\vdash P$, $S \subseteq
-  T$ is an {\em inductive validity core} set for $P$
-  \emph{iff} $P$ is provable by $S$.
+  T$ is an {\em inductive validity core} for $P$
+  \emph{iff} $(I, S) \vdash P$.
 \end{definition}
 
 In examining provability, we are interested in {\em minimal} sets that satisfy a property $P$; tracing a property to the entire model is not particularly enlightening.
 
 \begin{definition}{\emph{Minimal Inductive Validity Core (IVC):}}
   \label{def:minimal-ivc}
-  A set of inductive validity core $S$ for $(I, T)\vdash P$ is minimal, denoted $IVC(P, S)$, iff
+  Inductive validity core $S$ for $(I, T)\vdash P$ is minimal, denoted $IVC(P, S)$, iff
   $\neg\exists S' \subset S .\quad (I, S') \vdash P $.
 \end{definition}
 
-For the sake of simplicity, when we say an "IVC" set, it implies the set is \emph{minimal}.
-Note that there could be many IVCs for a given property, corresponding to different proofs. To capture that notion, we define \emph{all IVC sets ($AIVC$)} for a property as an association to all its IVCs.
+\begin{note}{}
+Hereafter, the term ``IVC'' refers to a \textbf{minimal} IVC.
+\end{note}
+
+Note that there could be many IVCs for a given property, corresponding to different proofs. To capture that notion, we define \emph{all IVCs ($AIVC$)} for a property as an association to all its IVCs.
 
 $$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  IVC(P, S)\} $$
 
@@ -63,15 +62,15 @@ regard to the notion of coverage. In fact, the way that coverage
 is formalized plays a key part in the strength/ effectiveness of
 a method for the assessment of completeness. The goal of a coverage metric is usually to assign a numeric score that describes how well properties cover the design. The majority of the work on coverage metrics has focused on {\em mutations}, which are ``atomic'' changes to the design, where the set of possible mutations depends on the notation that is used.  A mutant is ``killed'' if one of the properties that is satisfied by the original design is violated by the mutated design~\cite{chockler_coverage_2003,chockler2001practical,chockler2010coverage,Kupferman:2006:SCF,kupferman_theory_2008}.  There are many different kinds of mutations that have been proposed, primarily focused on checking sequential bit-level hardware designs.  For these designs, {\em State-based} mutations flip the value of one of the bits in the state.  There are several variations depending on whether the flip is performed on a single state within a Kripke structure~\cite{hoskote1999coverage}, or in the description of the signal in the transition relation of the circuit~\cite{chockler2001practical}.  {\em Logic-based} mutations fix the value of a bit to constant zero or one, and can be used to determine whether properties can find stuck-at faults.  {\em Syntactic} mutations~\cite{chockler_coverage_2003} remove states in a control flow graph representation of hardware.  Similarly, for software, it is possible to apply any of the ``standard'' source code mutation operators used for software testing~\cite{Andrews06:mutation} towards requirements coverage analysis.  Some examples of software mutations are:
 \begin{enumerate}
-    \item Replace an integer constant C by one of $\{0, 1, -1, C + 1, C - 1\}$.
-    \item Replace an arithmetic, relational, logical, bitwise logical, increment/decrement, or arithmetic-assignment operator by another operator from the same class.
-    \item Negate the decision in an if or while statement
-    \item Delete a statement
+    \item Replace an integer constant C by one of $\{0, 1, -1, C + 1, C - 1\}$,
+    \item Replace an arithmetic, relational, logical, bitwise logical, increment/decrement, or arithmetic-assignment operator by another operator from the same class,
+    \item Negate the decision in an if or while statement,
+    \item Delete a statement.
 \end{enumerate}
 
 We assume each element $T_i \in T$ has a set of possible mutations associated with it.  Depending on the modeling formalism used, this may be the value of a gate or signal or an expression within a statement in a program.  We will further assume the existence of a mutation function $f_{m}$ that, given a model element, will return a finite set of mutations for that element.  We can then define the set of mutant models $M$ as follows:
 \[
-    M = \{ T_i \in T, m \in f_{m}(T_i)\ |\ T \setminus \{T_i\} \cup \{m\} \}
+    M = \{ (T \setminus \{T_i\}) \cup \{m\} \ |\ T_i \in T, m \in f_{m}(T_i) \}
 \]
 
 \noindent and then define the mutation score for property $P$ in the standard way:
@@ -86,7 +85,7 @@ Note that without loss of generality, we consider a single property P, which can
 
 In our example in Figure~\ref{fig:asw}, applying the software mutations from~\cite{Andrews06:mutation} would involve manipulating the constants used in the definitions of \texttt{a1\_below, a2\_below, a1\_above, a2\_above}, swapping 'or' and 'and' in the definition of \texttt{below, above\_hyst}, or negating the conditions in the if/then/else statements.  Even for this small model, there are many possible mutations (57).  The number of single-mutation programs is roughly the product of the leaf elements of the program AST and the size of the chosen set of mutations, which can lead to an impractical number of verification problems.
 
-Of particular interest is the mutation that replaces a computed variable ({\em signal} in hardware) with a ``fresh'' input; this mutation is called a {\em nondeterminism mutation} with a coverage metric called (\nondetcov)~\cite{chockler2010coverage} and is discussed in~\cite{Kupferman:2006:SCF,kupferman_theory_2008,chockler2010coverage}.  If we use an equational transition system to assign the variables, then performing \nondetcov\ coverage an isomorphic operation to removing the defining equation from the set $T$ and checking whether provability is preserved.  In this case, we can dispense with the set $M$ and compute a mutation score much more simply. In one sense, the nondeterminism mutation is the {\em strongest} mutation because it introduces the most additional behaviors into the model, that is, any execution sequence constructed by modifying the assigning equation is also an execution sequence for a nondeterministic mutation.  Equivalently, given a set of universal properties, it is the easiest mutation to ``kill''.  For our example in Figure~\ref{fig:asw}, this mutation would lead to 10 mutations, one for each equation in the model.
+Of particular interest is the mutation that replaces a computed variable ({\em signal} in hardware) with a ``fresh'' input; this mutation is called a {\em nondeterminism mutation} with a coverage metric called (\nondetcov)~\cite{chockler2010coverage} and is discussed in~\cite{Kupferman:2006:SCF,kupferman_theory_2008,chockler2010coverage}.  If we use an equational transition system to assign the variables, then performing \nondetcov\ coverage is an isomorphic operation that removes the defining equation from the set $T$ and checks whether the property is still satisfied.  In this case, we can dispense with the set $M$ and compute a mutation score much more simply. In one sense, the nondeterminism mutation is the {\em strongest} mutation because it introduces the most additional behaviors into the model, that is, any execution sequence constructed by modifying the assigning equation is also an execution sequence for a nondeterministic mutation.  Equivalently, given a set of universal properties, it is the easiest mutation to ``kill''.  For our example in Figure~\ref{fig:asw}, this mutation would lead to 9 mutations, one for each equation in the model.
 
 \begin{definition} {\emph{Nondeterministic coverage (\nondetcov) ~\cite{chockler2010coverage}.} }
 \label{def:non-det}

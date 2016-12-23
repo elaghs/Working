@@ -1,18 +1,16 @@
-
 \documentclass{sig-alternate-05-2015}
-
 \usepackage{tabularx,colortbl}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{flushend}
 \usepackage{cite}
-%\usepackage{amsmath}
+\usepackage{amsmath}
 %\usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{epsfig}
 \usepackage{stmaryrd}
 \usepackage{url}
 \usepackage{multirow}
-\usepackage{latexsym} 
+\usepackage{latexsym}
 \usepackage{graphics}
 \usepackage{graphicx}
 \usepackage{enumitem}
@@ -24,11 +22,23 @@
 \usepackage{subfigure}
 \usepackage{color}
 \usepackage{balance}
-\usepackage[ruled, vlined, linesnumbered]{algorithm2e}
+\usepackage[ruled, vlined, linesnumbered]{algorithm2e} 
 \usepackage[english]{babel}
 \renewcommand{\abstract}{\noindent {\sc \textbf{\large {Proof-based Coverage Metrics for\\Formal Verification}}}\\}
 
-\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+%\theoremstyle{Definition}
+%\newtheorem{definition}{Definition}
+%%
+%\theoremstyle{Theorem}
+%\newtheorem{theorem}{Theorem}
+
+
+%\newcommand{\definition}{\noindent \textbf{Definition} \citation{}}
+%\newcommand{\theorem}{\noindent \textbf{Theorem} \citation{}}
+%\newcommand{\lemma}{\noindent \textbf{Lemma} \citation{}}
+
 \newcommand{\mkeyword}[1]{\mbox{\texttt{#1}}}
 \DeclareMathOperator{\kuop}{uop}
 \DeclareMathOperator{\kbop}{bop}
@@ -43,20 +53,23 @@
 \newcommand{\rbb}{]\!]}
 \newcommand{\expr}{\phi}
 \newcommand{\exprS}{\Phi}
-\newcommand{\nondetcov}{\text{\sc Nondet-Cov}}
-\newcommand{\ivccov}{\text{\sc IVC-Cov}}
-\newcommand{\maycov}{\text{\sc MAY-Cov}}
-\newcommand{\allcov}{\text{\sc MODEL-Cov}}
-\newcommand{\mutcov}{\text{\sc Mutant-Cov}}
+% this toggles between a tech-report version of the paper and the MEMOCODE version
+%\newcommand{\TECHREPORT}{}
+%\tolerance=1
+%\emergencystretch=\maxdimen
+%\hyphenpenalty=10000
+%\hbadness=10000
+\sloppypar
 
-
-\newcommand{\bfalg}{{IVC\_BF}\xspace}
-\newcommand{\ucalg}{{IVC\_UC}\xspace}
-\newcommand{\ucbfalg}{{IVC\_UCBF}\xspace}
-\newcommand{\mustalg}{{IVC\_MUST}\xspace}
 
 
 \begin{document}
+\CopyrightYear{2016}
+\setcopyright{acmcopyright}
+\conferenceinfo{FSE'16,}{November 13-19, 2016, Seattle, WA, USA}
+\isbn{978-1-4503-4218-6/16/11}\acmPrice{\$15.00}
+\doi{http://dx.doi.org/10.1145/2950290.2950346}
+ % Add this to every tex file, so that you can comment with a diff color%
 \definecolor{gold}{rgb}{0.90,.66,0}
 \definecolor{dgreen}{rgb}{0,0.6,0}
 \newcommand{\mike}[1]{\textcolor{red}{#1}}
@@ -73,15 +86,21 @@
 \newdef{definition}{Definition}
 \newdef{theorem}{Theorem}
 \newdef{coroll}{Corollary}
-%\newtheorem{definition}{Definition}
-%\newtheorem{lemma}{Lemma}
-%\newtheorem{theorem}{Theorem}
-%\newtheorem{coroll}{Corollary}
-%\newdef{lemma}{Lemma}
-%\newdef{definition}{Definition}
-%\newdef{theorem}{Theorem}
-%\newdef{note}{Note}
-%
+%\newcommand{\TECHREPORT}{}
+
+
+\newcommand{\nondetcov}{\text{\sc Nondet-Cov}}
+\newcommand{\ivccov}{\text{\sc IVC-Cov}}
+\newcommand{\maycov}{\text{\sc MAY-Cov}}
+\newcommand{\allcov}{\text{\sc MODEL-Cov}}
+\newcommand{\mutcov}{\text{\sc Mutant-Cov}}
+
+
+\newcommand{\bfalg}{{IVC\_BF}\xspace}
+\newcommand{\ucalg}{{IVC\_UC}\xspace}
+\newcommand{\ucbfalg}{{IVC\_UCBF}\xspace}
+\newcommand{\mustalg}{{IVC\_MUST}\xspace}
+
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
 \title{Written Preliminary Examination Report}

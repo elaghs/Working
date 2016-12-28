@@ -77,7 +77,7 @@ We assume each element $T_i \in T$ has a set of possible mutations associated wi
 
 \begin{definition} {\emph{Generalized mutation coverage.} } \\
 \[
-   \mutcov = \frac{ | \{m \in M(T)~|~ m \nvdash P\} |}{|M(T)|}
+   \mutcov = \frac{ | \{m~|~ m \in M(T)~\land~m \nvdash P\} |}{|M(T)|}
 \]
 \end{definition}
 Note that without loss of generality, we consider a single property P, which can be viewed as the conjunction of all the properties of the model.
@@ -85,12 +85,47 @@ Note that without loss of generality, we consider a single property P, which can
 
 In our example in Figure~\ref{fig:asw}, applying the software mutations from~\cite{Andrews06:mutation} would involve manipulating the constants used in the definitions of \texttt{a1\_below, a2\_below, a1\_above, a2\_above}, swapping 'or' and 'and' in the definition of \texttt{below, above\_hyst}, or negating the conditions in the if/then/else statements.  Even for this small model, there are many possible mutations (57).  The number of single-mutation programs is roughly the product of the leaf elements of the program AST and the size of the chosen set of mutations, which can lead to an impractical number of verification problems.
 
-Of particular interest is the mutation that replaces a computed variable ({\em signal} in hardware) with a ``fresh'' input; this mutation is called a {\em nondeterminism mutation} with a coverage metric called (\nondetcov)~\cite{chockler2010coverage} and is discussed in~\cite{Kupferman:2006:SCF,kupferman_theory_2008,chockler2010coverage}.  If we use an equational transition system to assign the variables, then performing \nondetcov\ coverage is an isomorphic operation that removes the defining equation from the set $T$ and checks whether the property is still satisfied.  In this case, we can dispense with the set $M$ and compute a mutation score much more simply. In one sense, the nondeterminism mutation is the {\em strongest} mutation because it introduces the most additional behaviors into the model, that is, any execution sequence constructed by modifying the assigning equation is also an execution sequence for a nondeterministic mutation.  Equivalently, given a set of universal properties, it is the easiest mutation to ``kill''.  For our example in Figure~\ref{fig:asw}, this mutation would lead to 9 mutations, one for each equation in the model.
+\newcommand{\andnode}{{\sc and}}
+\newcommand{\invnode}{{\sc inv}}
+\newcommand{\inpnode}{{\sc inp}}
+\newcommand{\regnode}{{\sc reg}}
+\newcommand{\mutnode}{{\sc mut}}
+\newcommand{\inputnode}{{\sc input}}
+
+Mutations for hardware are discussed in~\cite{chockler2010coverage,Kupferman:2006:SCF,kupferman_theory_2008}.  In most of this work, the hardware model is formalized as an and-inverter-graph netlist, a graph representation of circuits in which vertices are \{\andnode, \invnode\} gates or memory elements (registers) and edges are connections between gates (signals).  Formally, A netlist $N$ is a directed graph $(V_N,E_N, \tau_N)$ where $V_N$ is a finite set of vertices, $EN \subseteq VN \times VN$ is the set of directed edges and $\tau_N : VN \rightarrow \{$\andnode, \invnode, \regnode, \inpnode$\}$ maps a node to its type, where \andnode\ is an ``and'' gate, \invnode\ is an inverter, \regnode\ is a register, and \inpnode\ is a primary input.  The in-degree of a vertex of type \andnode\ is at least two, of type \invnode\ and \regnode\ is exactly one and of type \inpnode\ is zero. Any cycle in $N$ must contain at least one \regnode\ node~\cite{chockler2010coverage}.
+
+Given this representation, it is possible to discuss mutations of a single vertex: either stuck-at-zero, stuck-at-one, or nondeterministic.  This mutation is performed by changing the vertex to \mutnode, where \mutnode\ can be a ``fresh'' input for non-deterministic mutations, or fixed to 0 or 1 for stuck-at mutations.  Formally the semantics of a mutant netlist is defined as a new labeling function:
+
+\[ \tau^{v}_{N}(u) = \begin{cases}
+    \tau(v) & \textrm{ if $v \neq u$} \\ 
+    \textrm{\mutnode}   & \textrm{ if $v = u$}
+\end{cases}  \]
+\noindent Coverage is then measured by how many of the mutated models are ``killed'' by the property.
+
+
+
+\iffalse
+\begin{figure}
+  \centering
+  \includegraphics[width=0.37\textwidth]{figs/screenshot_multiplexer.png}
+  \vspace{-0.1in}
+  \caption{Multiplexer for introducing mutations into circuits}\label{fig:multiplexer}
+\end{figure}
+
+
+To introduce mutations, a multiplexer is introduced into the graph for the mutated vertex $v$ as shown in Figure~\ref{fig:multiplexer}, and all edges connected to $v$ are connected to $v^{mx}$.   If the selector signal $v^{s}$ is true, then the mutated signal $v^{f}$ is emitted instead of the original signal $v$.  To model stuck-at faults, $v^{f}$ is set to constant true or false, and to model non-deterministic faults, a ``fresh'' input signal is added to the model.
+\fi
+%Of particular interest is the mutation that replaces a computed variable ({\em signal} in hardware) with a ``fresh'' input; this mutation is called a {\em nondeterminism mutation} with a coverage metric called (\nondetcov)~\cite{chockler2010coverage} and is discussed .  
+%s
+%We can re-formalize their appr
+
+A netlist can immediately be mapped a transition system consisting of a conjunction of equations, where each vertex $v_i \in VN$ is represented by a variable $V_i$ in the transition system, and each non-input vertex is assigned by an equation based on its type and input edges.  Given this representation, we can define nondeterministic coverage as follows:
 
 \begin{definition} {\emph{Nondeterministic coverage (\nondetcov) ~\cite{chockler2010coverage}.} }
 \label{def:non-det}
+Given a set of netlist equations $T_i = (V_i = E_i)$ and ``fresh'' model variable \inputnode, 
 $T_i \in T$ is covered by property $P$ \emph{iff} $T_i \in \nondetcov (P)$, where
-$\nondetcov (P) = \{T_i \in T~|~ (I, T) \vdash P \wedge (I, T \setminus \{T_i\}) \nvdash P\}$.
+$\nondetcov (P) = \{ T_i~|~ T_i = (V_i = E_i)\in T \wedge (I, T \setminus \{(V_i = E_i)\} \cup \{(V_i = \textrm{\inputnode})\}) \nvdash P\}$.
 \end{definition}
 
 %For the sake of simplicity, we refer to the coverage function
@@ -99,6 +134,10 @@ Using  $\nondetcov$, the coverage score of specification $P$ is computed by
 \[
    \frac{ | \nondetcov (P)|}{|T|}
 \]
+
+\noindent It is straightforward to define stuck-at-true and stuck-at-false coverage by replacing \inputnode\ by either constant 1 or 0.
+
+
 
 
 

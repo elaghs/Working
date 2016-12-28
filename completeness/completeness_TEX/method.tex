@@ -8,7 +8,7 @@ In this section, we propose a new approach for measuring property completeness b
 %\subsection{Coverage and Minimal Proofs}
 %Alternatively, we can consider using the proofs themselves as a mechanism for determining adequacy of requirements.
 
-\begin{definition} {\emph{Justifiable coverage (\ivccov):}} \\
+\begin{definition} {\emph{IVC coverage (\ivccov):}} \\
 \label{def:coverage-justi}
 Given $S \in AIVC(P)$, $T_i$ is covered by $P$ via $S$ \emph{iff} $T_i \in \ivccov (P, S)$, where
 $\ivccov (P, S) = \{ T_i \in T ~|~ T_i \in S \}$.
@@ -63,33 +63,44 @@ Using the notions of $MAY$ and $MUST$, we can introduce additional coverage metr
 \begin{definition} {\emph{(\maycov):}}
   \label{def:comp-1}
  $T_i \in T$ is covered by $P$ \emph{iff} $T_i \in \maycov (P)$, where
-   $\maycov (P) = \{T_i \in T ~|~ (\exists S \in AIVC(P))[T_i \in S] \}$.
+   $\maycov (P) = \{T_i ~|~ \exists S \in AIVC(P)~.~T_i \in S \}$.
+\end{definition}
+
+\begin{definition} {\emph{(\mustcov):}}
+  \label{def:mustcov}
+ $T_i \in T$ is covered by $P$ \emph{iff} $T_i \in \mustcov (P)$, where
+   $\mustcov (P) = \{T_i ~|~ \forall S \in AIVC(P)~.~T_i \in S \}$.
 \end{definition}
 
 The $\maycov$ notion aims to deal with the fact that a property $P$ may have
 several distinct IVCs. In such cases, \ivccov\ only looks at an arbitrary IVC set
 that may contain a subset of $MAY(P)$, which means, depending on
 which IVC it considers, every time it may report a different part of $MAY(P)$
-as uncovered. However, \maycov\ resolves this issue reporting the entire set of $MAY(P)$ as covered, which also leads to higher coverage scores.
-We could even go beyond that and build more relaxed metrics where coverage
-is captured by looking at individual properties, rather than their conjunction;
-for example, in the definition of \ivccov , it is wise to look at $P$ as
-the conjunction of all properties. However, with this view,
-elements around IVCs that do not have common \emph{must}
-elements with others will be treated as uncovered while they are at least covered by one
- IVC of an individual property in the specification. The next notion, \allcov ,
- addresses this issue.
+as uncovered. However, \maycov\ resolves this issue reporting the entire set of $MAY(P)$ as covered, which also leads to higher coverage scores.  \mustcov takes the opposite view, considering model elements covered only if they appear in all proofs.
+
+
+It is possible to build still more relaxed coverage metrics in which coverage
+is captured by looking at individual properties, rather than their conjunction.
+%for example, in the definition of \ivccov , it is wise to look at $P$ as
+%the conjunction of all properties. However, 
+We can, for example, describe a metric in which any element used by an IVC for any property is considered covered.
+%with this view,
+%elements around IVCs that do not have common \emph{must}
+%elements with others will be treated as uncovered while they are at least covered by one
+% IVC of an individual property in the specification. 
+%
+The next definition, \allcov, formalizes this notion.
 
 \begin{definition} {\emph{(\allcov):}}
   \label{def:comp-2}
      Given a set of properties $\Delta$ over $T$, $T_i \in T$ is covered
    \emph{iff} $T_i \in \allcov (T)$, where
-   $\allcov (T) = \{T_i \in T ~|~ (\exists P \in \Delta)[T_i \in AIVC(P)] \}$.
+   $\allcov (T) = \{T_i ~|~ (\exists P \in \Delta~.~T_i \in AIVC(P) \}$.
 \end{definition}
 
-Considering $MAY$ and $MUST$ categorization, we can formalize another
-coverage metric that takes into account the \emph{must} set;
-however, such a metric is the same as \nondetcov\ as we discuss in the next sub-section.
+%Considering $MAY$ and $MUST$ categorization, we can formalize another
+%coverage metric that takes into account the \emph{must} set;
+%however, such a metric is the same as \nondetcov\ as we discuss in the next sub-section.
 
 \subsection{Discussion}
 \label{subsec:method-disc}
@@ -118,8 +129,28 @@ Based on the categorization of elements, we will state some relationships about 
 \vspace{2mm}
 
 \begin{lemma}
+    \label{lem:must-mustcov}
+    $T_i \in MUST(P) \Leftrightarrow T_i \in \mustcov(P)$
+\end{lemma}
+\begin{proof}
+\mike{obvious?}
+\end{proof}
+
+Now we focus on the relationship between \nondetcov\ and proof-based metrics.  Given an equational transition system to assign the vertices in the graph, assigning a ``fresh'' input in \nondetcov\ coverage is an isomorphic operation to simply removing the defining equation from the set $T$.  As the variable is no longer constrained by a defining equation, it is effectively an input.
+
+\mike{Should we call this \nondetcov-2 or something?}
+
+\begin{definition} {\emph{Nondeterministic coverage (alternate) (\nondetcov) ~\cite{chockler2010coverage}.} }
+\label{def:non-det}
+$T_i \in T$ is covered by property $P$ \emph{iff} $T_i \in \nondetcov (P)$, where
+$\nondetcov (P) = \{T_i~|~ (I, T) \vdash P \wedge (I, T \setminus \{T_i\}) \nvdash P\}$.
+\end{definition}
+
+\noindent Given this definition, it becomes straightforward to define some additional properties.  
+
+\begin{lemma}
   \label{lem:must-coverage}
-$T_i \in \nondetcov (P) \Leftrightarrow T_i \in MUST(P)$.
+$T_i \in \nondetcov (P) \Leftrightarrow T_i \in \mustcov(P)$.
 \end{lemma}
 \begin{proof}
 $T_i \in \nondetcov (P)$ means that $(I, S \setminus \{ T_i \}) \nvdash P$ then $T_i$ is necessary to prove $P$ (Lemma \ref{lem:must-not-enough}), which means $T_i \in MUST(P)$.
@@ -157,14 +188,18 @@ Immediate from Definition~\ref{def:minimal-ivc} and Definition \ref{def:coverage
 It should be pointed out that \ivccov\ is accurate meaning that it does not result in false positives. In other words, since IVCs are \emph{minimal}, \ivccov\ does not mark
 any \emph{actual} uncovered element as covered.
 
-To conclude this section, we should mention that one can define many more proof-based coverage metrics based on the IVC idea. However, metrics that make use of $AIVC$ relation are computationally much more expensive than \ivccov\ although they might be easier to satisfy (i.e. result in higher coverage scores).  Generally speaking,
-in an ascending order of resulting coverage scores,
+To conclude this section, we should mention that one can define many more proof-based coverage metrics based on the IVC/AIVC idea. Metrics that make use of $AIVC$ relation are computationally more expensive to compute than \ivccov\ although they might be easier to satisfy (i.e. result in higher coverage scores).  
+
+Generally speaking,
+in an ascending order of coverage scores,
 the proposed coverage metrics can be ranked as follows:
 $$\nondetcov\ \leq \ivccov\ \leq \maycov\ \leq \allcov$$
-Based on our preliminary evaluation, we believe, approximately, metrics based on
-$AIVC$ relation (like \maycov\ and \allcov) are as computationally expensive as \nondetcov . \footnote{\noindent ~The reason is that \nondetcov\ computes the must set which is also based on $AIVC$ relation. However, in terms of preserving provability, a set of design elements marked as covered by \allcov\ and \maycov\ are
+However, \ivccov\ and \nondetcov\ are equivalent when all elements within the model are covered: if all model elements are MUST elements, then there can only be one IVC, and this IVC uses all of the model elements.
+
+Based on our preliminary evaluation, we believe that metrics based on
+$AIVC$ relation (like \maycov\ and \allcov) are approximately as computationally expensive as \nondetcov. \footnote{\noindent ~The reason is that \nondetcov\ computes the must set which is also based on $AIVC$ relation. However, in terms of preserving provability, a set of design elements marked as covered by \allcov\ and \maycov\ are
 sufficient to reconstruct the proof of the properties.} So, in order to examine the proof-based metrics, Section \ref{sec:impl} considers the implementation of two major notions: \nondetcov\ and
  \ivccov ; because \nondetcov\ is based on a recent work in the literature,
  and among all the other proposed notions, \ivccov\ is the
  one that does not take into account $AIVC$.
- Besides, in terms of coverage score, \ivccov\ is not too easy (or hard) to satisfy.  
+ %Besides, in terms of coverage score, \ivccov\ is not too easy (or hard) to satisfy.  

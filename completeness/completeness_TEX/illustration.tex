@@ -15,7 +15,7 @@
 \newcommand{\abovehyst}{\texttt{above\_hyst}}
 \newcommand{\inhibit}{\texttt{inhibit}}
 
-We illustrate the idea of completeness metrics and the "score" of the different metrics on our altitude switch (ASW) example from Section~\ref{sec:example}.  In so doing, we hope to motivate the need for completeness metrics and also to justify our proof-based approaches.
+We illustrate the idea of completeness metrics and the ``score" from different metrics on our altitude switch (ASW) example from Section~\ref{sec:example}.  In so doing, we hope to motivate the need for completeness metrics and also to justify our proof-based approaches.
 
 The ASW is responsible for turning on and off a device of interest, so we formulate two requirements that describe when the ASW should be {\em on} and when it should be {\em off}.  Our first (somewhat faulty) attempt at formalization is as follows:
 
@@ -31,7 +31,7 @@ all_p = on_p and off_p;
 }
 %\end{definition}
 
-\noindent Informally, when both altimeters are below the threshold and not inhibited, then the DOI should be on (\onp), and when both altimeters are below the threshold and the ASW is inhibited, then the DOI should be off (\offp).  The property \allp\ is the conjunction of all requirements.  We can now apply each of the completeness notions: IVC, MAY, and MUST (which is the same as \nondetcov).  What we discover is that, for all three metrics, \allp\ only requires \texttt{\{below, d1, doi\_on\}}.  This is alarming, and somewhat puzzling, because one would think that at least the definitions of the `below' or `above' would be necessary.  However, because the specification used the model variables \aonebelow, \atwobelow, \aoneabove, and \atwoabove, the actual valuations of the thresholds do not matter.  This situation illustrates a classic specification problem: using computed variables in the antecedents of implications.  
+\noindent Informally, when both altimeters are below the threshold and not inhibited, then the DOI should be on (\onp), and when both altimeters are below the threshold and the ASW is inhibited, then the DOI should be off (\offp).  The property \allp\ is the conjunction of all requirements.  We can now apply each of the completeness notions: IVC, MAY, and MUST (which is the same as \nondetcov).  What we discover is that, for all three metrics, \allp\ only requires \texttt{\{below, d1, doi\_on\}}.  This is alarming, and somewhat puzzling, because one would think that at least the definitions of the `below' or `above' would be necessary.  However, because the specification used the model variables \aonebelow, \atwobelow, \aoneabove, and \atwoabove, the actual valuations of the thresholds do not matter.  This situation illustrates a classic specification problem: using computed variables in the antecedents of implications.
 %\footnote{\noindent ~In this case, if the computation of the variables used in the antecedent is incorrect, then our property will not verify what it is expected to verify \mike{citation to one of our papers on specification here...}; note also that this does not mean the property is necessarily {\em vacuous}.}
 
 We therefore modify our properties to use inputs and constants as antecedents and derive:

@@ -141,13 +141,21 @@ Based on the categorization of elements, we will state some relationships about 
 
 Now we focus on the relationship between \nondetcov\ and proof-based metrics.  Given an equational transition system to assign the vertices in the graph, assigning a ``fresh'' input in \nondetcov\ coverage is an isomorphic operation to simply removing the defining equation from the set $T$.  As the variable is no longer constrained by a defining equation, it is effectively an input.
 
-\mike{Should we call this \nondetcov-2 or something?}
+%\mike{Should we call this \nondetcov-2 or something?}
 
-\begin{definition} {\emph{Nondeterministic coverage (alternate) (\nondetcov) ~\cite{chockler2010coverage}.} }
-\label{def:non-det}
-$T_i \in T$ is covered by property $P$ \emph{iff} $T_i \in \nondetcov (P)$, where
-$\nondetcov (P) = \{T_i~|~ (I, T) \vdash P \wedge (I, T \setminus \{T_i\}) \nvdash P\}$.
+\begin{definition} {\emph{Nondeterministic coverage alternate definition (\nondetcovalt) ~\cite{chockler2010coverage}.} }
+\label{def:non-det-2}
+$T_i \in T$ is covered by property $P$ \emph{iff} $T_i \in \nondetcovalt (P)$, where
+$\nondetcovalt (P) = \{T_i~|~ (I, T) \vdash P \wedge (I, T \setminus \{T_i\}) \nvdash P\}$.
 \end{definition}
+
+\begin{lemma}
+    \label{lem:nondet-nondetaltcov}
+    $\nondetcov(P) = \nondetcovalt(P)$
+\end{lemma}
+\begin{proof}
+\mike{obvious?}
+\end{proof}
 
 \noindent Given this definition, it becomes straightforward to define some additional properties.
 

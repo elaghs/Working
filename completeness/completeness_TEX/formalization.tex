@@ -97,7 +97,7 @@ Mutations for hardware are discussed in~\cite{chockler2010coverage,Kupferman:200
 Given this representation, it is possible to discuss mutations of a single vertex: either stuck-at-zero, stuck-at-one, or nondeterministic.  This mutation is performed by changing the vertex to \mutnode, where \mutnode\ can be a ``fresh'' input for non-deterministic mutations, or fixed to 0 or 1 for stuck-at mutations.  Formally the semantics of a mutant netlist is defined as a new labeling function:
 
 \[ \tau^{v}_{N}(u) = \begin{cases}
-    \tau(v) & \textrm{ if $v \neq u$} \\ 
+    \tau(v) & \textrm{ if $v \neq u$} \\
     \textrm{\mutnode}   & \textrm{ if $v = u$}
 \end{cases}  \]
 \noindent Coverage is then measured by how many of the mutated models are ``killed'' by the property.
@@ -115,7 +115,7 @@ Given this representation, it is possible to discuss mutations of a single verte
 
 To introduce mutations, a multiplexer is introduced into the graph for the mutated vertex $v$ as shown in Figure~\ref{fig:multiplexer}, and all edges connected to $v$ are connected to $v^{mx}$.   If the selector signal $v^{s}$ is true, then the mutated signal $v^{f}$ is emitted instead of the original signal $v$.  To model stuck-at faults, $v^{f}$ is set to constant true or false, and to model non-deterministic faults, a ``fresh'' input signal is added to the model.
 \fi
-%Of particular interest is the mutation that replaces a computed variable ({\em signal} in hardware) with a ``fresh'' input; this mutation is called a {\em nondeterminism mutation} with a coverage metric called (\nondetcov)~\cite{chockler2010coverage} and is discussed .  
+%Of particular interest is the mutation that replaces a computed variable ({\em signal} in hardware) with a ``fresh'' input; this mutation is called a {\em nondeterminism mutation} with a coverage metric called (\nondetcov)~\cite{chockler2010coverage} and is discussed .
 %s
 %We can re-formalize their appr
 
@@ -123,7 +123,7 @@ A netlist can immediately be mapped a transition system consisting of a conjunct
 
 \begin{definition} {\emph{Nondeterministic coverage (\nondetcov) ~\cite{chockler2010coverage}.} }
 \label{def:non-det}
-Given a set of netlist equations $T_i = (V_i = E_i)$ and ``fresh'' model variable \inputnode, 
+Given a set of netlist equations $T_i = (V_i = E_i)$ and ``fresh'' model variable \inputnode,
 $T_i \in T$ is covered by property $P$ \emph{iff} $T_i \in \nondetcov (P)$, where
 $\nondetcov (P) = \{ T_i~|~ T_i = (V_i = E_i)\in T \wedge (I, T \setminus \{(V_i = E_i)\} \cup \{(V_i = \textrm{\inputnode})\}) \nvdash P\}$.
 \end{definition}
@@ -135,7 +135,7 @@ Using  $\nondetcov$, the coverage score of specification $P$ is computed by
    \frac{ | \nondetcov (P)|}{|T|}
 \]
 
-\noindent It is straightforward to define stuck-at-true and stuck-at-false coverage by replacing \inputnode\ by either constant 1 or 0.
+\noindent It is straightforward to define stuck-at-true and stuck-at-false coverage by replacing \inputnode\ by constant 1 or 0, respectively.
 
 
 

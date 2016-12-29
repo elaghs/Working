@@ -21,7 +21,7 @@ $\ivccov (P, S) = \{ T_i \in T ~|~ T_i \in S \}$.
 %formalized in Definition \ref{def:coverage-justi} as \ivccov\.
 %
 We call Definition \ref{def:coverage-justi} a \emph{justifiable} metric because, with a set of the model elements marked as covered by \ivccov, $P$ is provable.  Other notions, such as \nondetcov\ may yield subsets of the model that are insufficient to reconstruct the proof of the property, as will be discussed in Section~\ref{subsec:method-disc}. %\footnote{\noindent ~Throughout the paper, when a coverage metric is justifiable, like \ivccov, it is said that it preserves provability of the property.}
-%Thus, the coverage score for \ivccov\ is often higher than the score for \nondetcov. 
+%Thus, the coverage score for \ivccov\ is often higher than the score for \nondetcov.
 The coverage score for \ivccov\ can be calculated with: $$\frac{|S|}{|T|}$$
 %Note that because minimal proofs are not unique, there are several possible coverage scores.
 Because $P$ may have multiple IVCs, there can be a range of scores (with equal justification) for the \ivccov\ metric, which is shown by \minproofcov:
@@ -29,7 +29,7 @@ Because $P$ may have multiple IVCs, there can be a range of scores (with equal j
    \minproofcov(T, P) = \{~\frac{ |S|}{|T|}~|~S \in AIVC(P)~\}
 \]
 
-\noindent Note however that if an IVC contains all model elements (i.e., the model is {\em completely covered}), then there is only one possible IVC, so in this case there is no diversity of scores.
+\noindent Note that if an IVC contains all model elements (i.e., the model is {\em completely covered}), then there is only one possible IVC, so in this case there is no diversity of scores.
 
 %the model is {\em completely covered}, on the other hand, then there is only one possible minimal set: the set of all elements.
 
@@ -76,13 +76,13 @@ Using the notions of $MAY$ and $MUST$, we can introduce additional coverage metr
 \end{definition}
 
 The $\maycov$ notion aims to deal with the fact that a property $P$ may have
-several distinct IVCs. In such cases, \ivccov\ only looks at an arbitrary IVC set
+several distinct IVCs. In such cases, \ivccov\ only looks at an arbitrary IVC
 that may contain a subset of $MAY(P)$, which means, depending on
 which IVC it considers, every time it may report a different part of $MAY(P)$
-as uncovered. However, \maycov\ resolves this issue reporting the entire set of $MAY(P)$ as covered, which also leads to higher coverage scores.  \mustcov takes the opposite view, considering model elements covered only if they appear in all proofs.
+as uncovered. However, \maycov\ resolves this issue reporting the entire set of $MAY(P)$ as covered, which also leads to higher coverage scores.  \mustcov\ takes the opposite view, considering model elements covered only if they appear in all proofs.
 
 
-It is possible to build still more relaxed coverage metrics in which coverage
+It is still possible to build more relaxed coverage metrics in which coverage
 is captured by looking at individual properties, rather than their conjunction.
 %for example, in the definition of \ivccov , it is wise to look at $P$ as
 %the conjunction of all properties. However,
@@ -136,10 +136,13 @@ Based on the categorization of elements, we will state some relationships about 
     $T_i \in MUST(P) \Leftrightarrow T_i \in \mustcov(P)$
 \end{lemma}
 \begin{proof}
-\mike{obvious?}
+Immediate from the definition of $MUST$ and \mustcov.
+\mike{obvious?} \ela{  Ela: you mean we don't need it?}
 \end{proof}
 
-Now we focus on the relationship between \nondetcov\ and proof-based metrics.  Given an equational transition system to assign the vertices in the graph, assigning a ``fresh'' input in \nondetcov\ coverage is an isomorphic operation to simply removing the defining equation from the set $T$.  As the variable is no longer constrained by a defining equation, it is effectively an input.
+Now we focus on the relationship between \nondetcov\ and proof-based metrics.  Considering the conjunctive structure of transition relation, assigning a ``fresh'' input in \nondetcov\ coverage is an isomorphic operation to simply removing a $T_i$ from $T$, which makes 
+a mutant transition relation like the one introduced in Definition \ref{def:non-det}. 
+As the variable is no longer constrained by a defining equation, it is effectively an input.
 
 %\mike{Should we call this \nondetcov-2 or something?}
 
@@ -154,7 +157,7 @@ $\nondetcovalt (P) = \{T_i~|~ (I, T) \vdash P \wedge (I, T \setminus \{T_i\}) \n
     $\nondetcov(P) = \nondetcovalt(P)$
 \end{lemma}
 \begin{proof}
-\mike{obvious?}
+\mike{obvious?} \ela{   not so sure if obvious with my formalization?}
 \end{proof}
 
 \noindent Given this definition, it becomes straightforward to define some additional properties.
@@ -207,7 +210,7 @@ $$\nondetcov\ \leq \ivccov\ \leq \maycov\ \leq \allcov$$
 
 %Based on our preliminary evaluation, we believe that metrics based on
 %$AIVC$ relation (like \maycov\ and \allcov) are approximately as computationally expensive as \nondetcov.\footnote{\noindent ~The reason is that \nondetcov\ computes the must set which is also based on $AIVC$ relation. However, in terms of preserving provability, a set of design elements marked as covered by \allcov\ and \maycov\ are
-%sufficient to reconstruct the proof of the properties.}  
+%sufficient to reconstruct the proof of the properties.}
 %In the following sections, we first illustrate how the different metrics measure coverage of our ASW example with some sample requirements, and then perform a larger experiment with the \nondetcov\ and \ivccov\ metrics.
 
 %So, in order to examine the proof-based metrics, Section \ref{sec:impl} considers the implementation of two major notions: \nondetcov\ and

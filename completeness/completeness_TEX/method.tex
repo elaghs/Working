@@ -140,8 +140,9 @@ Immediate from the definition of $MUST$ and \mustcov.
 \mike{obvious?} \ela{  Ela: you mean we don't need it?}
 \end{proof}
 
-Now we focus on the relationship between mutation-based coverage in \cite{chockler2010coverage} and proof-based metrics.  Considering the conjunctive structure of transition relation, assigning a ``fresh'' input performed in mutations for hardware \cite{chockler2010coverage} is an isomorphic operation to simply removing a $T_i$ from $T$.
-As the variable is no longer constrained by a defining equation, it is effectively an input.
+Now we focus on the relationship between mutation-based coverage in \cite{chockler2010coverage} and proof-based metrics. In \cite{chockler2010coverage}, each mutant design changes the type of a single node to INPUT. Considering the conjunctive structure of transition relation, assigning a ``fresh'' input is an isomorphic operation to simply removing a $T_i$ from $T$.
+As the variable is no longer constrained by a defining equation, it is effectively an input. 
+So, we can reframe the non-deterministic coverage as follows:
 
 \begin{definition} {\emph{Nondeterministic coverage (\nondetcov) ~\cite{chockler2010coverage}.} }
 \label{def:non-det-2}

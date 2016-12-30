@@ -140,25 +140,29 @@ Immediate from the definition of $MUST$ and \mustcov.
 \mike{obvious?} \ela{  Ela: you mean we don't need it?}
 \end{proof}
 
-Now we focus on the relationship between \nondetcov\ and proof-based metrics.  Considering the conjunctive structure of transition relation, assigning a ``fresh'' input in \nondetcov\ coverage is an isomorphic operation to simply removing a $T_i$ from $T$, which makes 
-a mutant transition relation like the one introduced in Definition \ref{def:non-det}. 
+Now we focus on the relationship between mutation-based coverage in \cite{chockler2010coverage} and proof-based metrics.  Considering the conjunctive structure of transition relation, assigning a ``fresh'' input performed in mutations for hardware \cite{chockler2010coverage} is an isomorphic operation to simply removing a $T_i$ from $T$.
 As the variable is no longer constrained by a defining equation, it is effectively an input.
 
-%\mike{Should we call this \nondetcov-2 or something?}
-
-\begin{definition} {\emph{Nondeterministic coverage alternate definition (\nondetcovalt) ~\cite{chockler2010coverage}.} }
+\begin{definition} {\emph{Nondeterministic coverage (\nondetcov) ~\cite{chockler2010coverage}.} }
 \label{def:non-det-2}
-$T_i \in T$ is covered by property $P$ \emph{iff} $T_i \in \nondetcovalt (P)$, where
-$\nondetcovalt (P) = \{T_i~|~ (I, T) \vdash P \wedge (I, T \setminus \{T_i\}) \nvdash P\}$.
+$T_i \in T$ is covered by property $P$ \emph{iff} $T_i \in \nondetcov (P)$, where
+$\nondetcov (P) = \{T_i~|~ (I, T) \vdash P \wedge (I, T \setminus \{T_i\}) \nvdash P\}$.
 \end{definition}
 
-\begin{lemma}
-    \label{lem:nondet-nondetaltcov}
-    $\nondetcov(P) = \nondetcovalt(P)$
-\end{lemma}
-\begin{proof}
-\mike{obvious?} \ela{   not so sure if obvious with my formalization?}
-\end{proof}
+
+%\begin{definition} {\emph{Nondeterministic coverage alternate definition (\nondetcovalt) ~\cite{chockler2010coverage}.} }
+%\label{def:non-det-2}
+%$T_i \in T$ is covered by property $P$ \emph{iff} $T_i \in \nondetcovalt (P)$, where
+%$\nondetcovalt (P) = \{T_i~|~ (I, T) \vdash P \wedge (I, T \setminus \{T_i\}) \nvdash P\}$.
+%\end{definition}
+%
+%\begin{lemma}
+%    \label{lem:nondet-nondetaltcov}
+%    $\nondetcov(P) = \nondetcovalt(P)$
+%\end{lemma}
+%\begin{proof}
+%\mike{obvious?} \ela{   not so sure if obvious}
+%\end{proof}
 
 \noindent Given this definition, it becomes straightforward to define some additional properties.
 

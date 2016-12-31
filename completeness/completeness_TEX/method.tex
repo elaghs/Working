@@ -1,5 +1,5 @@
 \newcommand{\minproofcov}{\text{\sc MinProof-Cov}}
-
+ 
 
 \section{Proof-Based Metrics}
 \label{sec:method}
@@ -131,16 +131,16 @@ Based on the categorization of elements, we will state some relationships about 
 \end{proof}
 \vspace{2mm}
 
-\begin{lemma}
-    \label{lem:must-mustcov}
-    $T_i \in MUST(P) \Leftrightarrow T_i \in \mustcov(P)$
-\end{lemma}
-\begin{proof}
-Immediate from the definition of $MUST$ and \mustcov. 
-\end{proof}
+%\begin{lemma}
+%    \label{lem:must-mustcov}
+%    $T_i \in MUST(P) \Leftrightarrow T_i \in \mustcov(P)$
+%\end{lemma}
+%\begin{proof}
+%Immediate from the definition of $MUST$ and \mustcov.
+%\end{proof}
 
-Now we focus on the relationship between mutation-based coverage in \cite{chockler2010coverage} and proof-based metrics. In \cite{chockler2010coverage}, each mutant design changes the type of a single node to INPUT. Considering the conjunctive structure of transition relation, assigning a ``fresh'' input is an isomorphic operation to simply removing a $T_i$ from $T$.
-As the variable is no longer constrained by a defining equation, it is effectively an input. 
+Now we focus on the relationship between mutation-based coverage in \cite{chockler2010coverage} and proof-based metrics. In \cite{chockler2010coverage}, each mutant design changes the type of a single node to \inputnode. Considering the conjunctive structure of transition relation, assigning a ``fresh'' input is an isomorphic operation to simply removing a $T_i$ from $T$.
+%As the variable is no longer constrained by a defining equation, it is effectively an %input.
 So, we can reframe the non-deterministic coverage proposed in \cite{chockler2010coverage} as follows:
 
 \begin{definition} {\emph{Nondeterministic coverage (\nondetcov) ~\cite{chockler2010coverage}.} }

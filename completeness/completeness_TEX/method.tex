@@ -20,7 +20,7 @@ $\ivccov (P, S) = \{ T_i \in T ~|~ T_i \in S \}$.
 %For the sake of simplicity, we refer to the coverage function
 %formalized in Definition \ref{def:coverage-justi} as \ivccov\.
 %
-We call Definition \ref{def:coverage-justi} a \emph{justifiable} metric because, with a set of the model elements marked as covered by \ivccov, $P$ is provable.  Other notions, such as \nondetcov\ may yield subsets of the model that are insufficient to reconstruct the proof of the property, as will be discussed in Section~\ref{subsec:method-disc}. %\footnote{\noindent ~Throughout the paper, when a coverage metric is justifiable, like \ivccov, it is said that it preserves provability of the property.}
+We call Definition \ref{def:coverage-justi} a \emph{justifiable} metric because, with a set of the model elements marked as covered by \ivccov, $P$ is provable.  Other notions, such as \nondetcovalt\ may yield subsets of the model that are insufficient to reconstruct the proof of the property, as will be discussed in Section~\ref{subsec:method-disc}. %\footnote{\noindent ~Throughout the paper, when a coverage metric is justifiable, like \ivccov, it is said that it preserves provability of the property.}
 %Thus, the coverage score for \ivccov\ is often higher than the score for \nondetcov.
 The coverage score for \ivccov\ can be calculated with: $$\frac{|S|}{|T|}$$
 %Note that because minimal proofs are not unique, there are several possible coverage scores.
@@ -139,9 +139,9 @@ Based on the categorization of elements, we will state some relationships about 
 %Immediate from the definition of $MUST$ and \mustcov.
 %\end{proof}
 
-Now we focus on the relationship between non-deterministic mutation-based coverage and proof-based metrics. In \cite{chockler2010coverage}, each mutant design changes the type of a single node to \inputnode. 
+Now we focus on the relationship between non-deterministic mutation-based coverage and proof-based metrics. In \cite{chockler2010coverage}, each mutant design changes the type of a single node to \inputnode.
 Given a suitable encoding of the netlist,\footnote{The mapping is as follows: the netlist becomes a conjunction
-of equations, where each vertex becomes a variable $v_i \in U$, and where each non-input vertex becomes an assignment equation $T_i \in T$.  
+of equations, where each vertex becomes a variable $v_i \in U$, and where each non-input vertex becomes an assignment equation $T_i \in T$.
 For example, given an AND-vertex $v_i$ with three input edges from other vertexes $\{v_a, v_b, v_c\}$, we would define an equation $T_i \in T$ of the form $(v_i = (v_a \wedge v_b \wedge v_c))$. } assigning a ``fresh'' input is an isomorphic operation to simply removing a $T_i$ from $T$.
 %
 %As the variable is no longer constrained by a defining equation, it is effectively an %input.
@@ -214,7 +214,7 @@ To conclude this section, we should mention that one can define many more proof-
 
 The proposed coverage metrics can be ranked in terms of their scores as follows:
 $$\nondetcovalt\ \leq \ivccov\ \leq \maycov\ \leq \allcov$$
-\ivccov\ and \nondetcov\ are equivalent when all elements within the model are covered: if all model elements are MUST elements, then there can only be one IVC, and this IVC uses all of the model elements.
+\ivccov\ and \nondetcovalt\ are equivalent when all elements within the model are covered: if all model elements are MUST elements, then there can only be one IVC, and this IVC uses all of the model elements.
 
 %Based on our preliminary evaluation, we believe that metrics based on
 %$AIVC$ relation (like \maycov\ and \allcov) are approximately as computationally expensive as \nondetcov.\footnote{\noindent ~The reason is that \nondetcov\ computes the must set which is also based on $AIVC$ relation. However, in terms of preserving provability, a set of design elements marked as covered by \allcov\ and \maycov\ are

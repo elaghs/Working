@@ -1,4 +1,4 @@
-\subsection{Discussion}
+\section{Discussion}
 \label{sec:discussion}
 As mentioned, IVCs are derived from inductive invariants; in other words, they are built upon the proof of the validity of a given property. One interesting fact about proofs
   is that a given property could be proved from different proof paths.
@@ -24,7 +24,7 @@ as the conjunction of Boolean formulae.   The granularity of these formulas subs
 %
 We have recently implemented a transformation that we believe splits models into {\em sufficiently granular} conjuncts such that further decomposition will not cause a complete specification to become incomplete.  We will document this transformation and provide a proof of completeness-result-preservation in future work.
 %
-In a small initial experiment involving 30 of the original models, we performed our transformation and re-ran the analysis.  By changing the granularity of the model, the analysis tools perform significantly slower for proofs, but the ratio of performance between the proof and the \ucalg\ and \nondetcov\ models is largely unchanged.  However, on some models, the \nondetcov\ metric becomes unacceptably slow (analysis times of 10s of hours) and occasionally causes the solver to run out of memory.
+In a small initial experiment involving 30 of the original models, we performed our transformation and re-ran the analysis.  By changing the granularity of the model, the analysis tools perform significantly slower for proofs, but the ratio of performance between the proof and the \ucalg\ and \nondetcovalt\ models is largely unchanged.  However, on some models, the \nondetcovalt\ metric becomes unacceptably slow (analysis times of 10s of hours) and occasionally causes the solver to run out of memory.
 
 The issue of granularity of models is significant, but tends not to be discussed in detail other papers.  This will be a focus of our future work, especially in analyzing situations in which the tool determines that a set of requirements is {\em complete}.
 

@@ -108,14 +108,14 @@ Given this representation, it is possible to discuss mutations of a single verte
 
 Let  $N = (V_N,E_N, \tau_N)$ be the original net-list;
 when property $P$ satisfied by $N$ fails on the mutant net-list $(V_N, E^{v_i}_N, \tau^{v_i}_{N})$ constructed by a single non-deterministic mutation from the labeling $\tau^{v}_{N}(v_i)$, it is said that a mutant is discovered for $P$ (or $v_i$ is covered by $P$).
-We assume a function $TS : N \rightarrow T$ that returns the corresponding transition system of a net-list.  \ela{shouldn't it be $TS: N \rightarrow I \rightarrow T$ ?}
-Given this representation, we can define nondeterministic coverage as follows:
+We assume a function $TS : N \rightarrow T$ that returns the corresponding transition relation of a net-list. % \ela{shouldn't it be $TS: N \rightarrow I \rightarrow T$ ?}
+Given this representation, and an initial state $I$, we can define nondeterministic coverage as follows:
 
 \begin{definition} {\emph{Nondeterministic coverage (\nondetcov) ~\cite{chockler2010coverage}.} }
 \label{def:non-det}
 Given $N = (V_N,E_N, \tau_N)$,
 $v_i \in V_N$ is covered by property $P$ \emph{iff} $v_i \in \nondetcov (P)$, where
-$\nondetcov (P) = \{ v_i~|~ v_i \in V_N \wedge TS(N) \vdash P \wedge TS((V_N, E^{v_i}_N, \tau^{v_i}_{N})) \nvdash P \}$.
+$\nondetcov (P) = \{ v_i~|~ v_i \in V_N \wedge (I, TS(N)) \vdash P \wedge (I, TS((V_N, E^{v_i}_N, \tau^{v_i}_{N}))) \nvdash P \}$.
 \end{definition}
 Using  $\nondetcov$, the coverage score of specification $P$ is computed by
 \[

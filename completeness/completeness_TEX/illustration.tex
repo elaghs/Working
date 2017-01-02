@@ -19,7 +19,7 @@ We illustrate the idea of completeness metrics and the ``score" from different m
 %
 The ASW is responsible for turning on and off a device of interest, so we formulate two requirements that describe when the ASW should be {\em on} and when it should be {\em off}.
 
-Our first (somewhat faulty) attempt at formalization is as follows:
+The first attempt at formalization is as follows:
 
 %\begin{definition} {\emph{ASW Requirements Version 1} }
 {\smaller
@@ -33,11 +33,14 @@ all_p = on_p and off_p;
 }
 %\end{definition}
 
-\noindent Informally, when both altimeters are below the threshold and not inhibited, then the DOI should be on (\onp), and when both altimeters are below the threshold and the ASW is inhibited, then the DOI should be off (\offp).  The property \allp\ is the conjunction of all requirements.  We can now apply each of the completeness notions: IVC, MAY, and MUST (which is the same as \nondetcov).  What we discover is that, for all three metrics, \allp\ only requires \texttt{\{below, d1, doi\_on\}}.  This is alarming, and somewhat puzzling, because one would think that at least the definitions of the `below' or `above' would be necessary.  However, because the specification used the model variables \aonebelow, \atwobelow, \aoneabove, and \atwoabove, the actual valuations of the thresholds do not matter.  This situation illustrates a classic specification problem: using computed variables in the antecedents of implications.
+\noindent Informally, when both altimeters are below the threshold and not inhibited, then the DOI should be on (\onp), and when both altimeters are below the threshold and the ASW is inhibited, then the DOI should be off (\offp).  
+For each of the MAY, MUST, and IVC metrics, \allp\ only requires \texttt{\{below, d1, doi\_on\}}.   This small set of elements is due to a classic specification problem: using computed variables as the antecedents of implications.  If these values are computed incorrectly (say, we choose the wrong threshold for \aonebelow), it may cause the property to be valid for incorrect reasons.
+
+%This is alarming, and somewhat puzzling, because one would think that at least the definitions of the `below' or `above' would be necessary.  However, because the specification used the model variables \aonebelow, \atwobelow, \aoneabove, and \atwoabove, the actual valuations of the thresholds do not matter.  This situation illustrates a classic specification problem: using computed variables in the antecedents of implications.
 %\footnote{\noindent ~In this case, if the computation of the variables used in the antecedent is incorrect, then our property will not verify what it is expected to verify \mike{citation to one of our papers on specification here...}; note also that this does not mean the property is necessarily {\em vacuous}.}
 
 We therefore modify our properties to use inputs and constants as antecedents and derive:
-%\begin{definition} {\emph{ASW Requirements Version 2} }
+
 {\smaller
 \begin{verbatim}
 on_p = ((alt1 < THRESHOLD) and (alt2 < THRESHOLD))
@@ -49,10 +52,11 @@ off_p = ((alt1 >= T_HYST) and (alt2 >= T_HYST))
 % all_p = on_p and off_p;
 %\end{definition}
 
-\noindent In this version, we can see distinctions between the metrics.  \allp\ has two IVCs: \texttt{\{\{a1\_below, below, doi\_on, d1\}, \{a2\_below, below, doi\_on, d1\}\}}.  The reason that there are two IVCs is due to the \onp\ property: in the implementation, the DOI is turned on when either of the altimeters is below the threshold, while our property states that they both must be on.
-From domain experts, we determine that the requirement is correctly specified and that our implementation is a reasonable refinement, so there is no need to change the model or the property.  The MUST elements are the same as version 1: \texttt{\{below, doi\_on, d1\}}, because neither \aonebelow\ or \atwobelow\ is required for all proofs.  However, given the MUST elements, we can no longer construct a proof, because at one of these definitions is necessary for either proof.  The MAY elements contain both \aonebelow\ and \atwobelow.
+\noindent In this version, distinctions emerge between the metrics.  \allp\ has two IVCs: \texttt{\{\{a1\_below, below, doi\_on, d1\}, \{a2\_below, below, doi\_on, d1\}\}}, because of the \onp\ property: in the implementation, the DOI is turned on when either of the altimeters is below the threshold, while our property states that they both must be on.
+Domain experts determine that the requirement is correctly specified and that our implementation is a reasonable refinement, so there is no need to change the model or the property.  The MUST elements are the same as version 1: \texttt{\{below, doi\_on, d1\}}, because neither \aonebelow\ or \atwobelow\ is required for all proofs.  %However, given the MUST elements, we can no longer construct a proof, because at one of these definitions is necessary for either proof.
+The MAY elements contain both \aonebelow\ and \atwobelow.
 
-We are still missing the \abovehyst, \aoneabove, \atwoabove, and \dtwo\ variables, so the `above' thresholds are irrelevant to our properties.  Examining \offp, we realize that we have a specification error; the DOI should be off if either \inhibit\ is true or both altimeters are above the threshold, so we fix it:
+The \abovehyst, \aoneabove, \atwoabove, and \dtwo\ equations are still missing, meaning that the `above' thresholds are irrelevant to our properties.  Examining \offp, we realize that we have a specification error; the DOI should be off if either \inhibit\ is true or both altimeters are above the threshold. The fix is:
 
 %\begin{definition} {\emph{ASW Requirements Version 2} }
 {\smaller
@@ -66,7 +70,7 @@ off_p = ((alt1 >= T_HYST) and (alt2 >= T_HYST))
 %all_p = on_p and off_p;
 %\end{definition}
 
-\noindent Now the \allp\ requirement proof yields a single IVC that requires all variables except \{d2\}, so IVC = MAY = MUST.  Interestingly, the \offp\ proof requires both the lower altimeter thresholds even though the \onp\ proof does not; the reason is that if either of these is false, then \doion\ will be true.  To cover \{d2\}, we realize that there is no property covering the `no change' case where both altimeters are within the hysteresis range, so we further refine our requirements:
+\noindent Now the \allp\ requirement proof yields a single IVC that requires all variables except \{\texttt{d2}\}, so IVC = MAY = MUST.  Interestingly, the \offp\ proof requires both the lower altimeter thresholds even though the \onp\ proof does not; the reason is that if either of these is false, then \doion\ will be true.  To cover \{\texttt{d2}\}, we realize no property covers the hysteresis case, so an additional property is added for this case:
 
 %\begin{definition} {\emph{ASW Requirements Version 2} }
 {\smaller
@@ -84,7 +88,7 @@ all_p = on_p and off_p and hyst_p;
 %\end{definition}
 \noindent The final property states that if the antecedent conditions hold, then in the initial state, the \doion\ variable is assigned false, and in subsequent steps, it retains the same value as it previously had.
 
-Now all model variables are required for the IVC, so the measures coincide, and we have a reasonably complete specification, so the measures appear to be useful.  However, the measures are certainly not foolproof; it turns out that using {\em only} the hysteresis property \hystp\ will {\em also} yield a ``complete'' result for all of the metrics: to establish its validity, all of the equations that we have defined in the model are required.  This is because the partitioning of the transition system (i.e., the equations) is insufficiently {\em granular} to detect the incompletenes.
+The measures again coincide and include all variables, and we appear to have a reasonably complete specification.  However, the measures are certainly not foolproof; it turns out that using {\em only} the hysteresis property \hystp\ will {\em also} yield a ``complete'' result for all of the metrics: to establish its validity, all of the equations that we have defined in the model are required.  This is because the partitioning of the transition system (i.e., the equations) is insufficiently {\em granular} to detect the incompleteness.
 %However, this one property would not reasonably be considered a complete specification.
 We will examine this situation further in Section~\ref{sec:discussion}.
 %We will examine this situation further in the discussion section~\mike{add this!}.

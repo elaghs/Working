@@ -143,10 +143,10 @@ Now we focus on the relationship between non-deterministic mutation-based covera
 %As the variable is no longer constrained by a defining equation, it is effectively an %input.
 So, we can reframe the non-deterministic coverage proposed in \cite{chockler2010coverage} as follows:
 
-\begin{definition} {\emph{Nondeterministic coverage (\nondetcov) ~\cite{chockler2010coverage}.} }
+\begin{definition} {\emph{Nondeterministic coverage alternate specification (\nondetcovalt) ~\cite{chockler2010coverage}.} }
 \label{def:non-det-2}
-$T_i \in T$ is covered by property $P$ \emph{iff} $T_i \in \nondetcov (P)$, where
-$\nondetcov (P) = \{T_i~|~ (I, T) \vdash P \wedge (I, T \setminus \{T_i\}) \nvdash P\}$.
+$T_i \in T$ is covered by property $P$ \emph{iff} $T_i \in \nondetcovalt (P)$, where
+$\nondetcovalt (P) = \{T_i~|~ (I, T) \vdash P \wedge (I, T \setminus \{T_i\}) \nvdash P\}$.
 \end{definition}
 
 
@@ -168,16 +168,16 @@ $\nondetcov (P) = \{T_i~|~ (I, T) \vdash P \wedge (I, T \setminus \{T_i\}) \nvda
 
 \begin{lemma}
   \label{lem:must-coverage}
-$T_i \in \nondetcov (P) \Leftrightarrow T_i \in \mustcov(P)$.
+$T_i \in \nondetcovalt (P) \Leftrightarrow T_i \in \mustcov(P)$.
 \end{lemma}
 \begin{proof}
-$T_i \in \nondetcov (P)$ means that $(I, S \setminus \{ T_i \}) \nvdash P$ then $T_i$ is necessary to prove $P$ (Lemma \ref{lem:must-not-enough}), which means $T_i \in MUST(P)$.
+$T_i \in \nondetcovalt (P)$ means that $(I, S \setminus \{ T_i \}) \nvdash P$ then $T_i$ is necessary to prove $P$ (Lemma \ref{lem:must-not-enough}), which means $T_i \in MUST(P)$.
 On the other hand, $MUST(P), T_i \in MUST (P) \Rightarrow T_i \in IVC(P, S)$,
 which implies (I, $S \setminus \{ T_i \}) \nvdash P$.
 \end{proof}
 \vspace{2mm}
 
-In light of Lemma \ref{lem:must-coverage}, the \nondetcov\ coverage score of specification $P$ can be also calculated by
+In light of Lemma \ref{lem:must-coverage}, the \nondetcovalt\ coverage score of specification $P$ can be also calculated by
 $$\frac{|MUST(P)|}{|T|}$$
 %Therefore, for set of properties $\Delta$, the coverage score is computed by $$\frac{|MUST(\Pi)|}{|T|},\quad  \Pi= \bigwedge_{i} {P_i \in \Delta}$$
 \vspace{0.2in}

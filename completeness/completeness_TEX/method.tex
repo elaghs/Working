@@ -1,5 +1,5 @@
 \newcommand{\minproofcov}{\text{\sc MinProof-Cov}}
- 
+
 
 \section{Proof-Based Metrics}
 \label{sec:method}
@@ -139,7 +139,7 @@ Based on the categorization of elements, we will state some relationships about 
 %Immediate from the definition of $MUST$ and \mustcov.
 %\end{proof}
 
-Now we focus on the relationship between mutation-based coverage in \cite{chockler2010coverage} and proof-based metrics. In \cite{chockler2010coverage}, each mutant design changes the type of a single node to \inputnode. Considering the conjunctive structure of transition relation, assigning a ``fresh'' input is an isomorphic operation to simply removing a $T_i$ from $T$.
+Now we focus on the relationship between non-deterministic mutation-based coverage and proof-based metrics. In \cite{chockler2010coverage}, each mutant design changes the type of a single node to \inputnode. Considering the conjunctive structure of transition relation, assigning a ``fresh'' input is an isomorphic operation to simply removing a $T_i$ from $T$.
 %As the variable is no longer constrained by a defining equation, it is effectively an %input.
 So, we can reframe the non-deterministic coverage proposed in \cite{chockler2010coverage} as follows:
 
@@ -206,7 +206,7 @@ Immediate from Definition~\ref{def:minimal-ivc} and Definition \ref{def:coverage
 %It should be pointed out that \ivccov\ is accurate meaning that it does not result in false positives. In other words, since IVCs are \emph{minimal}, \ivccov\ does not mark
 %any \emph{actual} uncovered element as covered.
 
-To conclude this section, we should mention that one can define many more proof-based coverage metrics based on the IVC/AIVC idea. Metrics that make use of $AIVC$ relation are computationally more expensive to compute than \ivccov\ although they might be easier to satisfy (i.e. result in higher coverage scores).
+To conclude this section, we should mention that one can define many more proof-based coverage metrics based on the IVC/AIVC idea. Metrics that make use of $AIVC$ relation are computationally more expensive to compute than \ivccov\ although they might be easier to satisfy (i.e., result in higher coverage scores).
 
 The proposed coverage metrics can be ranked in terms of their scores as follows:
 $$\nondetcov\ \leq \ivccov\ \leq \maycov\ \leq \allcov$$

@@ -17,9 +17,9 @@ For critical systems, it has been argued that formal methods
 %, involving formalized requirements and proofs of implementation correctness,
 should be applied to gain higher assurance than is possible with testing~\cite{Miller10:CACM,Rushby09:SEFM,Hardin09:Security}.  For these approaches, testing may still be performed, but the verification effort is primarily focused on performing proofs.  Unfortunately, proof-based approaches tend not to answer the question as to whether implementations have {\em additional functionality} that is not covered by requirements.  Testing, despite its faults, can measure {\em structural coverage} to find untested functionality and can find some errors by {\em serendipity}, in which problems not directly related to the requirement under test are exposed.  Therefore, in formal verification approaches, it is even more important that requirements be complete.
 
-Relatively recently, techniques have been devised for analyzing completeness of requirements against formal implementation models, specified as transition systems or Kripke structures \cite{chockler2001practical,das2005formal, claessen2007coverage, grosse2007estimating}.  These models are agnostic to the ``abstraction level'' of the implementation: they can represent lower-level requirements, software architectures, or concrete implementations of system behavior.  The mechanism used is based on {\em mutation} and {\em proof}: is it possible to prove that the requirements still hold of the system after mutating the model in some way?  If so, then the requirements are incomplete with respect to that model element.
+Relatively recently, techniques have been devised for analyzing completeness of requirements against formal implementation models, specified as transition systems or Kripke structures \cite{chockler2001practical,das2005formal, claessen2007coverage, grosse2007estimating}.  These models are agnostic to the abstraction level of the implementation: implementations can be lower-level requirements, software architectures, or concrete implementations of system behavior.  The mechanism used is based on {\em mutation} and {\em proof}: is it possible to prove that the requirements still hold of the system after mutating the model in some way?  If so, then the requirements are incomplete with respect to that model element.
 
-Unfortunately, previous completeness metrics can {\em underapproximate} which portions of a program are necessary to fulfill the requirements.  That is, if we construct a model from the required residual model elements returned by the analysis, it is oftentimes no longer sufficient to prove the requirement, so it provides incorrect feedback to the developer.  In addition, these approaches tend to be very computationally expensive.  For example, for model checkers, state of the art techniques have runtimes of (in the best case) several times more than is required for proof~\cite{chockler2010coverage}.
+Unfortunately, previous completeness metrics can {\em underapproximate} which portions of a program are necessary to fulfill the requirements.  That is, if we construct a model consisting of only the required model elements as determined by the analysis, it is often no longer possible to prove the requirement.  Thus the feedback provided to the developer may be somewhat misleading.  In addition, the mutation-based analyses tend to be very computationally expensive.  For example, for model checkers, state of the art techniques have runtimes of (in the best case) several times more than is required for proof~\cite{chockler2010coverage}.
 
 What we would like to have is an approach for checking the relative completeness of requirements against an implementation model that:
 \begin{itemize}
@@ -34,12 +34,13 @@ What we would like to have is an approach for checking the relative completeness
 Thus, the contributions of this work are:
 \begin{enumerate}
 \item A notion of requirements completeness based on a proof involving a minimal number of model elements,
-\item A realization of this idea for symbolic transition systems using {\em Inductive Validity Cores} that is a.) inexpensive to compute, given a model-checking proof, b.) more accurate than test-based methods, and c.) preserves the ``provability'' property from the residual model,
+\item A realization of this idea for symbolic transition systems using {\em Inductive Validity Cores} that is a.) inexpensive to compute, given a model-checking proof and b.) preserves the ``provability'' property from the residual model,
+%b.) more accurate than test-based methods, 
 \item An implementation that computes this notion of completeness,
 \item An experiment that examines our notion of requirements completeness against a previous mutation-based notion of completeness.
 \end{enumerate}
 
-\noindent Our eventual goal is to provide a definition of completeness of requirements that can be established using formal verification-based approaches that is acceptable to certification authorities.  We believe that using minimal proofs provides a reasonable candidate metric for this discussion.
+\noindent Our eventual goal is to provide a definition of completeness of requirements using formal verification-based approaches that is acceptable to certification authorities.  We believe that our minimal proof metrics provides a reasonable candidates for this purpose.
 
 %\mike{something here about certification?}
 

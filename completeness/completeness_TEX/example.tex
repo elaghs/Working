@@ -22,18 +22,17 @@ var
    a1_below, a2_below, a1_above, a2_above,
    below, above_hyst, d1, d2: bool;
 let
-   --%MAIN
-(1)   a1_below = (alt1 < THRESHOLD);
-(2)   a2_below = (alt2 < THRESHOLD);
-(3)   a1_above = (alt1 >= T_HYST);
-(4)   a2_above = (alt2 >= T_HYST);
-(5)   below = a1_below or a2_below;
-(6)   above_hyst = a1_above and a2_above;
-(7)   doi_on = if (below and not inhibit)
+   a1_below = (alt1 < THRESHOLD);        // (1)
+   a2_below = (alt2 < THRESHOLD);        // (2)
+   a1_above = (alt1 >= T_HYST);          // (3)
+   a2_above = (alt2 >= T_HYST);          // (4)
+   below = a1_below or a2_below;         // (5)
+   above_hyst = a1_above and a2_above;   // (6)
+   doi_on = if (below and not inhibit)   // (7)
         then true else d1;
-(8)   d1 = if (inhibit or above_hyst)
+   d1 = if (inhibit or above_hyst)       // (8)
          then false else d2;
-(9)   d2 = (false -> pre(doi_on));
+   d2 = (false -> pre(doi_on));          // (9)
 tel;
 \end{verbatim}
 }
@@ -42,7 +41,7 @@ tel;
 \label{fig:asw}
 \end{figure}
 
-We will use a very simple system from the avionics domain to illustrate our approach. An Altitude Switch (ASW) is a hypothetical device that turns power on to another subsystem, the Device of Interest (DOI), when the aircraft descends below a threshold altitude and turns the power off again after we ascend over the threshold plus some hysteresis factor.  An implementation of an ASW containing two altimeters written in the Lustre language (simplified and adapted from~\cite{HCW02:ase-deviation}) is shown in Figure~\ref{fig:asw}.  If the system is not `inhibited' by the user and either altimeter is below the constant THRESHOLD, then it turns on the DOI; else, if the system is inhibited or both altimeters are above the threshold plus the hysteresis factor (THRESHOLD + HYST), then the DOI is turned off, and if neither condition holds, then in the initial computation it is false and thereafter retains its previous value.  The notation \texttt{(false -> pre(doi\_on))} describes an initialized register in Lustre: in the initial state, the expression is \texttt{false}, and thereafter it is the previous value of \texttt{doi\_on}.  In the remainder of the paper, we will use this model to illustrate aspects of requirements completeness.  %Section \ref{sec:illust}.
+We will use a very simple system from the avionics domain to illustrate our approach. An Altitude Switch (ASW) is a hypothetical device that turns power on to another subsystem, the Device of Interest (DOI), when the aircraft descends below a threshold altitude and turns the power off again after we ascend over the threshold plus some hysteresis factor.  An implementation of an ASW containing two altimeters written in the Lustre language (simplified and adapted from~\cite{HCW02:ase-deviation}) is shown in Figure~\ref{fig:asw}.  If the system is not `inhibited' by the user and either altimeter is below the constant THRESHOLD, then it turns on the DOI; else, if the system is inhibited or both altimeters are above the threshold plus the hysteresis factor (THRESHOLD + HYST), then the DOI is turned off, and if neither condition holds, then in the initial computation it is false and thereafter retains its previous value.  The notation \texttt{(false -> pre(doi\_on))} in equation (9) describes an initialized register in Lustre: in the initial state, the expression is \texttt{false}, and thereafter it is the previous value of \texttt{doi\_on}.  In the remainder of the paper, we will use this model to illustrate aspects of requirements completeness.  %Section \ref{sec:illust}.
 
 
 \iffalse

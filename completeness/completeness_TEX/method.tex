@@ -142,7 +142,7 @@ Based on the categorization of elements, we will state some relationships about 
 Now we focus on the relationship between non-deterministic mutation-based coverage and proof-based metrics. In \cite{chockler2010coverage}, each mutant design changes the type of a single node to \inputnode. Considering the conjunctive structure of transition relation, assigning a ``fresh'' input is an isomorphic operation to simply removing a $T_i$ from $T$.
 %As the variable is no longer constrained by a defining equation, it is effectively an %input.
 So, we can reframe the non-deterministic coverage proposed in \cite{chockler2010coverage} as follows:
-
+\ela{you've already added back \nondetcov. should it be \nondetcovalt ? \\ also there was a lemma saying \nondetcov and \nondetcovalt are the same, whose proof it's not really obvious to me. I think if we call this one \nondetcovalt , we need to be more specific about $TS$ and other things...}
 \begin{definition} {\emph{Nondeterministic coverage (\nondetcov) ~\cite{chockler2010coverage}.} }
 \label{def:non-det-2}
 $T_i \in T$ is covered by property $P$ \emph{iff} $T_i \in \nondetcov (P)$, where

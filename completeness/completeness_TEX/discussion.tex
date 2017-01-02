@@ -1,8 +1,25 @@
 \subsection{Discussion}
 \label{sec:discussion}
+As mentioned, IVCs are derived from inductive invariants; in other words, they are built upon the proof of the validity of a given property. One interesting fact about proofs
+  is that a given property could be proved from different proof paths. 
+  The $AIVC$ captures this fact and gives a clear picture of various ways a property is satisfied. By getting all the IVCs for the system properties and categorizing them, one can find if there are design artifacts that do not trace to any property: set $\bigcap \{IRR (P) | P \in \Delta \}$.  If this set is non-empty, it is a possible indication of ``gold plating" or missing properties. 
+%  That is to say, it helps to assess if the specification describe all the behaviors of the system. Being able to measure the coverage of properties over the model is crucial in the safety critical system domain.
 
+Very recent, as yet unpublished, work has focused on the
+generation of all IVCs, whose preliminary evaluation
+shows the overhead in discovering all IVCs is a linear in the
+number of unique IVC in the problem multiplied by the cost
+for finding a proof for a single IVC. For complex models, such
+as the ones described in \cite {QFCS15:backes} and \cite{hilt2013}, it has been possible to
+find $AIVC$ for individual properties in a matter of minutes.
+Based on our preliminary results we expect computing $AIVC$ to be computationally feasible for complex models. In
+addition, we believe that it is possible to use the information
+from the set of all IVCs to more efficiently produce minimal
+IVCs than the \ucbfalg algorithm. 
+
+\ela{Mike, I didn't edit the following part since you said you want to rewrite it:\\}
 As we described in Section \ref{sec:background}, transition relation is considered
-as the conjunction of Boolean formulae.   The granularity of these formulas substantially affects the analysis results.  For example, in our running example in Section~\ref{sec:illust}, it was possible to have a ``complete'' specification of the model involving only the hysteresis property \hystp.  How could this be?  The way that the model was structured, in order to reach the hysteresis property, we had to ``fall through'' the equations (7) and (8) to reach the hysteresis case (9), so the property depended on these equations.  Furthermore, to evaluate the conditions of (7-8), the other equations (1-6) were required.  The expressions in the description that were {\em not} required were the values assigned to the DOI in the 'then' branches of (7) and (8).  These values could be changed without affecting the correctness of the requirement.  In order to determine that these assignments are irrelevant, it is necessary to analyze the models at a finer granularity.  This can be accomplished by splitting the conjuncts (or equations, in our example) into smaller pieces.  By adding equations for the assignments of `true' and `false' on the then branches of (7) and (8) we can determine that our set of requirements is incomplete.
+as the conjunction of Boolean formulas. The granularity of these formulas substantially affects the analysis results.  For example, in our running example in Section~\ref{sec:illust}, it was possible to have a ``complete'' specification of the model involving only the hysteresis property \hystp.  How could this be?  The way that the model was structured, in order to reach the hysteresis property, we had to ``fall through'' the equations (7) and (8) to reach the hysteresis case (9), so the property depended on these equations.  Furthermore, to evaluate the conditions of (7-8), the other equations (1-6) were required.  The expressions in the description that were {\em not} required were the values assigned to the DOI in the 'then' branches of (7) and (8).  These values could be changed without affecting the correctness of the requirement.  In order to determine that these assignments are irrelevant, it is necessary to analyze the models at a finer granularity.  This can be accomplished by splitting the conjuncts (or equations, in our example) into smaller pieces.  By adding equations for the assignments of `true' and `false' on the then branches of (7) and (8) we can determine that our set of requirements is incomplete.
 
 %Splitting a model into more conjuncts will make coverage scores more accurate and usually lower, though it will not always lower coverage scores.
 %
@@ -10,7 +27,7 @@ We have recently implemented a transformation that we believe splits models into
 
 In a small initial experiment involving 30 of the original models, we performed our transformation and re-ran the analysis.  By changing the granularity of the model, the analysis tools perform significantly slower for proofs, but the ratio of performance between the proof and the \ucalg\ and \nondetcov\ models is largely unchanged.  However, on some models, the \nondetcov\ metric becomes unacceptably slow (analysis times of 10s of hours) and occasionally causes the solver to run out of memory.
 
-The issue of granularity of models is significant, but not discussed in detail in previous coverage metrics.  This will be a focus of our future work, especially in analyzing situations in which the tool determines that a set of requirements is {\em complete}.  
+The issue of granularity of models is significant, but not discussed in detail in previous coverage metrics.  This will be a focus of our future work, especially in analyzing situations in which the tool determines that a set of requirements is {\em complete}.
 
 %We plan to focus on efficient analysis of sufficiently granular models in future work.
 %when the tool returns that the set of requirements are complete.

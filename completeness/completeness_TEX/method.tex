@@ -20,7 +20,7 @@ $\ivccov (P, S) = \{ T_i \in T ~|~ T_i \in S \}$.
 %For the sake of simplicity, we refer to the coverage function
 %formalized in Definition \ref{def:coverage-justi} as \ivccov\.
 %
-We call Definition \ref{def:coverage-justi} a \emph{justifiable} metric because, with a set of the model elements marked as covered by \ivccov, $P$ is provable.  Other notions, such as \nondetcovalt\ may yield subsets of the model that are insufficient to reconstruct the proof of the property, as will be discussed in Section~\ref{subsec:method-disc}. %\footnote{\noindent ~Throughout the paper, when a coverage metric is justifiable, like \ivccov, it is said that it preserves provability of the property.}
+We call Definition \ref{def:coverage-justi} a \emph{justifiable} metric because, with a set of the model elements marked as covered by \ivccov, $P$ is provable.  Other notions, as will be discussed in Section~\ref{subsec:method-disc}, may yield subsets of the model that are insufficient to reconstruct the proof of the property\footnote{\noindent ~Throughout the paper, when a coverage metric is justifiable, like \ivccov, it is said that it preserves provability of the property.}.
 %Thus, the coverage score for \ivccov\ is often higher than the score for \nondetcov.
 The coverage score for \ivccov\ can be calculated with: $$\frac{|S|}{|T|}$$
 %Note that because minimal proofs are not unique, there are several possible coverage scores.
@@ -98,7 +98,7 @@ The next definition, \allcov, formalizes this notion.
   \label{def:comp-2}
      Given a set of properties $\Delta$ over $T$, $T_i \in T$ is covered
    \emph{iff} $T_i \in \allcov (T)$, where
-   $\allcov (T) = \{T_i ~|~ (\exists P \in \Delta~.~T_i \in AIVC(P) \}$.
+   $\allcov (T) = \{T_i ~|~ \exists P \in \Delta ,~ S \in AIVC(P).~T_i \in S \}$.
 \end{definition}
 
 %Considering $MAY$ and $MUST$ categorization, we can formalize another
@@ -112,22 +112,16 @@ The next definition, \allcov, formalizes this notion.
 Based on the categorization of elements, we will state some relationships about IVCs so to compare different proof-based metrics proposed earlier.
 
 \begin{lemma}
-  \label{lem:ivc-must-may}
- $IVC(P, S) \Rightarrow  MUST(P) \subseteq S$.
-\end{lemma}
-\begin{proof}
- Immediate from the definition of $AIVC$ and $MUST$.
-\end{proof}
-\vspace{2mm}
-
-\begin{lemma}
   \label{lem:must-not-enough}
   If $MAY(P) \neq \varnothing$, then $P$ is not provable by $MUST(P)$.
 \end{lemma}
 \begin{proof}
-  Proof by contradiction. If $(I, MUST(P)) \vdash P$, then $MUST(P)$
-  would be an IVC for $P$ based on Definition \ref{def:ivc},
-  which contradicts Lemma \ref{lem:ivc-must-may}.
+  $MAY(P) \neq \varnothing \Rightarrow  \exists T_i \in MAY(P).$
+$T_i \in \bigcup AIVC(P) \wedge T_i \notin MUST(P)$,
+which implies $\exists S \in AIVC(P).~ T_i \in S$.
+Considering the fact that $S$ is minimal and
+$MUST(P) \subset S$ (since $T_i \in S \wedge T_i \notin MUST(P)$), 
+ $\nexists S' \subset S.~ (I,S') \vdash P$,  which means $(I, MUST(P)) \nvdash P$.
 \end{proof}
 \vspace{2mm}
 
@@ -176,8 +170,9 @@ $T_i \in \nondetcovalt (P) \Leftrightarrow T_i \in \mustcov(P)$.
 \end{lemma}
 \begin{proof}
 $T_i \in \nondetcovalt (P)$ means that $(I, S \setminus \{ T_i \}) \nvdash P$ then $T_i$ is necessary to prove $P$ (Lemma \ref{lem:must-not-enough}), which means $T_i \in MUST(P)$.
-On the other hand, $MUST(P), T_i \in MUST (P) \Rightarrow T_i \in IVC(P, S)$,
-which implies (I, $S \setminus \{ T_i \}) \nvdash P$.
+On the other hand, by definition, $MUST(P)$ is the intersection of all IVCs. 
+Since all IVCs in $AIVC$ are minimal, if a 
+$T_i \in MUST(P)$ is removed from $T$, then $\nexists S \in  AIVC(P).~(I, S) \vdash P$, which implies  $(I, T \setminus \{ T_i \}) \nvdash P$.
 \end{proof}
 \vspace{2mm}
 

@@ -48,7 +48,7 @@ In examining provability, we are interested in {\em minimal} sets that satisfy a
 Hereafter, the term ``IVC'' refers to a \textbf{minimal} IVC.
 \end{note}
 
-Note that there could be many IVCs for a given property, corresponding to different proofs. To capture that notion, we define \emph{all IVCs ($AIVC$)} for a property as an association to all its IVCs.
+Note that there is always at least one (minimal) IVC, and there could be many IVCs for a given property, corresponding to different proofs. To capture that notion, we define \emph{all IVCs ($AIVC$)} for a property as an association to all its IVCs.
 
 $$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  IVC(P, S)\} $$
 
@@ -77,7 +77,7 @@ We assume each element $T_i \in T$ has a set of possible mutations associated wi
 
 \begin{definition} {\emph{Generalized mutation coverage.} } \\
 \[
-   \mutcov = \frac{ | \{m~|~ m \in M(T)~\land~m \nvdash P\} |}{|M(T)|}
+   \mutcov = \frac{ | \{m~|~ m \in M~\land~(I, m) \nvdash P\} |}{|M|}
 \]
 \end{definition}
 Note that without loss of generality, we consider a single property P, which can be viewed as the conjunction of all the properties of the model.
@@ -101,15 +101,14 @@ Given this representation, it is possible to discuss mutations of a single verte
     \textrm{\mutnode}   & \textrm{ if $v = u$}
 \end{cases}  \]
 \noindent
-
 %To mutate a vertex $v_i$, a  multiplexer is added to $N$. Then, the  edges  of  the  net-list are modified such  that  the  tails  of  all  the edges directed from
 %$v_i$ are changed to the output of the multiplexer, which replaces
-%$E_N$ with a new set of edges $E^{v_i}_M$ in the mutated net-list. 
-
-Let  $N = (V_N,E_N, \tau_N)$ be the original net-list; 
-when property $P$ satisfied by $N$ fails on the mutant net-list $(V_N, E^{v_i}_N, \tau^{v_i}_{N})$ constructed by a single non-deterministic mutation from $\tau^{v_i}_{N}$, it is said that a mutant is discovered for $P$ (or $v_i$ is covered by $P$).
+%$E_N$ with a new set of edges $E^{v_i}_M$ in the mutated net-list.
+Let  $N = (V_N,E_N, \tau_N)$ be the original net-list; to mutate a vertex $v_i$ using $\tau^{v_i}_{N}$, the  edges that had tails pointing to $v_i$ are removed,
+ which replaces $E_N$ with a new set of edges $E^{v_i}_M$ in the mutated net-list.
+When property $P$ satisfied by $N$ fails on the mutant net-list $(V_N, E^{v_i}_N, \tau^{v_i}_{N})$, it is said that a mutant is discovered for $P$ (or $v_i$ is covered by $P$).
 We assume a function $TR : N \rightarrow T$ that returns the corresponding transition relation of a net-list. % \ela{shouldn't it be $TS: N \rightarrow I \rightarrow T$ ?}
-Given this representation, and an initial state $I$, we can define nondeterministic coverage as follows: 
+Given this representation, and an initial state $I$, we can define nondeterministic coverage as follows:
 
 \begin{definition} {\emph{Nondeterministic coverage (\nondetcov) ~\cite{chockler2010coverage}.} }
 \label{def:non-det}

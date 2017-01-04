@@ -120,7 +120,7 @@ Based on the categorization of elements, we will state some relationships about 
 $T_i \in \bigcup AIVC(P) \wedge T_i \notin MUST(P)$,
 which implies $\exists S \in AIVC(P).~ T_i \in S$.
 Considering the fact that $S$ is minimal and
-$MUST(P) \subset S$ (since $T_i \in S \wedge T_i \notin MUST(P)$), 
+$MUST(P) \subset S$ (since $T_i \in S \wedge T_i \notin MUST(P)$),
  $\nexists S' \subset S.~ (I,S') \vdash P$,  which means $(I, MUST(P)) \nvdash P$.
 \end{proof}
 \vspace{2mm}
@@ -169,10 +169,23 @@ $\nondetcovalt (P) = \{T_i~|~ (I, T) \vdash P \wedge (I, T \setminus \{T_i\}) \n
 $T_i \in \nondetcovalt (P) \Leftrightarrow T_i \in \mustcov(P)$.
 \end{lemma}
 \begin{proof}
-$T_i \in \nondetcovalt (P)$ means that $(I, S \setminus \{ T_i \}) \nvdash P$ then $T_i$ is necessary to prove $P$ (Lemma \ref{lem:must-not-enough}), which means $T_i \in MUST(P)$.
-On the other hand, by definition, $MUST(P)$ is the intersection of all IVCs. 
-Since all IVCs in $AIVC$ are minimal, if a 
-$T_i \in MUST(P)$ is removed from $T$, then $\nexists S \in  AIVC(P).~(I, S) \vdash P$, which implies  $(I, T \setminus \{ T_i \}) \nvdash P$.
+$T_i \in \nondetcovalt (P)$ means that $(I, T \setminus \{ T_i \}) \nvdash P$ then
+%$T_i$ is necessary to prove $P$,  which means
+$\forall S \subset T .~ T_i \notin S \Rightarrow (I, S) \nvdash P$.
+Therefore, since $(I, T) \vdash P$, $T_i \in \bigcap AIVC(P)$, which means  $T_i \in MUST(P)$.
+On the other hand, let $T_i \in MUST(P)$; then $\forall S \in AIVC(P).~ T_i \in S$.
+By definition, any proof of $P$ is a superset of some minimal IVC in $AIVC(P)$.
+Thus, any subset $S$ of $T$ leading to proof contains $T_i$.
+Therefore, $T \setminus \{ T_i \}$ does not lead to a proof.
+%On the other hand, by definition, $MUST(P)$ is the intersection of all IVCs.
+%From the definition of $MUST$, removing a $T_i \in MUST(P)$ from $T$
+%results in $ \bigcap AIVC(P) \setminus \{ T_i \} $.
+%And since all IVCs in $AIVC$ are \emph{minimal} removing an element from all possible IVCs makes
+% $P$ unprovable by every single of them:
+% $\forall S \in AIVC(P),~ T_i \in \bigcap AIVC(P).~ (I, S \setminus \{ T_i \}) \nvdash P$. And, we know $S \subseteq T$, so $S \setminus \{ T_i \} \subseteq T \setminus \{ T_i \}$, which means the reachable states of
+% $(I, T \setminus \{ T_i \})$ are a subset of the reachable states from
+%   $(I, S \setminus \{ T_i \})$. Therefore,
+%   $ (I, S \setminus \{ T_i \}) \nvdash P \Rightarrow (I, T \setminus \{ T_i \}) \nvdash P$.
 \end{proof}
 \vspace{2mm}
 

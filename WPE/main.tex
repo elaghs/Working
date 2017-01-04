@@ -22,7 +22,7 @@
 \usepackage{subfigure}
 \usepackage{color}
 \usepackage{balance}
-\usepackage[ruled, vlined, linesnumbered]{algorithm2e} 
+\usepackage[ruled, vlined, linesnumbered]{algorithm2e}
 \usepackage[english]{babel}
 \renewcommand{\abstract}{\noindent {\sc \textbf{\large {Proof-based Coverage Metrics for\\Formal Verification}}}\\}
 
@@ -86,15 +86,17 @@
 \newdef{definition}{Definition}
 \newdef{theorem}{Theorem}
 \newdef{coroll}{Corollary}
+\newdef{note}{Note}
 %\newcommand{\TECHREPORT}{}
 
 
 \newcommand{\nondetcov}{\text{\sc Nondet-Cov}}
+\newcommand{\nondetcovalt}{\text{\sc Nondet-Cov*}}
 \newcommand{\ivccov}{\text{\sc IVC-Cov}}
 \newcommand{\maycov}{\text{\sc MAY-Cov}}
 \newcommand{\allcov}{\text{\sc MODEL-Cov}}
 \newcommand{\mutcov}{\text{\sc Mutant-Cov}}
-
+\newcommand{\mustcov}{\text{\sc MUST-Cov}}
 
 \newcommand{\bfalg}{{IVC\_BF}\xspace}
 \newcommand{\ucalg}{{IVC\_UC}\xspace}
@@ -165,6 +167,7 @@ Elaheh Ghassabani\\
 
 \input{experiments}
 
+\input{discussion}
 
 \input{related}
 

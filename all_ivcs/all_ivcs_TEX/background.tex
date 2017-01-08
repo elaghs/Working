@@ -8,7 +8,7 @@
 %\subsection{Transition Systems and Safety Properties}
 This section defines the terms and concepts used in the paper. Given a state space $U$, a transition system $(I,T)$ consists of an
 initial state predicate $I : U \to \bool$ and a transition step
-predicate $T : U \times U \to \bool$. 
+predicate $T : U \times U \to \bool$.
 We define the notion of
 reachability for $(I, T)$ as the smallest predicate $\reach : U \to
 \bool$ which satisfies the following formulas:
@@ -20,24 +20,61 @@ A safety property $P : U \to \bool$ is a state predicate. A safety
 property $P$ holds on a transition system $(I, T)$ if it holds on all
 reachable states, i.e., $\forall u.~ \reach(u) \Rightarrow P(u)$,
 written as $\reach \Rightarrow P$ for short. When this is the case, we
-write $(I, T)\vdash P$. To generalize the notion of transition system, especially in SMT-based model checking, it is assumed that the transition relation has the structure of a top-level conjunction. This assumption gives us a structure that we can easily manipulate. Given $T(u, u') = T_1(u, u') \land \cdots \land T_n(u, u')$ we will write $T = T_1 \land \cdots \land T_n$ for short.
+write $(I, T)\vdash P$. To generalize the notion of transition system, especially in SMT-based model checking, it is assumed that the transition relation has the structure of a top-level conjunction. This assumption gives us a structure that we can easily manipulate. Given $T(u, u') = T_1(u, u') \land \cdots \land T_n(u, u')$ we will write $T = \bigwedge_{i=1..n}T_i$ for short.
 By further abuse of notation,
-$T$ is identified with the set of its top-level conjuncts. Thus, $x \in
-T$ means that $x$ is a top-level conjunct of $T$, and $S
+$T$ is identified with the set of its top-level conjuncts. Thus, $T_i \in
+T$ means that $T_i$ is a top-level conjunct of $T$, and $S
 \subseteq T$ means all top-level conjuncts of $S$ are top-level
-conjuncts of $T$. When a top-level conjunct $x$ is removed from $T$, it is written as $T \setminus \{x\}$. Such a transition system can easily encode our example model in Section~\ref{sec:example}.  We assume each equation defines a conjunct within the transition system which we will denote by the variable assigned, so $T = \{$ {\small \texttt{a1\_below, a2\_below, c1, c2, below, alarm, p1, p2, doi\_on}} $\}$.
+conjuncts of $T$. When a top-level conjunct $T_i$ is removed from $T$, it is written as $T \setminus \{T_i\}$. Such a transition system can easily encode our example model in Section~\ref{sec:example}, where each equation defines a conjunct within $T$ that we will denote by the variable assigned; so, $T = \{$ {\small \texttt{a1\_below, a2\_below, c1, c2, below, alarm, p1, p2, doi\_on}} $\}$.
 
-\begin{definition}{\emph{Minimal Inductive Validity Core (IVC):}}
+The idea behind finding an IVC for a given property $P$ \cite{Ghass16} is based on the inductive proof methods used in SMT-based model checking, such as K-induction and PDR \cite{NFM2012:KaGaTiWh, amla2005analysis, Een2011:PDR}. Generally, an IVC computation technique aims to determine, for any subset $S \subseteq T$, whether $P$ is provable by $S$. Then, a minimal subset that satisfies $P$ is seen as a minimal proof explanation or traceability, which is called a minimal Inductive Validity Core.
+
+\begin{definition}{\emph{Minimal Inductive Validity Core (IVC) \cite{Ghass16}:}}
   \label{def:minimal-ivc}
-  $S \subseteq T$ for $(I, T)\vdash P$ is minimal Inductive Validity Core, denoted $IVC(P, S)$, iff
-  $(I, S) \vdash P \wedge (\neg\exists S' \subset S .\quad (I, S') \vdash P) $.
+  $S \subseteq T$ for $(I, T)\vdash P$ is minimal Inductive Validity Core, 
+  denoted by $IVC(P, S)$, iff
+  $(I, S) \vdash P \wedge (\forall T_i \in S.~ (I, S\setminus\{ T_i \}) \nvdash P) $.
 \end{definition}
 
-For brevity, we use term ``IVC'' refers to a minimal IVC. Note that there is always at least one IVC, and there could be many IVCs for a given property, corresponding to different proofs. To capture that notion, we define \emph{all IVCs ($AIVC$)} for a property as an association to all its IVCs.
+For brevity, we use term ``IVC'' to refer to a minimal IVC. Note that, given a valid property $P$, not only there is always at least one IVC for $P$, but also there could be many distinct IVCs for $P$, corresponding to different proof paths. To capture the latter, \emph{all IVCs ($AIVC$)} relation has been introduced in \cite{Ghass16, Murugesan16:renext, Ghass17Cov}.
+\begin{definition}{\emph{All IVCs \cite{Murugesan16:renext, Ghass17Cov}:}}
+    \label{def:allivcs}
+    Given $(I, T) \vdash P$, $AIVC(P)$ is an association to all IVCs for $P$: 
+    $$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  IVC(P, S)\} $$
+\end{definition}
 
-$$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  IVC(P, S)\} $$
+Figure~\ref{fig:ivcs} illustrates these notions by a graphical representation of IVCs for property $P = (\texttt{p1 or p2})$ in the example presented in Section~\ref{sec:example}; as shown in the picture, this property has two distinct IVCs, which means the model satisfies $P$ in two different ways: $AIVC(P) = \{ \{ \texttt{doi\_on},
+~\texttt{alarm},~\texttt{below},~\texttt{c1},~\texttt{p1}\},~ \allowbreak  
+\{ \texttt{doi\_on},~\texttt{alarm},
+~\texttt{below},~\texttt{c2},~\texttt{p2}\}\}$. 
+As you can see, distinct IVCs may have common elements. 
+The intersection of all IVCs is called the \emph{must} set for $P$. 
+And, the other elements constitute a \emph{may} set for $P$ \cite{Murugesan16:renext}: 
+\begin{itemize}
+  \item   $MUST (P) = \bigcap AIVC(P)$
+  \item  $MAY(P) = (\bigcup AIVC (P)) \setminus MUST(P)$
+  \item $IRR(P) = T \setminus (\bigcup AIVC(P))$
+\end{itemize}
+\noindent Given property $P$, functions $MUST$, $MAY$, and $IRR$ partition top-level conjuncts of $T$ (model elements) into three disjoint sets \emph{must}, \emph{may}, and \emph{irrelevant}, respectively. $IRR(P)$ returns portion of the model irrelevant to the satisfaction of $P$, which in our running example is $\varnothing$.
+We have used this intuition to devise heuristics for an efficient implementation, as will be discussed in Section~\ref{sec:impl}.
 
- 
+\begin{figure}[t]
+ \centering
+  \includegraphics[width=0.9\columnwidth]{figs/ivcs.png}
+  \label{fig:ivcs}
+  \vspace{-0.1in}
+  \caption{Graphical representation of IVCs for the model in Figure\ref{fig:asw}}
+\end{figure}
+
+As mentioned, the contribution of this paper is to provide an efficient and complete method for calculating $AIVC$ of a property. To this end, now we introduce several additional notions and definitions.  
+
+\begin{definition}{\emph{Maximal Irrelevant Subset (MIS):}}
+  \label{def:mis}
+  $S \subseteq T$ for $(I, T)\vdash P$ is minimal Inductive Validity Core,
+  denoted by $IVC(P, S)$, iff
+  $(I, S) \vdash P \wedge (\forall T_i \in S.~ (I, S\setminus\{ T_i \}) \nvdash P) $.
+\end{definition}
+
 %
 %\begin{figure}
 %\begin{gather*}
@@ -55,5 +92,5 @@ $$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  IVC(P, S)\} $$
 %  step}
 %\label{fig:k-induction}
 %\end{figure}
- 
- 
+
+

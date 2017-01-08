@@ -1,0 +1,20 @@
+const THRESHOLD = 10000;  
+node asw(alt1, alt2: int; stat1, stat2 : bool) returns (doi_on: bool; alarm: bool);
+var
+   a1_below, a2_below, below , c1, c2, p1, p2, p: bool; 
+let
+   a1_below = (alt1 < THRESHOLD);
+   a2_below = (alt2 < THRESHOLD); 
+   
+   below = if c1 or c2 then true else alarm; 
+   c1 = (stat1 and a1_below);
+   c2 = (stat2 and a2_below);
+   alarm = not stat1 and not stat2; 
+
+   doi_on = if alarm then pre(doi_on) else if below then true else false;   
+   
+   p1 = (stat1 and a1_below) => doi_on;
+   p2 =  (stat2 and a2_below) => doi_on ;
+   p = true -> p1 or p2;
+   --%PROPERTY p;   
+tel;

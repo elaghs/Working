@@ -1,0 +1,87 @@
+const THRESHOLD = 10000; 
+const THRESHOLD_HYST = THRESHOLD + 500; 
+
+node asw(alt1, alt2: int; random: bool) returns (sw_on: bool);
+var
+   alt1_below, alt2_below, alt1_above, alt2_above: bool;
+   sw_on2, sw_on3, one_below_alt, all_above_hyst: bool;
+   prop1, prop2, prop2_1: bool;
+let
+   --%MAIN
+   alt1_below = (alt1 < THRESHOLD); 
+   alt2_below = (alt2 < THRESHOLD);
+   alt1_above = (alt1 >= THRESHOLD_HYST); 
+   alt2_above = (alt2 >= THRESHOLD_HYST);    
+   
+   one_below_alt = alt1_below or alt2_below ;
+   all_above_hyst = alt1_above and alt2_above;   
+   sw_on = 
+	 if (one_below_alt) then true
+	 else sw_on2; 
+   sw_on2 = if (all_above_hyst) then false
+	 else sw_on3;
+   sw_on3 = (false -> pre(sw_on)); 
+	
+   prop1 = ((alt1 >= THRESHOLD_HYST) and (alt2 >= THRESHOLD_HYST)) => sw_on = false;
+   prop2 = ((alt1 < THRESHOLD) or (alt2 < THRESHOLD)) => sw_on = true;   
+   -- Note: this weakens the property.
+   prop2_1 = (alt1 < THRESHOLD) => sw_on = true;
+   prop3 = 
+   
+   
+   --%PROPERTY prop1;
+   --%PROPERTY prop2;
+   --%PROPERTY prop2_1;
+   --%IVC sw_on, sw_on2, sw_on3, alt1_below, alt2_below, alt1_above, alt2_above, one_below_alt, all_above_hyst;
+tel;
+
+(* 
+When exactly do you get multiple results for a property?
+	prop = a or b 
+or 
+	prop = (a and b) => c
+implementation guarantees both a and b are always true.
+
+Note that this is just "normal" vacuity checking.
+	Is it always the case that if a variable is referenced in a property then it correlates with vacuity?
+	
+	No: for example, if you have two equivalent declarations, 
+		x = foo
+		y = foo
+	
+	Then it is possible that even though x is used in the property, y is referred to.
+	
+	Also, vacuity is over *conditions* not variables.
+		
+
+*)
+
+
+-- Or:
+-- a => b
+
+-- Is this just vacuity over a program argument?
+
+-- Things to note: IVC for prop2 contains 'all_above_hyst' even though this declaration is not explicitly
+-- referenced in the property;
+
+-- requirements:
+--  	(alt1_below or alt2_below) and (!one_below_alt) => sw_on = false;
+--  	inhibit => sw_on = false;
+
+-- test cases:
+-- 
+-- inhibit						T T F
+-- alt1_below					F F F 
+-- alt2_below					F F F
+-- alt1_above					T T F  
+-- alt2_above					F T T
+-- sw_on						F F T
+-- one_above_hyst_no_below     F F T
+
+-- alt1_above independent: true
+-- alt2_above independent: true
+-- inhibit independent: true
+
+-- 'and' vs. 'or' error caught: false.
+-- proof: requires only one true.

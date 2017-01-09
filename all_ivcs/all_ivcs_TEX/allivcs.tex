@@ -8,17 +8,35 @@
 \newcommand{\minivc}{\textsc{MinimizeIvc}\xspace}
 
 \newcommand{\checksat}{\textsc{CheckSat}\xspace}
+\newcommand{\isadeq}{\textsc{CheckAdq}\xspace}
+\newcommand{\actlit}{\textsc{ActLit}}
 \newcommand{\unsatcore}{\textsc{UnsatCore}\xspace}
-\newcommand{\unsat}{\textsc{UNSAT}\xspace}
-\newcommand{\sat}{\textsc{SAT}\xspace}
+\newcommand{\unsat}{\texttt{UNSAT}\xspace}
+\newcommand{\sat}{\texttt{SAT}\xspace}
 
-As mentioned, the contribution of this paper is to provide an efficient and complete method for calculating $AIVC$ of a property. To this end, we first introduce several additional notions and definitions, most of which are inspired by the MUS enumeration technique proposed in \cite{marco2016fast}.
+As mentioned, the contribution of this paper is to provide an efficient and complete method for calculating $AIVC$ of a property. To this end, we first introduce several additional notions and definitions. 
+%most of which are inspired by the MUS enumeration technique proposed in \cite{marco2016fast}.
 
-\begin{definition}{\emph{Maximal Irrelevant Subset (MIS):}}
-  \label{def:mis}
-  $S \subset T$ for $(I, T) \vdash P$ is a Maximal Irrelevant Subset (MIS) iff 
-  $(I, S) \nvdash P$ and $\forall T_i \in T\setminus S.~ (I, S\cup{T_i}) \vdash P$.  
+The technique for enumerating all IVCs is a generalization of exploring the power set of $T$ (denoted by $ \mathcal{P}(T) $).
+Basically, the algorithm needs to explore the provability of a
+given property by any subset of $T$, which may sound impractical.
+However, this section, first, proposes some notions that make it possible to have a complete
+enumeration algorithm that only needs to explore a (small) portion of $\mathcal{P}(T)$
+in order to compute $AIVC$.
+
+\begin{definition} {\emph{Adequacy:}}
+\label{def:adeq}
+Given property $P$ and every $S \in \mathcal{P}(T)$, we have either $(I, S) \vdash P$ or $(I, S) \nvdash P$. In the former case, we say $S$ is \textbf{adequate} for $P$; in the latter, we say that $S$ is \textbf{inadequate} for the proof of $P$.
 \end{definition}
+
+\begin{definition}{\emph{Maximal Inadequate Subset (MIS):}}
+  \label{def:mis}
+  $S \subset T$ for $(I, T) \vdash P$ is a Maximal Inadequate Subset (MIS) iff
+  $(I, S) \nvdash P$ and $\forall T_i \in T\setminus S.~ (I, S\cup{T_i}) \vdash P$.
+\end{definition}
+\begin{note}
+If the second condition in $MIS$ does not hold, $S$ is not maximal, but it is an inadequate set.
+\end{note}
 
 \begin{definition}{\emph{Minimal Correction Set (MCS):}}
   \label{def:mcs}
@@ -26,33 +44,73 @@ As mentioned, the contribution of this paper is to provide an efficient and comp
   $(I, T \setminus S) \nvdash P$ and $\forall T_i \in S.~ (I, (T \setminus S)\cup \{T_i\}) \vdash P$.
 \end{definition}
 
-%It should be mentioned that minimality and maximality are about minimum or maximum cardinality subsets. 
-Note that $MCS$ is more of syntactic sugar that specifies sets that can also be specified by $MSS$; i.e. for any $MIS$ of $T$, there is a corresponding $MCS$ such that adding any element of that $MCS$ to the $MIS$, makes the property provable by the $MIS$. 
+%It should be mentioned that minimality and maximality are about minimum or maximum cardinality subsets.
+Note that $MCS$ is more of syntactic sugar that specifies sets that can also be specified by $MIS$; i.e. for any $MIS$ of $T$, there is a corresponding $MCS$ such that adding any element of that $MCS$ to the $MIS$, makes the property provable by the $MIS$.
 And, that's why it is called the ``minimal correction'' set. 
+\begin{note}
+If $S \subset T$ is inadequate, but not maximal, there will be a correction set $C \subset T$ for it such that $S \cup C$ is adequate.
+\end{note}
 
-The technique for enumerating all IVCs is a generalization of exploring the power set of $T$ (denoted by $ \mathcal{P}(T) $).
-Basically, the algorithm needs to explore the provability of a 
-given property by any subset of $T$, which may sound impractical. 
-However, using some facts about $IVC$s and $MIS$es we can have a complete
-enumeration algorithm that only needs to explore a (small) subset of $T$ 
-in order to calculate $AIVC$:
+\begin{lemma}
+\label{lem:adeq}
+For $(I, T) \vdash P$, if $S \subset T$ is adequate for property $P$, then all of its supersets are adequate for $P$ as well:
+\allowbreak $$\forall S_1 \subset S_2 \subset T.~ (I, S_1) \vdash P \Rightarrow (I, S_2) \vdash P$$
+\end{lemma}
+\begin{proof}
+From $S_1 \subseteq S_2$ we have $S_2 \Rightarrow S_1$. Thus the
+  reachable states of $(I, S_2)$ are a subset of the reachable states
+  of $(I, S_1)$.
+\end{proof}
+
+\begin{lemma}
+\label{lem:inadeq}
+For $(I, T) \vdash P$, if a given subset $S$ is inadequate, then all of its subsets are inadequate as well:
+\allowbreak $$\forall S_1 \subset S_2 \subset T.~ (I, S_2) \nvdash P \Rightarrow (I, S_1) \nvdash P$$
+\end{lemma}
+\begin{proof}
+Given the fact that $(I, T) \vdash P$ and $S_2$ is inadequate,
+there is a correction set $C \subseteq (T\setminus S_2)$ such that
+$C \cup S_2$ is adequate, which implies every $S' \subseteq (T \setminus C)$ is inadequate.
+So, since $S_1 \subset S_2 \subseteq (T \setminus C)$, set $S_1$ is also inadequate.
+\end{proof}
+
+In exploring the power set,
+we define two functions \checksat and \isadeq; function \isadeq tells whether or not property $P$ is provable by a subset of $T$:
+$$\isadeq : \mathcal{P}(T) \rightarrow \{true~(adequate), false~(inadequate)\}$$
+\noindent Function \checksat determines if an
+existentially quantified formula is satisfiable or not
+\footnote{We assume readers are familiar with the boolean satisfiability problem, which is the problem of determining whether there exists an assignment that satisfies a given propositional formula. For more information, refer to \cite{cook1971complexity}.}:
+$$\checksat: Boolean \rightarrow \{ true~(\sat), false~(\unsat) \}$$
+
+\noindent The main core of an algorithm for computing $AIVC(P)$ is to choose an \emph{unexplored} $S \in \mathcal{P}(T)$ and examine whether or not it is adequate for $P$; if so, then compute an $S' \subseteq S$ such that $IVC(P, S')$. 
+To choose $S$ and keep track of which parts of the the power set
+have been explored, we use a Boolean variable $map$, which is
+in conjunctive normal form (CNF) and built gradually as the algorithm proceeds. 
+As $map$ gets updated, it guides our exploration algorithm for $AIVC$. 
+In other words, $map$ shows the \emph{search space} we have to explore for finding all IVCs. 
+
+More precisely, given $T$ with $n$ top-level conjuncts, 
+we define an ordered
+set of activation literals $\mathcal{A} = \{a_1...a_n\}$, where every $a_i$ is of type of Boolean. Function $\actlit : T \rightarrow \mathcal{A}$ 
+is a one-to-one map assigning every $T_i \in T$ to an $a_i \in \mathcal{A}$. 
+Then, a $map$ for $AIVC(P)$ is a CNF formula built over the elements of $\mathcal{A}$ such that:
 \begin{itemize}
-  \item Given property $P$ and every subset $S$ of $\mathcal{P}(T)$, we have either $(I, S) \vdash P$ or $(I, S) \nvdash P$. In the former case, we say $S$ is \textbf{adequate} (to prove $P$); in the latter, we say that $S$ is \textbf{inadequate} (for the proof of P).
-  \item If a given subset $S$ is adequate (inadequate), then all of its supersets (subsets) are (in)adequate as well. 
+  \item Initially $map = true$ which we will interpret as the fact that the whole $\mathcal{P}(T)$ is unexplored.
+  \item For every explored set $S \in \mathcal{P}(T)$: 
+  \begin{itemize}
+    \item if $S$ is adequate for $P$, then $map$ contains a clause $\bigvee_{i: T_{i}\in S} \neg {\actlit (T_i)}$. Note that, according to Lemma \ref{lem:adeq}, such a clause makes every superset of $S$ as explored, which shrinks our search space.
+    \item if $S$ is inadequate for $P$, then $map$ contains a clause $\bigvee_{i: T_{i}\in (T \setminus S)} \actlit (T_i)$.
+  \end{itemize}
 \end{itemize}
 
-In exploring the power set, 
-we define two functions $MAP$ and $\mathcal{A}$
-from subsets to truth values. 
-Function $\mathcal{A}$ tells whether or not property $P$ is provable by a subset of $T$:
-$$\mathcal{A} : \mathcal{P}(T) \rightarrow \{true~(adequate), false~(inadequate)\}$$  
-\noindent Function $MAP$ is defined to guide the exploration algorithm. 
-If we consider the power set as a lattice in a Hasse diagram, 
+
+
+If we consider the power set as a lattice in a Hasse diagram,
 $MAP$ tells us which parts of the lattice have been explored:
 $$MAP: \mathcal{P}(T) \rightarrow \{true~(unexplored), false~(explored)\}$$
-\noindent The core of an algorithm for computing $AIVC(P)$ is to choose an \emph{unexplored} subset $S$ of $\mathcal{P}(T)$ and examine whether or not $S$ is adequate for $P$. If so, then compute an $S' \subseteq S$ such that $IVC(P, S')$.
 
-To choose 
+
+
 
 \begin{definition}{\emph{Unexplored subset problem:}}
   \label{def:usp}

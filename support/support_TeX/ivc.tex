@@ -47,14 +47,14 @@ when working with sets of invariants.
   \label{def:ivc}
   Let $(I, T)$ be a transition system and let $P$ be a
   safety property with $(I, T)\vdash P$. We say $S \subseteq
-  T$ is an {\em inductive validity core} for $(I, T)\vdash P$ iff $(I,
+  T$ is an {\em inductive validity core} for $(I, T)\vdash P$ \emph{iff} $(I,
   S) \vdash P$. When $I$, $T$, and $P$ can be inferred from
   context we will simply say $S$ is an inductive validity core.
 \end{definition}
 
 \begin{definition}{\emph{Minimal Inductive Validity Core:}}
   \label{def:minimal-ivc}
-  An inductive validity core $S$ for $(I, T)\vdash P$ is minimal iff
+  An inductive validity core $S$ for $(I, T)\vdash P$ is minimal \emph{iff} 
   there does not exist $M \subset S$ such that $M$ is an inductive validity core
   for $(I, T)\vdash P$.
 \end{definition}
@@ -334,7 +334,7 @@ terminate since \bfalg is not guaranteed to terminate.
 %%% TeX-master: "main.tex"
 %%% End
 
-%%  LocalWords:  Lustre iff TODO invariants Minimality BaseQuery IVC
+%%  LocalWords:  Lustre \emph{iff} TODO invariants Minimality BaseQuery IVC
 %%  LocalWords:  InductiveQuery FullQuery MinimizeK ReduceInvariants
 %%  LocalWords:  MinimizeIVC CheckSat UnsatCore UNSAT UC UCBF
 %%  LocalWords:  IndQuery MinimizeIvc minimality

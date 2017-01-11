@@ -2,10 +2,12 @@
 \label{sec:allivcs}
 
 \newcommand{\getivc}{\textsc{GetIVC}}
-
+\newcommand{\getmodel}{\textsc{GetLiteralsFromMaxModel}}
+\newcommand{\aivcalg}{AIVC\xspace}
 \newcommand{\blockup}{\textsc{BlockUp}}
 \newcommand{\blockdown}{\textsc{BlockDown}}
-\newcommand{\minivc}{\textsc{MinimizeIvc}\xspace}
+\newcommand{\mis}{\textsc{MIS}}
+\newcommand{\mcs}{\textsc{MCS}}
 
 \newcommand{\checksat}{\textsc{CheckSat}}
 \newcommand{\isadeq}{\textsc{CheckAdq}}
@@ -83,9 +85,11 @@ $\forall S \in AIVC(P)$, S is a minimal adequate set for $P$.
 The main core of an algorithm for computing $AIVC(P)$ is to choose an \emph{unexplored} $S \in \mathcal{P}(T)$ and examine whether or not it is adequate for $P$; if so, then compute an $S' \subseteq S$ such that $IVC(P, S')$.
 To choose $S$ and keep track of which parts of the the power set
 have been explored, we use a Boolean variable $map$, which is
-in conjunctive normal form (CNF) and built gradually as the algorithm proceeds.
+in conjunctive normal form (CNF) and built gradually as the algorithm proceeds. 
+Basically, with the help of $map$, an unexplored set $S$ is selected, and after processing $S$,
+formula $map$ is updated in a way, which will be described, that marks $S$ as \emph{explored}.
 As $map$ gets updated, it guides our exploration algorithm for $AIVC$.
-In other words, $map$ shows the \emph{search space} we have to explore for finding all IVCs.
+In other words, $map$ represents the \emph{search space} needed to be explored for finding all IVCs.
 
 More precisely, given $T$ with $n$ top-level conjuncts,
 we define an ordered
@@ -93,7 +97,8 @@ set of activation literals $\mathcal{A} = \{a_1...a_n\}$, where every $a_i$ is o
 is a bijection function assigning every $T_i \in T$ to an $a_i \in \mathcal{A}$ and vice versa.
 Then, a $map$ for $AIVC(P)$ is a CNF formula built over the elements of $\mathcal{A}$ such that:
 \begin{itemize}
-  \item Initially $map$ is $\top$ interpreted as the fact that the whole $\mathcal{P}(T)$ is unexplored.
+  \item Initially $map$ is $\top$ interpreted as the fact that the whole $\mathcal{P}(T)$ is unexplored.   
+clauses to map to block or remove the corresponding models
   \item When $map$ is satisfiable, a model of it is a set
   $M \in \mathcal{P}(\mathcal{A})$.
   \item Every model $M$ of $map$ corresponds to a set $S \in \mathcal{P}(T)$ such that
@@ -143,26 +148,40 @@ For $(I, T) \vdash P$, $map$ is unsatisfiable \emph{iff} every $S \in \mathcal{P
 Immediate from Lemma \ref{lem:map:comp}.
 \end{proof}
 
-
-In exploring the power set,
-we first define several function; function \isadeq ~tells whether or not property $P$ is provable by a subset of $T$:
-$$\isadeq : \mathcal{P}(T) \rightarrow \{true~(adequate), false~(inadequate)\}$$
-\noindent Function \checksat determines if an
-existentially quantified formula is satisfiable or not
-\footnote{We assume readers are familiar with the boolean satisfiability problem, which is the problem of determining whether there exists an assignment that satisfies a given propositional formula. For more information, refer to \cite{cook1971complexity}.}:
-$$\checksat : Boolean \rightarrow \{ true~(\sat), false~(\unsat) \}$$
-
-
-\getivc ...
-
-\blockup ...
-
-\blockdown ...
-
-... continue with the algorithms here
-
-- say why the algorithm is fast; because we block down and up based on MIS and IVC, which prunes the maximum number of cases from the search space (map)
-
+\begin{algorithm}[t]
+  %\SetKwInOut{Input}{input}
+%  \SetKwInOut{Output}{output}
+%  \Input{$IVC(S, P), (I, T) \vdash P$}
+%  \Output{ }
+  %\BlankLine
+  $A \leftarrow \varnothing$\\
+  Create activation literals $\{a_1, \ldots, a_n\}$ \\
+ % $map \leftarrow true$ \\
+  $map \leftarrow$ empty Boolean formula with variables $a_1 \ldots a_n$ \\ 
+ % $L \leftarrow \varnothing$ \\
+  \BlankLine
+    
+  \While{$\checksat (map)$} {
+    $model \leftarrow $ build a maximal model of $map$ \\
+    $M \leftarrow$ extract the set of variables assigned $true$ in $model$ \\
+    $M \leftarrow \bigcup_{a_i \in M} \actlit ^{-1}(a_i)$ \\
+ 
+    \If{$\isadeq (M)$}{
+      $S' \leftarrow \getivc (M)$ \\
+      $A \leftarrow A \cup S'$ \\
+      $map \leftarrow map \wedge (\bigvee_{T_{i}\in S'} \neg {\actlit (T_i)})$
+    }
+    \Else{
+      $map \leftarrow map \wedge (\bigvee_{T_{i}\in (T \setminus M)} \actlit (T_i))$ \\
+    %  $L \leftarrow L \cup (\bigcup_{T_i \in C} T_i)$
+    }
+  }
+  \Return{A}
+\caption{$\aivcalg (T, P)$}
+\label{alg:aivc}
+\end{algorithm}
+ 
+\ela{in continue:\\describing algorithm\\say what maximal sat model is\\say in the maxsat algo, M is a literals that are true in maximal model\\ \\Maximal Models The first two goals were addressed in both [21] and [28] similar fashions: generate seeds by computing large or maximal models of map . A maximal model of map is one in which no False assignment can be made True without violating a clause; therefore, a maximal model will represent a subset of C for which all supersets have been explored\\ in implementation talk about max sat, must list, initialization of map \\In exploring the power set,we first define several functions; function \isadeq ~tells whether or not property $P$ is provable by a subset of $T$:$$\isadeq : \mathcal{P}(T) \rightarrow \{true~(adequate), false~(inadequate)\}$$ \noindent Function \checksat ~determines if an existentially quantified formula is satisfiable or not \footnote{We assume readers are familiar with the boolean satisfiability problem, which is the problem of determining whether there exists an assignment that satisfies a given propositional formula. For more information, refer to \cite{cook1971complexity}.}: $$\checksat : Boolean \rightarrow \{ true~(\sat), false~(\unsat) \}$$\\say why the algorithm is fast; because we block down and up based on MIS and IVC, which prunes the maximum number of cases from the search space (map)}
 
 %\begin{algorithm}[t]
 %  $k' \leftarrow 1$ \\

@@ -85,7 +85,7 @@ $\forall S \in AIVC(P)$, S is a minimal adequate set for $P$.
 The main core of an algorithm for computing $AIVC(P)$ is to choose an \emph{unexplored} $S \in \mathcal{P}(T)$ and examine whether or not it is adequate for $P$; if so, then compute an $S' \subseteq S$ such that $IVC(P, S')$.
 To choose $S$ and keep track of which parts of the the power set
 have been explored, we use a Boolean variable $map$, which is
-in conjunctive normal form (CNF) and built gradually as the algorithm proceeds. 
+in conjunctive normal form (CNF) and built gradually as the algorithm proceeds.
 Basically, with the help of $map$, an unexplored set $S$ is selected, and after processing $S$,
 formula $map$ is updated in a way, which will be described, that marks $S$ as \emph{explored}.
 As $map$ gets updated, it guides our exploration algorithm for $AIVC$.
@@ -97,7 +97,7 @@ set of activation literals $\mathcal{A} = \{a_1...a_n\}$, where every $a_i$ is o
 is a bijection function assigning every $T_i \in T$ to an $a_i \in \mathcal{A}$ and vice versa.
 Then, a $map$ for $AIVC(P)$ is a CNF formula built over the elements of $\mathcal{A}$ such that:
 \begin{itemize}
-  \item Initially $map$ is $\top$ interpreted as the fact that the whole $\mathcal{P}(T)$ is unexplored.   
+  \item Initially $map$ is $\top$ interpreted as the fact that the whole $\mathcal{P}(T)$ is unexplored.
 clauses to map to block or remove the corresponding models
   \item When $map$ is satisfiable, a model of it is a set
   $M \in \mathcal{P}(\mathcal{A})$.
@@ -127,7 +127,7 @@ From Case 1 and Case 2, there is no model of $map$ whose corresponding set in $\
 
 \begin{lemma}
 \label{lem:map:comp}
-For $(I, T) \vdash P$, $map$ is unsatisfiable \emph{iff} all $S \in AIVC(P)$ and all $MIS$es of $T$ have been explored.
+For $(I, T) \vdash P$, $map$ is unsatisfiable \emph{iff} all $S \in AIVC(P)$ and all $MIS$es of $T$ (and thus every $S \in \mathcal{P}(T)$) have been explored.
 \end{lemma}
 \begin{proof}
 As with any CNF formula, $map$ is unsatisfiable \emph{iff} every complete assignment falsifies at least one of its clauses. Clauses in $map$ have especial structure;
@@ -137,16 +137,24 @@ $S$ is inadequate, it means that $S$ lacks a correction set $C$ of $T$ so to pro
 And, in this case, a new clause containing \emph{positive} activation literals of $C$ is added to $map$. Essentially, elements of correction are essential part of some proofs, so are elements in the adequate sets, which means eventually, negative literals added from adequate sets will have their own  positive form added from the correction sets(and vice versa).
 Therefore, every complete assignment falsifies at least one clause in $map$ \emph{iff} every
 member of $\mathcal{P}(T)$ is dominated by some adequate or inadequate set.
-And, considering the definitions of $IVC$ and $MIS$,  every member of $\mathcal{P}(T)$ is dominated by some set \emph{iff} all $IVC$s and $MIS$es have been explored.
+And, considering the definitions of $IVC$ and $MIS$,  every member of $\mathcal{P}(T)$ is dominated by some set \emph{iff} all $IVC$s and $MIS$es have been explored. According to definition of $map$, when all $IVC$s and $MIS$es are covered, every $S \in \mathcal{P}(T)$ will be covered as well.
 \end{proof}
 
-\begin{lemma}
-\label{lem:map:cc}
-For $(I, T) \vdash P$, $map$ is unsatisfiable \emph{iff} every $S \in \mathcal{P}(T)$ has been explored.
-\end{lemma}
-\begin{proof}
-Immediate from Lemma \ref{lem:map:comp}.
-\end{proof}
+%\begin{lemma}
+%\label{lem:map:cc}
+%For $(I, T) \vdash P$, $map$ is unsatisfiable \emph{iff} every $S \in \mathcal{P}(T)$ has been explored.
+%\end{lemma}
+%\begin{proof}
+%Immediate from Lemma \ref{lem:map:comp}.
+%\end{proof}
+
+
+Algorithm~\ref{alg:aivc} shows the process of capturing all IVCs, which are kept in set $A$.
+In line 2, we create the set of activation literals used by function \actlit . Line 3 initializes $map$ with $\top$ over the set of literals we have. The main loop of sate exploration starts at line 4 and continues until $map$ becomes \unsat that means all the IVCs have been found. We assume we have a function \checksat ~that determines if an existentially quantified formula  is satisfiable or not\footnote{We assume readers are familiar with the boolean satisfiability problem, which is the problem of determining whether there exists an assignment that satisfies a given propositional formula. For more information, refer to \cite{cook1971complexity}.}.
+%$$\checksat : Boolean \rightarrow \{ true~(\sat), false~(\unsat) \}$$
+As long as $map$ is satisfiable, the algorithm computes a \emph{maximal} \sat model for it (line 5). A maximal SAT model is a model with as many $true$ assignment as possible without violating a clause; this problem, known as MaxSAT, has been well studied in the literature \cite{cimatti2013modular, davies2011solving, morgado2013iterative}, so we assume there is a method by which we are able to have a maximal model of $map$.
+Line 6 extracts a set $M \in \mathcal{P} (\mathcal{A})$ of literals assigned to $true$ in the model.
+Then, we need to obtain the corresponding set of $M$ in $\mathcal{P}(T)$, which is done with function $\actlit ^{-1}$ in line 7. Note that such a set will be a $MIS$ whose all supersets have already been explored. We also assume there is a function \isadeq ~that checks whether or not $P$ is provable by a given subset of $T$. Using this function, the adequacy of $M$ is determined in line 8; if $M$ is adequate, an IVC $S' \subseteq M$ is computed by function \getivc and added to set $A$ (line 10).\footnote{Note that \isadeq ~can be any method that verifies a safety property, such as K-induction. As for \getivc , Ghassabani et al. proposed an efficient algorithm for computing a single IVC in \cite{Ghass16} which can be used for the \getivc ~function.} In this case $map$ is constrained by a new clause in a way described before and shown in line 11. However, in case that $M$ is inadequate, $map$ is constrained by the corresponding literals from the correction set of $M$ (i.e. $T \setminus M$) in lines (12-13).
 
 \begin{algorithm}[t]
   %\SetKwInOut{Input}{input}
@@ -157,17 +165,18 @@ Immediate from Lemma \ref{lem:map:comp}.
   $A \leftarrow \varnothing$\\
   Create activation literals $\{a_1, \ldots, a_n\}$ \\
  % $map \leftarrow true$ \\
-  $map \leftarrow$ empty Boolean formula with variables $a_1 \ldots a_n$ \\ 
+  $map \leftarrow$ empty Boolean formula with variables $a_1 \ldots a_n$ \\
  % $L \leftarrow \varnothing$ \\
   \BlankLine
-    
+
   \While{$\checksat (map)$} {
     $model \leftarrow $ build a maximal model of $map$ \\
     $M \leftarrow$ extract the set of variables assigned $true$ in $model$ \\
     $M \leftarrow \bigcup_{a_i \in M} \actlit ^{-1}(a_i)$ \\
- 
-    \If{$\isadeq (M)$}{
-      $S' \leftarrow \getivc (M)$ \\
+\BlankLine
+    \If{$\isadeq (P, M)$}{
+    \BlankLine
+      $S' \leftarrow \getivc (P, M)$ \\
       $A \leftarrow A \cup S'$ \\
       $map \leftarrow map \wedge (\bigvee_{T_{i}\in S'} \neg {\actlit (T_i)})$
     }
@@ -180,8 +189,28 @@ Immediate from Lemma \ref{lem:map:comp}.
 \caption{$\aivcalg (T, P)$}
 \label{alg:aivc}
 \end{algorithm}
- 
-\ela{in continue:\\describing algorithm\\say what maximal sat model is\\say in the maxsat algo, M is a literals that are true in maximal model\\ \\Maximal Models The first two goals were addressed in both [21] and [28] similar fashions: generate seeds by computing large or maximal models of map . A maximal model of map is one in which no False assignment can be made True without violating a clause; therefore, a maximal model will represent a subset of C for which all supersets have been explored\\ in implementation talk about max sat, must list, initialization of map \\In exploring the power set,we first define several functions; function \isadeq ~tells whether or not property $P$ is provable by a subset of $T$:$$\isadeq : \mathcal{P}(T) \rightarrow \{true~(adequate), false~(inadequate)\}$$ \noindent Function \checksat ~determines if an existentially quantified formula is satisfiable or not \footnote{We assume readers are familiar with the boolean satisfiability problem, which is the problem of determining whether there exists an assignment that satisfies a given propositional formula. For more information, refer to \cite{cook1971complexity}.}: $$\checksat : Boolean \rightarrow \{ true~(\sat), false~(\unsat) \}$$\\say why the algorithm is fast; because we block down and up based on MIS and IVC, which prunes the maximum number of cases from the search space (map)}
+
+\begin{theorem}
+\label{theorem:aivc}
+  Algorithm \ref{alg:aivc} enumerates all $MIS$es and $IVC$s.
+\end{theorem}
+\begin{proof}
+In each iteration of the \texttt{while} loop, Algorithm \ref{alg:aivc} explores a set which is either a $MIS$ or leads to an $IVC$. These sets have not explored before according to Lemma \ref{lem:map:sound}. So, in each iteration a new minimal adequate or maximal inadequate member of $\mathcal {P}(T)$ is explored. Therefore, the loop continues as long as there is any $IVC$ or
+$MIS$ not yet found.
+\end{proof}
+
+
+\begin{theorem}
+  Algorithm \ref{alg:aivc} will terminate.
+\end{theorem}
+\begin{proof}
+The algorithm will terminate \emph{iff} $map$ eventually becomes  \unsat.
+Based on Lemma \ref{lem:map:comp}, $map$ is \unsat \emph{iff} all
+$IVC$s and $MIS$es have been explored.
+So, following Theorem \ref{theorem:aivc},  Algorithm \ref{alg:aivc} will terminate.
+\end{proof}
+
+
 
 %\begin{algorithm}[t]
 %  $k' \leftarrow 1$ \\

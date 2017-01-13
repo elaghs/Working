@@ -16,24 +16,26 @@
 %\includegraphics[width=\columnwidth]{figs/simulink.png}
 {\smaller
 \begin{verbatim}
-node asw(alt1, alt2: int; stat1, stat2 : bool) 
-     returns (doi_on: bool; alarm: bool);
+node asw(alt1, alt2: int; stat1, stat2 : bool)
+     returns (alarm: bool; doi_on: bool);
 var
-   a1_below, a2_below, below, 
-   c1, c2, p1, p2, p: bool; 
+   a1_below, a2_below, below,
+   p1, p2 : bool;
 let
-   a1_below = (alt1 < THRESHOLD);        // (1)
-   a2_below = (alt2 < THRESHOLD);        // (2) 
-   c1 = stat1 and a1_below;              // (3)
-   c2 = stat2 and a2_below;              // (4)
-   below = if c1 or c2                   // (5)
-        then true else alarm;
-   alarm = not stat1 and not stat2;      // (6) 
-   doi_on = if alarm then pre(doi_on)    // (7)
-            else if below then true      //
-            else false;                  //
-   p1 = stat1 and a1_below => doi_on;    // (8)
-   p2 = stat2 and a2_below => doi_on ;   // (9)
+   a1_below = if stat1                   // (1)
+              then (alt1 < THRESHOLD)    
+              else false;               
+   a2_below = if stat2                   // (2)
+              then (alt2 < THRESHOLD)    
+              else false;                 
+   below = if if a1_below or a2_below    // (3)
+           then true else alarm;
+   alarm = not stat1 and not stat2;      // (4)
+   doi_on = if alarm then pre(doi_on)    // (5)
+            else if below then true      
+            else false;                  
+   p1 = a1_below => doi_on;              // (6)
+   p2 = a2_below => doi_on ;             // (7)
 tel;
 \end{verbatim}
 }
@@ -42,7 +44,7 @@ tel;
 \label{fig:asw}
 \end{figure}
 
-We will use a very simple version of an Altitude Switch (ASW) from the avionics domain as a running example throughout the paper, which is written in the Lustre language (simplified and adapted from~\cite{HCW02:ase-deviation}) (Figure~\ref{fig:asw}). 
+We will use a very simple version of an Altitude Switch (ASW) from the avionics domain as a running example throughout the paper, which is written in the Lustre language (simplified and adapted from~\cite{HCW02:ase-deviation}) (Figure~\ref{fig:asw}).
 Lustre~\cite{Halbwachs91:lustre} is a synchronous dataflow language
 used as an input language for various model checkers. A Lustre program runs over discrete
 time steps. On each step, the input variables take on some values and
@@ -51,9 +53,8 @@ In addition, equations may refer to the previous value of a variable
 using the {\tt pre} operator.
 
 In our scenario, the ASW is a hypothetical device that turns power on to another subsystem, the Device of Interest (DOI), when the aircraft descends below a threshold altitude.
-For fault tolerance, it is assumed that there are two altimeters that send altitude to the ASW system in terms of input variables \texttt{alt1} and \texttt{alt2}.  
+For fault tolerance, it is assumed that there are two altimeters that send altitude to the ASW system in terms of input variables \texttt{alt1} and \texttt{alt2}.
 It is possible that sensors fail due to different reasons so input variables \texttt{stat1} and \texttt{stat2}, respectively, show the working status of the altimeters \texttt{alt1} and \texttt{alt2}; e.g. when the altimeter \texttt{alt1} is not working, \texttt{stat1} will be \texttt{false}. In the case that both altimeters fail, an ``alarm'' will be triggered (the output \texttt{alarm} will be set to \texttt{true}).
-%The notation \texttt{pre(doi\_on))} in equation (7) shows the previous value of \texttt{doi\_on}. 
+%The notation \texttt{pre(doi\_on))} in equation (7) shows the previous value of \texttt{doi\_on}.
 One simple property over this model is that whenever sensors are working and altitude falls below the threshold, output variable \texttt{doi\_on} shall be true. Equations \texttt{p1} and \texttt{p2} show different scenarios under which the DOI might gets on. So, we can specify the property in terms of these equations as \texttt{(p1 or p2)}.
 In the remainder of the paper, we will use this model to illustrate different notions.
- 

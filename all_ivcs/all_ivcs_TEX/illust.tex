@@ -4,14 +4,14 @@ To illustrate the $AIVC$ algorithm we use the example presented in Section \ref{
 %As inspired by the MARCO algorithm in \cite{marco2016fast}, we visualize $\mathcal{P}(\mathcal{A})$ as a lattice in a Hasse diagram (Figure~\ref{fig:lattice1}) to demonstrate the progress of the algorithm. As you can see, each level of the lattice contains sets with the same size linked to sets that are their immediate
 %supersets (upper level regions) and subsets (lower level regions). Note that the power set is viewed as a Boolean formula, so each member in the lattice shows
 % variable with $true$.
-For better illustration, we view $T$ as an ordered set with its top-level conjuncts; i.e. $T = \{$ {\small \texttt{a1\_below, a2\_below, below, alarm, doi\_on, p1, p2}} $\}$.
-The algorithm starts with assigning activation literals to each member of $T$. Let the ordered set of Boolean variables $\{ a_1, \ldots , a_7 \}$ be the corresponding literals to the elements of $T$ (e.g. $\actlit (\small{\texttt{a1\_below}}) = a_1$ and $\actlit (\small{\texttt{p2}}) = a_7$). Then line 3 initializes $map$ with $\top$. 
+For better description, we view $T$ as an ordered set of its top-level conjuncts; i.e. $T = \{$ {\small \texttt{a1\_below, a2\_below, below, alarm, doi\_on, p1, p2}} $\}$.
+The algorithm starts with creating activation literals for each $T_i \in T$. Let the ordered set of Boolean variables $\{ a_1, \ldots , a_7 \}$ be the corresponding literals to the elements of $T$ (e.g. $\actlit (\small{\texttt{a1\_below}}) = a_1$ and $\actlit (\small{\texttt{p2}}) = a_7$). Then, line 3 initializes $map$ with $\top$.
 
 In the first iteration of the \texttt{while} loop, since $map$ is empty,
 it is satisfiable, and a model for it can
-be any subset of literals. So obviously, the first maximal model of $map$ contains all the literals, which means, in line 6, $M = {a_1, \ldots, a_7}$,
+be any subset of literals. So obviously, the first maximal model of $map$ contains all the literals, which means, in line 6, $M = \{a_1, \ldots, a_7\}$,
  and in line 7, $M = T$. Since $M$ is adequate for $P$, 
- the function \getivc is called in line 9. 
+ the function \getivc ~is called in line 9. 
  Suppose the returned IVC by this function  is 
  $S' = \{ \small{ \texttt{a1\_below},~\texttt{below}, ~\texttt{alarm},
 ~\texttt{doi\_on},~\texttt{p1}}\}$; 
@@ -20,8 +20,8 @@ As discussed, this constraint marks all the supersets of $S'$ as explored and pr
 
 For the second iteration, $map$ is still satisfiable, 
 so the algorithm gets to find a maximal model of it in line 5. Suppose this time, the maximal model makes $M = \{a_2, \ldots, a_7\}$, 
-which leads $M = T \setminus \{\small{\texttt{a1\_below}}\} $ in line 7. 
-Since this $M$ is adequate for $P$, \getivc computes a new $IVC$ in line 9. 
+which leads to $M = T \setminus \{\small{\texttt{a1\_below}}\} $ in line 7. 
+Since this $M$ is adequate for $P$, \getivc ~computes a new $IVC$ in line 9. 
 Let the new $IVC$ be $S' = \{ \small{ \texttt{a2\_below},~\texttt{below}, ~\texttt{alarm},
 ~\texttt{doi\_on},~\texttt{p2}}\}$; after adding this set to $A$, 
 it is time to constrain $map$ by a new clause in line 11, 
@@ -31,13 +31,13 @@ Although we found two $IVC$s of $P$, $map$ is still satisfiable meaning that the
 yields to a 
 $M = T \setminus \{ \small{ \texttt{a1\_below},~\texttt{a\_2below}}\}$
  in line 7. 
-This time, $M$ is inadequate, so we get into line 13 updating $map$ as 
+Now, $M$ is inadequate, so we get into line 13 updating $map$ as 
 $map = map \wedge (a_1 \vee a_2)$. 
 Note that by adding this new clause to $map$, 
 all the subsets of $T \setminus \{ \small{ \texttt{a1\_below},~\texttt{a\_2below}}\}$ 
 are removed from the search space.
 
-The algorithm continues similar to the third iteration leading to $M$ in lines 7 and $map$ in line 13 to be as follows:
+The algorithm continues similar to the third iteration leading to $M$ (in line 7) and $map$ (in line 13) to be as follows:
 \begin{itemize}
   \item Iteration 4:  $M = T \setminus \{ \small{ \texttt{alarm}}\}$, $map = map \wedge a_4$
  
@@ -51,9 +51,9 @@ The algorithm continues similar to the third iteration leading to $M$ in lines 7
       
   \item Iteration 9: $M = T \setminus \{ \small{ \texttt{a2\_below},~\texttt{p1}}\}$, $map = map \wedge (a_2 \vee a_6)$
 \end{itemize}
-Finally, after ninth iteration, $map$ becomes \unsat and the algorithm terminates. 
-It should be pointed out that different runs of the algorithm might discovers $MIS$es and $IVC$s in different orders. The order by which sets are explored is 
-quite dependent on the maximal model returned in line 6 as well as the $IVC$ returned in line 9 in each iteration of the loop because there could be several distinct maximal models ($MIS$es) and $IVC$s. Another thing to consider the power set exploration problem. For this example with a $|T| = 7$ and $|\mathcal{P}(T)| = 2^7$, a brute force approach of power set exploration needs to look into  $2^7$ cases. However, the $AIVC$ algorithm only explored 9 cases to cover the entire power set. However, depending on the order by which $IVC$s and $MIS$es are discovered, the total cases needed to be explored by the algorithm maybe different.
+Finally, after the ninth iteration, $map$ becomes \unsat and the algorithm terminates. 
+It should be pointed out that $MIS$es and $IVC$s may be discovered in different orders from what explained here. The order by which sets are explored is
+quite dependent on the maximal model returned in line 6 as well as the $IVC$ returned in line 9 because there could be several distinct maximal models ($MIS$es) and $IVC$s. Another thing to consider is the power set exploration problem. For this example with a $|T| = 7$ and $|\mathcal{P}(T)| = 2^7$, a brute force approach of power set exploration needs to look into  $2^7$ cases. However, the $AIVC$ algorithm only explored 9 cases to cover the entire power set. Even so, depending on the order by which $IVC$s and $MIS$es are discovered, the total cases needed to be explored by the algorithm maybe different.
 % All in all, it is fair to say the $AIVC$ algorithm is  linear in the size of $T$.
 %This issue could affect the performance of the algorithm as well.
 

@@ -6,11 +6,11 @@ let
    a1_below = if stat1 then (alt1 < THRESHOLD) else false;
    a2_below = if stat2 then (alt2 < THRESHOLD) else false; 
    
-   below = if a1_below or a2_below then true else alarm;  
-   alarm = not stat1 and not stat2; 
+   below = if a1_below or a2_below then true else false;  
+  
 
    doi_on = if alarm then pre(doi_on) else if below then true else false;   
-   
+    alarm = not stat1 and not stat2; 
    p1 = a1_below => doi_on;
    p2 =  a2_below => doi_on ;
    p = true -> p1 or p2;

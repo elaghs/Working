@@ -29,7 +29,7 @@ let
               then (alt2 < THRESHOLD)    
               else false;                 
    below = if if a1_below or a2_below    // (3)
-           then true else alarm;
+           then true else false;
    alarm = not stat1 and not stat2;      // (4)
    doi_on = if alarm then pre(doi_on)    // (5)
             else if below then true      
@@ -56,5 +56,5 @@ In our scenario, the ASW is a hypothetical device that turns power on to another
 For fault tolerance, it is assumed that there are two altimeters that send altitude to the ASW system in terms of input variables \texttt{alt1} and \texttt{alt2}.
 It is possible that sensors fail due to different reasons so input variables \texttt{stat1} and \texttt{stat2}, respectively, show the working status of the altimeters \texttt{alt1} and \texttt{alt2}; e.g. when the altimeter \texttt{alt1} is not working, \texttt{stat1} will be \texttt{false}. In the case that both altimeters fail, an ``alarm'' will be triggered (the output \texttt{alarm} will be set to \texttt{true}).
 %The notation \texttt{pre(doi\_on))} in equation (7) shows the previous value of \texttt{doi\_on}.
-One simple property over this model is that whenever sensors are working and altitude falls below the threshold, output variable \texttt{doi\_on} shall be true. Equations \texttt{p1} and \texttt{p2} show different scenarios under which the DOI might gets on. So, we can specify the property in terms of these equations as \texttt{(p1 or p2)}.
-In the remainder of the paper, we will use this model to illustrate different notions.
+One simple property over this model is that whenever sensors are working and altitude falls below the threshold, output variable \texttt{doi\_on} shall be true. Equations \texttt{p1} and \texttt{p2} show different scenarios under which the DOI might get on. So, we can specify the property in terms of these equations as \texttt{(p1 or p2)}.
+In the remainder of the paper, we will use this model for illustration.

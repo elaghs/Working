@@ -6,7 +6,7 @@
 \newcommand{\ite}[3]{\mathit{if}\ {#1}\ \mathit{then}\ {#2}\ \mathit{else}\ {#3}}
 
 %\subsection{Transition Systems and Safety Properties}
-This section defines the terms and concepts used in the paper. Given a state space $U$, a transition system $(I,T)$ consists of an
+Given a state space $U$, a transition system $(I,T)$ consists of an
 initial state predicate $I : U \to \bool$ and a transition step
 predicate $T : U \times U \to \bool$.
 We define the notion of
@@ -27,7 +27,7 @@ T$ means that $T_i$ is a top-level conjunct of $T$, and $S
 \subseteq T$ means all top-level conjuncts of $S$ are top-level
 conjuncts of $T$. When a top-level conjunct $T_i$ is removed from $T$, it is written as $T \setminus \{T_i\}$. Such a transition system can easily encode our example model in Section~\ref{sec:example}, where each equation defines a conjunct within $T$ that we will denote by the variable assigned; so, $T = \{$ {\small \texttt{a1\_below, a2\_below, below, alarm, doi\_on, p1, p2}} $\}$.
 
-The idea behind finding an IVC for a given property $P$ \cite{Ghass16} is based on the inductive proof methods used in SMT-based model checking, such as K-induction and PDR \cite{NFM2012:KaGaTiWh, amla2005analysis, Een2011:PDR}. Generally, an IVC computation technique aims to determine, for any subset $S \subseteq T$, whether $P$ is provable by $S$. Then, a minimal subset that satisfies $P$ is seen as a minimal proof explanation or traceability, which is called a minimal Inductive Validity Core.
+The idea behind finding an IVC for a given property $P$ \cite{Ghass16} is based on inductive proof methods used in SMT-based model checking, such as K-induction and PDR \cite{NFM2012:KaGaTiWh, amla2005analysis, Een2011:PDR}. Generally, an IVC computation technique aims to determine, for any subset $S \subseteq T$, whether $P$ is provable by $S$. Then, a minimal subset that satisfies $P$ is seen as a minimal proof explanation or traceability, which is called a minimal Inductive Validity Core.
 
 \begin{definition}{\emph{Minimal Inductive Validity Core (IVC) \cite{Ghass16}:}}
   \label{def:minimal-ivc}
@@ -36,7 +36,7 @@ The idea behind finding an IVC for a given property $P$ \cite{Ghass16} is based 
   $(I, S) \vdash P \wedge (\forall T_i \in S.~ (I, S\setminus\{ T_i \}) \nvdash P) $.
 \end{definition}
 
-For brevity, we use term ``IVC'' to refer to a minimal IVC. Note that, given a valid property $P$, not only there is always at least one IVC for $P$, but also there could be many distinct IVCs for $P$, corresponding to different proof paths. To capture the latter, \emph{all IVCs ($AIVC$)} relation has been introduced in \cite{Ghass16, Murugesan16:renext, Ghass17Cov}.
+For brevity, we use term ``IVC'' to refer to a minimal IVC. Note that, given a valid property $P$, not only $P$ always has at least one IVC from $T$, but also it may have many distinct IVCs corresponding to different proof paths. To capture the latter, the \emph{all IVCs ($AIVC$)} relation has been introduced in \cite{Ghass16, Murugesan16:renext, Ghass17Cov}.
 \begin{definition}{\emph{All IVCs ($AIVC$)\cite{Murugesan16:renext, Ghass17Cov}:}}
     \label{def:allivcs}
     Given $(I, T) \vdash P$, $AIVC(P)$ is an association to all IVCs for $P$:

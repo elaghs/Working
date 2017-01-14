@@ -33,7 +33,7 @@ all_p = on_p and off_p;
 }
 %\end{definition}
 
-\noindent Informally, when both altimeters are below the threshold and not inhibited, then the DOI should be on (\onp), and when both altimeters are below the threshold and the ASW is inhibited, then the DOI should be off (\offp).  
+\noindent Informally, when both altimeters are below the threshold and not inhibited, then the DOI should be on (\onp), and when both altimeters are below the threshold and the ASW is inhibited, then the DOI should be off (\offp).
 For each of the MAY, MUST, and IVC metrics, \allp\ only requires \texttt{\{below, d1, doi\_on\}}.   This small set of elements is due to a classic specification problem: using computed variables as the antecedents of implications.  If these values are computed incorrectly (say, we choose the wrong threshold for \aonebelow), it may cause the property to be valid for incorrect reasons.
 
 %This is alarming, and somewhat puzzling, because one would think that at least the definitions of the `below' or `above' would be necessary.  However, because the specification used the model variables \aonebelow, \atwobelow, \aoneabove, and \atwoabove, the actual valuations of the thresholds do not matter.  This situation illustrates a classic specification problem: using computed variables in the antecedents of implications.
@@ -52,11 +52,11 @@ off_p = ((alt1 >= T_HYST) and (alt2 >= T_HYST))
 % all_p = on_p and off_p;
 %\end{definition}
 
-\noindent In this version, distinctions emerge between the metrics.  \allp\ has two IVCs: \texttt{\{\{a1\_below, below, doi\_on, d1\}, \{a2\_below, below, doi\_on, d1\}\}}, because of the \onp\ property: in the implementation, the DOI is turned on when either of the altimeters is below the threshold, while our property states that they both must be on.
+\noindent In this version, distinctions emerge between the metrics.  \allp\ has two IVCs: \texttt{\{\{a1\_below, below, doi\_on, d1\}, \{a2\_below, below, doi\_on, d1\}\}}, because of the \onp\ property: in the implementation, the DOI is turned on when either of the altimeters is below the threshold, while our property states that they both must be below.
 Domain experts determine that the requirement is correctly specified and that our implementation is a reasonable refinement, so there is no need to change the model or the property.  The MUST elements are the same as version 1: \texttt{\{below, doi\_on, d1\}}, because neither \aonebelow\ or \atwobelow\ is required for all proofs.  %However, given the MUST elements, we can no longer construct a proof, because at one of these definitions is necessary for either proof.
 The MAY elements contain both \aonebelow\ and \atwobelow.
 
-The \abovehyst, \aoneabove, \atwoabove, and \dtwo\ equations are still missing, meaning that the `above' thresholds are irrelevant to our properties.  Examining \offp, we realize that we have a specification error; the DOI should be off if either \inhibit\ is true or both altimeters are above the threshold. The fix is:
+The \abovehyst, \aoneabove, \atwoabove, and \dtwo\ equations are still missing, meaning that the ``above'' thresholds are irrelevant to our properties.  Examining \offp, we realize that we have a specification error; the DOI should be off if either \inhibit\ is true or both altimeters are above the threshold. The fix is:
 
 %\begin{definition} {\emph{ASW Requirements Version 2} }
 {\smaller

@@ -5,7 +5,7 @@
 \newcommand{\bool}[0]{\mathit{bool}}
 \newcommand{\reach}[0]{\mathit{R}}
 \newcommand{\ite}[3]{\mathit{if}\ {#1}\ \mathit{then}\ {#2}\ \mathit{else}\ {#3}}
-
+To begin, we define the terms and concepts used in this paper while providing some background on mutation-based coverage metrics. 
 
 \subsection{Models, Requirements, and Provability}
 
@@ -26,7 +26,7 @@ By further abuse of notation,
 $T$ is identified with the set of its top-level conjuncts. Thus, $x \in
 T$ means that $x$ is a top-level conjunct of $T$, and $S
 \subseteq T$ means all top-level conjuncts of $S$ are top-level
-conjuncts of $T$. When a top-level conjunct $x$ is removed from $T$, it is written as $T \setminus \{x\}$. Such a transition system can easily encode our example model in Section~\ref{sec:example}.  We assume each equation defines a conjunct within the transition system which we will denote by the variable assigned, so $T = \{$ {\small \texttt{a1\_below, a2\_below, a1\_above, a2\_above, below, above\_hyst}} $\}$.
+conjuncts of $T$. When a top-level conjunct $x$ is removed from $T$, it is written as $T \setminus \{x\}$. Such a transition system can easily encode our example model in Section~\ref{sec:example}.  We assume each equation defines a conjunct within the transition system which we will denote by the variable assigned, so $T = \{$ {\small \texttt{a1\_below, a2\_below, a1\_above, a2\_above, below, above\_hyst, d1, d2}} $\}$.
 
 
 \begin{definition}{\emph{Inductive Validity Core:}}
@@ -54,17 +54,18 @@ $$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  IVC(P, S)\} $$
 
 %In the example in Fig. \ref{fig:asw}, as visualized in part (b),
 %$AIVC ({\tt P}) = \{\{{\tt P}, {\tt c2}, {\tt c3}\}, \{{\tt P}, {\tt x}, {\tt c3}\}\}$.
-\noindent The set of $AIVC$-s for all properties represents the complete traceability of the system. Establishing the $AIVC$ for a single property, one gets a clear picture of the all the model elements that are necessary to prove the property.
+\noindent 
+Establishing the $AIVC$ for a single property, one gets a clear picture of the all the model elements that are necessary to prove the property. The set of $AIVC$s for all properties demonstrates a complete mapping from the requirements to the design elements, which is called complete traceability \cite{Murugesan16:renext}.
 
 \subsection{Coverage and Mutations}
 In general, specification completeness can be defined with
 regard to the notion of coverage. In fact, the way that coverage
-is formalized plays a key part in the strength/ effectiveness of
-a method for the assessment of completeness. The goal of a coverage metric is usually to assign a numeric score that describes how well properties cover the design. The majority of the work on coverage metrics has focused on {\em mutations}, which are ``atomic'' changes to the design, where the set of possible mutations depends on the notation that is used.  A mutant is ``killed'' if one of the properties that is satisfied by the original design is violated by the mutated design~\cite{chockler_coverage_2003,chockler2001practical,chockler2010coverage,Kupferman:2006:SCF,kupferman_theory_2008}.  There are many different kinds of mutations that have been proposed, primarily focused on checking sequential bit-level hardware designs.  For these designs, {\em State-based} mutations flip the value of one of the bits in the state.  There are several variations depending on whether the flip is performed on a single state within a Kripke structure~\cite{hoskote1999coverage}, or in the description of the signal in the transition relation of the circuit~\cite{chockler2001practical}.  {\em Logic-based} mutations fix the value of a bit to constant zero or one, and can be used to determine whether properties can find stuck-at faults.  {\em Syntactic} mutations~\cite{chockler_coverage_2003} remove states in a control flow graph representation of hardware.  Similarly, for software, it is possible to apply any of the ``standard'' source code mutation operators used for software testing~\cite{Andrews06:mutation} towards requirements coverage analysis.  Some examples of software mutations are:
+is formalized plays a key part in the strength/effectiveness of
+a method for the assessment of completeness. The goal of a coverage metric is usually to assign a numeric score that describes how well properties cover the design. The majority of the work on coverage metrics has focused on {\em mutations}, which are ``atomic'' changes to the design, where the set of possible mutations depends on the notation that is used.  A mutant is ``killed'' if one of the properties that is satisfied by the original design is violated by the mutated design~\cite{chockler_coverage_2003,chockler2001practical,chockler2010coverage,Kupferman:2006:SCF,kupferman_theory_2008}.  There are many different kinds of mutations that have been proposed, primarily focused on checking sequential bit-level hardware designs.  For these designs, {\em State-based} mutations flip the value of one of the bits in the state.  There are several variations depending on whether the flip is performed on a single state within a Kripke structure~\cite{hoskote1999coverage}, or in the description of the signal in the transition relation of the circuit~\cite{chockler2001practical}.  {\em Logic-based} mutations fix the value of a bit to constant zero or one, and can be used to determine whether properties can find stuck-at faults.  {\em Syntactic} mutations~\cite{chockler_coverage_2003} remove states in a control flow graph representation of hardware.  Similarly, for software, it is possible to apply any of the ``standard'' source code mutation operators used for software testing~\cite{Andrews06:mutation} towards requirements coverage analysis.  Some examples of software mutations are \cite{}:
 \begin{enumerate}
-    \item Replace an integer constant C by one of $\{0, 1, -1, C + 1, C - 1\}$,
+    \item Replace an integer constant $C$ by one of $\{0, 1, -1, C + 1, C - 1\}$,
     \item Replace an arithmetic, relational, logical, bitwise logical, increment/decrement, or arithmetic-assignment operator by another operator from the same class,
-    \item Negate the decision in an if or while statement,
+    \item Negate the decision in an \texttt{if} or \texttt{while} statement,
     \item Delete a statement.
 \end{enumerate}
 
@@ -83,7 +84,7 @@ We assume each element $T_i \in T$ has a set of possible mutations associated wi
 Note that without loss of generality, we consider a single property P, which can be viewed as the conjunction of all the properties of the model.
 %\footnote{Besides, the notions provided in this paper can be easily applied to a set of properties.}.
 
-In our example in Figure~\ref{fig:asw}, applying the software mutations from~\cite{Andrews06:mutation} would involve manipulating the constants used in the definitions of \texttt{a1\_below, a2\_below, a1\_above, a2\_above}, swapping 'or' and 'and' in the definition of \texttt{below, above\_hyst}, or negating the conditions in the if/then/else statements.  Even for this small model, there are many possible mutations (57).  The number of single-mutation programs is roughly the product of the leaf elements of the program AST and the size of the chosen set of mutations, which can lead to an impractical number of verification problems.
+In our example in Figure~\ref{fig:asw}, applying the software mutations from~\cite{Andrews06:mutation} would involve manipulating the constants used in the definitions of \texttt{a1\_below, a2\_below, a1\_above, a2\_above}, swapping \texttt{or} and \texttt{and} in the definition of \texttt{below, above\_hyst}, or negating the conditions in the if/then/else statements.  Even for this small model, there are many possible mutations (57).  The number of single-mutation programs is roughly the product of the leaf elements of the program abstract syntax tree (AST) and the size of the chosen set of mutations, which can lead to an impractical number of verification problems.
 
 \newcommand{\andnode}{{\sc and}}
 \newcommand{\invnode}{{\sc inv}}

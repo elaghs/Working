@@ -10,48 +10,48 @@ The algorithm starts with creating activation literals for each $T_i \in T$. Let
 In the first iteration of the \texttt{while} loop, since $map$ is empty,
 it is satisfiable, and a model for it can
 be any subset of literals. So obviously, the first maximal model of $map$ contains all the literals, which means, in line 6, $M = \{a_1, \ldots, a_7\}$,
- and in line 7, $M = T$. Since $M$ is adequate for $P$, 
- the function \getivc ~is called in line 9. 
- Suppose the returned IVC by this function  is 
+ and in line 7, $M = T$. Since $M$ is adequate for $P$,
+ the function \getivc ~is called in line 9.
+ Suppose the returned IVC by this function  is
  $S' = \{ \small{ \texttt{a1\_below},~\texttt{below}, ~\texttt{alarm},
-~\texttt{doi\_on},~\texttt{p1}}\}$; 
-this set is added to $A$ in line 10, and thus it comes to adding a new clause to $map$ (line 11), which makes $map = (\neg a_1 \vee \neg a_3 \vee \neg a_4 \vee \neg a_5 \vee \neg a_6)$. 
+~\texttt{doi\_on},~\texttt{p1}}\}$;
+this set is added to $A$ in line 10, and thus it comes to adding a new clause to $map$ (line 11), which makes $map = (\neg a_1 \vee \neg a_3 \vee \neg a_4 \vee \neg a_5 \vee \neg a_6)$.
 As discussed, this constraint marks all the supersets of $S'$ as explored and prune them off the search space.
 
-For the second iteration, $map$ is still satisfiable, 
-so the algorithm gets to find a maximal model of it in line 5. Suppose this time, the maximal model makes $M = \{a_2, \ldots, a_7\}$, 
-which leads to $M = T \setminus \{\small{\texttt{a1\_below}}\} $ in line 7. 
-Since this $M$ is adequate for $P$, \getivc ~computes a new $IVC$ in line 9. 
+For the second iteration, $map$ is still satisfiable,
+so the algorithm gets to find a maximal model of it in line 5. Suppose this time, the maximal model makes $M = \{a_2, \ldots, a_7\}$,
+which leads to $M = T \setminus \{\small{\texttt{a1\_below}}\} $ in line 7.
+Since this $M$ is adequate for $P$, \getivc ~computes a new $IVC$ in line 9.
 Let the new $IVC$ be $S' = \{ \small{ \texttt{a2\_below},~\texttt{below}, ~\texttt{alarm},
-~\texttt{doi\_on},~\texttt{p2}}\}$; after adding this set to $A$, 
-it is time to constrain $map$ by a new clause in line 11, 
-which results in $map = map \wedge (\neg a_2 \vee \neg a_3 \vee \neg a_4 \vee \neg a_5 \vee \neg a_7)$. 
+~\texttt{doi\_on},~\texttt{p2}}\}$; after adding this set to $A$,
+it is time to constrain $map$ by a new clause in line 11,
+which results in $map \leftarrow map \wedge (\neg a_2 \vee \neg a_3 \vee \neg a_4 \vee \neg a_5 \vee \neg a_7)$.
 
-Although we found two $IVC$s of $P$, $map$ is still satisfiable meaning that the power set has not yet explored entirely.\footnote{Note that the algorithm terminates when all $IVC$s and $MIS$es are explored. Up to now, only $IVC$s have been explored.} So, we get into the third iteration of the \texttt{while} loop. Let the maximal model returned this time 
-yields to a 
-$M = T \setminus \{ \small{ \texttt{a1\_below},~\texttt{a\_2below}}\}$
- in line 7. 
-Now, $M$ is inadequate, so we get into line 13 updating $map$ as 
-$map = map \wedge (a_1 \vee a_2)$. 
-Note that by adding this new clause to $map$, 
-all the subsets of $T \setminus \{ \small{ \texttt{a1\_below},~\texttt{a\_2below}}\}$ 
+Although we found two $IVC$s of $P$, $map$ is still satisfiable meaning that the power set has not yet explored entirely.\footnote{Note that the algorithm terminates when all $IVC$s and $MIS$es are explored. Up to now, only $IVC$s have been explored.} So, we get into the third iteration of the \texttt{while} loop. Let the maximal model returned this time
+yields to a
+$M = T \setminus \{ \small{ \texttt{a1\_below},~\texttt{a2\_below}}\}$
+ in line 7.
+Now, $M$ is inadequate, so we get into line 13 updating $map$ as
+$map \leftarrow map \wedge (a_1 \vee a_2)$.
+Note that by adding this new clause to $map$,
+all the subsets of $T \setminus \{ \small{ \texttt{a1\_below},~\texttt{a\_2below}}\}$
 are removed from the search space.
 
 The algorithm continues similar to the third iteration leading to $M$ (in line 7) and $map$ (in line 13) to be as follows:
 \begin{itemize}
-  \item Iteration 4:  $M = T \setminus \{ \small{ \texttt{alarm}}\}$, $map = map \wedge a_4$
- 
-  \item Iteration 5: $M = T \setminus \{ \small{ \texttt{p1},~\texttt{p2}}\}$, $map = map \wedge (a_6 \vee a_7)$
- 
-  \item Iteration 6: $M = T \setminus \{ \small{ \texttt{doi\_on}}\}$, $map = map \wedge a_5$
- 
-  \item Iteration 7: $M = T \setminus \{ \small{ \texttt{below}}\}$, $map = map \wedge a_3$
- 
-  \item Iteration 8: $M = T \setminus \{ \small{ \texttt{a1\_below},~\texttt{p2}}\}$, $map = map \wedge (a_1 \vee a_7)$
-      
-  \item Iteration 9: $M = T \setminus \{ \small{ \texttt{a2\_below},~\texttt{p1}}\}$, $map = map \wedge (a_2 \vee a_6)$
+  \item Iteration 4:  $M = T \setminus \{ \small{ \texttt{alarm}}\}$, $map \leftarrow map \wedge a_4$
+
+  \item Iteration 5: $M = T \setminus \{ \small{ \texttt{p1},~\texttt{p2}}\}$, $map \leftarrow map \wedge (a_6 \vee a_7)$
+
+  \item Iteration 6: $M = T \setminus \{ \small{ \texttt{doi\_on}}\}$, $map \leftarrow map \wedge a_5$
+
+  \item Iteration 7: $M = T \setminus \{ \small{ \texttt{below}}\}$, $map \leftarrow map \wedge a_3$
+
+  \item Iteration 8: $M = T \setminus \{ \small{ \texttt{a1\_below},~\texttt{p2}}\}$, $map \leftarrow map \wedge (a_1 \vee a_7)$
+
+  \item Iteration 9: $M = T \setminus \{ \small{ \texttt{a2\_below},~\texttt{p1}}\}$, $map \leftarrow map \wedge (a_2 \vee a_6)$
 \end{itemize}
-Finally, after the ninth iteration, $map$ becomes \unsat and the algorithm terminates. 
+Finally, after the ninth iteration, $map$ becomes \unsat and the algorithm terminates.
 It should be pointed out that $MIS$es and $IVC$s may be discovered in different orders from what explained here. The order by which sets are explored is
 quite dependent on the maximal model returned in line 6 as well as the $IVC$ returned in line 9 because there could be several distinct maximal models ($MIS$es) and $IVC$s. Another thing to consider is the power set exploration problem. For this example with a $|T| = 7$ and $|\mathcal{P}(T)| = 2^7$, a brute force approach of power set exploration needs to look into  $2^7$ cases. However, the $AIVC$ algorithm only explored 9 cases to cover the entire power set. Even so, depending on the order by which $IVC$s and $MIS$es are discovered, the total cases needed to be explored by the algorithm maybe different.
 % All in all, it is fair to say the $AIVC$ algorithm is  linear in the size of $T$.

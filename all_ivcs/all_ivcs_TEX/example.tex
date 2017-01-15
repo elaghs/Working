@@ -22,20 +22,15 @@ var
    a1_below, a2_below, below,
    p1, p2 : bool;
 let
-   a1_below = if stat1                   // (1)
-              then (alt1 < THRESHOLD)    
-              else false;               
-   a2_below = if stat2                   // (2)
-              then (alt2 < THRESHOLD)    
-              else false;                 
-   below = if if a1_below or a2_below    // (3)
-           then true else false;
-   alarm = not stat1 and not stat2;      // (4)
-   doi_on = if alarm then pre(doi_on)    // (5)
-            else if below then true      
-            else false;                  
-   p1 = a1_below => doi_on;              // (6)
-   p2 = a2_below => doi_on ;             // (7)
+   a1_below = stat1 and (alt1 < THRESHOLD)  // (1) 
+   a2_below = stat2 and (alt2 < THRESHOLD)  // (2) 
+   below = a1_below or a2_below             // (3)
+   alarm = not stat1 and not stat2;         // (4)
+   doi_on = if alarm then pre(doi_on)       // (5)
+            else if below then true
+            else false;
+   p1 = a1_below => doi_on;                 // (6)
+   p2 = a2_below => doi_on ;                // (7)
 tel;
 \end{verbatim}
 }
@@ -44,15 +39,13 @@ tel;
 \label{fig:asw}
 \end{figure}
 
-We will use a very simple version of an Altitude Switch (ASW) from the avionics domain as a running example throughout the paper, which is written in the Lustre language (simplified and adapted from~\cite{HCW02:ase-deviation}) (Figure~\ref{fig:asw}).
-Lustre~\cite{Halbwachs91:lustre} is a synchronous dataflow language
+We will use a very simple version of an Altitude Switch (ASW) from the avionics domain as a running example (simplified and adapted from~\cite{HCW02:ase-deviation}). 
+Figure~\ref{fig:asw} shows the ASW model in the Lustre language.\footnote{Lustre~\cite{Halbwachs91:lustre} is a synchronous dataflow language
 used as an input language for various model checkers. A Lustre program runs over discrete
 time steps. On each step, the input variables take on some values and
 are used to compute values for the output variables on the same step.
 In addition, equations may refer to the previous value of a variable
-using the {\tt pre} operator.
-
-In our scenario, the ASW is a hypothetical device that turns power on to another subsystem, the Device of Interest (DOI), when the aircraft descends below a threshold altitude.
+using the \small{{\tt pre}} operator.} In our scenario, the ASW is a hypothetical device that turns power on to another subsystem, the Device of Interest (DOI), when the aircraft descends below a threshold altitude.
 For fault tolerance, it is assumed that there are two altimeters that send altitude to the ASW system in terms of input variables \texttt{alt1} and \texttt{alt2}.
 It is possible that sensors fail due to different reasons so input variables \texttt{stat1} and \texttt{stat2}, respectively, show the working status of the altimeters \texttt{alt1} and \texttt{alt2}; e.g. when the altimeter \texttt{alt1} is not working, \texttt{stat1} will be \texttt{false}. In the case that both altimeters fail, an ``alarm'' will be triggered (the output \texttt{alarm} will be set to \texttt{true}).
 %The notation \texttt{pre(doi\_on))} in equation (7) shows the previous value of \texttt{doi\_on}.

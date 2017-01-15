@@ -25,7 +25,7 @@ in order to compute $AIVC$. To this end, we begin with introducing several addit
 
 \begin{definition} {\emph{Adequacy:}}
 \label{def:adeq}
-Given property $P$ and every $S \in \mathcal{P}(T)$, we have either $(I, S) \vdash P$ or $(I, S) \nvdash P$. In the former case, we say $S$ is \textbf{adequate} for $P$; in the latter, we say that $S$ is \textbf{inadequate} for the proof of $P$.
+Given $(I, T) \vdash P$, for every $S \in \mathcal{P}(T)$, we have either $(I, S) \vdash P$ or $(I, S) \nvdash P$. In the former case, we say $S$ is \textbf{adequate} for $P$; in the latter, we say that $S$ is \textbf{inadequate} for the proof of $P$.
 \end{definition}
 
 Obviously, for every inadequate set $S \subset T$, there is some set $C \subset T$ such that $S \cup C$ is adequate; we refer to such set $C$ as a \emph{correction set} for $S$. Furthermore, considering the definition of $IVC$, every set $S \in AIVC (P)$ is a \emph{minimal} adequate set meaning  that $\nexists S' \subset S. (I, S') \vdash P$.
@@ -80,13 +80,13 @@ For $(I, T) \vdash P$, if a given subset $S$ is inadequate, then all of its subs
 %\end{proof}
 
 The basic idea behind an algorithm for computing $AIVC(P)$ is the same as exploration of $\mathcal{P}(T)$ determining whether or not every set $S \in \mathcal{P}(T)$ is adequate for $P$.
-At first, all the sets in $\mathcal{P}(T)$ are ``\emph{unexplored}''. When the adequacy of a set $S \in \mathcal{P}(T)$ is determined/known, we consider $S$ as \emph{explored}.
+At first, all the sets in $\mathcal{P}(T)$ are \emph{unexplored}. When the adequacy of a set $S \in \mathcal{P}(T)$ is determined/known, we consider $S$ as \emph{explored}.
 In order to choose an unexplored set and keep track of which parts of the the power set
 have been explored, we use a Boolean expression $map$, which is
 in conjunctive normal form (CNF) and built gradually as the algorithm proceeds.
-Basically, with the help of $map$, an unexplored set $S$ is selected, and after processing $S$,
-formula $map$ is updated in a way, which will be described, that marks $S$ as \emph{explored}.
-As $map$ gets updated, it guides our exploration algorithm for $AIVC$.
+With the help of $map$, an unexplored set $S$ is selected. After processing $S$,
+formula $map$ is updated such that marks $S$ as \emph{explored}.
+As $map$ is updated, it guides our exploration algorithm for $AIVC$.
 In other words, $map$ represents the \emph{search space} needed to be explored for finding all IVCs.
 
 More precisely, given $T$ with $n$ top-level conjuncts,
@@ -102,7 +102,7 @@ Then, a $map$ for $AIVC(P)$ is a CNF formula built over the elements of $\mathca
 $S = \bigcup_{a_i \in M} \actlit ^{-1} (a_i)$ and $M = \bigcup_{T_i \in S} \actlit(T_i)$.
   \item For every explored set $S \in \mathcal{P}(T)$:
   \begin{itemize}
-    \item if $S$ is adequate for $P$, then $map$ contains a clause $\bigvee_{T_{i}\in S} \neg {\actlit (T_i)}$. Note that, according to Lemma \ref{lem:adeq}, such a clause automatically makes every superset of $S$ as explored, which shrinks our search space. So, it is said those supersets are \emph{dominated} by $S$.
+    \item if $S$ is adequate for $P$, then $map$ contains a clause $\bigvee_{T_{i}\in S} \neg {\actlit (T_i)}$. Note that, according to Lemma \ref{lem:adeq}, such a clause automatically marks every superset of $S$ as explored, which shrinks our search space. So, it is said those supersets are \emph{dominated} by $S$.
     \item if $S$ is inadequate for $P$, then $map$ contains a clause $\bigvee_{T_{i}\in (T \setminus S)} \actlit (T_i)$. Note that, according to Corollary \ref{lem:inadeq}, such a clause automatically makes every subset of $S$ as explored, which prunes the search space. So, it is said those subsets are \emph{dominated} by $S$.
   \end{itemize}
 \end{itemize}

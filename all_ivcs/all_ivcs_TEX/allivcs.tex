@@ -28,7 +28,7 @@ in order to compute $AIVC$. To this end, we begin with introducing several addit
 Given $(I, T) \vdash P$, for every $S \in \mathcal{P}(T)$, we have either $(I, S) \vdash P$ or $(I, S) \nvdash P$. In the former case, we say $S$ is \textbf{adequate} for $P$; in the latter, we say that $S$ is \textbf{inadequate} for the proof of $P$.
 \end{definition}
 
-Obviously, for every inadequate set $S \subset T$, there is some set $C \subset T$ such that $S \cup C$ is adequate; we refer to such set $C$ as a \emph{correction set} for $S$. Furthermore, considering the definition of $IVC$, every set $S \in AIVC (P)$ is a \emph{minimal} adequate set meaning  that $\nexists S' \subset S. (I, S') \vdash P$.
+Obviously, for every inadequate set $S \subset T$, there is some set $C \subset T$ such that $S \cup C$ is adequate; we refer to such set $C$ as a \emph{correction set} for $S$. Furthermore, considering the definition of $IVC$, every set $S \in AIVC (P)$ is a \emph{minimal} adequate set meaning  that $\nexists S' \subset S. (I, S') \vdash P$. 
 
 \begin{definition}{\emph{Maximal Inadequate Set (MIS):}}
   \label{def:mis}
@@ -198,6 +198,32 @@ $MIS$ not yet found.
 
 
 \begin{theorem}
+\label{theorem:ivc-not-min}
+  Algorithm \ref{alg:aivc} enumerates all $IVC$s 
+  even if \getivc ~does not guarantee minimality of an Inductive Validity Core.
+\end{theorem}
+\begin{proof}
+In an iteration of the \texttt{while} loop that $\isadeq (P, M)$ is $true$, 
+let \getivc ~returns a set $S'$ which is not minimal: 
+$\exists \mathcal{M} \subset S'.~ (I, \mathcal{M}) \vdash P$ and 
+$\forall T_i \in \mathcal{M} . ~ (I, \mathcal{M} \setminus \{T_i\}) \nvdash P$.
+Therefore, there is an unexplored set $S \supseteq \mathcal{M}$ that all its supersets have already been explored, which means
+$map$ is still satisfiable. 
+So, eventually there will be a model of $map$ that makes $M = S$ in line 7. 
+Suppose, again this time, \getivc ~ returns an adequate set $S''$ which is not minimal. 
+We know that
+  $\mathcal{M} \subset S'' \subseteq S \wedge S'' \neq S' \wedge |S''| \leq |S'|$. 
+  Previously, set $S'$ marked all its supersets as explored. And, this time, the 
+  same thing happens with $S''$; hence with the same reasoning, 
+  eventually, all the supersets of $\mathcal{M}$ will be explored, and there will be a model of $map$ that makes $M = \mathcal{M}$ in line 7,
+  which results in a minimal $IVC$ by \getivc (because $\mathcal{M}$ is minimal itself). 
+  Now,  $\mathcal{M}$  prunes itself from the $map$.
+  Therefore, Algorithm \ref{alg:aivc} explores all minimal adequate sets even if \getivc ~
+  does not guarantee minimality.
+\end{proof}
+
+\begin{theorem}
+\label{theorem:termination}
   Algorithm \ref{alg:aivc} will terminate.
 \end{theorem}
 \begin{proof}
@@ -207,6 +233,12 @@ $IVC$s and $MIS$es have been explored.
 So, following Theorem \ref{theorem:aivc},  Algorithm \ref{alg:aivc} will terminate.
 \end{proof}
 
+\begin{corol}
+ Algorithm \ref{alg:aivc} will terminate even if \getivc ~does not guarantee minimality.
+\end{corol}
+\begin{proof}
+  Immediate from Theorem \ref{theorem:ivc-not-min}, \ref{theorem:aivc}, and \ref{theorem:termination}.
+\end{proof}
 
 
 %\begin{algorithm}[t]

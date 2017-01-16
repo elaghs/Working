@@ -1,6 +1,6 @@
 \section{Illustration}
 \label{sec:illust}
-To illustrate the $AIVC$ algorithm we use the example presented in Section \ref{sec:example} with $P = (\small{\texttt{p1 or p2}})$ .
+To illustrate the \aivcalg ~algorithm we use the example presented in Section \ref{sec:example} with $P = (\small{\texttt{p1 or p2}})$ .
 %As inspired by the MARCO algorithm in \cite{marco2016fast}, we visualize $\mathcal{P}(\mathcal{A})$ as a lattice in a Hasse diagram (Figure~\ref{fig:lattice1}) to demonstrate the progress of the algorithm. As you can see, each level of the lattice contains sets with the same size linked to sets that are their immediate
 %supersets (upper level regions) and subsets (lower level regions). Note that the power set is viewed as a Boolean formula, so each member in the lattice shows
 % variable with $true$.
@@ -53,7 +53,7 @@ The algorithm continues similar to the third iteration leading to $M$ (in line 7
 \end{itemize}
 Finally, after the ninth iteration, $map$ becomes \unsat and the algorithm terminates.
 It should be pointed out that $MIS$es and $IVC$s may be discovered in different orders from what explained here. The order by which sets are explored is
-quite dependent on the maximal model returned in line 6 as well as the $IVC$ returned in line 9 because there could be several distinct maximal models ($MIS$es) and $IVC$s. Another thing to consider is the power set exploration problem. For this example with a $|T| = 7$ and $|\mathcal{P}(T)| = 2^7$, a brute force approach of power set exploration needs to look into  $2^7$ cases. However, the $AIVC$ algorithm only explored 9 cases to cover the entire power set. Even so, depending on the order by which $IVC$s and $MIS$es are discovered, the total cases needed to be explored by the algorithm maybe different.
-% All in all, it is fair to say the $AIVC$ algorithm is  linear in the size of $T$.
+quite dependent on the maximal model returned in line 6 as well as the $IVC$ returned in line 9 because there could be several distinct maximal models ($MIS$es) and $IVC$s. Another thing to consider is the power set exploration problem. For this example with a $|T| = 7$ and $|\mathcal{P}(T)| = 2^7$, a brute force approach of power set exploration needs to look into  $2^7$ cases. However, the \aivcalg ~algorithm only explored 9 cases to cover the entire power set. Even so, depending on the order by which $IVC$s and $MIS$es are discovered, the total cases needed to be explored by the algorithm maybe different.
+% All in all, it is fair to say the \aivcalg ~algorithm is  linear in the size of $T$.
 %This issue could affect the performance of the algorithm as well.
 

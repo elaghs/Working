@@ -3,7 +3,7 @@
 
 \newcommand{\getivc}{\textsc{GetIVC}}
 \newcommand{\getmodel}{\textsc{GetLiteralsFromMaxModel}}
-\newcommand{\aivcalg}{AIVC\xspace}
+\newcommand{\aivcalg}{\texttt{\small{All\_IVCs}}}
 \newcommand{\blockup}{\textsc{BlockUp}}
 \newcommand{\blockdown}{\textsc{BlockDown}}
 \newcommand{\mis}{\textsc{MIS}}
@@ -151,14 +151,14 @@ In line 2, we create the set of activation literals used by function \actlit . L
 %$$\checksat : Boolean \rightarrow \{ true~(\sat), false~(\unsat) \}$$
 As long as $map$ is satisfiable, the algorithm computes a \emph{maximal} \sat model for it (line 5). A maximal SAT model is a model with as many $true$ assignment as possible without violating a clause; this problem, known as MaxSAT, has been well studied in the literature \cite{cimatti2013modular, davies2011solving, morgado2013iterative}, so we assume there is a method by which we are able to have a maximal model of $map$.
 Line 6 extracts a set $M \in \mathcal{P} (\mathcal{A})$ of literals assigned to $true$ in the model.
-Then, we need to obtain the corresponding set of $M$ in $\mathcal{P}(T)$, which is done with function $\actlit ^{-1}$ in line 7. Note that such a set will be a $MIS$ that all its supersets have already been explored. We also assume there is a function \isadeq ~that checks whether or not $P$ is provable by a given subset of $T$. Using this function, the adequacy of $M$ is determined in line 8; if $M$ is adequate, an IVC  is computed by function \getivc ~and added to set $A$ (line 10).\footnote{Note that \isadeq ~can be any method that verifies a safety property, such as K-induction. As for \getivc , Ghassabani et al. proposed an efficient algorithm for computing a single IVC in \cite{Ghass16} that can be used for the \getivc ~function.} In this case $map$ is constrained by a new clause in a way described before and shown in line 11. However, in case that $M$ is inadequate, $map$ is constrained by the corresponding literals from the correction set of $M$ (i.e. $T \setminus M$) in lines (12-13).
+Then, we need to obtain the corresponding set of $M$ in $\mathcal{P}(T)$, which is done with function $\actlit ^{-1}$ in line 7. Note that such a set will be a $MIS$ that all its supersets have already been explored. We also assume there is a function \isadeq ~that checks whether or not $P$ is provable by a given subset of $T$. Using this function, the adequacy of $M$ is determined in line 8; if $M$ is adequate, an IVC  is computed by \getivc ~and added to set $A$ (line 10).\footnote{Note that \isadeq ~can be any method that verifies a safety property, such as K-induction. As for \getivc , Ghassabani et al. proposed an efficient algorithm for computing a single IVC in \cite{Ghass16} that can be used for the \getivc ~module.} In this case $map$ is constrained by a new clause in a way described before and shown in line 11. However, in case that $M$ is inadequate, $map$ is constrained by the corresponding literals from the correction set of $M$ (i.e. $T \setminus M$) in lines (12-13).
 
 \begin{algorithm}[t]
-  %\SetKwInOut{Input}{input}
-%  \SetKwInOut{Output}{output}
-%  \Input{$IVC(S, P), (I, T) \vdash P$}
-%  \Output{ }
-  %\BlankLine
+  \SetKwInOut{Input}{input}
+  \SetKwInOut{Output}{output}
+  \Input{$(I, T) \vdash P$}
+  \Output{$AIVC (P)$}
+  \BlankLine
   $A \leftarrow \varnothing$\\
   Create activation literals $\{a_1, \ldots, a_n\}$ \\
  % $map \leftarrow true$ \\
@@ -182,8 +182,8 @@ Then, we need to obtain the corresponding set of $M$ in $\mathcal{P}(T)$, which 
     %  $L \leftarrow L \cup (\bigcup_{T_i \in C} T_i)$
     }
   }
-  \Return{A}
-\caption{$\aivcalg (T, P)$}
+  \Return{$A$}
+\caption{Algorithm \aivcalg ~for computing $AIVC$}
 \label{alg:aivc}
 \end{algorithm}
 
@@ -198,31 +198,6 @@ $MIS$ not yet found.
 
 
 \begin{theorem}
-\label{theorem:ivc-not-min}
-  Algorithm \ref{alg:aivc} enumerates all $IVC$s 
-  even if \getivc ~does not guarantee minimality of an Inductive Validity Core.
-\end{theorem}
-\begin{proof}
-In an iteration of the \texttt{while} loop that $\isadeq (P, M)$ is $true$, 
-let \getivc ~returns a set $S'$ which is not minimal: 
-$\exists \mathcal{M} \subset S'.~ (I, \mathcal{M}) \vdash P$ and 
-$\forall T_i \in \mathcal{M} . ~ (I, \mathcal{M} \setminus \{T_i\}) \nvdash P$.
-Therefore, there is an unexplored set $S \supseteq \mathcal{M}$ that all its supersets have already been explored, which means
-$map$ is still satisfiable. 
-So, eventually there will be a model of $map$ that makes $M = S$ in line 7. 
-Suppose, again this time, \getivc ~ returns an adequate set $S''$ which is not minimal. 
-We know that
-  $\mathcal{M} \subset S'' \subseteq S \wedge S'' \neq S' \wedge |S''| \leq |S'|$. 
-  Previously, set $S'$ marked all its supersets as explored. And, this time, the 
-  same thing happens with $S''$; hence with the same reasoning, 
-  eventually, all the supersets of $\mathcal{M}$ will be explored, and there will be a model of $map$ that makes $M = \mathcal{M}$ in line 7,
-  which results in a minimal $IVC$ by \getivc (because $\mathcal{M}$ is minimal itself). 
-  Now,  $\mathcal{M}$  prunes itself from the $map$.
-  Therefore, Algorithm \ref{alg:aivc} explores all minimal adequate sets even if \getivc ~
-  does not guarantee minimality.
-\end{proof}
-
-\begin{theorem}
 \label{theorem:termination}
   Algorithm \ref{alg:aivc} will terminate.
 \end{theorem}
@@ -233,14 +208,9 @@ $IVC$s and $MIS$es have been explored.
 So, following Theorem \ref{theorem:aivc},  Algorithm \ref{alg:aivc} will terminate.
 \end{proof}
 
-\begin{corol}
- Algorithm \ref{alg:aivc} will terminate even if \getivc ~does not guarantee minimality.
-\end{corol}
-\begin{proof}
-  Immediate from Theorem \ref{theorem:ivc-not-min}, \ref{theorem:aivc}, and \ref{theorem:termination}.
-\end{proof}
 
 
+\input{minimality}
 %\begin{algorithm}[t]
 %  $k' \leftarrow 1$ \\
 %  \While{$\checksat(\neg\iq_{k'}(T, P, P)) = \sat$} {

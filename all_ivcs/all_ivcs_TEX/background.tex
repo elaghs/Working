@@ -57,16 +57,16 @@ $AIVC(P) = \{ \{ \small{ \texttt{doi\_on},
 \{ \texttt{doi\_on},~\texttt{alarm},}  \allowbreak \small{
 ~\texttt{below},~\texttt{a2\_below},~\texttt{p2}\} }\}$.
 
-%As you can see, distinct IVCs may have common elements.
-%The intersection of all IVCs is called the \emph{must} set for $P$.
-%And, the other elements constitute a \emph{may} set for $P$ \cite{Murugesan16:renext}:
-%\begin{itemize}
-%  \item   $MUST (P) = \bigcap AIVC(P)$
-%  \item  $MAY(P) = (\bigcup AIVC (P)) \setminus MUST(P)$
-%  \item $IRR(P) = T \setminus (\bigcup AIVC(P))$
-%\end{itemize}
-%\noindent Given property $P$, functions $MUST$, $MAY$, and $IRR$ partition top-level conjuncts of $T$ (model elements) into three disjoint sets \emph{must}, \emph{may}, and \emph{irrelevant}, respectively. $IRR(P)$ returns portion of the model irrelevant to the satisfaction of $P$, which in our running example is $\varnothing$.
-%We have used this intuition to devise heuristics for an efficient implementation, as will be discussed in Section~\ref{sec:impl}.
+As you can see, distinct IVCs may have common elements.
+The intersection of all IVCs is called the \emph{must} set for $P$.
+And, the other elements constitute a \emph{may} set for $P$ \cite{Murugesan16:renext}:
+\begin{itemize}
+  \item   $MUST (P) = \bigcap AIVC(P)$
+  \item  $MAY(P) = (\bigcup AIVC (P)) \setminus MUST(P)$
+  \item $IRR(P) = T \setminus (\bigcup AIVC(P))$
+\end{itemize}
+\noindent Given property $P$, functions $MUST$, $MAY$, and $IRR$ partition top-level conjuncts of $T$ (model elements) into three disjoint sets \emph{must}, \emph{may}, and \emph{irrelevant}, respectively. $IRR(P)$ returns portion of the model irrelevant to the satisfaction of $P$, which in our running example is $\varnothing$.
+We will make use of this intuition in Section~\ref{subsec:minimality}.
 
 \begin{figure}[t]
  \centering

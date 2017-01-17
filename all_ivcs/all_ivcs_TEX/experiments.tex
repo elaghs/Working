@@ -8,7 +8,7 @@
 }
  
  We would like to evaluate the efficiency 
- of our algorithms and compare it with \ucalg ~and \ucbfalg algorithms. 
+ of our algorithms and compare it with \ucalg ~and \ucbfalg ~algorithms. 
  Efficiency is computed in terms of wall-clock time. 
  In this study, we designed an experiment from a suite of 700 Lustre models developed
 as a benchmark suite for~\cite{Hagen08:FMCAD}. 
@@ -51,18 +51,20 @@ Therefore, in practice, we have to set some boundaries
 (over depth/time of the model checking algorithm) in each iteration. 
 In our implementation, we set a timeout based on the time a property takes to be proved. 
 Since before starting the \aivcalg ~algorithm, the property has to be proved, 
-we obtain the its required \emph{proof-time}. 
+we obtain its required \emph{proof-time}. 
 Then, the timeout we set for each iteration is ($60 sec  + 10 \times$ \emph{proof-time}). 
 When the \texttt{while} loop times out for $M$ in line 8 of Algorithm~\ref{alg:aivc}, 
 we treat $M$ as an \emph{inadequate} set because 
 when the adequacy of $M$ is undecidable,
- the adequacy of all its subsets are undecidable too. So, if we consider it as inadequate, line 13 will prune off $M$ and all its subsets. \ela{~~Ela: do you have better justification? }
+ the adequacy of all its subsets are undecidable too. So, if we consider it as inadequate, line 13 will prune off $M$ and all its subsets from the search space. \ela{~~Ela: do you have better justification? }
 Even so, in our benchmarks, there have been a few models containing iterations with timeout. 
 
 We measured the performance overhead of the algorithms over the time
 necessary to find a proof using inductive model checking. Fig. \ref{fig:performance} 
  allows a visualization of the  overhead  of the \aivcalg ~algorithm  in  comparison  with \ucalg ~and \ucbfalg, which is also summarized in Table \ref{tab:overhead}.  
  The running time of the algorithms is also summarized in Table \ref{tab:runtime}. 
+ Note that the \aivcalg ~algorithm could have had better (worse) performance 
+ if timeout had been set lower (higher).
 
 \begin{table}
   \caption{Overhead of different algorithms}
@@ -71,7 +73,7 @@ necessary to find a proof using inductive model checking. Fig. \ref{fig:performa
   \begin{tabular}{ |c||c|c|c|c| }
     \hline
      algorithm & min & max & mean & stdev \\[0.5ex]
-    \hline
+ 
     \hline
     \aivcalg   & 13.642\% & 101034.615\% & 2544.399\% & 7764.159\% \\[0.5ex]
     \ucbfalg &   14.092\% & 111124.432\% &  882.018\% & 1512.071\%\\[0.5ex]

@@ -12,9 +12,11 @@ back-end, \texttt{JKind} supports \texttt{Z3}~\cite{DeMoura08:z3},
 \texttt{Yices}~\cite{Dutertre06:yices}, \texttt{MathSAT}~\cite{Cimatti2013:MathSAT},
 \texttt{SMTInterpol}~\cite{Christ2012:SMTInterpol}, and \texttt{CVC4} \cite{barrett2011cvc4}. \texttt{JKind} is a multi-engine model checker that works on multiple properties simultaneously. When a property is
 proven and IVC generation is enabled, an additional parallel engine
-executes the \ucalg ~algorithm \cite{Ghass16} to generate a nearly minimal IVC. To implement our method, we have made use of this engine and also extended \texttt{JKind} with a new engine that
+executes the \ucalg ~algorithm \cite{Ghass16} to generate an (approximately) minimal IVC. To implement our method, we have made use of this engine and also extended \texttt{JKind} with a new engine that
 implements Algorithm \ref{alg:aivc} on top of \texttt{Z3}.
 The source code is publicly available on \cite{mygit}.
+
+
 
 %The source code is publicly available on \cite{mygit}.
 %This section points out some technical issues in the implementation.

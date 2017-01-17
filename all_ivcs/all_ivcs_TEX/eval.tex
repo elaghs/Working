@@ -10,7 +10,7 @@ This section evaluates our approach by addressing the following research questio
 
 \subsection{Analytical Results}
 \label{sec:res}
-This section addresses the aforementioned research questions briefly describing the way the results were analyzed. In general, for timing analyses, from all 13 configurations, we only considered the settings where both \texttt{PDR} and \texttt{K-induction} engines were activated. Since this configuration is a default setting in \texttt{JKind}, we only care about timing while both engines are employed. Therefore, $(4 \times 405) = 1620$ of all 5265 runs have been analyzed to address time-efficiency questions.
+This section addresses the aforementioned research questions briefly describing the way the results were analyzed. In general, for timing analyses, from all 13 configurations, we only considered the settings where both \texttt{PDR} and \texttt{K-induction} engines were activated. Since this configuration is a default setting in \texttt{\texttt{JKind}}, we only care about timing while both engines are employed. Therefore, $(4 \times 405) = 1620$ of all 5265 runs have been analyzed to address time-efficiency questions.
 \ela{remove this line if removing the Result section: }
 Note that  the results of 10 models with unprovable properties were omitted in calculations. In addition,
  while analyzing support sets, \texttt{K-induction} settings that timed out were not considered because they failed to prove the properties.
@@ -53,12 +53,12 @@ In the following, we will address the research questions from different perspect
 }
  \vspace{6pt}
 
-In addition to overhead, it is also important to know how efficiently \texttt{ReduceSupport} performs on computing set of support in comparison with \texttt{JSupport}. For 405 models, runtime of support computation in the configurations where both \texttt{K-induction} and \texttt{PDR} were activated has been collected. Fig~\ref{fig:runtimez3} and Fig~\ref{fig:runtimeall} visualize the results. Fig~\ref{fig:runtimez3} shows the running time of \texttt{JKind} with and without support computation while employing \texttt{Z3}. As you can see in Fig~\ref{fig:runtimeall}, \texttt{JSupport} is a lot more time-consuming than all \texttt{ReduceSupport} configurations.
+In addition to overhead, it is also important to know how efficiently \texttt{ReduceSupport} performs on computing set of support in comparison with \texttt{JSupport}. For 405 models, runtime of support computation in the configurations where both \texttt{K-induction} and \texttt{PDR} were activated has been collected. Fig~\ref{fig:runtimez3} and Fig~\ref{fig:runtimeall} visualize the results. Fig~\ref{fig:runtimez3} shows the running time of \texttt{\texttt{JKind}} with and without support computation while employing \texttt{Z3}. As you can see in Fig~\ref{fig:runtimeall}, \texttt{JSupport} is a lot more time-consuming than all \texttt{ReduceSupport} configurations.
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{figs/runtimeZ3.png}
-  \caption{Runtime of \texttt{JKind} with/without support computation}\label{fig:runtimez3}
+  \caption{Runtime of \texttt{\texttt{JKind}} with/without support computation}\label{fig:runtimez3}
 \end{figure}
 
 
@@ -210,7 +210,7 @@ Since \texttt{JSupport}, with a great percentage, most of the time computed the 
 %\vspace{6pt}
 %\noindent\fbox{%
 %    \parbox{\textwidth}{%
-%     \texttt{JKind} is able to find minimal support sets with a very negligible dependency on solvers/ proof engines.
+%     \texttt{\texttt{JKind}} is able to find minimal support sets with a very negligible dependency on solvers/ proof engines.
 %    }%
 %}
 % \vspace{6pt}
@@ -232,7 +232,7 @@ Since \texttt{JSupport}, with a great percentage, most of the time computed the 
   \item H1: \texttt{ReduceSupport} in all configurations computes sets that are very close to minimal (with an average Jaccard distance less than 0.2).
 \end{itemize}
 
-Table~\ref{tab:jsupconf} represents the result of this analysis; for example, configuration \emph{(Z3, Both)}, shows that \texttt{JKind} with \texttt{Z3} and both \texttt{K-induction} and \texttt{PDR} engines has an average Jaccard distance of 0.106 (in 405 models) from \texttt{JSupport}.
+Table~\ref{tab:jsupconf} represents the result of this analysis; for example, configuration \emph{(Z3, Both)}, shows that \texttt{\texttt{JKind}} with \texttt{Z3} and both \texttt{K-induction} and \texttt{PDR} engines has an average Jaccard distance of 0.106 (in 405 models) from \texttt{JSupport}.
 
 
 \begin{table}
@@ -316,7 +316,7 @@ Table~\ref{tab:jsupconf} represents the result of this analysis; for example, co
 }
  \vspace{6pt}
 
-%\textbf{(3)}  Fig~\ref{fig:maxdis} and Fig~\ref{fig:mindis} shows the results. As you can see, different configurations of \texttt{JKind} do not affect very much the variety of the generated sets. However, \texttt{JSupport} and \texttt{JKind} configurations have had maximum distances most of the time. Even so, the frequency of such maximum distances among 405 models is very low. Table~\ref{tab:pairminmax} shows the percentage that two configurations has the maximum Jaccard distance
+%\textbf{(3)}  Fig~\ref{fig:maxdis} and Fig~\ref{fig:mindis} shows the results. As you can see, different configurations of \texttt{\texttt{JKind}} do not affect very much the variety of the generated sets. However, \texttt{JSupport} and \texttt{\texttt{JKind}} configurations have had maximum distances most of the time. Even so, the frequency of such maximum distances among 405 models is very low. Table~\ref{tab:pairminmax} shows the percentage that two configurations has the maximum Jaccard distance
 %\ela{this is a misleading approach because maximum jaccard distance doesn't mean a big jaccard distance. for this reason, I remove it. related results for this section is in file support_variety_analyses.txt }
 
 %\begin{figure}
@@ -398,7 +398,7 @@ Table~\ref{tab:jsupconf} represents the result of this analysis; for example, co
 %%solvers/ proof engines?
 %\textbf{RQ3:} To address this question, we analyzed the raw data with two different approaches described in the following.
 %
-%\textbf{(1)} We analyzed the sets of each 405 models. In each model, we looked for configurations that generated the biggest support set and ones that generated the smallest. Fig~\ref{fig:smallest} and Fig~\ref{fig:bigest} visualize the results of this analysis. For example, as you can see in Fig~\ref{fig:bigest}, \texttt{JSupport} generated biggest support sets in less than 10 models. Note that it implies there is at least one \texttt{JKind} configuration that generated the set with a smaller size.
+%\textbf{(1)} We analyzed the sets of each 405 models. In each model, we looked for configurations that generated the biggest support set and ones that generated the smallest. Fig~\ref{fig:smallest} and Fig~\ref{fig:bigest} visualize the results of this analysis. For example, as you can see in Fig~\ref{fig:bigest}, \texttt{JSupport} generated biggest support sets in less than 10 models. Note that it implies there is at least one \texttt{\texttt{JKind}} configuration that generated the set with a smaller size.
 %
 %
 %\begin{figure}
@@ -417,7 +417,7 @@ Table~\ref{tab:jsupconf} represents the result of this analysis; for example, co
 %\vspace{6pt}
 %\noindent\fbox{%
 %    \parbox{\textwidth}{%
-%    Solvers/ proof engines have negligible effects on the size of the support sets computed by \texttt{JKind}.
+%    Solvers/ proof engines have negligible effects on the size of the support sets computed by \texttt{\texttt{JKind}}.
 %    }%
 %}
 % \vspace{6pt}

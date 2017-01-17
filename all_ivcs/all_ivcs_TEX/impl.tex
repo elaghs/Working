@@ -1,108 +1,32 @@
-\section{Implementation}
+\section{Implementation and Evaluation}
 \label{sec:impl}
 
-tell how function map has been built.
+We have implemented the \aivcalg ~algorithm 
+in an infinite-state model checker for safety
+properties called \texttt{JKind} ~\cite{jkind}. 
+The \texttt{JKind} model checker accepts Lustre programs \cite{Halbwachs91:lustre}
+written over the theory of linear integer and real arithmetic. In the
+back-end, \texttt{JKind} needs to interact with an SMT solver, and
+it supports \texttt{Z3}~\cite{DeMoura08:z3},
+\texttt{Yices}~\cite{Dutertre06:yices}, \texttt{MathSAT}~\cite{Cimatti2013:MathSAT},
+\texttt{SMTInterpol}~\cite{Christ2012:SMTInterpol}, and \texttt{CVC4} \cite{barrett2011cvc4}. \texttt{JKind} is a multi-engine model checker that works on multiple properties simultaneously. When a property is
+proven and IVC generation is enabled, an additional parallel engine
+executes the \ucalg ~algorithm \cite{Ghass16} to generate a nearly minimal IVC. To implement our method, we have made use of this engine. We have extended \texttt{JKind} with a new engine that
+implements Algorithm \ref{alg:aivc}.
+The source code is publicly available on \cite{mygit}.
 
-in implementation talk about max sat, must list, initialization of map
-
-say why the algorithm is fast; because we block down and up based on MIS and IVC, which prunes the maximum number of cases from the search space (map)
-
-%We have implemented the inductive validity core algorithms in the
-%previous section in two tools: {\em JKind}, which performs the \ucalg
-%algorithm, and {\em JSupport}, which can compute either the \bfalg or
-%the \ucbfalg algorithm (using JKind as a subprocess). Moreover, our
-%implementation of \ucbfalg uses an additional feature of JKind to
-%store and re-use discovered invariants between separate runs. This
-%reduces some of the cost of attempting to re-prove a property multiple
-%times. These tools operate over the Lustre
-%language~\cite{Halbwachs91:lustre}, which we briefly illustrate below.
+%The source code is publicly available on \cite{mygit}.
+%This section points out some technical issues in the implementation.
 %
-%\vspace{0.1in}
-%
-%\subsection{Lustre and IVCs}
-%
-%Lustre~\cite{Halbwachs91:lustre} is a synchronous dataflow language
-%used as an input language for various model checkers. The textual
-%models in Figures~\ref{fig:ex-before} and \ref{fig:ex-after} are
-%written in Lustre. We will use model in Figure~\ref{fig:ex-before} as
-%a running example in this section. For our purposes, a Lustre program
-%consists of 1) input variables, {\tt x} in the example, 2) output
-%variables, {\tt a}, {\tt b}, and {\tt y} in the example, and 3) an
-%equation for each output variable. A Lustre program runs over discrete
-%time steps. On each step, the input variables take on some values and
-%are used to compute values for the output variables on the same step.
-%In addition, equations may refer to the previous value of a variable
-%using the {\tt pre} operator. This operator is underspecified in the
-%first step, so the arrow operator, {\tt ->}, is used to guard the
-%{\tt pre} operator. In the first step the expression {\tt e1 -> e2}
-%evaluates to {\tt e1}, and it evaluates to {\tt e2} in all other steps.
-%
-%We interpret a Lustre program as a model specification by considering
-%the behavior of the program under all possible input traces. Safety
-%properties over Lustre can then be expressed as Boolean expressions in
-%Lustre. A safety property holds if the corresponding expression is
-%always true for all input traces. For example, the property for
-%Figure~\ref{fig:ex-before} is {\tt y >= 0}, which is a valid property.
-%
-%It is straightforward to translate this interpretation of Lustre into
-%the traditional initial and transition relations. We will show this by
-%continuing with the example in Figure~\ref{fig:ex-before}. First we
-%introduce a new Boolean variable $init$ into the state space to denote
-%when the system is in its initial state, the state of the system prior
-%to initialization. In the initial state, all other variables are
-%completely unconstrained which models the underspecification of the pre
-%operator during the first step. Then we define,
-%\begin{align*}
-%  &I((x, a, b, y, \mathit{init})) = \mathit{init} \\
-%  &T((x, a, b, y, \mathit{init}), (x', a', b', y', \mathit{init'})) = \\
-%  &\hspace{1.5cm} (a' = f(x', \ite{init}{0}{y})) \land~ \\
-%  &\hspace{1.5cm} (b' = \ite{a' \geq 0}{a'}{-a'}) \land~ \\
-%  &\hspace{1.5cm} (y' = b' + (\ite{init}{0}{y})) \land ~\\
-%  &\hspace{1.5cm} \neg\mathit{init'}
-%\end{align*}
-%Note that $f$ is unspecified in Figure~\ref{fig:ex-before} and so also
-%in $T$. In a real system, $f$ would be defined in the Lustre model and
-%expanded in $T$. A safety property such as {\tt y >= 0} is translated
-%into $\mathit{init} \lor (y \geq 0)$. Nested uses of arrow and pre
-%operators are handled by introducing new output variables for nested
-%expressions, though such details are unimportant for our purposes.
-%
-%Each equation in the Lustre program is translated into a single
-%top-level conjunct in the transition relation. This is very convenient
-%as the IVC of a Lustre property can be reported in terms of the output
-%variables whose equations are part of the IVC. Equivalently, the
-%interpretation of an IVC for a Lustre property is that any output
-%variable that is not part of the IVC can be turned into an input
-%variable, its equation thrown away, while preserving the validity of
-%the property. Thus the granularity of the IVC analysis is determined
-%by the granularity of the Lustre equations and can be adjusted by
-%introducing auxiliary variables for subexpressions if desired.
-%
-%\subsection{JKind}
-%
-%JKind~\cite{jkind} is an infinite-state model checker for safety
-%properties. JKind proves safety properties using multiple cooperative
-%engines in parallel including $k$-induction~\cite{SheeranSS00},
-%property directed reachability~\cite{Een2011:PDR}, and template-based
-%lemma generation~\cite{Kahsai2011}. JKind accepts Lustre programs
-%written over the theory of linear integer and real arithmetic. In the
-%back-end, JKind uses an SMT solver such as Z3~\cite{DeMoura08:z3},
-%Yices~\cite{Dutertre06:yices}, MathSAT~\cite{Cimatti2013:MathSAT}, or
-%SMTInterpol~\cite{Christ2012:SMTInterpol}.
-%
-%JKind works on multiple properties simultaneously. When a property is
-%proven and IVC generation is enabled, an additional parallel engine
-%executes Algorithm~\ref{alg:ivc} to generate a nearly minimal IVC.
-%
-%JKind accepts an annotation on its input Lustre program indicating
-%which outputs variables to consider for IVC generation. Output
-%variables not mentioned in the annotation are implicitly included in
-%all IVCs. This allows the implementation to focus on the variables
-%important to the user and ignore, for example, administrative
-%equations. This is even more important for tools which generate Lustre
-%as they often create many such administrative equations which simply
-%wire together more interesting expressions.
-%
-%%%  LocalWords:  JSupport subprocess IVCs dataflow underspecified IVC
-%%%  LocalWords:  init Yices MathSAT SMTInterpol subexpressions
-%%%  LocalWords:  underspecification
+%We have extended \texttt{JKind} with a new engine that
+% implements Algorithm \ref{alg:aivc}.
+% First a property is proved and a single IVC set $S$ is computed
+% by the IVC generation engine. Then, the set $S$ is sent to our engine.
+% For efficiency, instead of initializing $map$ with $\top$,
+% we initialize $map$ with $\bigvee_{T_{i}\in S} \neg {\actlit (T_i)}$,
+% which prunes off set $S$ and all its supersets from $\mathcal{P}(T)$ at the beginning of the algorithm. If $S$ is minimal, then chances are a large
+% subset of  $\mathcal{P}(T)$ is marked as explored even before
+% the algorithm starts the search.
+ 
+\input{experiments}
+\input{results}

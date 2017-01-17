@@ -1,6 +1,4 @@
-%\documentclass{sig-alternate-05-2015}
-\documentclass{llncs}
-\usepackage{makeidx}
+\documentclass{sig-alternate-05-2015}
 \usepackage{tabularx,colortbl}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{flushend}
@@ -30,7 +28,7 @@
 
 %\theoremstyle{Definition}
 %\newtheorem{definition}{Definition}
-%%%
+%%
 %\theoremstyle{Theorem}
 %\newtheorem{theorem}{Theorem}
 
@@ -39,12 +37,6 @@
 %\newcommand{\theorem}{\noindent \textbf{Theorem} \citation{}}
 %\newcommand{\lemma}{\noindent \textbf{Lemma} \citation{}}
 
-%\newdef{lemma}{Lemma}
-%\newdef{definition}{Definition}
-%\newdef{theorem}{Theorem}
-%\newdef{corollary}{Corollary}
-%\newdef{note}{Note}
-%\newdef{axiom}{Axiom}
 \newcommand{\mkeyword}[1]{\mbox{\texttt{#1}}}
 \DeclareMathOperator{\kuop}{uop}
 \DeclareMathOperator{\kbop}{bop}
@@ -59,13 +51,23 @@
 \newcommand{\rbb}{]\!]}
 \newcommand{\expr}{\phi}
 \newcommand{\exprS}{\Phi}
- 
+% this toggles between a tech-report version of the paper and the MEMOCODE version
+%\newcommand{\TECHREPORT}{}
+%\tolerance=1
+%\emergencystretch=\maxdimen
+%\hyphenpenalty=10000
+%\hbadness=10000
 \sloppypar
 
 
 
-\begin{document} 
-
+\begin{document}
+%\CopyrightYear{2016}
+%\setcopyright{acmcopyright}
+%\conferenceinfo{FSE'16,}{November 13-19, 2016, Seattle, WA, USA}
+%\isbn{978-1-4503-4218-6/16/11}\acmPrice{\$15.00}
+%\doi{http://dx.doi.org/10.1145/2950290.2950346}
+ % Add this to every tex file, so that you can comment with a diff color%
 \definecolor{gold}{rgb}{0.90,.66,0}
 \definecolor{dgreen}{rgb}{0,0.6,0}
 \newcommand{\mike}[1]{\textcolor{red}{#1}}
@@ -77,28 +79,75 @@
 \newcommand{\ta}{\text{TA}}
 \newcommand{\cta}{\text{TA$_{C}$}}
 \newcommand{\tta}{\text{TA$_{T}$}}
- 
-\title{Efficient Generation of All Inductive Validity Cores}
 
-\author{Elaheh Ghassabani\inst{1} 
-\and Michael W. Whalen\inst{1} 
-\and Andrew Gacek\inst{2} }
-\institute{University of Minnesota\\Department of Computer
-Science and Engineering\\
-200 Union Street\\
-Minneapolis, MN, 55455, USA\\
-\email{ghassaba, whalen@cs.umn.edu} 
-\and
-Rockwell Collins\\
-Advanced Technology Center\\400 Collins Rd. NE\\
-Cedar Rapids, IA, 52498, USA\\ \email{ andrew.gacek@rockwellcollins.com}
+\newdef{lemma}{Lemma}
+\newdef{definition}{Definition}
+\newdef{theorem}{Theorem}
+\newdef{corol}{Corollary}
+\newdef{note}{Note}
+\newdef{axiom}{Axiom}
+%\newcommand{\TECHREPORT}{}
+
+\title{Efficient Generation of All Inductive Validity Cores (IVCs)}
+
+\numberofauthors{3}
+
+\author{
+\alignauthor
+Elaheh Ghassabani\\
+       \affaddr{Department of Computer Science and Engineering}\\
+       \affaddr{University of Minnesota}\\
+       \affaddr{\small{200 Union Street\\Minneapolis, MN, 55455, USA}}\\
+       \email{\texttt{\small{ghass013@umn.edu}}}
+\alignauthor
+Michael W. Whalen\\
+       \affaddr{Department of Computer Science and Engineering}\\
+       \affaddr{University of Minnesota}\\
+       \affaddr{\small{200 Union Street\\Minneapolis, MN, 55455, USA}}\\
+       \email{\texttt{\small{whalen@cs.umn.edu}}}
+\alignauthor
+Andrew Gacek\\
+       \affaddr{Rockwell Collins\\ Advanced Technology Center}\\
+       \affaddr{\small{400 Collins Rd. NE\\Cedar Rapids, IA, 52498, USA}}\\
+       \email{\texttt{\small{andrew.gacek@rockwellcollins.com}}}
 }
+
 \maketitle
 
 \begin{abstract}
 All IVCs method is awesome!!!! :-)
 \end{abstract}
- 
+
+%\begin{CCSXML}
+%<ccs2012>
+%<concept>
+%<concept_id>10003752.10003790.10003794</concept_id>
+%<concept_desc>Theory of computation~Automated reasoning</concept_desc>
+%<concept_significance>500</concept_significance>
+%</concept>
+%<concept>
+%<concept_id>10003752.10003790.10011192</concept_id>
+%<concept_desc>Theory of computation~Verification by model checking</concept_desc>
+%<concept_significance>500</concept_significance>
+%</concept>
+%<concept>
+%<concept_id>10011007.10011074.10011075.10011076</concept_id>
+%<concept_desc>Software and its engineering~Requirements analysis</concept_desc>
+%<concept_significance>500</concept_significance>
+%</concept>
+%<concept>
+%<concept_id>10011007.10011074.10011099.10011692</concept_id>
+%<concept_desc>Software and its engineering~Formal software verification</concept_desc>
+%<concept_significance>500</concept_significance>
+%</concept>
+%</ccs2012>
+%\end{CCSXML}
+%
+%\ccsdesc[500]{Theory of computation~Verification by model checking}
+%\ccsdesc[500]{Theory of computation~Automated reasoning}
+%\ccsdesc[500]{Software and its engineering~Requirements analysis}
+%\ccsdesc[500]{Software and its engineering~Formal software verification}
+%\printccsdesc
 \keywords{Inductive validity cores, UNSAT-core generation, SMT-based model checking, Inductive proofs}
 
 \input{introduction}

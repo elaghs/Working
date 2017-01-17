@@ -48,10 +48,10 @@ Note that, given a valid property $P$, not only $P$ always has at least one IVC 
 \begin{definition}{\emph{All IVCs ($AIVC$)\cite{Murugesan16:renext, Ghass17Cov}:}}
     \label{def:allivcs}
     Given $(I, T) \vdash P$, $AIVC(P)$ is an association to all IVCs for $P$:
-    $AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  IVC(P, S)\} $
+    $$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  IVC(P, S)\} $$
 \end{definition}
 
-Figure~\ref{fig:ivcs} illustrates these notions by a graphical representation of IVCs for property $P = (\small{\texttt{p1 or p2}})$ in the example presented in Section~\ref{sec:example}; as shown in the picture, this property has two distinct IVCs, which means the model satisfies $P$ in two different ways:
+Fig.~\ref{fig:ivcs} illustrates these notions by a graphical representation of IVCs for property $P = (\small{\texttt{p1 or p2}})$ in the example presented in Section~\ref{sec:example}; as shown in the picture, this property has two distinct IVCs, which means the model satisfies $P$ in two different ways:
 $AIVC(P) = \{ \{ \small{ \texttt{doi\_on},
 ~\texttt{alarm},~\texttt{below},~\texttt{a1\_below},~\texttt{p1}\},~
 \{ \texttt{doi\_on},~\texttt{alarm},}  \allowbreak \small{
@@ -73,7 +73,7 @@ $AIVC(P) = \{ \{ \small{ \texttt{doi\_on},
   \includegraphics[width=0.65\columnwidth]{figs/ivcs.png}
   \label{fig:ivcs}
   \vspace{-0.1in}
-  \caption{Graphical representation of IVCs for the model in Figure\ref{fig:asw} with  $P = (\small{\texttt{p1 or p2}})$}
+  \caption{Graphical representation of IVCs for the model in Fig.\ref{fig:asw} with  $P = (\small{\texttt{p1 or p2}})$}
 \end{figure}
 
 %\subsection{Satisfiability}

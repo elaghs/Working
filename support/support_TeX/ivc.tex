@@ -54,7 +54,7 @@ when working with sets of invariants.
 
 \begin{definition}{\emph{Minimal Inductive Validity Core:}}
   \label{def:minimal-ivc}
-  An inductive validity core $S$ for $(I, T)\vdash P$ is minimal \emph{iff} 
+  An inductive validity core $S$ for $(I, T)\vdash P$ is minimal \emph{iff}
   there does not exist $M \subset S$ such that $M$ is an inductive validity core
   for $(I, T)\vdash P$.
 \end{definition}
@@ -179,7 +179,7 @@ Algorithm \ucalg~(\ref{alg:ivc}).
 
 To describe the details of Algorithm~\ref{alg:ivc} we define queries
 for the base and inductive steps of $k$-induction
-(Figure~\ref{fig:queries}). Note, in $\iq(T, Q, P)$ we separate the
+(Fig.~\ref{fig:queries}). Note, in $\iq(T, Q, P)$ we separate the
 assumptions made on each step, $Q$, from the property we try to show
 on the last step, $P$. We use this separation when reducing the set of
 invariants.

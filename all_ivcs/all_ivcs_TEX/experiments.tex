@@ -10,18 +10,18 @@
  We would like to evaluate the efficiency
  of our algorithms and compare it with \ucalg ~and \ucbfalg ~algorithms.
  Efficiency is computed in terms of wall-clock time.
- In this study, we designed an experiment from 
+ In this study, we designed an experiment from
  the same benchmark suite used for evaluation of the \ucalg ~and \ucbfalg ~algorithms in \cite{Ghass16}.
- The benchmark contains 476 Lustre models 
+ The benchmark contains 476 Lustre models
  published in~\cite{Hagen08:FMCAD} augmented
-with 81 additional models from industrial case studies from ~\cite{QFCS15:backes,hilt2013}.
+with 81 additional models from industrial case studies ~\cite{QFCS15:backes,hilt2013}.
  Most of
 the benchmark models from~\cite{Hagen08:FMCAD} are small (10kB or less,
 with 6-40 equations) and include a range of hardware benchmarks and
 software problems involving counters.
 The industrial cases are much
-larger: around 80kB with over 600 equations.  
-Each benchmark model has a single property to analyze. 
+larger: around 80kB with over 600 equations.
+Each benchmark model has a single property to analyze.
 For each test model, we computed \aivcalg , \ucalg , and \ucbfalg ~algorithms
 in a configuration with
 the \texttt{Z3} solver and the fastest mode of \texttt{JKind} (running k-induction and PDR in parallel). The experiments
@@ -41,10 +41,10 @@ One technical issue that needs to
 be handled in any implementation of the \aivcalg ~algorithm,
 is about the undecidability of the model checking algorithms;
 in each iteration of the \texttt{while} loop, Algorithm~\ref{alg:aivc}
-has to decide on the adequacy of a given set $M \subset T$ (line 8).
+has to decide on the adequacy of a given set $M \subseteq T$ (line 8).
 This decision should be made by the use of a proof method that
 tries to prove the property $P$ over $M$. Although we know that $(I, T) \vdash P$,
-there is no guarantee that we can determine whether or not $S$ is adequate.
+there is no guarantee that we can determine whether or not any $M \subset T$ is adequate.
 Therefore, in practice, we have to set some boundaries
 (over depth/time of the model checking algorithm) in each iteration.
 In our implementation, we set a timeout based on the time a property takes to be proved.

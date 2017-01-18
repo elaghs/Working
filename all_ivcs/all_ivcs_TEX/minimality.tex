@@ -5,8 +5,8 @@
 
 To compute all $IVC$s of a given property, the \aivcalg ~algorithm
  makes a major assumption on the outcome of the \getivc ~module;
-it assumes \getivc ~returns \emph{minimal} Inductive Validity Cores. 
-However, as shown in \cite{Ghass16}, 
+it assumes \getivc ~returns \emph{minimal} Inductive Validity Cores.
+However, as shown in \cite{Ghass16},
 determining  the minimality of  an  $IVC$ is  hard. Although the $IVC$ generation algorithm proposed by Ghassabani et al. \cite{Ghass16}, called \ucalg ,
 is efficient and fast, it does not guarantee minimality;
 i.e. an $IVC$ obtained from \ucalg ~is either minimal or approximately minimal.
@@ -88,10 +88,10 @@ remove supersets before returning $A$; for example, adding the following code sn
 
 \vspace{0.09in}
 \indent  \For{$X \in A$}{
-\indent        \If{$S' \subset X$}{ $A \leftarrow A \setminus X$}
-\indent      }   
+\indent        \If{$S' \subset X$}{ $A \leftarrow A \setminus \{X\}$}
+\indent      }
 \vspace{0.09in}
-\noindent Obviously, the closer to minimal the results of \getivc ~are, 
+\noindent Obviously, the closer to minimal the results of \getivc ~are,
 the more quickly the search space shrinks and Algorithm \ref{alg:aivc} terminates.
 
 %
@@ -133,4 +133,4 @@ the more quickly the search space shrinks and Algorithm \ref{alg:aivc} terminate
 %\caption{Modified version of the \aivcalg ~algorithm that
 %guarantees $AIVC(P)$ contains minimal Inductive Validity Cores}
 %\label{alg:aivc2}
-%\end{algorithm}
+%\end{algorithm} 

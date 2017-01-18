@@ -59,12 +59,12 @@
 \newcommand{\rbb}{]\!]}
 \newcommand{\expr}{\phi}
 \newcommand{\exprS}{\Phi}
- 
+
 \sloppypar
 
 
 
-\begin{document} 
+\begin{document}
 
 \definecolor{gold}{rgb}{0.90,.66,0}
 \definecolor{dgreen}{rgb}{0,0.6,0}
@@ -77,17 +77,17 @@
 \newcommand{\ta}{\text{TA}}
 \newcommand{\cta}{\text{TA$_{C}$}}
 \newcommand{\tta}{\text{TA$_{T}$}}
- 
+
 \title{Efficient Generation of All Inductive Validity Cores}
 
-\author{Elaheh Ghassabani\inst{1} 
-\and Michael W. Whalen\inst{1} 
+\author{Elaheh Ghassabani\inst{1}
+\and Michael W. Whalen\inst{1}
 \and Andrew Gacek\inst{2} }
 \institute{University of Minnesota\\Department of Computer
 Science and Engineering\\
 200 Union Street\\
 Minneapolis, MN, 55455, USA\\
-\email{ghassaba, whalen@cs.umn.edu} 
+\email{ghassaba, whalen@cs.umn.edu}
 \and
 Rockwell Collins\\
 Advanced Technology Center\\400 Collins Rd. NE\\
@@ -96,10 +96,20 @@ Cedar Rapids, IA, 52498, USA\\ \email{ andrew.gacek@rockwellcollins.com}
 \maketitle
 
 \begin{abstract}
-All IVCs method is awesome!!!! :-)
+Inductive Validity Core (IVC) has been recently introduced 
+as a base method that facilitates and automates a variety of system analyses. 
+  By a minimal IVC, a property is mapped a minimal portion of the design that satisfies the property. IVCs minimize inductive invariants obtained from the inductive proof methods such as k-induction, lifting them to the design level so to provide validity explanations that are meaningful to the users.
+   Applications that take advantage of the IVC idea rely on the minimality of IVCs.
+However, minimality is challenging and existing algorithms are either expensive or able to generate an approximately minimal IVC. In addition to minimality,
+computing \emph{all} minimal IVCs of a given property is
+ an interesting problem that could have a lot of useful applications,
+  for which there is no efficient method in the literature. 
+  For the first time, this paper proposes a new technique for generating all IVCs of a property
+   that are guaranteed to be minimal. We prove the 
+   correctness and completeness of the technique and show the efficiency of our algorithm by benchmarking it against existing IVC generation algorithms.
 \end{abstract}
- 
-\keywords{Inductive validity cores, UNSAT-core generation, SMT-based model checking, Inductive proofs}
+
+\keywords{Inductive Validity Cores, UNSAT-core generation, SMT-based model checking, Inductive proofs}
 
 \input{introduction}
 
@@ -127,9 +137,9 @@ All IVCs method is awesome!!!! :-)
 \input{conclusion}
 %ACKNOWLEDGMENTS are optional
 %TODO: Fill in for final version
-%\vspace{0.05in}
+\vspace{0.08in}
 
-
+ 
 \textbf{Acknowledgments:}
 This work was supported by
 

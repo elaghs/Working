@@ -1,25 +1,53 @@
 \section{Introduction}
 \label{sec:intro}
+Constraint solving is a powerful mathematical method that allows the computer to 
+solve a problem formulated by the user \cite{freuder1997pursuit}. Many verification problems can be reduced to constraint satisfaction problems and solved with a SAT (or SMT) solver.
+A lot of useful formal methods built on top of
+constraint solvers, such as model checking algorithms \cite{Een2011:PDR, SheeranSS00, mcmillan2003interpolation}, abstraction techniques \cite{mcmillan2003automatic, gupta2003iterative}, and proof-certificate generation \cite{ivrii2014small, piskac2016}. 
+When it comes to verification using
+constraint-based model checking, tools are able to prove 
+the correctness (or violation) of a given specification over a system model. 
+However, this type of automated reasoning itself might be misleading due to potential pitfalls that 
+cause verification to succeed despite errors in 
+design/specification (such as inconsistencies, vacuity, over-constrained specifications,
+logical errors, and so on), which  can  lead  to  overconfidence in
+the behavior of the system or even disasters \cite{Ghass16}. 
+In other words, although automated verification is helpful,
+ model checkers usually do not provide much useful information on the quality of the design or specification. In 2016, Ghassabani et al.
+proposed the idea of Inductive Validity Core \cite{Ghass16} that tries to 
+bridge the gap between model checking and the user insight into the results provided by the tool. 
 
-talk a little about symb MC
+IVCs are minimal proof explanations 
+that are user-understandable creating better perception in the assessment of the verification results. 
+For IVCs, a  wide
+range of practical applications has been mentioned in \cite{Ghass16}. Specifically, they have been used to develop methods for
+automatic proof-based traceability,
+measuring specification coverage, 
+proof-based abstraction, proof-based slicing, vacuity detection, and symbolic simulation/test case generation \cite{Ghass16, Murugesan16:renext, Ghass17Cov}. An IVC is extracted from the inductive proof of a valid property using the unsat-core generation mechanism provided by SMT solvers.
+The method makes use of the idea of minimal unsatisfiable subformula (MUS) 
+lifting a correctness proof of a property to the design level.
+A \emph{minimal} IVC contains a minimal subset of the design elements that are
+necessary to satisfy the property meaning that the 
+property will not hold if any of those elements are removed. 
+Minimality is an important requirement IVCs need to meet \cite{Ghass16}. 
+However, computing a minimal IVC can be very time-intensive and expensive; hence, authors in \cite{Ghass16} proposed a
+fast and efficient technique for generating \emph{approximately minimal} IVCs; i.e. their method 
+does not guarantee the minimality of an IVC. In addition, their method is aimed to generate one single IVC of a given property, while the property may have several distinct IVCs corresponding to different proof paths when a model satisfies it in different ways. 
 
-talk about IVC and why they are good
+Most of the applications of IVCs rely on the minimality feature. In addition, there are some useful 
+applications that require determining all IVCs of a property, including establishing complete traceability \cite{Murugesan16:renext}, some of the proof-based coverage analyses \cite{Ghass17Cov},
+and analyzing requirements redundancy or system fault tolerance. Therefore, addressing these issues may provide valuable techniques to to the domain of system analysis. 
 
-bring up the issue of multiple proof path, unsat-cores (MUS), IVCs
+In this paper, we propose a new method for computing \emph{all minimal} IVCs. Similar to the IVCs that are based on MUS generation, our algorithm is inspired by the methods for enumerating all MUSes. In  recent  years,  a  number  of  efficient
+algorithms  for  extracting  all MUSes  have  been proposed \cite{Bacchus2016, bacchus2015using, belov2012muser2, belov2013core, belov2012towards, nadel2014accelerated, liffiton2005max}.
+The purpose of this paper is not to enumerate MUSes or to propose a method for that; instead, our work is inspired by the idea of fast generation of all MUSes proposed in a recent work by Liffiton et al. \cite{marco2016fast}. In fact, we adapt their approach from the domain of feasibility analysis for the domain of model checking and system analysis (IVCs). 
+We prove the correctness and completeness of our algorithm which shows the algorithm extracts \emph{all} possible IVCs of a given property and guarantees their minimality.
+We have evaluated the algorithm against existing IVC generation algorithms proposed in \cite{Ghass16}. The experimental evaluation shows the cost of extracting all minimal IVCs with our algorithm is as nearly expensive as the cost of finding a single IVC guaranteed to be minimal from \cite{Ghass16}.
+To the best of our knowledge, this paper is the first work that addresses the problem of computing all minimal IVCs.
 
-say that all IVC idea is brought up in the FSE paper, used and introduced in RE and coverage papers. But, the contribution of this paper is to provide an efficient technique to calculate all IVCs.
-
-why we need to compute all IVCs (fault tolerance, coverage, traceability)
-
-contribution: minimum, minimal, must...
-
-tell this work is based on the recent algorithm for fast computation of all MUSes
-
-say that our work is a general and optimized version of the MARCO
-
-MARCO and other algorithms in the domain of infeasibility analysis
-
-contribution
-
-organization
-
+The rest of the paper is organized as follows. 
+Section \ref{sec:example} introduces a running example used to illustrate concepts and our method. 
+Section \ref{sec:background} covers the formal preliminaries for the approach. 
+In Section \ref{sec:allivcs}, we present our method for enumerating all minimal IVCs, 
+which is illustrated in
+Section \ref{sec:illust}. In Section \ref{sec:impl}, we talk about implementation and evaluation of our method. Finally, Section \ref{sec:conc} mentions some conclusions and future work. 

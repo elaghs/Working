@@ -1,12 +1,12 @@
 \section{Implementation and Evaluation}
 \label{sec:impl}
 
-We have implemented the \aivcalg ~algorithm 
-in an industrial model checker called \texttt{JKind} ~\cite{jkind}, 
-which is for verifying safety properties of  infinite-state synchronous systems. 
+We have implemented the \aivcalg ~algorithm
+in an industrial model checker called \texttt{JKind} ~\cite{jkind},
+which is for verifying safety properties of  infinite-state synchronous systems.
 It accepts Lustre programs \cite{Halbwachs91:lustre}
-written over the theory of linear integer and real arithmetic. 
-Verification is based on k-induction and property directed reachability(PDR) using a back-end SMT solver.
+written over the theory of linear integer and real arithmetic.
+Verification is based on k-induction and property directed reachability (PDR) using a back-end SMT solver.
 In the
 back-end, \texttt{JKind} supports \texttt{Z3}~\cite{DeMoura08:z3},
 \texttt{Yices}~\cite{Dutertre06:yices}, \texttt{MathSAT}~\cite{Cimatti2013:MathSAT},
@@ -30,5 +30,5 @@ The source code is publicly available on \cite{mygit}.
 % which prunes off set $S$ and all its supersets from $\mathcal{P}(T)$ at the beginning of the algorithm. If $S$ is minimal, then chances are a large
 % subset of  $\mathcal{P}(T)$ is marked as explored even before
 % the algorithm starts the search.
- 
+
 \input{experiments} 

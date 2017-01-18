@@ -1,16 +1,15 @@
 \section{Conclusions \& Future Work}
 \label{sec:conc}
-
- future work:
- - explore more recent muses algorithm like \cite{Bacchus2016}
-
- - improve initial IVC computation algorithm by
+The idea of extracting a minimal IVC of a given 
+specification has been recently introduced in \cite{Ghass16} with a lot of useful applications in different phases of system development \cite{Ghass16, Murugesan16:renext, Ghass17Cov}.
+In this paper, we have addressed the problem of extracting all minimal IVCs. We have shown 
+the correctness and completeness of our method and algorithm.
+The experimental evaluation shows that our method is as fast as finding a single
+ minimal IVC by the \ucbfalg ~algorithm proposed in \cite{Ghass16}. 
  
- - BVC\\
-
-~~~~~~- using built-in solver mechanism for minimization
-
-~~~~~~- use recent work on minimizing unsat-cores like Offer's work at FMCAD'16
-
- - use parallel implementation of inductive methods:
- the tricky and resource-intensive part in all-ivcs is the proof part: we need to reduce the time it takes to prove a property. 
+ Our method is inspired by a recent work in the domain of satisfiability analysis \cite{marco2016fast}. One interesting future direction is to devise similar IVC enumeration algorithms based on other studies on MUSes extraction such as \cite{Bacchus2016, nadel2014accelerated}.
+ We are also looking into improving our implementation by using more 
+ efficient methods for the \isadeq ~and \getivc ~modules used by our algorithm. 
+ Another interesting direction is to parallelize the enumeration process. 
+ We are also interested in adapting the notion of (all) Validity Cores for bounded model checking.  
+ \ela{\\things to remember before submission: \\1) put the experiments and code on somewhere else and remove my git citation \\2) put the coverage paper on arxiv for citation} 

@@ -24,7 +24,7 @@ larger: around 80kB with over 600 equations.
 Each benchmark model has a single property to analyze.
 For each test model, we computed \aivcalg , \ucalg , and \ucbfalg ~algorithms
 in a configuration with
-the \texttt{Z3} solver and the fastest mode of \texttt{JKind} (running k-induction and PDR in parallel). The experiments
+the \texttt{Z3} solver and the fastest mode of \texttt{JKind} (running K-induction and PDR in parallel). The experiments
 were run on an  Intel(R) i5-4690, 3.50GHz,
 16 GB memory machine.\footnote{\noindent ~The benchmarks, all raw experimental results,
   and computed data are available on \cite{expr}.}
@@ -55,7 +55,7 @@ When the \texttt{while} loop times out for $M$ in line 8 of Algorithm~\ref{alg:a
 we treat $M$ as an \emph{inadequate} set because
 when the adequacy of $M$ is undecidable,
  the adequacy of all its subsets are undecidable too. So, if we consider it as inadequate, line 13 will prune off $M$ and all its subsets from the search space. \ela{~~Ela: do you have better justification? }
-Even so, in our benchmarks, there have been a few models containing iterations with timeout.
+In our benchmarks, there have been several models from~\cite{Hagen08:FMCAD} containing iterations with timeout.
 
 We measured the performance overhead of the algorithms over the time
 necessary to find a proof using inductive model checking. Fig. \ref{fig:performance}

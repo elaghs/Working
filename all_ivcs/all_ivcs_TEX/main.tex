@@ -96,17 +96,9 @@ Cedar Rapids, IA, 52498, USA\\ \email{ andrew.gacek@rockwellcollins.com}
 \maketitle
 
 \begin{abstract}
-Inductive Validity Core (IVC) has been recently introduced
-as a base method that facilitates and automates a variety of system analyses.
-  By a minimal IVC, a property is mapped a minimal portion of the design that satisfies the property. IVCs minimize inductive invariants obtained from the inductive proof methods such as K-induction, lifting them to the design level so to provide validity explanations that are meaningful to the users.
-   Applications that take advantage of the IVC idea rely on the minimality of IVCs.
-However, minimality is challenging and existing algorithms are either expensive or able to generate an approximately minimal IVC. In addition to minimality,
-computing \emph{all} minimal IVCs of a given property is
- an interesting problem that could have a lot of useful applications,
-  for which there is no efficient method in the literature.
-  For the first time, this paper proposes a new technique for generating all IVCs of a property
-   that are guaranteed to be minimal. We prove the
-   correctness and completeness of the technique and show the efficiency of our algorithm by benchmarking it against existing IVC generation algorithms.
+Symbolic model checkers can construct proofs of safety properties over complex models, but the results reported when a proof succeeds do not generally provide much insight to the user.  Recently, the notion of an {\em inductive validity core} (IVC) was introduced in order to trace a property to a minimal set of model elements necessary for proof.  IVCs can be used for several engineering tasks, including traceability, vacuity detection, and as a completeness metric for requirements.  Previous work showed that it was computationally inexpensive to find an approximately minimal IVCs, and somewhat more expensive to compute a minimal IVC.
+
+In this paper, we describe an approach for finding {\em all} IVCs for a given property.  In so doing, several additional analyses become possible, including regression analysis for testing and proof, determination of the minimum (as opposed to minimal) number of model elements necessary for proof, and the systematic examination of {\em diversity} of model elements leading to proof, which can be used for analyzing the fault tolerance of models.  We prove the correctness and completeness of our technique and benchmark our algorithm against single IVC-generating algorithms.  Surprisingly, in many cases, the computational cost of finding all minimal IVCs is similar to finding a single minimal IVC.
 \end{abstract}
 
 \keywords{Inductive Validity Cores, UNSAT-core generation, SMT-based model checking, Inductive proofs}

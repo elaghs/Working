@@ -1,4 +1,6 @@
 # This is for running experiments on all-ivcs engine
+# 1- create a folder "benchmarks", put all the models there
+# 2- put this script in the parent directory of the benchmarks and run it
 
 __author__ = "Elaheh"
 __date__ = "$Aug 3, 2016 6:35:15 PM$"

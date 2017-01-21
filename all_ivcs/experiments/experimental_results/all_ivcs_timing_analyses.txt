@@ -1,46 +1,34 @@
 
-min runtime of all-ivcs: 0.125
-max runtime of all-ivcs: 2375.058
-stdev runtime of all-ivcs: 256.529965937
-average runtime of all-ivcs: 58.8842605042
+min runtime of all-ivcs (without proof): 0.016
+max runtime of all-ivcs: 18022.416
+stdev runtime of all-ivcs: 866.540682874
+average runtime of all-ivcs: 97.0705473684
 ###############################################################
 
-min overall runtime of all-ivcs + minimization: 0.25
-max overall runtime of all-ivcs + minimization: 2388.5020000000004
-stdev overall runtime of all-ivcs + minimization: 257.867949578
-average overall runtime of all-ivcs + minimization: 60.260460084
+min overall runtime of all-ivcs (includes proof): 0.094
+max overall runtime of all-ivcs : 18037.868000000002
+stdev overall runtime of all-ivcs: 867.599515998
+average overall runtime of all-ivcs : 98.4544610526
 ###############################################################
 
-min overall runtime of all-ivcs - minimization: 0.25
-max overall runtime of all-ivcs - minimization: 2388.501
-stdev overall runtime of all-ivcs - minimization: 257.736262493
-average overall runtime of all-ivcs  minimization: 60.1836155462
-###############################################################
-
-min overall runtime of  minimization: 0.0
-max overall runtime of minimization: 5.797
-stdev overall runtime of  minimization: 0.363650153052
-average overall runtime of minimization: 0.0768445378151
-###############################################################
-
-min runtime of UCBF: 0.248
-max runtime of UCBF: 1323.5149999999999
-stdev runtime of UCBF: 104.837699509
-average runtime of UCBF: 17.2470231092
+min runtime of UCBF: 0.219
+max runtime of UCBF: 1325.683
+stdev runtime of UCBF: 105.299183413
+average runtime of UCBF: 17.3626736842
 ###############################################################
 
 min runtime of proof_time + UC: 0.062
-max runtime of proof_time + UC: 14.758000000000001
-stdev runtime of proof_time + UC: 2.0461103894
-average runtime of proof_time + UC: 1.38386554622
+max runtime of proof_time + UC: 18.439
+stdev runtime of proof_time + UC: 2.36928081045
+average runtime of proof_time + UC: 1.46767368421
 -----------------------------------------------------------------
-min runtime of proof_time: 0.047
-max runtime of proof_time: 14.617
-stdev runtime of proof_time: 1.94045213316
-average runtime of proof_time: 1.29935504202
+min runtime of proof_time: 0.062
+max runtime of proof_time: 18.283
+stdev runtime of proof_time: 2.27970066154
+average runtime of proof_time: 1.38391368421
 ------------------------------------------------------------------
 minimum runtime of  UC: 0.0
-maximum runtime of UC: 1.422
-stdev runtime of UC: 0.184262218091
-average runtime of UC: 0.0845105042017
+maximum runtime of UC: 1.157
+population standard deviation runtime of UC: 0.174178424188
+average runtime of UC: 0.08376
 -------------------------------------------------------------------

@@ -26,7 +26,7 @@ By further abuse of notation,
 $T$ is identified with the set of its top-level conjuncts. Thus, $x \in
 T$ means that $x$ is a top-level conjunct of $T$, and $S
 \subseteq T$ means all top-level conjuncts of $S$ are top-level
-conjuncts of $T$. When a top-level conjunct $x$ is removed from $T$, it is written as $T \setminus \{x\}$. Such a transition system can easily encode our example model in Section~\ref{sec:example}.  We assume each equation defines a conjunct within the transition system which we will denote by the variable assigned, so $T = \{$ {\small \texttt{a1\_below, a2\_below, a1\_above, a2\_above, below, above\_hyst, d1, d2}} $\}$. 
+conjuncts of $T$. When a top-level conjunct $x$ is removed from $T$, it is written as $T \setminus \{x\}$. Such a transition system can easily encode our example model in Section~\ref{sec:example}.  We assume each equation defines a conjunct within the transition system which we will denote by the variable assigned, so $T = \{$ {\small \texttt{a1\_below, a2\_below, a1\_above, a2\_above, below, above\_hyst, d1, d2}} $\}$.
 
 
 %\begin{definition}{\emph{Inductive Validity Core:}}
@@ -37,19 +37,19 @@ conjuncts of $T$. When a top-level conjunct $x$ is removed from $T$, it is writt
 %\end{definition}
 %
 %In examining provability, we are interested in {\em minimal} sets that satisfy a property $P$; tracing a property to the entire model is not particularly enlightening.
-
-\begin{definition}{\emph{Minimal Inductive Validity Core (IVC):}}
+\begin{definition}{\emph{Minimal Inductive Validity Core (IVC) \cite{Ghass16}:}}
   \label{def:minimal-ivc}
-  Inductive validity core $S$ for $(I, T)\vdash P$ is minimal, denoted $IVC(P, S)$, iff
-  $\neg\exists S' \subset S .\quad (I, S') \vdash P $.
-\end{definition}
+  $S \subseteq T$ for $(I, T)\vdash P$ is a minimal Inductive Validity Core,
+  denoted by $IVC(P, S)$, iff
+  $(I, S) \vdash P \wedge (\neg\exists S' \subset S .\quad (I, S') \vdash P) $.
+\end{definition} 
 
 \noindent The second condition in Definition \ref{def:minimal-ivc}
 specifies the \emph{minimality} of an Inductive Validity Core.
 In other words, $S \subseteq T$ that only meets the condition $(I, S) \vdash P$ is
 an Inductive Validity Core, but not minimal.
 For brevity, we use the term ``IVC'' to refer to a minimal IVC, unless
-we explicitly mention that a given IVC is not minimal. 
+we explicitly mention that a given IVC is not minimal.
 
 Note that there is always at least one IVC, and there could be many IVCs for a given property, corresponding to different proofs. To capture that notion, we define \emph{all IVCs ($AIVC$)} for a property as an association to all its IVCs.
 

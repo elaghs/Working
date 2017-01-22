@@ -13,29 +13,29 @@
 %% We put the image here so it shows up side-by-side with fig:ex-after
 \begin{figure}[t]
 \centering
-%\includegraphics[width=\columnwidth]{figs/simulink.png}
-{\smaller
-\begin{verbatim}
-node asw(alt1, alt2: int; inhibit: bool)
-        returns (doi_on: bool);
-var
-   a1_below, a2_below, a1_above, a2_above,
-   below, above_hyst, d1, d2: bool;
-let
-   a1_below = (alt1 < THRESHOLD);        // (1)
-   a2_below = (alt2 < THRESHOLD);        // (2)
-   a1_above = (alt1 >= T_HYST);          // (3)
-   a2_above = (alt2 >= T_HYST);          // (4)
-   below = a1_below or a2_below;         // (5)
-   above_hyst = a1_above and a2_above;   // (6)
-   doi_on = if (below and not inhibit)   // (7)
-        then true else d1;
-   d1 = if (inhibit or above_hyst)       // (8)
-         then false else d2;
-   d2 = (false -> pre(doi_on));          // (9)
-tel;
-\end{verbatim}
-}
+\includegraphics[width=\columnwidth]{figs/code.png}
+%{\smaller
+%\begin{verbatim}
+%node asw(alt1, alt2: int; inhibit: bool)
+%        returns (doi_on: bool);
+%var
+%   a1_below, a2_below, a1_above, a2_above,
+%   below, above_hyst, d1, d2: bool;
+%let
+%   a1_below = (alt1 < THRESHOLD);        // (1)
+%   a2_below = (alt2 < THRESHOLD);        // (2)
+%   a1_above = (alt1 >= T_HYST);          // (3)
+%   a2_above = (alt2 >= T_HYST);          // (4)
+%   below = a1_below or a2_below;         // (5)
+%   above_hyst = a1_above and a2_above;   // (6)
+%   doi_on = if (below and not inhibit)   // (7)
+%        then true else d1;
+%   d1 = if (inhibit or above_hyst)       // (8)
+%         then false else d2;
+%   d2 = (false -> pre(doi_on));          // (9)
+%tel;
+%\end{verbatim}
+%}
 \vspace{-0.1in}
 \caption{Altitude Switch Model}
 \label{fig:asw}

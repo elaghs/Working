@@ -11,7 +11,7 @@ We propose a new approach for measuring property completeness based on proof rat
 \begin{definition} {\emph{IVC coverage (\ivccov):}} \\
 \label{def:coverage-justi}
 Given $S \in AIVC(P)$, $T_i$ is covered by $P$ via $S$ \emph{iff} $T_i \in \ivccov (P, S)$, where
-$\ivccov (P, S) = \{ T_i \in T ~|~ T_i \in S \}$.
+$\ivccov (P, S) = S$.
 %Given $S \in AIVC(P)$, $T_i \in T$ is covered by $P$ \emph{iff} $T_i \in S$,
 %denoted by $T_i \in \ivccov (P, S)$
 \end{definition}
@@ -134,9 +134,9 @@ $MUST(P) \subset S$ (since $T_i \in S \wedge T_i \notin MUST(P)$),
 %\end{proof}
 
 Now we focus on the relationship between non-deterministic mutation-based coverage and proof-based metrics. In \cite{chockler2010coverage}, each mutant design changes the type of a single node to \inputnode.
-Given a suitable encoding of the netlist,\footnote{The mapping is as follows: the net-list becomes a conjunction
+Given a suitable encoding of the netlist, assigning a ``fresh'' input is an isomorphic operation to simply removing a $T_i$ from $T$. The mapping is as follows: the net-list becomes a conjunction
 of equations, where each vertex becomes a variable $v_i \in U$, and where each non-input vertex becomes an assignment equation $T_i \in T$.
-For example, given an AND-vertex $v_i$ with three input edges from other vertexes $\{v_a, v_b, v_c\}$, we would define an equation $T_i \in T$ of the form $(v_i = (v_a \wedge v_b \wedge v_c))$. } assigning a ``fresh'' input is an isomorphic operation to simply removing a $T_i$ from $T$.
+For example, given an AND-vertex $v_i$ with three input edges from other vertexes $\{v_a, v_b, v_c\}$, we would define an equation $T_i \in T$ of the form $(v_i = (v_a \wedge v_b \wedge v_c))$.
 %
 %As the variable is no longer constrained by a defining equation, it is effectively an %input.
 So, we can reframe the non-deterministic coverage proposed in \cite{chockler2010coverage} as follows:

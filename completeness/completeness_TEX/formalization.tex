@@ -5,7 +5,7 @@
 \newcommand{\bool}[0]{\mathit{bool}}
 \newcommand{\reach}[0]{\mathit{R}}
 \newcommand{\ite}[3]{\mathit{if}\ {#1}\ \mathit{then}\ {#2}\ \mathit{else}\ {#3}}
-To begin, we define the terms and concepts used in this paper while providing some background on mutation-based coverage metrics. 
+To begin, we define the terms and concepts used in this paper while providing some background on mutation-based coverage metrics.
 
 \subsection{Models, Requirements, and Provability}
 
@@ -26,17 +26,17 @@ By further abuse of notation,
 $T$ is identified with the set of its top-level conjuncts. Thus, $x \in
 T$ means that $x$ is a top-level conjunct of $T$, and $S
 \subseteq T$ means all top-level conjuncts of $S$ are top-level
-conjuncts of $T$. When a top-level conjunct $x$ is removed from $T$, it is written as $T \setminus \{x\}$. Such a transition system can easily encode our example model in Section~\ref{sec:example}.  We assume each equation defines a conjunct within the transition system which we will denote by the variable assigned, so $T = \{$ {\small \texttt{a1\_below, a2\_below, a1\_above, a2\_above, below, above\_hyst, d1, d2}} $\}$.
+conjuncts of $T$. When a top-level conjunct $x$ is removed from $T$, it is written as $T \setminus \{x\}$. Such a transition system can easily encode our example model in Section~\ref{sec:example}.  We assume each equation defines a conjunct within the transition system which we will denote by the variable assigned, so $T = \{$ {\small \texttt{a1\_below, a2\_below, a1\_above, a2\_above, below, above\_hyst, d1, d2}} $\}$. 
 
 
-\begin{definition}{\emph{Inductive Validity Core:}}
-  \label{def:ivc}
-  Given $(I, T)\vdash P$, $S \subseteq
-  T$ is an {\em Inductive Validity Core} for $P$
-  \emph{iff} $(I, S) \vdash P$.
-\end{definition}
-
-In examining provability, we are interested in {\em minimal} sets that satisfy a property $P$; tracing a property to the entire model is not particularly enlightening.
+%\begin{definition}{\emph{Inductive Validity Core:}}
+%  \label{def:ivc}
+%  Given $(I, T)\vdash P$, $S \subseteq
+%  T$ is an {\em Inductive Validity Core} for $P$
+%  \emph{iff} $(I, S) \vdash P$.
+%\end{definition}
+%
+%In examining provability, we are interested in {\em minimal} sets that satisfy a property $P$; tracing a property to the entire model is not particularly enlightening.
 
 \begin{definition}{\emph{Minimal Inductive Validity Core (IVC):}}
   \label{def:minimal-ivc}
@@ -44,17 +44,20 @@ In examining provability, we are interested in {\em minimal} sets that satisfy a
   $\neg\exists S' \subset S .\quad (I, S') \vdash P $.
 \end{definition}
 
-\begin{note}{}
-Hereafter, the term ``IVC'' refers to a \textbf{minimal} IVC.
-\end{note}
+\noindent The second condition in Definition \ref{def:minimal-ivc}
+specifies the \emph{minimality} of an Inductive Validity Core.
+In other words, $S \subseteq T$ that only meets the condition $(I, S) \vdash P$ is
+an Inductive Validity Core, but not minimal.
+For brevity, we use the term ``IVC'' to refer to a minimal IVC, unless
+we explicitly mention that a given IVC is not minimal. 
 
-Note that there is always at least one (minimal) IVC, and there could be many IVCs for a given property, corresponding to different proofs. To capture that notion, we define \emph{all IVCs ($AIVC$)} for a property as an association to all its IVCs.
+Note that there is always at least one IVC, and there could be many IVCs for a given property, corresponding to different proofs. To capture that notion, we define \emph{all IVCs ($AIVC$)} for a property as an association to all its IVCs.
 
 $$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  IVC(P, S)\} $$
 
 %In the example in Fig. \ref{fig:asw}, as visualized in part (b),
 %$AIVC ({\tt P}) = \{\{{\tt P}, {\tt c2}, {\tt c3}\}, \{{\tt P}, {\tt x}, {\tt c3}\}\}$.
-\noindent 
+\noindent
 Establishing the $AIVC$ for a single property, one gets a clear picture of the all the model elements that are necessary to prove the property. The set of $AIVC$s for all properties demonstrates a complete mapping from the requirements to the design elements, which is called complete traceability \cite{Murugesan16:renext}.
 
 \subsection{Coverage and Mutations}
@@ -81,7 +84,8 @@ We assume each element $T_i \in T$ has a set of possible mutations associated wi
    \mutcov = \frac{ | \{m~|~ m \in M~\land~(I, m) \nvdash P\} |}{|M|}
 \]
 \end{definition}
-Note that without loss of generality, we consider a single property P, which can be viewed as the conjunction of all the properties of the model.
+
+\noindent Note that without loss of generality, we consider a single property P, which can be viewed as the conjunction of all the properties of the model.
 %\footnote{Besides, the notions provided in this paper can be easily applied to a set of properties.}.
 
 In our example in Figure~\ref{fig:asw}, applying the software mutations from~\cite{Andrews06:mutation} would involve manipulating the constants used in the definitions of \texttt{a1\_below, a2\_below, a1\_above, a2\_above}, swapping \texttt{or} and \texttt{and} in the definition of \texttt{below, above\_hyst}, or negating the conditions in the if/then/else statements.  Even for this small model, there are many possible mutations (57).  The number of single-mutation programs is roughly the product of the leaf elements of the program abstract syntax tree (AST) and the size of the chosen set of mutations, which can lead to an impractical number of verification problems.
@@ -95,7 +99,7 @@ In our example in Figure~\ref{fig:asw}, applying the software mutations from~\ci
 
 Mutations for hardware are discussed in~\cite{chockler2010coverage,Kupferman:2006:SCF,kupferman_theory_2008}.  In most of this work, the hardware model is formalized as an and-inverter-graph net-list, a graph representation of circuits in which vertices are \{\andnode, \invnode\} gates or memory elements (registers) and edges are connections between gates (signals).  Formally, A net-list $N$ is a directed graph $(V_N,E_N, \tau_N)$ where $V_N$ is a finite set of vertices, $E_N \subseteq V_N \times V_N$ is the set of directed edges and $\tau_N : V_N \rightarrow \{$\andnode, \invnode, \regnode, \inpnode$\}$ maps a node to its type, where \andnode\ is an ``and'' gate, \invnode\ is an inverter, \regnode\ is a register, and \inpnode\ is a primary input.  The in-degree of a vertex of type \andnode\ is at least two, of type \invnode\ and \regnode\ is exactly one and of type \inpnode\ is zero. Any cycle in $N$ must contain at least one \regnode\ node~\cite{chockler2010coverage}.
 
-Given this representation, it is possible to discuss mutations of a single vertex: either stuck-at-zero, stuck-at-one, or nondeterministic.  This mutation is performed by changing the vertex to \mutnode, where \mutnode\ can be a ``fresh'' input for non-deterministic mutations, or fixed to 0 or 1 for stuck-at mutations. Formally the semantics of a mutant net-list is defined as a new labeling function:
+Given this representation, it is possible to discuss mutations of a single vertex: either stuck-at-zero, stuck-at-one, or nondeterministic.  This mutation is performed by changing the vertex to \mutnode, where \mutnode\ can be a ``fresh'' input for \emph{non-deterministic mutations}, or fixed to 0 or 1 for stuck-at mutations. Formally the semantics of a mutant net-list is defined as a new labeling function:
 
 \[ \tau^{v}_{N}(u) = \begin{cases}
     \tau(v) & \textrm{ if $v \neq u$} \\
@@ -107,7 +111,7 @@ Given this representation, it is possible to discuss mutations of a single verte
 %$E_N$ with a new set of edges $E^{v_i}_M$ in the mutated net-list.
 Let  $N = (V_N,E_N, \tau_N)$ be the original net-list; to mutate a vertex $v_i$ using $\tau^{v_i}_{N}$, the  edges that had tails pointing to $v_i$ are removed,
  which replaces $E_N$ with a new set of edges $E^{v_i}_M$ in the mutated net-list.
-When property $P$ satisfied by $N$ fails on the mutant net-list $(V_N, E^{v_i}_N, \tau^{v_i}_{N})$, it is said that a mutant is discovered for $P$ (or $v_i$ is covered by $P$).
+When property $P$ satisfied by $N$ fails on the mutant net-list $(V_N, E^{v_i}_N, \tau^{v_i}_{N})$, which is obtained from the non-deterministic mutation of $v_i$, it is said that a mutant is discovered for $P$ (or $v_i$ is covered by $P$).
 We assume a function $TR : N \rightarrow T$ that returns the corresponding transition relation of a net-list. % \ela{shouldn't it be $TS: N \rightarrow I \rightarrow T$ ?}
 Given this representation, and an initial state $I$, we can define nondeterministic coverage as follows:
 

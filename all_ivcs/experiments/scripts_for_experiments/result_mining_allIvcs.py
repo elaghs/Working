@@ -91,8 +91,8 @@ for file in sorted_models_mem:
         all = (float(elem.text) + uc)
         all_ivcs_time.append(all)
         all_ivcs_w_proof.append(all + proof)
-
-
+    
+ 
 timing_info = shelve.open(os.path.join(MINING_DIR, 'timing_info')) 
 timing_info ['all_ivcs_no_proof'] = all_ivcs_time
 timing_info ['proof_time'] = proof_time
@@ -112,20 +112,12 @@ minimization_no_proof =[]
 minimization_w_proof =[]
 minimals = []
 for i, file in enumerate(sorted_models_mem): 
-    tree = ET.ElementTree(file = os.path.join(RESULTS_DIR, file + '_minimalIvc.xml'))
-    for elem in tree.iter(tag = 'Runtime'):
-        minimization_w_proof.append(float(elem.text) + all_ivcs_w_proof[i])
-        minimization_no_proof.append(float(elem.text))
+    tree = ET.ElementTree(file = os.path.join(RESULTS_DIR, file + '_minimalIvc.xml')) 
     ivc_set = []
     for ivc in tree.iter(tag = 'IVC'):
         ivc_set.append(ivc.text)
     minimals.append(ivc_set)
-
-timing_info ['minimization_no_proof'] = minimization_no_proof 
-timing_info ['minimization_w_proof'] = minimization_w_proof 
-del minimization_no_proof
-del minimization_w_proof
-del all_ivcs_w_proof
+ 
 
 #
 # Extract ivc sets info
@@ -151,7 +143,7 @@ for i, file in enumerate(sorted_models_mem):
             ivc_set.append(e.text)
         ivc_info ['set' + str(id)] = ivc_set
         id += 1
-    ivc_info ['minimal_from_all_ivcs'] = minimals[i]    
+    ivc_info ['minimum'] = minimals[i]    
     ivc_info.close() 
     
 timing_info['number_of_ivc_sets'] = unm_of_ivcs    

@@ -1,7 +1,8 @@
-# #  This is meant to extract ucbf_all-ivcs info
+# This is meant to extract ucbf_all-ivcs info
+# This file should be run after result_mining_allIvcs.py
 
 __author__ = "Elaheh"
-__date__ = "$Aug 8, 2016 1:18:31 PM$"
+__date__ = "$20 1, 2017 9:18:31 AM$"
 
 import xml.etree.cElementTree as ET
 import os, sys, shelve, shutil
@@ -38,6 +39,7 @@ reader.close()
   
 timing_info = shelve.open(os.path.join(MINING_DIR, 'timing_info'), 'c')  
 timing = []
+minimum = [] 
 for i, model in enumerate(models):
     tree = ET.ElementTree(file = os.path.join(RESULTS_DIR, model + '_minimalIvc.xml'))
     for elem in tree.iter(tag = 'Runtime'):
@@ -49,31 +51,31 @@ for i, model in enumerate(models):
     ivc_info ['minimal_from_ucbf'] = ivc_set
     ivc_info.close()
     
-    
-timing_info ['ucbf'] = timing
+timing_info ['ucbf'] = timing 
 timing_info.close()
 del timing
+del minimum
 del proof_time
 
 
 #
 # Extract additional timing info from XXX.lus_minimizationInfo.xml files
 #
-for model in models:
-    tree = ET.ElementTree(file = os.path.join(RESULTS_DIR, model + '_minimizationInfo.xml'))
-    ivc_info = shelve.open(os.path.join(MINING_DIR, model + '_ivc_info'), 'c')
+#for model in models:
+#    tree = ET.ElementTree(file = os.path.join(RESULTS_DIR, model + '_minimizationInfo.xml'))
+#    ivc_info = shelve.open(os.path.join(MINING_DIR, model + '_ivc_info'), 'c')
     
-    runs = []
-    for elem in tree.iter(tag = 'Run'):
-        t = ""
-        s = ""
-        times = elem.find('Runtime')
-        sts = elem.find('Status')
-        for e1 in times.iter('Runtime') :
-            t = e1.text
-        for e2 in sts.iter('Status'):
-            s = e2.text
-        runs.append({'status': s, 'time': t})
-    ivc_info ['ucbf_minimization_info'] = runs
-    ivc_info.close()
+#    runs = []
+#    for elem in tree.iter(tag = 'Run'):
+#        t = ""
+#        s = ""
+#        times = elem.find('Runtime')
+#        sts = elem.find('Status')
+#        for e1 in times.iter('Runtime') :
+#            t = e1.text
+#        for e2 in sts.iter('Status'):
+#            s = e2.text
+#        runs.append({'status': s, 'time': t})
+#    ivc_info ['ucbf_minimization_info'] = runs
+#    ivc_info.close()
         

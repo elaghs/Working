@@ -4,32 +4,24 @@ this is to report the overhead of IVC computation
 
  overhead of all-ivcs:
 
-average overhead is: 2544.39942799%
-stdev overhead is: 7764.15886864%
-min overhead is: 13.641826923076925%
-max overhead is: 101034.61538461539%
-------------------------------------------------------------------
-
- overhead of minimization:
-
-average overhead is: 26.5605549903%
-stdev overhead is: 181.578742018%
-min overhead is: 0.0%
-max overhead is: 3646.153846153846%
+average overhead is: 2503.64305114%
+stdev overhead is: 7923.08886049%
+min overhead is: 9.521290663845543%
+max overhead is: 116634.84338596945%
 ------------------------------------------------------------------
 
  overhead of IVC_UC:
 
-average overhead is: 10.2264358101%
-stdev overhead is: 11.7185761736%
+average overhead is: 10.5320497211%
+stdev overhead is: 12.9821345137%
 min overhead is: 0.0%
-max overhead is: 100.0%
+max overhead is: 89.52702702702705%
 ------------------------------------------------------------------
 
  overhead of IVC_UCBF:
 
-average overhead is: 882.018596164%
-stdev overhead is: 1512.07094215%
-min overhead is: 14.092548076923073%
-max overhead is: 11124.432209222297%
+average overhead is: 834.616690365%
+stdev overhead is: 1331.90466935%
+min overhead is: 12.827294366569685%
+max overhead is: 13562.110601304035%
 ------------------------------------------------------------------

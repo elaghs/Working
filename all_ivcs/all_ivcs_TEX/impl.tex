@@ -1,5 +1,5 @@
 \section{Implementation \& Evaluation}
-\label{sec:impl} 
+\label{sec:impl}
 \subsection{Implementation}
 We have implemented the \aivcalg ~algorithm
 in an industrial model checker called \texttt{JKind} ~\cite{jkind},
@@ -15,6 +15,10 @@ proven and IVC generation is enabled, an additional parallel engine
 executes the \ucalg ~algorithm \cite{Ghass16} to generate an (approximately) minimal IVC. To implement our method, we have made use of this engine and also extended \texttt{JKind} with a new engine that
 implements Algorithm \ref{alg:aivc} on top of \texttt{Z3}.
 %The source code is publicly available on \cite{mygit}.
+In fact, we employs the \ucalg ~algorithm to implement the \getivc\ procedure used in the \texttt{while} loop of Algorithm \ref{alg:aivc}. It worth mentioning that we could have used the \ucbfalg ~algorithm for this purpose as well.
+One might say that since \ucbfalg ~guarantees minimality it would help to the \aivcalg ~terminates sooner.
+However, as shown in our experimental results, on the one hand, the \ucbfalg ~algorithm is very expensive. On the other hand, the \ucalg ~algorithm is not only fast, but it also generates \ivc s that are 
+quite close to the \mivc s computed by \ucbfalg , as we will show in the experiments.   
 
 One technical issue that needs to
 be handled in any implementation of the \aivcalg ~algorithm,
@@ -35,7 +39,6 @@ we treat $M$ as an \emph{inadequate} set because
 when the adequacy of $M$ is undecidable,
  the adequacy of all its subsets are undecidable too. So, if we consider it as inadequate, line 13 will prune off $M$ and all its subsets from the search space. \ela{~~Ela: do you have better justification? }
 In our benchmarks, there have been several models from~\cite{Hagen08:FMCAD} containing iterations with timeout.
-
 
 
 %The source code is publicly available on \cite{mygit}.

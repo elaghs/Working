@@ -6,8 +6,10 @@
 \newcommand{\aivcalg}{\texttt{\small{All\_IVCs}}}
 \newcommand{\blockup}{\textsc{BlockUp}}
 \newcommand{\blockdown}{\textsc{BlockDown}}
-\newcommand{\mis}{\textsc{MIS}}
-\newcommand{\mcs}{\textsc{MCS}}
+\newcommand{\mis}{\textit{MIS}}
+\newcommand{\mcs}{\textit{MCS}}
+
+\newcommand{\ivc}{\textit{IVC}}
 
 \newcommand{\checksat}{\textsc{CheckSat}}
 \newcommand{\isadeq}{\textsc{CheckAdq}}
@@ -28,7 +30,7 @@ in order to compute $AIVC$. To this end, we begin with introducing several addit
 Given $(I, T) \vdash P$, for every $S \in \mathcal{P}(T)$, we have either $(I, S) \vdash P$ or $(I, S) \nvdash P$. In the former case, we say $S$ is \textbf{adequate} for $P$; in the latter, we say that $S$ is \textbf{inadequate} for the proof of $P$.
 \end{definition}
 
-Obviously, for every inadequate set $S \subset T$, there is some set $C \subseteq T$ such that $S \cup C$ is adequate; we refer to such set $C$ as a \emph{correction set} for $S$. Furthermore, considering the definition of $IVC$, every set $S \in AIVC (P)$ is a \emph{minimal} adequate set meaning  that $\nexists S' \subset S.~ (I, S') \vdash P$.
+Obviously, for every inadequate set $S \subset T$, there is some set $C \subseteq T$ such that $S \cup C$ is adequate; we refer to such set $C$ as a \emph{correction set} for $S$. Furthermore, considering the definition of \ivc, every set $S \in AIVC (P)$ is a \emph{minimal} adequate set meaning  that $\nexists S' \subset S.~ (I, S') \vdash P$.
 
 \begin{definition}{\emph{Maximal Inadequate Set (MIS):}}
   \label{def:mis}
@@ -77,11 +79,11 @@ For $(I, T) \vdash P$, if a given subset $S$ is inadequate, then all of its subs
 %\end{corollary}
 %\begin{proof}
 %  Immediate from the definitions of $IVC$ and $AIVC$, and Lemma \ref{lem:adeq}.
-%\end{proof} 
+%\end{proof}
 
-The basic idea behind an algorithm for computing $AIVC(P)$ is the same as exploration of $\mathcal{P}(T)$ determining whether or not every set $S \in \mathcal{P}(T)$ is adequate for $P$. 
+The basic idea behind an algorithm for computing $AIVC(P)$ is the same as exploration of $\mathcal{P}(T)$ determining whether or not every set $S \in \mathcal{P}(T)$ is adequate for $P$.
 Lemma \ref{lem:adeq} and Corollary \ref{lem:inadeq} will be used to make this exploration fast.
-At first, all the sets in $\mathcal{P}(T)$ are \emph{unexplored}. When the adequacy of a set $S \in \mathcal{P}(T)$ has been either explicitly examined 
+At first, all the sets in $\mathcal{P}(T)$ are \emph{unexplored}. When the adequacy of a set $S \in \mathcal{P}(T)$ has been either explicitly examined
 or transitively known, as will be described, we consider $S$ as \emph{explored}.
 In order to choose an unexplored set and keep track of which parts of the the power set
 have been explored, we use a Boolean expression called $map$, which is
@@ -128,19 +130,19 @@ From Case 1 and Case 2, there is no model of $map$ whose corresponding set in $\
 \begin{lemma}
 \label{lem:map:comp}
 For $(I, T) \vdash P$, $map$ is satisfiable iff
-at least one $S \in AIVC(P)$ or one $MIS$ of $T$ is unexplored.
+at least one $S \in AIVC(P)$ or one \mis\ of $T$ is unexplored.
 \end{lemma}
 \begin{proof}
 Let $map$ is satisfiable with a model $M$. Then, set
  $S = \bigcup_{a_i \in M} \actlit ^{-1} (a_i)$ is a corresponding set of $M$ in $\mathcal{P}(T)$.
- Case 1: Suppose $S$ is adequate. Then, it is or contains an unexplored $IVC$ since
-otherwise the model would have been blocked. 
-Case 2: Suppose $S$ is inadequate. Then, it is either a $MIS$ or a subset of a $MIS$ that is not yet explored because, otherwise, the model would have been blocked. 
+ Case 1: Suppose $S$ is adequate. Then, it is or contains an unexplored \ivc\ since
+otherwise the model would have been blocked.
+Case 2: Suppose $S$ is inadequate. Then, it is either a \mis\ or a subset of a \mis\ that is not yet explored because, otherwise, the model would have been blocked.
 
-On the other hand, let $S \subseteq T$ be an unexplored set. Case 1: Suppose $S$ is an $IVC$. 
+On the other hand, let $S \subseteq T$ be an unexplored set. Case 1: Suppose $S$ is an \ivc.
 Since it has not yet explored, $map$ does not have a clause containing $\bigvee_{T_{i}\in S} \neg {\actlit (T_i)}$. Therefore, there is some unexplored set $S' \supseteq S$ for which $map$
-has a model that assigns every $\actlit (T_i)$, $T_i\in S'$, to $true$. 
-Case 2: Suppose $S$ is a $MIS$. Since it has not explored yet, $map$ 
+has a model that assigns every $\actlit (T_i)$, $T_i\in S'$, to $true$.
+Case 2: Suppose $S$ is a \mis. Since it has not explored yet, $map$
 has a model where all $\actlit (T_i)$, $T_i\in S$ can be assigned to $true$.
 \end{proof}
 
@@ -157,7 +159,7 @@ has a model where all $\actlit (T_i)$, $T_i\in S$ can be assigned to $true$.
 %And, in this case, a new clause containing \emph{positive} activation literals of $C$ is added to $map$. Generally, similar to the elements of adequate sets, elements of correction sets are also essential part of some proof, which means eventually, negative literals added from adequate sets will have their own  positive form added from the correction sets (and vice versa).
 %Therefore, every complete assignment falsifies at least one clause in $map$ \emph{iff} every
 %member of $\mathcal{P}(T)$ is dominated by some adequate or inadequate set.
-%And, considering the definitions of $IVC$ and $MIS$,  every member of $\mathcal{P}(T)$ is dominated by some set \emph{iff} all $IVC$s and $MIS$es have been explored. According to definition of $map$, when all $IVC$s and $MIS$es are covered, every $S \in \mathcal{P}(T)$ will be covered as well.
+%And, considering the definitions of $IVC$ and $MIS$,  every member of $\mathcal{P}(T)$ is dominated by some set \emph{iff} all \ivc s and \mis es have been explored. According to definition of $map$, when all $IVC$s and $MIS$es are covered, every $S \in \mathcal{P}(T)$ will be covered as well.
 %\end{proof}
 
 \begin{corollary}
@@ -174,7 +176,7 @@ In line 2, we create the set of activation literals used by function \actlit . L
 %$$\checksat : Boolean \rightarrow \{ true~(\sat), false~(\unsat) \}$$
 As long as $map$ is satisfiable, the algorithm computes a \emph{maximal} \sat model for it (line 5). A maximal SAT model is a model with as many $true$ assignment as possible without violating a clause; this problem, known as MaxSAT, has been well studied in the literature \cite{cimatti2013modular, davies2011solving, morgado2013iterative}, so we assume there is a method by which we are able to have a maximal model of $map$.
 Line 6 extracts a set $M \in \mathcal{P} (\mathcal{A})$ of literals assigned to $true$ in the model.
-Then, we need to obtain the corresponding set of $M$ in $\mathcal{P}(T)$, which is done with function $\actlit ^{-1}$ in line 7. Note that such a set will be a $MIS$ that all its supersets have already been explored. We also assume there is a function \isadeq ~that checks whether or not $P$ is provable by a given subset of $T$. Using this function, the adequacy of $M$ is determined in line 8; if $M$ is adequate, an IVC  is computed by \getivc ~and added to set $A$ (line 10).\footnote{Note that \isadeq ~can be any method that verifies a safety property, such as K-induction. As for \getivc , Ghassabani et al. proposed an efficient algorithm for computing a single IVC in \cite{Ghass16} that can be used for the \getivc ~module.} In this case $map$ is constrained by a new clause in a way described before and shown in line 11. However, in case that $M$ is inadequate, $map$ is constrained by the corresponding literals from the correction set of $M$ (i.e. $T \setminus M$) in lines (12-13).
+Then, we need to obtain the corresponding set of $M$ in $\mathcal{P}(T)$, which is done with function $\actlit ^{-1}$ in line 7. Note that such a set will be a \mis\ that all its supersets have already been explored. We also assume there is a function \isadeq ~that checks whether or not $P$ is provable by a given subset of $T$. Using this function, the adequacy of $M$ is determined in line 8; if $M$ is adequate, an IVC  is computed by \getivc ~and added to set $A$ (line 10).\footnote{Note that \isadeq ~can be any method that verifies a safety property, such as K-induction. As for \getivc , Ghassabani et al. proposed an efficient algorithm for computing a single IVC in \cite{Ghass16} that can be used for the \getivc ~module.} In this case $map$ is constrained by a new clause in a way described before and shown in line 11. However, in case that $M$ is inadequate, $map$ is constrained by the corresponding literals from the correction set of $M$ (i.e. $T \setminus M$) in lines (12-13).
 
 \begin{algorithm}[t]
   \SetKwInOut{Input}{input}
@@ -212,11 +214,11 @@ Then, we need to obtain the corresponding set of $M$ in $\mathcal{P}(T)$, which 
 
 \begin{theorem}
 \label{theorem:aivc}
-  Algorithm \ref{alg:aivc} enumerates all $MIS$es and $IVC$s.
+  Algorithm \ref{alg:aivc} enumerates all \mis es and \ivc s.
 \end{theorem}
 \begin{proof}
-In each iteration of the \texttt{while} loop, Algorithm \ref{alg:aivc} explores a set which is either a $MIS$ or leads to an $IVC$. These sets have not explored before according to Lemma \ref{lem:map:sound}. So, in each iteration a new minimal adequate or maximal inadequate member of $\mathcal {P}(T)$ is explored. Therefore, the loop continues as long as there is any $IVC$ or
-$MIS$ not yet found.
+In each iteration of the \texttt{while} loop, Algorithm \ref{alg:aivc} explores a set which is either a \mis\ or leads to an \ivc. These sets have not explored before according to Lemma \ref{lem:map:sound}. So, in each iteration a new adequate or maximal inadequate member of $\mathcal {P}(T)$ is explored. Therefore, the loop continues as long as there is any \ivc\ or
+\mis\ not yet found.
 \end{proof}
 
 
@@ -227,7 +229,7 @@ $MIS$ not yet found.
 \begin{proof}
 The algorithm will terminate \emph{iff} $map$ eventually becomes  \unsat.
 Based on Lemma \ref{lem:map:comp}, $map$ is \unsat \emph{iff} all
-$IVC$s and $MIS$es have been explored.
+\ivc s and \mis es have been explored.
 So, following Theorem \ref{theorem:aivc},  Algorithm \ref{alg:aivc} will terminate.
 \end{proof}
 

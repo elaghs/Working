@@ -20,8 +20,7 @@ A safety property $P : U \to \bool$ is a state predicate. A safety
 property $P$ holds on a transition system $(I, T)$ if it holds on all
 reachable states, i.e., $\forall u.~ \reach(u) \Rightarrow P(u)$,
 written as $\reach \Rightarrow P$ for short. When this is the case, we
-write $(I, T)\vdash P$. For reasons that will become clear soon, we assume the transition
-  relation has the structure of a top-level conjunction. This assumption gives us a structure that we can easily manipulate. Given $T(u, u') = T_1(u, u') \land \cdots \land T_n(u, u')$ we will write $T = \bigwedge_{i=1..n}T_i$ for short.
+write $(I, T)\vdash P$. We assume the transition relation has the structure of a top-level conjunction.  Given $T(u, u') = T_1(u, u') \land \cdots \land T_n(u, u')$ we will write $T = \bigwedge_{i=1..n}T_i$ for short.
 By further abuse of notation,
 $T$ is identified with the set of its top-level conjuncts. Thus, $T_i \in
 T$ means that $T_i$ is a top-level conjunct of $T$, and $S

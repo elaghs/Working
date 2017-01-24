@@ -9,7 +9,7 @@ let
    below = if a1_below or a2_below then true else false;  
   
 
-   doi_on = if alarm then pre(doi_on) else if below then true else false;   
+   doi_on = false -> if alarm then pre(doi_on) else below;   
     alarm = not stat1 and not stat2; 
    p1 = a1_below => doi_on;
    p2 =  a2_below => doi_on ;

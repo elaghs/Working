@@ -115,15 +115,15 @@ $S = \bigcup_{a_i \in M} \actlit ^{-1} (a_i)$ and $M = \bigcup_{T_i \in S} \actl
 
 \begin{lemma}
 \label{lem:map:sound}
-When $map$ is satisfiable with model $M$, set $S = \bigcup_{a_i \in M} \actlit ^{-1} (a_i)$ is not subset (superset) of any
-inadequate (adequate) explored sets of $\mathcal{P}(T)$.
+When $map$ is satisfiable with model $M$, set $S = \bigcup_{a_i \in M} \actlit ^{-1} (a_i)$ is not equal to any adequate or inadequate explored set, nor a subset (superset) of any
+inadequate (adequate) explored set in $\mathcal{P}(T)$.
 \end{lemma}
 \begin{proof}
-Proof by contradiction. Case 1: Suppose there is an adequate set $Ex \subset S$ that has been already explored. Therefore, according to the definition, $map$ contains a clause $C = \bigvee_{T_{i}\in Ex} \neg {\actlit (T_i)}$, and since $Ex \subset S$, it is impossible for the model $M = \bigcup_{T_i \in S} \actlit (T_i)$ to satisfy $C$; hence, the assumption is false.
+Proof by contradiction. Case 1: Suppose there is an adequate set $Ex \subseteq S$ that has been already explored. Therefore, according to the definition, $map$ contains a clause $C = \bigvee_{T_{i}\in Ex} \neg {\actlit (T_i)}$, and since $Ex \subseteq S$, it is impossible for the model $M = \bigcup_{T_i \in S} \actlit (T_i)$ to satisfy $C$; hence, the assumption is false.
 
-Case 2: Suppose there is an inadequate set $Ex$ such that $S \subset Ex$ and $Ex$ has been already explored. Therefore, according to the definition, $map$ contains a clause $C = \bigvee_{T_{i}\in (T \setminus S)} \actlit (T_i)$, and since $S \subset Ex$, it is impossible for the model $M = \bigcup_{T_i \in S} \actlit (T_i)$ to satisfy $C$; so, the assumption is false.
+Case 2: Suppose there is an inadequate set $Ex$ such that $S \subseteq Ex$ and $Ex$ has been already explored. Therefore, according to the definition, $map$ contains a clause $C = \bigvee_{T_{i}\in (T \setminus S)} \actlit (T_i)$, and since $S \subseteq Ex$, it is impossible for the model $M = \bigcup_{T_i \in S} \actlit (T_i)$ to satisfy $C$; so, the assumption is false.
 
-From Case 1 and Case 2, there is no model of $map$ whose corresponding set in $\mathcal{P}(T)$ is the subset (superset) of any inadequate (adequate) explored sets.
+From Case 1 and Case 2, there is no model of $map$ whose corresponding set in $\mathcal{P}(T)$ is a non-strict subset (superset) of any inadequate (adequate) explored set.
 \end{proof}
 
 
@@ -135,9 +135,9 @@ at least one $S \in AIVC(P)$ or one \mis\ of $T$ is unexplored.
 \begin{proof}
 Let $map$ is satisfiable with a model $M$. Then, set
  $S = \bigcup_{a_i \in M} \actlit ^{-1} (a_i)$ is a corresponding set of $M$ in $\mathcal{P}(T)$.
- Case 1: Suppose $S$ is adequate. Then, it is or contains an unexplored \ivc\ since
-otherwise the model would have been blocked.
-Case 2: Suppose $S$ is inadequate. Then, it is either a \mis\ or a subset of a \mis\ that is not yet explored because, otherwise, the model would have been blocked.
+ Case 1: Suppose $S$ is adequate. By Lemma 2, $S$ is not equal to or a superset of an explored set, 
+ so it is or contains an unexplored \ivc.
+Case 2: Suppose $S$ is inadequate. Again by Lemma 2, $S$ is either a \mis\ or a subset of a \mis\ that is not yet explored.
 
 On the other hand, let $S \subseteq T$ be an unexplored set. Case 1: Suppose $S$ is an \ivc.
 Since it has not yet explored, $map$ does not have a clause containing $\bigvee_{T_{i}\in S} \neg {\actlit (T_i)}$. Therefore, there is some unexplored set $S' \supseteq S$ for which $map$
@@ -217,7 +217,11 @@ Then, we need to obtain the corresponding set of $M$ in $\mathcal{P}(T)$, which 
   Algorithm \ref{alg:aivc} enumerates all \mis es and \ivc s.
 \end{theorem}
 \begin{proof}
-In each iteration of the \texttt{while} loop, Algorithm \ref{alg:aivc} explores a set which is either a \mis\ or leads to an \ivc. These sets have not explored before according to Lemma \ref{lem:map:sound}. So, in each iteration a new adequate or maximal inadequate member of $\mathcal {P}(T)$ is explored. Therefore, the loop continues as long as there is any \ivc\ or
+In each iteration of the \texttt{while} loop, Algorithm \ref{alg:aivc} explores a set which is either a \mis\ or is an adequate set which is not 
+
+\ivc.
+
+These sets have not explored before according to Lemma \ref{lem:map:sound}. So, in each iteration a new adequate or maximal inadequate member of $\mathcal {P}(T)$ is explored. Therefore, the loop continues as long as there is any \ivc\ or
 \mis\ not yet found.
 \end{proof}
 

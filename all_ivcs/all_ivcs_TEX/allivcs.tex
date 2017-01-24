@@ -218,26 +218,29 @@ Then, we need to obtain the corresponding set of $M$ in $\mathcal{P}(T)$, which 
 \end{theorem}
 \begin{proof}
 We first note that for any model, the number of possible \mis es and adequate sets is finite, so we can do induction on the number of remaining sets to be added to $map$.
+Suppose that $x$ is an undiscovered \ivc\ in $map$ after some number of iterations (including 0) of the algorithm.   
 
-Suppose that $x$ is an undiscovered \ivc\ in $map$ after some number of iterations (including 0) of the algorithm.   By Lemma~\ref{lem:map:comp}, $map$ is satisfiable, so the loop proceeds.  In each iteration of the \texttt{while} loop, Algorithm \ref{alg:aivc} extracts a model $M$ from $map$ in line~\ref{alg:aivc:maxsat}, which has not been previously explored, by Lemma~\ref{lem:map:sound}.  If $M$ is inadequate, then it yields a \mis\ (by virtue of using MaxSAT).  This \mis\ is blocked in line~\ref{alg:aivc:iadd}.  By Lemma~\ref{lem:map:comp}, $map$ is still satisfiable, the loop proceeds with a smaller number of remaining sets to add to $map$, and by induction, $x$ is eventually discovered.  Suppose alternately that $M$ is adequate.  If $M = x$, we are finished.  Alternately, $M$ is blocked in line~\ref{alg:aivc:aadd}, $map$ is still satisfiable, and by induction $x$ is eventually discovered.
+Base case: Suppose that $\checksat$ is unsatisfiable.  By Lemma~\ref{lem:map:comp}, this contradicts our assumption that $x$ is an undiscovered \ivc\ in $map$.
+
+Inductive case: $map$ is satisfiable, so the loop proceeds.  In each iteration of the \texttt{while} loop, Algorithm \ref{alg:aivc} extracts a model $M$ from $map$ in line~\ref{alg:aivc:maxsat}, which has not been previously explored, by Lemma~\ref{lem:map:sound}.  If $M$ is inadequate, then it yields a \mis\ (by virtue of using MaxSAT).  This \mis\ is blocked in line~\ref{alg:aivc:iadd}.  By Lemma~\ref{lem:map:comp}, $map$ is still satisfiable, the loop proceeds with a smaller number of remaining sets to add to $map$, and by induction, $x$ is eventually discovered.  Suppose alternately that $M$ is adequate.  If $M = x$, we are finished.  Alternately, $M \neq x$, so $M$ is blocked in line~\ref{alg:aivc:aadd}, $map$ is still satisfiable, and by induction $x$ is eventually discovered.
 
 The case where $x$ is an undiscovered \mis\ in $map$ is essentially the same.
 
-%As there are a finite number of model constraints, there are a finite number of \mis es and \ivc s.  
+%As there are a finite number of model constraints, there are a finite number of \mis es and \ivc s.
 %
-%If the model is inadequate, then it yields a \mis (by virtue of using MaxSAT).  If the model is adequate, then the model 
+%If the model is inadequate, then it yields a \mis (by virtue of using MaxSAT).  If the model is adequate, then the model
 %yields either a minimal inductive validity core, or a superset of a minimal inductive validity core.  In either adequacy case, the clause is blocked for future exploration (lines~\ref{alg:aivc:aadd} and~\ref{alg:aivc:iadd}).  If any remaining minimal \ivc s or \mis es remain, then , $map$ is still satisfiable, and the loop continues iterating (line~\ref{alg:aivc:checksat}).
 
 
-%By Lemma~\ref{lem:map:comp}, 
+%By Lemma~\ref{lem:map:comp},
 %
-%it yields an 
-%inductive validity core, which may be a subset of an 
+%it yields an
+%inductive validity core, which may be a subset of an
 %
 %which is added back into the map in line~\ref{alg:aivc:iadd},
-%so subsequent iterations must 
+%so subsequent iterations must
 %
-%explores a set which is either a \mis\ (by virtue of using MaxSAT) or is an adequate set.  
+%explores a set which is either a \mis\ (by virtue of using MaxSAT) or is an adequate set.
 %These sets have not explored before according to Lemma \ref{lem:map:sound}.  If the set is inadequ
 %So, in each iteration a new adequate or maximal inadequate member of $\mathcal {P}(T)$ is explored.  Therefore, the loop continues as long as there is any \ivc\ or
 %\mis\ not yet found.
@@ -256,18 +259,18 @@ So, following Theorem \ref{theorem:aivc},  Algorithm \ref{alg:aivc} will termina
 \end{proof}
 
 \subsection{Using Approximate Inductive Validity Cores for Computing AIVC}
-Note that none of the proofs above require that \getivc\ returns a minimal IVC.  
+Note that none of the proofs above require that \getivc\ returns a minimal IVC.
 From \cite{Ghass16}, it is computationally cheap to find an
 approximately minimal \ivc\ using the algorithm \ucalg; however, finding a {\em guaranteed}
 minimal \ivc\ using the \ucbfalg\ algorithm is computationally expensive.  For efficiency
-reasons, it is much better to use the approximate \ucalg\ algorithm to compute the set of 
+reasons, it is much better to use the approximate \ucalg\ algorithm to compute the set of
 all IVCs.
 
 On the other hand, if \getivc ~does not return minimal adequate sets, at the end of the process,
 set $A$ may contain both minimal IVCs and supersets of minimal IVCs. To make sure that the algorithm only returns
-the minimal adequate sets (\ivc s), all we need is to remove any supersets of other sets in $A$.  We can do this ``on the fly'' by changing 
-line~\ref{alg:aivc:addset} to the following: 
-$A \leftarrow A \cup \{S'\} \setminus \{ S~|~S \in A \wedge S' \subset S \}$. 
+the minimal adequate sets (\ivc s), all we need is to remove any supersets of other sets in $A$.  We can do this ``on the fly'' by changing
+line~\ref{alg:aivc:addset} to the following:
+$A \leftarrow A \cup \{S'\} \setminus \{ S~|~S \in A \wedge S' \subset S \}$.
 Obviously, the closer to minimal the results of \getivc ~are,
 the fewer iterations are required for Algorithm 1 to terminate.  Each non-minimal adequate set returned by \textsc{GetIVC} will induce an additional iteration for Algorithm 1.
 

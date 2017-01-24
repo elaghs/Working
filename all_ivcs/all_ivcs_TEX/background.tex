@@ -25,7 +25,7 @@ By further abuse of notation,
 $T$ is identified with the set of its top-level conjuncts. Thus, $T_i \in
 T$ means that $T_i$ is a top-level conjunct of $T$, and $S
 \subseteq T$ means all top-level conjuncts of $S$ are top-level
-conjuncts of $T$. When a top-level conjunct $T_i$ is removed from $T$, it is written as $T \setminus \{T_i\}$. Such a transition system can easily encode our example model in Section~\ref{sec:example}, where each equation defines a conjunct within $T$ that we will denote by the variable assigned; so, $T = \{$ {\small \texttt{a1\_below, a2\_below, below, alarm, doi\_on, p1, p2}} $\}$.
+conjuncts of $T$. When a top-level conjunct $T_i$ is removed from $T$, it is written as $T \setminus \{T_i\}$. Such a transition system can easily encode our example model in Section~\ref{sec:example}, where each equation defines a conjunct within $T$ that we will denote by the variable assigned; so, $T = \{$ {\small \texttt{a1\_below, a2\_below, a1\_above, a2\_above, one\_below, both\_above, doi\_on, on\_p}} $\}$.
 
 The idea behind finding an IVC for a given property $P$ \cite{Ghass16} is based on inductive proof methods used in SMT-based model checking, such as K-induction and PDR \cite{NFM2012:KaGaTiWh, amla2005analysis, Een2011:PDR}. Generally, an IVC computation technique aims to determine, for any subset $S \subseteq T$, whether $P$ is provable by $S$. Then, a minimal subset that satisfies $P$ is seen as a minimal proof explanation called a minimal Inductive Validity Core.
 
@@ -50,11 +50,7 @@ Note that, given $(I, T) \vdash P$, $P$ always has at least one IVC, and it may 
     $$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  IVC(P, S)\} $$
 \end{definition}
 
-Fig.~\ref{fig:ivcs} illustrates these notions by a graphical representation of IVCs for property $P = (\small{\texttt{p1 or p2}})$ in the example presented in Section~\ref{sec:example}. As shown in the picture, this property has two distinct IVCs, which means the model satisfies $P$ in two different ways:
-$AIVC(P) = \{ \{ \small{ \texttt{doi\_on},
-~\texttt{alarm},~\texttt{below},~\texttt{a1\_below},~\texttt{p1}\},~
-\{ \texttt{doi\_on},~\texttt{alarm},}  \allowbreak \small{
-~\texttt{below},~\texttt{a2\_below},~\texttt{p2}\} }\}$.
+Fig.~\ref{fig:ivcs} illustrates these notions by a graphical representation of IVCs for property $P = (\small{\texttt{on\_p}})$ in the example presented in Section~\ref{sec:example}. As shown in the picture, this property has two distinct IVCs, which means the model satisfies $P$ in two different ways:  \texttt{\{\{a1\_below, one\_below, doi\_on\}, \{a2\_below, one\_below, doi\_on\}\}}, This is because in the implementation, the DOI is turned on when either of the altimeters is below the threshold, while our property states that they both must be below.
 
 %As you can see, distinct IVCs may have common elements.
 %The intersection of all IVCs is called the \emph{must} set for $P$.
@@ -72,7 +68,7 @@ $AIVC(P) = \{ \{ \small{ \texttt{doi\_on},
   \includegraphics[width=0.65\columnwidth]{figs/ivcs.png}
   \label{fig:ivcs}
   \vspace{-0.1in}
-  \caption{Graphical representation of IVCs for the model in Fig.\ref{fig:asw} with  $P = (\small{\texttt{p1 or p2}})$}
+  \caption{Graphical representation of IVCs for the model in Fig.\ref{fig:asw} with  $P = (\small{\texttt{on\_p}})$}
 \end{figure}
 
 %\subsection{Satisfiability}

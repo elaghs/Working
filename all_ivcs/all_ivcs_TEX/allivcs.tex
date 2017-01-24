@@ -135,7 +135,7 @@ at least one $S \in AIVC(P)$ or one \mis\ of $T$ is unexplored.
 \begin{proof}
 Let $map$ is satisfiable with a model $M$. Then, set
  $S = \bigcup_{a_i \in M} \actlit ^{-1} (a_i)$ is a corresponding set of $M$ in $\mathcal{P}(T)$.
- Case 1: Suppose $S$ is adequate. By Lemma 2, $S$ is not equal to or a superset of an explored set, 
+ Case 1: Suppose $S$ is adequate. By Lemma 2, $S$ is not equal to or a superset of an explored set,
  so it is or contains an unexplored \ivc.
 Case 2: Suppose $S$ is inadequate. Again by Lemma 2, $S$ is either a \mis\ or a subset of a \mis\ that is not yet explored.
 
@@ -175,8 +175,8 @@ Algorithm~\ref{alg:aivc} shows the process of capturing all IVCs, which are kept
 In line 2, we create the set of activation literals used by function \actlit . Line 3 initializes $map$ with $\top$ over the set of literals we have. The main loop of state exploration starts at line 4 and continues until $map$ becomes \unsat that means all the IVCs have been found. We assume we have a function \checksat ~that determines if an existentially quantified formula  is satisfiable or not\footnote{We assume readers are familiar with the Boolean satisfiability problem, which is the problem of determining whether there exists an assignment that satisfies a given propositional formula. For more information, refer to \cite{cook1971complexity}.}.
 %$$\checksat : Boolean \rightarrow \{ true~(\sat), false~(\unsat) \}$$
 As long as $map$ is satisfiable, the algorithm computes a \emph{maximal} \sat model for it (line 5). A maximal SAT model is a model with as many $true$ assignment as possible without violating a clause; this problem, known as MaxSAT, has been well studied in the literature \cite{cimatti2013modular, davies2011solving, morgado2013iterative}, so we assume there is a method by which we are able to have a maximal model of $map$.
-Line 6 extracts a set $M \in \mathcal{P} (\mathcal{A})$ of literals assigned to $true$ in the model.
-Then, we need to obtain the corresponding set of $M$ in $\mathcal{P}(T)$, which is done with function $\actlit ^{-1}$ in line 7. Note that such a set will be a \mis\ that all its supersets have already been explored. We also assume there is a function \isadeq ~that checks whether or not $P$ is provable by a given subset of $T$. Using this function, the adequacy of $M$ is determined in line 8; if $M$ is adequate, an IVC  is computed by \getivc ~and added to set $A$ (line 10).\footnote{Note that \isadeq ~can be any method that verifies a safety property, such as K-induction. As for \getivc , Ghassabani et al. proposed an efficient algorithm for computing a single IVC in \cite{Ghass16} that can be used for the \getivc ~module.} In this case $map$ is constrained by a new clause in a way described before and shown in line 11. However, in case that $M$ is inadequate, $map$ is constrained by the corresponding literals from the correction set of $M$ (i.e. $T \setminus M$) in lines (12-13).
+Line 6 extracts a set $V \in \mathcal{P} (\mathcal{A})$ of literals assigned to $true$ in the model.
+Then, we need to obtain the corresponding set of $M$ in $\mathcal{P}(T)$, which is done with function $\actlit ^{-1}$ in line 7. Note that such a set will be a \mis\ that all its supersets have already been explored. We also assume there is a function \isadeq ~that checks whether or not $P$ is provable by a given subset of $T$. Using this function, the adequacy of $M$ is determined in line 8; if $M$ is adequate, an IVC  is computed by \getivc ~and added to set $A$ (line 10).\footnote{Note that \isadeq ~can be any method that verifies a safety property, such as K-induction, and the \getivc\ function can be any function that returns an (approximately) minimal IVC, such as the \ucalg\ or \ucbfalg\ algorithms from \cite{Ghass16}.  The only requirement is that it follows the definition of an inductive validity core, that is: $S' \leftarrow \getivc (P, M)$ implies that $S' \subseteq M$ and $(I, S') \vdash P$.} In this case $map$ is constrained by a new clause in a way described before and shown in line 11. However, in case that $M$ is inadequate, $map$ is constrained by the corresponding literals from the correction set of $M$ (i.e. $T \setminus M$) in lines (12-13).
 
 \begin{algorithm}[t]
   \SetKwInOut{Input}{input}
@@ -191,19 +191,19 @@ Then, we need to obtain the corresponding set of $M$ in $\mathcal{P}(T)$, which 
  % $L \leftarrow \varnothing$ \\
   \BlankLine
 
-  \While{$\checksat (map)$} {
-    $model \leftarrow $ build a maximal model of $map$ \\
-    $M \leftarrow$ extract the set of variables assigned $true$ in $model$ \\
-    $M \leftarrow \bigcup_{a_i \in M} \actlit ^{-1}(a_i)$ \\
+  \While{$\checksat (map)$} { \label{alg:aivc:checksat}
+    $model \leftarrow $ build a maximal model of $map$  \label{alg:aivc:maxsat} \\
+    $V \leftarrow$ extract the set of variables assigned $true$ in $model$ \\
+    $M \leftarrow \bigcup_{a_i \in V} \actlit ^{-1}(a_i)$ \\ %\mike{should we use a letter other than M?}\\
 \BlankLine
     \If{$\isadeq (P, M)$}{
     \BlankLine
       $S' \leftarrow \getivc (P, M)$ \\
-      $A \leftarrow A \cup S'$ \\
-      $map \leftarrow map \wedge (\bigvee_{T_{i}\in S'} \neg {\actlit (T_i)})$
+      $A \leftarrow A \cup \{S'\}$ \label{alg:aivc:addset}\\
+      $map \leftarrow map \wedge (\bigvee_{T_{i}\in S'} \neg {\actlit (T_i)})$ \label{alg:aivc:aadd}
     }
     \Else{
-      $map \leftarrow map \wedge (\bigvee_{T_{i}\in (T \setminus M)} \actlit (T_i))$ \\
+      $map \leftarrow map \wedge (\bigvee_{T_{i}\in (T \setminus M)} \actlit (T_i))$ \label{alg:aivc:iadd} \\
     %  $L \leftarrow L \cup (\bigcup_{T_i \in C} T_i)$
     }
   }
@@ -217,12 +217,30 @@ Then, we need to obtain the corresponding set of $M$ in $\mathcal{P}(T)$, which 
   Algorithm \ref{alg:aivc} enumerates all \mis es and \ivc s.
 \end{theorem}
 \begin{proof}
-In each iteration of the \texttt{while} loop, Algorithm \ref{alg:aivc} explores a set which is either a \mis\ or is an adequate set which is not 
+We first note that for any model, the number of possible \mis es and adequate sets is finite, so we can do induction on the number of remaining sets to be added to $map$.
 
-\ivc.
+Suppose that $x$ is an undiscovered \ivc\ in $map$ after some number of iterations (including 0) of the algorithm.   By Lemma~\ref{lem:map:comp}, $map$ is satisfiable, so the loop proceeds.  In each iteration of the \texttt{while} loop, Algorithm \ref{alg:aivc} extracts a model $M$ from $map$ in line~\ref{alg:aivc:maxsat}, which has not been previously explored, by Lemma~\ref{lem:map:sound}.  If $M$ is inadequate, then it yields a \mis\ (by virtue of using MaxSAT).  This \mis\ is blocked in line~\ref{alg:aivc:iadd}.  By Lemma~\ref{lem:map:comp}, $map$ is still satisfiable, the loop proceeds with a smaller number of remaining sets to add to $map$, and by induction, $x$ is eventually discovered.  Suppose alternately that $M$ is adequate.  If $M = x$, we are finished.  Alternately, $M$ is blocked in line~\ref{alg:aivc:aadd}, $map$ is still satisfiable, and by induction $x$ is eventually discovered.
 
-These sets have not explored before according to Lemma \ref{lem:map:sound}. So, in each iteration a new adequate or maximal inadequate member of $\mathcal {P}(T)$ is explored. Therefore, the loop continues as long as there is any \ivc\ or
-\mis\ not yet found.
+The case where $x$ is an undiscovered \mis\ in $map$ is essentially the same.
+
+%As there are a finite number of model constraints, there are a finite number of \mis es and \ivc s.  
+%
+%If the model is inadequate, then it yields a \mis (by virtue of using MaxSAT).  If the model is adequate, then the model 
+%yields either a minimal inductive validity core, or a superset of a minimal inductive validity core.  In either adequacy case, the clause is blocked for future exploration (lines~\ref{alg:aivc:aadd} and~\ref{alg:aivc:iadd}).  If any remaining minimal \ivc s or \mis es remain, then , $map$ is still satisfiable, and the loop continues iterating (line~\ref{alg:aivc:checksat}).
+
+
+%By Lemma~\ref{lem:map:comp}, 
+%
+%it yields an 
+%inductive validity core, which may be a subset of an 
+%
+%which is added back into the map in line~\ref{alg:aivc:iadd},
+%so subsequent iterations must 
+%
+%explores a set which is either a \mis\ (by virtue of using MaxSAT) or is an adequate set.  
+%These sets have not explored before according to Lemma \ref{lem:map:sound}.  If the set is inadequ
+%So, in each iteration a new adequate or maximal inadequate member of $\mathcal {P}(T)$ is explored.  Therefore, the loop continues as long as there is any \ivc\ or
+%\mis\ not yet found.
 \end{proof}
 
 
@@ -232,14 +250,30 @@ These sets have not explored before according to Lemma \ref{lem:map:sound}. So, 
 \end{theorem}
 \begin{proof}
 The algorithm will terminate \emph{iff} $map$ eventually becomes  \unsat.
-Based on Lemma \ref{lem:map:comp}, $map$ is \unsat \emph{iff} all
+Based on Corollary \ref{cor:map:cc}, $map$ is \unsat \emph{iff} all
 \ivc s and \mis es have been explored.
 So, following Theorem \ref{theorem:aivc},  Algorithm \ref{alg:aivc} will terminate.
 \end{proof}
 
+\subsection{Using Approximate Inductive Validity Cores for Computing AIVC}
+Note that none of the proofs above require that \getivc\ returns a minimal IVC.  
+From \cite{Ghass16}, it is computationally cheap to find an
+approximately minimal \ivc\ using the algorithm \ucalg; however, finding a {\em guaranteed}
+minimal \ivc\ using the \ucbfalg\ algorithm is computationally expensive.  For efficiency
+reasons, it is much better to use the approximate \ucalg\ algorithm to compute the set of 
+all IVCs.
+
+On the other hand, if \getivc ~does not return minimal adequate sets, at the end of the process,
+set $A$ may contain both minimal IVCs and supersets of minimal IVCs. To make sure that the algorithm only returns
+the minimal adequate sets (\ivc s), all we need is to remove any supersets of other sets in $A$.  We can do this ``on the fly'' by changing 
+line~\ref{alg:aivc:addset} to the following: 
+$A \leftarrow A \cup \{S'\} \setminus \{ S~|~S \in A \wedge S' \subset S \}$. 
+Obviously, the closer to minimal the results of \getivc ~are,
+the fewer iterations are required for Algorithm 1 to terminate.  Each non-minimal adequate set returned by \textsc{GetIVC} will induce an additional iteration for Algorithm 1.
 
 
-\input{minimality}
+
+%\input{minimality}
 %\begin{algorithm}[t]
 %  $k' \leftarrow 1$ \\
 %  \While{$\checksat(\neg\iq_{k'}(T, P, P)) = \sat$} {

@@ -1,12 +1,18 @@
 \subsection{Using Approximate Inductive Validity Cores for Computing AIVC}
 \label{subsec:minimality}
-\newcommand{\ucalg}{\texttt{\small{IVC\_UC}}}
-\newcommand{\ucbfalg}{\texttt{\small{IVC\_UCBF}}}
 
-To compute all \ivc s of a given property, it appears that the \aivcalg ~algorithm
+To compute all \ivc s of a given property, our algorithm contains a call to a \getivc\ 
+
+
+it appears that the \aivcalg ~algorithm
 assumes that \getivc\ always returns \emph{minimal} Inductive Validity Cores.
 However, as shown in \cite{Ghass16}, it is computationally cheap to find an 
-approximately minimal \ivc\ using the algorithm \ucalg; however, finding a {\em guaranteed} minimal \ivc\ using the \ucbfalg\ algorithm is computationally expensive.  In this section,
+approximately minimal \ivc\ using the algorithm \ucalg; however, finding a {\em guaranteed} 
+minimal \ivc\ using the \ucbfalg\ algorithm is computationally expensive.  Fortunately,
+none of the proof infrastructure in the previous section requires minimality
+
+
+In this section,
 we demonstrate that the \aivcalg ~algorithm is correct and complete even if the \getivc ~module does not guarantee minimality.  %Then, we mention how to modify Algorithm \ref{alg:aivc} such that the output set $A$ only contains \textbf{minimal} \ivc s.
 
 %\begin{algorithm}

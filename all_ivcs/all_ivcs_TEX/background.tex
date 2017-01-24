@@ -32,7 +32,7 @@ conjuncts of $T$. When a top-level conjunct $T_i$ is removed from $T$, it is wri
 The idea behind finding an IVC for a given property $P$ \cite{Ghass16} is based on inductive proof methods used in SMT-based model checking, such as K-induction and PDR \cite{NFM2012:KaGaTiWh, amla2005analysis, Een2011:PDR}. Generally, an IVC computation technique aims to determine, for any subset $S \subseteq T$, whether $P$ is provable by $S$. Then, a minimal subset that satisfies $P$ is seen as a minimal proof explanation called a minimal Inductive Validity Core.
 
 \begin{definition}{\emph{Inductive Validity Core (\ivc)\cite{Ghass16}:}}
-  \label{def:minimal-ivc}
+  \label{def:ivc}
   $S \subseteq T$ for $(I, T)\vdash P$ is an Inductive Validity Core,
   denoted by $\ivc(P, S)$, iff $(I, S) \vdash P $.
 \end{definition}

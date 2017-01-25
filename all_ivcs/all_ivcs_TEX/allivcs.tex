@@ -341,7 +341,10 @@ From \cite{Ghass16}, it is computationally cheap to find an
 approximately minimal \ivc\ using the algorithm \ucalg; however, finding a {\em guaranteed}
 minimal \ivc\ using the \ucbfalg\ algorithm is computationally expensive.  For efficiency
 reasons, it is much better to use the approximate \ucalg\ algorithm to compute the set of
-all \mivc s.  The \ucbfalg\ algorithm attempts to repeatedly prove the property by brute-force removing elements (BF = ``brute force''), so does much of the work of Algorithm~\ref{alg:aivc} in a way that is not effective towards finding other IVCs.  The overhead of the \ucalg\ algorithm is approximately 8.5\% over the baseline proof, as opposed to approximately 1700\% for the \ucbfalg\ algorithm.  In addition, the average increase in size of IVCs returned by \ucalg\ is approximately 10\% of the \ucbfalg\ algorithm\mike{Elaheh, do we have this number in the paper?}.
+all \mivc s.  The \ucbfalg\ algorithm attempts to repeatedly prove the property by brute-force removing elements (BF = ``brute force''), so does much of the work of Algorithm~\ref{alg:aivc} in a way that is not effective towards finding other IVCs.  The overhead of the \ucalg\ algorithm is on average 10\% over the baseline proof, as opposed to 882\% for the \ucbfalg\ algorithm.  In addition, the average increase in size of IVCs returned by \ucalg\ is approximately 10\% of the \ucbfalg\ algorithm\mike{Elaheh, do we have this number in the paper?}.
+\ela{\\what do you mean by average increase (I know we calculated it for the previous paper, but sorry I don't remember what it was exactly)? if you can show me with some data how you would calculate it, I'll give you the number. I assume the number used in the previous paper was for the old UCBF algorithm. But I have some data already in table 3 which might be useful for here}
+
+\ela{Maybe we should talk about statistics in the implementation, not here.}
 
 On the other hand, if \getivc ~does not return minimal adequate sets, at the end of the process,
 set $A$ may contain both \mivc s and some supersets of \mivc s. To make sure that the algorithm only returns

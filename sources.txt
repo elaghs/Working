@@ -1,0 +1,5 @@
+All the experimental results, benchmarks, and scripts are accessible from:
+https://github.com/elaghs/Working/tree/master/all_ivcs/experiments
+
+The implementation is available on:
+ https://github.com/elaghs/jkind/tree/IVCs

@@ -52,8 +52,8 @@ Note that, given $(I, T) \vdash P$, $P$ always has at least one \mivc, and it ma
 \end{definition}
 
 Fig.~\ref{fig:ivcs} illustrates these notions by a graphical representation of IVCs for property $P = (\small{\texttt{on\_p}})$ in the example presented in Section~\ref{sec:example}. As shown in the picture, this property has two distinct \mivc s, which means the model satisfies $P$ in two different ways:  \texttt{\{\{a1\_below, one\_below, doi\_on, on\_p\}, \{a2\_below, one\_below, doi\_on, on\_p\}\}}, This is because in the implementation, the DOI is turned on when either of the altimeters is below the threshold, while our property states that they both must be below.
-Note that there is a subset of model elements, $\{{\small \texttt{a1\_above, a2\_above, both\_above}}\}$, that does not show up in $AIVC(P)$. Elements in such a subset 
-do not affect the satisfaction of $P$. However, as with realistic problems, 
+Note that there is a subset of model elements, $\{{\small \texttt{a1\_above, a2\_above, both\_above}}\}$, that does not show up in $AIVC(P)$. Elements in such a subset
+do not affect the satisfaction of $P$. However, as with realistic problems,
 there could be other properties that cover such portion of the model.
 \ela{added the above description. review/edit please}
 
@@ -73,7 +73,7 @@ there could be other properties that cover such portion of the model.
   \includegraphics[width=0.8\textwidth]{figs/ivcs.png}
   \label{fig:ivcs}
   \vspace{-0.1in}
-  \caption{Graphical representation of IVCs for the model in Fig.\ref{fig:asw}
+  \caption{Graphical representation of \mivc s for the model in Fig.\ref{fig:asw}
   with  $P = (\small{\texttt{on\_p}})$}
 \end{figure}
 

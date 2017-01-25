@@ -25,33 +25,33 @@ search space.
 For the second iteration, $map$ is still satisfiable,
 so the algorithm gets to find a maximal model of it in line~\ref{alg:aivc:maxsat}. Suppose this time, the maximal model makes $M = \{a_1, \ldots, a_7\}$,
 which leads to $S = T \setminus \{\small{\texttt{on\_p}}\} $ in line~\ref{alg:aivc:assigns}.
-Since $S$ is inadequate for $P$, 
-the algorithm jumps to line 12 updating 
-$map$ as $map \leftarrow map \wedge a_8$. 
-Adding this new clause removes all the subsets of 
-$T \setminus \{\small{\texttt{on\_p}}\}$ 
+Since $S$ is inadequate for $P$,
+the algorithm jumps to line 12 updating
+$map$ as $map \leftarrow map \wedge a_8$.
+Adding this new clause removes all the subsets of
+$T \setminus \{\small{\texttt{on\_p}}\}$
 from the search space. Similarly, in the third iteration, if the maximal model of $map$
-yields $M = \{a_1, \ldots, a_4, a_6, \ldots, a_8\}$, then $S = T \setminus \{\small{\texttt{one\_below}}\} $ will be another inadequate set that makes $map$ become 
+yields $M = \{a_1, \ldots, a_4, a_6, \ldots, a_8\}$, then $S = T \setminus \{\small{\texttt{one\_below}}\} $ will be another inadequate set that makes $map$ become
 $map \leftarrow map \wedge a_5$
 in line~\ref{alg:aivc:iadd}.
 
-Suppose, in the forth iteration, the maximal model leads to $M = \{a_2, \ldots, a_8\}$ and 
-$S = T \setminus \{\small{\texttt{a1\_below}}\} $ in lines~\ref{alg:aivc:assignm} and~\ref{alg:aivc:assigns}. 
+Suppose, in the forth iteration, the maximal model leads to $M = \{a_2, \ldots, a_8\}$ and
+$S = T \setminus \{\small{\texttt{a1\_below}}\} $ in lines~\ref{alg:aivc:assignm} and~\ref{alg:aivc:assigns}.
 Since this $S$ is adequate for $P$, \getivc ~computes a new \mivc\ in line~\ref{alg:aivc:getivc}.
 Let the new \mivc\ be $S' = \{ \small{ \texttt{a2\_below},~\texttt{one\_below}, ~\texttt{doi\_on},~\texttt{on\_p}}\}$; after adding this set to $A$,
 it is time to constrain $map$ by a new clause in line~\ref{alg:aivc:addset},
 which results in $map \leftarrow map \wedge (\neg a_2 \vee \neg a_5 \vee \neg a_7 \vee \neg a_8)$.
 
-After these iterations, $map$ 
+After these iterations, $map$
 is still satisfiable.
 \footnote{Note that the algorithm terminates when all \mivc s and $MIS$es are explored. Up to now, only some of \mis es and all \mivc s have been explored.}
- The maximal model returned now makes 
+ The maximal model returned now makes
  $S = T \setminus \{ \small{ \texttt{a1\_below}}, \small{ \texttt{a2\_below}}\}$ in line~\ref{alg:aivc:assigns}.
 In this case, $S$ is inadequate, so we get into line~\ref{alg:aivc:iadd} updating $map$ as
 $map \leftarrow map \wedge (a_1 \vee a_2)$. By adding this new clause to $map$,
 all the subsets of $T \setminus \{ \small{ \texttt{a1\_below}}, \small{ \texttt{a2\_below}}\}$
 will be blocked. The algorithm continues similar to the forth iteration leading to $S$ (in line~\ref{alg:aivc:assigns}) and $map$ (in line~\ref{alg:aivc:iadd}) to be as
- $S = T \setminus \{ \small{ \texttt{doi\_on}}\}$, $map \leftarrow map \wedge a_7$.
+ $S = T \setminus \{ \small{ \texttt{doi\_on}}\}$ and $map \leftarrow map \wedge a_7$.
 
 Finally, after the fifth iteration, $map$ becomes \unsat and the algorithm terminates.
 Note that $MIS$es and $IVC$s may be discovered in different orders from what explained here. The order by which sets are explored is

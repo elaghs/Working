@@ -260,12 +260,12 @@ literals from $T \setminus S$ in lines (12-13).
 
   \While{$\checksat (map)$} { \label{alg:aivc:checksat}
     $model \leftarrow $ build a maximal model of $map$  \label{alg:aivc:maxsat} \\
-    $M \leftarrow$ extract the set of variables assigned $true$ in $model$ \\
-    $S \leftarrow \bigcup_{a_i \in M} \actlit ^{-1}(a_i)$ \\ %\mike{should we use a letter other than M?}\\
+    $M \leftarrow$ extract the set of variables assigned $true$ in $model$ \label{alg:aivc:assignm}\\
+    $S \leftarrow \bigcup_{a_i \in M} \actlit ^{-1}(a_i)$ \label{alg:aivc:assigns}\\
 \BlankLine
     \If{$\isadeq (P, S)$}{
     \BlankLine
-      $S' \leftarrow \getivc (P, S)$ \\
+      $S' \leftarrow \getivc (P, S)$ \label{alg:aivc:getivc} \\
       $A \leftarrow A \cup \{S'\}$ \label{alg:aivc:addset}\\
       $map \leftarrow map \wedge (\bigvee_{T_{i}\in S'} \neg {\actlit (T_i)})$ \label{alg:aivc:aadd}
     }

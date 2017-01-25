@@ -7,15 +7,20 @@ To illustrate the \aivcalg ~algorithm we use the example presented in Section \r
 For better description, we view $T$ as an ordered set of its top-level conjuncts; i.e. $T = \{$ {\small \texttt{a1\_below, a2\_below, a1\_above, a2\_above, one\_below, both\_above, doi\_on, on\_p}} $\}$.
 The algorithm starts with creating activation literals for each $T_i \in T$. Let the ordered set of Boolean variables $\{ a_1, \ldots , a_8 \}$ be the corresponding literals to the elements of $T$ (e.g. $\actlit (\small{\texttt{a1\_below}}) = a_1$ and $\actlit (\small{\texttt{on\_p}}) = a_8$). Then, line 3 initializes $map$ with $\top$.
 
-In the first iteration of the \texttt{while} loop, since $map$ is empty,
-it is satisfiable, and a model for it can
-be any subset of literals. So obviously, the first maximal model of $map$ contains all the literals, which means, in line~\ref{alg:aivc:assignv}, $M = \{a_1, \ldots, a_8\}$,
- and in line~\ref{alg:aivc:assignm}, $M = T$. Since $M$ is adequate for $P$,
- the \getivc ~module is called in line~\ref{alg:aivc:getivc}.
- Suppose the returned IVC by this function  is
- $S' = \{ \small{ \texttt{a1\_below},~\texttt{one\_below}, ~\texttt{doi\_on},~\texttt{on\_p}}\}$;
-this set is added to $A$ in line~\ref{alg:aivc:addset}, and thus it comes to adding a new clause to $map$ (line~\ref{alg:aivc:aadd}), which makes $map = (\neg a_1 \vee \neg a_5 \vee \neg a_7 \vee \neg a_8)$.
-As discussed, this constraint marks all the supersets of $S'$ as explored and prune them off the search space.
+In the first iteration of the \texttt{while} loop, since $map$ is
+empty, it is satisfiable, and a model for it can be any subset of
+literals. So obviously, the first maximal model of $map$ contains all
+the literals, which means, in line~\ref{alg:aivc:assignm}, $M = \{a_1,
+\ldots, a_8\}$, and in line~\ref{alg:aivc:assigns}, $S = T$. Since $M$
+is adequate for $P$, the \getivc ~module is called in
+line~\ref{alg:aivc:getivc}. Suppose the returned IVC by this function
+is $S' = \{ \small{ \texttt{a1\_below},~\texttt{one\_below},
+  ~\texttt{doi\_on},~\texttt{on\_p}}\}$; this set is added to $A$ in
+line~\ref{alg:aivc:addset}, and thus it comes to adding a new clause
+to $map$ (line~\ref{alg:aivc:aadd}), which makes $map = (\neg a_1 \vee
+\neg a_5 \vee \neg a_7 \vee \neg a_8)$. As discussed, this constraint
+marks all the supersets of $S'$ as blocked and prunes them off the
+search space.
 
 For the second iteration, $map$ is still satisfiable,
 so the algorithm gets to find a maximal model of it in line~\ref{alg:aivc:maxsat}. Suppose this time, the maximal model makes $M = \{a_2, \ldots, a_8\}$,

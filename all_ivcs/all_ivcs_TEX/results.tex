@@ -1,4 +1,4 @@
-In this section, we examine our experimental results to address the above research questions over the performance of our algorithm.
+In this section, we examine our experimental results to address the research questions defined in the experiment.
 
 \begin{figure}[t]
  \centering
@@ -7,17 +7,17 @@ In this section, we examine our experimental results to address the above resear
   \vspace{-0.2in}
   \caption{Runtime of \aivcalg, \ucbfalg, and \ucalg ~algorithms}
 \end{figure}
-\vspace{0.1in}
-\textbf{RQ1)} We measured the performance overhead of the algorithms over the time
-necessary to find a proof using inductive model checking. Fig. \ref{fig:performance}
- allows a visualization of the  overhead  of the \aivcalg ~algorithm  in  comparison  with \ucalg ~and \ucbfalg.
- In the figure, the models are ranked along the x-axis by the number of IVCs found by \ucalg ~per model.
- Table \ref{tab:runtime} and Table \ref{tab:overhead} also provide a summary of the computation time and the overhead of different algorithms.
- As it can be seen, the \ucalg ~algorithm imposes a negligible overhead to the proof time and is quite fast, whereas \ucbfalg ~algorithm adds a substantial penalty in order to find a single IVC.
- The \aivcalg ~algorithm is able to outperform the \ucbfalg ~in a lot of cases,
- or perform approximately the same.
- Note that the \aivcalg ~algorithm could have had better (worse) performance
- if timeout had been set lower (higher), which caused the average runtime (overhead) of the \aivcalg ~shown in Table \ref{tab:runtime} (Table \ref{tab:overhead}) to be $\thicksim 3$ times more than \ucbfalg .
+%\vspace{0.1in}
+
+\subsubsection{RQ1:} 
+
+To address RQ1, we measured the performance overhead of the various IVC algorithms against the baseline time
+necessary to find a proof using inductive model checking. Fig. \ref{fig:performance} provides an overview of the  overhead of the \aivcalg ~algorithm in comparison to the \ucalg ~and \ucbfalg\ algorithms.  In the figure, each curve is ranked along the x-axis according to the time required for the algorithm to terminate for each analysis problem.  Table \ref{tab:runtime} and Table \ref{tab:overhead} provide a summary of the computation time and the overhead of different algorithms, respectively.  As is evidenced by Fig. \ref{fig:performance}, the \ucalg\  algorithm imposes a negligible overhead over the baseline proof time, whereas both the \ucbfalg\ algorithm and \aivcalg\ algorithms add a substantial penalty over the baseline proof time.  We examine the performance of the \aivcalg\ algorithm both in terms of the time required to find all IVCs and also the time required divided by the number of IVCs found.  Somewhat surprisingly, for the majority of models, the latter measure outperforms the \ucbfalg\ algorithm for the majority of the models in the benchmark suite.
+
+The \aivcalg\ algorithm requires approximately 3.4x more time than the \ucbfalg\ algorithm, calculated in the following way: we measure the ratio of time required for each model for both metrics, then we take the mean over all models of this ratio.  It is important to note that these performance curves are sensitive to the timeout values chosen for individual proof-searches for IVCs (the \getivc\ step in \aivcalg and line 3 in the ``brute force'' algorithm in~\cite{Ghass16}).  This will be discussed in more detail in Section~\ref{sec:experiment-discussion}.
+
+%The \aivcalg ~algorithm could have had better (worse) performance
+% if timeout had been set lower (higher), which caused the average runtime (overhead) of the \aivcalg ~shown in Table \ref{tab:runtime} (Table \ref{tab:overhead}) to be $\thicksim 3$ times more than \ucbfalg .
 
 
 \begin{table}
@@ -57,9 +57,14 @@ necessary to find a proof using inductive model checking. Fig. \ref{fig:performa
 %\takeaway{Computing all minimal Inductive Validity Cores with the \aivcalg ~algorithm is as nearly expensive as computing one single minimal Inductive Validity Core with the \ucbfalg  ~algorithm.
 %\ela{Ela: is that fair to say??}}
 \vspace{0.1in}
-\textbf{RQ2)} The structure of the model and specification can play a part in how well \aivcalg ~performs.
-Therefore, we would like to examine whether or not there is a relationship between the performance and the size of the model, proof-time, and the diversity of IVCs. A graph showing the size of each model (determined by the number of equations in the model) and the number of IVCs
- along with the running time of \aivcalg ~and normal verification time is shown in Fig \ref{fig:modelsize}. In the figure, the models are ranked along the x-axis by their size. The picture shows that as models get larger, it is more likely for the \aivcalg ~algorithm to take more time to complete. However, there is no straightforward relationship between the performance and the number of IVCs. It can be expected that the running time of the \aivcalg ~algorithm goes higher when verification takes more time.
+\subsubsection{RQ2:} For this research question, we examine how the proof time of the original model and the number of MIVCs associated with the property affects the analysis time of the \aivcalg\ algorithm.  Figure~\ref{fig:modelsize} provides an overview of this data.  The data in Figure~\ref{fig:modelsize} is sorted twice along the x-axis: the major axis is the number of IVCs that exist for the model, and the minor axis is the analysis time of the baseline model.  In this graph, we can visualize how both factors effect the performance of the \aivcalg\ algorithm.  Note that there are two scales for the y-axis: the scale on the left is a logarithmic scale of performance in terms of the run time; the scale on the right is a linear scale based on the number of minimal IVCs discovered.
+
+Figure~\ref{fig:modelsize} shows two distinct trends.  First, for models whose baseline proofs are inexpensive and that only have a single MIVC, the \aivcalg\ is roughly equivalent in performance to the \ucbfalg.  However, as proofs become more expensive for a single MIVC, the \aivcalg\ begins to underperform the \ucbfalg.  This trend becomes more pronounced for properties that yield multiple MIVCs.  In the cases where several MIVCs are found, the \aivcalg\ algorithm can underperform the \ucbfalg\ algorithm by an order of magnitude.  Thus, the performance of the \aivcalg\ is driven to a large degree by the number of minimal inductive validity cores that exist for the model.
+
+
+%The structure of the model and specification can play a part in how well \aivcalg ~performs.
+%Therefore, we would like to examine whether or not there is a relationship between the performance and the size of the model, proof-time, and the diversity of IVCs. A graph showing the size of each model (determined by the number of equations in the model) and the number of IVCs
+% along with the running time of \aivcalg ~and normal verification time is shown in Fig \ref{fig:modelsize}. In the figure, the models are ranked along the x-axis by their size. The picture shows that as models get larger, it is more likely for the \aivcalg ~algorithm to take more time to complete. However, there is no straightforward relationship between the performance and the number of IVCs. It can be expected that the running time of the \aivcalg ~algorithm goes higher when verification takes more time.
 
  \begin{figure}[t]
  \centering
@@ -69,7 +74,7 @@ Therefore, we would like to examine whether or not there is a relationship betwe
   \caption{Runtime of different computations along with the number of IVCs}
 \end{figure}
 
-\ela{do we want this table 3? I commented the table description in case you want to use it...}
+%\ela{do we want this table 3? I commented the table description in case you want to use it...}
 %Table \ref{tab:ivcsize} compares
 %the  minimum,  maximum,  average,
 %and standard deviation of the size of the IVCs computed by the different algorithms.
@@ -105,7 +110,7 @@ Therefore, we would like to examine whether or not there is a relationship betwe
 %  \vspace{-0.2in}
 %  \caption{Runtime of \aivcalg ~along divided by the number of IVCs vs the runtime of other computations}
 %\end{figure}
-\subsubsection {Discussion}
+\subsection {Discussion}
 \label{sec:experiment-discussion}
 \ela{rewrite...\\}
 \textbf{RQ4)} In the benchmarks, there have been

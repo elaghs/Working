@@ -3,56 +3,56 @@ In this section, we examine our experimental results to address the research que
 \begin{figure}[t]
  \centering
   \includegraphics[width=\textwidth]{figs/performance.jpg}
-  \label{fig:performance}
   \vspace{-0.2in}
   \caption{Runtime of \aivcalg, \ucbfalg, and \ucalg ~algorithms}
+  \label{fig:performance}
 \end{figure}
 %\vspace{0.1in}
 
 \subsubsection{RQ1:} 
 
 To address RQ1, we measured the performance overhead of the various IVC algorithms against the baseline time
-necessary to find a proof using inductive model checking. Fig. \ref{fig:performance} provides an overview of the  overhead of the \aivcalg ~algorithm in comparison to the \ucalg ~and \ucbfalg\ algorithms.  In the figure, each curve is ranked along the x-axis according to the time required for the algorithm to terminate for each analysis problem.  Table \ref{tab:runtime} and Table \ref{tab:overhead} provide a summary of the computation time and the overhead of different algorithms, respectively.  As is evidenced by Fig. \ref{fig:performance}, the \ucalg\  algorithm imposes a negligible overhead over the baseline proof time, whereas both the \ucbfalg\ algorithm and \aivcalg\ algorithms add a substantial penalty over the baseline proof time.  We examine the performance of the \aivcalg\ algorithm both in terms of the time required to find all IVCs and also the time required divided by the number of IVCs found.  Somewhat surprisingly, for the majority of models, the latter measure outperforms the \ucbfalg\ algorithm for the majority of the models in the benchmark suite.
+necessary to find a proof using inductive model checking. Fig. \ref{fig:performance} provides an overview of the  overhead of the \aivcalg ~algorithm in comparison to the \ucalg ~and \ucbfalg\ algorithms.  In the figure, each curve is ranked along the x-axis according to the time required for the algorithm to terminate for each analysis problem.  Table \ref{tab:runtime} provides a summary of the computation time and the overhead of different algorithms.  As is evidenced by Fig. \ref{fig:performance}, the \ucalg\  algorithm imposes a negligible overhead over the baseline proof time, whereas both the \ucbfalg\ algorithm and \aivcalg\ algorithms add a substantial penalty over the baseline proof time.  We examine the performance of the \aivcalg\ algorithm both in terms of the time required to find all IVCs and also the time required divided by the number of IVCs found.  Somewhat surprisingly, for the majority of models, the latter measure outperforms the \ucbfalg\ algorithm for the majority of the models in the benchmark suite.
 
-The \aivcalg\ algorithm requires approximately 3.4x more time than the \ucbfalg\ algorithm, calculated in the following way: we measure the ratio of time required for each model for both metrics, then we take the mean over all models of this ratio.  It is important to note that these performance curves are sensitive to the timeout values chosen for individual proof-searches for IVCs (the \getivc\ step in \aivcalg and line 3 in the ``brute force'' algorithm in~\cite{Ghass16}).  This will be discussed in more detail in Section~\ref{sec:experiment-discussion}.
+The \aivcalg\ algorithm requires approximately 3.4x more time than the \ucbfalg\ algorithm, calculated in the following way: we measure the ratio of time required for each model for both metrics, then we take the mean of this ratio for all models.  It is important to note that these performance curves are sensitive to the timeout values chosen for individual proof-searches for IVCs (the \getivc\ step in \aivcalg\ and line 3 in the ``brute force'' algorithm in~\cite{Ghass16}).  This aspect will be discussed in more detail in Section~\ref{sec:experiment-discussion}.
 
 %The \aivcalg ~algorithm could have had better (worse) performance
 % if timeout had been set lower (higher), which caused the average runtime (overhead) of the \aivcalg ~shown in Table \ref{tab:runtime} (Table \ref{tab:overhead}) to be $\thicksim 3$ times more than \ucbfalg .
 
 
 \begin{table}
-  \caption{Runtime of different computations}
+  \caption{Runtime and overhead of different computations}
    \vspace{-0.1in}
   \centering
-  \begin{tabular}{ |c||c|c|c|c| }
+  \begin{tabular}{ |c||c|c|c|c|c||c|c|c|c| }
     \hline
-      runtime (sec)& min & max & mean & stdev \\[0.5ex]
+      runtime (sec)& min & max & mean & stdev & \% & min & max & mean & stdev  \\[0.5ex]
     \hline\hline
-    \emph{\small{proof-time}}    & 0.047 & 14.617 & 1.299 & 1.940 \\[0.5ex]
-    \aivcalg    & 10.125 & 2375.058& 58.884 & 256.529 \\[0.5ex]
-    \ucbfalg &   0.248 & 1323.515 &  17.247& 104.838\\[0.5ex]
-    \ucalg&  0.0  & 1.422  & 0.084 & 0.184 \\[0.5ex]
+    \emph{\small{proof-time}}    & 0.05 & 14.62 & 1.30 & 1.94 & & & & & \\ [0.5ex]
+    \aivcalg    & 10.13 & 2375.11 & 58.88 & 256.53 & & 13.64\% & 101034.62\% & 2544.40\% & 7764.16 \\[0.5ex]
+    \ucbfalg &   0.25 & 1323.52 &  17.25 & 104.84 & & 14.09\% &111124.43\% &  882.02\% & 1512.07\%  \\[0.5ex]
+    \ucalg&  0.0  & 1.42  & 0.08 & 0.18 & & 0.00\%  & 100.00\%   & 10.23\% & 11.72\% \\[0.5ex]
     \hline
   \end{tabular}
   \label{tab:runtime}
 \end{table}
 
-\begin{table}
-  \caption{Overhead of different algorithms}
-   \vspace{-0.1in}
-  \centering
-  \begin{tabular}{ |c||c|c|c|c| }
-    \hline
-     algorithm & min & max & mean & stdev \\[0.5ex]
-
-    \hline
-    \aivcalg   & 13.642\% & 101034.615\% & 2544.399\% & 7764.159\% \\[0.5ex]
-    \ucbfalg &   14.092\% & 111124.432\% &  882.018\% & 1512.071\%\\[0.5ex]
-    \ucalg&  0.00\%  & 100.00\%   & 10.226\% & 11.718\% \\[0.5ex]
-    \hline
-  \end{tabular}
-  \label{tab:overhead}
-\end{table}
+%\begin{table}
+%  \caption{Overhead of different algorithms}
+%   \vspace{-0.1in}
+%  \centering
+%  \begin{tabular}{ |c||c|c|c|c| }
+%    \hline
+%     algorithm & min & max & mean & stdev \\[0.5ex]
+%
+%    \hline
+%    \aivcalg   & 13.64\% & 101034.62\% & 2544.40\% & 7764.16\% \\[0.5ex]
+%    \ucbfalg &   14.09\% & 111124.43\% &  882.02\% & 1512.07\%\\[0.5ex]
+%    \ucalg&  0.00\%  & 100.00\%   & 10.23\% & 11.72\% \\[0.5ex]
+%    \hline
+%  \end{tabular}
+%  \label{tab:overhead}
+%\end{table}
 
 %\takeaway{Computing all minimal Inductive Validity Cores with the \aivcalg ~algorithm is as nearly expensive as computing one single minimal Inductive Validity Core with the \ucbfalg  ~algorithm.
 %\ela{Ela: is that fair to say??}}
@@ -69,9 +69,10 @@ Figure~\ref{fig:modelsize} shows two distinct trends.  First, for models whose b
  \begin{figure}[t]
  \centering
   \includegraphics[width=\textwidth]{figs/size.jpg}
-  \label{fig:modelsize}
   \vspace{-0.2in}
   \caption{Runtime of different computations along with the number of IVCs}
+  \label{fig:modelsize}
+  \vspace{-0.2in}
 \end{figure}
 
 %\ela{do we want this table 3? I commented the table description in case you want to use it...}
@@ -112,20 +113,20 @@ Figure~\ref{fig:modelsize} shows two distinct trends.  First, for models whose b
 %\end{figure}
 \subsection {Discussion}
 \label{sec:experiment-discussion}
-\ela{rewrite...\\}
-\textbf{RQ4)} In the benchmarks, there have been
-several models containing undecidable cases which affected the average
-performance of \aivcalg ~reported in Table \ref{tab:runtime}. Moreover, such cases also influence the minimality of the IVCs computed by \aivcalg. It is also possible that an iteration of
-the \texttt{while} loop in Algorithm \ref{alg:aivc} times out while
-the adequacy of the subset under examination is decidable in general.
-We were interested in determining how often it is possible to come across such cases in our benchmarks. Size of IVCs obtained from different algorithms is shown in Fig. \ref{fig:min}.
-As you can see, there are 14 cases among 476 models for which the size of
- minimum IVC computed by the \aivcalg ~is bigger than the size of the minimal IVC
- generated by the \ucbfalg ~algorithm.
+%\ela{rewrite...\\}
+The experiment demonstrates that for most of the example models, finding all minimal IVCs is within the same ballpark as finding a single minimal IVC in terms of computation time.  However, these results are dependent on the number of minimal IVCs that are associated with the property: the more MIVCs associated with a property, the higher the expense of \aivcalg\ as compared to the \ucbfalg\ algorithm.  
+
+An important aspect of the performance comparison involves the timeout value chosen for individual IVC computations performed by \getivc\ within the \aivcalg\ algorithm and also the behavior of the SMT solvers with different sets of activation literals.  Each time we call \getivc\ we attempt to do a ``fresh'' proof from a new set of activation literals.  As we approach minimal IVCs, these proofs can become substantially harder for the solver to determine than the original proof, often involving more lemmas for information that was originally present in the model.  Thus, for complex models, it often happens that we reach the `timeout' case in both the \aivcalg\ and \ucbfalg\ algorithms, which may cause both algorithms to reject valid IVC solutions that are smaller than what is reported as a minimal IVCs, since both algorithms treat timeout-as-failure.  We have empirically set timeout values for a given proof search to 60 seconds + 10 $*$ {\em proof-time} for the initial proof over the whole model, because we observed that if properties were not solved in this time, then \texttt{JKind} appeared to be unable to solve the problem for substantially longer timeouts (e.g., 24 hours). However, the timeout threshold is arbitrary, and it is certain that the performance results would change if a different threshold was chosen.
+
+Worse, because the \ucbfalg\ and \aivcalg\ algorithms submit different profiles in terms of activation literals, the solvers sometimes can solve an IVC problem for one algorithm but not the other.  This leads to some cases where the \ucbfalg\ algorithm finds a {\em smaller} IVC than the \aivcalg\ algorithm, because the \aivcalg\ algorithm times out attempting to find a MIVC that was found by the \ucbfalg.  This is shown in Fig.~\ref{fig:min}, where in 14 out of 476 models, \ucbfalg\ finds a smaller MIVC than the minimum IVC found by \aivcalg.  Of course, in many more cases,\mike{Elaheh: how many?}, the \aivcalg\ finds a smaller minimum IVC than the \ucbfalg.  
+
  \begin{figure}
  \centering
   \includegraphics[width=\textwidth]{figs/min.jpg}
+  \vspace{-0.2in}
+  \caption{Size of smallest IVCs obtained from different algorithms}
   \label{fig:min}
   \vspace{-0.2in}
-  \caption{Size of IVCs obtained from different computations}
 \end{figure}
+
+Although we understand the issue, it is worrisome that different activation literal sets can cause solvers to time out in this way.  In the future, we will examine whether it is possible to eliminate these anomalous cases by different encodings of activation literals. 

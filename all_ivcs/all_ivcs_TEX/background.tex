@@ -44,8 +44,8 @@ The idea behind finding an IVC for a given property $P$ \cite{Ghass16} is based 
 \end{definition}
 
 
-Note that, given $(I, T) \vdash P$, $P$ always has at least one \mivc, and it may also have many distinct \mivc s corresponding to different proof paths. To capture the latter, the \emph{all \mivc s ($AIVC$)} relation has been introduced in \cite{Murugesan16:renext}.
-\begin{definition}{\emph{All \mivc s ($AIVC$):}}
+Note that, given $(I, T) \vdash P$, $P$ always has at least one \mivc, and it may also have many distinct \mivc s corresponding to different proof paths. To capture the latter, the \emph{all \mivc s ($AIVC$)} relation has been introduced in \cite{Ghass16, Murugesan16:renext}.
+\begin{definition}{\emph{All \mivc s ($AIVC$)\cite{Murugesan16:renext}:}}
     \label{def:allivcs}
     Given $(I, T) \vdash P$, $AIVC(P)$ is an association to all \mivc s for $P$:
     $$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  MIVC(P, S)\} $$
@@ -66,10 +66,11 @@ Fig.~\ref{fig:ivcs} illustrates these notions by a graphical representation of I
 
 \begin{figure}[t]
  \centering
-  \includegraphics[width=0.65\columnwidth]{figs/ivcs.png}
+  \includegraphics[width=0.8\textwidth]{figs/ivcs.png}
   \label{fig:ivcs}
   \vspace{-0.1in}
-  \caption{Graphical representation of MIVCs for the model in Fig.\ref{fig:asw} with  $P = (\small{\texttt{on\_p}})$}
+  \caption{Graphical representation of IVCs for the model in Fig.\ref{fig:asw} 
+  with  $P = (\small{\texttt{on\_p}})$}
 \end{figure}
 
 %\subsection{Satisfiability}

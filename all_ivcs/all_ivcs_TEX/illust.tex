@@ -11,9 +11,9 @@ In the first iteration of the \texttt{while} loop, since $map$ is
 empty, it is satisfiable, and a model for it can be any subset of
 literals. So obviously, the first maximal model of $map$ contains all
 the literals, which means, in line~\ref{alg:aivc:assignm}, $M = \{a_1,
-\ldots, a_8\}$, and in line~\ref{alg:aivc:assigns}, $S = T$. Since $M$
+\ldots, a_8\}$, and in line~\ref{alg:aivc:assigns}, $S = T$. Since $S$
 is adequate for $P$, the \getivc ~module is called in
-line~\ref{alg:aivc:getivc}. Suppose the returned IVC by this function
+line~\ref{alg:aivc:getivc}. Suppose the returned \mivc\ by this function
 is $S' = \{ \small{ \texttt{a1\_below},~\texttt{one\_below},
   ~\texttt{doi\_on},~\texttt{on\_p}}\}$; this set is added to $A$ in
 line~\ref{alg:aivc:addset}, and thus it comes to adding a new clause
@@ -24,9 +24,9 @@ search space.
 
 For the second iteration, $map$ is still satisfiable,
 so the algorithm gets to find a maximal model of it in line~\ref{alg:aivc:maxsat}. Suppose this time, the maximal model makes $M = \{a_2, \ldots, a_8\}$,
-which leads to $M = T \setminus \{\small{\texttt{a1\_below}}\} $ in line~\ref{alg:aivc:assignm}.
-Since this $M$ is adequate for $P$, \getivc ~computes a new $IVC$ in line~\ref{alg:aivc:getivc}.
-Let the new $IVC$ be $S' = \{ \small{ \texttt{a2\_below},~\texttt{one\_below}, ~\texttt{doi\_on},~\texttt{on\_p}}\}$; after adding this set to $A$,
+which leads to $S = T \setminus \{\small{\texttt{a1\_below}}\} $ in line~\ref{alg:aivc:assigns}.
+Since this $S$ is adequate for $P$, \getivc ~computes a new \mivc\ in line~\ref{alg:aivc:getivc}.
+Let the new \mivc\ be $S' = \{ \small{ \texttt{a2\_below},~\texttt{one\_below}, ~\texttt{doi\_on},~\texttt{on\_p}}\}$; after adding this set to $A$,
 it is time to constrain $map$ by a new clause in line~\ref{alg:aivc:addset},
 which results in $map \leftarrow map \wedge (\neg a_2 \vee \neg a_5 \vee \neg a_7 \vee \neg a_8)$.
 

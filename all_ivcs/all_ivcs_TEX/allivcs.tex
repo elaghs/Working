@@ -344,7 +344,7 @@ reasons, it is much better to use the approximate \ucalg\ algorithm to compute t
 all \mivc s.  The \ucbfalg\ algorithm attempts to repeatedly prove the property by brute-force removing elements (BF = ``brute force''), so does much of the work of Algorithm~\ref{alg:aivc} in a way that is not effective towards finding other IVCs.  The overhead of the \ucalg\ algorithm is approximately 8.5\% over the baseline proof, as opposed to approximately 1700\% for the \ucbfalg\ algorithm.  In addition, the average increase in size of IVCs returned by \ucalg\ is approximately 10\% of the \ucbfalg\ algorithm\mike{Elaheh, do we have this number in the paper?}.
 
 On the other hand, if \getivc ~does not return minimal adequate sets, at the end of the process,
-set $A$ may contain both minimal IVCs and supersets of minimal IVCs. To make sure that the algorithm only returns
+set $A$ may contain both \mivc s and some supersets of \mivc s. To make sure that the algorithm only returns
 the minimal adequate sets (\mivc s), all we need is to remove any supersets of other sets in $A$.  We can do this ``on the fly'' by changing
 line~\ref{alg:aivc:addset} to the following:
 $A \leftarrow A \cup \{S'\} \setminus \{ S~|~S \in A \wedge S' \subset S \}$.

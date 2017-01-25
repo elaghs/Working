@@ -7,20 +7,20 @@ which verifies safety properties of  infinite-state synchronous systems.
 It accepts Lustre programs \cite{Halbwachs91:lustre} as input.  The translation of Lustre
 into a symbolic transition system in \texttt{JKind} is straightforward and is similar to what is described
 in~\cite{Hagen08:FMCAD}.
-Verification is supported by multiple ``proof engines'' that execute in parallel, including K-induction,  
-property directed reachability (PDR), and lemma generation engines, and several of the engines attempt to prove 
-multiple properties in parallel.  To implement the engines, 
-\texttt{JKind} emits SMT problems using the theories of linear integer and real arithmetic.  \texttt{JKind} supports the 
+Verification is supported by multiple ``proof engines'' that execute in parallel, including K-induction,
+property directed reachability (PDR), and lemma generation engines that attempt to prove
+multiple properties in parallel.  To implement the engines,
+\texttt{JKind} emits SMT problems using the theories of linear integer and real arithmetic.  \texttt{JKind} supports the
 \texttt{Z3}~\cite{DeMoura08:z3},
 \texttt{Yices}~\cite{Dutertre06:yices}, \texttt{MathSAT}~\cite{Cimatti2013:MathSAT},
 \texttt{SMTInterpol}~\cite{Christ2012:SMTInterpol}, and \texttt{CVC4} \cite{barrett2011cvc4} SMT solvers as back-ends.  When a property is
 proved and IVC generation is enabled, an additional parallel engine
-executes the \ucalg ~algorithm \cite{Ghass16} to generate an (approximately) minimal IVC.  
+executes the \ucalg ~algorithm \cite{Ghass16} to generate an (approximately) minimal IVC.
 %
 To implement our method, we have extended \texttt{JKind} with a new engine that
 implements Algorithm \ref{alg:aivc} on top of \texttt{Z3}.
 %The source code is publicly available on \cite{mygit}.
-We use the \texttt{JKind} IVC generation engine to implement the \getivc\ procedure in  Algorithm \ref{alg:aivc}. 
+We use the \texttt{JKind} IVC generation engine to implement the \getivc\ procedure in  Algorithm \ref{alg:aivc}.
 %It worth mentioning that we could have employed the \ucbfalg ~algorithm for this purpose as well.
 %One might say that since \ucbfalg ~guarantees minimality, it would help to the \aivcalg ~algorithm terminate more quickly.
 %However, as we will show in the experiments, on the one hand, the \ucbfalg ~algorithm is very expensive. On the other hand, the \ucalg ~algorithm is not only fast, but it also generates \ivc s that are
@@ -32,19 +32,19 @@ in each iteration of the \texttt{while} loop, Algorithm~\ref{alg:aivc}
 has to decide on the adequacy of a given set $S \subseteq T$ (line 8).
 This decision should be made by the use of a proof method that
 tries to prove the property $P$ over $S$. Although we know that $(I, T) \vdash P$,
-there is no guarantee that we can determine whether or not any $S \subset T$ is adequate; it is known~\cite{Ghass16} that 
+there is no guarantee that we can determine whether or not any $S \subset T$ is adequate; it is known~\cite{Ghass16} that
 this problem is as hard as model checking, which is undecidable for infinite state systems.
 Therefore, in practice, we have to set timeouts for the model checking algorithm in each iteration.
 In our implementation, we set a timeout based on the time the property takes to be proved given all model elements.
 During this initial proof, we obtain its required \emph{proof-time}.
 Then, the timeout we set for each iteration is ($60$ sec  $+ 10\ \times$ \emph{proof-time}).
 When the \texttt{while} loop times out for $S$ in line 8 of Algorithm~\ref{alg:aivc},
-we treat $S$ as an \emph{inadequate} set; 
-otherwise results may be incorrect; i.e. sets that are not actually adequate may be reported as adequate. 
-When we mark an indeterminate set $S$ as inadequate, line 13 will prune off $S$ and all its subsets from 
-the search space.  This can occasionally lead to anomalies where the brute force algorithm discovers a {\em smaller} 
-MIVC than is discovered by the All-IVCs procedure.  Note that this can happen regardless of the timeout threshold used 
-due to the lemma generation procedure; this aspect will be discussed in more detail in 
+we treat $S$ as an \emph{inadequate} set;
+otherwise results may be incorrect; i.e. sets that are not actually adequate may be reported as adequate.
+When we mark an indeterminate set $S$ as inadequate, line 13 will prune off $S$ and all its subsets from
+the search space.  This can occasionally lead to anomalies where the brute force algorithm (like \ucbfalg) discovers a {\em smaller}
+MIVC than is discovered by the All-IVCs procedure.  Note that this can happen regardless of the timeout threshold used
+due to the lemma generation procedure; this aspect will be discussed in more detail in
 Section~\ref{sec:experiment-discussion}.
 
 

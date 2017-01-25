@@ -12,32 +12,33 @@ back-end, \texttt{JKind} supports \texttt{Z3}~\cite{DeMoura08:z3},
 \texttt{Yices}~\cite{Dutertre06:yices}, \texttt{MathSAT}~\cite{Cimatti2013:MathSAT},
 \texttt{SMTInterpol}~\cite{Christ2012:SMTInterpol}, and \texttt{CVC4} \cite{barrett2011cvc4}. \texttt{JKind} is a multi-engine model checker that works on multiple properties simultaneously. When a property is
 proven and IVC generation is enabled, an additional parallel engine
-executes the \ucalg ~algorithm \cite{Ghass16} to generate an (approximately) minimal IVC. To implement our method, we have made use of this engine and also extended \texttt{JKind} with a new engine that
+executes the \ucalg ~algorithm \cite{Ghass16} to generate an (approximately) minimal IVC. 
+
+To implement our method, we have extended \texttt{JKind} with a new engine that
 implements Algorithm \ref{alg:aivc} on top of \texttt{Z3}.
 %The source code is publicly available on \cite{mygit}.
-In fact, we employs the \ucalg ~algorithm to implement the \getivc\ procedure used in the \texttt{while} loop of Algorithm \ref{alg:aivc}. It worth mentioning that we could have used the \ucbfalg ~algorithm for this purpose as well.
-One might say that since \ucbfalg ~guarantees minimality it would help to the \aivcalg ~terminates sooner.
-However, as shown in our experimental results, on the one hand, the \ucbfalg ~algorithm is very expensive. On the other hand, the \ucalg ~algorithm is not only fast, but it also generates \ivc s that are 
-quite close to the \mivc s computed by \ucbfalg , as we will show in the experiments.   
+We have made use of the \texttt{JKind} IVC generation engine in place of the \getivc\ procedure in  Algorithm \ref{alg:aivc}. It worth mentioning that we could have employed the \ucbfalg ~algorithm for this purpose as well.
+One might say that since \ucbfalg ~guarantees minimality, it would help to the \aivcalg ~algorithm terminate more quickly.
+However, as we will show in the experiments, on the one hand, the \ucbfalg ~algorithm is very expensive. On the other hand, the \ucalg ~algorithm is not only fast, but it also generates \ivc s that are
+quite close to the \mivc s computed by \ucbfalg.
 
 One technical issue that needs to
 be handled in any implementation of the \aivcalg ~algorithm,
 is about the undecidability of the model checking algorithms;
 in each iteration of the \texttt{while} loop, Algorithm~\ref{alg:aivc}
-has to decide on the adequacy of a given set $M \subseteq T$ (line 8).
+has to decide on the adequacy of a given set $S \subseteq T$ (line 8).
 This decision should be made by the use of a proof method that
-tries to prove the property $P$ over $M$. Although we know that $(I, T) \vdash P$,
-there is no guarantee that we can determine whether or not any $M \subset T$ is adequate.
+tries to prove the property $P$ over $S$. Although we know that $(I, T) \vdash P$,
+there is no guarantee that we can determine whether or not any $S \subset T$ is adequate.
 Therefore, in practice, we have to set some boundaries
 (over depth/time of the model checking algorithm) in each iteration.
 In our implementation, we set a timeout based on the time a property takes to be proved.
 Since before starting the \aivcalg ~algorithm, the property has to be proved,
 we obtain its required \emph{proof-time}.
 Then, the timeout we set for each iteration is ($60 sec  + 10 \times$ \emph{proof-time}).
-When the \texttt{while} loop times out for $M$ in line 8 of Algorithm~\ref{alg:aivc},
-we treat $M$ as an \emph{inadequate} set because
-when the adequacy of $M$ is undecidable,
- the adequacy of all its subsets are undecidable too. So, if we consider it as inadequate, line 13 will prune off $M$ and all its subsets from the search space. \ela{~~Ela: do you have better justification? }
+When the \texttt{while} loop times out for $S$ in line 8 of Algorithm~\ref{alg:aivc},
+we treat $S$ as an \emph{inadequate} set,
+otherwise results may be incorrect; i.e. sets that are not actually adequate may be reported as adequate. When we consider $S$ as inadequate, line 13 will prune off $S$ and all its subsets from the search space.
 In our benchmarks, there have been several models from~\cite{Hagen08:FMCAD} containing iterations with timeout.
 
 

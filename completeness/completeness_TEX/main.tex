@@ -88,32 +88,32 @@
 
 \numberofauthors{2}
 
-\author{
-\alignauthor
-Elaheh Ghassabani\\
-       \affaddr{Department of Computer Science and Engineering}\\
-       \affaddr{University of Minnesota}\\
-       \affaddr{\small{200 Union Street\\Minneapolis, MN, 55455, USA}}\\
-       \email{\texttt{\small{ghass013@umn.edu}}}
-\alignauthor
-Andrew Gacek\\
-       \affaddr{Rockwell Collins\\ Advanced Technology Center}\\
-       \affaddr{\small{400 Collins Rd. NE\\Cedar Rapids, IA, 52498, USA}}\\
-       \email{\texttt{\small{andrew.gacek@rockwellcollins.com}}}\\
-       \and
-\alignauthor
-Michael W. Whalen\\
-       \affaddr{Department of Computer Science and Engineering}\\
-       \affaddr{University of Minnesota}\\
-       \affaddr{\small{200 Union Street\\Minneapolis, MN, 55455, USA}}\\
-       \email{\texttt{\small{whalen@cs.umn.edu}}}
-\alignauthor
-Mats Heimdahl\\
-       \affaddr{Department of Computer Science and Engineering}\\
-       \affaddr{University of Minnesota}\\
-       \affaddr{\small{200 Union Street\\Minneapolis, MN, 55455, USA}}\\
-       \email{\texttt{\small{heimdahl@cs.umn.edu}}}
-} 
+%\author{
+%\alignauthor
+%Elaheh Ghassabani\\
+%       \affaddr{Department of Computer Science and Engineering}\\
+%       \affaddr{University of Minnesota}\\
+%       \affaddr{\small{200 Union Street\\Minneapolis, MN, 55455, USA}}\\
+%       \email{\texttt{\small{ghass013@umn.edu}}}
+%\alignauthor
+%Andrew Gacek\\
+%       \affaddr{Rockwell Collins\\ Advanced Technology Center}\\
+%       \affaddr{\small{400 Collins Rd. NE\\Cedar Rapids, IA, 52498, USA}}\\
+%       \email{\texttt{\small{andrew.gacek@rockwellcollins.com}}}\\
+%       \and
+%\alignauthor
+%Michael W. Whalen\\
+%       \affaddr{Department of Computer Science and Engineering}\\
+%       \affaddr{University of Minnesota}\\
+%       \affaddr{\small{200 Union Street\\Minneapolis, MN, 55455, USA}}\\
+%       \email{\texttt{\small{whalen@cs.umn.edu}}}
+%\alignauthor
+%Mats Heimdahl\\
+%       \affaddr{Department of Computer Science and Engineering}\\
+%       \affaddr{University of Minnesota}\\
+%       \affaddr{\small{200 Union Street\\Minneapolis, MN, 55455, USA}}\\
+%       \email{\texttt{\small{heimdahl@cs.umn.edu}}}
+%}
 \maketitle
 
 
@@ -121,7 +121,8 @@ Mats Heimdahl\\
 
 \begin{abstract}
  An important question while using formal verification is whether we have specified enough properties for a given implementation model.  To address this question, we need coverage metrics for property-based formal verification. Existing metrics are usually based on mutation, in which the implementation model is modified and re-analyzed to determine whether the properties hold over the mutated model.
- However, these metrics are expensive to compute (involving many additional proofs), and have the issue that the residual model after removing the ``unnecessary'' parts is often inadequate to prove the original property. This paper proposes an alternate characterization of completeness based on the proofs themselves.   We have previously investigated algorithms for determining minimal sets of model elements necessary to construct safety-property proofs called Inductive Validity Cores (IVCs).  In this paper, we examine a family of coverage metrics that can be computed from IVCs.  One of the proposed metrics is substantially cheaper to compute than previous metrics and is guaranteed to preserve a residual model that leads to a proof.  Other possible metrics are more expensive to compute and provide  more- or less-rigorous definitions.
+ However, these metrics are expensive to compute (involving many additional proofs for possible mutations). Besides, a set of design elements marked as covered by these metrics, called residual mode, is often inadequate to prove the original property. This paper proposes an alternate characterization of completeness based on the idea of  minimal Inductive Validity Core (IVC) introduced recently to the literature. IVCs trace a given proof to minimal sets of model elements necessary for the validity of the proof.
+ In this paper, we examine a family of coverage metrics that can be computed from IVCs.  One of the proposed metrics is substantially cheaper to compute than previous metrics and is guaranteed to preserve a residual model that leads to a proof.  Other possible metrics are more expensive to compute and provide  more- or less-rigorous definitions.
  We demonstrate the metrics on a large corpus of examples.
 
 \end{abstract}
@@ -160,7 +161,7 @@ Mats Heimdahl\\
 \keywords{coverage; requirements completeness; formal verification; SAT-based model checking;
   inductive proofs; inductive validity cores;}
 
- 
+
 
 \input{introduction}
 

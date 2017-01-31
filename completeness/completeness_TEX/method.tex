@@ -10,8 +10,7 @@ We propose a new approach for measuring property completeness based on proof rat
 
 \begin{definition} {\emph{IVC coverage (\ivccov):}} \\
 \label{def:coverage-justi}
-Given $S \in AIVC(P)$, $T_i$ is covered by $P$ via $S$ \emph{iff} $T_i \in \ivccov (P, S)$, where
-$\ivccov (P, S) = S$.
+Given $S \in AIVC(P)$, $T_i$ is covered by $P$ via $S$ \emph{iff} $T_i \in S$.
 %Given $S \in AIVC(P)$, $T_i \in T$ is covered by $P$ \emph{iff} $T_i \in S$,
 %denoted by $T_i \in \ivccov (P, S)$
 \end{definition}
@@ -20,22 +19,23 @@ $\ivccov (P, S) = S$.
 %For the sake of simplicity, we refer to the coverage function
 %formalized in Definition \ref{def:coverage-justi} as \ivccov\.
 %
-We call Definition \ref{def:coverage-justi} a \emph{justifiable} metric because, with a set of the model elements marked as covered by \ivccov, $P$ is provable.  Other notions, as will be discussed in Section~\ref{subsec:method-disc}, may yield subsets of the model that are insufficient to reconstruct the proof of the property\footnote{\noindent ~Throughout the paper, when a coverage metric is justifiable, like \ivccov, we say that it preserves provability of the property.}.
+We call Definition \ref{def:coverage-justi} a \emph{proof-preserving} metric because, with a set of the model elements marked as covered by \ivccov, $P$ is provable.  Other notions, as will be discussed in Section~\ref{subsec:method-disc}, may yield subsets of the model that are insufficient to reconstruct the proof of the property.
+%\footnote{\noindent ~Throughout the paper, when a coverage metric is justifiable, like \ivccov, we say that it preserves provability of the property.}
 %Thus, the coverage score for \ivccov\ is often higher than the score for \nondetcov.
 The coverage score for \ivccov\ can be calculated with: $$\frac{|S|}{|T|}$$
 %Note that because minimal proofs are not unique, there are several possible coverage scores.
-Because $P$ may have multiple IVCs, there can be a range of scores (with equal justification) for the \ivccov\ metric, which is shown by \minproofcov:
-\[
-   \minproofcov(T, P) = \{~\frac{ |S|}{|T|}~|~S \in AIVC(P)~\}
+Because $P$ may have multiple \mivc s,  \ivccov\ metric may lead to various scores that belong to the following set:
+\[ 
+\{~\frac{ |S|}{|T|}~|~S \in AIVC(P)~\}
 \]
 
-\noindent Note that if an IVC contains all model elements (i.e., the model is {\em completely covered}), then there is only one possible IVC, so in this case there is no diversity of scores.
+\noindent Note that if an \mivc ~contains all model elements (i.e., the model is {\em completely covered}), then there is only one possible \mivc , so in this case there is no diversity of scores.
 
 %the model is {\em completely covered}, on the other hand, then there is only one possible minimal set: the set of all elements.
 
 Given {\em all} proofs of a particular property, it is possible to define additional, complementary coverage notions.  To do so, we first introduce categorizations of elements within proofs.
 %
-Considering $IVC$ and $AIVC$ relations for $P$, model elements can be categorized into one of the following groups:
+Considering \mivc ~and $AIVC$ relations for $P$, model elements can be categorized into one of the following groups:
 
 \begin{itemize}
   \item \textbf{MUST} elements - target artifacts that are present in all the IVCs of a specification.
@@ -46,7 +46,7 @@ Considering $IVC$ and $AIVC$ relations for $P$, model elements can be categorize
 
   \item \textbf{MAY} elements - target artifacts that are used in some, but not all, IVCs.
       \[
-      MAY(P) = (\bigcup AIVC (P)) \setminus MUST (P))
+      MAY(P) = (\bigcup AIVC (P)) \setminus MUST (P)
       \]
 
   \item \textbf{IRRELEVANT} elements - target artifacts that are not in any of the IVCs.
@@ -76,9 +76,9 @@ Using the notions of $MAY$ and $MUST$, we can introduce additional coverage metr
 \end{definition}
 
 The $\maycov$ notion aims to deal with the fact that a property $P$ may have
-several distinct IVCs. In such cases, \ivccov\ only looks at an arbitrary IVC
+several distinct \mivc s. In such cases, \ivccov\ only looks at an arbitrary \mivc\
 that may contain a subset of $MAY(P)$, which means, depending on
-which IVC it considers, every time it may report a different part of $MAY(P)$
+which \mivc\ it considers, every time it may report a different part of $MAY(P)$
 as uncovered. However, \maycov\ resolves this issue reporting the entire set of $MAY(P)$ as covered, which also leads to higher coverage scores.  \mustcov\ takes the opposite view, considering model elements covered only if they appear in all proofs.
 
 
@@ -86,7 +86,7 @@ It is still possible to build more relaxed coverage metrics in which coverage
 is captured by looking at individual properties, rather than their conjunction.
 %for example, in the definition of \ivccov , it is wise to look at $P$ as
 %the conjunction of all properties. However,
-We can, for example, describe a metric in which any element used by an IVC for any property is considered covered.
+We can, for example, describe a metric in which any element used by an \mivc ~for any property is considered covered.
 %with this view,
 %elements around IVCs that do not have common \emph{must}
 %elements with others will be treated as uncovered while they are at least covered by one
@@ -109,7 +109,7 @@ The next definition, \allcov, formalizes this notion.
 \label{subsec:method-disc}
 
 
-Based on the categorization of elements, we will state some relationships about IVCs so to compare different proof-based metrics proposed earlier.
+Based on the categorization of elements, we will state some relationships about \mivc s so to compare different proof-based metrics proposed earlier.
 
 \begin{lemma}
   \label{lem:must-not-enough}
@@ -218,11 +218,11 @@ Immediate from Definition~\ref{def:minimal-ivc} and Definition \ref{def:coverage
 %It should be pointed out that \ivccov\ is accurate meaning that it does not result in false positives. In other words, since IVCs are \emph{minimal}, \ivccov\ does not mark
 %any \emph{actual} uncovered element as covered.
 
-To conclude this section, we should mention that one can define many more proof-based coverage metrics based on the IVC/AIVC idea. Metrics that make use of the $AIVC$ relation are computationally more expensive to compute than \ivccov\ although they might be easier to satisfy (i.e., result in higher coverage scores).
+To conclude this section, we should mention that one can define many more proof-based coverage metrics based on the $\mivc /AIVC$ idea. Metrics that make use of the $AIVC$ relation are computationally more expensive to compute than \ivccov\ although they might be easier to satisfy (i.e., result in higher coverage scores).
 
 The proposed coverage metrics can be ranked in terms of their scores as follows:
 $$\nondetcovalt\ \leq \ivccov\ \leq \maycov\ \leq \allcov$$
-\ivccov\ and \nondetcovalt\ are equivalent when all elements within the model are covered: if all model elements are MUST elements, then there can only be one IVC, and this IVC uses all of the model elements.
+\ivccov\ and \nondetcovalt\ are equivalent when all elements within the model are covered: if all model elements are MUST elements, then there can only be one \mivc , and this \mivc ~uses all of the model elements.
 
 %Based on our preliminary evaluation, we believe that metrics based on
 %$AIVC$ relation (like \maycov\ and \allcov) are approximately as computationally expensive as \nondetcov.\footnote{\noindent ~The reason is that \nondetcov\ computes the must set which is also based on $AIVC$ relation. However, in terms of preserving provability, a set of design elements marked as covered by \allcov\ and \maycov\ are

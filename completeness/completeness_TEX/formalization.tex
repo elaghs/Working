@@ -5,6 +5,8 @@
 \newcommand{\bool}[0]{\mathit{bool}}
 \newcommand{\reach}[0]{\mathit{R}}
 \newcommand{\ite}[3]{\mathit{if}\ {#1}\ \mathit{then}\ {#2}\ \mathit{else}\ {#3}}
+\newcommand{\ivc}{\textit{IVC}}
+\newcommand{\mivc}{\textit{MIVC}}
 To begin, we define the terms and concepts used in this paper while providing some background on mutation-based coverage metrics.
 
 \subsection{Models, Requirements, and Provability}
@@ -37,23 +39,28 @@ conjuncts of $T$. When a top-level conjunct $x$ is removed from $T$, it is writt
 %\end{definition}
 %
 %In examining provability, we are interested in {\em minimal} sets that satisfy a property $P$; tracing a property to the entire model is not particularly enlightening.
-\begin{definition}{\emph{Minimal Inductive Validity Core (IVC) \cite{Ghass16}:}}
-  \label{def:minimal-ivc}
-  $S \subseteq T$ for $(I, T)\vdash P$ is a minimal Inductive Validity Core,
-  denoted by $IVC(P, S)$, iff
-  $(I, S) \vdash P \wedge (\neg\exists S' \subset S .\quad (I, S') \vdash P) $.
+
+
+\begin{definition}{\emph{Inductive Validity Core (\ivc)\cite{Ghass16}:}}
+  \label{def:ivc}
+  $S \subseteq T$ for $(I, T)\vdash P$ is an Inductive Validity Core,
+  denoted by $\ivc(P, S)$, iff $(I, S) \vdash P $.
 \end{definition}
 
-\noindent The second condition in Definition \ref{def:minimal-ivc}
-specifies the \emph{minimality} of an Inductive Validity Core.
-In other words, $S \subseteq T$ that only meets the condition $(I, S) \vdash P$ is
-an Inductive Validity Core, but not minimal.
-For brevity, we use the term ``IVC'' to refer to a minimal IVC, unless
-we explicitly mention that a given IVC is not minimal.
+\ivc s have
+the following monotonicity property \cite{Ghass16}. Given $(I, T)\vdash P$, $\forall S_1 \subseteq S_2 \subseteq T$. $IVC(P, S_1) \Rightarrow IVC(P, S_2)$.
 
-Note that there is always at least one IVC, and there could be many IVCs for a given property, corresponding to different proofs. To capture that notion, we define \emph{all IVCs ($AIVC$)} for a property as an association to all its IVCs.
+\begin{definition}{\emph{Minimal Inductive Validity Core (\mivc) \cite{Ghass16}:}}
+  \label{def:minimal-ivc}
+  $S \subseteq T$ is a minimal Inductive Validity Core,
+  denoted by $\mivc(P, S)$, iff ~$\ivc(P, S) \wedge \forall T_i \in S.~ (I, S\setminus\{ T_i \}) \nvdash P$.
+\end{definition}
 
-$$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  IVC(P, S)\} $$
+Note that given $(I, T) \vdash P$, $P$ always has at least one \mivc , which implies \mivc s are not necessarily unique.
+For example, take $I = a \land b$, $T = a' \land b'$, and $P = a \lor
+b$. Then both $\{a'\}$ and $\{b'\}$ are \mivc s for $(I, T)\vdash P$. To capture this fact, the \emph{all \mivc s ($AIVC$)} relation has been introduced in \cite{Murugesan16:renext}.
+
+$$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  \mivc(P, S)\} $$
 
 %In the example in Fig. \ref{fig:asw}, as visualized in part (b),
 %$AIVC ({\tt P}) = \{\{{\tt P}, {\tt c2}, {\tt c3}\}, \{{\tt P}, {\tt x}, {\tt c3}\}\}$.
@@ -111,7 +118,7 @@ Given this representation, it is possible to discuss mutations of a single verte
 %$E_N$ with a new set of edges $E^{v_i}_M$ in the mutated net-list.
 Let  $N = (V_N,E_N, \tau_N)$ be the original net-list; to mutate a vertex $v_i$ using $\tau^{v_i}_{N}$, the  edges that had tails pointing to $v_i$ are removed,
  which replaces $E_N$ with a new set of edges $E^{v_i}_M$ in the mutated net-list.
-When property $P$ satisfied by $N$ fails on the mutant net-list $(V_N, E^{v_i}_N, \tau^{v_i}_{N})$, which is obtained from the non-deterministic mutation of $v_i$, it is said that a mutant is discovered for $P$ (or $v_i$ is covered by $P$).
+When property $P$ satisfied by $N$ fails on the mutant net-list $(V_N, E^{v_i}_N, \tau^{v_i}_{N})$, which is obtained from the \emph{non-deterministic} mutation of $v_i$, it is said that a mutant is discovered for $P$ (or $v_i$ is covered by $P$).
 We assume a function $TR : N \rightarrow T$ that returns the corresponding transition relation of a net-list. % \ela{shouldn't it be $TS: N \rightarrow I \rightarrow T$ ?}
 Given this representation, and an initial state $I$, we can define nondeterministic coverage as follows:
 

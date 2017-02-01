@@ -1,18 +1,21 @@
 \section{Implementation}
 \label{sec:impl}
 
-To implement our method, we have made use of the technique proposed by Ghassabani et al. \cite{Ghass16} for the efficient computation of IVCs, where there are two detailed algorithms for computing minimal IVCs: (1) Algorithm \ucbfalg that computes a minimal IVC for a given property, which is expensive. (2) Algorithm \ucalg that computes an approximately minimal IVC in a much more efficient way. This section provides a high-level representation of these algorithms.
+To implement our method, we have made use of the technique proposed by Ghassabani et al. \cite{Ghass16} for the efficient computation of IVCs, where there are two detailed algorithms for computing minimal IVCs: (1) Algorithm \ucbfalg that computes a MIVC of a given property, which is expensive. (2) Algorithm \ucalg that computes an \emph{approximately minimal} IVC in a much more efficient way. This section provides a high-level representation of these algorithms.
 
 IVCs are built upon inductive proofs. In order to prove a property, inductive proof methods employ heuristics to derive additional lemmas (or invariants) so to strengthen the property and prove it inductively. Intuitively, to extract IVCs, Algorithm \ref{alg:uc}
 first proves the property and obtains all the invariants generated for the proof (line 1). Since not all these invariants are essential for the proof, it performs a minimization step to keep a set of necessary invariants (line 2). The proofs of these invariants themselves are dependent on the structure of the model or design elements that we have defined them as Inductive Validity Core (Definition \ref{def:ivc}).
 So, using function $map\_to\_design$, Algorithm \ref{alg:uc}
-computes those design elements. And finally, the algorithm minimizes the computed elements so to obtain a minimal IVC (line 4). Although Algorithm \ref{alg:uc} performs minimization, because of the structure of the inductive proofs, \ucalg might still not produce a minimal IVC. For example, a minimal set of lemmas found in line 2 of Algorithm \ref{alg:uc} may need more model elements for their proof than another possible set of lemmas which is not minimal \footnote{\noindent ~for more information, see \cite{Ghass16}. Here we abstract away the details.}.
+computes those design elements. And finally, the algorithm minimizes the computed elements so to obtain a minimal IVC (line 4). Although Algorithm \ref{alg:uc} performs minimization, because of the structure of the inductive proofs, \ucalg might still not produce a minimal IVC. For example, a minimal set of lemmas found in line 2 of Algorithm \ref{alg:uc} may need more model elements for their proof than another possible set of lemmas which is not necessarily minimal \footnote{\noindent ~for more information, see \cite{Ghass16}. Here we abstract away the details.}.
 Therefore, Algorithm \ref{alg:ucbf}, \ucbfalg, includes a post-minimization process that
-operates on the result of \ucalg. The results by this algorithm are guaranteed to be minimal.
+operates on the result of \ucalg. The results from the \ucbfalg\ algorithm are guaranteed to be minimal.
 
-Algorithm \ref{alg:must} is also an efficient way of computing the \emph{must} set of a given property using \ucalg. Note that, as discussed in Section \ref{sec:method}, the
+Algorithm \ref{alg:must} is also an efficient way of computing the \emph{must} set of a given property using \ucalg. A different algorithm for computing $MUST (P)$ is to first compute $AIVC (P)$ and then take the intersection of all sets in $AIVC (P)$, which requires an algorithm for finding $AIVC$. 
+However, to the best of our knowledge, there is still not an efficient way of doing so. \ela{do we need to point that out?!}
+
+Note that, as discussed in Section \ref{sec:method}, the
 output of \ucalg (as well as \ucbfalg) for $(I, T) \vdash P$ pinpoints the covered design elements
-using \ivccov\ (Definition \ref{def:coverage-justi}).
+using \ivccov\ (Definition \ref{def:coverage-justi}). 
 And, the output of \mustalg represents covered design elements according to \nondetcovalt\ (or \nondetcov ), which is the same as $MUST(P)$.
 
 \begin{algorithm}
@@ -57,7 +60,7 @@ And, the output of \mustalg represents covered design elements according to \non
   $S \leftarrow \ucalg((I, T) \vdash P)$ \\
   $M \leftarrow \varnothing$ \\
   \For{$x \in S$} {
-    \If{$(I, S\setminus\{x\}) \nvdash P$}{
+    \If{$(I, T\setminus\{x\}) \nvdash P$}{
       $M = M \cup \{x\}$
     }
   }
@@ -66,7 +69,7 @@ And, the output of \mustalg represents covered design elements according to \non
 \label{alg:must}
 \end{algorithm}
 
-We have implemented the three algorithms introduced in this section in \texttt{JKind} \cite{jkind}, which is an infinite-state industrial model checker. \texttt{JKind} proves safety properties using multiple cooperative engines in parallel including k-induction \cite{SheeranSS00}, property directed reachability (PDR) \cite{Een2011:PDR}, and template-based lemma generation \cite{Kahsai2011}. It accepts
+The three algorithms introduced in this section have been implemented in the \texttt{JKind} \cite{jkind} model checker, which is an infinite-state industrial model checker. \texttt{JKind} proves safety properties using multiple cooperative engines in parallel including $k$-induction \cite{SheeranSS00}, property directed reachability (PDR) \cite{Een2011:PDR}, and template-based lemma generation \cite{Kahsai2011}. It accepts
 Lustre programs written over the theory of linear integer and real
 arithmetic. In the back-end, it uses an SMT solver such as
 Z3 \cite{DeMoura08:z3}, Yices \cite{Dutertre06:yices},
@@ -74,7 +77,8 @@ MathSAT \cite{Cimatti2013:MathSAT}, or SMTInterpol \cite{Christ2012:SMTInterpol}
 \texttt{JKind} works on multiple properties simultaneously. When a
 property is proven and IVC generation is enabled, an additional
 parallel engine executes Algorithm \ref{alg:uc} to generate a nearly minimal
-IVC.
+IVC. 
+We have made use of this engine extending it with some post-processing so to implement the other two algorithms and calculate coverage scores.
 
 %Although the minimality of $IVC$ sets makes \ivccov\ accurate
 %in terms of both preserving provability and not having false positives, the exact implementation of \ivccov\ is based on the \ucbfalg algorithm, which is as nearly expensive as the \mustalg algorithm for \nondetcov\ . To alleviate this issue, we have used the efficient implementation for \ivccov\ proposed in \cite{Ghass16}, i.e. \ucalg,

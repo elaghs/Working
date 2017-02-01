@@ -24,8 +24,8 @@ We call Definition \ref{def:coverage-justi} a \emph{proof-preserving} metric bec
 %Thus, the coverage score for \ivccov\ is often higher than the score for \nondetcov.
 The coverage score for \ivccov\ can be calculated with: $$\frac{|S|}{|T|}$$
 %Note that because minimal proofs are not unique, there are several possible coverage scores.
-Because $P$ may have multiple \mivc s,  \ivccov\ metric may lead to various scores that belong to the following set:
-\[ 
+Because $P$ may have multiple \mivc s,  \ivccov\ metric can lead to various scores that belong to the following set:
+\[
 \{~\frac{ |S|}{|T|}~|~S \in AIVC(P)~\}
 \]
 
@@ -33,28 +33,27 @@ Because $P$ may have multiple \mivc s,  \ivccov\ metric may lead to various scor
 
 %the model is {\em completely covered}, on the other hand, then there is only one possible minimal set: the set of all elements.
 
-Given {\em all} proofs of a particular property, it is possible to define additional, complementary coverage notions.  To do so, we first introduce categorizations of elements within proofs.
-%
-Considering \mivc ~and $AIVC$ relations for $P$, model elements can be categorized into one of the following groups:
-
+Given {\em all} proofs of a particular property, it is possible to define additional, complementary coverage notions.  To do so, we use the following categorization of the model elements based on \mivc ~and $AIVC$ relations for $P$:
 \begin{itemize}
-  \item \textbf{MUST} elements - target artifacts that are present in all the IVCs of a specification.
-      %$$ MUST_x = \{\forall i (S_xi \in \Sigma_x) \mid \bigcap S_xi \}$$
-      \[
-      MUST (P) = \bigcap AIVC(P)
-      \]
-
-  \item \textbf{MAY} elements - target artifacts that are used in some, but not all, IVCs.
-      \[
-      MAY(P) = (\bigcup AIVC (P)) \setminus MUST (P)
-      \]
-
-  \item \textbf{IRRELEVANT} elements - target artifacts that are not in any of the IVCs.
-  $$IRR(P) = T \setminus (\bigcup AIVC (P))$$
+ % \item  \textbf{$MUST$} contains model elements in all the \mivc s of $P$.
+%      %$$ MUST_x = \{\forall i (S_xi \in \Sigma_x) \mid \bigcap S_xi \}$$
+%      \[
+%      MUST (P) = \bigcap AIVC(P)
+%      \]
+%
+%  \item  \textbf{$MAY$} includes model elements that are used in some, but not all, \mivc s.
+%      \[
+%      MAY(P) = (\bigcup AIVC (P)) \setminus MUST (P)
+%      \]
+%
+%  \item  \textbf{$IRR$} specifies model elements that are not in any of the possible \mivc s of $P$.
+%  $$IRR(P) = T \setminus (\bigcup AIVC (P))$$
+\item $MUST (P) = \bigcap AIVC(P)$
+\item $MAY(P) = (\bigcup AIVC (P)) \setminus MUST (P)$
+\item $IRR(P) = T \setminus (\bigcup AIVC (P))$
 \end{itemize}
 
-Given property $P$, functions MUST, MAY, and IRR partition the target artifacts (set $T$) into three disjoint sets \emph{must}, \emph{may}, and \emph{irrelevant}, respectively. This categorization helps to identify the role and relevance of each target artifact in satisfying a property. The \emph{must} set contains those target artifacts that are absolutely necessary for the property satisfaction.  Any change to these elements will affect provability of the property. On the other hand, any single element in the \emph{may} set may be modified without affecting provability of the property (though modifying multiple elements may require re-proof).   The \emph{irrelevant} artifacts never affect the satisfaction of the property \cite{Murugesan16:renext}.
-
+\noindent This categorization helps to identify the role and relevance of each design element in satisfying a property. Function $MUST$ specifies the parts of the model absolutely necessary for the property satisfaction.  Any change to these parts will affect provability of the property. On the other hand, any single element in $MAY (P)$, may be modified without affecting satisfaction of $P$(though modifying multiple elements may require re-proof). The $IRR$ denotes model elements that are irrelevant to the validity of $P$ \cite{Murugesan16:renext}.
 
 Using the notions of $MAY$ and $MUST$, we can introduce additional coverage metrics.
 %Since the primary goal of
@@ -79,7 +78,7 @@ The $\maycov$ notion aims to deal with the fact that a property $P$ may have
 several distinct \mivc s. In such cases, \ivccov\ only looks at an arbitrary \mivc\
 that may contain a subset of $MAY(P)$, which means, depending on
 which \mivc\ it considers, every time it may report a different part of $MAY(P)$
-as uncovered. However, \maycov\ resolves this issue reporting the entire set of $MAY(P)$ as covered, which also leads to higher coverage scores.  \mustcov\ takes the opposite view, considering model elements covered only if they appear in all proofs.
+as uncovered. However, \maycov\ resolves this issue reporting the entire set of $MAY(P)$ as covered, which also leads to higher coverage scores.  \mustcov\ takes the opposite view, considering a model element as covered only if it affects all the proofs of $P$.
 
 
 It is still possible to build more relaxed coverage metrics in which coverage
@@ -133,7 +132,7 @@ $MUST(P) \subset S$ (since $T_i \in S \wedge T_i \notin MUST(P)$),
 %Immediate from the definition of $MUST$ and \mustcov.
 %\end{proof}
 
-Now we focus on the relationship between non-deterministic mutation-based coverage and proof-based metrics. In \cite{chockler2010coverage}, each mutant design changes the type of a single node to \inputnode.
+Now we focus on the relationship between non-deterministic mutation-based coverage and proof-based metrics. In \cite{chockler2010coverage}, each mutant design changes the type of a single node to \inputnode (see Section \ref{sec:background}).
 Given a suitable encoding of the netlist, assigning a ``fresh'' input is an isomorphic operation to simply removing a $T_i$ from $T$. The mapping is as follows: the net-list becomes a conjunction
 of equations, where each vertex becomes a variable $v_i \in U$, and where each non-input vertex becomes an assignment equation $T_i \in T$.
 For example, given an AND-vertex $v_i$ with three input edges from other vertexes $\{v_a, v_b, v_c\}$, we would define an equation $T_i \in T$ of the form $(v_i = (v_a \wedge v_b \wedge v_c))$.
@@ -200,7 +199,7 @@ $$\frac{|MUST(P)|}{|T|}$$
 %\mike{Then, you can talk about justification, etc.}
 \begin{coroll}
 \label{cor:must-not-provable}
-\nondetcovalt\ does not preserve provability.
+\nondetcovalt\ is not proof-preserving.
 \end{coroll}
 \begin{proof}
 Immediate from Lemma \ref{lem:must-not-enough} and Lemma \ref{lem:must-coverage}
@@ -208,7 +207,7 @@ Immediate from Lemma \ref{lem:must-not-enough} and Lemma \ref{lem:must-coverage}
 \vspace{2mm}
 \begin{coroll}
 \label{cor:ivc-provable}
-\ivccov\ preserves provability.
+\ivccov\ is proof-preserving.
 \end{coroll}
 \begin{proof}
 Immediate from Definition~\ref{def:minimal-ivc} and Definition \ref{def:coverage-justi}
@@ -220,9 +219,17 @@ Immediate from Definition~\ref{def:minimal-ivc} and Definition \ref{def:coverage
 
 To conclude this section, we should mention that one can define many more proof-based coverage metrics based on the $\mivc /AIVC$ idea. Metrics that make use of the $AIVC$ relation are computationally more expensive to compute than \ivccov\ although they might be easier to satisfy (i.e., result in higher coverage scores).
 
+\ela{please read the following paragraph and improve it. I've been trying to justify why we only have implementation for \ivccov \\}
 The proposed coverage metrics can be ranked in terms of their scores as follows:
 $$\nondetcovalt\ \leq \ivccov\ \leq \maycov\ \leq \allcov$$
-\ivccov\ and \nondetcovalt\ are equivalent when all elements within the model are covered: if all model elements are MUST elements, then there can only be one \mivc , and this \mivc ~uses all of the model elements.
+\ivccov\ and \nondetcovalt\ are equivalent when all elements within the model are covered: if all model elements are MUST elements, then there can only be one \mivc , and this \mivc ~uses all of the model elements. However, we will show \ivccov\ is a lot cheaper to compute
+and in terms of rigor, it is neither too hard (like \nondetcovalt)
+nor too easy (like \allcov) to satisfy.
+Let $\Delta$ be a set of properties over $T$. When we define a new property $P = \bigwedge p_i$, where $p_i \in \Delta$, possible \mivc s of $P$ are the parts of the models that affect the proof of every property $p_i \in \Delta$. In this way, we are able to identify portions of the model that are constrained by some properties without having to calculate the $AIVC$ relation for individual properties, which will significantly reduce computational cost.
+\footnote{Next section will illustrate this idea.} For these reasons, in Section \ref{sec:impl},
+we consider computation of \ivccov\
+and in order to benchmark it against the existing methods,
+we also provide implementation of \mustcov\ which is the same as \nondetcovalt .
 
 %Based on our preliminary evaluation, we believe that metrics based on
 %$AIVC$ relation (like \maycov\ and \allcov) are approximately as computationally expensive as \nondetcov.\footnote{\noindent ~The reason is that \nondetcov\ computes the must set which is also based on $AIVC$ relation. However, in terms of preserving provability, a set of design elements marked as covered by \allcov\ and \maycov\ are

@@ -3,11 +3,13 @@
 
 In this paper, we have examined the use of proof-based coverage notions for formal verification.
 Further we have implemented these notions in terms of checking safety properties using inductive model checking tools through Inductive Validity Cores (IVCs).  We have shown that this approach
-is computationally efficient while providing accurate information about the covered parts of a given design.  Our approach preserves provability, which means that a set of elements considered covered by our algorithm is sufficient to establish the validity proof for every requirement in the set of specifications.
-%
-We have implemented our algorithm as part of the open source model checker JKind, and experimented with our approach comparing it to another recent approach from the literature.  Our results show that the \ucalg\ computation imposes a small overhead to the verification process and so it is reasonable to measure completeness as part of the normal analysis process.
+is computationally efficient while providing accurate information about the covered parts of a given design.  
 
-We are now in the process of developing some efficient algorithms for exploring the space of IVCs, e.g., finding a minimum, rather than minimal support set, or finding all IVCs.  Having such algorithms, if they are performant, will allow a useful range of coverage metrics.  As part of this process, we are also investigating the relationship among the size of $IVC$s, coverage score of \ivccov\, and vacuity metrics for models and properties.
+Our approach preserves provability, which means that a set of elements considered covered by our algorithm is sufficient to establish the validity proof for every requirement in the set of specifications. This issue is important in coverage analysis because ... \ela{Mike maybe you can add to this for why proof-preserving is a big deal}
+%
+For implementation, we have made use of the open source model checker \texttt{JKind} and its IVC generation capability. We have evaluated our approach comparing it to another recent approach from the literature.  Our results show that the \ivccov\ computation imposes a small overhead to the verification process and so it is reasonable to measure completeness as part of the normal analysis process. 
+
+We are now in the process of developing some efficient algorithms for exploring the space of MIVCs, e.g., finding a minimum, rather than minimal IVC, or finding all MIVCs.  Having such algorithms, if they are performant, will allow a useful range of coverage metrics.  As part of this process, we are also investigating the relationship among the size of IVCs, coverage score of \ivccov\, and vacuity metrics for models and properties.
 
 We will also more closely examine the {\em granularity} of models.  We hope to construct algorithms that can create models that are sufficiently granular and maximally efficient in terms of verification time.  In addition, we will properly formalize these notions and construct proofs that our algorithms establish sufficient granularity.
 

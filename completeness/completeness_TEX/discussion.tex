@@ -2,27 +2,22 @@
 \label{sec:discussion}
 As mentioned, IVCs are derived from inductive invariants; in other words, they are built upon the proof of the validity of a given property. One interesting fact about proofs
   is that a given property could be proved from different proof paths.
-  The $AIVC$ captures this fact and gives a clear picture of various ways a property is satisfied. By getting all the IVCs for the system properties and categorizing them, one can find if there are design artifacts that do not trace to any property: set $\bigcap \{IRR (P) | P \in \Delta \}$.  If this set is non-empty, it is a possible indication of ``gold plating" or missing properties.
+  The $AIVC$ captures this fact and gives a clear picture of various ways a property is satisfied. By getting all the MIVCs for the system properties and categorizing them, one can find if there are design artifacts that do not trace to any property: set $\bigcap \{IRR (P) | P \in \Delta \}$.  If this set is non-empty, it is a possible indication of ``gold plating" or missing properties \cite{Murugesan16:renext}.
 %  That is to say, it helps to assess if the specification describe all the behaviors of the system. Being able to measure the coverage of properties over the model is crucial in the safety critical system domain.
 
-Very recent, as yet unpublished, work has focused on the
-generation of all IVCs, whose preliminary evaluation
-shows the overhead in discovering all IVCs is a linear in the
-number of unique IVC in the problem multiplied by the cost
-for finding a proof for a single IVC. For complex models, such
-as the ones described in \cite {QFCS15:backes} and \cite{hilt2013}, it has been possible to
-find $AIVC$ for individual properties in a matter of minutes.
-Based on our preliminary results we expect computing $AIVC$ to be computationally feasible for complex models. In
-addition, we believe that it is possible to use the information
-from the set of all IVCs to more efficiently produce minimal
-IVCs than the \ucbfalg algorithm.
+Since some of the proposed metrics need to find $AIVC (P)$, 
+very recent, as yet unpublished, work has focused on an efficient algorithm for doing so. 
+Based on preliminary evaluation,
+ we expect computing $AIVC$ to be computationally feasible for realistic models. In
+addition, we believe that it is possible to obtain MIVCs directly while computing $AIVC$, 
+which means we would not have any concern about minimality. \ela{this is also mentioned in the RE paper. I don't know if it would be problematic for double-blind reviewing}
 
 As we described in Section \ref{sec:background}, transition relation is considered
 as the conjunction of Boolean formulas. The granularity of these formulas substantially affects the analysis results.  In our running example in Section~\ref{sec:illust}, it was possible to have a ``complete'' specification of the model involving only the hysteresis property \hystp.  The way that the model was structured, in order to determine the validity of the property, all of the equations in the model were required.  However, for this property certain subexpressions of the equations were irrelevant, notably the value assigned to the \texttt{doi\_on} variable in the \texttt{then} branches of equations (7) and (8).  If we decompose the equations into smaller pieces, e.g., creating separate equations for the \texttt{then} and \texttt{else} branches, this incompleteness becomes visible and the model is no longer completely covered.
 
 %Splitting a model into more conjuncts will make coverage scores more accurate and usually lower, though it will not always lower coverage scores.
 %
-We have recently implemented a transformation that we believe splits models into {\em sufficiently granular} conjuncts such that further decomposition will not cause a complete specification to become incomplete.  We will document this transformation and provide a proof of completeness-result-preservation in future work.
+We have recently implemented a transformation that splits models into {\em sufficiently granular} conjuncts such that further decomposition will not cause a complete specification to become incomplete.  We will document this transformation and provide a proof of completeness-result-preservation in future work.
 %
 In a small initial experiment involving 30 of the original models, we performed our transformation and re-ran the analysis.  By changing the granularity of the model, the analysis tools perform significantly slower for proofs, but the ratio of performance between the proof and the \ucalg\ and \nondetcovalt\ models is largely unchanged.  However, on some models, the \nondetcovalt\ metric becomes unacceptably slow (analysis times of 10s of hours) and occasionally causes the solver to run out of memory.
 

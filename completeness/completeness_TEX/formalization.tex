@@ -62,7 +62,7 @@ b$. Then both $\{a'\}$ and $\{b'\}$ are \mivc s for $(I, T)\vdash P$. To capture
 
 $$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  \mivc(P, S)\} $$
 
-%In the example in Fig. \ref{fig:asw}, as visualized in part (b),
+%In the example in Figure \ref{fig:asw}, as visualized in part (b),
 %$AIVC ({\tt P}) = \{\{{\tt P}, {\tt c2}, {\tt c3}\}, \{{\tt P}, {\tt x}, {\tt c3}\}\}$.
 \noindent
 Establishing the $AIVC$ for a single property, one gets a clear picture of the all the model elements that are necessary to prove the property. The set of $AIVC$s for all properties demonstrates a complete mapping from the requirements to the design elements, which is called complete traceability \cite{Murugesan16:renext}.
@@ -119,8 +119,8 @@ Given this representation, it is possible to discuss mutations of a single verte
 Let  $N = (V_N,E_N, \tau_N)$ be the original net-list; to mutate a vertex $v_i$ using $\tau^{v_i}_{N}$, the  edges that had tails pointing to $v_i$ are removed,
  which replaces $E_N$ with a new set of edges $E^{v_i}_M$ in the mutated net-list.
 When property $P$ satisfied by $N$ fails on the mutant net-list $(V_N, E^{v_i}_N, \tau^{v_i}_{N})$, which is obtained from the \emph{non-deterministic} mutation of $v_i$, it is said that a mutant is discovered for $P$ (or $v_i$ is covered by $P$).
-We assume a function $TR : N \rightarrow T$ that returns the corresponding transition relation of a net-list. % \ela{shouldn't it be $TS: N \rightarrow I \rightarrow T$ ?}
-Given this representation, and an initial state $I$, we can define nondeterministic coverage as follows:
+We assume a function $TR : N \rightarrow T$ that returns the corresponding transition relation of a net-list.
+Given this representation, and the initial state $I$, we can define nondeterministic coverage as follows:
 
 \begin{definition} {\emph{Nondeterministic coverage (\nondetcov) ~\cite{chockler2010coverage}.} }
 \label{def:non-det}

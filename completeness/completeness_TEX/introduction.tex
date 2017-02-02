@@ -19,8 +19,8 @@ should be applied to gain higher assurance than is possible with testing~\cite{M
 
 Relatively recently, techniques have been devised for analyzing completeness of requirements against formal implementation models, specified as transition systems or Kripke structures \cite{chockler2001practical,das2005formal, claessen2007coverage, grosse2007estimating}.  These models are agnostic to the abstraction level of the implementation: implementations can be lower-level requirements, software architectures, or concrete implementations of system behavior.  The mechanism used is based on {\em mutation} and {\em proof}: is it possible to prove that the requirements still hold of the system after mutating the model in some way?  If so, then the requirements are incomplete with respect to that the mutant part of the model.
 
-Unfortunately, previous coverage metrics can {\em underapproximate} which portions of a program are necessary to fulfill the requirements \cite{}.  That is, if we construct a model consisting of only the model elements marked as covered by the analysis, it is often no longer possible to prove the requirement.  Thus, the feedback provided to the developer may be somewhat misleading.
-In addition, the mutation-based analyses tend to be very computationally expensive because there are usually too many possible mutant models to verify.  For example, for model checkers, state of the art techniques have runtimes of (in the best case) several times more than is required for proof~\cite{chockler2010coverage}.
+Unfortunately, previous coverage metrics can {\em underapproximate} which portions of a program are necessary to fulfill the requirements.  That is, if we construct a model consisting of only the model elements marked as covered by the analysis, it is often no longer possible to prove the requirement.  Thus, the feedback provided to the developer may be somewhat misleading.
+In addition, the mutation-based analyses tend to be very computationally expensive because there are many possible mutant models to verify.  For example, for model checkers, state of the art techniques have runtimes of (in the best case) several times more than is required for proof~\cite{chockler2010coverage}.
 
 What we would like to have is an approach for checking the relative completeness of requirements against an implementation model that:
 \begin{itemize}
@@ -30,14 +30,14 @@ What we would like to have is an approach for checking the relative completeness
     \item Is reasonably computationally efficient.
 \end{itemize}
 
-\noindent Towards this end, we propose several notions of requirements completeness that examine {\em minimal proofs of requirements}.  In this approach, we measure the completeness of a set of requirements by examining an (approximately) minimal set of model elements necessary to construct a proof of all the requirements.  Like earlier approaches proposed for formal verification, this idea is implementation agnostic, so can be applied early in the development cycle against abstract implementation models.  We then define an implementation of this idea using {\em Inductive Validity Cores} (IVCs)~\cite{Ghass16} for transition systems.  We demonstrate that the IVC-based approach is considerably more computationally tractable than previous approaches based on mutation, averaging ~10\% overhead over model-checking alone, rather than (for our benchmark problems) ~900\% overhead required for the state of the art of the mutation-based metrics.  In addition, by definition, the covered portion of the model computed by the IVC-based approach is minimal (does not include unnecessary parts irrelevant to the property) and sufficient to prove the requirements.
+\noindent Towards this end, we propose several notions of requirements completeness that examine {\em minimal proofs of requirements}.  In this approach, we measure the completeness of a set of requirements by examining an (approximately) minimal set of model elements necessary to construct a proof of all the requirements.  Like earlier approaches proposed for formal verification, this idea is implementation agnostic, so can be applied early in the development cycle against abstract implementation models.  The approach is implemented using {\em Inductive Validity Cores} (IVCs)~\cite{Ghass16} for transition systems.  We demonstrate that the IVC-based approach is considerably more computationally tractable than previous approaches based on mutation, averaging ~10\% overhead over model-checking alone, rather than (for our benchmark problems) ~900\% overhead required for the state of the art of the mutation-based metrics.  In addition, by definition, the covered portion of the model computed by the IVC-based approach is minimal (does not include unnecessary parts irrelevant to the property) and sufficient to prove the requirements.
 
 Thus, the contributions of this work are:
 \begin{enumerate}
-\item New approach for measuring coverage in formal verification based on \emph{minimal} Inductive Validity Cores (MIVCs), which is proof-preserving,
-\item An implementation that efficiently measures requirements completeness over symbolic transition systems,
-%%b.) more accurate than test-based methods, 
-\item An experiment that examines our technique against a the state of the art mutation-based notion of completeness.
+\item A family of coverage metrics for formal verification based on \emph{minimal} Inductive Validity Cores (MIVCs) that preserve provability,
+\item An implementation that efficiently measures property coverage over symbolic transition systems,
+%%b.) more accurate than test-based methods,
+\item An experiment that examines our technique against a state of the art mutation-based notion of completeness.
 \end{enumerate}
 
 \noindent Our eventual goal is to provide a range of metrics for quantifying requirements completeness using formal methods that is acceptable to certification authorities.  We believe that our minimal proof metrics provides reasonable candidates for this purpose.
@@ -46,6 +46,6 @@ Thus, the contributions of this work are:
 
 The rest of the paper is organized as follows.  In Section~\ref{sec:example}, we present a running example to illustrate the concepts formalized throughout the paper.  In Section~\ref{sec:background}, we provide the formal preliminaries for the approach and some background on mutation-based coverage notions.  Section~\ref{sec:method} presents our method for computing relative completeness.
 In Section~\ref{sec:illust}, we illustrate how the new approach can be employed in the assessment of requirements completeness.
-Section~\ref{sec:impl} provides detail on algorithms and implementation. Section~\ref{sec:experiments} describes an experiment to evaluate our algorithm comparing it with recent work by Chockler and Kroening~\cite{chockler2010coverage}. 
+Section~\ref{sec:impl} provides detail on algorithms and implementation. Section~\ref{sec:experiments} describes an experiment to evaluate our algorithm comparing it with recent work by Chockler and Kroening~\cite{chockler2010coverage}.
 Section~\ref{sec:results} provides the experimental results followed by a discussion on limitations of all ``relative completeness'' algorithms in Section \ref{sec:discussion}.  In Section~\ref{sec:related}, we cover related work.  Finally, Section~\ref{sec:conclusion} mentions some conclusions and future work.
 

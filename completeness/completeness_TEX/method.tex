@@ -4,7 +4,7 @@
 \section{Proof-Based Metrics}
 \label{sec:method}
 
-We propose a new approach for measuring property completeness based on proof rather than mutation.  We first define notation, then describe different possible metrics given a set of {\em minimal proofs}.\footnote{Section~\ref{sec:impl} describes how these proofs are discovered in practice.}
+We propose a new approach for measuring property completeness based on proof rather than mutation.  We first define notation, then describe different possible metrics given a set of {\em minimal proofs}.%\footnote{Section~\ref{sec:impl} describes how these proofs are discovered in practice.}
 %\subsection{Coverage and Minimal Proofs}
 %Alternatively, we can consider using the proofs themselves as a mechanism for determining adequacy of requirements.
 
@@ -132,7 +132,7 @@ $MUST(P) \subset S$ (since $T_i \in S \wedge T_i \notin MUST(P)$),
 %Immediate from the definition of $MUST$ and \mustcov.
 %\end{proof}
 
-Now we focus on the relationship between non-deterministic mutation-based coverage and proof-based metrics. In \cite{chockler2010coverage}, each mutant design changes the type of a single node to \inputnode (see Section \ref{sec:background}).
+Now we focus on the relationship between non-deterministic mutation-based coverage and proof-based metrics. In Chockler et. al. \cite{chockler2010coverage}, each mutant design changes the type of a single node to \inputnode\ (see Section \ref{sec:background}).
 Given a suitable encoding of the netlist, assigning a ``fresh'' input is an isomorphic operation to simply removing a $T_i$ from $T$. The mapping is as follows: the net-list becomes a conjunction
 of equations, where each vertex becomes a variable $v_i \in U$, and where each non-input vertex becomes an assignment equation $T_i \in T$.
 For example, given an AND-vertex $v_i$ with three input edges from other vertexes $\{v_a, v_b, v_c\}$, we would define an equation $T_i \in T$ of the form $(v_i = (v_a \wedge v_b \wedge v_c))$.

@@ -72,7 +72,7 @@
 \newcommand{\maycov}{\text{\sc May-Cov}}
 \newcommand{\mustcov}{\text{\sc Must-Cov}}
 \newcommand{\allcov}{\text{\sc Model-Cov}}
-\newcommand{\mutcov}{\text{\sc Mutant-Cov}} 
+\newcommand{\mutcov}{\text{\sc Mutant-Cov}}
 \newcommand{\ucalg}{\texttt{IVC\_UC}\xspace}
 \newcommand{\ucbfalg}{\texttt{IVC\_UCBF}\xspace}
 \newcommand{\mustalg}{\texttt{IVC\_MUST}\xspace}
@@ -119,10 +119,31 @@
 
 
 \begin{abstract}
- An important question while using formal verification is whether we have specified enough properties for a given implementation model.  To address this question, we need coverage metrics for property-based formal verification. Existing metrics are usually based on mutation, in which the implementation model is modified and re-analyzed to determine whether the properties hold over the mutated model.
- However, these metrics are expensive to compute (involving many additional proofs for possible mutations). Besides, a set of design elements marked as covered by these metrics, called residual mode, is often inadequate to prove the original property. This paper proposes an alternate characterization of completeness based on the idea of  minimal Inductive Validity Core (IVC) introduced recently to the literature. IVCs trace a given proof to minimal sets of model elements necessary for the validity of the proof.
- In this paper, we examine a family of coverage metrics that can be computed from IVCs.  One of the proposed metrics is substantially cheaper to compute than previous metrics and is guaranteed to preserve a residual model that leads to a proof.  Other possible metrics are more expensive to compute and provide  more- or less-rigorous definitions.
- We demonstrate the metrics on a large corpus of examples.
+When using formal verification on critical software, an important question involves whether the properties
+used for analysis are sufficient to adequately constrain the behavior of an implementation model. To address
+this question, coverage metrics for property-based formal verification have been proposed.  Existing metrics
+are usually based on {\em mutation}, where the implementation model is repeatedly modified and
+re-analyzed to determine whether mutant models are ``killed'' by the property set.
+These metrics tend to be very expensive to compute, as they involve many additional verification problems.
+%In addition, the set of design elements marked as necessary for these metrics (the residual model)
+%is often insufficient to re-prove the original properties; that is, if we remove the unnecessary elements, we no longer
+%can prove the original property set.
+
+This paper proposes an alternate family of metrics that can be computed using the recently introduced idea of
+Inductive Validity Cores (IVCs).  IVCs determine a minimal set of model elements necessary to
+establish a proof. One of the proposed metrics is both rigorous and substantially
+cheaper to compute than mutation-based metrics.  In addition, unlike the mutation-based techniques, the design 
+elements marked as necessary in the metric are guaranteed to preserve provability.  %Other possible metrics
+%are more expensive to compute and provide more- or less-rigorous
+%definitions. 
+We demonstrate the metrics on a large corpus of examples.
+
+%that use the proofs themselves to determine adequacy.
+%It uses the recently introduced idea Inductive Validity Cores (IVCs) to find minimal sets of model elements necessary to establish proofs.
+%One of the proposed metrics is rigorous, substantially cheaper to compute than previous metrics, and
+%is guaranteed to yield a residual model that leads to a proof.  Other possible metrics are more expensive
+%to compute and provide  more- or less-rigorous completeness definitions.  We demonstrate the metrics on
+%a large corpus of examples.
 
 \end{abstract}
 

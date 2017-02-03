@@ -2,16 +2,17 @@
 \label{sec:experiments}
 
 We would like to evaluate both the {\em efficiency} and {\em
-  effectiveness} of the three described algorithms: \ucbfalg, \ucalg, and \mustalg. Therefore, we investigate the following research questions:
+  effectiveness} of the three described algorithms: \ucalg, \ucbfalg, and \mustalg. Therefore, we investigate the following research questions:
 \begin{itemize}
-    \item \textbf{RQ1:} How expensive is the coverage analysis using the \ucalg, \mustalg, and \ucbfalg algorithms?
-    \item \textbf{RQ2:} How hard are different metrics to satisfy (\ivccov\ vs \nondetcovalt)?  And, what is the relationship between the coverage scores obtained from different notions and provability?
-        \item \textbf{RQ3:} How much does the coverage scores are affected by the \emph{minimality} issue?
+    \item \textbf{RQ1:} How computationally expensive is it to perform coverage analysis using the \ucalg, \ucbfalg, and \mustalg\ algorithms?
+    \item \textbf{RQ2:} What are the differences in coverage for different models produced by the \ucalg, \ucbfalg, and \mustalg algorithms?
+    \item \textbf{RQ3:} How often does the previously proposed \nondetcov\ metric (\mustalg) not preserve provability?
+    %How much does the potential \emph{non-minimality} of \ucalg affect coverage scores?
 \end{itemize}
 
 \subsection{Experimental Setup}
 
-In order to compare our new coverage notion (\ivccov) with the previous one (\nondetcovalt), we designed an experiment from a suite of 476 Lustre models from~\cite{Hagen08:FMCAD} augmented
+In order to compare our new coverage notion (\ivccov) with previous work (\nondetcovalt), we designed an experiment from a suite of 476 Lustre models from~\cite{Hagen08:FMCAD} augmented
 with 81 additional models from some industrial cases ~\cite{QFCS15:backes,hilt2013}. Most of
 the benchmark models from~\cite{Hagen08:FMCAD} are small (10kB or less,
 with 6-40 equations) and contain a range of hardware benchmarks and

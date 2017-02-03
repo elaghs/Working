@@ -138,7 +138,8 @@ of equations, where each vertex becomes a variable $v_i \in U$, and where each n
 For example, given an AND-vertex $v_i$ with three input edges from other vertexes $\{v_a, v_b, v_c\}$, we would define an equation $T_i \in T$ of the form $(v_i = (v_a \wedge v_b \wedge v_c))$.
 %
 %As the variable is no longer constrained by a defining equation, it is effectively an %input.
-So, we can reframe the non-deterministic coverage proposed in \cite{chockler2010coverage} as follows:
+
+Given this encoding, we can reframe the non-deterministic coverage proposed in \cite{chockler2010coverage} as follows:
 
 \begin{definition} {\emph{Nondeterministic coverage (alternate specification) (\nondetcovalt) ~\cite{chockler2010coverage}.} }
 \label{def:non-det-2}
@@ -219,17 +220,20 @@ Immediate from Definition~\ref{def:minimal-ivc} and Definition \ref{def:coverage
 
 To conclude this section, we should mention that one can define many more proof-based coverage metrics based on the $\mivc /AIVC$ idea. Metrics that make use of the $AIVC$ relation are computationally more expensive to compute than \ivccov\ although they might be easier to satisfy (i.e., result in higher coverage scores).
 
-\ela{please read the following paragraph and improve it. I've been trying to justify why we only have implementation for \ivccov \\}
+%\ela{please read the following paragraph and improve it. I've been trying to justify why we only have implementation for \ivccov \\}
 The proposed coverage metrics can be ranked in terms of their scores as follows:
 $$\nondetcovalt\ \leq \ivccov\ \leq \maycov\ \leq \allcov$$
-\ivccov\ and \nondetcovalt\ are equivalent when all elements within the model are covered: if all model elements are MUST elements, then there can only be one \mivc , and this \mivc ~uses all of the model elements. However, we will show \ivccov\ is a lot cheaper to compute
-and in terms of rigor, it is neither too hard (like \nondetcovalt)
-nor too easy (like \allcov) to satisfy.
-Let $\Delta$ be a set of properties over $T$. When we define a new property $P = \bigwedge p_i$, where $p_i \in \Delta$, possible \mivc s of $P$ are the parts of the models that affect the proof of every property $p_i \in \Delta$. In this way, we are able to identify portions of the model that are constrained by some properties without having to calculate the $AIVC$ relation for individual properties, which will significantly reduce computational cost.
-\footnote{Next section will illustrate this idea.} For these reasons, in Section \ref{sec:impl},
-we consider computation of \ivccov\
-and in order to benchmark it against the existing methods,
-we also provide implementation of \mustcov\ which is the same as \nondetcovalt .
+\ivccov\ and \nondetcovalt\ are equivalent when all elements within the model are covered: if all model elements are MUST elements, then there can only be one \mivc , and this \mivc ~uses all of the model elements.   In the implementation and experiments, we will focus on the \ivccov\ and \nondetcovalt\ metrics.  Both metrics are fairly rigorous and can be computed reasonably efficiently.  The equivalence of \mustcov\ and \nondetcovalt\ allows us to compare our algorithms against state-of-the-art mutation based coverage.
+
+
+%However, we will show \ivccov\ is a lot cheaper to compute
+%and in terms of rigor, it is neither too hard (like \nondetcovalt)
+%nor too easy (like \allcov) to satisfy.
+%Let $\Delta$ be a set of properties over $T$. When we define a new property $P = \bigwedge p_i$, where $p_i \in \Delta$, possible \mivc s of $P$ are the parts of the models that affect the proof of every property $p_i \in \Delta$. In this way, we are able to identify portions of the model that are constrained by some properties without having to calculate the $AIVC$ relation for individual properties, which will significantly reduce computational cost.
+%\footnote{Next section will illustrate this idea.} For these reasons, in Section \ref{sec:impl},
+%we consider computation of \ivccov\
+%and in order to benchmark it against the existing methods,
+%we also provide implementation of \mustcov\ which is the same as \nondetcovalt .
 
 %Based on our preliminary evaluation, we believe that metrics based on
 %$AIVC$ relation (like \maycov\ and \allcov) are approximately as computationally expensive as \nondetcov.\footnote{\noindent ~The reason is that \nondetcov\ computes the must set which is also based on $AIVC$ relation. However, in terms of preserving provability, a set of design elements marked as covered by \allcov\ and \maycov\ are

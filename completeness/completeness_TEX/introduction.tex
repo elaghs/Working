@@ -25,7 +25,7 @@ In addition, the mutation-based analyses tend to be very computationally expensi
 What we would like to have is an approach for checking the relative completeness of requirements against an implementation model that:
 \begin{itemize}
     \item Can be applied early and throughout a development cycle on different implementation artifacts.
-    \item Is accurate: the portion of the implementation that is identified as necessary demonstrates the
+    \item Is {\em proof preserving}: the portion of the implementation that is identified as necessary demonstrates the
         fulfillment of the requirement but does not contain irrelevant information.
     \item Is reasonably computationally efficient.
 \end{itemize}
@@ -34,7 +34,7 @@ What we would like to have is an approach for checking the relative completeness
 
 Thus, the contributions of this work are:
 \begin{enumerate}
-\item A family of coverage metrics for formal verification based on \emph{minimal} Inductive Validity Cores (MIVCs) that preserve provability,
+\item A family of coverage metrics for formal verification based on \emph{minimal} Inductive Validity Cores (MIVCs).  Most of the proposed metrics are {\em proof preserving},
 \item An implementation that efficiently measures property coverage over symbolic transition systems,
 %%b.) more accurate than test-based methods,
 \item An experiment that examines our technique against a state of the art mutation-based notion of completeness.

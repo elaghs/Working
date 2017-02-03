@@ -47,8 +47,10 @@ conjuncts of $T$. When a top-level conjunct $x$ is removed from $T$, it is writt
   denoted by $\ivc(P, S)$, iff $(I, S) \vdash P $.
 \end{definition}
 
-\ivc s have
-the following monotonicity property \cite{Ghass16}. Given $(I, T)\vdash P$, $\forall S_1 \subseteq S_2 \subseteq T$. $IVC(P, S_1) \Rightarrow IVC(P, S_2)$.
+In examining provability, we are interested in minimal sets
+that satisfy a property P; tracing a property to the entire model
+is not particularly enlightening.  Fortunately, \ivc s have
+the following monotonicity property \cite{Ghass16}: given $(I, T)\vdash P$, $\forall S_1 \subseteq S_2 \subseteq T$. $IVC(P, S_1) \Rightarrow IVC(P, S_2)$.  We next introduce the notion of {\em minimal} inductive validity cores.
 
 \begin{definition}{\emph{Minimal Inductive Validity Core (\mivc) \cite{Ghass16}:}}
   \label{def:minimal-ivc}

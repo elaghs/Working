@@ -5,12 +5,10 @@ As mentioned, IVCs are derived from inductive invariants; in other words, they a
   The $AIVC$ captures this fact and gives a clear picture of various ways a property is satisfied. By getting all the MIVCs for the system properties and categorizing them, one can find if there are design artifacts that do not trace to any property: set $\bigcap \{IRR (P) | P \in \Delta \}$.  If this set is non-empty, it is a possible indication of ``gold plating" or missing properties \cite{Murugesan16:renext}.
 %  That is to say, it helps to assess if the specification describe all the behaviors of the system. Being able to measure the coverage of properties over the model is crucial in the safety critical system domain.
 
-Since some of the proposed metrics need to find $AIVC (P)$, 
-very recent, as yet unpublished, work has focused on an efficient algorithm for doing so. 
-Based on preliminary evaluation,
- we expect computing $AIVC$ to be computationally feasible for realistic models. In
-addition, we believe that it is possible to obtain MIVCs directly while computing $AIVC$, 
-which means we would not have any concern about minimality. \ela{this is also mentioned in the RE paper. I don't know if it would be problematic for double-blind reviewing}
+Since some of the proposed metrics need to compute $AIVC (P)$,
+we are researching efficient algorithms for computing all inductive validity cores.
+Based on a preliminary evaluation, we expect computing $AIVC$ to be computationally feasible for realistic models. In addition, we believe that it is possible to obtain MIVCs directly while computing $AIVC$.
+%which would remove any concern about minimality. %\ela{this is also mentioned in the RE paper. I don't know if it would be problematic for double-blind reviewing}
 
 As we described in Section \ref{sec:background}, transition relation is considered
 as the conjunction of Boolean formulas. The granularity of these formulas substantially affects the analysis results.  In our running example in Section~\ref{sec:illust}, it was possible to have a ``complete'' specification of the model involving only the hysteresis property \hystp.  The way that the model was structured, in order to determine the validity of the property, all of the equations in the model were required.  However, for this property certain subexpressions of the equations were irrelevant, notably the value assigned to the \texttt{doi\_on} variable in the \texttt{then} branches of equations (7) and (8).  If we decompose the equations into smaller pieces, e.g., creating separate equations for the \texttt{then} and \texttt{else} branches, this incompleteness becomes visible and the model is no longer completely covered.
@@ -19,9 +17,9 @@ as the conjunction of Boolean formulas. The granularity of these formulas substa
 %
 We have recently implemented a transformation that splits models into {\em sufficiently granular} conjuncts such that further decomposition will not cause a complete specification to become incomplete.  We will document this transformation and provide a proof of completeness-result-preservation in future work.
 %
-In a small initial experiment involving 30 of the original models, we performed our transformation and re-ran the analysis.  By changing the granularity of the model, the analysis tools perform significantly slower for proofs, but the ratio of performance between the proof and the \ucalg\ and \nondetcovalt\ models is largely unchanged.  However, on some models, the \nondetcovalt\ metric becomes unacceptably slow (analysis times of 10s of hours) and occasionally causes the solver to run out of memory.
+In a small initial experiment involving 30 of the original models, we performed our transformation and re-ran the analysis.  By changing the granularity of the model, the analysis tools perform significantly slower for proofs, but the ratio of performance between the proof and the \ucalg\ and \mustalg\ algorithms is largely unchanged.  However, on some models, the \mustalg\ algorithm becomes unacceptably slow (analysis times of 10s of hours) and occasionally causes the solver to run out of memory.
 
-The issue of granularity of models is significant, but tends not to be discussed in detail in other papers.  This will be a focus of our future work, especially in analyzing situations in which the tool determines that a set of requirements is {\em complete}.
+The issue of granularity of models is significant, but tends not to be discussed in detail in previous work.  This will be a focus of our future work, especially in analyzing situations in which the tool determines that a set of requirements is {\em complete}.
 
 %We plan to focus on efficient analysis of sufficiently granular models in future work.
 %when the tool returns that the set of requirements are complete.

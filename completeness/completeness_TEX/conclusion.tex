@@ -1,11 +1,10 @@
 \section{Conclusions \& Future Work}
 \label{sec:conclusion}
 
-In this paper, we have examined the use of proof-based coverage notions for formal verification.
-Further we have implemented these notions in terms of checking safety properties using inductive model checking tools through Inductive Validity Cores (IVCs).  We have shown that this approach
-is computationally efficient while providing accurate information about the covered parts of a given design.
+In this paper, we have examined the use of proof-based coverage notions for formal verification.  These provide an alternate way of measuring property completeness than previously proposed metrics based on mutation or functional traces of outputs.
+Further we have implemented these notions in terms of checking safety properties using inductive model checking tools through Inductive Validity Cores (IVCs).  We have shown that these metrics complement existing methods, and in some cases are much more computationally efficient than previous metrics, while still providing accurate information about the covered parts of a given design.
 
-Our approach preserves provability, which means that a set of elements considered covered by our algorithm is sufficient to establish the validity proof for every requirement in the set of specifications.  The notion of proof preservation is appealing because it allows a concrete demonstration to the user of the irrelevance of portions of the implementation.  The IVC coverage notion also allows, in cases where there are multiple minimal satisfying sets, insight on multiple ways by which the model meets a requirement.
+Most of our proposed metrics preserve provability, which means that the set of elements considered covered by our algorithm is sufficient to establish the validity proof for every requirement in the set of specifications.  The notion of proof preservation is appealing because it allows a concrete demonstration to the user of the irrelevance of portions of the implementation.  The IVC coverage notion also allows, in cases where there are multiple minimal satisfying sets, insight on multiple ways by which the model meets a requirement.
 Finally, if the user decides that the only behavior of interest is that provided by the properties, it may allow new notions of synthesis that simply remove unnecessary behaviors.
 
 For implementation, we have made use of the open source model checker \texttt{JKind} and its IVC generation capability. We have evaluated our approach comparing it to another Precent approach from the literature.  Our results show that the \ivccov\ computation imposes a small overhead to the verification process and so it is reasonable to measure completeness as part of the normal analysis process.

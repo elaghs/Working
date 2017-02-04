@@ -60,14 +60,14 @@ the following monotonicity property \cite{Ghass16}: given $(I, T)\vdash P$, $\fo
 
 Note that given $(I, T) \vdash P$, $P$ always has at least one \mivc , which implies \mivc s are not necessarily unique.
 For example, take $I = a \land b$, $T = a' \land b'$, and $P = a \lor
-b$. Then both $\{a'\}$ and $\{b'\}$ are \mivc s for $(I, T)\vdash P$. To capture this fact, the \emph{all \mivc s ($AIVC$)} relation has been introduced in \cite{Murugesan16:renext}.
+b$. Then both $\{a'\}$ and $\{b'\}$ are \mivc s for $(I, T)\vdash P$. To capture this fact, the \emph{all \mivc s ($AIVC$)} relation has been introduced \cite{Murugesan16:renext}.
 
 $$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  \mivc(P, S)\} $$
 
 %In the example in Figure \ref{fig:asw}, as visualized in part (b),
 %$AIVC ({\tt P}) = \{\{{\tt P}, {\tt c2}, {\tt c3}\}, \{{\tt P}, {\tt x}, {\tt c3}\}\}$.
 \noindent
-Establishing the $AIVC$ for a single property, one gets a clear picture of the all the model elements that are necessary to prove the property. The set of $AIVC$s for all properties demonstrates a complete mapping from the requirements to the design elements, which is called complete traceability \cite{Murugesan16:renext}.
+Establishing the $AIVC$ for a single property, one gets a clear picture of the all the model elements constrained by the property. The set of $AIVC$s for all properties demonstrates a complete mapping from the requirements to the design elements, which is called complete traceability \cite{Murugesan16:renext}.
 
 \subsection{Coverage and Mutations}
 In general, specification completeness can be defined with

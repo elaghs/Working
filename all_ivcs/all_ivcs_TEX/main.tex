@@ -1,51 +1,76 @@
-%\documentclass{sig-alternate-05-2015}
-\documentclass{llncs}
-\usepackage{makeidx}
-\usepackage{tabularx,colortbl}
+
+\documentclass[10pt, conference]{IEEEtran}
+\usepackage{cite}
+
+\ifCLASSINFOpdf
+\usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+\usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+\usepackage[cmex10]{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{amsthm}
+\usepackage{algorithmic}
+\usepackage{array}
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+\usepackage{eqparbox}
+%\usepackage[tight,normalsize]{subfigure}
+%\usepackage[font=normalsize]{caption}
+%\usepackage{tabularx,colortbl}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{flushend}
 \usepackage{cite}
 \usepackage{amsmath}
-%\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{epsfig}
-\usepackage{stmaryrd}
-\usepackage{url}
-\usepackage{multirow}
-\usepackage{latexsym}
-\usepackage{graphics}
-\usepackage{graphicx}
-\usepackage{enumitem}
-\usepackage{comment}
-\usepackage{longtable}
-\usepackage{supertabular}
-\usepackage{times}
-\usepackage{listings}
-\usepackage{subfigure}
-\usepackage{color}
-\usepackage{balance}
-\usepackage{xspace}
+%\usepackage[font=footnotesize]{subfig}
+%\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage{fixltx2e}
 \usepackage[ruled, vlined, linesnumbered]{algorithm2e}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{xspace}
 
-
-
-%\theoremstyle{Definition}
-%\newtheorem{definition}{Definition}
-%%%
-%\theoremstyle{Theorem}
-%\newtheorem{theorem}{Theorem}
-
-
-%\newcommand{\definition}{\noindent \textbf{Definition} \citation{}}
-%\newcommand{\theorem}{\noindent \textbf{Theorem} \citation{}}
-%\newcommand{\lemma}{\noindent \textbf{Lemma} \citation{}}
-
-%\newdef{lemma}{Lemma}
-%\newdef{definition}{Definition}
-%\newdef{theorem}{Theorem}
-%\newdef{corollary}{Corollary}
-%\newdef{note}{Note}
-%\newdef{axiom}{Axiom}
+\hyphenation{op-tical net-works semi-conduc-tor}
 \newcommand{\mkeyword}[1]{\mbox{\texttt{#1}}}
 \DeclareMathOperator{\kuop}{uop}
 \DeclareMathOperator{\kbop}{bop}
@@ -59,12 +84,7 @@
 \newcommand{\lbb}{[\![}
 \newcommand{\rbb}{]\!]}
 \newcommand{\expr}{\phi}
-\newcommand{\exprS}{\Phi}
-
-\sloppypar
-
-
-
+\newcommand{\exprS}{\Phi} 
 \begin{document}
 
 \definecolor{gold}{rgb}{0.90,.66,0}
@@ -78,26 +98,46 @@
 \newcommand{\ta}{\text{TA}}
 \newcommand{\cta}{\text{TA$_{C}$}}
 \newcommand{\tta}{\text{TA$_{T}$}}
-\newcommand{\ucalg}{\texttt{\small{IVC\_UC}}}
-\newcommand{\ucbfalg}{\texttt{\small{IVC\_UCBF}}}
 
+\newcommand{\bfalg}{{IVC\_BF}\xspace}
+\newcommand{\ucalg}{{IVC\_UC}\xspace}
+\newcommand{\ucbfalg}{{IVC\_UCBF}\xspace}
+\newcommand{\mustalg}{{IVC\_MUST}\xspace}
 
-\title{Efficient Generation of All Minimal Inductive Validity Cores}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+%\newdef{lemma}{Lemma}
+%\newdef{definition}{Definition}
+%\newdef{theorem}{Theorem}
+\newtheorem{note}{Note}
 %
-%\author{Elaheh Ghassabani\inst{1}
-%\and Michael W. Whalen\inst{1}
-%\and Andrew Gacek\inst{2} }
-%\institute{University of Minnesota\\Department of Computer
-%Science and Engineering\\
-%200 Union Street\\
-%Minneapolis, MN, 55455, USA\\
-%\email{ghassaba, whalen@cs.umn.edu}
-%\and
-%Rockwell Collins\\
-%Advanced Technology Center\\400 Collins Rd. NE\\
-%Cedar Rapids, IA, 52498, USA\\ \email{ andrew.gacek@rockwellcollins.com}
-%}
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{Efficient Generation of All Minimal Inductive
+Validity Cores}
+
+
+% author names and affiliations
+% use a multiple column layout for up to two different
+% affiliations
+
+\author{\IEEEauthorblockN{Elaheh Ghassabani, Michael Whalen}
+\IEEEauthorblockA{Department of Computer Science \& Engineering\\
+University of Minnesota\\
+MN, USA\\
+ghassaba, whalen@cs.umn.edu}
+\and
+\IEEEauthorblockN{Andrew Gacek}
+\IEEEauthorblockA{Rockwell Collins\\
+Advanced Technology Center\\
+IA, USA\\
+andrew.gacek@rockwellcollins.com}
+}
+
 \maketitle
+
 
 \begin{abstract}
 Symbolic model checkers can construct proofs of safety properties over complex models, but the results reported when a proof succeeds do not generally provide much insight to the user.  Recently, the notion of a minimal {\em Inductive Validity Core} (IVC) was introduced to trace a property to a minimal set of model elements necessary for proof.  Minimal IVCs can be used for several engineering tasks, including traceability, vacuity detection, and as a coverage metric for property-based verification. Such applications usually rely on the minimality of IVCs. However, existing algorithms for generating a minimal IVC are either expensive or able to find an approximately
@@ -109,8 +149,11 @@ property is an interesting problem that provides several useful analyses, includ
 This paper proposes an efficient method for finding {\em all minimal} IVCs of a given property. We prove the correctness and completeness of our technique and benchmark our algorithm against existing IVC-generating algorithms.  We show that, in many cases, the computational cost of finding all minimal IVCs by our technique is similar to finding a single minimal IVC using existing algorithms.
 \end{abstract}
 
-\keywords{Inductive Validity Cores, UNSAT-core generation, SMT-based model checking, Inductive proofs}
+\begin{IEEEkeywords}
+Inductive Validity Cores; UNSAT-core generation; SMT-based model checking; Inductive proofs;
+\end{IEEEkeywords}
 
+\IEEEpeerreviewmaketitle
 \input{introduction}
 
 %\ifdefined\TECHREPORT
@@ -144,12 +187,11 @@ This paper proposes an efficient method for finding {\em all minimal} IVCs of a 
 %This work was supported by
 
 %We thank XXXX
+\IEEEtriggercmd{\enlargethispage{-5in}}
+\bibliographystyle{IEEEtran}
 
-\bibliographystyle{abbrv}
+
 \bibliography{biblio}
-
-% This ~ seems to fix an odd bibliography alignment issue
-~
 
 %\ifdefined\TECHREPORT
 %\appendix

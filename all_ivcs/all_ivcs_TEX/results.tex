@@ -3,13 +3,13 @@
 In this section, we examine our
 experimental results to address the research questions defined in the experiment.
 
-\begin{figure}[t]
+\begin{figure*}
  \centering
   \includegraphics[width=\textwidth]{figs/performance.jpg}
   \vspace{-0.2in}
   \caption{Runtime of \aivcalg, \ucbfalg, and \ucalg ~algorithms}
   \label{fig:performance}
-\end{figure}
+\end{figure*}
 %\vspace{0.1in}
 
 \subsubsection{RQ1:}
@@ -72,14 +72,14 @@ Figure~\ref{fig:modelsize} shows two distinct trends.  First, for models whose b
 %Therefore, we would like to examine whether or not there is a relationship between the performance and the size of the model, proof-time, and the diversity of IVCs. A graph showing the size of each model (determined by the number of equations in the model) and the number of IVCs
 % along with the running time of \aivcalg ~and normal verification time is shown in Fig \ref{fig:modelsize}. In the figure, the models are ranked along the x-axis by their size. The picture shows that as models get larger, it is more likely for the \aivcalg ~algorithm to take more time to complete. However, there is no straightforward relationship between the performance and the number of IVCs. It can be expected that the running time of the \aivcalg ~algorithm goes higher when verification takes more time.
 
- \begin{figure}[t]
+ \begin{figure*}
  \centering
   \includegraphics[width=\textwidth]{figs/size.jpg}
   \vspace{-0.2in}
   \caption{Runtime of different computations along with the number of MIVCs}
   \label{fig:modelsize}
   \vspace{-0.2in}
-\end{figure}
+\end{figure*}
 
 %\ela{do we want this table 3? I commented the table description in case you want to use it...}
 %Table \ref{tab:ivcsize} compares
@@ -126,13 +126,13 @@ An important aspect of the performance comparison involves the timeout value cho
 
 Worse, because the \ucbfalg\ and \aivcalg\ algorithms submit different profiles in terms of activation literals, the solvers sometimes can solve an IVC problem for one algorithm but not the other.  This leads to some cases where the \ucbfalg\ algorithm finds a {\em smaller} IVC than the \aivcalg\ algorithm, because the \aivcalg\ algorithm times out attempting to find a MIVC  that was found by the \ucbfalg.  This is shown in Fig.~\ref{fig:min}, where in 14 out of 476 models, \ucbfalg\ has found a smaller MIVC  than the minimum IVC found by \aivcalg.  Of course, in many more cases, the \aivcalg\ and \ucbfalg\ algorithms computed the same size of IVCs because the majority of the models only contain one minimal IVC. However, for 11 models,~\aivcalg\ has found a smaller minimum IVC than the \ucbfalg .
 
- \begin{figure}
+ \begin{figure*}
  \centering
   \includegraphics[width=\textwidth]{figs/min.jpg}
   \vspace{-0.2in}
   \caption{Size of smallest IVCs obtained from different algorithms}
   \label{fig:min}
   \vspace{-0.2in}
-\end{figure}
+\end{figure*}
 
 Although we understand the issue, it is worrisome that different activation literal sets can cause solvers to time out in this way.  In the future, we will examine whether it is possible to eliminate these anomalous cases by different encodings of activation literals. 

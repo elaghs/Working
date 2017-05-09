@@ -1,0 +1,17 @@
+
+
+ overhead of MUST computation:
+
+average overhead is: 2475.76812306%
+stdev overhead is: 2925.00312962%
+min overhead is: 18.909235668789808%
+max overhead is: 22708.163265306124%
+------------------------------------------------------------------
+
+ overhead of IVC_UC:
+
+average overhead is: 24.1387881164%
+stdev overhead is: 25.2860919132%
+min overhead is: 0.11614401858304298%
+max overhead is: 122.72727272727273%
+------------------------------------------------------------------

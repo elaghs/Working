@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 from matplotlib.pyplot import cm
 from operator import itemgetter
 import numpy as np
+import statistics as stat
 from mpl_toolkits.axes_grid1 import host_subplot
 import xml.etree.cElementTree as ET
 import mpl_toolkits.axisartist as AA 
@@ -98,16 +99,27 @@ writer.close()
 # This shows what percentage of the overal runtime is because of all-ivcs comutation
 # Formula:  overhead_percentage = 100 * (all-ivcs runtime/ Prooftime)
 #
+
+models = []
+with open (os.path.join(MINING_DIR, SORTED_MODELS)) as models_name:
+    for line in models_name:
+        if (line is not '\n'):
+            models.append(line.strip('\n'))
+models_name.close()  
+    
     
 overhead_ucbf = []
 overhead_uc = []
 overhead_all_ivcs = []
 overhead_minimization = []
-         
+
+print("file          all-ivcs timing        proof-time       all-ivcs overhead")     
 for i in range(len(ucbf)): 
-    overhead_ucbf.append(100.0 * ((ucbf[i]-proof_time[i])/ proof_time[i]))
-    overhead_uc.append(100.0 * (uc_time[i]/ proof_time[i])) 
-    overhead_all_ivcs.append(100.0 * (all_ivcs_timing[i]/ proof_time[i]))  
+    overhead_ucbf.append ((ucbf[i]-proof_time[i])/ proof_time[i])
+    overhead_uc.append(uc_time[i]/ proof_time[i])
+    overhead_all_ivcs.append(all_ivcs_timing[i]/ proof_time[i])
+    print(models[i]+" :  "+ str(all_ivcs_timing[i])+"   " +str(proof_time[i]) +"   "+str(overhead_all_ivcs[i])) 
+    print("")
         
 
 #
@@ -116,22 +128,22 @@ for i in range(len(ucbf)):
 writer = open(os.path.join(ANALYSES_DIR, 'all_ivcs_overhead.txt'), 'w')
 writer.write("this is to report the overhead of IVC computation\n\n")  
 writer.write("\n\n overhead of all-ivcs:\n")
-writer.write('\naverage overhead is: ' + str(np.nanmean(overhead_all_ivcs)) + "%")
-writer.write('\nstdev overhead is: ' + str(np.nanstd(overhead_all_ivcs)) + "%")
-writer.write('\nmin overhead is: ' + str(min(overhead_all_ivcs)) + "%")
-writer.write('\nmax overhead is: ' + str(max(overhead_all_ivcs)) + "%")
+writer.write('\naverage overhead is: ' + str(np.mean(overhead_all_ivcs) * 100.0) + "%")
+writer.write('\nstdev overhead is: ' + str(np.std(overhead_all_ivcs) * 100.0) + "%")
+writer.write('\nmin overhead is: ' + str(min(overhead_all_ivcs) * 100.0) + "%")
+writer.write('\nmax overhead is: ' + str(max(overhead_all_ivcs) * 100.0) + "%")
 writer.write('\n------------------------------------------------------------------') 
 writer.write("\n\n overhead of IVC_UC:\n")
-writer.write('\naverage overhead is: ' + str(np.nanmean(overhead_uc)) + "%")
-writer.write('\nstdev overhead is: ' + str(np.nanstd(overhead_uc)) + "%")
-writer.write('\nmin overhead is: ' + str(min(overhead_uc)) + "%")
-writer.write('\nmax overhead is: ' + str(max(overhead_uc)) + "%")
+writer.write('\naverage overhead is: ' + str(np.mean(overhead_uc)* 100.0) + "%")
+writer.write('\nstdev overhead is: ' + str(np.std(overhead_uc)* 100.0) + "%")
+writer.write('\nmin overhead is: ' + str(min(overhead_uc)* 100.0) + "%")
+writer.write('\nmax overhead is: ' + str(max(overhead_uc)* 100.0) + "%")
 writer.write('\n------------------------------------------------------------------')
 writer.write("\n\n overhead of IVC_UCBF:\n")
-writer.write('\naverage overhead is: ' + str(np.nanmean(overhead_ucbf)) + "%")
-writer.write('\nstdev overhead is: ' + str(np.nanstd(overhead_ucbf)) + "%")
-writer.write('\nmin overhead is: ' + str(min(overhead_ucbf)) + "%")
-writer.write('\nmax overhead is: ' + str(max(overhead_ucbf)) + "%")
+writer.write('\naverage overhead is: ' + str(np.mean(overhead_ucbf)* 100.0) + "%")
+writer.write('\nstdev overhead is: ' + str(np.std(overhead_ucbf)* 100.0) + "%")
+writer.write('\nmin overhead is: ' + str(min(overhead_ucbf)* 100.0) + "%")
+writer.write('\nmax overhead is: ' + str(max(overhead_ucbf)* 100.0) + "%")
 writer.write('\n------------------------------------------------------------------')
 
 writer.close() 
@@ -144,42 +156,53 @@ del overhead_all_ivcs
 #
 # Visualize the results
 #
-
+LEGENDS =  ['JKind Verification + All_IVCs',
+            'JKind Verification + IVC_UCBF', 'JKind Verification + IVC_UC',
+            'JKind Verification (no IVC computation)','#of IVCs']
 
 # Build a list for x-axis
 x_axis = []
 for i in range(len(proof_time)):
     x_axis.append(i)
-    
+'''    
 
-    
-    
 fig = plt.figure()
-plt.subplots_adjust(hspace=0.1)  
-    
-host = host_subplot(111, axes_class=AA.Axes) 
-
-par1 = host.twinx() 
-offset = 60  
- 
-
-host.set_xlabel("Models")
-host.set_ylabel("Runtime (sec)")
-par1.set_ylabel("#of IVCs") 
-
-LEGENDS =  ['JKind Verification + All_IVCs',
-            'JKind Verification + IVC_UCBF', 'JKind Verification + IVC_UC',
-            'JKind Verification (no IVC computation)','#of IVCs']
+plt.subplots_adjust(hspace=0.1)
+ax = plt.subplot(111)
 
 
-'''
+
+#
+
+sorted_aivc = []
+for i, item in enumerate(all_ivcs_timing):
+    sorted_aivc.append(item/float(numb_of_ivcs[i]))
+
 #sorted based on proof-time:
-host.plot(x_axis, aivc, ':go' , markersize=2 ,label=LEGENDS[0])
-host.plot(x_axis, ucbf, 'mx', markersize=6, label=LEGENDS[1])
-host.plot(x_axis, ucpr_time, 'r+', markersize=5, label=LEGENDS[2])
-host.plot(x_axis, proof_time, color = 'k', label=LEGENDS[3]) 
-par1.scatter(x_axis, numb_of_ivcs, marker='s', color='b', label=LEGENDS[4]) 
+plt.plot(x_axis, sorted(aivc), 'g+' , markersize=8 ,label=LEGENDS[0])
+plt.plot(x_axis, sorted(ucbf), '-.mo', markersize=2, label=LEGENDS[1])
+plt.plot(x_axis, sorted(sorted_aivc), '--b', markersize=10, label='All_IVCs runtime/ #of MIVCs')  
+plt.plot(x_axis, sorted(ucpr_time), ':r', markersize=2, label=LEGENDS[2])
+plt.plot(x_axis, proof_time, 'k', markersize=2, label=LEGENDS[3]) 
+
+#par1.scatter(x_axis, numb_of_ivcs, marker='s', color='b', label=LEGENDS[4]) 
+plt.xlabel('Models')
+plt.ylabel('Runtime (sec)')
+#ax.set_yscale("log", nonposy='clip')
+plt.yscale('log')
+plt.tight_layout()
+plt.grid(True)
+#plt.subplots_adjust(left=0.125, bottom=0.5, right=0.9, top=0.9, wspace=0.2, hspace=0.2)
+box = ax.get_position()
+ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+ax.legend(loc=2, prop={'size':14}) 
+fig.savefig(os.path.join(ANALYSES_DIR, 'scaled_all_ivcs_timing.png'))
+plt.show()
+plt.close(fig)
+
 '''
+
+
 
 
 '''
@@ -220,8 +243,18 @@ par1.plot(x_axis, sorted_numofivcs, 'kx' , markersize=6, label=LEGENDS[4])
 
 
 
+fig = plt.figure()
+plt.subplots_adjust(hspace=0.1)  
+    
+host = host_subplot(111, axes_class=AA.Axes) 
 
-'''
+par1 = host.twinx() 
+offset = 60  
+  
+host.set_xlabel("Models")
+host.set_ylabel("Runtime (sec)")
+par1.set_ylabel("#of IVCs") 
+
 # Sort based on number of ivcs
 
 aivc_dic = [] 
@@ -250,11 +283,15 @@ host.plot(x_axis, sorted_uc, ':b+', markersize=8, label=LEGENDS[2])
 host.plot(x_axis, sorted_proof, color='k', label=LEGENDS[3]) 
 #par1.scatter(x_axis, sorted_numofivcs, marker='s', color='b', label=LEGENDS[4]) 
 par1.plot(x_axis, sorted_numofivcs, 'rs', markersize=5 , label=LEGENDS[4]) 
+
+host.legend() 
+host.set_yscale('log')   
+host.grid(True)
+plt.show()
+
+
+
 '''
-
-
-
-
 
 # Sort based on UCBF
 # 
@@ -285,16 +322,15 @@ host.plot(x_axis, sorted_proof,':g', markersize=3, label=LEGENDS[3])
 #par1.scatter(x_axis, sorted_numofivcs, marker='s', color='b', label=LEGENDS[4]) 
 par1.plot(x_axis, sorted_numofivcs, 'r.' , markersize=10, label=LEGENDS[4]) 
 
-
-
+ 
 host.legend() 
 host.set_yscale('log') 
 host.grid(True)
  
-plt.show()
+plt.show()'''
 
 
-
+'''
 
 #
 # Sort points for visualization
@@ -420,4 +456,4 @@ host.set_yscale('log')
 par2.set_yscale('log')
 host.grid(True)
  
-plt.show()
+plt.show()'''

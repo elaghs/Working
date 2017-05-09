@@ -88,9 +88,19 @@ for indx, model in enumerate(models):
     all_sets.append(ivcs)
     print(str(ivcs)) '''
     reader.close()  
-    
 
+ratio = []
+for i, item in enumerate(ucbf_ivcs):
+    ratio.append (100.0 *(float(uc_ivcs[i])/ float(item)))
 
+writer = open(os.path.join(ANALYSES_DIR, 'increase_ucbf_to_uc.txt'), 'w')
+
+writer.write('\nmin : ' + str(min(ratio)) +"%")
+writer.write('\nmax : ' + str(max(ratio))+"%")
+writer.write('\nstdev: ' + str(np.nanstd(ratio))+"%")
+writer.write('\naverage : ' + str(np.nanmean(ratio))+"%")  
+  
+writer.close()
 
 #
 # Extract ivc sets info
@@ -165,12 +175,13 @@ s_uc_ivcs = []
 s_ucbf_ivcs = []
 s_minimum = []
 s_avg = []
+
 for item in sorted_dic: 
     s_uc_ivcs.append(uc_ivcs[item['id']])
     s_ucbf_ivcs.append(ucbf_ivcs[item['id']])
     s_minimum.append(item['val'])
     s_avg.append(avg_size[item['id']]) 
-    if(ucbf_ivcs[item['id']] < item['val']):
+    if(ucbf_ivcs[item['id']] < item['val']): 
         print(models[item['id']])
 
 del sorted_dic
@@ -178,9 +189,9 @@ del sorted_dic
     
 LEGENDS =  [
             'Size of approximately minimal IVC computed by IVC_UC',
-            'Average size of IVCs from the All_IVCs algorithm',
-            'Size of minimal IVC computed by IVC_UCBF',
-            'Size of minimum IVC']
+            'Average size of MIVCs computed by the All_IVCs algorithm',
+            'Size of MIVC computed by IVC_UCBF',
+            'Size of minimum IVC computed by the All_IVCs algorithm']
 
 
 
@@ -189,9 +200,9 @@ fig2 = plt.figure()
 plt.subplots_adjust(hspace=0.1)
 ax2 = plt.subplot(111)
 
-plt.plot(x_axis, s_uc_ivcs, 'b+', markersize=7, label=LEGENDS[0])  
-plt.plot(x_axis,  s_avg, ':ms', markersize=3, label=LEGENDS[1]) 
+plt.plot(x_axis, s_uc_ivcs, 'b+', markersize=7, label=LEGENDS[0]) 
 plt.plot(x_axis,  s_ucbf_ivcs, 'rx', markersize=8, label=LEGENDS[2]) 
+plt.plot(x_axis,  s_avg, ':ms', markersize=3, label=LEGENDS[1]) 
 plt.plot(x_axis,  s_minimum, 'ko', markersize=3, label=LEGENDS[3])
 
 '''

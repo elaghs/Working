@@ -86,12 +86,14 @@ for file in sorted_models_mem:
     for elem in tree.iter(tag = 'UcRuntime'):
         uc = float(elem.text)
         uc_time.append(uc)    
-    tree2 = ET.ElementTree(file = os.path.join(RESULTS_DIR, file + '_runtimeAllIvcs.xml'))
-    for elem in tree2.iter(tag = 'AllIvcRuntime'):
-        all = (float(elem.text) + uc)
-        all_ivcs_time.append(all)
-        all_ivcs_w_proof.append(all + proof)
-    
+    try:    
+        tree2 = ET.ElementTree(file = os.path.join(RESULTS_DIR, file + '_runtimeAllIvcs.xml'))
+        for elem in tree2.iter(tag = 'AllIvcRuntime'):
+            all = (float(elem.text) + uc)
+            all_ivcs_time.append(all)
+            all_ivcs_w_proof.append(all + proof)
+    except:
+        print(file)    
  
 timing_info = shelve.open(os.path.join(MINING_DIR, 'timing_info')) 
 timing_info ['all_ivcs_no_proof'] = all_ivcs_time
@@ -105,19 +107,8 @@ del proof_time
 del uc_time
 del uc_w_proof
 
-#
-# Extract minimization timing
-#    
-minimization_no_proof =[]
-minimization_w_proof =[]
-minimals = []
-for i, file in enumerate(sorted_models_mem): 
-    tree = ET.ElementTree(file = os.path.join(RESULTS_DIR, file + '_minimalIvc.xml')) 
-    ivc_set = []
-    for ivc in tree.iter(tag = 'IVC'):
-        ivc_set.append(ivc.text)
-    minimals.append(ivc_set)
- 
+# 
+minimal = []
 
 #
 # Extract ivc sets info
@@ -136,14 +127,23 @@ for i, file in enumerate(sorted_models_mem):
     ivc_info ['number_of_ivc_sets'] = unm_of_ivcs[i]
     
     id = 0
+    min = 10000
     for elem in tree.iter(tag = 'IvcSet'): 
-        ivc_set = []
-        el = elem.find('Ivc')
-        for e in el.iter('Ivc'):
+        ivc_set = [] 
+        for e in elem.findall('Ivc'): 
             ivc_set.append(e.text)
+ 
         ivc_info ['set' + str(id)] = ivc_set
         id += 1
-    ivc_info ['minimum'] = minimals[i]    
+        if len(ivc_set) < min:
+            minimal = list(ivc_set)
+            min = len(ivc_set)
+    ivc_info ['minimum'] = minimal  
+    ivcuc=[]
+    treeuc = ET.ElementTree(file = os.path.join(RESULTS_DIR, file + '_uc.xml'))
+    for ivc in treeuc.iter(tag = 'TRIVC'):
+        ivcuc.append(ivc.text)
+    ivc_info ['uc_input_for_ucbf'] = ivcuc
     ivc_info.close() 
     
 timing_info['number_of_ivc_sets'] = unm_of_ivcs    

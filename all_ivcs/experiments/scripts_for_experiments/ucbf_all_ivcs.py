@@ -62,7 +62,7 @@ os.mkdir(RESULTS_DIR)
 #
 
 def run_single_jkind(file_path):
-    args = ['java', '-jar', jkind_jar, '-jsupport', 
+    args = ['java', '-Xmx13g', '-jar', jkind_jar, '-jsupport', 
             '-solver', 'z3', 
             '-use_unsat_core', file_path + '_uc.xml',
             file_path]

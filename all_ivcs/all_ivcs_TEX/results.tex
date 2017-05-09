@@ -5,7 +5,7 @@ experimental results to address the research questions defined in the experiment
 
 \begin{figure*}
  \centering
-  \includegraphics[width=\textwidth]{figs/performance.jpg}
+  \includegraphics[width=0.9\textwidth]{figs/performance.jpg}
   \vspace{-0.2in}
   \caption{Runtime of \aivcalg, \ucbfalg, and \ucalg ~algorithms}
   \label{fig:performance}
@@ -26,7 +26,7 @@ The \aivcalg\ algorithm requires approximately 3.4x more time than the \ucbfalg\
 % if timeout had been set lower (higher), which caused the average runtime (overhead) of the \aivcalg ~shown in Table \ref{tab:runtime} (Table \ref{tab:overhead}) to be $\thicksim 3$ times more than \ucbfalg .
 
 
-\begin{table}
+\begin{table*}
   \caption{Runtime and overhead of different computations}
    \vspace{-0.1in}
   \centering
@@ -34,14 +34,14 @@ The \aivcalg\ algorithm requires approximately 3.4x more time than the \ucbfalg\
     \hline
       runtime (sec)& min & max & mean & stdev & \% & min & max & mean & stdev  \\[0.5ex]
     \hline\hline
-    \emph{\small{proof-time}}    & 0.05 & 14.62 & 1.30 & 1.94 & & & & & \\ [0.5ex]
-    \aivcalg    & 10.13 & 2375.11 & 58.88 & 256.53 & & 13.64\% & 101034.62\% & 2544.40\% & 7764.16 \\[0.5ex]
-    \ucbfalg &   0.25 & 1323.52 &  17.25 & 104.84 & & 14.09\% &111124.43\% &  882.02\% & 1512.07\%  \\[0.5ex]
-    \ucalg&  0.0  & 1.42  & 0.08 & 0.18 & & 0.00\%  & 100.00\%   & 10.23\% & 11.72\% \\[0.5ex]
+    \emph{\small{proof-time}}    & 0.016 & 25.489 & 1.250 & 2.381 & & & & & \\ [0.5ex]
+    \aivcalg    & 0.009 & 792.01 & 16.457 & 64.491 & & 12.337\% & 277269.387\% &3129.320\% & 13009.838 \\[0.5ex]
+    \ucbfalg &   0.163 & 1625.289 &  18.624 & 119.593 & & 18.710\% &15359.574\% &  1963.605\% & 2495.281\%  \\[0.5ex]
+    \ucalg&  0.003  & 1.126  & 0.078 & 0.158 & & 0.116\%  & 122.727\%   & 24.138\% & 25.28\% \\[0.5ex]
     \hline
   \end{tabular}
   \label{tab:runtime}
-\end{table}
+\end{table*}
 
 %\begin{table}
 %  \caption{Overhead of different algorithms}
@@ -101,10 +101,10 @@ Figure~\ref{fig:modelsize} shows two distinct trends.  First, for models whose b
      algorithm & min & max & mean & stdev \\[0.5ex]
 
     \hline
-    \aivcalg   & 1 & 159 & 12.462 & 1.1684 \\[0.5ex]
-    \ucalg   & 1 & 141 & 12.754 & 16.000 \\[0.5ex]
+    \aivcalg   & 1 & 159 & 12.406 & 1.170 \\[0.5ex]
+    \ucalg   & 1 & 141 & 12.734 & 16.000 \\[0.5ex]
     \ucbfalg &   1 & 141 &  12.185 & 16.107\\[0.5ex]
-    \texttt{minimum IVC} & 1  & 134  & 12.078 & 15.550 \\[0.5ex]
+    \texttt{minimum IVC} & 1  & 134  & 12.018 & 15.524 \\[0.5ex]
     \hline
     \end{tabular}
   \label{tab:ivcsize}
@@ -128,7 +128,7 @@ Worse, because the \ucbfalg\ and \aivcalg\ algorithms submit different profiles 
 
  \begin{figure*}
  \centering
-  \includegraphics[width=\textwidth]{figs/min.jpg}
+  \includegraphics[width=0.9\textwidth]{figs/min.jpg}
   \vspace{-0.2in}
   \caption{Size of smallest IVCs obtained from different algorithms}
   \label{fig:min}

@@ -37,7 +37,7 @@ this problem is as hard as model checking, which is undecidable for infinite sta
 Therefore, in practice, we have to set timeouts for the model checking algorithm in each iteration.
 In our implementation, we set a timeout based on the time the property takes to be proved given all model elements.
 During this initial proof, we obtain its required \emph{proof-time}.
-Then, the timeout we set for each iteration is ($60$ sec  $+ 10\ \times$ \emph{proof-time}).
+Then, the timeout we set for each iteration is ($30$ sec  $+ 5\ \times$ \emph{proof-time}).
 When the \texttt{while} loop times out for $S$ in line 8 of Algorithm~\ref{alg:aivc},
 we treat $S$ as an \emph{inadequate} set;
 otherwise results may be incorrect; i.e. sets that are not actually adequate may be reported as adequate.

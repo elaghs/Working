@@ -1,0 +1,10 @@
+\section{Applicability}
+\label{sec:applicability}
+
+The proposed technique is immediately useful in the aviation certification domain. Airborne software must undergo a rigorous software development process to ensure its airworthiness. This process is governed by Software Considerations in Airborne Systems and Equipment Certification, also known as DO-178C \cite{}. DO-178C proposes a rigorous software development process that starts with abstract requirements artifacts that are iteratively refined into software designs, source code, and object code. One of the key tenets of this process is traceability; that is, each refinement of an abstract artifact into a more concrete one must be traceable to the source artifact. Further, each refinement must be shown not to introduce additional functionality.
+
+Efforts by Miller and Cofer \cite{} advocate the use of model checking to demonstrate that the software design artifact is correctly developed from the high-level software requirements artifact. This is accomplished by creating a formal model of the software design and checking it against properties that represent the high-level software requirements. If the model checker is able to prove these obligations, it demonstrates that the software design satisfies the high-level software requirements. This proof also establishes that the software design traces to the high-level software requirements. However, this proof does not demonstrate that additional functionality was not added to the model. The technique discussed in this paper addresses this shortcoming. In this use-case, IVC can be used to identify functionality that appears in the software design that does not trace to a corresponding high-level requirement.
+
+Introduce SpeAR version of the example
+Show analysis
+Business case?

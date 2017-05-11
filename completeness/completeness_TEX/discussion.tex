@@ -1,14 +1,17 @@
 \section{Discussion}
 \label{sec:discussion}
-As mentioned, IVCs are derived from inductive invariants; in other words, they are built upon the proof of the validity of a given property. One interesting fact about proofs
+\iffalse As mentioned, IVCs are derived from inductive invariants; in other words, they are built upon the proof of the validity of a given property. One interesting fact about proofs
   is that a given property could be proved from different proof paths.
   The $AIVC$ captures this fact and gives a clear picture of various ways a property is satisfied. By getting all the MIVCs for the system properties and categorizing them, one can find if there are design artifacts that do not trace to any property: set $\bigcap \{IRR (P) | P \in \Delta \}$.  If this set is non-empty, it is a possible indication of ``gold plating" or missing properties \cite{Murugesan16:renext}.
+\fi
 %  That is to say, it helps to assess if the specification describe all the behaviors of the system. Being able to measure the coverage of properties over the model is crucial in the safety critical system domain.
 
-Since some of the proposed metrics need to compute $AIVC (P)$,
+Since some of the proposed metrics need to compute all IVCs ($AIVC(P)$),
 we are researching efficient algorithms for computing all inductive validity cores.
 Based on a preliminary evaluation, we expect computing $AIVC$ to be computationally feasible for realistic models. In addition, we believe that it is possible to obtain MIVCs directly while computing $AIVC$.
 %which would remove any concern about minimality. %\ela{this is also mentioned in the RE paper. I don't know if it would be problematic for double-blind reviewing}
+
+\subsection{Granularity}
 
 As we described in Section \ref{sec:background}, transition relation is considered
 as the conjunction of Boolean formulas. The granularity of these formulas substantially affects the analysis results.  In our running example in Section~\ref{sec:illust}, it was possible to have a ``complete'' specification of the model involving only the hysteresis property \hystp.  The way that the model was structured, in order to determine the validity of the property, all of the equations in the model were required.  However, for this property certain subexpressions of the equations were irrelevant, notably the value assigned to the \texttt{doi\_on} variable in the \texttt{then} branches of equations (7) and (8).  If we decompose the equations into smaller pieces, e.g., creating separate equations for the \texttt{then} and \texttt{else} branches, this incompleteness becomes visible and the model is no longer completely covered.
@@ -20,6 +23,19 @@ We have recently implemented a transformation that splits models into {\em suffi
 In a small initial experiment involving 30 of the original models, we performed our transformation and re-ran the analysis.  By changing the granularity of the model, the analysis tools perform significantly slower for proofs, but the ratio of performance between the proof and the \ucalg\ and \mustalg\ algorithms is largely unchanged.  However, on some models, the \mustalg\ algorithm becomes unacceptably slow (analysis times of 10s of hours) and occasionally causes the solver to run out of memory.
 
 The issue of granularity of models is significant, but tends not to be discussed in detail in previous work.  This will be a focus of our future work, especially in analyzing situations in which the tool determines that a set of requirements is {\em complete}.
+
+\subsection{Use in Certification}
+Airborne software must undergo a rigorous software development process to ensure its airworthiness. This process is governed by DO-178C: Software Considerations in Airborne Systems and Equipment Certification \cite{DO178C} and when formal methods tools are used, DO-333: Formal Methods Supplement to DO-178C and DO-278A \cite{DO333}. DO-178C proposes a rigorous software development process that starts with an abstract requirements artifact that is iteratively refined into a software designs, source code, and finally, object code, and a set of ``objectives'' that should be met by critical avionics software.  Two of the key tenets of this process are traceability and adequacy; that is, each refinement of an artifact must be traceable to the artifact if was derived from. Further, each refinement must be shown not to introduce functionality not present in the artifact from which it was derived (adequacy).
+
+DO178C currently uses a variety of metrics to determine adequacy of requirements, but much of the effort involves code-level testing.  Test suites are derived from requirements and used to test the software and measured using different structural coverage test metrics.  If code-level test suites do not achieve full coverage, then an analysis is performed to determine whether there are missing requirements and test cases.  The kind of structural coverage required (e.g., statement, branch, MCDC) for ``adequate'' testing is driven by the criticality of the software in question.
+
+The utility of the proposed metrics are being evaluated by an industrial partner on a pilot project\footnote{Again, obscuring the partner and project name to avoid identifying the authors}.  The proposed metrics appear to be useful for both traceability and adequacy.  Previously, bi-directional traceability between artifacts involved rigorous manual peer review to determine that requirements were adequate and that additional functionality was not introduced in the implementation model.  In the pilot approach, both traceability and adequacy are assessed using metrics proposed in this paper.  The goal is to use this automation to satisfy several DO178C objectives related to traceability and adequacy.  It is an object of future study to try to map the level of rigor of adequacy metrics to the levels of software criticality identified in DO178C.
+
+\mike{Lucas: could you add something here about actual DO178C objectives that might be automated?}
+
+
+
+
 
 %We plan to focus on efficient analysis of sufficiently granular models in future work.
 %when the tool returns that the set of requirements are complete.

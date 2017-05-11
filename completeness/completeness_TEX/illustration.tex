@@ -17,9 +17,9 @@
 
 We illustrate the idea of completeness metrics and the ``score" from different metrics on our altitude switch (ASW) example from Section~\ref{sec:example}.  %In so doing, we hope to motivate the need for completeness metrics and also to justify our proof-based approaches.
 %
-The ASW is responsible for turning on and off a device of interest, so we formulate two requirements that describe when the ASW should be {\em on} and when it should be {\em off}.  We illustrate with the results with the traceability matrix produced by our implementation for IVC coverage, which is discussed in Section~\ref{sec:impl}.
+The ASW is responsible for turning on and off a device of interest, so we formulate two requirements that describe when the ASW should be {\em on} and when it should be {\em off}.  We illustrate the results with the traceability matrix produced by the Spear tool~\cite{Spear}, which implements the metrics and is discussed in Section~\ref{sec:impl}.
 
-The first attempt at formalization is as follows:
+The first attempt at formalization (property set 1) is as follows:
 
 %\begin{definition} {\emph{ASW Requirements Version 1} }
 {\smaller
@@ -33,8 +33,17 @@ all_p = on_p and off_p;
 }
 %\end{definition}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{figs/spear_set1.png}
+  \vspace{-0.1in}
+  \caption{Elements covered by the initial property set}
+  \label{fig:propertyset1}
+\end{figure}
+
+
 \noindent Informally, when both altimeters are below the threshold and not inhibited, then the DOI should be on (\onp), and when both altimeters are below the threshold and the ASW is inhibited, then the DOI should be off (\offp).
-For each of the \ivccov, \maycov, and \mustcov\ metrics, \allp\ only requires \texttt{\{below, d1, doi\_on\}}.   This small set of elements is due to a classic specification problem: using computed variables as the antecedents of implications.  If these values are computed incorrectly (say, we choose the wrong threshold for \aonebelow), it may cause the property to be valid for incorrect reasons.
+For each of the \ivccov, \maycov, and \mustcov\ metrics, \allp\ only requires \texttt{\{below, d1, doi\_on\}}, as shown in Figure~\ref{fig:propertyset1}.   This small set of elements is due to a classic specification problem: using computed variables as the antecedents of implications.  If these values are computed incorrectly (say, we choose the wrong threshold for \aonebelow), it may cause the property to be valid for incorrect reasons.
 
 %This is alarming, and somewhat puzzling, because one would think that at least the definitions of the `below' or `above' would be necessary.  However, because the specification used the model variables \aonebelow, \atwobelow, \aoneabove, and \atwoabove, the actual valuations of the thresholds do not matter.  This situation illustrates a classic specification problem: using computed variables in the antecedents of implications.
 %\footnote{\noindent ~In this case, if the computation of the variables used in the antecedent is incorrect, then our property will not verify what it is expected to verify \mike{citation to one of our papers on specification here...}; note also that this does not mean the property is necessarily {\em vacuous}.}
@@ -87,6 +96,14 @@ all_p = on_p and off_p and hyst_p;
 %all_p = on_p and off_p;
 %\end{definition}
 \noindent The final property states that if the antecedent conditions hold, then in the initial state, the \doion\ variable is assigned false, and in subsequent steps, it retains the same value as it previously had.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{figs/spear_set4.png}
+  \vspace{-0.1in}
+  \caption{Elements covered by the final property set}
+  \label{fig:propertyset4}
+\end{figure}
 
 The measures again coincide and include all variables, and we appear to have a reasonably complete specification.  However, the measures are certainly not foolproof; it turns out that using {\em only} the hysteresis property \hystp\ will {\em also} yield a ``complete'' result for all of the metrics: to establish its validity, all of the equations that we have defined in the model are required.  This is because the partitioning of the transition system (i.e., the equations) is insufficiently {\em granular} to detect the incompleteness.
 %However, this one property would not reasonably be considered a complete specification.

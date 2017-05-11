@@ -95,7 +95,7 @@ all_p = on_p and off_p and hyst_p;
 %   and not inhibit => doi_on = true;
 %all_p = on_p and off_p;
 %\end{definition}
-\noindent The final property states that if the antecedent conditions hold, then in the initial state, the \doion\ variable is assigned false, and in subsequent steps, it retains the same value as it previously had.
+\noindent The final property states that if the antecedent conditions hold, then in the initial state, the \doion\ variable is assigned false, and in subsequent steps, it retains the same value as it previously had.  
 
 \begin{figure}
   \centering
@@ -105,7 +105,7 @@ all_p = on_p and off_p and hyst_p;
   \label{fig:propertyset4}
 \end{figure}
 
-The measures again coincide and include all variables, and we appear to have a reasonably complete specification.  However, the measures are certainly not foolproof; it turns out that using {\em only} the hysteresis property \hystp\ will {\em also} yield a ``complete'' result for all of the metrics: to establish its validity, all of the equations that we have defined in the model are required.  This is because the partitioning of the transition system (i.e., the equations) is insufficiently {\em granular} to detect the incompleteness.
+As shown in Figure~\ref{fig:propertyset4}, the measures again coincide and include all variables, and we appear to have a reasonably complete specification.  However, the measures are certainly not foolproof; it turns out that using {\em only} the hysteresis property \hystp\ will {\em also} yield a ``complete'' result for all of the metrics: to establish its validity, all of the equations that we have defined in the model are required.  This is because the partitioning of the transition system (i.e., the equations) is insufficiently {\em granular} to detect the incompleteness.
 %However, this one property would not reasonably be considered a complete specification.
 We will examine this situation further in Section~\ref{sec:discussion}.
 %We will examine this situation further in the discussion section~\mike{add this!}.

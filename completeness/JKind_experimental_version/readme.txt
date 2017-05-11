@@ -1,3 +1,4 @@
 These are .jar files used for the experiments, taken from:
 https://github.com/elaghs/jkind/tree/experimental-sync-with-masters
-commit: 1e63500ae33ce6d3fa5213075382389aaba9b368
+commit: 759ded37eaf27f8a6e57a99f3f2e035c4d97c85a for jkind_must
+commit: 4453c98cc8ae33045c354af1516a3dfac9a78d73 for jkind_ucbf

@@ -12,9 +12,9 @@ average overall runtime of all-ivcs : 17.6295473684
 ###############################################################
 
 min runtime of UCBF: 0.163
-max runtime of UCBF: 1625.289
-stdev runtime of UCBF: 119.593739512
-average runtime of UCBF: 18.6248357895
+max runtime of UCBF: 996.734
+stdev runtime of UCBF: 68.5257505464
+average runtime of UCBF: 11.9874168421
 ###############################################################
 
 min runtime of proof_time + UC: 0.016

@@ -2,8 +2,8 @@
 
  overhead of MUST computation:
 
-average overhead is: 2475.76812306%
-stdev overhead is: 2925.00312962%
+average overhead is: 2369.45782927%
+stdev overhead is: 2777.96705652%
 min overhead is: 18.909235668789808%
 max overhead is: 22708.163265306124%
 ------------------------------------------------------------------

@@ -15,16 +15,16 @@ population standard deviation runtime of UC: 0.158614285147
 average runtime of UC: 0.07864
 -------------------------------------------------------------------
 min runtime of proof_time + Must computation: 0.169
-max runtime of proof_time + Must computation: 1911.7930000000001
-stdev runtime of proof_time + Must computation: 121.851817945
-average runtime of proof_time + Must computation: 22.2174
+max runtime of proof_time + Must computation: 1283.7930000000001
+stdev runtime of proof_time + Must computation: 74.4436239165
+average runtime of proof_time + Must computation: 14.99148
 ------------------------------------------------------------------
 minimum runtime of  Must computation: 0.127
-maximum runtime of Must computation: 1886.5040000000001
-population standard deviation runtime of Must computation: 120.202811113
-average runtime of Must computation: 21.0450526316
+maximum runtime of Must computation: 1258.5040000000001
+population standard deviation runtime of Must computation: 72.7478170288
+average runtime of Must computation: 13.8191326316
 -------------------------------------------------------------------
 min runtime of UCBF: 0.163
-max runtime of UCBF: 1625.289
-stdev runtime of UCBF: 119.593739512
-average runtime of UCBF: 18.6248357895
+max runtime of UCBF: 996.734
+stdev runtime of UCBF: 68.5257505464
+average runtime of UCBF: 11.9874168421

@@ -1,0 +1,225 @@
+\documentclass{sig-alternate-05-2015}
+\usepackage{tabularx,colortbl}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{flushend}
+\usepackage{cite}
+\usepackage{amsmath}
+%\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{epsfig}
+\usepackage{stmaryrd}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{latexsym}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{comment}
+\usepackage{longtable}
+\usepackage{supertabular}
+\usepackage{times}
+\usepackage{listings}
+\usepackage{subfigure}
+\usepackage{color}
+\usepackage{balance}
+\usepackage[ruled, vlined, linesnumbered]{algorithm2e}
+
+
+\newcommand{\mkeyword}[1]{\mbox{\texttt{#1}}}
+\DeclareMathOperator{\kuop}{uop}
+\DeclareMathOperator{\kbop}{bop}
+\DeclareMathOperator{\kite}{ite}
+\DeclareMathOperator{\kpre}{pre}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\ktrue}{true}
+\DeclareMathOperator{\kfalse}{false}
+\DeclareMathOperator{\kselect}{select}
+\DeclareMathOperator{\ran}{range}
+\newcommand{\lbb}{[\![}
+\newcommand{\rbb}{]\!]}
+\newcommand{\expr}{\phi}
+\newcommand{\exprS}{\Phi}
+% this toggles between a tech-report version of the paper and the MEMOCODE version
+%\newcommand{\TECHREPORT}{}
+%\tolerance=1
+%\emergencystretch=\maxdimen
+%\hyphenpenalty=10000
+%\hbadness=10000
+\sloppypar
+
+
+\begin{document}
+\CopyrightYear{2017}
+\setcopyright{acmcopyright}
+\conferenceinfo{}{ }
+\isbn{ }\acmPrice{ }
+\doi{ }
+ % Add this to every tex file, so that you can comment with a diff color%
+\definecolor{gold}{rgb}{0.90,.66,0}
+\definecolor{dgreen}{rgb}{0,0.6,0}
+\newcommand{\mike}[1]{\textcolor{red}{#1}}
+\newcommand{\fixed}[1]{\textcolor{purple}{#1}}
+\newcommand{\andrew}[1]{\textcolor{green}{#1}}
+\newcommand{\ela}[1]{\textcolor{blue}{#1}}
+\newcommand{\stateequiv}{\equiv_{s}}
+\newcommand{\traceequiv}{\equiv_{\sigma}}
+\newcommand{\ta}{\text{TA}}
+\newcommand{\cta}{\text{TA$_{C}$}}
+\newcommand{\tta}{\text{TA$_{T}$}}
+\newcommand{\nondetcov}{\text{\sc Nondet-Cov}}
+\newcommand{\nondetcovalt}{\text{\sc Nondet-Cov$^{*}$}}
+\newcommand{\ivccov}{\text{\sc IVC-Cov}}
+\newcommand{\maycov}{\text{\sc May-Cov}}
+\newcommand{\mustcov}{\text{\sc Must-Cov}}
+\newcommand{\allcov}{\text{\sc Model-Cov}}
+\newcommand{\mutcov}{\text{\sc Mutant-Cov}}
+\newcommand{\ucalg}{\texttt{IVC\_UC}\xspace}
+\newcommand{\ucbfalg}{\texttt{IVC\_UCBF}\xspace}
+\newcommand{\mustalg}{\texttt{IVC\_MUST}\xspace}
+\newdef{lemma}{Lemma}
+\newdef{definition}{Definition}
+\newdef{coroll}{Corollary}
+\newdef{theorem}{Theorem}
+\newdef{note}{Note}
+%\newcommand{\TECHREPORT}{}
+
+\title{Proof-based Coverage Metrics for Formal Verification}
+
+\numberofauthors{2}
+
+%\author{
+%\alignauthor
+%Elaheh Ghassabani\\
+%       \affaddr{Department of Computer Science and Engineering}\\
+%       \affaddr{University of Minnesota}\\
+%       \affaddr{\small{200 Union Street\\Minneapolis, MN, 55455, USA}}\\
+%       \email{\texttt{\small{ghass013@umn.edu}}}
+%\alignauthor
+%Andrew Gacek\\
+%       \affaddr{Rockwell Collins\\ Advanced Technology Center}\\
+%       \affaddr{\small{400 Collins Rd. NE\\Cedar Rapids, IA, 52498, USA}}\\
+%       \email{\texttt{\small{andrew.gacek@rockwellcollins.com}}}\\
+%       \and
+%\alignauthor
+%Michael W. Whalen\\
+%       \affaddr{Department of Computer Science and Engineering}\\
+%       \affaddr{University of Minnesota}\\
+%       \affaddr{\small{200 Union Street\\Minneapolis, MN, 55455, USA}}\\
+%       \email{\texttt{\small{mwwhalen@umn.edu}}}
+%\alignauthor
+%Mats Heimdahl\\
+%       \affaddr{Department of Computer Science and Engineering}\\
+%       \affaddr{University of Minnesota}\\
+%       \affaddr{\small{200 Union Street\\Minneapolis, MN, 55455, USA}}\\
+%       \email{\texttt{\small{heimdahl@umn.edu}}}
+%}
+\maketitle
+
+
+
+
+\begin{abstract}
+When using formal verification on critical software, an important question involves whether the properties
+used for analysis are sufficient to adequately constrain the behavior of an implementation model. To address
+this question, coverage metrics for property-based formal verification have been proposed.  Existing metrics
+are usually based on {\em mutation}, where the implementation model is repeatedly modified and
+re-analyzed to determine whether mutant models are ``killed'' by the property set.
+These metrics tend to be very expensive to compute, as they involve many additional verification problems.
+%In addition, the set of design elements marked as necessary for these metrics (the residual model)
+%is often insufficient to re-prove the original properties; that is, if we remove the unnecessary elements, we no longer
+%can prove the original property set.
+
+This paper proposes an alternate family of metrics that can be computed using the recently introduced idea of
+Inductive Validity Cores (IVCs).  IVCs determine a minimal set of model elements necessary to
+establish a proof. One of the proposed metrics is both rigorous and substantially
+cheaper to compute than mutation-based metrics.  In addition, unlike the mutation-based techniques, the design
+elements marked as necessary by the metric are guaranteed to preserve provability.  %Other possible metrics
+%are more expensive to compute and provide more- or less-rigorous
+%definitions.
+We demonstrate the metrics on a large corpus of examples.
+
+%that use the proofs themselves to determine adequacy.
+%It uses the recently introduced idea Inductive Validity Cores (IVCs) to find minimal sets of model elements necessary to establish proofs.
+%One of the proposed metrics is rigorous, substantially cheaper to compute than previous metrics, and
+%is guaranteed to yield a residual model that leads to a proof.  Other possible metrics are more expensive
+%to compute and provide  more- or less-rigorous completeness definitions.  We demonstrate the metrics on
+%a large corpus of examples.
+
+\end{abstract}
+
+
+%\begin{CCSXML}
+%<ccs2012>
+%<concept>
+%<concept_id>10003752.10003790.10003794</concept_id>
+%<concept_desc>Theory of computation~Automated reasoning</concept_desc>
+%<concept_significance>500</concept_significance>
+%</concept>
+%<concept>
+%<concept_id>10003752.10003790.10011192</concept_id>
+%<concept_desc>Theory of computation~Verification by model checking</concept_desc>
+%<concept_significance>500</concept_significance>
+%</concept>
+%<concept>
+%<concept_id>10011007.10011074.10011075.10011076</concept_id>
+%<concept_desc>Software and its engineering~Requirements analysis</concept_desc>
+%<concept_significance>500</concept_significance>
+%</concept>
+%<concept>
+%<concept_id>10011007.10011074.10011099.10011692</concept_id>
+%<concept_desc>Software and its engineering~Formal software verification</concept_desc>
+%<concept_significance>500</concept_significance>
+%</concept>
+%</ccs2012>
+%\end{CCSXML}
+%
+%\ccsdesc[500]{Theory of computation~Verification by model checking}
+%\ccsdesc[500]{Theory of computation~Automated reasoning}
+%\ccsdesc[500]{Software and its engineering~Requirements analysis}
+%\ccsdesc[500]{Software and its engineering~Formal software verification}
+%\printccsdesc
+\keywords{coverage; requirements completeness; formal verification; SAT-based model checking;
+  inductive proofs; inductive validity cores;}
+
+
+
+\input{introduction}
+
+%\ifdefined\TECHREPORT
+%\input{description}
+%\fi
+\input{example}
+
+%\input{background}
+
+\input{formalization}
+
+\input{method}
+
+\input{Illustration}
+
+\input{impl}
+
+\input{experiments}
+
+\input{discussion}
+
+\input{related}
+
+\input{conclusion}
+
+%\section*{Acknowledgment}
+%
+%
+%The authors would like to thank...
+%more thanks here
+
+
+\bibliographystyle{abbrv}
+\bibliography{biblio}
+
+% This ~ seems to fix an odd bibliography alignment issue
+~
+\end{document}
+
+

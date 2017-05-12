@@ -61,10 +61,8 @@ the following monotonicity property \cite{Ghass16}: given $(I, T)\vdash P$, $\fo
 Note that given $(I, T) \vdash P$, $P$ always has at least one \mivc , which implies \mivc s are not necessarily unique.
 For example, take $I = a \land b$, $T = a' \land b'$, and $P = a \lor
 b$. Then both $\{a'\}$ and $\{b'\}$ are \mivc s for $(I, T)\vdash P$. To capture this fact, the \emph{all \mivc s ($AIVC$)} relation has been introduced \cite{Murugesan16:renext}.
-
 $$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  \mivc(P, S)\} $$
-
-%In the example in Figure \ref{fig:asw}, as visualized in part (b),
+%In the example in Fig. \ref{fig:asw}, as visualized in part (b),
 %$AIVC ({\tt P}) = \{\{{\tt P}, {\tt c2}, {\tt c3}\}, \{{\tt P}, {\tt x}, {\tt c3}\}\}$.
 \noindent
 Establishing the $AIVC$ for a single property, one gets a clear picture of the all the model elements constrained by the property. The set of $AIVC$s for all properties demonstrates a complete mapping from the requirements to the design elements, which is called complete traceability \cite{Murugesan16:renext}.
@@ -85,9 +83,7 @@ We assume each element $T_i \in T$ has a set of possible mutations associated wi
 \[
     M = \{ (T \setminus \{T_i\}) \cup \{m\} \ |\ T_i \in T, m \in f_{m}(T_i) \}
 \]
-
 \noindent and then define the mutation score for property $P$ in the standard way:
-
 \begin{definition} {\emph{Generalized mutation coverage.} } \\
 \[
    \mutcov = \frac{ | \{m~|~ m \in M~\land~(I, m) \nvdash P\} |}{|M|}
@@ -97,7 +93,7 @@ We assume each element $T_i \in T$ has a set of possible mutations associated wi
 \noindent Note that without loss of generality, we consider a single property P, which can be viewed as the conjunction of all the properties of the model.
 %\footnote{Besides, the notions provided in this paper can be easily applied to a set of properties.}.
 
-In our example in Figure~\ref{fig:asw}, applying the software mutations from~\cite{Andrews06:mutation} would involve manipulating the constants used in the definitions of \texttt{a1\_below, a2\_below, a1\_above, a2\_above}, swapping \texttt{or} and \texttt{and} in the definition of \texttt{below, above\_hyst}, or negating the conditions in the if/then/else statements.  Even for this small model, there are many possible mutations (57).  The number of single-mutation programs is roughly the product of the leaf elements of the program abstract syntax tree (AST) and the size of the chosen set of mutations, which can lead to an impractical number of verification problems.
+In our example in Fig.~\ref{fig:asw}, applying the software mutations from~\cite{Andrews06:mutation} would involve manipulating the constants used in the definitions of \texttt{a1\_below, a2\_below, a1\_above, a2\_above}, swapping \texttt{or} and \texttt{and} in the definition of \texttt{below, above\_hyst}, or negating the conditions in the if/then/else statements.  Even for this small model, there are many possible mutations (57).  The number of single-mutation programs is roughly the product of the leaf elements of the program abstract syntax tree (AST) and the size of the chosen set of mutations, which can lead to an impractical number of verification problems.
 
 \newcommand{\andnode}{{\sc and}}
 \newcommand{\invnode}{{\sc inv}}
@@ -109,7 +105,6 @@ In our example in Figure~\ref{fig:asw}, applying the software mutations from~\ci
 Mutations for hardware are discussed in~\cite{chockler2010coverage,Kupferman:2006:SCF,kupferman_theory_2008}.  In most of this work, the hardware model is formalized as an and-inverter-graph net-list, a graph representation of circuits in which vertices are \{\andnode, \invnode\} gates or memory elements (registers) and edges are connections between gates (signals).  Formally, A net-list $N$ is a directed graph $(V_N,E_N, \tau_N)$ where $V_N$ is a finite set of vertices, $E_N \subseteq V_N \times V_N$ is the set of directed edges and $\tau_N : V_N \rightarrow \{$\andnode, \invnode, \regnode, \inpnode$\}$ maps a node to its type, where \andnode\ is an ``and'' gate, \invnode\ is an inverter, \regnode\ is a register, and \inpnode\ is a primary input.  The in-degree of a vertex of type \andnode\ is at least two, of type \invnode\ and \regnode\ is exactly one and of type \inpnode\ is zero. Any cycle in $N$ must contain at least one \regnode\ node~\cite{chockler2010coverage}.
 
 Given this representation, it is possible to discuss mutations of a single vertex: either stuck-at-zero, stuck-at-one, or nondeterministic.  This mutation is performed by changing the vertex to \mutnode, where \mutnode\ can be a ``fresh'' input for \emph{non-deterministic mutations}, or fixed to 0 or 1 for stuck-at mutations. Formally the semantics of a mutant net-list is defined as a new labeling function:
-
 \[ \tau^{v}_{N}(u) = \begin{cases}
     \tau(v) & \textrm{ if $v \neq u$} \\
     \textrm{\mutnode}   & \textrm{ if $v = u$}
@@ -147,7 +142,7 @@ Using  $\nondetcov$, the coverage score of specification $P$ is computed by
 %\end{figure}
 %
 %
-%To introduce mutations, a multiplexer is introduced into the graph for the mutated vertex $v$ as shown in Figure~\ref{fig:multiplexer}, and all edges connected to $v$ are connected to $v^{mx}$.   If the selector signal $v^{s}$ is true, then the mutated signal $v^{f}$ is emitted instead of the original signal $v$.  To model stuck-at faults, $v^{f}$ is set to constant true or false, and to model non-deterministic faults, a ``fresh'' input signal is added to the model.
+%To introduce mutations, a multiplexer is introduced into the graph for the mutated vertex $v$ as shown in Fig.~\ref{fig:multiplexer}, and all edges connected to $v$ are connected to $v^{mx}$.   If the selector signal $v^{s}$ is true, then the mutated signal $v^{f}$ is emitted instead of the original signal $v$.  To model stuck-at faults, $v^{f}$ is set to constant true or false, and to model non-deterministic faults, a ``fresh'' input signal is added to the model.
 %\fi
 %Of particular interest is the mutation that replaces a computed variable ({\em signal} in hardware) with a ``fresh'' input; this mutation is called a {\em nondeterminism mutation} with a coverage metric called (\nondetcov)~\cite{chockler2010coverage} and is discussed .
 %s

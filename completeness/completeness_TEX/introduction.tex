@@ -32,7 +32,7 @@ What we would like to have is a graduated set of metrics for checking the adequa
 
 \noindent Towards this end, we propose several notions of requirements adequacy based on {\em minimal proofs of requirements}.  We measure the adequacy of a set of requirements by examining an (approximately) minimal set of model elements necessary to construct a proof of all the requirements.  Like earlier approaches proposed for formal verification, this idea is implementation agnostic so it can be applied early in the development cycle against abstract implementation models.  The approach is implemented using {\em Inductive Validity Cores} (IVCs)~\cite{Ghass16} for transition systems.
 
-We have built support for generating these metrics into a branch of the JKind model checker~\cite{jkind}.  Using a large benchmark suite, we demonstrate that one of the proof-based metrics is considerably more computationally tractable than previous approaches based on mutation, averaging \~20\% overhead over model-checking alone, rather than (for our benchmark problems) the up to~2300\% overhead required for the state of the art of the mutation-based metrics.
+We have built support for generating these metrics into a branch of the JKind model checker~\cite{jkind}.  Using a large benchmark suite, we demonstrate that one of the proof-based metrics is considerably more computationally tractable than previous approaches based on mutation, averaging ${\sim}$20\% overhead over model-checking alone, rather than (for our benchmark problems) the up to ${\sim}$2300\% overhead required for the state of the art of the mutation-based metrics.
 
 Thus, the contributions of this work are:
 \begin{enumerate}

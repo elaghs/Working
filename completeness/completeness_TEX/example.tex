@@ -11,22 +11,44 @@
 %\end{figure*}
 
 %% We put the image here so it shows up side-by-side with fig:ex-after
-\begin{figure}
+\begin{figure}[t]
 \centering
-\includegraphics[width=0.85\columnwidth]{figs/code.jpg}
+\includegraphics[width=0.9\columnwidth]{figs/code.jpg}
+%{\smaller
+%\begin{verbatim}
+%node asw(alt1, alt2: int; inhibit: bool)
+%        returns (doi_on: bool);
+%var
+%   a1_below, a2_below, a1_above, a2_above,
+%   below, above_hyst, d1, d2: bool;
+%let
+%   a1_below = (alt1 < THRESHOLD);        // (1)
+%   a2_below = (alt2 < THRESHOLD);        // (2)
+%   a1_above = (alt1 >= T_HYST);          // (3)
+%   a2_above = (alt2 >= T_HYST);          // (4)
+%   below = a1_below or a2_below;         // (5)
+%   above_hyst = a1_above and a2_above;   // (6)
+%   doi_on = if (below and not inhibit)   // (7)
+%        then true else d1;
+%   d1 = if (inhibit or above_hyst)       // (8)
+%         then false else d2;
+%   d2 = (false -> pre(doi_on));          // (9)
+%tel;
+%\end{verbatim}
+%}
 \vspace{-0.1in}
 \caption{Altitude Switch Model}
+\vspace{-0.27in}
 \label{fig:asw}
 \end{figure}
 
-
-We will use a very simple system from the avionics domain to illustrate our approach. An Altitude Switch (ASW) is a hypothetical device that turns power on to another subsystem, the Device of Interest (DOI), when the aircraft descends below a threshold altitude and turns the power off again after we ascend over the threshold plus some hysteresis factor.  An implementation of an ASW containing two altimeters written in the Lustre language (simplified and adapted from~\cite{HCW02:ase-deviation}) is shown in Fig.~\ref{fig:asw}.  If the system is not ``inhibited'' by the user and either altimeter is below the constant THRESHOLD, then it turns on the DOI; else, if the system is inhibited or both altimeters are above the threshold plus the hysteresis factor (THRESHOLD + HYST), then the DOI is turned off, and if neither condition holds, then in the initial computation it is false and thereafter retains its previous value.  The notation \texttt{(false -> pre(doi\_on))} in equation (9) describes an initialized register in Lustre: in the initial state, the expression is \texttt{false}, and thereafter it is the previous value of \texttt{doi\_on}.  In the remainder of the paper, we will use this model to illustrate aspects of requirements completeness.  %Section \ref{sec:illust}.
+We will use a very simple system from the avionics domain to illustrate our approach. An Altitude Switch (ASW) is a hypothetical device that turns power on to another subsystem, the Device of Interest (DOI), when the aircraft descends below a threshold altitude and turns the power off again after we ascend over the threshold plus some hysteresis factor.  An implementation of an ASW containing two altimeters written in the Lustre language (simplified and adapted from~\cite{HCW02:ase-deviation}) is shown in Figure~\ref{fig:asw}.  If the system is not ``inhibited'' by the user and either altimeter is below the constant THRESHOLD, then it turns on the DOI; else, if the system is inhibited or both altimeters are above the threshold plus the hysteresis factor (THRESHOLD + HYST), then the DOI is turned off, and if neither condition holds, then in the initial computation it is false and thereafter retains its previous value.  The notation \texttt{(false -> pre(doi\_on))} in equation (9) describes an initialized register in Lustre: in the initial state, the expression is \texttt{false}, and thereafter it is the previous value of \texttt{doi\_on}.  In the remainder of the paper, we will use this model to illustrate aspects of requirements completeness.  %Section \ref{sec:illust}.
 
 
 \iffalse
 \mike{replace with altitude switch example!}
 
-We will use the model in Fig.~\ref{fig:ex} (a) as
+We will use the model in Figure~\ref{fig:ex} (a) as
 a running example throughout the paper. This model is written in Lustre~\cite{Halbwachs91:lustre}, which is a synchronous dataflow language used as an input language for various model checkers. For our purposes, a Lustre program
 consists of 1) input variables, {\tt in1} and {\tt in2} in the example, 2) output
 variables, {\tt P} in the example, and 3) an
@@ -42,7 +64,7 @@ the behavior of the program under all possible input traces. Safety
 properties over Lustre can then be expressed as Boolean expressions in
 Lustre. A safety property holds if the corresponding expression is
 always true for all input traces. For example, the property for
-Fig.~\ref{fig:ex} is {\tt P}, which is a valid property.
+Figure~\ref{fig:ex} is {\tt P}, which is a valid property.
 
 In the example, the structure of the model allows property {\tt P} to be proved in two ways.
 Note that {\tt c1}, {\tt r1}, and {\tt r2} do not affect the validity of {\tt P}, which means

@@ -36,14 +36,15 @@ all_p = on_p and off_p;
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{figs/spear_set1.png}
-  \vspace{-0.2in}
+  \vspace{-0.1in}
   \caption{Elements covered by the initial property set}
+  \vspace{-0.1in}
   \label{fig:propertyset1}
 \end{figure}
 
 
 \noindent Informally, when both altimeters are below the threshold and not inhibited, then the DOI should be on (\onp), and when both altimeters are below the threshold and the ASW is inhibited, then the DOI should be off (\offp).
-For each of the \ivccov, \maycov, and \mustcov\ metrics, \allp\ only requires \texttt{\{below, d1, doi\_on\}}, as shown in Fig.~\ref{fig:propertyset1}.   This small set of elements is due to a classic specification problem: using computed variables as the antecedents of implications.  If these values are computed incorrectly (say, we choose the wrong threshold for \aonebelow), it may cause the property to be valid for incorrect reasons.
+For each of the \ivccov, \maycov, and \mustcov\ metrics, \allp\ only requires \texttt{\{below, d1, doi\_on\}}, as shown in Figure~\ref{fig:propertyset1}.   This small set of elements is due to a classic specification problem: using computed variables as the antecedents of implications.  If these values are computed incorrectly (say, we choose the wrong threshold for \aonebelow), it may cause the property to be valid for incorrect reasons.
 
 %This is alarming, and somewhat puzzling, because one would think that at least the definitions of the `below' or `above' would be necessary.  However, because the specification used the model variables \aonebelow, \atwobelow, \aoneabove, and \atwoabove, the actual valuations of the thresholds do not matter.  This situation illustrates a classic specification problem: using computed variables in the antecedents of implications.
 %\footnote{\noindent ~In this case, if the computation of the variables used in the antecedent is incorrect, then our property will not verify what it is expected to verify \mike{citation to one of our papers on specification here...}; note also that this does not mean the property is necessarily {\em vacuous}.}
@@ -100,12 +101,13 @@ all_p = on_p and off_p and hyst_p;
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{figs/spear_set4.png}
-  \vspace{-0.2in}
+  \vspace{-0.1in}
   \caption{Elements covered by the final property set}
+  \vspace{-0.1in}
   \label{fig:propertyset4}
 \end{figure}
 
-As shown in Fig.~\ref{fig:propertyset4}, the measures again coincide and include all variables, and we appear to have a reasonably complete specification.  However, the measures are certainly not foolproof; it turns out that using {\em only} the hysteresis property \hystp\ will {\em also} yield a ``complete'' result for all of the metrics: to establish its validity, all of the equations that we have defined in the model are required.  This is because the partitioning of the transition system (i.e., the equations) is insufficiently {\em granular} to detect the incompleteness.
+As shown in Figure~\ref{fig:propertyset4}, the measures again coincide and include all variables, and we appear to have a reasonably complete specification.  However, the measures are certainly not foolproof; it turns out that using {\em only} the hysteresis property \hystp\ will {\em also} yield a ``complete'' result for all of the metrics: to establish its validity, all of the equations that we have defined in the model are required.  This is because the partitioning of the transition system (i.e., the equations) is insufficiently {\em granular} to detect the incompleteness.
 %However, this one property would not reasonably be considered a complete specification.
 We will examine this situation further in Section~\ref{sec:discussion}.
 %We will examine this situation further in the discussion section~\mike{add this!}.

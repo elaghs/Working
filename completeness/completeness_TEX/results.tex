@@ -72,7 +72,8 @@ Therefore, in order to compute \ivccov\, it is much more efficient to use \ucalg
 
 In terms of comparing cost of coverage computation from \ivccov\ and \mustcov ,
 the \mustcov\ computation imposes an average 2369\% runtime overhead on the verification time.
-\ela{we include \maycov\ but don't have an algorithm for it. Besides, we justify at different places in the paper we only care about the \mustcov\ and \ivccov\ . I don't know. Perhaps the footnote we added (I edited) suffices...}
+
+%\ela{we include \maycov\ but don't have an algorithm for it. Besides, we justify at different places in the paper we only care about the \mustcov\ and \ivccov\ . I don't know. Perhaps the footnote we added (I edited) suffices...}
 \takeaway{Coverage analysis using \ucalg is much more efficient than coverage analysis using \mustalg or \ucbfalg.}
 
 \begin{table}
@@ -127,7 +128,7 @@ we were interested in the number of models in the benchmark for which
 \mustalg did not preserve provability).
 Obviously properties are provable by 100\% of the IVCs computed by \ucalg (and \ucbfalg).
 As for the \mustalg algorithm, the properties of 84 models in the benchmarks were not provable by the output of \mustalg. In practice, for larger models, \mustcov\ is more likely not to maintain provability,
- and since more than half of the models are small, 18\% may still not reveal the actual degree 
+ and since more than half of the models are small, 18\% may still not reveal the actual degree
  to which \mustcov\ underapproximates the covered parts of a model.
 %In the assessment of completeness, \ucalg has an average error rate of $+8\%$,
 %while the average error rate of \mustalg is $-3\%$.

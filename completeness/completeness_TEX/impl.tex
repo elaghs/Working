@@ -4,21 +4,30 @@
 To implement our method, we have made use of the technique proposed by Ghassabani et al. \cite{Ghass16} for the efficient computation of IVCs, where there are two detailed algorithms for computing minimal IVCs: (1) Algorithm \ucbfalg that computes a MIVC of a given property, which is expensive. (2) Algorithm \ucalg that computes an \emph{approximately minimal} IVC in a much more efficient way. This section provides a high-level representation of these algorithms, and their implementation in a tool chain.
 
 \subsection{Algorithms}
-IVCs are built upon inductive proofs. In order to prove a property, inductive proof methods employ heuristics to derive additional lemmas (or invariants) so to strengthen the property and prove it inductively. To extract IVCs, the baseline algorithm \ucalg, shown in Algorithm \ref{alg:uc} iteratively uses UNSAT cores (hence the `UC') to determine an approximately minimal set of model elements.
+IVCs are built upon inductive proofs. In order to prove a property, inductive proof methods employ heuristics to derive additional lemmas (or invariants) so to strengthen the property and prove it inductively. To extract IVCs, the baseline algorithm \ucalg (Algorithm \ref{alg:uc}) iteratively uses UNSAT cores (hence the `UC') to determine an approximately minimal set of model elements.
 Algorithm \ref{alg:uc}
 first proves the property and obtains all the invariants generated for the proof (line 1). Since not all these invariants are essential for the proof, it performs a minimization step to keep a set of necessary invariants (line 2). The proofs of these invariants themselves are dependent on the structure of the model or design elements that we have defined them as Inductive Validity Core (Definition \ref{def:ivc}).
 So, using function $map\_to\_design$, Algorithm \ref{alg:uc}
-computes those design elements. Finally, the algorithm minimizes the computed elements so to obtain an approximately minimal IVC (line 4). Although Algorithm \ref{alg:uc} performs minimization, because of the structure of the inductive proofs, \ucalg might still not produce a minimal IVC. It is often the case that to discover a minimal proof, additional lemmas might be necessary that were not part of the original proof.  It can also be the case that different minimal lemma sets may require larger or smaller sets of model elements\footnote{for complete information, see Ghassabani et. al \cite{Ghass16}.}.
+computes those design elements. Finally, the algorithm minimizes the computed elements to obtain an approximately minimal IVC (line 4). 
+Although Algorithm \ref{alg:uc} performs minimization, because of the structure of the inductive proofs, \ucalg might still not produce a minimal IVC. It is often the case that to discover a minimal proof, additional lemmas might be necessary that were not part of the original proof.  It can also be the case that different minimal lemma sets may require larger or smaller sets of model elements.
+%Ela: we will add back this footnote after the review process
+%\footnote{for complete information, see Ghassabani et. al \cite{Ghass16}.}
+%--------------------------
+%Ela: I commented the above footnote because it gives everything away when being 
+%read right before the next footnote. 
+%Besides, we put ourselves into trouble. Again, they may try hard to find fault with us. 
+%And this gives them a hint why you didn't explain the algorithms in detail...
+%-------------------------
 Therefore, Algorithm \ref{alg:ucbf}, \ucbfalg, includes a minimization brute-force post-processing step starting from the result of \ucalg (hence `UCBF').  The results from the \ucbfalg\ algorithm are guaranteed to be minimal.
 
-Algorithm \ref{alg:must} is also an efficient way of computing the \emph{must} set of a given property using \ucalg. A different algorithm for computing $MUST (P)$ is to first compute $AIVC (P)$ and then take the intersection of all sets in $AIVC (P)$, which requires an algorithm for finding $AIVC$.  N{\"a}ive approaches for computing all inductive validity cores would be very inefficient, so we are researching algorithms towards efficiently generating all inductive validity cores\footnote{We have an initial technical report on our algorithms, but this would identify the authors. If this paper is accepted we will provide a reference to the tech report}.
-
-%However, to the best of our knowledge, there is still not an efficient way of doing so. \ela{do we need to point that out?!}
+Algorithm \ref{alg:must} is also an efficient way of computing the \emph{must} set of a given property using \ucalg. A different algorithm for computing $MUST (P)$ is to first compute $AIVC (P)$ and then take the intersection of all sets in $AIVC (P)$, which requires an algorithm for finding $AIVC$.  However, n{\"a}ive approaches for computing all inductive validity cores would be very inefficient.
+\footnote{We have implemented an efficient algorithm for generating all IVCs, not yet published though. Once the author names are revealed, we can provide a detailed report about it. The experimental results for the \maycov\ metric in Section~\ref{sec:results} were calculated with this algorithm although it is not the main purpose of our experiments, as explained in the end of Section~\ref{sec:method}.}.
+ 
 
 Note that, as discussed in Section \ref{sec:method}, the
 output of \ucalg (as well as \ucbfalg) for $(I, T) \vdash P$ pinpoints the covered design elements
 using \ivccov\ (Definition \ref{def:coverage-justi}).
-And, the output of \mustalg represents covered design elements according to \nondetcovalt\ (or \nondetcov ), which is the same as $MUST(P)$.
+And, the output of \mustalg represents covered design elements according to \nondetcovalt\ (or \nondetcov ), which is the same as $MUST(P)$. 
 
 \begin{algorithm}
   \SetKwInOut{Input}{input}
@@ -72,7 +81,7 @@ And, the output of \mustalg represents covered design elements according to \non
 
 \subsection{Tooling}
 
-The three algorithms introduced in this section have been implemented in the \texttt{JKind}~\cite{jkind} model checker, which is an infinite-state industrial model checker. \texttt{JKind} proves safety properties using multiple cooperative engines in parallel including $k$-induction \cite{SheeranSS00}, property directed reachability (PDR) \cite{Een2011:PDR}, and template-based lemma generation \cite{Kahsai2011}. It accepts
+The three algorithms introduced in this section have been implemented in the \texttt{JKind} model checker~\cite{jkind}, which is an infinite-state industrial model checker. \texttt{JKind} proves safety properties using multiple cooperative engines in parallel including $k$-induction \cite{SheeranSS00}, property directed reachability (PDR) \cite{Een2011:PDR}, and template-based lemma generation \cite{Kahsai2011}. It accepts
 Lustre programs written over the theory of linear integer and real
 arithmetic. In the back-end, it uses an SMT solver such as
 Z3 \cite{DeMoura08:z3}, Yices \cite{Dutertre06:yices},

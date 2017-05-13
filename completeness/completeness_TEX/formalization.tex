@@ -62,7 +62,7 @@ Note that given $(I, T) \vdash P$, $P$ always has at least one \mivc , which imp
 For example, take $I = a \land b$, $T = a' \land b'$, and $P = a \lor
 b$. Then both $\{a'\}$ and $\{b'\}$ are \mivc s for $(I, T)\vdash P$. To capture this fact, the \emph{all \mivc s ($AIVC$)} relation has been introduced \cite{Murugesan16:renext}.
 $$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  \mivc(P, S)\} $$
-%In the example in Fig. \ref{fig:asw}, as visualized in part (b),
+%In the example in Figure \ref{fig:asw}, as visualized in part (b),
 %$AIVC ({\tt P}) = \{\{{\tt P}, {\tt c2}, {\tt c3}\}, \{{\tt P}, {\tt x}, {\tt c3}\}\}$.
 \noindent
 Establishing the $AIVC$ for a single property, one gets a clear picture of the all the model elements constrained by the property. The set of $AIVC$s for all properties demonstrates a complete mapping from the requirements to the design elements, which is called complete traceability \cite{Murugesan16:renext}.
@@ -93,7 +93,7 @@ We assume each element $T_i \in T$ has a set of possible mutations associated wi
 \noindent Note that without loss of generality, we consider a single property P, which can be viewed as the conjunction of all the properties of the model.
 %\footnote{Besides, the notions provided in this paper can be easily applied to a set of properties.}.
 
-In our example in Fig.~\ref{fig:asw}, applying the software mutations from~\cite{Andrews06:mutation} would involve manipulating the constants used in the definitions of \texttt{a1\_below, a2\_below, a1\_above, a2\_above}, swapping \texttt{or} and \texttt{and} in the definition of \texttt{below, above\_hyst}, or negating the conditions in the if/then/else statements.  Even for this small model, there are many possible mutations (57).  The number of single-mutation programs is roughly the product of the leaf elements of the program abstract syntax tree (AST) and the size of the chosen set of mutations, which can lead to an impractical number of verification problems.
+In our example in Figure~\ref{fig:asw}, applying the software mutations from~\cite{Andrews06:mutation} would involve manipulating the constants used in the definitions of \texttt{a1\_below, a2\_below, a1\_above, a2\_above}, swapping \texttt{or} and \texttt{and} in the definition of \texttt{below, above\_hyst}, or negating the conditions in the if/then/else statements.  Even for this small model, there are many possible mutations (57).  The number of single-mutation programs is roughly the product of the leaf elements of the program abstract syntax tree (AST) and the size of the chosen set of mutations, which can lead to an impractical number of verification problems.
 
 \newcommand{\andnode}{{\sc and}}
 \newcommand{\invnode}{{\sc inv}}
@@ -142,7 +142,7 @@ Using  $\nondetcov$, the coverage score of specification $P$ is computed by
 %\end{figure}
 %
 %
-%To introduce mutations, a multiplexer is introduced into the graph for the mutated vertex $v$ as shown in Fig.~\ref{fig:multiplexer}, and all edges connected to $v$ are connected to $v^{mx}$.   If the selector signal $v^{s}$ is true, then the mutated signal $v^{f}$ is emitted instead of the original signal $v$.  To model stuck-at faults, $v^{f}$ is set to constant true or false, and to model non-deterministic faults, a ``fresh'' input signal is added to the model.
+%To introduce mutations, a multiplexer is introduced into the graph for the mutated vertex $v$ as shown in Figure~\ref{fig:multiplexer}, and all edges connected to $v$ are connected to $v^{mx}$.   If the selector signal $v^{s}$ is true, then the mutated signal $v^{f}$ is emitted instead of the original signal $v$.  To model stuck-at faults, $v^{f}$ is set to constant true or false, and to model non-deterministic faults, a ``fresh'' input signal is added to the model.
 %\fi
 %Of particular interest is the mutation that replaces a computed variable ({\em signal} in hardware) with a ``fresh'' input; this mutation is called a {\em nondeterminism mutation} with a coverage metric called (\nondetcov)~\cite{chockler2010coverage} and is discussed .
 %s

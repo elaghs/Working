@@ -16,9 +16,12 @@ experimental results to address the research questions defined in the experiment
 \subsubsection{RQ1}
 
 To address RQ1, we measured the performance overhead of the various IVC algorithms against the baseline time
-necessary to find a proof using inductive model checking. Fig. \ref{fig:performance} provides an overview of the  overhead of the \aivcalg ~algorithm in comparison to the \ucalg ~and \ucbfalg\ algorithms.  In the figure, each curve is ranked along the x-axis according to the time required for the algorithm to terminate for each analysis problem.  Table \ref{tab:runtime} provides a summary of the computation time and the overhead of different algorithms.
-  As is evidenced by Fig. \ref{fig:performance}, the \ucalg\  algorithm imposes a negligible overhead over the baseline proof time, whereas both the \ucbfalg\ algorithm and \aivcalg\ algorithms add a substantial penalty over the baseline proof time.
-    We examine the performance of the \aivcalg\ algorithm both
+necessary to find a proof using inductive model checking. Fig. \ref{fig:performance} provides an overview of the  overhead of the \aivcalg ~algorithm in comparison to the \ucalg ~and \ucbfalg\ algorithms.  In the figure, each curve is ranked along the x-axis according to the time required for the algorithm to terminate for each analysis problem.  
+Table \ref{tab:runtime} provides a summary of the computation time and the overhead of different algorithms.
+  The \ucalg\  algorithm imposes a negligible overhead over the baseline proof time,
+   whereas both the \ucbfalg\ algorithm and \aivcalg\ 
+   algorithm add a substantial penalty over the baseline proof time. However, as is evidenced by Fig. \ref{fig:performance}, the overhead of the \aivcalg\ on larger models decreases. But, for the models with less than 1 sec verification time, \aivcalg\ appears with a very high overhead.
+    We examine the performance of the \aivcalg\ both
      in terms of the time required to find all MIVCs and also the time required divided by the number of MIVCs found.  Somewhat surprisingly, the latter measure outperforms the \ucbfalg\ algorithm for the majority of the models in the benchmark suite.
 
 The \aivcalg\ algorithm requires approximately 1.6x more time than the \ucbfalg\ algorithm, calculated in the following way: we measure the ratio of time required for each model for both metrics, then we take the mean of this ratio for all models.  It is important to note that these performance curves are sensitive to the timeout values chosen for individual proof-searches for IVCs (the \getivc\ step in \aivcalg\ and line 3 in the \ucbfalg\ algorithm in~\cite{Ghass16}). It is likely that the performance would change if a different threshold was chosen.

@@ -36,8 +36,11 @@ there is no guarantee that we can determine whether or not any $S \subset T$ is 
 this problem is as hard as model checking, which is undecidable for infinite state systems.
 Therefore, in practice, we have to set timeouts for the model checking algorithm in each iteration.
 In our implementation, we set a timeout based on the time the property takes to be proved given all model elements.
-During this initial proof, we obtain its required \emph{proof-time}.
-Then, the timeout we set for each iteration is ($30$ sec  $+ 5\ \times$ \emph{proof-time}).
+During this initial proof, we obtain its required \emph{proof-time}. 
+Obtaining the initial proof guarantees the success of calculating first IVC by \ucalg. 
+Therefore, in our implementation, a proof is first passed to the IVC generation engine, and then the result of this engine is sent to our All-IVCs generation engine\footnote{This information flow is useful because we are able to initialize $map$ with the disjunction of the negated literals of the initial IVC set.}.
+At this point, we have obtained the runtime of single IVC extraction (\emph{\ucalg-time}) and \emph{proof-time}.
+Then, the timeout we set for each iteration of the algorithm is ($30$ sec  $+\ 5\ \times$ (\emph{proof-time} $+$ \emph{\ucalg-time})). 
 When the \texttt{while} loop times out for $S$ in line 8 of Algorithm~\ref{alg:aivc},
 we treat $S$ as an \emph{inadequate} set;
 otherwise results may be incorrect; i.e. sets that are not actually adequate may be reported as adequate.
@@ -45,7 +48,7 @@ When we mark an indeterminate set $S$ as inadequate, line 13 will prune off $S$ 
 the search space.  This can occasionally lead to anomalies where the brute force algorithm (like \ucbfalg) discovers a {\em smaller}
 MIVC than is discovered by the \aivcalg ~procedure.  Note that this can happen regardless of the timeout threshold used
 due to the lemma generation procedure; this aspect will be discussed in more detail in
-Section~\ref{sec:experiment-discussion}.
+Section~\ref{sec:experiment-discussion}. It should be pointed out the IVCs found by the algorithm are only guaranteed to be minimal in the absence of timeouts.
 
 
 %The source code is publicly available on \cite{mygit}.

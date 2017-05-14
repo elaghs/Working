@@ -1,3 +1,17 @@
 \section{Industrial Case Study}
 
 \label{sec:qfc} 
+ 
+This section is to evaluate our technique on a a realistic example from NASA's Transport Class Model (TCM) aircraft simulation model \cite{hueschen2011development}. We use the Quad-redundant Flight Control System (QFCS) model from \cite{NFM2015:backes} developed using \texttt{AADL AGREE}
+tool suite \cite{NFM2012:CoGa}. 
+The QFCS has a hierarchical architecture consisting of several components. 
+The monotonic model has 50,635 design elements (LUSTRE equations), 7,719 of which are registers. 
+For this study, due to time limitation, we chose two of the model components: 
+the Flight Control Computers (FCC) (with 9,953 design elements 
+and 9 properties) and the Flight Control System (FCS) (with 3,423 design elements and 2 properties). 
+We ran the algorithm on each property separately, which left us with 11 complex problems to study.  
+%The FCS 3,423  104 prop
+%fcc 9953 1511? prop
+
+ 
+  

@@ -10,10 +10,14 @@ in~\cite{Hagen08:FMCAD}.
 Verification is supported by multiple ``proof engines'' that execute in parallel, including K-induction,
 property directed reachability (PDR), and lemma generation engines that attempt to prove
 multiple properties in parallel.  To implement the engines,
-\texttt{JKind} emits SMT problems using the theories of linear integer and real arithmetic.  \texttt{JKind} supports the
-\texttt{Z3}~\cite{DeMoura08:z3},
-\texttt{Yices}~\cite{Dutertre06:yices}, \texttt{MathSAT}~\cite{Cimatti2013:MathSAT},
-\texttt{SMTInterpol}~\cite{Christ2012:SMTInterpol}, and \texttt{CVC4} \cite{barrett2011cvc4} SMT solvers as back-ends.  When a property is
+\texttt{JKind} emits SMT problems using the theories of linear integer and real arithmetic.  \texttt{JKind} supports the 
+%I remove citations to save some space in the end
+%------------------
+%\texttt{Z3}~\cite{DeMoura08:z3},
+%\texttt{Yices}~\cite{Dutertre06:yices}, \texttt{MathSAT}~\cite{Cimatti2013:MathSAT},
+%\texttt{SMTInterpol}~\cite{Christ2012:SMTInterpol}, and \texttt{CVC4} \cite{barrett2011cvc4}
+%----------------------------------------------------------------
+\texttt{Z3}, \texttt{Yices}, \texttt{MathSAT}, \texttt{SMTInterpol}, and \texttt{CVC4} SMT solvers as back-ends.  When a property is
 proved and IVC generation is enabled, an additional parallel engine
 executes the \ucalg ~algorithm \cite{Ghass16} to generate an (approximately) minimal IVC.
 %
@@ -36,19 +40,18 @@ there is no guarantee that we can determine whether or not any $S \subset T$ is 
 this problem is as hard as model checking, which is undecidable for infinite state systems.
 Therefore, in practice, we have to set timeouts for the model checking algorithm in each iteration.
 In our implementation, we set a timeout based on the time the property takes to be proved given all model elements.
-During this initial proof, we obtain its required \emph{proof-time}. 
-Obtaining the initial proof guarantees the success of calculating first IVC by \ucalg. 
+During this initial proof, we obtain its required \emph{proof-time}.
+Obtaining the initial proof guarantees the success of calculating first IVC by \ucalg.
 Therefore, in our implementation, a proof is first passed to the IVC generation engine, and then the result of this engine is sent to our All-IVCs generation engine\footnote{This information flow is useful because we are able to initialize $map$ with the disjunction of the negated literals of the initial IVC set.}.
 At this point, we have obtained the runtime of single IVC extraction (\emph{\ucalg-time}) and \emph{proof-time}.
-Then, the timeout we set for each iteration of the algorithm is ($30$ sec  $+\ 5\ \times$ (\emph{proof-time} $+$ \emph{\ucalg-time})). 
+Then, the timeout we set for each iteration of the algorithm is ($30$ sec  $+\ 5\ \times$ (\emph{proof-time} $+$ \emph{\ucalg-time})).
 When the \texttt{while} loop times out for $S$ in line 8 of Algorithm~\ref{alg:aivc},
 we treat $S$ as an \emph{inadequate} set;
 otherwise results may be incorrect; i.e. sets that are not actually adequate may be reported as adequate.
 When we mark an indeterminate set $S$ as inadequate, line 13 will prune off $S$ and all its subsets from
 the search space.  This can occasionally lead to anomalies where the brute force algorithm (like \ucbfalg) discovers a {\em smaller}
 MIVC than is discovered by the \aivcalg ~procedure.  Note that this can happen regardless of the timeout threshold used
-due to the lemma generation procedure; this aspect will be discussed in more detail in
-Section~\ref{sec:experiment-discussion}. It should be pointed out the IVCs found by the algorithm are only guaranteed to be minimal in the absence of timeouts.
+due to the lemma generation procedure. It should be pointed out the IVCs found by the algorithm are only guaranteed to be minimal in the absence of timeouts.
 
 
 %The source code is publicly available on \cite{mygit}.

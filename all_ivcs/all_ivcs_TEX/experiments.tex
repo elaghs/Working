@@ -22,12 +22,11 @@ Therefore, we investigate the following research questions:
 
 \subsection{Experimental Setup}
 %I didn't cite Ceasare's paper \cite{piskac2016} in the benchmarks because they're not exactly the same. They also have cruise controller models. If I have time to run experiments for them. I'll add them. but, I don't think it's possible...
-We evaluated our algorithm on a set of academic benchmarks (395 models)\cite{Hagen08:FMCAD} and a smaller set
-of industrial models (80 models) \cite{QFCS15:backes, hilt2013}. We selected
+We evaluated our algorithm on a set of academic benchmarks (395 models)\cite{Hagen08:FMCAD} and a smaller set of industrial models (80 models) \cite{NFM2015:backes, hilt2013}. We selected
 only benchmark problems consisting of a Lustre model with
-properties that \texttt{JKind} could prove with an hour timeout.  
+properties that \texttt{JKind} could prove with an hour timeout.
 For each test model, we computed \aivcalg , \ucalg , and \ucbfalg ~algorithms in a configuration with the \texttt{Z3} solver and the ``fastest'' mode of \texttt{JKind} (which involves running the $k$-induction and PDR engines in parallel and terminating when a solution is found). The experiments were run on an  Intel(R) i5-4690, 3.50GHz, 16 GB memory machine running Linux.
-\footnote{The benchmarks, all raw experimental results, and computed data are available on \cite{expr}.}
+\footnote{The benchmarks, tools, and experimental results are available on \cite{expr}.}
 
 
 

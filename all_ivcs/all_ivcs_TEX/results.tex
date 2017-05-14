@@ -9,6 +9,7 @@ experimental results to address the research questions defined in the experiment
   \vspace{-0.2in}
   \caption{Runtime of \aivcalg, \ucbfalg, and \ucalg ~algorithms}
   \label{fig:performance}
+  \vspace{-0.2in}
 \end{figure}
 %\vspace{0.1in}
 
@@ -20,7 +21,7 @@ necessary to find a proof using inductive model checking. Fig. \ref{fig:performa
     We examine the performance of the \aivcalg\ algorithm both
      in terms of the time required to find all MIVCs and also the time required divided by the number of MIVCs found.  Somewhat surprisingly, the latter measure outperforms the \ucbfalg\ algorithm for the majority of the models in the benchmark suite.
 
-The \aivcalg\ algorithm requires approximately 1.6x more time than the \ucbfalg\ algorithm, calculated in the following way: we measure the ratio of time required for each model for both metrics, then we take the mean of this ratio for all models.  It is important to note that these performance curves are sensitive to the timeout values chosen for individual proof-searches for IVCs (the \getivc\ step in \aivcalg\ and line 3 in the \ucbfalg\ algorithm in~\cite{Ghass16}). 
+The \aivcalg\ algorithm requires approximately 1.6x more time than the \ucbfalg\ algorithm, calculated in the following way: we measure the ratio of time required for each model for both metrics, then we take the mean of this ratio for all models.  It is important to note that these performance curves are sensitive to the timeout values chosen for individual proof-searches for IVCs (the \getivc\ step in \aivcalg\ and line 3 in the \ucbfalg\ algorithm in~\cite{Ghass16}).
 
 %It is likely that the performance and minimality results would change if a different threshold was chosen.
 
@@ -43,6 +44,7 @@ The \aivcalg\ algorithm requires approximately 1.6x more time than the \ucbfalg\
     \hline
   \end{tabular}
   \label{tab:runtime}
+  \vspace{-0.2in}
 \end{table*}
 
 %\begin{table}
@@ -65,9 +67,9 @@ The \aivcalg\ algorithm requires approximately 1.6x more time than the \ucbfalg\
 %\takeaway{Computing all minimal Inductive Validity Cores with the \aivcalg ~algorithm is as nearly expensive as computing one single minimal Inductive Validity Core with the \ucbfalg  ~algorithm.
 %\ela{Ela: is that fair to say??}}
 \vspace{0.1in}
-\subsubsection{RQ2} For this research question, we examine how the proof time of the original model and the number of MIVCs associated with the property affects the analysis time of the \aivcalg\ algorithm.  Figure~\ref{fig:modelsize} provides an overview of this data.  The data in Figure~\ref{fig:modelsize} is sorted twice along the x-axis: the major axis is the number of MIVCs that exist for the model, and the minor axis is the analysis time of the baseline model.  In this graph, we can visualize how both factors effect the performance of the \aivcalg\ algorithm.  Note that there are two scales for the y-axis: the scale on the left is a logarithmic scale of performance in terms of the run time; the scale on the right is a linear scale based on the number of minimal IVCs discovered.
+\subsubsection{RQ2} For this research question, we examine how the proof time of the original model and the number of MIVCs associated with the property affects the analysis time of the \aivcalg\ algorithm.  Fig.~\ref{fig:modelsize} provides an overview of this data.  The data in Fig.~\ref{fig:modelsize} is sorted twice along the x-axis: the major axis is the number of MIVCs that exist for the model, and the minor axis is the analysis time of the baseline model.  In this graph, we can visualize how both factors effect the performance of the \aivcalg\ algorithm.  Note that there are two scales for the y-axis: the scale on the left is a logarithmic scale of performance in terms of the run time; the scale on the right is a linear scale based on the number of minimal IVCs discovered.
 
-Figure~\ref{fig:modelsize} shows two distinct trends.  First, for models whose baseline proofs are inexpensive and that only have a single MIVC, the \aivcalg\ is roughly equivalent in performance to the \ucbfalg.  However, as proofs become more expensive for a single MIVC, the \aivcalg\ begins to underperform the \ucbfalg.  This trend becomes more pronounced for properties that yield multiple MIVCs.  In the cases where several MIVCs are found, the \aivcalg\ algorithm can underperform the \ucbfalg\ algorithm by an order of magnitude.  Thus, the performance of the \aivcalg\ is driven to a large degree by the number of MIVCs that exist
+Fig.~\ref{fig:modelsize} shows two distinct trends.  First, for models whose baseline proofs are inexpensive and that only have a single MIVC, the \aivcalg\ is roughly equivalent in performance to the \ucbfalg.  However, as proofs become more expensive for a single MIVC, the \aivcalg\ begins to underperform the \ucbfalg.  This trend becomes more pronounced for properties that yield multiple MIVCs.  In the cases where several MIVCs are found, the \aivcalg\ algorithm can underperform the \ucbfalg\ algorithm by an order of magnitude.  Thus, the performance of the \aivcalg\ is driven to a large degree by the number of MIVCs that exist
 %. For most of the models, finding all minimal IVCs is within the same ballpark as finding a single minimal IVC in terms of computation time.  However, these results are dependent on the number of minimal IVCs that are associated with the property
 : the more MIVCs associated with a property, the higher the expense of \aivcalg\ as compared to the \ucbfalg\ algorithm.
 
@@ -128,8 +130,8 @@ Figure~\ref{fig:modelsize} shows two distinct trends.  First, for models whose b
 %\ela{rewrite...\\}
 
 
-%An important aspect of the performance comparison involves the timeout value chosen for individual IVC computations performed by \getivc\ within the \aivcalg\ algorithm and also the behavior of the SMT solvers with different sets of activation literals.  Each time we call \getivc\ we attempt to do a ``fresh'' proof from a new set of activation literals.  As we approach minimal IVCs, these proofs can become substantially harder for the solver to determine than the original proof, often involving more lemmas for information that was originally present in the model.  Thus, for complex models, it often happens that we reach the `timeout' case in both the \aivcalg\ 
-%and \ucbfalg\ algorithms, which may cause both algorithms to reject valid IVC solutions that are smaller than what is reported as a minimal IVCs, since both algorithms treat timeout-as-failure.  We have empirically set timeout values for a given proof search to (60 seconds $+$ 10 $\times$ {\em proof-time}) for the initial proof over the whole model. 
+%An important aspect of the performance comparison involves the timeout value chosen for individual IVC computations performed by \getivc\ within the \aivcalg\ algorithm and also the behavior of the SMT solvers with different sets of activation literals.  Each time we call \getivc\ we attempt to do a ``fresh'' proof from a new set of activation literals.  As we approach minimal IVCs, these proofs can become substantially harder for the solver to determine than the original proof, often involving more lemmas for information that was originally present in the model.  Thus, for complex models, it often happens that we reach the `timeout' case in both the \aivcalg\
+%and \ucbfalg\ algorithms, which may cause both algorithms to reject valid IVC solutions that are smaller than what is reported as a minimal IVCs, since both algorithms treat timeout-as-failure.  We have empirically set timeout values for a given proof search to (60 seconds $+$ 10 $\times$ {\em proof-time}) for the initial proof over the whole model.
 
 %
 %Worse, because the \ucbfalg\ and \aivcalg\ algorithms submit different profiles in terms of activation literals, the solvers sometimes can solve an IVC problem for one algorithm but not the other.  This leads to some cases where the \ucbfalg\ algorithm finds a {\em smaller} IVC than the \aivcalg\ algorithm, because the \aivcalg\ algorithm times out attempting to find a MIVC  that was found by the \ucbfalg.  This is shown in Fig.~\ref{fig:min}, where in 14 out of 476 models, \ucbfalg\ has found a smaller MIVC  than the minimum IVC found by \aivcalg.  Of course, in many more cases, the \aivcalg\ and \ucbfalg\ algorithms computed the same size of IVCs because the majority of the models only contain one minimal IVC. However, for 11 models,~\aivcalg\ has found a smaller minimum IVC than the \ucbfalg .

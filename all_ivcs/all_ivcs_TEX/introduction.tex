@@ -4,17 +4,17 @@ Most modern sequential model checking techniques for safety properties, includin
 
 On the other hand, there many situations in which properties can be proved, but systems still will not perform as intended.  Issues such as vacuity~\cite{Kupferman03:Vacuity}, incorrect environmental assumptions~\cite{Whalen07:FMICS}, and errors either in English language requirements or formalization~\cite{Pike06:axioms} can all lead to failures of ``proved'' systems.  Thus, even if proofs are established, one must approach verification with skepticism.
 
-Recently, Ghassabani et al.~\cite{Ghass16} introduced the idea of {\em Inductive Validity Cores} (IVCs) in order to provide additional information with proofs. IVCs offer proof explanation as to why a property is satisfied by a model in a formal and human-understandable way.  The idea lifts UNSAT cores~\cite{zhang2003extracting} 
-to the level of sequential model checking algorithms using induction.  Informally, if a model is viewed as a conjunction of constraints, 
-a minimal IVC (MIVC) is a set of constraints that is sufficient to construct a proof such that if any constraint is removed, the property is no longer valid. 
+Recently, Ghassabani et al.~\cite{Ghass16} introduced the idea of {\em Inductive Validity Cores} (IVCs) in order to provide additional information with proofs. IVCs offer proof explanation as to why a property is satisfied by a model in a formal and human-understandable way.  The idea lifts UNSAT cores~\cite{zhang2003extracting}
+to the level of sequential model checking algorithms using induction.  Informally, if a model is viewed as a conjunction of constraints,
+a minimal IVC (MIVC) is a set of constraints that is sufficient to construct a proof such that if any constraint is removed, the property is no longer valid.
 IVCs and MIVCs can be used for several purposes, including performing traceability between specification and design elements, assessing model coverage, and explanation of unsatisfiable test obligations when using model checkers for test case generation. Ghassabani et al.~\cite{Ghass16} presented two algorithms: \ucalg, which computes an approximately minimal IVC that is computationally inexpensive, and \ucbfalg,
 an algorithm that produces a
 MIVC but is considerably more expensive to compute.
 %
-The IVC idea shares many similarities with approaches for computing minimal 
+The IVC idea shares many similarities with approaches for computing minimal
 invariant sets for inductive proofs (such as is performed for inductive proof certificates~\cite{piskac2016, ivrii2014small}), and in fact the \ucalg\ algorithm performs a minimal lemma set computation.  However, there is a substantive difference: to find a guaranteed minimal set of constraints, it is usually necessary to find new proofs involving {\em new lemmas} not used in the original proof, which accounts for the expense of the \ucbfalg\ algorithm.
 
-It is often the case that there are multiple MIVCs for a given property.  In this case, the algorithms from~\cite{Ghass16} give, at best, an 
+It is often the case that there are multiple MIVCs for a given property.  In this case, the algorithms from~\cite{Ghass16} give, at best, an
 incomplete picture of the traceability information associated with the proof.  Depending on the model and property to be analyzed, there is often substantial diversity between the IVCs used for proof, and there can be substantial difference in the size between the {\em minimal} IVC returned by the \ucbfalg\ algorithm and a {\em minimum} IVC, which is the (not necessarily unique) smallest MIVC.
  If {\em all} MIVCs can be found, then several additional analyses can be performed:
 \begin{itemize}
@@ -27,12 +27,12 @@ incomplete picture of the traceability information associated with the proof.  D
 \noindent In addition, the Requirements Engineering community is keenly interested in approaches to manage requirements traceability.  In most cases, it is assumed that there is a single ``golden'' set of trace links that describes how requirements are implemented in software~\cite{COEST,hayes2003improving,cleland2007best}.  However, if there are multiple MIVCs, then it is possible that there are several equally valid sets of trace links.  Examining the diversity of all MIVCs could lead to changes in how traceability is performed and managed in critical systems.
 
 In this paper, we propose a new method for computing \emph{all minimal} IVCs. In  recent  years,  a  number  of  efficient
-algorithms  for  extracting  all MUSes  have  been proposed \cite{Bacchus2016, bacchus2015using, belov2012muser2, belov2013core, belov2012towards, nadel2014accelerated, liffiton2005max}.  In this paper, we adapt the recent work by Liffiton et al. \cite{marco2016fast} from the generation of MUSes from UNSAT-cores to all IVCs for inductive model checking.  This requires changing the underlying mechanisms that are used to construct candidate solutions and also changing the structure of the proof of correctness.  In addition, in our proof, we demonstrate that the approach terminates with all minimal IVCs even if the witness generator only generates approximately minimal IVCs (utilizing the ``fast'' \ucalg\ algorithm from~\cite{Ghass16}).  In our empirical results, this allows our algorithm to be quite efficient to the extent that in many cases, the cost of extracting all minimal IVCs is similar to the cost of finding a single guaranteed-minimal IVC, and on average is approximately 1.6x the cost of determining a single minimal IVC.
+algorithms  for  extracting  all MUSes  have  been proposed \cite{bacchus2015using, belov2012muser2, belov2013core, belov2012towards, nadel2014accelerated, liffiton2005max}.  In this paper, we adapt the recent work by Liffiton et al. \cite{marco2016fast} from the generation of MUSes from UNSAT-cores to all IVCs for inductive model checking.  This requires changing the underlying mechanisms that are used to construct candidate solutions and also changing the structure of the proof of correctness.  In addition, in our proof, we demonstrate that the approach terminates with all minimal IVCs even if the witness generator only generates approximately minimal IVCs (utilizing the ``fast'' \ucalg\ algorithm from~\cite{Ghass16}).  In our empirical results, this allows our algorithm to be quite efficient to the extent that in many cases, the cost of extracting all minimal IVCs is similar to the cost of finding a single guaranteed-minimal IVC, and on average is approximately 1.6x the cost of determining a single minimal IVC.
 The contributions of the work are therefore as follows:
 \begin{itemize}
     \item An algorithm for computing all minimal IVCs.
     \item A proof of correctness and completeness of the algorithm.
-    \item An evaluation of the algorithm for performance and diversity of result sets against a benchmark suite. 
+    \item An evaluation of the algorithm for performance and diversity of result sets against a benchmark suite.
     \item An industrial case study with over 10K design elements that demonstrates the practicality and usefulness of our technique.
 \end{itemize}
 

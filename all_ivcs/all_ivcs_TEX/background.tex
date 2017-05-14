@@ -51,7 +51,7 @@ Note that, given $(I, T) \vdash P$, $P$ always has at least one \mivc, and it ma
     $$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  MIVC(P, S)\} $$
 \end{definition}
 
-Fig.~\ref{fig:ivcs} illustrates these notions by a graphical representation of IVCs for property $P = (\small{\texttt{on\_p}})$ in the example presented in Section~\ref{sec:example}. As shown in the picture, this property has two distinct \mivc s, which means the model satisfies $P$ in two different ways:  \texttt{\{\{a1\_below, one\_below, doi\_on, on\_p\}, \{a2\_below, one\_below, doi\_on, on\_p\}\}}, This is because in the implementation, the DOI is turned on when either of the altimeters is below the threshold, while our property states that they both must be below.
+Fig.~\ref{fig:ivcs} illustrates these notions by a graphical representation of IVCs for property $P = (\small{\texttt{on\_p}})$ in the example presented in Section~\ref{sec:example}. As shown in the picture, this property has two distinct \mivc s, which means the model satisfies $P$ in two different ways:  \small{\texttt{\{\{a1\_below, one\_below, doi\_on, on\_p\}, \{a2\_below, one\_below, doi\_on, on\_p\}\}}}, This is because in the implementation, the DOI is turned on when either of the altimeters is below the threshold, while our property states that they both must be below.
 Note that there is a subset of model elements, $\{{\small \texttt{a1\_above, a2\_above, both\_above}}\}$, that does not show up in $AIVC(P)$. Elements in such a subset
 do not affect the satisfaction of $P$.  In the complete ASW model in~\cite{HCW02:ase-deviation} there are additional properties that use these elements, but they are not necessary for the discussion in this paper.
 
@@ -68,7 +68,7 @@ do not affect the satisfaction of $P$.  In the complete ASW model in~\cite{HCW02
 
 \begin{figure}[t]
  \centering
-  \includegraphics[width=0.9\columnwidth]{figs/ivcs.png}
+  \includegraphics[width=0.8\columnwidth]{figs/ivcs.jpg}
   \vspace{-0.1in}
   \caption{Graphical representation of \mivc s for the model in Fig.~\ref{fig:asw}
   with  $P = (\small{\texttt{on\_p}})$}

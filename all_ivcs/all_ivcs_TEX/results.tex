@@ -16,10 +16,10 @@ experimental results to address the research questions defined in the experiment
 \subsubsection{RQ1}
 
 To address RQ1, we measured the performance overhead of the various IVC algorithms against the baseline time
-necessary to find a proof using inductive model checking. Fig. \ref{fig:performance} provides an overview of the  overhead of the \aivcalg ~algorithm in comparison with the \ucalg ~and \ucbfalg\ algorithms.  In the figure, each curve is ranked along the x-axis according to the time required for the algorithm to terminate for each analysis problem.  
+necessary to find a proof using inductive model checking. Fig. \ref{fig:performance} provides an overview of the  overhead of the \aivcalg ~algorithm in comparison with the \ucalg ~and \ucbfalg\ algorithms.  In the figure, each curve is ranked along the x-axis according to the time required for the algorithm to terminate for each analysis problem.
 Table \ref{tab:runtime} provides a summary of the computation time and the overhead of different algorithms.
   The \ucalg\  algorithm imposes a negligible overhead over the baseline proof time,
-   whereas both the \ucbfalg\ algorithm and \aivcalg\ 
+   whereas both the \ucbfalg\ algorithm and \aivcalg\
    algorithm add a substantial penalty over the baseline proof time. However, as is evidenced by Fig. \ref{fig:performance}, the overhead of the \aivcalg\ on larger models is lower. But, for the models with less than 1 sec verification time, \aivcalg\ appears with a very high overhead.
     We examine the performance of the \aivcalg\ both
      in terms of the time required to find all MIVCs and also the required time divided by the number of MIVCs found.  Somewhat surprisingly, the latter measure outperforms the \ucbfalg\ algorithm for the majority of the models in the benchmark suite.
@@ -45,7 +45,7 @@ The \aivcalg\ algorithm takes approximately 1.6x more time than the \ucbfalg\ al
     \hline
   \end{tabular}
   \label{tab:runtime}
-  \vspace{-0.2in}
+  \vspace{-0.1in}
 \end{table*}
 
 %\begin{table}

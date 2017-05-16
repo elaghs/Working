@@ -42,20 +42,17 @@ Let the new \mivc\ be $S' = \{ {\small \texttt{a2\_below},~\texttt{one\_below}, 
 it is time to constrain $map$ by a new clause in line~\ref{alg:aivc:addset},
 which results in $map \leftarrow map \wedge (\neg a_2 \vee \neg a_5 \vee \neg a_7 \vee \neg a_8)$.
 
-After these iterations, $map$
-is still satisfiable.
-\footnote{Note that the algorithm terminates when all \mivc s and $MIS$es are explored. Up to now, only some of \mis es and all \mivc s have been explored.}
- The maximal model returned now makes
+After these iterations, $map$ is still satisfiable, and the maximal model is
  $S = T \setminus \{ { \small \texttt{a1\_below}}, { \small \texttt{a2\_below}}\}$ in line~\ref{alg:aivc:assigns}.
-In this case, $S$ is inadequate, so we get into line~\ref{alg:aivc:iadd} updating $map$ as
-$map \leftarrow map \wedge (a_1 \vee a_2)$. By adding this new clause to $map$,
+In this case, $S$ is inadequate, so we update $map$ as
+$map \leftarrow map \wedge (a_1 \vee a_2)$ (line~\ref{alg:aivc:iadd}). After adding this new clause to $map$,
 all the subsets of $T \setminus \{ { \small \texttt{a1\_below}}, {\small \texttt{a2\_below}}\}$
 will be blocked. The algorithm continues similar to the forth iteration leading to $S$ (in line~\ref{alg:aivc:assigns}) and $map$ (in line~\ref{alg:aivc:iadd}) to be as
  $S = T \setminus \{ {\small  \texttt{doi\_on}}\}$ and $map \leftarrow map \wedge a_7$.
 
 Finally, after the fifth iteration, $map$ becomes \unsat and the algorithm terminates.
 Note that $MIS$es and $IVC$s may be discovered in different orders from what explained here. The order by which sets are explored is
-quite dependent on the maximal model returned in line~\ref{alg:aivc:maxsat} as well as the \mivc s returned in line~\ref{alg:aivc:getivc} because there could be several distinct maximal models (\mis es) and \mivc s. For this example with a $|T| = 8$ and $|\mathcal{P}(T)| = 2^8$, a brute force approach of power set exploration needs to look into  256 cases. However, the \aivcalg ~algorithm only explored 5 cases to cover the entire power set. Even so, depending on the order by which \mivc s and \mis es are discovered, the total cases to explore by the algorithm may change.
+quite dependent on the maximal model returned in line~\ref{alg:aivc:maxsat} as well as the \mivc s returned in line~\ref{alg:aivc:getivc} because there could be several distinct maximal models (\mis es) and \mivc s. For this example with a $|T| = 8$ and $|\mathcal{P}(T)| = 2^8$, a brute force approach of power set exploration needs to look into  256 cases. However, the \aivcalg ~algorithm only explored 5 cases to cover the entire power set. %Depending on the order by which \mivc s and \mis es are discovered, the total cases to explore by the algorithm may change.
 % All in all, it is fair to say the \aivcalg ~algorithm is  linear in the size of $T$.
 %This issue could affect the performance of the algorithm as well.
 

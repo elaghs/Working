@@ -9,7 +9,7 @@ experimental results to address the research questions defined in the experiment
   \vspace{-0.2in}
   \caption{Runtime of \aivcalg, \ucbfalg, and \ucalg ~algorithms}
   \label{fig:performance}
-  \vspace{-0.2in}
+  %\vspace{-0.2in}
 \end{figure}
 %\vspace{0.1in}
 
@@ -27,6 +27,7 @@ For small models, much of this penalty is due to starting many instances of the 
 % if timeout had been set lower (higher), which caused the average runtime (overhead) of the \aivcalg ~shown in Table \ref{tab:runtime} (Table \ref{tab:overhead}) to be $\thicksim 3$ times more than \ucbfalg .
 
 
+\iffalse
 \begin{table*}
   \caption{Runtime and overhead of different computations}
    \vspace{-0.1in}
@@ -44,6 +45,26 @@ For small models, much of this penalty is due to starting many instances of the 
   \label{tab:runtime}
   \vspace{-0.1in}
 \end{table*}
+\fi 
+
+\begin{table}
+  \caption{Runtime and overhead of different computations}
+   \vspace{-0.1in}
+  \centering
+  \begin{tabular}{ |c||c|c|c|c| }
+    \hline
+      runtime (sec)& min & max & mean & stdev  \\[0.5ex]
+    \hline\hline
+    \emph{\small proof-time}    & 0.016 & 25.489 & 1.250 & 2.381 \\ [0.5ex]
+    \aivcalg    & 0.009 & 792.01 & 16.457 & 64.491  \\[0.5ex]
+    \ucbfalg &   0.163 & 996.734 &  11.987 & 68.525  \\[0.5ex]
+    \ucalg&  0.003  & 1.126  & 0.078 & 0.158  \\[0.5ex]
+    \hline
+  \end{tabular}
+  \label{tab:runtime}
+  \vspace{-0.1in}
+\end{table}
+
 
 %\begin{table}
 %  \caption{Overhead of different algorithms}
@@ -69,6 +90,12 @@ For small models, much of this penalty is due to starting many instances of the 
 
 Fig.~\ref{fig:modelsize} shows two distinct trends.  First, for models whose baseline proofs are inexpensive and that only have a single MIVC, the \aivcalg\ is roughly equivalent in performance to the \ucbfalg.  % Ela: I rewrite the rest of the paragraph based on what I see in QFC
 However, as proofs become more expensive for a single MIVC, the \aivcalg\ begins to underperform the \ucbfalg , this is the case for the properties with one MIVC.  In the cases where several MIVCs are found, the performance of the \aivcalg\ is driven to a large degree by the number of MIVCs that exist : the more MIVCs associated with a property, the higher the expense of \aivcalg\ as compared to the \ucbfalg\ algorithm. We will study these cases over very large models in Section \ref{sec:qfc}.
+
+\subsubsection{RQ3}
+For this research question, we analyzed the minimality of the produced IVC by each algorithm.  Results are shown in Figure~\ref{fig:size}.  Since \mike{XXX} of the models had only one IVC, for these models, the size of the minimum model produced by the \aivcalg\ algorithm should be the same as the \ucbfalg\ algorithm.  For the remainder, even when multiple IVCs were produced, in only 11 cases did the \aivcalg\ produce smaller minimal IVCs.  For these 11 models, the smallest model was \mike{XX\%} the size of the model produced by \ucbfalg, and in the most dramatic case, the number of elements shrank from \mike{XX} to \mike{YY}.
+
+
+
 %. For most of the models, finding all minimal IVCs is within the same ballpark as finding a single minimal IVC in terms of computation time.  However, these results are dependent on the number of minimal IVCs that are associated with the property
 
 %The structure of the model and specification can play a part in how well \aivcalg ~performs.
@@ -78,11 +105,21 @@ However, as proofs become more expensive for a single MIVC, the \aivcalg\ begins
  \begin{figure}
  \centering
   \includegraphics[width=\columnwidth]{figs/size.jpg}
-  \vspace{-0.2in}
+  \vspace{-0.25in}
   \caption{Runtime of different computations along with the number of MIVCs}
+  \vspace{-0.05in}
   \label{fig:modelsize}
-  \vspace{-0.2in}
 \end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{figs/min.jpg}
+  \vspace{-0.25in}
+  \caption{Size of the IVC sets produced by different algorithms}
+  \vspace{-0.2in}
+ \label{fig:size}
+\end{figure}
+
 
 %\ela{do we want this table 3? I commented the table description in case you want to use it...}
 %Table \ref{tab:ivcsize} compares

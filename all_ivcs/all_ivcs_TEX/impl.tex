@@ -46,16 +46,16 @@ given the full model (\emph{proof-time}), and the time required to calculate the
 The timeout we set for each iteration of the \aivcalg\ algorithm is ($30$ sec  $+\ 5\ \times$ (\emph{proof-time} $+$ \emph{\ucalg-time})).
 
 If the \texttt{while} loop times out for $S$ in line 8 of Algorithm~\ref{alg:aivc},
-we treat $S$ as an \emph{inadequate} set to ensure correctness of results: we do not know 
-whether such a set will lead to a proof or an eventual counterexample.
-When we mark an indeterminate set $S$ as inadequate, line 13 will prune off $S$ and all 
+we treat $S$ as an \emph{inadequate} set to ensure that all results support a proof.
+In this case, line 13 will prune off $S$ and all 
 its subsets from the search space.  Since the timeout is used by both the brute-force 
-algorithm and the \aivcalg\ algorithm, minimal IVC results are only guaranteed if there 
-are no timeouts.  In addition, because the analysis problems are slightly different 
-between the two approaches, timeouts can occasionally lead to anomalies where the 
-brute force algorithm discovers a {\em smaller} MIVC than is discovered by the 
-\aivcalg ~procedure.  This anomaly occurs in one of the benchmark examples within our 
-experiment.  It is important to note that by increasing the timeout, it is possible that 
+algorithm and the \aivcalg\ algorithm, minimality is only guaranteed if there 
+are no timeouts.  %In addition, because the analysis problems are slightly different 
+%between the two approaches, timeouts can occasionally lead to anomalies where the 
+%brute force algorithm discovers a {\em smaller} MIVC than is discovered by the 
+%\aivcalg ~procedure.  %This anomaly occurs in one of the benchmark examples within our 
+%experiment.  
+It is important to note that by increasing the timeout, it is possible that 
 in some cases smaller IVCs can be generated, but the general problem will remain due
 to the undecidability of the model checking problem.
 

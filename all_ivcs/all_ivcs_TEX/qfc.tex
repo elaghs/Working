@@ -1,10 +1,49 @@
-\section{Scalability Case Study}
+\section{Realistic Case Study}
 
 \label{sec:qfc}
-The benchmark models from~\cite{expr} are of modest size.  To examine the scalability of our approach for large models with large numbers of IVCs, we used one substantially larger model to analyze, a NASA Quad-redundant Flight Control System (QFCS) model from~\cite{NFM2015:backes}. %developed using the AADL AGREE tool suite \cite{NFM2012:CoGa}.
-%The QFCS has a hierarchical architecture consisting of several components.
-%The monotonic model has 50,635 design elements (LUSTRE equations), 7,719 of which are registers.
-For this study we examined two of the model components: the Flight Control System (FCS) (with 5,259 equations,708 integer delays, and 2 properties) and the Flight Control Computers (FCC) (with 9,953 equations, 1703 integer delays, and 9 properties), running each property separately.\ela{these are numbers before slicing. after slicing the number of registers is nothing. why don't we just use the number of equations after slicing (without number of pre). after all IVCs are all equations for us}
+In this section, we would like to demonstrate the practicality/scalability of our algorithm with a realistic case study a NASA Quad-redundant Flight Control System (QFCS) model~\cite{NFM2015:backes}. %developed using the AADL AGREE tool suite \cite{NFM2012:CoGa}.
+The QFCS model consists of several components, where the monotonic model has \ela{XXX} design elements (LUSTRE equations). For this study we examined two of the components: the Flight Control System (FCS) (with \ela{XXX} equations and 2 properties) and the Flight Control Computers (FCC) (with \ela{XXX} equations and 9 properties), examining each property separately. We performed our experiment for 4 hours per model. Table \ref{tab:qfcs} shows the result of our study. For each model. when the \aivcalg\ did not terminate before 4 hours, its runtime is shown with incomplete. \ela{we can explain a bit the numbers and table here, then get to coverage}
+
+As mentioned in Section~\ref{sec:intro}, proof-based coverage analysis is one important application of all minimal IVCs. The goal of a
+coverage metric is usually to assign a numeric score that de-
+scribes how well properties cover the design. The majority of
+the work on coverage metrics has focused on mutations, which
+are “atomic” changes to the design, where the set of possible
+mutations depends on the notation that is used. For large models, mutation-based coverage is quite inefficient. Having all minimal IVCs, we can easily formalize a family of proof-based metrics. For example, owe could define two distinct coverage metrics as follows:
+\ela{choose two metric that I can calculate: we could choose must and may since you also talk about them in the introduction}
+
+
+\begin{table*}
+  \caption{\aivcalg\ on the QFCS models}
+   \vspace{-0.1in}
+  \centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  models & FCS0 & FCS1 & FCC0 &
+   FCC1 & FCC02 & FCC2 & FCC3 &
+    FCC4 & FCC5 & FCC6 & FCC7 \\
+   \hline
+   \hline
+   \# of IVCs  & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+  runtime (h) &  & x & x & x & x & x & x & x & x & x & x \\
+   proof-time (min)  & x & x & x & x & x & x & x & x & x & x & x \\
+   \hline
+   \hline
+   IVC size by \ucbfalg\  & x & x & x & x & x & x & x & x & x & x & x \\ 
+   size of min IVC & x & x & x & x & x & x & x & x & x & x & x \\
+   avg size of IVCs  & x & x & x & x & x & x & x & x & x & x & x \\
+   size of max IVC  & x & x & x & x & x & x & x & x & x & x & x \\
+  stdev of IVC sizes  & x & x & x & x & x & x & x & x & x & x & x \\
+  \hline
+  \hline
+  
+  coverage score of M1 & x & x & x & x & x & x & x & x & x & x & x \\ 
+  coverage score of M2 & x & x & x & x & x & x & x & x & x & x & x \\ 
+  \hline
+\end{tabular}
+\label{tab:qfcs}
+\end{table*}
 
 %We ran the algorithm on each property separately, which left us with 11 complex problems to study.
 %The FCS 3,423  104 prop

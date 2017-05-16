@@ -18,8 +18,8 @@ experimental results to address the research questions defined in the experiment
 To address RQ1, we measured the performance overhead of the various IVC algorithms against the baseline time
 necessary to find a proof using inductive model checking. Fig. \ref{fig:performance} provides an overview of the  overhead of the \aivcalg ~algorithm in comparison with the \ucalg ~and \ucbfalg\ algorithms.  In the figure, each curve is ranked along the x-axis according to the time required for the algorithm to terminate for each analysis problem.
 Table \ref{tab:runtime} provides a summary of the computation time and the overhead of different algorithms.  The \ucalg\ algorithm imposes a 1.25x overhead to the baseline proof time, whereas both the \ucbfalg\ and \aivcalg\ algorithms add a substantial time penalty: \ucbfalg\ and \aivcalg\ add a (mean) 18.8x and 31.3x overhead, respectively, to the proof time, whereas \aivcalg\ adds a (mean) 31.3x overhead to proof time.
-For small models, much of this penalty is due to starting many instances of the SMT solver; if we examine models that require $\geq 1s$ of analysis time, the mean overhead of \aivcalg\ over the baseline analysis drops from 31.3x to
-\mike{YY.Yx}.
+For small models, much of this penalty is due to starting many instances of the SMT solver; if we examine models that require $\geq 1s$ of analysis time, the mean overhead of \aivcalg\ over the baseline analysis drops from 31.3x to 9.7x.
+% >=1 : aivc overhead = 970.46 
 
 %The \aivcalg\ algorithm takes approximately 1.6x more time than the \ucbfalg\ algorithm, calculated in the following way: we measure the ratio of time required for each model for both metrics, then we take the mean of this ratio for all models.  It is important to note that these performance curves are sensitive to the timeout values chosen for individual proof-searches for IVCs (the \getivc\ step in \aivcalg\ and line 3 in the \ucbfalg\ algorithm in~\cite{Ghass16}). It is likely that the performance would change if a different threshold was chosen.
 
@@ -45,11 +45,11 @@ For small models, much of this penalty is due to starting many instances of the 
   \label{tab:runtime}
   \vspace{-0.1in}
 \end{table*}
-\fi 
+\fi
 
 \begin{table}
   \caption{Runtime and overhead of different computations}
-   \vspace{-0.1in}
+   %\vspace{-0.1in}
   \centering
   \begin{tabular}{ |c||c|c|c|c| }
     \hline
@@ -62,7 +62,7 @@ For small models, much of this penalty is due to starting many instances of the 
     \hline
   \end{tabular}
   \label{tab:runtime}
-  \vspace{-0.1in}
+  %\vspace{-0.1in}
 \end{table}
 
 
@@ -92,7 +92,7 @@ Fig.~\ref{fig:modelsize} shows two distinct trends.  First, for models whose bas
 However, as proofs become more expensive for a single MIVC, the \aivcalg\ begins to underperform the \ucbfalg , this is the case for the properties with one MIVC.  In the cases where several MIVCs are found, the performance of the \aivcalg\ is driven to a large degree by the number of MIVCs that exist : the more MIVCs associated with a property, the higher the expense of \aivcalg\ as compared to the \ucbfalg\ algorithm. We will study these cases over very large models in Section \ref{sec:qfc}.
 
 \subsubsection{RQ3}
-For this research question, we analyzed the minimality of the produced IVC by each algorithm.  Results are shown in Figure~\ref{fig:size}.  Since \mike{XXX} of the models had only one IVC, for these models, the size of the minimum model produced by the \aivcalg\ algorithm should be the same as the \ucbfalg\ algorithm.  For the remainder, even when multiple IVCs were produced, in only 11 cases did the \aivcalg\ produce smaller minimal IVCs.  For these 11 models, the smallest model was \mike{XX\%} the size of the model produced by \ucbfalg, and in the most dramatic case, the number of elements shrank from \mike{XX} to \mike{YY}.
+For this research question, we analyzed the minimality of the produced IVC by each algorithm.  Results are shown in Figure~\ref{fig:size}.  Since 394 of the models had only one MIVC, for these models, the size of the minimum model produced by the \aivcalg\ algorithm should be the same as the \ucbfalg\ algorithm.  For the remainder, even when multiple MIVCs were produced, in only 12 cases did the \aivcalg\ produce smaller minimal IVCs.  For these 12 models, the smallest MIVC was 16\% the size of the MIVC produced by \ucbfalg, and in the most dramatic case, the number of elements shrank from 30 to 5. %\ela{actually, both cases are about one model}
 
 
 
@@ -105,18 +105,18 @@ For this research question, we analyzed the minimality of the produced IVC by ea
  \begin{figure}
  \centering
   \includegraphics[width=\columnwidth]{figs/size.jpg}
-  \vspace{-0.25in}
+  %\vspace{-0.25in}
   \caption{Runtime of different computations along with the number of MIVCs}
-  \vspace{-0.2in}
+  %\vspace{-0.1in}
   \label{fig:modelsize}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{figs/min.jpg}
-  \vspace{-0.25in}
+  %\vspace{-0.25in}
   \caption{Size of the IVC sets produced by different algorithms}
-  \vspace{-0.1in}
+ % \vspace{-0.1in}
  \label{fig:size}
 \end{figure}
 

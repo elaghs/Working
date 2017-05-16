@@ -1,3 +1,4 @@
+\iffalse
 \section{Case Study}
 
 \label{sec:qfc}
@@ -6,17 +7,6 @@ We demonstrate the applicability of the algorithms toward ``complete traceabilit
 We performed our experiment by examining the conjunction of requirements for each model. Table \ref{tab:qfcs} shows the result of our study.  We examine {\em model coverage} of the requirements, using two measurements: {\em MAY} coverage, which examines which elements might be necessary for proof, {\em MINIMAL IVC} coverage, which examines the smallest IVC, and {\em MUST} coverage, which includes only equations necessary for all proofs.  We also calculate the number and diversity of IVCs is an indication of redundancy in the model for its requirements~\mike{REMOVE if unsupported by data}. 
 
 
-\iffalse
-For each model. when the \aivcalg\ did not terminate before 4 hours, its runtime is shown with incomplete. \ela{we can explain a bit the numbers and table here, then get to coverage}
-
-As mentioned in Section~\ref{sec:intro}, proof-based coverage analysis is one important application of all minimal IVCs. The goal of a
-coverage metric is usually to assign a numeric score that de-
-scribes how well properties cover the design. The majority of
-the work on coverage metrics has focused on mutations, which
-are “atomic” changes to the design, where the set of possible
-mutations depends on the notation that is used. For large models, mutation-based coverage is quite inefficient. Having all minimal IVCs, we can easily formalize a family of proof-based metrics. For example, owe could define two distinct coverage metrics as follows:
-\ela{choose two metric that I can calculate: we could choose must and may since you also talk about them in the introduction}
-\fi
 
 \begin{table}
   \caption{\aivcalg\ on the QFCS models}
@@ -50,4 +40,4 @@ mutations depends on the notation that is used. For large models, mutation-based
 %The FCS 3,423  104 prop
 %fcc 9953 1511? prop
 
-
+\fi

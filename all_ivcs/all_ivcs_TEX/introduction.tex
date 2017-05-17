@@ -1,14 +1,14 @@
 \section{Introduction}
 \label{sec:intro}
-Most modern sequential model checking techniques for safety properties, including IC3/PDR~\cite{Een2011:PDR} and $k$-induction~\cite{SheeranSS00}, use a form of induction to establish proof.  These techniques are very powerful, and can often reason successfully over very larger or even infinite state spaces.  The proofs provided by these tools can provide rigorous evidence that a software or hardware system works as intended.
+Most modern sequential model checking techniques for safety properties, including IC3/PDR~\cite{Een2011:PDR} and $k$-induction~\cite{SheeranSS00}, use a form of induction to establish proof.  These techniques are very powerful, and can often reason successfully over very large or even infinite state spaces.  The proofs provided by these tools can provide rigorous evidence that a software or hardware system works as intended.
 
-On the other hand, there many situations in which properties can be proved, but systems still will not perform as intended.  Issues such as vacuity~\cite{Kupferman03:Vacuity}, incorrect environmental assumptions~\cite{Whalen07:FMICS}, and errors either in English language requirements or formalization~\cite{Pike06:axioms} can all lead to failures of ``proved'' systems.  Thus, even if proofs are established, one must approach verification with skepticism.
+On the other hand, there are many situations in which properties can be proved, but systems still will not perform as intended.  Issues such as vacuity~\cite{Kupferman03:Vacuity}, incorrect environmental assumptions~\cite{Whalen07:FMICS}, and errors either in English language requirements or formalization~\cite{Pike06:axioms} can all lead to failures of ``proved'' systems.  Thus, even if proofs are established, one must approach verification with skepticism.
 
 Recently, {\em proof cores}~\cite{jasper_gold} have been proposed as a mechanism to determine which elements of a model are used when constructing a proof.  This idea is formalized by Ghassabani et al. for inductive model checkers in~\cite{Ghass16} as {\em Inductive Validity Cores} (IVCs). IVCs offer proof explanation as to why a property is satisfied by a model in a formal and human-understandable way.  The idea lifts UNSAT cores~\cite{zhang2003extracting}
 to the level of sequential model checking algorithms using induction.  Informally, if a model is viewed as a conjunction of constraints,
 a minimal IVC (MIVC) is a set of constraints that is sufficient to construct a proof such that if any constraint is removed, the property is no longer valid.
 %
-IVCs and MIVCs can be used for several purposes, including performing traceability between specification and design elements, assessing model coverage, and explanation of unsatisfiable test obligations when using model checkers for test case generation. Ghassabani et al.~\cite{Ghass16} presented two algorithms: one that computes an approximately minimal IVC using UNSAT cores (\ucalg) that is computationally inexpensive, and an algorithm that produces a
+IVCs and MIVCs can be used for several purposes, including performing traceability between specification and design elements, assessing model coverage, and explaining unsatisfiable test obligations when using model checkers for test case generation. Ghassabani et al.~\cite{Ghass16} presented two algorithms: one that computes an approximately minimal IVC using UNSAT cores (\ucalg) that is computationally inexpensive, and an algorithm that produces a
 minimal IVC using a brute-force post-processing step (\ucbfalg) that is considerably more expensive to compute.
 
 The IVC and proof core ideas shares many similarities with approaches for computing minimal invariant sets for inductive proofs (such as is performed for inductive proof certificates~\cite{piskac2016, ivrii2014small}), and in fact the \ucalg\ algorithm performs a minimal lemma set computation.  However, there is a substantive difference: to find a guaranteed minimal set of constraints, it is usually necessary to find new proofs involving {\em new lemmas} not used in the original proof, which accounts for the expense of the \ucbfalg\ algorithm.
@@ -18,9 +18,9 @@ incomplete picture of the traceability information associated with the proof.  D
  If {\em all} MIVCs can be found, then several additional analyses can be performed:
 \begin{itemize}
     \item Coverage Analysis: MIVCs can be used to define coverage metrics by examining the percentage of model elements required for a proof.  However, since MIVCs are not unique, there are multiple, equally legitimate coverage scores possible.  Having \emph{all} MIVCs allows one to define additional metrics: coverage of MAY elements, coverage of MUST elements, as well as policies for the existing MIVC metric: e.g., choose the smallest MIVC. %\ela{I'm not sure if introducing MAY/MUST would make sense to the readers }
-    \item Optimizing Logic Synthesis:  synthesis tools can benefit from MIVCs in the process of transforming an abstract behavior into a design implementation. A practical way of calculating all MIVCs allows to find a minimum set of design elements (optimal implementation) for a certain behavior. Such optimizations can be performed at the different levels of synthesis.
+    \item Optimizing Logic Synthesis:  synthesis tools can benefit from MIVCs in the process of transforming an abstract behavior into a design implementation. A practical way of calculating all MIVCs allows to find a minimum set of design elements (optimal implementation) for a certain behavior. Such optimizations can be performed at different levels of synthesis.
     \item Impact Analysis: Given all MIVCs, it is possible to determine which requirements may be falsified by changes to the model.  This analysis allows for selective regression verification of tests and proofs: if there are alternate proof paths that do not require the modified portions of the model, then the requirement does not need to be re-verified.
-    \item Robustness Analysis: As proposed by Murugesan et. al in~\cite{Murugesan16:renext}, it is possible partition the model elements into MUST and MAY sets based on whether they are in every MIVC or only some MIVCs, respectively.  This may allow insight into the relative importance of different model elements for property.  For example, if the MUST set is empty, then the requirement has been implemented in multiple ways, such as would be expected in a fault-tolerant system.
+    \item Robustness Analysis: As proposed by Murugesan et. al in~\cite{Murugesan16:renext}, it is possible to partition the model elements into MUST and MAY sets based on whether they are in every MIVC or only some MIVCs, respectively.  This may allow insight into the relative importance of different model elements for the property.  For example, if the MUST set is empty, then the requirement has been implemented in multiple ways, such as would be expected in a fault-tolerant system.
         %Moreover, examining the diversity of all MIVCs could lead to changes in how traceability~\cite{cleland2007best} is performed and managed in critical systems.
 \end{itemize}
 
@@ -39,7 +39,7 @@ The contributions of the work are therefore as follows:
    % \item An industrial case study with over 10K design elements that demonstrates the practicality and usefulness of our technique.
 \end{itemize}
 
-Several commercial tools produce~\emph{proof-cores}~\cite{hanna2015formal, jasper_gold}, which we believe to be similar to IVCs/MIVCs, but are not presented at a level of formality to perform a precise comparison.  However, to the best of our knowledge, none of these tools offer to calculate \emph{all} proof-cores.  Our work can also be useful towards the support of this capability in future additions of these tools.
+Several commercial tools produce~\emph{proof-cores}~\cite{hanna2015formal, jasper_gold}, which we believe to be similar to IVCs/MIVCs, but are not presented at a level of formality to perform a precise comparison.  However, to the best of our knowledge, none of these tools offer to calculate \emph{all} proof-cores.  Our work can also be useful towards the support of this capability in future editions of these tools.
 
 %\ela{I think we need to make it clear that IVCs are different from MUSes, proof-certificates or minimal invariants, abstraction, slicing. Currently, the introduction doesn't say anything about these. You had an idea on having a table... Perhaps you want to include a discussion section?\\ Or, Maybe we could expand the introduction with these things and make it more motivating}
 
@@ -49,6 +49,6 @@ The rest of the paper is organized as follows.
 Section \ref{sec:example} introduces a running example used to illustrate concepts and our method.
 Section \ref{sec:background} covers the formal preliminaries for the approach.
 In Section \ref{sec:allivcs}, we present our method for enumerating all minimal IVCs,
-which is illustrated in Section \ref{sec:illust}. In Section \ref{sec:impl}, we talk about implementation and evaluation of our method. 
-%Section \ref{sec:qfc} presents an industrial case study. 
+which is illustrated in Section \ref{sec:illust}. In Sections~\ref{sec:impl} and \ref{sec:experiment} we talk about implementation and evaluation of our method.
+%Section \ref{sec:qfc} presents an industrial case study.
 Finally, Section \ref{sec:conc} mentions conclusions and future work. 

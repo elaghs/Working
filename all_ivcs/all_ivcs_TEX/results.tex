@@ -6,12 +6,12 @@ experimental results to address the research questions defined in the experiment
 \begin{figure}
  \centering
   \includegraphics[width=\columnwidth]{figs/performance.jpg}
-  \vspace{-0.2in}
-  \caption{Runtime of \aivcalg, \ucbfalg, and \ucalg ~algorithms}
+  \vspace{-0.25in}
+  \caption{Runtime of \small{\aivcalg}, \small{\ucbfalg}, and \small{\ucalg} ~algorithms}
   \label{fig:performance}
-  %\vspace{-0.2in}
+  %\vspace{-0.1in}
 \end{figure}
-%\vspace{0.1in}
+ 
 
 \subsubsection{RQ1}
 
@@ -19,7 +19,7 @@ To address RQ1, we measured the performance overhead of the various IVC algorith
 necessary to find a proof using inductive model checking. Fig. \ref{fig:performance} provides an overview of the  overhead of the \aivcalg ~algorithm in comparison with the \ucalg ~and \ucbfalg\ algorithms.  In the figure, each curve is ranked along the x-axis according to the time required for the algorithm to terminate for each analysis problem.
 Table \ref{tab:runtime} provides a summary of the computation time and the overhead of different algorithms.  The \ucalg\ algorithm imposes a 1.25x overhead to the baseline proof time, whereas both the \ucbfalg\ and \aivcalg\ algorithms add a substantial time penalty: \ucbfalg\ and \aivcalg\ add a (mean) 18.8x and 31.3x overhead, respectively, to the proof time.
 For small models, much of this penalty is due to starting many instances of the SMT solver; if we examine models that require $\geq1s$ of analysis time, the mean overhead of \aivcalg\ over the baseline analysis drops from 31.3x to 9.7x.
-% >=1 : aivc overhead = 970.46 
+% >=1 : aivc overhead = 970.46
 
 %The \aivcalg\ algorithm takes approximately 1.6x more time than the \ucbfalg\ algorithm, calculated in the following way: we measure the ratio of time required for each model for both metrics, then we take the mean of this ratio for all models.  It is important to note that these performance curves are sensitive to the timeout values chosen for individual proof-searches for IVCs (the \getivc\ step in \aivcalg\ and line 3 in the \ucbfalg\ algorithm in~\cite{Ghass16}). It is likely that the performance would change if a different threshold was chosen.
 
@@ -62,7 +62,7 @@ For small models, much of this penalty is due to starting many instances of the 
     \hline
   \end{tabular}
   \label{tab:runtime}
-  \vspace{-0.1in}
+  \vspace{-0.15in}
 \end{table}
 
 
@@ -105,9 +105,9 @@ For this research question, we analyzed the minimality of the produced IVC by ea
  \begin{figure}
  \centering
   \includegraphics[width=\columnwidth]{figs/size.jpg}
-  \vspace{-0.25in}
+  \vspace{-0.3in}
   \caption{Runtime of different computations along with the number of MIVCs}
-  \vspace{-0.2in}
+  %\vspace{-0.1in}
   \label{fig:modelsize}
 \end{figure}
 
@@ -116,7 +116,7 @@ For this research question, we analyzed the minimality of the produced IVC by ea
   \includegraphics[width=\columnwidth]{figs/min.jpg}
   \vspace{-0.25in}
   \caption{Size of the IVC sets produced by different algorithms}
-  \vspace{-0.1in}
+  \vspace{-0.2in}
  \label{fig:size}
 \end{figure}
 

@@ -1,0 +1,121 @@
+\subsection{Using Approximate Inductive Validity Cores for Computing AIVC}
+\label{subsec:minimality}
+\newcommand{\ucalg}{\texttt{\small{IVC\_UC}}}
+\newcommand{\ucbfalg}{\texttt{\small{IVC\_UCBF}}}
+
+To compute all \ivc s of a given property, it appears that the \aivcalg ~algorithm
+assumes that \getivc\ always returns \emph{minimal} Inductive Validity Cores.
+However, as shown in \cite{Ghass16}, it is computationally cheap to find an
+approximately minimal \ivc\ using the algorithm \ucalg; however, finding a {\em guaranteed} minimal \ivc\ using the \ucbfalg\ algorithm is computationally expensive.  In this section,
+we demonstrate that the \aivcalg ~algorithm is correct and complete even if the \getivc ~module does not guarantee minimality.  %Then, we mention how to modify Algorithm \ref{alg:aivc} such that the output set $A$ only contains \textbf{minimal} \ivc s.
+
+%\begin{algorithm}
+%  \SetKwInOut{Input}{input}
+%  \SetKwInOut{Output}{output}
+%  \Input{$(I, T) \vdash P$}
+%  \Output{Minimal IVC for $(I, T) \vdash P$}
+%  \BlankLine
+%  $S \leftarrow \ucalg((I, T) \vdash P)$ \\
+%  \For{$x \in S$} {
+%    \If{$(I, S\setminus\{x\}) \vdash P$}{
+%      $S \leftarrow S\setminus \{x\}$
+%    }
+%  }
+%  \Return{S}
+%\caption{An abstract representation of \ucbfalg \cite{Ghass16}}
+%\label{alg:ucbf}
+%\end{algorithm}
+
+\mike{The proof below seems a bit informal.  Moreover, as best I can tell, Lemma 3, corollary 2, Theorem 1, and Theorem 2 all work without modification.  Theorem 1 is a bit informal - the set A {\em contains} all \mivc s but can contain more.  As written, I think the proof works either way.}
+
+\begin{theorem}
+\label{theorem:ivc-not-min}
+  Algorithm \ref{alg:aivc} enumerates all minimal Inductive Validity Cores
+  even if \getivc returns a superset $S'$ of an IVC $S$.
+\end{theorem}
+\begin{proof}
+In an iteration of the \texttt{while} loop that $\isadeq (P, M)$ is $true$,
+let \getivc ~return a set $S'$ which is not minimal:
+$\exists \mathcal{M} \subset S'.~ (I, \mathcal{M}) \vdash P$ and
+$\forall T_i \in \mathcal{M} . ~ (I, \mathcal{M} \setminus \{T_i\}) \nvdash P$.
+Then there is an unexplored set $S \supseteq \mathcal{M}$ that all its supersets have already been explored, so $map$ is still satisfiable.
+Eventually there will be a model of $map$ that makes $M = S$ in line 7 \mike{why?}.
+Again at that point, suppose \getivc ~returns an adequate set $S''$ which is not minimal.
+We know that
+  $\mathcal{M} \subset S'' \subseteq S \wedge S'' \neq S' \wedge |S''| \leq |S'|$.
+  Previously, set $S'$ marked all its supersets as explored. And now, the
+  same thing happens with $S''$.
+  In the worst case scenario, \getivc
+   ~explores all the supersets of $\mathcal{M}$
+   before generating $\mathcal{M}$; hence with the same reasoning,
+  eventually, all the supersets of $\mathcal{M}$ will be explored, and there will be a model of $map$ that makes $M = \mathcal{M}$ in line 7,
+  which results in a minimal \ivc\ by \getivc ~(because $\mathcal{M}$ is minimal itself).
+  Now,  $\mathcal{M}$  prunes itself from the $map$.
+  This reasoning can be applied to all minimal Inductive Validity Cores.
+  Therefore, Algorithm \ref{alg:aivc} explores all minimal adequate sets even if \getivc ~
+  does not guarantee minimality.
+\end{proof}
+
+\begin{theorem}
+ Algorithm \ref{alg:aivc} will terminate even if \getivc ~does not guarantee minimality.
+\end{theorem}
+\begin{proof}
+  Immediate from Theorem \ref{theorem:ivc-not-min}, \ref{theorem:aivc}, and \ref{theorem:termination}.
+\end{proof}
+
+Although we have proved that \getivc ~does not have to return minimal sets,
+with the current version of the \aivcalg ~algorithm, if \getivc ~does not
+return minimal adequate sets, at the end of the process,
+ set $A$ may contain some supersets of
+minimal IVCs as well. So, to make sure that the algorithm only returns
+the minimal adequate sets (\ivc s), all we need is to
+remove supersets before returning $A$; for example, adding the following code snippet after line 9 of Algorithm \ref{alg:aivc} serves this purpose:
+
+\vspace{0.09in}
+\indent  \For{$X \in A$}{
+\indent        \If{$S' \subset X$}{ $A \leftarrow A \setminus \{X\}$}
+\indent      }
+\vspace{0.09in}
+\noindent Obviously, the closer to minimal the results of \getivc ~are,
+the fewer iterations are required for Algorithm 1 to terminate.  Each non-minimal adequate set returned by \textsc{GetIVC} will induce an additional iteration for Algorithm 1.
+
+%
+%\begin{algorithm}[t]
+%  \SetKwInOut{Input}{input}
+%  \SetKwInOut{Output}{output}
+%  \Input{$(I, T) \vdash P$}
+%  \Output{$AIVC (P)$}
+%  \BlankLine
+%  $A \leftarrow \varnothing$\\
+%  Create activation literals $\{a_1, \ldots, a_n\}$ \\
+% % $map \leftarrow true$ \\
+%  $map \leftarrow \top$ \\
+% % $L \leftarrow \varnothing$ \\
+%  \BlankLine
+%
+%  \While{$\checksat (map)$} {
+%    $model \leftarrow $ build a maximal model of $map$ \\
+%    $M \leftarrow$ extract the set of variables assigned $true$ in $model$ \\
+%    $M \leftarrow \bigcup_{a_i \in M} \actlit ^{-1}(a_i)$ \\
+%\BlankLine
+%    \If{$\isadeq (P, M)$}{
+%    \BlankLine
+%      $S' \leftarrow \getivc (P, M)$ \\
+%
+%      \For{$X \in A$}{
+%        \If{$S' \subset X$}{ $A \leftarrow A \setminus X$}
+%      }
+%      $A \leftarrow A \cup S'$ \\
+%
+%      $map \leftarrow map \wedge (\bigvee_{T_{i}\in S'} \neg {\actlit (T_i)})$
+%    }
+%    \Else{
+%      $map \leftarrow map \wedge (\bigvee_{T_{i}\in (T \setminus M)} \actlit (T_i))$ \\
+%    %  $L \leftarrow L \cup (\bigcup_{T_i \in C} T_i)$
+%    }
+%  }
+%  \Return{$A$}
+%\caption{Modified version of the \aivcalg ~algorithm that
+%guarantees $AIVC(P)$ contains minimal Inductive Validity Cores}
+%\label{alg:aivc2}
+%\end{algorithm} 

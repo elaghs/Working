@@ -1,0 +1,54 @@
+<<<<<<< HEAD
+\iffalse
+\section{Case Study}
+=======
+\section{Applicability}
+>>>>>>> 39f7e14d57742aa53cc0b409ec7781ad46bc9c94
+
+\label{sec:qfc}
+
+A practical approach for computing all minimal IVCs provides coverage analysis at no additional cost. 
+It is possible to easily trace the design elements to the specification, and those elements necessary for the proof are covered by the specification. Such elements have to appear in the set of all MIVCs. Therefore, we can examine {\em model coverage} of the requirements, using two measurements: {\em MUST} coverage as $\bigcap AIVC$, which includes only elements necessary for all proofs, and {\em MAY} coverage as $\bigcup AIVC \setminus MUST$, which contains the elements that appear in some proofs (rather than all proofs). Note that multiple MIVCs for a specification is an indication of redundancy in the model.
+
+This section demonstrates the scalability and utility of our algorithms toward ``requirements coverage'' 
+(or complete traceability as described by Murugesan~\cite{Murugesan16:renext}) 
+on the specification of two large-scale models from a NASA Quad-redundant Flight Control System (QFCS)~\cite{NFM2015:backes}: the Flight Control System (FCS) with 5259 design elements (Lustre equations) and the Flight Control Computer (FCC) with 10969 design elements.
+%The goal was to examine the scalability and utility of the approach for determining model redundancy %and model coverage given the requirements.
+
+Table \ref{tab:qfcs} shows the results of our study. For the initial evaluation, the experiment was conducted for 18 hours on each model. This boundary was set due to time limitation. We will provide the complete results for the final version of the paper; however, results are available and will be updated on \cite{expr}.
+
+
+
+\begin{table}
+  \caption{\aivcalg\ on the QFCS models}
+  \vspace{-0.1in}
+  \centering
+\begin{tabular}{|c|c|c|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  models & FCS & FCC \\
+   \hline
+   Initial proof time (min)  & 19.5 & 172 \\
+   All-IVC runtime (h) & 18 & 18 \\
+   \hline
+   \# of IVCs  & 47 & 2   \\
+   \hline
+   IVC size by \ucbfalg\  & 1659 & 4302  \\
+   min IVC size by \aivcalg & 1659 & 4302 \\
+   avg IVC size by \aivcalg  & 1659.9 & 4302 \\
+   max IVC size by \aivcalg  & 1660 & 4302 \\
+  \hline
+
+  coverage score of MAY & 0.61 & 0.39  \\
+  coverage score of MUST & 0.30 & 0.39 \\
+  \hline
+\end{tabular}
+\label{tab:qfcs}
+%\vspace{-0.2in}
+\end{table}
+
+%We ran the algorithm on each property separately, which left us with 11 complex problems to study.
+%The FCS 3,423  104 prop
+%fcc 9953 1511? prop
+
+\fi

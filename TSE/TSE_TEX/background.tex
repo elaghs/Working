@@ -1,13 +1,10 @@
 \section{Preliminaries}
 \label{sec:background}
 
-\newcommand{\ivc}{\textit{IVC}}
-\newcommand{\mivc}{\textit{MIVC}}
 \newcommand{\bool}[0]{\mathit{bool}}
 \newcommand{\reach}[0]{\mathit{R}}
-\newcommand{\ite}[3]{\mathit{if}\ {#1}\ \mathit{then}\ {#2}\ \mathit{else}\ {#3}}
+\newcommand{\ite}[3]{\mathit{if}\ {#1}\ \mathit{then}\ {#2}\ \mathit{else}\ {#3}} 
 
-%\subsection{Transition Systems and Safety Properties}
 Given a state space $U$, a transition system $(I,T)$ consists of an
 initial state predicate $I : U \to \bool$ and a transition step
 predicate $T : U \times U \to \bool$.
@@ -22,62 +19,87 @@ A safety property $P : U \to \bool$ is a state predicate. A safety
 property $P$ holds on a transition system $(I, T)$ if it holds on all
 reachable states, i.e., $\forall u.~ \reach(u) \Rightarrow P(u)$,
 written as $\reach \Rightarrow P$ for short. When this is the case, we
-write $(I, T)\vdash P$. We assume the transition relation has the structure of a top-level conjunction.  Given $T(u, u') = T_1(u, u') \land \cdots \land T_n(u, u')$ we will write $T = \bigwedge_{i=1..n}T_i$ for short.
-By further abuse of notation,
-$T$ is identified with the set of its top-level conjuncts. Thus, $T_i \in
-T$ means that $T_i$ is a top-level conjunct of $T$, and $S
-\subseteq T$ means all top-level conjuncts of $S$ are top-level
-conjuncts of $T$. When a top-level conjunct $T_i$ is removed from $T$, we write $T \setminus \{T_i\}$. Such a transition system can easily encode our example model in Section~\ref{sec:example}, where each equation defines a conjunct within $T$ that we will denote by the variable assigned; so, $T = \{$ {\small \texttt{a1\_below, a2\_below, a1\_above, a2\_above, one\_below, both\_above, doi\_on, on\_p}} $\}$.
+write $(I, T)\vdash P$.
 
-The idea behind finding an IVC for a given property $P$ \cite{Ghass16} is based on inductive proof methods used in SMT-based model checking, such as $K$-induction and IC3/PDR \cite{NFM2012:KaGaTiWh, amla2005analysis, Een2011:PDR}. Generally, an IVC computation technique aims to determine, for any subset $S \subseteq T$, whether $P$ is provable by $S$. Then, a minimal subset that satisfies $P$ is seen as a minimal proof explanation called a minimal Inductive Validity Core.
+For an arbitrary transition system $(I, T)$, computing reachability
+can be very expensive or even impossible. Thus, we need a more
+effective way of checking if a safety property $P$ is satisfied by the
+system. The key idea is to over-approximate reachability. If we can
+find an over-approximation that implies the property, then the
+property must hold. Otherwise, the approximation needs to be refined.
 
-\begin{definition}{\emph{Inductive Validity Core (\ivc)\cite{Ghass16}:}}
-  \label{def:ivc}
-  $S \subseteq T$ for $(I, T)\vdash P$ is an Inductive Validity Core,
-  denoted by $\ivc(P, S)$, iff $(I, S) \vdash P $.
-\end{definition}
+A good first approximation for reachability is the property itself.
+That is, we can check if the following formulas hold:
+\begin{gather}
+  \forall u.~ I(u) \Rightarrow P(u)
+  \label{eq:1-ind-base} \\
+  \forall u, u'.~ P(u) \land T(u, u') \Rightarrow P(s')
+  \label{eq:1-ind-step}
+\end{gather}
+If both formulas hold then $P$ is {\em inductive} and holds over the
+system. If (\ref{eq:1-ind-base}) fails to hold, then $P$ is violated
+by an initial state of the system. If (\ref{eq:1-ind-step}) fails to
+hold, then $P$ is too much of an over-approximation and needs to be
+refined.
 
-\begin{definition}{\emph{Minimal Inductive Validity Core (\mivc) \cite{Ghass16}:}}
-  \label{def:minimal-ivc}
-  $S \subseteq T$ is a minimal Inductive Validity Core,
-  denoted by $\mivc(P, S)$, iff ~$\ivc(P, S) \wedge \forall T_i \in S.~ (I, S\setminus\{ T_i \}) \nvdash P$.
-\end{definition}
+One way to refine our over-approximation is to add additional lemmas
+to the property of interest. For example, given another property $L :
+U \to bool$ we can consider the extended property $P'(u) = P(u) \land
+L(u)$, written as $P' = P \land L$ for short. If $P'$ holds on the
+system, then $P$ must hold as well. The hope is that the addition of
+$L$ makes formula (\ref{eq:1-ind-step}) provable because the
+antecedent is more constrained. However, the consequent of
+(\ref{eq:1-ind-step}) is also more constrained, so the lemma $L$ may
+require additional lemmas of its own. Finding and proving these
+lemmas is the means by which property directed reachability (PDR)
+strengthens and proves a safety property.
 
+Another way to refine our over-approximation is to use use {\em
+  $k$-induction} which unrolls the property over $k$ steps of the
+transition system. For example, 1-induction consists of formulas
+(\ref{eq:1-ind-base}) and (\ref{eq:1-ind-step}) above, whereas
+2-induction consists of the following formulas:
+\begin{gather*}
+\forall u.~ I(u) \Rightarrow P(u) \\
+\forall u, u'.~ I(u) \land T(u, u') \Rightarrow P(u') \\
+\forall u, u', u''.~ P(u) \land T(u, u') \land P(u') \land T(u',
+  u'') \Rightarrow P(u'')
+\end{gather*}
+That is, there are two base step checks and one inductive step check.
+In general, for an arbitrary $k$, $k$-induction consists of $k$
+base step checks and one inductive step check as shown in
+Figure~\ref{fig:k-induction} (the universal quantifiers on $u_i$ have
+been elided for space). We say that a property is $k$-inductive if it
+satisfies the $k$-induction constraints for the given value of $k$.
+The hope is that the additional formulas in the antecedent of the
+inductive step make it provable.
 
-Note that, given $(I, T) \vdash P$, $P$ always has at least one \mivc, and it may also have many distinct \mivc s corresponding to different proof paths. To capture the latter, the \emph{all \mivc s ($AIVC$)} relation has been introduced in \cite{Murugesan16:renext}.
-\begin{definition}{\emph{All \mivc s ($AIVC$):}}
-    \label{def:allivcs}
-    Given $(I, T) \vdash P$, $AIVC(P)$ is an association to all \mivc s for $P$:
-    $$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  MIVC(P, S)\} $$
-\end{definition}
-
-Fig.~\ref{fig:ivcs} illustrates these notions by a graphical representation of IVCs for property $P = ({\small{\texttt{on\_p}}})$ in the example presented in Section~\ref{sec:example}. As shown in the picture, this property has two distinct \mivc s, which means the model satisfies $P$ in two different ways:  {\small \texttt{\{\{a1\_below, one\_below, doi\_on, on\_p\}, \{a2\_below, one\_below, doi\_on, on\_p\}\}}}, This is because in the implementation, the DOI is turned on when either of the altimeters is below the threshold, while our property states that they both must be below.
-Note that there is a subset of model elements, $\{{\small \texttt{a1\_above, a2\_above, both\_above}}\}$, that does not show up in $AIVC(P)$. Elements in such a subset
-do not affect the satisfaction of $P$.  In the complete ASW model in~\cite{HCW02:ase-deviation} there are additional properties that use these elements, but they are not necessary for the discussion in this paper.
-
-%As you can see, distinct IVCs may have common elements.
-%The intersection of all \mivc s is called the \emph{must} set for $P$.
-%And, the other elements constitute a \emph{may} set for $P$ \cite{Murugesan16:renext}:
-%\begin{itemize}
-%  \item   $MUST (P) = \bigcap AIVC(P)$
-%  \item  $MAY(P) = (\bigcup AIVC (P)) \setminus MUST(P)$
-%  \item $IRR(P) = T \setminus (\bigcup AIVC(P))$
-%\end{itemize}
-%\noindent Given property $P$, functions $MUST$, $MAY$, and $IRR$ partition top-level conjuncts of $T$ (model elements) into three disjoint sets \emph{must}, \emph{may}, and \emph{irrelevant}, respectively. $IRR(P)$ returns portion of the model irrelevant to the satisfaction of $P$, which in our running example is $\varnothing$.
-%We will make use of this intuition in Section~\ref{subsec:minimality}.
-
-\begin{figure}[t]
- \centering
-  \includegraphics[width=0.9\columnwidth]{figs/ivcs.jpg}
-  \vspace{-0.1in}
-  \caption{Graphical representation of \mivc s for the model in Fig.~\ref{fig:asw}
-  with  $P = ({\small \texttt{on\_p}})$}
-  \label{fig:ivcs}
-  %\vspace{-0.2in}
+\begin{figure}
+\begin{gather*}
+I(u_0) \Rightarrow P(u_0) \\[-2pt]
+%
+\vdots \\[2pt]
+%
+I(u_0) \land T(u_0, u_1) \land \cdots \land T(u_{k-2}, u_{k-1})
+\Rightarrow P(u_{k-1}) \\[2pt]
+%
+P(u_0) \land T(u_0, u_1) \land \cdots \land P(u_{k-1}) \land
+T(u_{k-1}, u_k) \Rightarrow P(u_k)
+\end{gather*}
+\caption{$k$-induction formulas: $k$ base cases and one inductive
+  step}
+\label{fig:k-induction}
 \end{figure}
 
-%\subsection{Satisfiability}
-%In this subsection, we provide a brief background on satisfiability problem.
+In practice, inductive model checkers often use a combination of the
+above techniques. Thus, a typical conclusion is of the form ``$P$ with
+lemmas $L_1, \ldots, L_n$ is $k$-inductive''.
 
 
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main.tex"
+%%% End
 
+%%  LocalWords:  bool reachability JKind Lustre PDR Yices MathSAT ok
+%%  LocalWords:  SMTInterpol dataflow init

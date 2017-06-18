@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">4.016</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>V311_alwaysBsinceA</MustElem>
+    <MustElem>V46_grant_access</MustElem>
+    <MustElem>V56_env</MustElem>
+    <MustElem>V206_onceCsinceA</MustElem>
+    <MustElem>V54_empty_section</MustElem>
+    <MustElem>V53_no_derail_BC</MustElem>
+    <MustElem>V204_alwaysBsinceA</MustElem>
+    <MustElem>V47_grant_exit</MustElem>
+    <MustElem>V322_afterA</MustElem>
+    <MustElem>V55_only_on_B</MustElem>
+    <MustElem>V323_alwaysBsinceA</MustElem>
+    <MustElem>V191_alwaysBsinceA</MustElem>
+    <MustElem>V51_exclusive_req</MustElem>
+    <MustElem>V48_do_AB</MustElem>
+    <MustElem>V310_afterA</MustElem>
+    <MustElem>V313_onceCsinceA</MustElem>
+    <MustElem>V181_only_on_B</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>V321_afterA</MustElem>
+    <MustElem>V325_onceCsinceA</MustElem>
+    <MustElem>V49_do_BC</MustElem>
+    <MustElem>V203_afterA</MustElem>
+    <MustElem>V202_afterA</MustElem>
+    <MustElem>V180_empty_section</MustElem>
+    <MustElem>V50_no_collision</MustElem>
+    <MustElem>V309_afterA</MustElem>
+    <MustElem>V284_X</MustElem>
+    <MustElem>V205_afterA</MustElem>
+    <MustElem>V52_no_derail_AB</MustElem>
+    <MustElem>V189_afterA</MustElem>
+    <MustElem>V190_afterA</MustElem>
+    <MustElem>V192_afterA</MustElem>
+    <MustElem>V193_onceCsinceA</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Ivc>V311_alwaysBsinceA</Ivc>
+    <Ivc>V46_grant_access</Ivc>
+    <Ivc>V56_env</Ivc>
+    <Ivc>V206_onceCsinceA</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V204_alwaysBsinceA</Ivc>
+    <Ivc>V53_no_derail_BC</Ivc>
+    <Ivc>V47_grant_exit</Ivc>
+    <Ivc>V322_afterA</Ivc>
+    <Ivc>V323_alwaysBsinceA</Ivc>
+    <Ivc>V55_only_on_B</Ivc>
+    <Ivc>V191_alwaysBsinceA</Ivc>
+    <Ivc>V310_afterA</Ivc>
+    <Ivc>V51_exclusive_req</Ivc>
+    <Ivc>V48_do_AB</Ivc>
+    <Ivc>V313_onceCsinceA</Ivc>
+    <Ivc>V181_only_on_B</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V325_onceCsinceA</Ivc>
+    <Ivc>V321_afterA</Ivc>
+    <Ivc>V49_do_BC</Ivc>
+    <Ivc>V203_afterA</Ivc>
+    <Ivc>V202_afterA</Ivc>
+    <Ivc>V180_empty_section</Ivc>
+    <Ivc>V50_no_collision</Ivc>
+    <Ivc>V309_afterA</Ivc>
+    <Ivc>V284_X</Ivc>
+    <Ivc>V205_afterA</Ivc>
+    <Ivc>V52_no_derail_AB</Ivc>
+    <Ivc>V189_afterA</Ivc>
+    <Ivc>V192_afterA</Ivc>
+    <Ivc>V190_afterA</Ivc>
+    <Ivc>V193_onceCsinceA</Ivc>
+    </IvcSet>
+  </Property>

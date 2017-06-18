@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[__GUARANTEE4]">
+    <Runtime unit="sec">2.828</Runtime>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.clear_pressed</IVC>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.defs__is_cooking~0._outvar</IVC>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.defs__is_cooking~0.m</IVC>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.defs__is_setup~0._outvar</IVC>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.defs__is_setup~0.m</IVC>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</IVC>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.mode</IVC>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~1.clear_pressed</IVC>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~1.defs__is_cooking~0._outvar</IVC>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~1.defs__is_cooking~0.m</IVC>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~1.defs__is_setup~0._outvar</IVC>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~1.defs__is_setup~0.m</IVC>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~1.digit</IVC>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~1.mode</IVC>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~2.clear_pressed</IVC>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~2.defs__is_cooking~0._outvar</IVC>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~2.defs__is_cooking~0.m</IVC>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~2.defs__is_setup~0._outvar</IVC>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~2.defs__is_setup~0.m</IVC>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~2.digit</IVC>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~2.mode</IVC>
+    <IVC>__GUARANTEE4</IVC>
+    <IVC>defs__is_setup~0._outvar</IVC>
+    <IVC>defs__is_setup~0.m</IVC>
+  </MinimalIvc>
+</Results>

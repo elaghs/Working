@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[__GUARANTEE8]">
+    <Runtime unit="sec">1.641</Runtime>
+    <Must>__GUARANTEE8</Must>
+    <Must>defs__is_cooking._outvar</Must>
+    <Must>defs__is_cooking.m</Must>
+    <Must>defs__is_running._outvar</Must>
+    <Must>defs__is_running.m</Must>
+    <Must>defs__is_setup._outvar</Must>
+    <Must>defs__is_setup.m</Must>
+    <Must>defs__is_suspended._outvar</Must>
+    <Must>defs__is_suspended.m</Must>
+  </MustElements>
+</Results>

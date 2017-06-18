@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.007</UcRuntime>
+   <Timeout unit="sec">30.235</Timeout>
+   <ProofTime unit="sec">0.04</ProofTime>
+   <Runtime unit="sec">0.047</Runtime>
+   <IVC>__GUARANTEE1</IVC>
+   <IVC>defs__is_cooking~0._outvar</IVC>
+   <IVC>defs__is_cooking~0.m</IVC>
+   <IVC>defs__is_cooking~1._outvar</IVC>
+   <IVC>defs__is_cooking~1.m</IVC>
+   <TRIVC>__GUARANTEE1</TRIVC>
+   <TRIVC>defs__is_cooking~0._outvar</TRIVC>
+   <TRIVC>defs__is_cooking~0.m</TRIVC>
+   <TRIVC>defs__is_cooking~1._outvar</TRIVC>
+   <TRIVC>defs__is_cooking~1.m</TRIVC>
+</Results>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.029</UcRuntime>
+   <Timeout unit="sec">35.54</Timeout>
+   <ProofTime unit="sec">1.079</ProofTime>
+   <Runtime unit="sec">1.1079999999999999</Runtime>
+   <IVC>DRAGON~0.erreur</IVC>
+   <IVC>DRAGON~0.exclusive</IVC>
+   <IVC>DRAGON~0.g01</IVC>
+   <IVC>OK</IVC>
+   <IVC>erreur</IVC>
+   <TRIVC>DRAGON~0.exclusive</TRIVC>
+   <TRIVC>erreur</TRIVC>
+   <TRIVC>DRAGON~0.erreur</TRIVC>
+   <TRIVC>OK</TRIVC>
+   <TRIVC>DRAGON~0.g01</TRIVC>
+</Results>

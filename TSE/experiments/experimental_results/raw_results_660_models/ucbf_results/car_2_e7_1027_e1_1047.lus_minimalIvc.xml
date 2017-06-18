@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[OK]">
+    <Runtime unit="sec">3.005</Runtime>
+    <IVC>OK</IVC>
+    <IVC>V26_bump</IVC>
+    <IVC>V27_dist</IVC>
+    <IVC>V30_move</IVC>
+    <IVC>V32_meter</IVC>
+    <IVC>V33_env</IVC>
+    <IVC>V91_X</IVC>
+  </MinimalIvc>
+</Results>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.023</UcRuntime>
+   <Timeout unit="sec">30.3</Timeout>
+   <ProofTime unit="sec">0.037</ProofTime>
+   <Runtime unit="sec">0.06</Runtime>
+   <IVC>OK</IVC>
+   <IVC>V51_invalid</IVC>
+   <IVC>V52_dirty</IVC>
+   <IVC>V53_exclusive</IVC>
+   <IVC>V54_shared</IVC>
+   <IVC>V55_env</IVC>
+   <IVC>V114_garde5</IVC>
+   <IVC>V115_garde6</IVC>
+   <IVC>V118_mem_invalid</IVC>
+   <IVC>V137_X</IVC>
+   <IVC>V151_First</IVC>
+   <TRIVC>V53_exclusive</TRIVC>
+   <TRIVC>V137_X</TRIVC>
+   <TRIVC>V115_garde6</TRIVC>
+   <TRIVC>V55_env</TRIVC>
+   <TRIVC>V52_dirty</TRIVC>
+   <TRIVC>V151_First</TRIVC>
+   <TRIVC>V118_mem_invalid</TRIVC>
+   <TRIVC>V114_garde5</TRIVC>
+   <TRIVC>V54_shared</TRIVC>
+   <TRIVC>V51_invalid</TRIVC>
+   <TRIVC>OK</TRIVC>
+</Results>

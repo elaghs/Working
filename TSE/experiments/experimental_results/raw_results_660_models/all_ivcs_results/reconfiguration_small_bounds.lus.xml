@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="19">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="20">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="21">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="22">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="23">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="24">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="25">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="26">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="27">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="28">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="29">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Property name="ok">
+    <Runtime unit="sec">26.568</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>9</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>priority~2.command_failure</MustElem>
+    <MustElem>priority~1.in_command</MustElem>
+    <MustElem>priority~1.other_in_command</MustElem>
+    <MustElem>priority~0.conf1~0.pre_cpt</MustElem>
+    <MustElem>priority~0.conf1~0.signal</MustElem>
+    <MustElem>priority~0.conf1~0.cpt</MustElem>
+    <MustElem>conf1~0.cpt</MustElem>
+    <MustElem>priority~1.conf1~0.cpt</MustElem>
+    <MustElem>priority~0.command_failure</MustElem>
+    <MustElem>conf1~0.pre_cpt</MustElem>
+    <MustElem>priority~2.other_in_command</MustElem>
+    <MustElem>priority~2.conf1~0.cpt</MustElem>
+    <MustElem>priority~2.in_command</MustElem>
+    <MustElem>ok</MustElem>
+    <MustElem>priority~1.conf1~0.n</MustElem>
+    <MustElem>m1</MustElem>
+    <MustElem>m2</MustElem>
+    <MustElem>conf1~0.signal</MustElem>
+    <MustElem>m3</MustElem>
+    <MustElem>priority~2.conf1~0.pre_cpt</MustElem>
+    <MustElem>priority~1.command_failure</MustElem>
+    <MustElem>conf1~0.out</MustElem>
+    <MustElem>priority~0.conf1~0.out</MustElem>
+    <MustElem>priority~2.conf1~0.signal</MustElem>
+    <MustElem>priority~2.conf1~0.n</MustElem>
+    <MustElem>priority~1.conf1~0.pre_cpt</MustElem>
+    <MustElem>priority~1.n</MustElem>
+    <MustElem>priority~0.n</MustElem>
+    <MustElem>priority~0.in_command</MustElem>
+    <MustElem>in_command3</MustElem>
+    <MustElem>in_command2</MustElem>
+    <MustElem>priority~0.conf1~0.n</MustElem>
+    <MustElem>in_command1</MustElem>
+    <MustElem>priority~1.conf1~0.out</MustElem>
+    <MustElem>priority~1.conf1~0.signal</MustElem>
+    <MustElem>priority~0.other_in_command</MustElem>
+    <MustElem>priority~2.conf1~0.out</MustElem>
+    <MustElem>priority~2.n</MustElem>
+    <MustElem>no_command</MustElem>
+    <MustElem>conf1~0.n</MustElem>
+    <IvcSet number="1">
+    <Invariant>((priority~0.conf1~0.pre_cpt &lt;= 0) =&gt; (priority~1.conf1~0.pre_cpt &lt;= 0))</Invariant>
+    <Invariant>((priority~1.conf1~0.pre_cpt &lt;= 0) =&gt; (priority~2.conf1~0.pre_cpt &lt;= 0))</Invariant>
+    <Invariant>((priority~2.conf1~0.pre_cpt &lt;= 0) =&gt; (conf1~0.pre_cpt &lt;= 0))</Invariant>
+    <Invariant>ok</Invariant>
+    <Invariant>(priority~2.conf1~0.pre_cpt &gt;= 0)</Invariant>
+    <Ivc>priority~2.command_failure</Ivc>
+    <Ivc>priority~1.in_command</Ivc>
+    <Ivc>priority~1.other_in_command</Ivc>
+    <Ivc>priority~0.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~0.conf1~0.signal</Ivc>
+    <Ivc>priority~0.conf1~0.cpt</Ivc>
+    <Ivc>conf1~0.cpt</Ivc>
+    <Ivc>priority~1.conf1~0.cpt</Ivc>
+    <Ivc>priority~0.command_failure</Ivc>
+    <Ivc>conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~2.other_in_command</Ivc>
+    <Ivc>priority~2.conf1~0.cpt</Ivc>
+    <Ivc>priority~2.in_command</Ivc>
+    <Ivc>priority~1.conf1~0.n</Ivc>
+    <Ivc>ok</Ivc>
+    <Ivc>m1</Ivc>
+    <Ivc>conf1~0.signal</Ivc>
+    <Ivc>m2</Ivc>
+    <Ivc>m3</Ivc>
+    <Ivc>priority~2.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~1.command_failure</Ivc>
+    <Ivc>conf1~0.out</Ivc>
+    <Ivc>priority~0.conf1~0.out</Ivc>
+    <Ivc>priority~2.conf1~0.signal</Ivc>
+    <Ivc>priority~2.conf1~0.n</Ivc>
+    <Ivc>priority~1.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~1.n</Ivc>
+    <Ivc>priority~0.in_command</Ivc>
+    <Ivc>priority~0.n</Ivc>
+    <Ivc>in_command3</Ivc>
+    <Ivc>in_command2</Ivc>
+    <Ivc>priority~0.conf1~0.n</Ivc>
+    <Ivc>in_command1</Ivc>
+    <Ivc>priority~1.conf1~0.out</Ivc>
+    <Ivc>priority~1.conf1~0.signal</Ivc>
+    <Ivc>priority~0.other_in_command</Ivc>
+    <Ivc>priority~2.conf1~0.out</Ivc>
+    <Ivc>priority~2.n</Ivc>
+    <Ivc>no_command</Ivc>
+    <Ivc>conf1~0.n</Ivc>
+    </IvcSet>
+  </Property>

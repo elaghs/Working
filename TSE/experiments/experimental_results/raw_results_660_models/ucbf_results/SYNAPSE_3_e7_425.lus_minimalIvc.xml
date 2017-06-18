@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[OK]">
+    <Runtime unit="sec">1.189</Runtime>
+    <IVC>First~0.First</IVC>
+    <IVC>First~0.X</IVC>
+    <IVC>OK</IVC>
+    <IVC>dirty_s</IVC>
+    <IVC>invalid_s</IVC>
+    <IVC>synapse~0.dirty_s</IVC>
+    <IVC>synapse~0.init_invalid_s</IVC>
+    <IVC>synapse~0.invalid_s</IVC>
+    <IVC>synapse~0.mem_init_s</IVC>
+    <IVC>synapse~0.valid_s</IVC>
+    <IVC>valid_s</IVC>
+  </MinimalIvc>
+</Results>

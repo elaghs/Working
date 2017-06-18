@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">2.611</Runtime>
+    <Must>OK</Must>
+    <Must>Sofar.Sofar</Must>
+    <Must>Sofar.X</Must>
+    <Must>env</Must>
+    <Must>excludes4.X2</Must>
+    <Must>excludes4.X3</Must>
+    <Must>excludes4.X4</Must>
+    <Must>excludes4.excludes</Must>
+    <Must>exclusive_mo</Must>
+    <Must>invalid_mo</Must>
+    <Must>modified_mo</Must>
+    <Must>moesi.etat_mo2</Must>
+    <Must>moesi.etat_mo3</Must>
+    <Must>moesi.etat_mo4</Must>
+    <Must>moesi.exclusive_mo</Must>
+    <Must>moesi.invalid_mo</Must>
+    <Must>moesi.modified_mo</Must>
+    <Must>moesi.owned_mo</Must>
+    <Must>moesi.shared_mo</Must>
+    <Must>owned_mo</Must>
+    <Must>shared_mo</Must>
+  </MustElements>
+</Results>

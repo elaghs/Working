@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">2.922</Runtime>
+    <Must>OK</Must>
+    <Must>dist</Must>
+    <Must>speed</Must>
+    <Must>voiture.bump</Must>
+    <Must>voiture.dist</Must>
+    <Must>voiture.move</Must>
+    <Must>voiture.speed</Must>
+  </MustElements>
+</Results>

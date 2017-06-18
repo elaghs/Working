@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="__GUARANTEE59"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="__GUARANTEE59"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="__GUARANTEE59"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="__GUARANTEE59"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="__GUARANTEE59"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="__GUARANTEE59"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="__GUARANTEE59"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="__GUARANTEE59"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="__GUARANTEE59"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="__GUARANTEE59"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="__GUARANTEE59"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="__GUARANTEE59"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="__GUARANTEE59"/>
+  </Progress>
+  <Property name="__GUARANTEE59">
+    <Runtime unit="sec">11.581</Runtime>
+    <Answer source="pdr">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>_TOP__CONFIG~0.PRES_IN.VTBI_Total</MustElem>
+    <MustElem>_TOP__CONFIG~0.__ASSERT</MustElem>
+    <MustElem>_TOP__OUTPUT~0.GPCA_SW_OUT.Request_Patient_Drug_Info</MustElem>
+    <MustElem>__GUARANTEE59</MustElem>
+    <MustElem>_TOP__CONFIG~0.CONFIG_OUT.Configured</MustElem>
+    <MustElem>_TOP__CONFIG~0.__CONFIG__ASSERT__6</MustElem>
+    <MustElem>_TOP__CONFIG~0.CONFIG_OUT.Request_Patient_Drug_Info</MustElem>
+    <MustElem>_TOP__OUTPUT~0.__ASSERT</MustElem>
+    <MustElem>_TOP__CONFIG~0.PRES_IN.Max_Number_of_Patient_Bolus</MustElem>
+    <MustElem>_TOP__CONFIG~0.__ASSUME__CONJ</MustElem>
+    <MustElem>_TOP__ASSERT__69</MustElem>
+    <MustElem>_TOP__OUTPUT~0.GPCA_SW_OUT.Configured</MustElem>
+    <MustElem>_TOP__CONFIG~0.DB_IN.Number_Max_Patient_Bolus</MustElem>
+    <MustElem>_TOP__CONFIG~0.__ASSUME__HIST</MustElem>
+    <MustElem>_TOP__OUTPUT~0.CONFIG_IN.Request_Patient_Drug_Info</MustElem>
+    <MustElem>_TOP__CONFIG~0.PRES_IN.Flow_Rate_Intermittent_Bolus</MustElem>
+    <MustElem>_TOP__OUTPUT~0.__OUTPUT__PROP__25</MustElem>
+    <MustElem>_TOP__OUTPUT~0.CONFIG_IN.Configured</MustElem>
+    <MustElem>_TOP__OUTPUT~0.__OUTPUT__PROP__21</MustElem>
+    <MustElem>_TOP__CONFIG~0.DB_IN.Flow_Rate_Low</MustElem>
+    <MustElem>_TOP__CONFIG~0.DB_IN.Flow_Rate_High</MustElem>
+    <MustElem>_TOP__CONFIG~0.PRES_IN.Flow_Rate_Patient_Bolus</MustElem>
+    <MustElem>_TOP__CONFIG~0.PRES_IN.Flow_Rate_Basal</MustElem>
+    <MustElem>_TOP__CONFIG~0.DB_IN.VTBI_Low</MustElem>
+    <MustElem>_TOP__OUTPUT~0.__ASSUME__CONJ</MustElem>
+    <MustElem>_TOP__CONFIG~0.PRES_IN.Interval_Intermittent_Bolus</MustElem>
+    <MustElem>_TOP__CONFIG~0.DB_IN.VTBI_High</MustElem>
+    <MustElem>_TOP__CONFIG~0.PRES_IN.Duration_Intermittent_Bolus</MustElem>
+    <MustElem>_TOP__OUTPUT~0.__ASSUME__HIST</MustElem>
+    <MustElem>_TOP__CONFIG~0.__CONFIG__PROP__6</MustElem>
+    <IvcSet number="1">
+    <Invariant>__GUARANTEE59</Invariant>
+    <Invariant>_TOP__CONFIG~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Ivc>_TOP__CONFIG~0.__ASSERT</Ivc>
+    <Ivc>_TOP__CONFIG~0.PRES_IN.VTBI_Total</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Request_Patient_Drug_Info</Ivc>
+    <Ivc>__GUARANTEE59</Ivc>
+    <Ivc>_TOP__CONFIG~0.__CONFIG__ASSERT__6</Ivc>
+    <Ivc>_TOP__CONFIG~0.CONFIG_OUT.Configured</Ivc>
+    <Ivc>_TOP__CONFIG~0.CONFIG_OUT.Request_Patient_Drug_Info</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__CONFIG~0.PRES_IN.Max_Number_of_Patient_Bolus</Ivc>
+    <Ivc>_TOP__CONFIG~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__ASSERT__69</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Configured</Ivc>
+    <Ivc>_TOP__CONFIG~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__CONFIG~0.DB_IN.Number_Max_Patient_Bolus</Ivc>
+    <Ivc>_TOP__OUTPUT~0.CONFIG_IN.Request_Patient_Drug_Info</Ivc>
+    <Ivc>_TOP__CONFIG~0.PRES_IN.Flow_Rate_Intermittent_Bolus</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__25</Ivc>
+    <Ivc>_TOP__OUTPUT~0.CONFIG_IN.Configured</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__21</Ivc>
+    <Ivc>_TOP__CONFIG~0.DB_IN.Flow_Rate_Low</Ivc>
+    <Ivc>_TOP__CONFIG~0.DB_IN.Flow_Rate_High</Ivc>
+    <Ivc>_TOP__CONFIG~0.PRES_IN.Flow_Rate_Patient_Bolus</Ivc>
+    <Ivc>_TOP__CONFIG~0.DB_IN.VTBI_Low</Ivc>
+    <Ivc>_TOP__CONFIG~0.PRES_IN.Flow_Rate_Basal</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__CONFIG~0.DB_IN.VTBI_High</Ivc>
+    <Ivc>_TOP__CONFIG~0.PRES_IN.Interval_Intermittent_Bolus</Ivc>
+    <Ivc>_TOP__CONFIG~0.PRES_IN.Duration_Intermittent_Bolus</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__CONFIG~0.__CONFIG__PROP__6</Ivc>
+    </IvcSet>
+  </Property>

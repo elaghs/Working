@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="__GUARANTEE6"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="__GUARANTEE6"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="__GUARANTEE6"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="__GUARANTEE6"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="__GUARANTEE6"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="__GUARANTEE6"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="__GUARANTEE6"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="__GUARANTEE6"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="__GUARANTEE6"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="__GUARANTEE6"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="__GUARANTEE6"/>
+  </Progress>
+  <Property name="__GUARANTEE6">
+    <Runtime unit="sec">1.212</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>defs__is_setup~1.m</MustElem>
+    <MustElem>__GUARANTEE6</MustElem>
+    <MustElem>defs__is_cooking~0._outvar</MustElem>
+    <MustElem>defs__is_suspended~0._outvar</MustElem>
+    <MustElem>defs__is_setup~0._outvar</MustElem>
+    <MustElem>defs__is_suspended~1._outvar</MustElem>
+    <MustElem>defs__is_cooking~0.m</MustElem>
+    <MustElem>defs__is_suspended~0.m</MustElem>
+    <MustElem>defs__is_setup~1._outvar</MustElem>
+    <MustElem>defs__is_setup~0.m</MustElem>
+    <MustElem>defs__is_suspended~1.m</MustElem>
+    <IvcSet number="1">
+    <Invariant>__GUARANTEE6</Invariant>
+    <Ivc>defs__is_setup~1.m</Ivc>
+    <Ivc>__GUARANTEE6</Ivc>
+    <Ivc>defs__is_suspended~0._outvar</Ivc>
+    <Ivc>defs__is_cooking~0._outvar</Ivc>
+    <Ivc>defs__is_setup~0._outvar</Ivc>
+    <Ivc>defs__is_suspended~1._outvar</Ivc>
+    <Ivc>defs__is_setup~1._outvar</Ivc>
+    <Ivc>defs__is_suspended~0.m</Ivc>
+    <Ivc>defs__is_cooking~0.m</Ivc>
+    <Ivc>defs__is_setup~0.m</Ivc>
+    <Ivc>defs__is_suspended~1.m</Ivc>
+    </IvcSet>
+  </Property>

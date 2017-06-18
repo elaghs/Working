@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">3.691</Runtime>
+    <Must>OK</Must>
+    <Must>Sofar.Sofar</Must>
+    <Must>Sofar.X</Must>
+    <Must>dirty</Must>
+    <Must>env</Must>
+    <Must>excludes9.X1</Must>
+    <Must>excludes9.X2</Must>
+    <Must>excludes9.X3</Must>
+    <Must>excludes9.X4</Must>
+    <Must>excludes9.X5</Must>
+    <Must>excludes9.X6</Must>
+    <Must>excludes9.X7</Must>
+    <Must>excludes9.X8</Must>
+    <Must>excludes9.X9</Must>
+    <Must>excludes9.excludes</Must>
+    <Must>exclusive</Must>
+    <Must>illinois.dirty</Must>
+    <Must>illinois.e1</Must>
+    <Must>illinois.e2</Must>
+    <Must>illinois.e3</Must>
+    <Must>illinois.e4</Must>
+    <Must>illinois.e5</Must>
+    <Must>illinois.e6</Must>
+    <Must>illinois.e7</Must>
+    <Must>illinois.e8</Must>
+    <Must>illinois.e9</Must>
+    <Must>illinois.exclusive</Must>
+    <Must>illinois.invalid</Must>
+    <Must>illinois.shared</Must>
+    <Must>invalid</Must>
+    <Must>shared</Must>
+  </MustElements>
+</Results>

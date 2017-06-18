@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.008</UcRuntime>
+   <Timeout unit="sec">30.2</Timeout>
+   <ProofTime unit="sec">0.032</ProofTime>
+   <Runtime unit="sec">0.04</Runtime>
+   <IVC>OK</IVC>
+   <IVC>V30_invalid_s</IVC>
+   <IVC>V31_valid_s</IVC>
+   <IVC>V32_dirty_s</IVC>
+   <IVC>V33_mem_init_s</IVC>
+   <IVC>V34_env</IVC>
+   <IVC>V106_First</IVC>
+   <TRIVC>V31_valid_s</TRIVC>
+   <TRIVC>V106_First</TRIVC>
+   <TRIVC>V32_dirty_s</TRIVC>
+   <TRIVC>V33_mem_init_s</TRIVC>
+   <TRIVC>V30_invalid_s</TRIVC>
+   <TRIVC>OK</TRIVC>
+   <TRIVC>V34_env</TRIVC>
+</Results>

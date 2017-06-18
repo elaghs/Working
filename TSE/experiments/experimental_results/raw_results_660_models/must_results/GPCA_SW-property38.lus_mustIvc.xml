@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[__GUARANTEE38]">
+    <Runtime unit="sec">6.828</Runtime>
+    <Must>_TOP__ALARM.ALARM_OUT.Notification_Message</Must>
+    <Must>_TOP__ALARM.SENSOR_IN.Air_Pressure</Must>
+    <Must>_TOP__ALARM.SENSOR_IN.Humidity</Must>
+    <Must>_TOP__ALARM.SENSOR_IN.Temp</Must>
+    <Must>_TOP__ALARM.__ALARM__ASSERT__27</Must>
+    <Must>_TOP__ALARM.__ALARM__PROP__13</Must>
+    <Must>_TOP__ALARM.__ASSERT</Must>
+    <Must>_TOP__ALARM.__ASSUME__CONJ</Must>
+    <Must>_TOP__ALARM.__ASSUME__HIST</Must>
+    <Must>_TOP__ASSERT__48</Must>
+    <Must>_TOP__OUTPUT.ALARM_IN.Notification_Message</Must>
+    <Must>_TOP__OUTPUT.GPCA_SW_OUT.Notification_Message</Must>
+    <Must>_TOP__OUTPUT.__ASSERT</Must>
+    <Must>_TOP__OUTPUT.__ASSUME__CONJ</Must>
+    <Must>_TOP__OUTPUT.__ASSUME__HIST</Must>
+    <Must>_TOP__OUTPUT.__OUTPUT__PROP__4</Must>
+    <Must>__GUARANTEE38</Must>
+  </MustElements>
+</Results>

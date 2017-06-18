@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[__GUARANTEE21]">
+    <Runtime unit="sec">10.253</Runtime>
+    <Must>_TOP__ALARM.ALARM_OUT.Audio_Notification_Command</Must>
+    <Must>_TOP__ALARM.ALARM_OUT.Is_Audio_Disabled</Must>
+    <Must>_TOP__ALARM.OP_CMD_IN.Disable_Audio</Must>
+    <Must>_TOP__ALARM.TLM_MODE_IN.System_On</Must>
+    <Must>_TOP__ALARM.__ALARM__ASSERT__21</Must>
+    <Must>_TOP__ALARM.__ALARM__PROP__7</Must>
+    <Must>_TOP__ALARM.__ASSERT</Must>
+    <Must>_TOP__ALARM.__ASSUME__CONJ</Must>
+    <Must>_TOP__ALARM.__ASSUME__HIST</Must>
+    <Must>_TOP__ASSERT__31</Must>
+    <Must>_TOP__OUTPUT.ALARM_IN.Audio_Notification_Command</Must>
+    <Must>_TOP__OUTPUT.ALARM_IN.Is_Audio_Disabled</Must>
+    <Must>_TOP__OUTPUT.GPCA_SW_OUT.Audio_Notification_Command</Must>
+    <Must>_TOP__OUTPUT.GPCA_SW_OUT.Is_Audio_Disabled</Must>
+    <Must>_TOP__OUTPUT.__ASSERT</Must>
+    <Must>_TOP__OUTPUT.__ASSUME__CONJ</Must>
+    <Must>_TOP__OUTPUT.__ASSUME__HIST</Must>
+    <Must>_TOP__OUTPUT.__OUTPUT__PROP__3</Must>
+    <Must>_TOP__OUTPUT.__OUTPUT__PROP__5</Must>
+    <Must>_TOP__TLM.OP_CMD_IN.System_Start</Must>
+    <Must>_TOP__TLM.TLM_MODE_OUT.System_On</Must>
+    <Must>_TOP__TLM.__ASSERT</Must>
+    <Must>_TOP__TLM.__ASSUME__CONJ</Must>
+    <Must>_TOP__TLM.__ASSUME__HIST</Must>
+    <Must>_TOP__TLM.__TLM__ASSERT__0</Must>
+    <Must>_TOP__TLM.__TLM__PROP__0</Must>
+    <Must>__GUARANTEE21</Must>
+  </MustElements>
+</Results>

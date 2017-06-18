@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="19">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="20">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="21">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="22">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="23">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">5.124</Runtime>
+    <Answer source="pdr">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>V109_garde7</MustElem>
+    <MustElem>V108_garde6</MustElem>
+    <MustElem>V49_dirty</MustElem>
+    <MustElem>V50_exclusive</MustElem>
+    <MustElem>V103_garde1</MustElem>
+    <MustElem>V105_garde3</MustElem>
+    <MustElem>V104_garde2</MustElem>
+    <MustElem>V107_garde5</MustElem>
+    <MustElem>V106_garde4</MustElem>
+    <MustElem>V51_shared</MustElem>
+    <MustElem>V52_env</MustElem>
+    <MustElem>V110_garde8</MustElem>
+    <MustElem>V130_X</MustElem>
+    <MustElem>OK</MustElem>
+    <IvcSet number="1">
+    <Invariant>(((V51_shared = 0) or (V49_dirty &lt;= 0)) or (not V52_env))</Invariant>
+    <Invariant>(((V49_dirty &lt;= 0) or (V50_exclusive &lt;= 0)) or (not V52_env))</Invariant>
+    <Invariant>(((V51_shared = 0) or (V50_exclusive &lt;= 0)) or (not V52_env))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>((V50_exclusive &lt;= 1) or (not V52_env))</Invariant>
+    <Ivc>V109_garde7</Ivc>
+    <Ivc>V108_garde6</Ivc>
+    <Ivc>V49_dirty</Ivc>
+    <Ivc>V50_exclusive</Ivc>
+    <Ivc>V103_garde1</Ivc>
+    <Ivc>V105_garde3</Ivc>
+    <Ivc>V104_garde2</Ivc>
+    <Ivc>V107_garde5</Ivc>
+    <Ivc>V106_garde4</Ivc>
+    <Ivc>V110_garde8</Ivc>
+    <Ivc>V52_env</Ivc>
+    <Ivc>V51_shared</Ivc>
+    <Ivc>V130_X</Ivc>
+    <Ivc>OK</Ivc>
+    </IvcSet>
+  </Property>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">1.392</Runtime>
+    <Must>OK</Must>
+    <Must>V82_p1</Must>
+    <Must>V83_p2</Must>
+    <Must>V84_p3</Must>
+    <Must>V85_p4</Must>
+    <Must>V86_ccont</Must>
+    <Must>V87_cca</Must>
+    <Must>V389_ccall</Must>
+    <Must>V390_ob</Must>
+    <Must>V391_pnb</Must>
+    <Must>~flatten0</Must>
+    <Must>~flatten1</Must>
+  </MustElements>
+</Results>

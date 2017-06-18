@@ -1,0 +1,24 @@
+node top(a,b,c:bool) returns(ok:bool);
+var
+  pre_x,x,pre_y,y: int;
+  nX,nY: int;
+let
+
+  nX=15;
+  nY=10;
+  pre_x = 0-> pre(x);
+  pre_y = 0-> pre(y);
+
+  x = if (b or c) then 0
+      else (if (a and pre_x < nX) then pre_x + 1 else pre_x);
+
+  y = if (c) then 0 
+      else (if (a and pre_y < nY) then pre_y + 1 else pre_y);
+
+  -- Proof objective.
+  ok = ((x = nX) => (y = nY));
+
+--%PROPERTY ok;
+  
+--%MAIN;
+tel

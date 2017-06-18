@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.061</UcRuntime>
+   <Timeout unit="sec">30.54</Timeout>
+   <ProofTime unit="sec">0.047</ProofTime>
+   <Runtime unit="sec">0.108</Runtime>
+   <IVC>Abs~0.Abs</IVC>
+   <IVC>Abs~0.X</IVC>
+   <IVC>Abs~1.Abs</IVC>
+   <IVC>Abs~1.X</IVC>
+   <IVC>Abs~2.Abs</IVC>
+   <IVC>Abs~2.X</IVC>
+   <IVC>Abs~3.Abs</IVC>
+   <IVC>Abs~3.X</IVC>
+   <IVC>OK</IVC>
+   <IVC>Sofar~0.Sofar</IVC>
+   <IVC>env</IVC>
+   <IVC>exclusive_me</IVC>
+   <IVC>invalid_me</IVC>
+   <IVC>mesi~0.exclusive_me</IVC>
+   <IVC>mesi~0.garde_me1</IVC>
+   <IVC>mesi~0.garde_me2</IVC>
+   <IVC>mesi~0.garde_me3</IVC>
+   <IVC>mesi~0.garde_me4</IVC>
+   <IVC>mesi~0.invalid_me</IVC>
+   <IVC>mesi~0.modified_me</IVC>
+   <IVC>mesi~0.shared_me</IVC>
+   <IVC>modified_me</IVC>
+   <IVC>shared_me</IVC>
+   <TRIVC>Abs~1.Abs</TRIVC>
+   <TRIVC>mesi~0.modified_me</TRIVC>
+   <TRIVC>Sofar~0.Sofar</TRIVC>
+   <TRIVC>shared_me</TRIVC>
+   <TRIVC>Abs~3.Abs</TRIVC>
+   <TRIVC>env</TRIVC>
+   <TRIVC>Abs~2.X</TRIVC>
+   <TRIVC>mesi~0.shared_me</TRIVC>
+   <TRIVC>Abs~3.X</TRIVC>
+   <TRIVC>Abs~0.X</TRIVC>
+   <TRIVC>invalid_me</TRIVC>
+   <TRIVC>Abs~1.X</TRIVC>
+   <TRIVC>mesi~0.invalid_me</TRIVC>
+   <TRIVC>Abs~2.Abs</TRIVC>
+   <TRIVC>Abs~0.Abs</TRIVC>
+   <TRIVC>mesi~0.garde_me1</TRIVC>
+   <TRIVC>mesi~0.garde_me2</TRIVC>
+   <TRIVC>mesi~0.garde_me3</TRIVC>
+   <TRIVC>mesi~0.garde_me4</TRIVC>
+   <TRIVC>exclusive_me</TRIVC>
+   <TRIVC>mesi~0.exclusive_me</TRIVC>
+   <TRIVC>modified_me</TRIVC>
+   <TRIVC>OK</TRIVC>
+</Results>

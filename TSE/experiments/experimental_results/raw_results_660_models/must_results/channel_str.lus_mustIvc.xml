@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[controlLaw~0.out_stable]">
+    <Runtime unit="sec">120.353</Runtime>
+    <Must>controlLaw.c1</Must>
+    <Must>controlLaw.c2</Must>
+    <Must>controlLaw.c3</Must>
+    <Must>controlLaw.integ</Must>
+    <Must>controlLaw.out_stable</Must>
+    <Must>controlLaw.sum1</Must>
+  </MustElements>
+</Results>

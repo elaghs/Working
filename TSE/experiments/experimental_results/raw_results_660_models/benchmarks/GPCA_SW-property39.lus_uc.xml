@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.383</UcRuntime>
+   <Timeout unit="sec">43.09</Timeout>
+   <ProofTime unit="sec">2.235</ProofTime>
+   <Runtime unit="sec">2.618</Runtime>
+   <IVC>_TOP__ALARM~0.ALARM_OUT.Notification_Message</IVC>
+   <IVC>_TOP__ALARM~0.SENSOR_IN.Battery_Depleted</IVC>
+   <IVC>_TOP__ALARM~0.SENSOR_IN.CPU_Error</IVC>
+   <IVC>_TOP__ALARM~0.SENSOR_IN.Memory_Corrupted</IVC>
+   <IVC>_TOP__ALARM~0.SENSOR_IN.Pump_Too_Hot</IVC>
+   <IVC>_TOP__ALARM~0.SENSOR_IN.RTC_Error</IVC>
+   <IVC>_TOP__ALARM~0.SENSOR_IN.Watchdog_Interrupted</IVC>
+   <IVC>_TOP__ALARM~0.__ALARM__ASSERT__28</IVC>
+   <IVC>_TOP__ALARM~0.__ALARM__PROP__14</IVC>
+   <IVC>_TOP__ALARM~0.__ASSERT</IVC>
+   <IVC>_TOP__ALARM~0.__ASSUME__CONJ</IVC>
+   <IVC>_TOP__ALARM~0.__ASSUME__HIST</IVC>
+   <IVC>_TOP__ASSERT__49</IVC>
+   <IVC>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</IVC>
+   <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSERT</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSUME__CONJ</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSUME__HIST</IVC>
+   <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__4</IVC>
+   <IVC>__GUARANTEE39</IVC>
+   <TRIVC>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</TRIVC>
+   <TRIVC>__GUARANTEE39</TRIVC>
+   <TRIVC>_TOP__ALARM~0.__ASSUME__CONJ</TRIVC>
+   <TRIVC>_TOP__ALARM~0.SENSOR_IN.Pump_Too_Hot</TRIVC>
+   <TRIVC>_TOP__ALARM~0.ALARM_OUT.Notification_Message</TRIVC>
+   <TRIVC>_TOP__ALARM~0.SENSOR_IN.Battery_Depleted</TRIVC>
+   <TRIVC>_TOP__ASSERT__49</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSERT</TRIVC>
+   <TRIVC>_TOP__ALARM~0.SENSOR_IN.Watchdog_Interrupted</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</TRIVC>
+   <TRIVC>_TOP__ALARM~0.SENSOR_IN.Memory_Corrupted</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__OUTPUT__PROP__4</TRIVC>
+   <TRIVC>_TOP__ALARM~0.__ASSERT</TRIVC>
+   <TRIVC>_TOP__ALARM~0.SENSOR_IN.RTC_Error</TRIVC>
+   <TRIVC>_TOP__ALARM~0.SENSOR_IN.CPU_Error</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSUME__CONJ</TRIVC>
+   <TRIVC>_TOP__ALARM~0.__ALARM__PROP__14</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSUME__HIST</TRIVC>
+   <TRIVC>_TOP__ALARM~0.__ASSUME__HIST</TRIVC>
+   <TRIVC>_TOP__ALARM~0.__ALARM__ASSERT__28</TRIVC>
+</Results>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">2.913</Runtime>
+    <Must>OK</Must>
+    <Must>V24_toofast</Must>
+    <Must>V25_stop</Must>
+    <Must>V27_dist</Must>
+    <Must>V28_speed</Must>
+    <Must>V29_time</Must>
+    <Must>V30_move</Must>
+    <Must>V31_second</Must>
+    <Must>V32_meter</Must>
+  </MustElements>
+</Results>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.013</UcRuntime>
+   <Timeout unit="sec">30.3</Timeout>
+   <ProofTime unit="sec">0.047</ProofTime>
+   <Runtime unit="sec">0.06</Runtime>
+   <IVC>OK</IVC>
+   <IVC>V66_exclusive</IVC>
+   <IVC>V71_erreur</IVC>
+   <IVC>V131_g01</IVC>
+   <IVC>V169_Sofar</IVC>
+   <TRIVC>V71_erreur</TRIVC>
+   <TRIVC>V169_Sofar</TRIVC>
+   <TRIVC>V66_exclusive</TRIVC>
+   <TRIVC>OK</TRIVC>
+   <TRIVC>V131_g01</TRIVC>
+</Results>

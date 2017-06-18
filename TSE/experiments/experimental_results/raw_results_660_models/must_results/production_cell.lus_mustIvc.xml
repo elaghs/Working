@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">2.742</Runtime>
+    <Must>MayMove1</Must>
+    <Must>MayMove2</Must>
+    <Must>OK</Must>
+    <Must>fedge.f</Must>
+    <Must>fedge.redge.r</Must>
+    <Must>fedge.redge.signal</Must>
+    <Must>fedge.signal</Must>
+    <Must>moving</Must>
+    <Must>redge.r</Must>
+    <Must>redge.signal</Must>
+    <Must>start1</Must>
+    <Must>start2</Must>
+    <Must>stop</Must>
+    <Must>sustain.off</Must>
+    <Must>sustain.on</Must>
+    <Must>sustain.s</Must>
+  </MustElements>
+</Results>

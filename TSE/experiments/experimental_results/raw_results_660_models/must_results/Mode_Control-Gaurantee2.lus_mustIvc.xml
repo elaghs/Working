@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[__GUARANTEE2]">
+    <Runtime unit="sec">0.534</Runtime>
+    <Must>__GUARANTEE2</Must>
+    <Must>defs__initially_true.b</Must>
+    <Must>defs__initially_true.result</Must>
+    <Must>defs__is_setup._outvar</Must>
+    <Must>defs__is_setup.m</Must>
+  </MustElements>
+</Results>

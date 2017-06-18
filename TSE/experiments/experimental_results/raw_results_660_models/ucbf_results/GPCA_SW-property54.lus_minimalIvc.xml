@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[__GUARANTEE54]">
+    <Runtime unit="sec">2.155</Runtime>
+    <IVC>_TOP__ALARM~0.ALARM_OUT.Notification_Message</IVC>
+    <IVC>_TOP__ALARM~0.SENSOR_IN.Battery_Low</IVC>
+    <IVC>_TOP__ALARM~0.SENSOR_IN.Battery_Unable_To_Charge</IVC>
+    <IVC>_TOP__ALARM~0.SENSOR_IN.Supply_Voltage</IVC>
+    <IVC>_TOP__ALARM~0.__ALARM__ASSERT__43</IVC>
+    <IVC>_TOP__ALARM~0.__ALARM__PROP__29</IVC>
+    <IVC>_TOP__ALARM~0.__ASSERT</IVC>
+    <IVC>_TOP__ALARM~0.__ASSUME__CONJ</IVC>
+    <IVC>_TOP__ALARM~0.__ASSUME__HIST</IVC>
+    <IVC>_TOP__ASSERT__64</IVC>
+    <IVC>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</IVC>
+    <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSERT</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSUME__CONJ</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSUME__HIST</IVC>
+    <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__4</IVC>
+    <IVC>__GUARANTEE54</IVC>
+  </MinimalIvc>
+</Results>

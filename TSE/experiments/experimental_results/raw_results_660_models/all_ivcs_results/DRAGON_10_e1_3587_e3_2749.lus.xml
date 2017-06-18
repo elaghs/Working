@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">1.01</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>V72_env</MustElem>
+    <MustElem>V138_g07</MustElem>
+    <MustElem>V144_mem_init</MustElem>
+    <MustElem>V70_invalid</MustElem>
+    <MustElem>V132_g01</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>V139_g08</MustElem>
+    <MustElem>V133_g02</MustElem>
+    <MustElem>V165_X</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Ivc>V138_g07</Ivc>
+    <Ivc>V72_env</Ivc>
+    <Ivc>V144_mem_init</Ivc>
+    <Ivc>V70_invalid</Ivc>
+    <Ivc>V132_g01</Ivc>
+    <Ivc>V139_g08</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V133_g02</Ivc>
+    <Ivc>V165_X</Ivc>
+    </IvcSet>
+  </Property>

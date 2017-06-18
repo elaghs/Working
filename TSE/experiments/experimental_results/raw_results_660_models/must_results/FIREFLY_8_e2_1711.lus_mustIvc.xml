@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">1.655</Runtime>
+    <Must>OK</Must>
+    <Must>Sofar.Sofar</Must>
+    <Must>Sofar.X</Must>
+    <Must>env</Must>
+    <Must>firefly.garde1</Must>
+    <Must>firefly.garde2</Must>
+    <Must>firefly.garde3</Must>
+    <Must>firefly.garde6</Must>
+    <Must>firefly.garde7</Must>
+    <Must>firefly.garde8</Must>
+    <Must>firefly.i_invalid</Must>
+    <Must>firefly.invalid</Must>
+    <Must>firefly.mem_invalid</Must>
+    <Must>invalid</Must>
+  </MustElements>
+</Results>

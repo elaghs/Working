@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[__GUARANTEE58]">
+    <Runtime unit="sec">3.632</Runtime>
+    <IVC>_TOP__ASSERT__68</IVC>
+    <IVC>_TOP__CONFIG~0.CONFIG_OUT.Configured</IVC>
+    <IVC>_TOP__CONFIG~0.CONFIG_OUT.Error_Message_ID</IVC>
+    <IVC>_TOP__CONFIG~0.CONFIG_OUT.Request_Patient_Drug_Info</IVC>
+    <IVC>_TOP__CONFIG~0.CONST_IN.Empty_Reservoir</IVC>
+    <IVC>_TOP__CONFIG~0.DB_IN.Drug_Concentration_High</IVC>
+    <IVC>_TOP__CONFIG~0.DB_IN.Drug_Concentration_Low</IVC>
+    <IVC>_TOP__CONFIG~0.PRES_IN.Drug_Concentration</IVC>
+    <IVC>_TOP__CONFIG~0.PRES_IN.Drug_Name</IVC>
+    <IVC>_TOP__CONFIG~0.PRES_IN.Entered_Reservoir_Volume</IVC>
+    <IVC>_TOP__CONFIG~0.__ASSERT</IVC>
+    <IVC>_TOP__CONFIG~0.__ASSUME__CONJ</IVC>
+    <IVC>_TOP__CONFIG~0.__ASSUME__HIST</IVC>
+    <IVC>_TOP__CONFIG~0.__CONFIG__ASSERT__5</IVC>
+    <IVC>_TOP__CONFIG~0.__CONFIG__PROP__5</IVC>
+    <IVC>_TOP__OUTPUT~0.CONFIG_IN.Configured</IVC>
+    <IVC>_TOP__OUTPUT~0.CONFIG_IN.Error_Message_ID</IVC>
+    <IVC>_TOP__OUTPUT~0.CONFIG_IN.Request_Patient_Drug_Info</IVC>
+    <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Configured</IVC>
+    <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Error_Message_ID</IVC>
+    <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Request_Patient_Drug_Info</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSERT</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSUME__CONJ</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSUME__HIST</IVC>
+    <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__21</IVC>
+    <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__22</IVC>
+    <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__25</IVC>
+    <IVC>__GUARANTEE58</IVC>
+  </MinimalIvc>
+</Results>

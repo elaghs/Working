@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.246</UcRuntime>
+   <Timeout unit="sec">64.785</Timeout>
+   <ProofTime unit="sec">6.711</ProofTime>
+   <Runtime unit="sec">6.957000000000001</Runtime>
+   <IVC>_TOP__ASSERT__15</IVC>
+   <IVC>_TOP__IM~0.IM_OUT.Current_System_Mode</IVC>
+   <IVC>_TOP__IM~0.Patient_Bolus_Delivered_Count</IVC>
+   <IVC>_TOP__IM~0.__ASSERT</IVC>
+   <IVC>_TOP__IM~0.__ASSUME__CONJ</IVC>
+   <IVC>_TOP__IM~0.__ASSUME__HIST</IVC>
+   <IVC>_TOP__IM~0.__IM__ASSERT__1</IVC>
+   <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</IVC>
+   <IVC>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSERT</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSUME__CONJ</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSUME__HIST</IVC>
+   <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__27</IVC>
+   <IVC>__GUARANTEE5</IVC>
+   <TRIVC>_TOP__OUTPUT~0.__OUTPUT__PROP__27</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</TRIVC>
+   <TRIVC>__GUARANTEE5</TRIVC>
+   <TRIVC>_TOP__IM~0.IM_OUT.Current_System_Mode</TRIVC>
+   <TRIVC>_TOP__IM~0.__ASSERT</TRIVC>
+   <TRIVC>_TOP__ASSERT__15</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSERT</TRIVC>
+   <TRIVC>_TOP__IM~0.__IM__ASSERT__1</TRIVC>
+   <TRIVC>_TOP__IM~0.Patient_Bolus_Delivered_Count</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSUME__CONJ</TRIVC>
+   <TRIVC>_TOP__IM~0.__ASSUME__HIST</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSUME__HIST</TRIVC>
+   <TRIVC>_TOP__IM~0.__ASSUME__CONJ</TRIVC>
+</Results>

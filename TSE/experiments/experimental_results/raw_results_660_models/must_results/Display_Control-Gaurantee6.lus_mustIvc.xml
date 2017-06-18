@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[__GUARANTEE6]">
+    <Runtime unit="sec">0.767</Runtime>
+    <Must>Microwave_SEng5861__Display_Control__Impl__update_digit.digit</Must>
+    <Must>__GUARANTEE6</Must>
+    <Must>defs__initially_true.b</Must>
+    <Must>defs__initially_true.result</Must>
+  </MustElements>
+</Results>

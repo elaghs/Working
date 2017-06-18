@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="19">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="20">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="21">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="22">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="23">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="24">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="25">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="26">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="27">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="28">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="29">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="30">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="31">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="32">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="33">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="34">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="35">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="36">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="37">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="38">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="39">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="40">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="41">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="42">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="43">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="44">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="45">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="46">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">23.258</Runtime>
+    <Answer source="pdr">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>Sofar~0.Sofar</MustElem>
+    <MustElem>excludes12~0.X9</MustElem>
+    <MustElem>excludes12~0.X8</MustElem>
+    <MustElem>excludes12~0.X7</MustElem>
+    <MustElem>excludes12~0.X6</MustElem>
+    <MustElem>DRAGON~0.e02</MustElem>
+    <MustElem>DRAGON~0.e03</MustElem>
+    <MustElem>DRAGON~0.g01</MustElem>
+    <MustElem>DRAGON~0.e01</MustElem>
+    <MustElem>DRAGON~0.shared</MustElem>
+    <MustElem>exclusive</MustElem>
+    <MustElem>First~0.X</MustElem>
+    <MustElem>DRAGON~0.init_invalid</MustElem>
+    <MustElem>R1</MustElem>
+    <MustElem>DRAGON~0.mem_init</MustElem>
+    <MustElem>DRAGON~0.invalid</MustElem>
+    <MustElem>R2</MustElem>
+    <MustElem>R3</MustElem>
+    <MustElem>R4</MustElem>
+    <MustElem>R5</MustElem>
+    <MustElem>R6</MustElem>
+    <MustElem>R7</MustElem>
+    <MustElem>R8</MustElem>
+    <MustElem>R9</MustElem>
+    <MustElem>excludes12~0.X1</MustElem>
+    <MustElem>excludes12~0.X5</MustElem>
+    <MustElem>excludes12~0.X4</MustElem>
+    <MustElem>First~0.First</MustElem>
+    <MustElem>excludes12~0.X3</MustElem>
+    <MustElem>excludes12~0.X2</MustElem>
+    <MustElem>invalid</MustElem>
+    <MustElem>DRAGON~0.exclusive</MustElem>
+    <MustElem>shared</MustElem>
+    <MustElem>DRAGON~0.shared_dirty</MustElem>
+    <MustElem>excludes12~0.X11</MustElem>
+    <MustElem>excludes12~0.X12</MustElem>
+    <MustElem>excludes12~0.X10</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>dirty</MustElem>
+    <MustElem>shared_dirty</MustElem>
+    <MustElem>Sofar~0.X</MustElem>
+    <MustElem>erreur</MustElem>
+    <MustElem>DRAGON~0.e10</MustElem>
+    <MustElem>DRAGON~0.g11</MustElem>
+    <MustElem>env</MustElem>
+    <MustElem>DRAGON~0.erreur</MustElem>
+    <MustElem>DRAGON~0.g12</MustElem>
+    <MustElem>excludes12~0.excludes</MustElem>
+    <MustElem>DRAGON~0.e11</MustElem>
+    <MustElem>DRAGON~0.e12</MustElem>
+    <MustElem>DRAGON~0.g10</MustElem>
+    <MustElem>R10</MustElem>
+    <MustElem>DRAGON~0.e06</MustElem>
+    <MustElem>DRAGON~0.g04</MustElem>
+    <MustElem>DRAGON~0.e07</MustElem>
+    <MustElem>DRAGON~0.g05</MustElem>
+    <MustElem>R12</MustElem>
+    <MustElem>DRAGON~0.e04</MustElem>
+    <MustElem>DRAGON~0.g02</MustElem>
+    <MustElem>R11</MustElem>
+    <MustElem>DRAGON~0.e05</MustElem>
+    <MustElem>DRAGON~0.g03</MustElem>
+    <MustElem>R14</MustElem>
+    <MustElem>DRAGON~0.g08</MustElem>
+    <MustElem>R13</MustElem>
+    <MustElem>DRAGON~0.g09</MustElem>
+    <MustElem>DRAGON~0.e08</MustElem>
+    <MustElem>DRAGON~0.g06</MustElem>
+    <MustElem>DRAGON~0.e09</MustElem>
+    <MustElem>DRAGON~0.dirty</MustElem>
+    <MustElem>DRAGON~0.g07</MustElem>
+    <IvcSet number="1">
+    <Invariant>((not Sofar~0.Sofar) or (((shared_dirty + dirty) + invalid) &lt;= (DRAGON~0.invalid + 1)))</Invariant>
+    <Invariant>(((not (((-dirty) + 1) &lt;= 0)) or (not Sofar~0.Sofar)) or (not ((DRAGON~0.exclusive + (-dirty)) = 0)))</Invariant>
+    <Invariant>(((exclusive &lt;= 0) or ((DRAGON~0.shared_dirty + (-1)) &lt;&gt; 0)) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(((DRAGON~0.exclusive &lt;= 0) or (shared &lt;= 0)) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>excludes12~0.X9</Ivc>
+    <Ivc>Sofar~0.Sofar</Ivc>
+    <Ivc>excludes12~0.X8</Ivc>
+    <Ivc>excludes12~0.X7</Ivc>
+    <Ivc>excludes12~0.X6</Ivc>
+    <Ivc>DRAGON~0.e02</Ivc>
+    <Ivc>DRAGON~0.g01</Ivc>
+    <Ivc>DRAGON~0.e03</Ivc>
+    <Ivc>DRAGON~0.e01</Ivc>
+    <Ivc>DRAGON~0.shared</Ivc>
+    <Ivc>exclusive</Ivc>
+    <Ivc>First~0.X</Ivc>
+    <Ivc>DRAGON~0.init_invalid</Ivc>
+    <Ivc>R1</Ivc>
+    <Ivc>DRAGON~0.invalid</Ivc>
+    <Ivc>DRAGON~0.mem_init</Ivc>
+    <Ivc>R2</Ivc>
+    <Ivc>R3</Ivc>
+    <Ivc>R4</Ivc>
+    <Ivc>R5</Ivc>
+    <Ivc>R6</Ivc>
+    <Ivc>R7</Ivc>
+    <Ivc>R8</Ivc>
+    <Ivc>R9</Ivc>
+    <Ivc>excludes12~0.X1</Ivc>
+    <Ivc>excludes12~0.X5</Ivc>
+    <Ivc>excludes12~0.X4</Ivc>
+    <Ivc>excludes12~0.X3</Ivc>
+    <Ivc>First~0.First</Ivc>
+    <Ivc>excludes12~0.X2</Ivc>
+    <Ivc>invalid</Ivc>
+    <Ivc>DRAGON~0.exclusive</Ivc>
+    <Ivc>shared</Ivc>
+    <Ivc>DRAGON~0.shared_dirty</Ivc>
+    <Ivc>excludes12~0.X11</Ivc>
+    <Ivc>excludes12~0.X12</Ivc>
+    <Ivc>excludes12~0.X10</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>dirty</Ivc>
+    <Ivc>shared_dirty</Ivc>
+    <Ivc>Sofar~0.X</Ivc>
+    <Ivc>erreur</Ivc>
+    <Ivc>DRAGON~0.e10</Ivc>
+    <Ivc>DRAGON~0.g11</Ivc>
+    <Ivc>DRAGON~0.erreur</Ivc>
+    <Ivc>env</Ivc>
+    <Ivc>excludes12~0.excludes</Ivc>
+    <Ivc>DRAGON~0.g12</Ivc>
+    <Ivc>DRAGON~0.e11</Ivc>
+    <Ivc>DRAGON~0.g10</Ivc>
+    <Ivc>DRAGON~0.e12</Ivc>
+    <Ivc>DRAGON~0.g04</Ivc>
+    <Ivc>DRAGON~0.e06</Ivc>
+    <Ivc>R10</Ivc>
+    <Ivc>DRAGON~0.g05</Ivc>
+    <Ivc>DRAGON~0.e07</Ivc>
+    <Ivc>DRAGON~0.g02</Ivc>
+    <Ivc>DRAGON~0.e04</Ivc>
+    <Ivc>R12</Ivc>
+    <Ivc>DRAGON~0.g03</Ivc>
+    <Ivc>DRAGON~0.e05</Ivc>
+    <Ivc>R11</Ivc>
+    <Ivc>DRAGON~0.g08</Ivc>
+    <Ivc>R14</Ivc>
+    <Ivc>DRAGON~0.g09</Ivc>
+    <Ivc>R13</Ivc>
+    <Ivc>DRAGON~0.g06</Ivc>
+    <Ivc>DRAGON~0.e08</Ivc>
+    <Ivc>DRAGON~0.dirty</Ivc>
+    <Ivc>DRAGON~0.g07</Ivc>
+    <Ivc>DRAGON~0.e09</Ivc>
+    </IvcSet>
+  </Property>

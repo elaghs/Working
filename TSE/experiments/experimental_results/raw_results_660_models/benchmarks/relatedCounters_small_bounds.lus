@@ -1,0 +1,28 @@
+node top(a,b,c:bool) returns(ok:bool);
+var
+  pre_x,x,pre_y,y: int;
+  nX,nY: int;
+let
+
+  -- Ranges over the state variables, can be found easily
+  -- by AI or template-based techniques.
+  assert (0 <= x) and (x <= nX) and (0 <= y) and (y <= nY);
+
+  nX=15;
+  nY=10;
+  pre_x = 0-> pre(x);
+  pre_y = 0-> pre(y);
+
+  x = if (b or c) then 0
+      else (if (a and pre_x < nX) then pre_x + 1 else pre_x);
+
+  y = if (c) then 0 
+      else (if (a and pre_y < nY) then pre_y + 1 else pre_y);
+
+  -- Proof objective.
+  ok = ((x = nX) => (y = nY));
+
+--%PROPERTY ok;
+  
+--%MAIN;
+tel

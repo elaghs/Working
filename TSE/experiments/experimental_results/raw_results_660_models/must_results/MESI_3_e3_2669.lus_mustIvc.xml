@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">10.764</Runtime>
+    <Must>Abs.Abs</Must>
+    <Must>Abs.X</Must>
+    <Must>OK</Must>
+    <Must>exclusive_me</Must>
+    <Must>invalid_me</Must>
+    <Must>mesi.exclusive_me</Must>
+    <Must>mesi.garde_me1</Must>
+    <Must>mesi.garde_me2</Must>
+    <Must>mesi.garde_me3</Must>
+    <Must>mesi.garde_me4</Must>
+    <Must>mesi.invalid_me</Must>
+    <Must>mesi.modified_me</Must>
+    <Must>mesi.shared_me</Must>
+    <Must>modified_me</Must>
+    <Must>shared_me</Must>
+  </MustElements>
+</Results>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.009</UcRuntime>
+   <Timeout unit="sec">30.235</Timeout>
+   <ProofTime unit="sec">0.038</ProofTime>
+   <Runtime unit="sec">0.047</Runtime>
+   <IVC>OK</IVC>
+   <IVC>STEPS_TO_COOK</IVC>
+   <IVC>rlt_condact_resetmicrowave_microwave_KEYPAD_PROCESSING_rlt_clock</IVC>
+   <IVC>rlt_condact_resetmicrowave_microwave_KEYPAD_PROCESSING_rlt_init_step</IVC>
+   <TRIVC>rlt_condact_resetmicrowave_microwave_KEYPAD_PROCESSING_rlt_init_step</TRIVC>
+   <TRIVC>STEPS_TO_COOK</TRIVC>
+   <TRIVC>rlt_condact_resetmicrowave_microwave_KEYPAD_PROCESSING_rlt_clock</TRIVC>
+   <TRIVC>OK</TRIVC>
+</Results>

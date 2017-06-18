@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[OK]">
+    <Runtime unit="sec">3.047</Runtime>
+    <IVC>MayMove1</IVC>
+    <IVC>MayMove2</IVC>
+    <IVC>OK</IVC>
+    <IVC>fedge~0.f</IVC>
+    <IVC>fedge~0.redge~0.r</IVC>
+    <IVC>fedge~0.redge~0.signal</IVC>
+    <IVC>fedge~0.signal</IVC>
+    <IVC>fedge~1.f</IVC>
+    <IVC>fedge~1.redge~0.r</IVC>
+    <IVC>fedge~1.redge~0.signal</IVC>
+    <IVC>fedge~1.signal</IVC>
+    <IVC>moving</IVC>
+    <IVC>redge~0.r</IVC>
+    <IVC>redge~0.signal</IVC>
+    <IVC>redge~1.r</IVC>
+    <IVC>redge~1.signal</IVC>
+    <IVC>redge~2.r</IVC>
+    <IVC>redge~2.signal</IVC>
+    <IVC>redge~3.r</IVC>
+    <IVC>redge~3.signal</IVC>
+    <IVC>start1</IVC>
+    <IVC>start2</IVC>
+    <IVC>stop</IVC>
+    <IVC>sustain~0.off</IVC>
+    <IVC>sustain~0.on</IVC>
+    <IVC>sustain~0.s</IVC>
+  </MinimalIvc>
+</Results>

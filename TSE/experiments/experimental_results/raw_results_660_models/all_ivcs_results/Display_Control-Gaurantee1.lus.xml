@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="19">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="20">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="21">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="22">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="23">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="24">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="25">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="26">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Property name="__GUARANTEE1">
+    <Runtime unit="sec">2.631</Runtime>
+    <Answer source="pdr">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</MustElem>
+    <MustElem>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_value</MustElem>
+    <MustElem>__GUARANTEE1</MustElem>
+    <MustElem>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</MustElem>
+    <MustElem>Microwave_SEng5861__Display_Control__Impl__update_digit~1.digit</MustElem>
+    <MustElem>Microwave_SEng5861__Display_Control__Impl__update_digit~1.prev_right</MustElem>
+    <MustElem>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</MustElem>
+    <IvcSet number="1">
+    <Invariant>(((((((((((right_eq + (-9)) = 0) or ((right_eq + (-3)) = 0)) or ((right_eq + (-6)) = 0)) or ((right_eq + (-2)) = 0)) or ((right_eq + (-7)) = 0)) or ((right_eq + (-4)) = 0)) or ((right_eq + (-1)) = 0)) or ((right_eq + (-8)) = 0)) or (Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit = 0)) or (5 = right_eq))</Invariant>
+    <Invariant>__GUARANTEE1</Invariant>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_value</Ivc>
+    <Ivc>__GUARANTEE1</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.digit</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.prev_right</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</Ivc>
+    </IvcSet>
+  </Property>

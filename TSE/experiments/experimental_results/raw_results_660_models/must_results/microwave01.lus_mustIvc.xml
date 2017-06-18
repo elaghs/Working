@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">3.611</Runtime>
+    <Must>OK</Must>
+    <Must>chart_microwave_mode_logic_begin_state_states___root</Must>
+    <Must>chart_microwave_mode_logic_final_state_states___root</Must>
+    <Must>rlt_enter_microwave_mode_logic_ON_rlt_fired_0</Must>
+    <Must>rlt_enter_microwave_mode_logic_ON_rlt_fired_2</Must>
+    <Must>rlt_enter_microwave_mode_logic_ON_rlt_state_1_states___root</Must>
+    <Must>rlt_enter_microwave_mode_logic_ON_rlt_state_2_states___root</Must>
+    <Must>rlt_enter_microwave_mode_logic_ON_rlt_state_4_states___root</Must>
+    <Must>rlt_enter_microwave_mode_logic_rlt_state_2_states___root</Must>
+    <Must>rlt_eval_microwave_mode_logic_ON_rlt_state_1_states___root</Must>
+    <Must>rlt_eval_microwave_mode_logic_ON_rlt_state_2_states___root</Must>
+    <Must>rlt_eval_microwave_mode_logic_ON_rlt_state_3_states___root</Must>
+    <Must>rlt_eval_microwave_mode_logic_ON_rlt_state_4_states___root</Must>
+    <Must>rlt_eval_microwave_mode_logic_ON_rlt_state_6_states___root</Must>
+    <Must>rlt_eval_microwave_mode_logic_ON_rlt_state_7_states___root</Must>
+    <Must>rlt_eval_microwave_mode_logic_ON_rlt_state_9_states___root</Must>
+    <Must>rlt_eval_microwave_mode_logic_ON_rlt_state_10_states___root</Must>
+    <Must>rlt_eval_microwave_mode_logic_ON_rlt_state_11_states___root</Must>
+    <Must>rlt_eval_microwave_mode_logic_rlt_state_2_states___root</Must>
+    <Must>rlt_eval_microwave_mode_logic_rlt_state_3_states___root</Must>
+  </MustElements>
+</Results>

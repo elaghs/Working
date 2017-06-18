@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[__GUARANTEE59]">
+    <Runtime unit="sec">3.836</Runtime>
+    <IVC>_TOP__ASSERT__69</IVC>
+    <IVC>_TOP__CONFIG~0.CONFIG_OUT.Configured</IVC>
+    <IVC>_TOP__CONFIG~0.CONFIG_OUT.Request_Patient_Drug_Info</IVC>
+    <IVC>_TOP__CONFIG~0.DB_IN.Flow_Rate_High</IVC>
+    <IVC>_TOP__CONFIG~0.DB_IN.Flow_Rate_Low</IVC>
+    <IVC>_TOP__CONFIG~0.DB_IN.Number_Max_Patient_Bolus</IVC>
+    <IVC>_TOP__CONFIG~0.DB_IN.VTBI_High</IVC>
+    <IVC>_TOP__CONFIG~0.DB_IN.VTBI_Low</IVC>
+    <IVC>_TOP__CONFIG~0.PRES_IN.Duration_Intermittent_Bolus</IVC>
+    <IVC>_TOP__CONFIG~0.PRES_IN.Flow_Rate_Basal</IVC>
+    <IVC>_TOP__CONFIG~0.PRES_IN.Flow_Rate_Intermittent_Bolus</IVC>
+    <IVC>_TOP__CONFIG~0.PRES_IN.Flow_Rate_Patient_Bolus</IVC>
+    <IVC>_TOP__CONFIG~0.PRES_IN.Interval_Intermittent_Bolus</IVC>
+    <IVC>_TOP__CONFIG~0.PRES_IN.Max_Number_of_Patient_Bolus</IVC>
+    <IVC>_TOP__CONFIG~0.PRES_IN.VTBI_Total</IVC>
+    <IVC>_TOP__CONFIG~0.__ASSERT</IVC>
+    <IVC>_TOP__CONFIG~0.__ASSUME__CONJ</IVC>
+    <IVC>_TOP__CONFIG~0.__ASSUME__HIST</IVC>
+    <IVC>_TOP__CONFIG~0.__CONFIG__ASSERT__6</IVC>
+    <IVC>_TOP__CONFIG~0.__CONFIG__PROP__6</IVC>
+    <IVC>_TOP__OUTPUT~0.CONFIG_IN.Configured</IVC>
+    <IVC>_TOP__OUTPUT~0.CONFIG_IN.Request_Patient_Drug_Info</IVC>
+    <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Configured</IVC>
+    <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Request_Patient_Drug_Info</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSERT</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSUME__CONJ</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSUME__HIST</IVC>
+    <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__21</IVC>
+    <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__25</IVC>
+    <IVC>__GUARANTEE59</IVC>
+  </MinimalIvc>
+</Results>

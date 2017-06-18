@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">1.723</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>V72_dirty</MustElem>
+    <MustElem>V140_g01</MustElem>
+    <MustElem>V151_g12</MustElem>
+    <MustElem>V75_env</MustElem>
+    <MustElem>V71_shared_dirty</MustElem>
+    <MustElem>V69_exclusive</MustElem>
+    <MustElem>V74_erreur</MustElem>
+    <MustElem>V143_g04</MustElem>
+    <MustElem>V185_First</MustElem>
+    <MustElem>V144_g05</MustElem>
+    <MustElem>V73_invalid</MustElem>
+    <MustElem>V70_shared</MustElem>
+    <MustElem>V142_g03</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>V173_X</MustElem>
+    <MustElem>V152_mem_init</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Ivc>V72_dirty</Ivc>
+    <Ivc>V140_g01</Ivc>
+    <Ivc>V151_g12</Ivc>
+    <Ivc>V75_env</Ivc>
+    <Ivc>V71_shared_dirty</Ivc>
+    <Ivc>V69_exclusive</Ivc>
+    <Ivc>V143_g04</Ivc>
+    <Ivc>V74_erreur</Ivc>
+    <Ivc>V185_First</Ivc>
+    <Ivc>V144_g05</Ivc>
+    <Ivc>V73_invalid</Ivc>
+    <Ivc>V70_shared</Ivc>
+    <Ivc>V142_g03</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V173_X</Ivc>
+    <Ivc>V152_mem_init</Ivc>
+    </IvcSet>
+  </Property>

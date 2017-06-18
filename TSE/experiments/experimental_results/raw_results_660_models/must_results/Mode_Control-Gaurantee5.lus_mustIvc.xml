@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[__GUARANTEE5]">
+    <Runtime unit="sec">0.894</Runtime>
+    <Must>__GUARANTEE5</Must>
+    <Must>defs__is_cooking._outvar</Must>
+    <Must>defs__is_cooking.m</Must>
+    <Must>defs__is_setup._outvar</Must>
+    <Must>defs__is_setup.m</Must>
+  </MustElements>
+</Results>

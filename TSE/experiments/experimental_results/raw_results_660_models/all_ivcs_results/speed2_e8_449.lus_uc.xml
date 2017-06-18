@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.016</UcRuntime>
+   <Timeout unit="sec">30.22</Timeout>
+   <ProofTime unit="sec">0.028</ProofTime>
+   <Runtime unit="sec">0.044</Runtime>
+   <IVC>OK</IVC>
+   <IVC>early</IVC>
+   <IVC>late</IVC>
+   <IVC>speed~0.COUNTER~0.C</IVC>
+   <IVC>speed~0.COUNTER~0.PC</IVC>
+   <IVC>speed~0.COUNTER~0.incr</IVC>
+   <IVC>speed~0.COUNTER~0.reset</IVC>
+   <IVC>speed~0.diff</IVC>
+   <IVC>speed~0.early</IVC>
+   <IVC>speed~0.incr</IVC>
+   <IVC>speed~0.late</IVC>
+   <TRIVC>speed~0.early</TRIVC>
+   <TRIVC>speed~0.diff</TRIVC>
+   <TRIVC>speed~0.COUNTER~0.C</TRIVC>
+   <TRIVC>speed~0.COUNTER~0.PC</TRIVC>
+   <TRIVC>speed~0.late</TRIVC>
+   <TRIVC>speed~0.incr</TRIVC>
+   <TRIVC>late</TRIVC>
+   <TRIVC>speed~0.COUNTER~0.reset</TRIVC>
+   <TRIVC>speed~0.COUNTER~0.incr</TRIVC>
+   <TRIVC>OK</TRIVC>
+   <TRIVC>early</TRIVC>
+</Results>

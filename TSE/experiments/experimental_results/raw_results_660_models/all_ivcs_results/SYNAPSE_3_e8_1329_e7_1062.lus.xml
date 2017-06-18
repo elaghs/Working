@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="19">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="20">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="21">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="22">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="23">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="24">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="25">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="26">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="27">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="28">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="29">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="30">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="31">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="32">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="33">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="34">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">2.723</Runtime>
+    <Answer source="pdr">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>invalid_s</MustElem>
+    <MustElem>synapse~0.dirty_s</MustElem>
+    <MustElem>First~0.First</MustElem>
+    <MustElem>synapse~0.valid_s</MustElem>
+    <MustElem>synapse~0.invalid_s</MustElem>
+    <MustElem>valid_s</MustElem>
+    <MustElem>synapse~0.init_invalid_s</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>synapse~0.mem_init_s</MustElem>
+    <MustElem>First~0.X</MustElem>
+    <MustElem>dirty_s</MustElem>
+    <IvcSet number="1">
+    <Invariant>((not (((-synapse~0.dirty_s) + 1) &lt;= 0)) or (First~0.First = (synapse~0.valid_s + (synapse~0.invalid_s + 1))))</Invariant>
+    <Invariant>((not (((-synapse~0.dirty_s) + 1) &lt;= 0)) or ((synapse~0.dirty_s + (-1)) = 0))</Invariant>
+    <Invariant>((synapse~0.dirty_s = 0) or (((-synapse~0.dirty_s) + 1) &lt;= 0))</Invariant>
+    <Invariant>((synapse~0.valid_s &lt;= 0) or (synapse~0.dirty_s = 0))</Invariant>
+    <Invariant>((First~0.First = ((2 * synapse~0.dirty_s) + (synapse~0.valid_s + synapse~0.invalid_s))) or (not (synapse~0.dirty_s = 0)))</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>invalid_s</Ivc>
+    <Ivc>First~0.First</Ivc>
+    <Ivc>synapse~0.dirty_s</Ivc>
+    <Ivc>synapse~0.valid_s</Ivc>
+    <Ivc>synapse~0.invalid_s</Ivc>
+    <Ivc>valid_s</Ivc>
+    <Ivc>synapse~0.init_invalid_s</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>First~0.X</Ivc>
+    <Ivc>synapse~0.mem_init_s</Ivc>
+    <Ivc>dirty_s</Ivc>
+    </IvcSet>
+  </Property>

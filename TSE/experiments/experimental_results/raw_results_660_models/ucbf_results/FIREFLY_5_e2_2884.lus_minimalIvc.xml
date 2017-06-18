@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[OK]">
+    <Runtime unit="sec">0.852</Runtime>
+    <IVC>OK</IVC>
+    <IVC>Sofar~0.Sofar</IVC>
+    <IVC>dirty</IVC>
+    <IVC>env</IVC>
+    <IVC>firefly~0.dirty</IVC>
+    <IVC>firefly~0.garde2</IVC>
+    <IVC>firefly~0.garde7</IVC>
+  </MinimalIvc>
+</Results>

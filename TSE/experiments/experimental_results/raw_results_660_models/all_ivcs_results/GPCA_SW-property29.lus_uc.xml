@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.478</UcRuntime>
+   <Timeout unit="sec">41.165</Timeout>
+   <ProofTime unit="sec">1.755</ProofTime>
+   <Runtime unit="sec">2.2329999999999997</Runtime>
+   <IVC>DEFS__is_on~0._outvar</IVC>
+   <IVC>DEFS__is_on~0.mode</IVC>
+   <IVC>_TOP__ASSERT__8</IVC>
+   <IVC>_TOP__ASSERT__39</IVC>
+   <IVC>_TOP__IM~0.CONFIG_IN.Configured</IVC>
+   <IVC>_TOP__IM~0.IM_OUT.Current_System_Mode</IVC>
+   <IVC>_TOP__IM~0.IM_OUT.New_Infusion</IVC>
+   <IVC>_TOP__IM~0.__ASSERT</IVC>
+   <IVC>_TOP__IM~0.__ASSUME__CONJ</IVC>
+   <IVC>_TOP__IM~0.__ASSUME__HIST</IVC>
+   <IVC>_TOP__IM~0.__IM__ASSERT__14</IVC>
+   <IVC>_TOP__IM~0.__IM__PROP__12</IVC>
+   <IVC>_TOP__OUTPUT~0.CONFIG_IN.Configured</IVC>
+   <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Configured</IVC>
+   <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</IVC>
+   <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.New_Infusion</IVC>
+   <IVC>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</IVC>
+   <IVC>_TOP__OUTPUT~0.IM_IN.New_Infusion</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSERT</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSUME__CONJ</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSUME__HIST</IVC>
+   <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__21</IVC>
+   <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__27</IVC>
+   <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__30</IVC>
+   <IVC>__GUARANTEE29</IVC>
+   <TRIVC>DEFS__is_on~0.mode</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.IM_IN.New_Infusion</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.GPCA_SW_OUT.New_Infusion</TRIVC>
+   <TRIVC>_TOP__ASSERT__8</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__OUTPUT__PROP__30</TRIVC>
+   <TRIVC>_TOP__IM~0.__ASSERT</TRIVC>
+   <TRIVC>_TOP__ASSERT__39</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSERT</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Configured</TRIVC>
+   <TRIVC>_TOP__IM~0.__IM__ASSERT__14</TRIVC>
+   <TRIVC>_TOP__IM~0.CONFIG_IN.Configured</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__OUTPUT__PROP__27</TRIVC>
+   <TRIVC>__GUARANTEE29</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.CONFIG_IN.Configured</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__OUTPUT__PROP__21</TRIVC>
+   <TRIVC>DEFS__is_on~0._outvar</TRIVC>
+   <TRIVC>_TOP__IM~0.IM_OUT.Current_System_Mode</TRIVC>
+   <TRIVC>_TOP__IM~0.IM_OUT.New_Infusion</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSUME__CONJ</TRIVC>
+   <TRIVC>_TOP__IM~0.__ASSUME__HIST</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSUME__HIST</TRIVC>
+   <TRIVC>_TOP__IM~0.__IM__PROP__12</TRIVC>
+   <TRIVC>_TOP__IM~0.__ASSUME__CONJ</TRIVC>
+</Results>

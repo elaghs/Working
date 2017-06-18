@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">0.424</Runtime>
+    <Must>OK</Must>
+    <Must>cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed</Must>
+  </MustElements>
+</Results>

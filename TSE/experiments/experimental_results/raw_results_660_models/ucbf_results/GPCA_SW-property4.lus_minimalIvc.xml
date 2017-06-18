@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[__GUARANTEE4]">
+    <Runtime unit="sec">2.982</Runtime>
+    <IVC>DEFS__Is_Infusion_below_tolerance~0.actual_flow_rate</IVC>
+    <IVC>DEFS__Is_Infusion_below_tolerance~0.desired_flow_rate</IVC>
+    <IVC>DEFS__Is_Infusion_below_tolerance~0.tol</IVC>
+    <IVC>DEFS__Is_Infusion_below_tolerance~0.under</IVC>
+    <IVC>_TOP__ALARM~0.CONST_IN.Tolerance_Min</IVC>
+    <IVC>_TOP__ALARM~0.DEFS__Is_Infusion_below_tolerance~0.actual_flow_rate</IVC>
+    <IVC>_TOP__ALARM~0.DEFS__Is_Infusion_below_tolerance~0.desired_flow_rate</IVC>
+    <IVC>_TOP__ALARM~0.DEFS__Is_Infusion_below_tolerance~0.tol</IVC>
+    <IVC>_TOP__ALARM~0.DEFS__Is_Infusion_below_tolerance~0.under</IVC>
+    <IVC>_TOP__ALARM~0.IM_IN.Commanded_Flow_Rate</IVC>
+    <IVC>_TOP__ALARM~0.SENSOR_IN.Flow_Rate</IVC>
+    <IVC>_TOP__ALARM~0.Time_FR_Under_Min_Tol</IVC>
+    <IVC>_TOP__ALARM~0.__ALARM__ASSERT__7</IVC>
+    <IVC>_TOP__ALARM~0.__ASSERT</IVC>
+    <IVC>_TOP__ASSERT__1</IVC>
+    <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Commanded_Flow_Rate</IVC>
+    <IVC>_TOP__OUTPUT~0.IM_IN.Commanded_Flow_Rate</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSERT</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSUME__CONJ</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSUME__HIST</IVC>
+    <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__29</IVC>
+    <IVC>__GUARANTEE4</IVC>
+  </MinimalIvc>
+</Results>

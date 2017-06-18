@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="19">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="20">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="21">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="22">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Property name="ok">
+    <Runtime unit="sec">4.318</Runtime>
+    <Answer source="pdr">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>pre_y</MustElem>
+    <MustElem>pre_x</MustElem>
+    <MustElem>x</MustElem>
+    <MustElem>y</MustElem>
+    <MustElem>nX</MustElem>
+    <MustElem>nY</MustElem>
+    <MustElem>ok</MustElem>
+    <IvcSet number="1">
+    <Invariant>(((y + (-1)) &lt;= 8) or (((-(-9)) + 1) = y))</Invariant>
+    <Invariant>(((x + (-1)) &lt;= 12) or (not ((y + (-1)) &lt;= 8)))</Invariant>
+    <Invariant>ok</Invariant>
+    <Invariant>(((x + (-1)) &lt;= 10) or (not ((y + (-1)) &lt;= 6)))</Invariant>
+    <Invariant>((x &lt;= 0) or (0 &lt;= (y + (-1))))</Invariant>
+    <Invariant>(0 &lt;= y)</Invariant>
+    <Invariant>(((x + (-1)) &lt;= 2) or (not ((y + (-1)) &lt;= 2)))</Invariant>
+    <Invariant>(((x + (-1)) &lt;= 3) or (not ((y + (-1)) &lt;= 2)))</Invariant>
+    <Invariant>((not ((y + (-1)) &lt;= 4)) or ((x + (-1)) &lt;= 8))</Invariant>
+    <Invariant>(((x + (-1)) &lt;= 0) or (0 &lt;= ((y + (-1)) + (-1))))</Invariant>
+    <Invariant>((not ((y + (-1)) &lt;= 7)) or ((x + (-1)) &lt;= 11))</Invariant>
+    <Invariant>((not ((y + (-1)) &lt;= 5)) or ((x + (-1)) &lt;= 9))</Invariant>
+    <Invariant>((x &lt;= 8) or (0 &lt;= ((y + (-1)) + (-4))))</Invariant>
+    <Invariant>(((x + (-1)) &lt;= 1) or (not ((y + (-1)) &lt;= 1)))</Invariant>
+    <Ivc>pre_y</Ivc>
+    <Ivc>pre_x</Ivc>
+    <Ivc>x</Ivc>
+    <Ivc>y</Ivc>
+    <Ivc>nX</Ivc>
+    <Ivc>nY</Ivc>
+    <Ivc>ok</Ivc>
+    </IvcSet>
+  </Property>

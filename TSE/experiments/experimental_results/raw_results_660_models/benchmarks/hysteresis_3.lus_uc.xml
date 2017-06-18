@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.007</UcRuntime>
+   <Timeout unit="sec">30.27</Timeout>
+   <ProofTime unit="sec">0.047</ProofTime>
+   <Runtime unit="sec">0.054</Runtime>
+   <IVC>OK</IVC>
+   <IVC>V19_late</IVC>
+   <IVC>V20_early</IVC>
+   <IVC>V71_diff</IVC>
+   <IVC>V72_incr</IVC>
+   <IVC>V73_pc</IVC>
+   <TRIVC>V73_pc</TRIVC>
+   <TRIVC>V19_late</TRIVC>
+   <TRIVC>V20_early</TRIVC>
+   <TRIVC>V71_diff</TRIVC>
+   <TRIVC>V72_incr</TRIVC>
+   <TRIVC>OK</TRIVC>
+</Results>

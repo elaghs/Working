@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">30.469</Runtime>
+    <Must>OK</Must>
+    <Must>Sofar.Sofar</Must>
+    <Must>Sofar.X</Must>
+    <Must>ast</Must>
+    <Must>diff0</Must>
+    <Must>main.H0</Must>
+    <Must>main.ast</Must>
+    <Must>main.avance0</Must>
+    <Must>main.controleur.avance</Must>
+    <Must>main.controleur.diff</Must>
+    <Must>main.controleur.nB</Must>
+    <Must>main.controleur.nS</Must>
+    <Must>main.controleur.retard</Must>
+    <Must>main.diff0</Must>
+    <Must>main.hypothese.B</Must>
+    <Must>main.hypothese.S</Must>
+    <Must>main.hypothese.avance</Must>
+    <Must>main.hypothese.c</Must>
+    <Must>main.hypothese.ok</Must>
+    <Must>main.hypothese.retard</Must>
+    <Must>main.nB0</Must>
+    <Must>main.nS</Must>
+    <Must>main.retard0</Must>
+  </MustElements>
+</Results>

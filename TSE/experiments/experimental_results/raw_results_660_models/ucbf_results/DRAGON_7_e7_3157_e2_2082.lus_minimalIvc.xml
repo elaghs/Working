@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[OK]">
+    <Runtime unit="sec">1.068</Runtime>
+    <IVC>DRAGON~0.exclusive</IVC>
+    <IVC>DRAGON~0.g03</IVC>
+    <IVC>DRAGON~0.g06</IVC>
+    <IVC>DRAGON~0.g08</IVC>
+    <IVC>DRAGON~0.g10</IVC>
+    <IVC>DRAGON~0.g12</IVC>
+    <IVC>DRAGON~0.shared</IVC>
+    <IVC>OK</IVC>
+    <IVC>exclusive</IVC>
+    <IVC>shared</IVC>
+  </MinimalIvc>
+</Results>

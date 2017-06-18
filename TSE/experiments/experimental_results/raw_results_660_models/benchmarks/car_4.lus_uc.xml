@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.006</UcRuntime>
+   <Timeout unit="sec">30.205</Timeout>
+   <ProofTime unit="sec">0.035</ProofTime>
+   <Runtime unit="sec">0.041</Runtime>
+   <IVC>OK</IVC>
+   <IVC>Sofar~0.Sofar</IVC>
+   <IVC>env</IVC>
+   <IVC>speed</IVC>
+   <IVC>voiture~0.speed</IVC>
+   <TRIVC>voiture~0.speed</TRIVC>
+   <TRIVC>Sofar~0.Sofar</TRIVC>
+   <TRIVC>OK</TRIVC>
+   <TRIVC>env</TRIVC>
+   <TRIVC>speed</TRIVC>
+</Results>

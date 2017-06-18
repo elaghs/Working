@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[__GUARANTEE9]">
+    <Runtime unit="sec">14.668</Runtime>
+    <Must>_TOP__ASSERT__19</Must>
+    <Must>_TOP__IM.IM_OUT.Current_System_Mode</Must>
+    <Must>_TOP__IM.TLM_MODE_IN.System_On</Must>
+    <Must>_TOP__IM.__ASSERT</Must>
+    <Must>_TOP__IM.__ASSUME__CONJ</Must>
+    <Must>_TOP__IM.__ASSUME__HIST</Must>
+    <Must>_TOP__IM.__IM__ASSERT__4</Must>
+    <Must>_TOP__IM.__IM__PROP__2</Must>
+    <Must>_TOP__OUTPUT.GPCA_SW_OUT.Current_System_Mode</Must>
+    <Must>_TOP__OUTPUT.IM_IN.Current_System_Mode</Must>
+    <Must>_TOP__OUTPUT.__ASSERT</Must>
+    <Must>_TOP__OUTPUT.__ASSUME__CONJ</Must>
+    <Must>_TOP__OUTPUT.__ASSUME__HIST</Must>
+    <Must>_TOP__OUTPUT.__OUTPUT__PROP__27</Must>
+    <Must>_TOP__TLM.OP_CMD_IN.System_Start</Must>
+    <Must>_TOP__TLM.TLM_MODE_OUT.System_On</Must>
+    <Must>_TOP__TLM.__ASSERT</Must>
+    <Must>_TOP__TLM.__ASSUME__CONJ</Must>
+    <Must>_TOP__TLM.__ASSUME__HIST</Must>
+    <Must>_TOP__TLM.__TLM__ASSERT__0</Must>
+    <Must>_TOP__TLM.__TLM__PROP__0</Must>
+    <Must>__GUARANTEE9</Must>
+  </MustElements>
+</Results>

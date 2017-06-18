@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">1.143</Runtime>
+    <Must>OK</Must>
+    <Must>V68_X2</Must>
+    <Must>V141_g02</Must>
+  </MustElements>
+</Results>

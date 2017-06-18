@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">0.219</Runtime>
+    <Must>OK</Must>
+    <Must>microwave_microwave_TIME_ON_DISPLAY_SECONDS_TO_TENS__REMAINDER</Must>
+  </MustElements>
+</Results>

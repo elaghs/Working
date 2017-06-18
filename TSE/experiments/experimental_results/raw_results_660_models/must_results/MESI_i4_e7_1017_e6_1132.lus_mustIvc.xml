@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">1.662</Runtime>
+    <Must>OK</Must>
+    <Must>V29_modified_me</Must>
+    <Must>V30_exclusive_me</Must>
+    <Must>V31_shared_me</Must>
+    <Must>V32_invalid_me</Must>
+    <Must>V73_garde_me1</Must>
+    <Must>V74_garde_me2</Must>
+    <Must>V75_garde_me3</Must>
+    <Must>V76_garde_me4</Must>
+  </MustElements>
+</Results>

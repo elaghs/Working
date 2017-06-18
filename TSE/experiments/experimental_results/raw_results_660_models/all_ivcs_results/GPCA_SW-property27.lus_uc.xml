@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.394</UcRuntime>
+   <Timeout unit="sec">45.835</Timeout>
+   <ProofTime unit="sec">2.773</ProofTime>
+   <Runtime unit="sec">3.1670000000000003</Runtime>
+   <IVC>_TOP__ASSERT__37</IVC>
+   <IVC>_TOP__IM~0.IM_OUT.Commanded_Flow_Rate</IVC>
+   <IVC>_TOP__IM~0.IM_OUT.Current_System_Mode</IVC>
+   <IVC>_TOP__IM~0.__ASSERT</IVC>
+   <IVC>_TOP__IM~0.__ASSUME__CONJ</IVC>
+   <IVC>_TOP__IM~0.__ASSUME__HIST</IVC>
+   <IVC>_TOP__IM~0.__IM__ASSERT__2</IVC>
+   <IVC>_TOP__IM~0.__IM__PROP__0</IVC>
+   <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Commanded_Flow_Rate</IVC>
+   <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</IVC>
+   <IVC>_TOP__OUTPUT~0.IM_IN.Commanded_Flow_Rate</IVC>
+   <IVC>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSERT</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSUME__CONJ</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSUME__HIST</IVC>
+   <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__27</IVC>
+   <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__29</IVC>
+   <IVC>__GUARANTEE27</IVC>
+   <TRIVC>_TOP__OUTPUT~0.__OUTPUT__PROP__27</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Commanded_Flow_Rate</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</TRIVC>
+   <TRIVC>__GUARANTEE27</TRIVC>
+   <TRIVC>_TOP__IM~0.IM_OUT.Current_System_Mode</TRIVC>
+   <TRIVC>_TOP__IM~0.__ASSERT</TRIVC>
+   <TRIVC>_TOP__ASSERT__37</TRIVC>
+   <TRIVC>_TOP__IM~0.IM_OUT.Commanded_Flow_Rate</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSERT</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.IM_IN.Commanded_Flow_Rate</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</TRIVC>
+   <TRIVC>_TOP__IM~0.__IM__ASSERT__2</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSUME__CONJ</TRIVC>
+   <TRIVC>_TOP__IM~0.__ASSUME__HIST</TRIVC>
+   <TRIVC>_TOP__IM~0.__IM__PROP__0</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSUME__HIST</TRIVC>
+   <TRIVC>_TOP__IM~0.__ASSUME__CONJ</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__OUTPUT__PROP__29</TRIVC>
+</Results>

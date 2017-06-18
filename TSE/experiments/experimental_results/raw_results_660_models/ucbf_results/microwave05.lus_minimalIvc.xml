@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[OK]">
+    <Runtime unit="sec">8.665</Runtime>
+    <IVC>OK</IVC>
+    <IVC>STEPS_TO_COOK</IVC>
+    <IVC>chart_microwave_mode_logic_begin_state_outports_steps_remaining</IVC>
+    <IVC>chart_microwave_mode_logic_steps_remaining</IVC>
+    <IVC>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_LEFT_DIGIT_DIGIT_TO_DISPLAY</IVC>
+    <IVC>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_MIDDLE_DIGIT_DIGIT_TO_DISPLAY</IVC>
+    <IVC>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_RIGHT_DIGIT_DIGIT_TO_DISPLAY</IVC>
+    <IVC>microwave_microwave_TIME_ON_DISPLAY_SECONDS_TO_MINUTES__QUOTIENT</IVC>
+    <IVC>rlt_condact_resetmicrowave_microwave_KEYPAD_PROCESSING_rlt_init_step</IVC>
+    <IVC>rlt_eval_microwave_mode_logic_ON_rlt_fired_5</IVC>
+    <IVC>rlt_eval_microwave_mode_logic_ON_rlt_state_6_outports_steps_remaining</IVC>
+    <IVC>rlt_eval_microwave_mode_logic_rlt_state_1_outports_steps_remaining</IVC>
+  </MinimalIvc>
+</Results>

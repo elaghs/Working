@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[__GUARANTEE4]">
+    <Runtime unit="sec">0.759</Runtime>
+    <IVC>__GUARANTEE4</IVC>
+    <IVC>defs__is_running~1._outvar</IVC>
+    <IVC>defs__is_running~1.m</IVC>
+    <IVC>defs__is_suspended~1._outvar</IVC>
+    <IVC>defs__is_suspended~1.m</IVC>
+    <IVC>defs__rising_edge~2.re</IVC>
+    <IVC>defs__rising_edge~2.signal</IVC>
+  </MinimalIvc>
+</Results>

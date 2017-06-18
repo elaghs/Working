@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.013</UcRuntime>
+   <Timeout unit="sec">34.515</Timeout>
+   <ProofTime unit="sec">0.89</ProofTime>
+   <Runtime unit="sec">0.903</Runtime>
+   <IVC>Age~0.age_of_p</IVC>
+   <IVC>Age~1.age_of_p</IVC>
+   <IVC>Age~1.p</IVC>
+   <IVC>OK</IVC>
+   <IVC>Sofar~0.Sofar</IVC>
+   <IVC>Sofar~0.X</IVC>
+   <IVC>env</IVC>
+   <IVC>k</IVC>
+   <TRIVC>Age~1.age_of_p</TRIVC>
+   <TRIVC>Sofar~0.X</TRIVC>
+   <TRIVC>Age~1.p</TRIVC>
+   <TRIVC>Sofar~0.Sofar</TRIVC>
+   <TRIVC>k</TRIVC>
+   <TRIVC>OK</TRIVC>
+   <TRIVC>env</TRIVC>
+   <TRIVC>Age~0.age_of_p</TRIVC>
+</Results>

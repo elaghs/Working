@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="19">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="20">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">81.408</Runtime>
+    <Answer source="pdr">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>zz163</MustElem>
+    <MustElem>zz162</MustElem>
+    <MustElem>zz161</MustElem>
+    <MustElem>zz82</MustElem>
+    <MustElem>zz160</MustElem>
+    <MustElem>zz41</MustElem>
+    <MustElem>zz40</MustElem>
+    <MustElem>zz87</MustElem>
+    <MustElem>zz43</MustElem>
+    <MustElem>zz42</MustElem>
+    <MustElem>SP3c</MustElem>
+    <MustElem>mode</MustElem>
+    <MustElem>zz128</MustElem>
+    <MustElem>zz34</MustElem>
+    <MustElem>zz33</MustElem>
+    <MustElem>zz35</MustElem>
+    <MustElem>zz201</MustElem>
+    <MustElem>zz38</MustElem>
+    <MustElem>zz37</MustElem>
+    <MustElem>zz39</MustElem>
+    <MustElem>zz70</MustElem>
+    <MustElem>zz72</MustElem>
+    <MustElem>zz151</MustElem>
+    <MustElem>zz71</MustElem>
+    <MustElem>zz150</MustElem>
+    <MustElem>zz74</MustElem>
+    <MustElem>zz76</MustElem>
+    <MustElem>zz32</MustElem>
+    <MustElem>zz75</MustElem>
+    <MustElem>zz31</MustElem>
+    <MustElem>zz22</MustElem>
+    <MustElem>zz69</MustElem>
+    <MustElem>zz25</MustElem>
+    <MustElem>zz158</MustElem>
+    <MustElem>zz27</MustElem>
+    <MustElem>zz112</MustElem>
+    <MustElem>zz26</MustElem>
+    <MustElem>zz156</MustElem>
+    <MustElem>zz111</MustElem>
+    <MustElem>zz29</MustElem>
+    <MustElem>zz155</MustElem>
+    <MustElem>zz110</MustElem>
+    <MustElem>zz28</MustElem>
+    <MustElem>zz142</MustElem>
+    <MustElem>zz141</MustElem>
+    <MustElem>zz140</MustElem>
+    <MustElem>zz60</MustElem>
+    <MustElem>zz21</MustElem>
+    <MustElem>zz20</MustElem>
+    <MustElem>zz19</MustElem>
+    <MustElem>zz109</MustElem>
+    <MustElem>zz108</MustElem>
+    <MustElem>zz107</MustElem>
+    <MustElem>zz56</MustElem>
+    <MustElem>zz106</MustElem>
+    <MustElem>zz55</MustElem>
+    <MustElem>zz99</MustElem>
+    <MustElem>zz105</MustElem>
+    <MustElem>zz149</MustElem>
+    <MustElem>zz58</MustElem>
+    <MustElem>zz104</MustElem>
+    <MustElem>zz103</MustElem>
+    <MustElem>zz147</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>zz102</MustElem>
+    <MustElem>zz146</MustElem>
+    <MustElem>zz59</MustElem>
+    <MustElem>zz101</MustElem>
+    <MustElem>zz15</MustElem>
+    <MustElem>zz145</MustElem>
+    <MustElem>zz100</MustElem>
+    <MustElem>zz144</MustElem>
+    <MustElem>zz91</MustElem>
+    <MustElem>zz94</MustElem>
+    <MustElem>zz50</MustElem>
+    <MustElem>zz93</MustElem>
+    <MustElem>zz96</MustElem>
+    <MustElem>zz52</MustElem>
+    <MustElem>zz95</MustElem>
+    <MustElem>zz51</MustElem>
+    <MustElem>zz54</MustElem>
+    <MustElem>zz98</MustElem>
+    <MustElem>zz97</MustElem>
+    <MustElem>zz53</MustElem>
+    <MustElem>zz90</MustElem>
+    <MustElem>zz89</MustElem>
+    <MustElem>zz45</MustElem>
+    <MustElem>zz44</MustElem>
+    <MustElem>zz138</MustElem>
+    <MustElem>zz47</MustElem>
+    <MustElem>zz46</MustElem>
+    <MustElem>zz49</MustElem>
+    <MustElem>zz48</MustElem>
+    <MustElem>zz133</MustElem>
+    <IvcSet number="1">
+    <Invariant>((not zz162) or (4 = zz161))</Invariant>
+    <Invariant>((((not OK) or (not zz162)) or (6 = mode)) or (4 = mode))</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>zz163</Ivc>
+    <Ivc>zz162</Ivc>
+    <Ivc>zz161</Ivc>
+    <Ivc>zz82</Ivc>
+    <Ivc>zz160</Ivc>
+    <Ivc>zz41</Ivc>
+    <Ivc>zz40</Ivc>
+    <Ivc>zz87</Ivc>
+    <Ivc>zz43</Ivc>
+    <Ivc>zz42</Ivc>
+    <Ivc>SP3c</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>zz128</Ivc>
+    <Ivc>zz34</Ivc>
+    <Ivc>zz33</Ivc>
+    <Ivc>zz35</Ivc>
+    <Ivc>zz201</Ivc>
+    <Ivc>zz38</Ivc>
+    <Ivc>zz37</Ivc>
+    <Ivc>zz39</Ivc>
+    <Ivc>zz70</Ivc>
+    <Ivc>zz151</Ivc>
+    <Ivc>zz72</Ivc>
+    <Ivc>zz71</Ivc>
+    <Ivc>zz150</Ivc>
+    <Ivc>zz74</Ivc>
+    <Ivc>zz32</Ivc>
+    <Ivc>zz76</Ivc>
+    <Ivc>zz31</Ivc>
+    <Ivc>zz75</Ivc>
+    <Ivc>zz22</Ivc>
+    <Ivc>zz69</Ivc>
+    <Ivc>zz25</Ivc>
+    <Ivc>zz158</Ivc>
+    <Ivc>zz27</Ivc>
+    <Ivc>zz112</Ivc>
+    <Ivc>zz26</Ivc>
+    <Ivc>zz156</Ivc>
+    <Ivc>zz29</Ivc>
+    <Ivc>zz111</Ivc>
+    <Ivc>zz155</Ivc>
+    <Ivc>zz28</Ivc>
+    <Ivc>zz110</Ivc>
+    <Ivc>zz142</Ivc>
+    <Ivc>zz141</Ivc>
+    <Ivc>zz140</Ivc>
+    <Ivc>zz60</Ivc>
+    <Ivc>zz21</Ivc>
+    <Ivc>zz20</Ivc>
+    <Ivc>zz19</Ivc>
+    <Ivc>zz109</Ivc>
+    <Ivc>zz108</Ivc>
+    <Ivc>zz107</Ivc>
+    <Ivc>zz56</Ivc>
+    <Ivc>zz106</Ivc>
+    <Ivc>zz149</Ivc>
+    <Ivc>zz55</Ivc>
+    <Ivc>zz105</Ivc>
+    <Ivc>zz99</Ivc>
+    <Ivc>zz58</Ivc>
+    <Ivc>zz104</Ivc>
+    <Ivc>zz147</Ivc>
+    <Ivc>zz103</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>zz102</Ivc>
+    <Ivc>zz146</Ivc>
+    <Ivc>zz59</Ivc>
+    <Ivc>zz101</Ivc>
+    <Ivc>zz145</Ivc>
+    <Ivc>zz15</Ivc>
+    <Ivc>zz144</Ivc>
+    <Ivc>zz100</Ivc>
+    <Ivc>zz91</Ivc>
+    <Ivc>zz50</Ivc>
+    <Ivc>zz94</Ivc>
+    <Ivc>zz93</Ivc>
+    <Ivc>zz52</Ivc>
+    <Ivc>zz96</Ivc>
+    <Ivc>zz95</Ivc>
+    <Ivc>zz51</Ivc>
+    <Ivc>zz98</Ivc>
+    <Ivc>zz54</Ivc>
+    <Ivc>zz97</Ivc>
+    <Ivc>zz53</Ivc>
+    <Ivc>zz90</Ivc>
+    <Ivc>zz89</Ivc>
+    <Ivc>zz45</Ivc>
+    <Ivc>zz44</Ivc>
+    <Ivc>zz138</Ivc>
+    <Ivc>zz47</Ivc>
+    <Ivc>zz46</Ivc>
+    <Ivc>zz49</Ivc>
+    <Ivc>zz48</Ivc>
+    <Ivc>zz133</Ivc>
+    </IvcSet>
+  </Property>

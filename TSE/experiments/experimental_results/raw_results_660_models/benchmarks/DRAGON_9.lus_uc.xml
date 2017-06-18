@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.016</UcRuntime>
+   <Timeout unit="sec">30.42</Timeout>
+   <ProofTime unit="sec">0.068</ProofTime>
+   <Runtime unit="sec">0.084</Runtime>
+   <IVC>DRAGON~0.dirty</IVC>
+   <IVC>DRAGON~0.g09</IVC>
+   <IVC>OK</IVC>
+   <IVC>Sofar~0.Sofar</IVC>
+   <IVC>dirty</IVC>
+   <IVC>env</IVC>
+   <TRIVC>dirty</TRIVC>
+   <TRIVC>DRAGON~0.g09</TRIVC>
+   <TRIVC>DRAGON~0.dirty</TRIVC>
+   <TRIVC>Sofar~0.Sofar</TRIVC>
+   <TRIVC>OK</TRIVC>
+   <TRIVC>env</TRIVC>
+</Results>

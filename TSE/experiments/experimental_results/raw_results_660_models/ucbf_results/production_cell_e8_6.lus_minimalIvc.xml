@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[OK]">
+    <Runtime unit="sec">1.26</Runtime>
+    <IVC>OK</IVC>
+    <IVC>V16_MayMove1</IVC>
+    <IVC>V17_MayMove2</IVC>
+    <IVC>V18_start1</IVC>
+    <IVC>V19_start2</IVC>
+    <IVC>V20_stop</IVC>
+    <IVC>V21_moving</IVC>
+    <IVC>V58_on</IVC>
+    <IVC>V66_signal</IVC>
+    <IVC>V75_signal</IVC>
+    <IVC>V86_signal</IVC>
+    <IVC>V90_signal</IVC>
+  </MinimalIvc>
+</Results>

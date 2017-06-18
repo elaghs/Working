@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">0.613</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>0</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>desiredSpeed</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>zz234</MustElem>
+    <MustElem>zz233</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Ivc>desiredSpeed</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>zz234</Ivc>
+    <Ivc>zz233</Ivc>
+    </IvcSet>
+  </Property>

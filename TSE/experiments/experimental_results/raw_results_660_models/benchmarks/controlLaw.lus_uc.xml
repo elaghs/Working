@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.006</UcRuntime>
+   <Timeout unit="sec">30.195</Timeout>
+   <ProofTime unit="sec">0.033</ProofTime>
+   <Runtime unit="sec">0.039</Runtime>
+   <IVC>c1</IVC>
+   <IVC>c2</IVC>
+   <IVC>c3</IVC>
+   <IVC>check</IVC>
+   <IVC>integ</IVC>
+   <IVC>sum1</IVC>
+   <TRIVC>c3</TRIVC>
+   <TRIVC>sum1</TRIVC>
+   <TRIVC>integ</TRIVC>
+   <TRIVC>check</TRIVC>
+   <TRIVC>c1</TRIVC>
+   <TRIVC>c2</TRIVC>
+</Results>

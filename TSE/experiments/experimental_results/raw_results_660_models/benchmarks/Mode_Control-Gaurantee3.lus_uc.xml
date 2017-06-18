@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.008</UcRuntime>
+   <Timeout unit="sec">30.205</Timeout>
+   <ProofTime unit="sec">0.033</ProofTime>
+   <Runtime unit="sec">0.041</Runtime>
+   <IVC>__GUARANTEE3</IVC>
+   <IVC>defs__is_cooking~0._outvar</IVC>
+   <IVC>defs__is_cooking~0.m</IVC>
+   <IVC>defs__is_cooking~1._outvar</IVC>
+   <IVC>defs__is_cooking~1.m</IVC>
+   <IVC>defs__is_running~1._outvar</IVC>
+   <IVC>defs__is_running~1.m</IVC>
+   <IVC>defs__rising_edge~2.re</IVC>
+   <IVC>defs__rising_edge~2.signal</IVC>
+   <TRIVC>__GUARANTEE3</TRIVC>
+   <TRIVC>defs__rising_edge~2.signal</TRIVC>
+   <TRIVC>defs__is_cooking~0._outvar</TRIVC>
+   <TRIVC>defs__is_cooking~0.m</TRIVC>
+   <TRIVC>defs__is_running~1.m</TRIVC>
+   <TRIVC>defs__is_cooking~1._outvar</TRIVC>
+   <TRIVC>defs__is_cooking~1.m</TRIVC>
+   <TRIVC>defs__rising_edge~2.re</TRIVC>
+   <TRIVC>defs__is_running~1._outvar</TRIVC>
+</Results>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[__GUARANTEE6]">
+    <Runtime unit="sec">0.757</Runtime>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</IVC>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~1.digit</IVC>
+    <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~2.digit</IVC>
+    <IVC>__GUARANTEE6</IVC>
+    <IVC>defs__initially_true~0.b</IVC>
+    <IVC>defs__initially_true~0.result</IVC>
+  </MinimalIvc>
+</Results>

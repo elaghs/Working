@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[OK]">
+    <Runtime unit="sec">1.635</Runtime>
+    <IVC>ControlMode~0.critical_failure~0.critical_failure</IVC>
+    <IVC>ControlMode~0.critical_failure~0.dangerous_level~0.dangerous_level</IVC>
+    <IVC>ControlMode~0.critical_failure~0.dangerous_level~0.q</IVC>
+    <IVC>ControlMode~0.critical_failure~0.op_mode</IVC>
+    <IVC>ControlMode~0.critical_failure~0.q</IVC>
+    <IVC>ControlMode~0.op_mode</IVC>
+    <IVC>ControlMode~0.q</IVC>
+    <IVC>ControlMode~0.stop_request</IVC>
+    <IVC>OK</IVC>
+    <IVC>dangerous_level~0.dangerous_level</IVC>
+    <IVC>dangerous_level~0.q</IVC>
+    <IVC>mode_normal_then_no_stop_request</IVC>
+    <IVC>mode_normal_then_water_level_ok</IVC>
+    <IVC>op_mode</IVC>
+  </MinimalIvc>
+</Results>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">3.044</Runtime>
+    <Must>OK</Must>
+    <Must>PosEdge.X</Must>
+    <Must>PosEdge.Y</Must>
+    <Must>cca</Must>
+    <Must>main.cca</Must>
+    <Must>main.ccr</Must>
+    <Must>main.ccsetd</Must>
+    <Must>main.ccseti</Must>
+    <Must>main.one_button_accept.ccr</Must>
+    <Must>main.one_button_accept.ccsetd</Must>
+    <Must>main.one_button_accept.ccseti</Must>
+    <Must>main.one_button_accept.ob</Must>
+    <Must>main.one_button_accept.oba</Must>
+    <Must>main.one_button_accept.one_button.ccr</Must>
+    <Must>main.one_button_accept.one_button.ccsetd</Must>
+    <Must>main.one_button_accept.one_button.ccseti</Must>
+    <Must>main.one_button_accept.one_button.ob</Must>
+    <Must>main.one_button_accept.pnb</Must>
+    <Must>main.one_button_accept.prev_no_button.ccr</Must>
+    <Must>main.one_button_accept.prev_no_button.ccsetd</Must>
+    <Must>main.one_button_accept.prev_no_button.ccseti</Must>
+    <Must>main.one_button_accept.prev_no_button.pnb</Must>
+  </MustElements>
+</Results>

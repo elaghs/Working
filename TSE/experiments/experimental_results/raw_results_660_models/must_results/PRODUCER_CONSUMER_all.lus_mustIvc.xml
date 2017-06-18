@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">1.448</Runtime>
+    <Must>OK</Must>
+    <Must>V34_i</Must>
+    <Must>V36_a</Must>
+    <Must>V37_o1</Must>
+    <Must>V39_env</Must>
+    <Must>V88_garde1</Must>
+    <Must>V123_First</Must>
+  </MustElements>
+</Results>

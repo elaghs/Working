@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.009</UcRuntime>
+   <Timeout unit="sec">30.265</Timeout>
+   <ProofTime unit="sec">0.044</ProofTime>
+   <Runtime unit="sec">0.053</Runtime>
+   <IVC>__GUARANTEE4</IVC>
+   <IVC>defs__is_running~1._outvar</IVC>
+   <IVC>defs__is_running~1.m</IVC>
+   <IVC>defs__is_suspended~1._outvar</IVC>
+   <IVC>defs__is_suspended~1.m</IVC>
+   <IVC>defs__rising_edge~2.re</IVC>
+   <IVC>defs__rising_edge~2.signal</IVC>
+   <TRIVC>defs__rising_edge~2.signal</TRIVC>
+   <TRIVC>__GUARANTEE4</TRIVC>
+   <TRIVC>defs__is_suspended~1._outvar</TRIVC>
+   <TRIVC>defs__is_running~1.m</TRIVC>
+   <TRIVC>defs__rising_edge~2.re</TRIVC>
+   <TRIVC>defs__is_running~1._outvar</TRIVC>
+   <TRIVC>defs__is_suspended~1.m</TRIVC>
+</Results>

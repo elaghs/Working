@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="__GUARANTEE2"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="__GUARANTEE2"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="__GUARANTEE2"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="__GUARANTEE2"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="__GUARANTEE2"/>
+  </Progress>
+  <Property name="__GUARANTEE2">
+    <Runtime unit="sec">0.517</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>__GUARANTEE2</MustElem>
+    <MustElem>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</MustElem>
+    <MustElem>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</MustElem>
+    <MustElem>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</MustElem>
+    <IvcSet number="1">
+    <Invariant>__GUARANTEE2</Invariant>
+    <Ivc>__GUARANTEE2</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</Ivc>
+    </IvcSet>
+  </Property>

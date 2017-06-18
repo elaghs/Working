@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[controlLaw~0.out_stable]">
+    <Runtime unit="sec">0.639</Runtime>
+    <IVC>controlLaw~0.c1</IVC>
+    <IVC>controlLaw~0.c2</IVC>
+    <IVC>controlLaw~0.c3</IVC>
+    <IVC>controlLaw~0.integ</IVC>
+    <IVC>controlLaw~0.out_stable</IVC>
+    <IVC>controlLaw~0.sum1</IVC>
+  </MinimalIvc>
+</Results>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[__GUARANTEE29]">
+    <Runtime unit="sec">3.312</Runtime>
+    <IVC>DEFS__is_on~0._outvar</IVC>
+    <IVC>DEFS__is_on~0.mode</IVC>
+    <IVC>_TOP__ASSERT__8</IVC>
+    <IVC>_TOP__ASSERT__39</IVC>
+    <IVC>_TOP__IM~0.CONFIG_IN.Configured</IVC>
+    <IVC>_TOP__IM~0.IM_OUT.Current_System_Mode</IVC>
+    <IVC>_TOP__IM~0.IM_OUT.New_Infusion</IVC>
+    <IVC>_TOP__IM~0.__ASSERT</IVC>
+    <IVC>_TOP__IM~0.__ASSUME__CONJ</IVC>
+    <IVC>_TOP__IM~0.__ASSUME__HIST</IVC>
+    <IVC>_TOP__IM~0.__IM__ASSERT__14</IVC>
+    <IVC>_TOP__IM~0.__IM__PROP__12</IVC>
+    <IVC>_TOP__OUTPUT~0.CONFIG_IN.Configured</IVC>
+    <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Configured</IVC>
+    <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</IVC>
+    <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.New_Infusion</IVC>
+    <IVC>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</IVC>
+    <IVC>_TOP__OUTPUT~0.IM_IN.New_Infusion</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSERT</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSUME__CONJ</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSUME__HIST</IVC>
+    <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__21</IVC>
+    <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__27</IVC>
+    <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__30</IVC>
+    <IVC>__GUARANTEE29</IVC>
+  </MinimalIvc>
+</Results>

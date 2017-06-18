@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">1.518</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>Sofar~0.X</MustElem>
+    <MustElem>Sofar~0.Sofar</MustElem>
+    <MustElem>firefly~0.i_invalid</MustElem>
+    <MustElem>env</MustElem>
+    <MustElem>firefly~0.invalid</MustElem>
+    <MustElem>firefly~0.garde1</MustElem>
+    <MustElem>firefly~0.garde3</MustElem>
+    <MustElem>invalid</MustElem>
+    <MustElem>firefly~0.garde2</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>firefly~0.garde7</MustElem>
+    <MustElem>firefly~0.garde6</MustElem>
+    <MustElem>firefly~0.mem_invalid</MustElem>
+    <MustElem>firefly~0.garde8</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Ivc>Sofar~0.X</Ivc>
+    <Ivc>Sofar~0.Sofar</Ivc>
+    <Ivc>firefly~0.i_invalid</Ivc>
+    <Ivc>env</Ivc>
+    <Ivc>firefly~0.invalid</Ivc>
+    <Ivc>firefly~0.garde1</Ivc>
+    <Ivc>firefly~0.garde3</Ivc>
+    <Ivc>invalid</Ivc>
+    <Ivc>firefly~0.garde2</Ivc>
+    <Ivc>firefly~0.garde7</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>firefly~0.garde6</Ivc>
+    <Ivc>firefly~0.mem_invalid</Ivc>
+    <Ivc>firefly~0.garde8</Ivc>
+    </IvcSet>
+  </Property>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="__GUARANTEE3"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="__GUARANTEE3"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="__GUARANTEE3"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="__GUARANTEE3"/>
+  </Progress>
+  <Property name="__GUARANTEE3">
+    <Runtime unit="sec">0.114</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>0</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>__GUARANTEE3</MustElem>
+    <IvcSet number="1">
+    <Invariant>__GUARANTEE3</Invariant>
+    <Ivc>__GUARANTEE3</Ivc>
+    </IvcSet>
+  </Property>

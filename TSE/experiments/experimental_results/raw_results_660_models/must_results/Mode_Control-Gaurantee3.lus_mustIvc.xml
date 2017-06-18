@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[__GUARANTEE3]">
+    <Runtime unit="sec">1.01</Runtime>
+    <Must>__GUARANTEE3</Must>
+    <Must>defs__is_cooking._outvar</Must>
+    <Must>defs__is_cooking.m</Must>
+    <Must>defs__is_running._outvar</Must>
+    <Must>defs__is_running.m</Must>
+    <Must>defs__rising_edge.re</Must>
+    <Must>defs__rising_edge.signal</Must>
+  </MustElements>
+</Results>

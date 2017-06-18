@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[OK]">
+    <Runtime unit="sec">1.569</Runtime>
+    <IVC>OK</IVC>
+    <IVC>zz163</IVC>
+    <IVC>zz164</IVC>
+    <IVC>zz165</IVC>
+    <IVC>zz196</IVC>
+    <IVC>zz197</IVC>
+    <IVC>zz198</IVC>
+    <IVC>zz200</IVC>
+    <IVC>zz202</IVC>
+    <IVC>zz216</IVC>
+    <IVC>zz217</IVC>
+    <IVC>zz218</IVC>
+    <IVC>zz219</IVC>
+    <IVC>zz220</IVC>
+    <IVC>zz223</IVC>
+  </MinimalIvc>
+</Results>

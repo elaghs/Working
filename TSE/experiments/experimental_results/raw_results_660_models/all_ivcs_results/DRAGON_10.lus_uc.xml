@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.021</UcRuntime>
+   <Timeout unit="sec">31.895</Timeout>
+   <ProofTime unit="sec">0.358</ProofTime>
+   <Runtime unit="sec">0.379</Runtime>
+   <IVC>DRAGON~0.g01</IVC>
+   <IVC>DRAGON~0.g02</IVC>
+   <IVC>DRAGON~0.g07</IVC>
+   <IVC>DRAGON~0.g08</IVC>
+   <IVC>DRAGON~0.init_invalid</IVC>
+   <IVC>DRAGON~0.invalid</IVC>
+   <IVC>DRAGON~0.mem_init</IVC>
+   <IVC>OK</IVC>
+   <IVC>Sofar~0.Sofar</IVC>
+   <IVC>Sofar~0.X</IVC>
+   <IVC>env</IVC>
+   <IVC>invalid</IVC>
+   <TRIVC>DRAGON~0.invalid</TRIVC>
+   <TRIVC>DRAGON~0.mem_init</TRIVC>
+   <TRIVC>DRAGON~0.g02</TRIVC>
+   <TRIVC>Sofar~0.X</TRIVC>
+   <TRIVC>DRAGON~0.g08</TRIVC>
+   <TRIVC>DRAGON~0.g07</TRIVC>
+   <TRIVC>Sofar~0.Sofar</TRIVC>
+   <TRIVC>invalid</TRIVC>
+   <TRIVC>OK</TRIVC>
+   <TRIVC>env</TRIVC>
+   <TRIVC>DRAGON~0.g01</TRIVC>
+   <TRIVC>DRAGON~0.init_invalid</TRIVC>
+</Results>

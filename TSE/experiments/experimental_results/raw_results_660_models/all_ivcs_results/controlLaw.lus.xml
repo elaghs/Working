@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="check"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="check"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="check"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="check"/>
+  </Progress>
+  <Property name="check">
+    <Runtime unit="sec">0.611</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>c3</MustElem>
+    <MustElem>sum1</MustElem>
+    <MustElem>integ</MustElem>
+    <MustElem>check</MustElem>
+    <MustElem>c1</MustElem>
+    <MustElem>c2</MustElem>
+    <IvcSet number="1">
+    <Invariant>check</Invariant>
+    <Ivc>c3</Ivc>
+    <Ivc>sum1</Ivc>
+    <Ivc>integ</Ivc>
+    <Ivc>check</Ivc>
+    <Ivc>c1</Ivc>
+    <Ivc>c2</Ivc>
+    </IvcSet>
+  </Property>

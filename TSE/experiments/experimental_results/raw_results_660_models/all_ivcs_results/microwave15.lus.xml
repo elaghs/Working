@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">0.416</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>0</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>rlt_condact_resetmicrowave_microwave_KEYPAD_PROCESSING_rlt_init_step</MustElem>
+    <MustElem>STEPS_TO_COOK</MustElem>
+    <MustElem>rlt_condact_resetmicrowave_microwave_KEYPAD_PROCESSING_rlt_clock</MustElem>
+    <MustElem>OK</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Ivc>rlt_condact_resetmicrowave_microwave_KEYPAD_PROCESSING_rlt_init_step</Ivc>
+    <Ivc>STEPS_TO_COOK</Ivc>
+    <Ivc>rlt_condact_resetmicrowave_microwave_KEYPAD_PROCESSING_rlt_clock</Ivc>
+    <Ivc>OK</Ivc>
+    </IvcSet>
+  </Property>

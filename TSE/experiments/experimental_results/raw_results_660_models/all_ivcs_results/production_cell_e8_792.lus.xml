@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="19">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="20">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="21">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="22">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="23">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="24">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="25">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="26">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="27">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="28">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="29">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="30">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="31">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="32">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">3.021</Runtime>
+    <Answer source="invariant-generation">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>start1</MustElem>
+    <MustElem>redge~3.signal</MustElem>
+    <MustElem>redge~0.signal</MustElem>
+    <MustElem>redge~1.signal</MustElem>
+    <MustElem>redge~2.signal</MustElem>
+    <MustElem>fedge~0.signal</MustElem>
+    <MustElem>fedge~1.signal</MustElem>
+    <MustElem>sustain~0.off</MustElem>
+    <MustElem>sustain~0.on</MustElem>
+    <MustElem>fedge~1.redge~0.signal</MustElem>
+    <MustElem>fedge~1.f</MustElem>
+    <MustElem>MayMove1</MustElem>
+    <MustElem>fedge~0.f</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>fedge~1.redge~0.r</MustElem>
+    <MustElem>moving</MustElem>
+    <MustElem>start2</MustElem>
+    <MustElem>sustain~0.s</MustElem>
+    <MustElem>MayMove2</MustElem>
+    <MustElem>fedge~0.redge~0.r</MustElem>
+    <MustElem>redge~3.r</MustElem>
+    <MustElem>fedge~0.redge~0.signal</MustElem>
+    <MustElem>redge~2.r</MustElem>
+    <MustElem>redge~1.r</MustElem>
+    <MustElem>redge~0.r</MustElem>
+    <MustElem>stop</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Invariant>((not MaySafelyMove) =&gt; (not sustain~0.s))</Invariant>
+    <Invariant>((not TryToMove1) =&gt; (not sustain~0.s))</Invariant>
+    <Ivc>start1</Ivc>
+    <Ivc>redge~3.signal</Ivc>
+    <Ivc>redge~2.signal</Ivc>
+    <Ivc>redge~1.signal</Ivc>
+    <Ivc>redge~0.signal</Ivc>
+    <Ivc>fedge~0.signal</Ivc>
+    <Ivc>fedge~1.signal</Ivc>
+    <Ivc>sustain~0.off</Ivc>
+    <Ivc>sustain~0.on</Ivc>
+    <Ivc>fedge~1.redge~0.signal</Ivc>
+    <Ivc>fedge~1.f</Ivc>
+    <Ivc>MayMove1</Ivc>
+    <Ivc>fedge~0.f</Ivc>
+    <Ivc>fedge~1.redge~0.r</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>start2</Ivc>
+    <Ivc>moving</Ivc>
+    <Ivc>sustain~0.s</Ivc>
+    <Ivc>MayMove2</Ivc>
+    <Ivc>fedge~0.redge~0.r</Ivc>
+    <Ivc>redge~3.r</Ivc>
+    <Ivc>fedge~0.redge~0.signal</Ivc>
+    <Ivc>redge~2.r</Ivc>
+    <Ivc>redge~1.r</Ivc>
+    <Ivc>redge~0.r</Ivc>
+    <Ivc>stop</Ivc>
+    </IvcSet>
+  </Property>

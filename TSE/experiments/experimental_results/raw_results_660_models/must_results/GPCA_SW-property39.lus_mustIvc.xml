@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[__GUARANTEE39]">
+    <Runtime unit="sec">8.024</Runtime>
+    <Must>_TOP__ALARM.ALARM_OUT.Notification_Message</Must>
+    <Must>_TOP__ALARM.SENSOR_IN.Battery_Depleted</Must>
+    <Must>_TOP__ALARM.SENSOR_IN.CPU_Error</Must>
+    <Must>_TOP__ALARM.SENSOR_IN.Memory_Corrupted</Must>
+    <Must>_TOP__ALARM.SENSOR_IN.Pump_Too_Hot</Must>
+    <Must>_TOP__ALARM.SENSOR_IN.RTC_Error</Must>
+    <Must>_TOP__ALARM.SENSOR_IN.Watchdog_Interrupted</Must>
+    <Must>_TOP__ALARM.__ALARM__ASSERT__28</Must>
+    <Must>_TOP__ALARM.__ALARM__PROP__14</Must>
+    <Must>_TOP__ALARM.__ASSERT</Must>
+    <Must>_TOP__ALARM.__ASSUME__CONJ</Must>
+    <Must>_TOP__ALARM.__ASSUME__HIST</Must>
+    <Must>_TOP__ASSERT__49</Must>
+    <Must>_TOP__OUTPUT.ALARM_IN.Notification_Message</Must>
+    <Must>_TOP__OUTPUT.GPCA_SW_OUT.Notification_Message</Must>
+    <Must>_TOP__OUTPUT.__ASSERT</Must>
+    <Must>_TOP__OUTPUT.__ASSUME__CONJ</Must>
+    <Must>_TOP__OUTPUT.__ASSUME__HIST</Must>
+    <Must>_TOP__OUTPUT.__OUTPUT__PROP__4</Must>
+    <Must>__GUARANTEE39</Must>
+  </MustElements>
+</Results>

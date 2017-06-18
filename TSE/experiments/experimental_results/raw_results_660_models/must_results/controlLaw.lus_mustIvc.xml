@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[check]">
+    <Runtime unit="sec">0.65</Runtime>
+    <Must>c1</Must>
+    <Must>c2</Must>
+    <Must>c3</Must>
+    <Must>check</Must>
+    <Must>integ</Must>
+    <Must>sum1</Must>
+  </MustElements>
+</Results>

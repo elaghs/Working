@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">0.73</Runtime>
+    <Must>OK</Must>
+    <Must>a</Must>
+    <Must>b</Must>
+    <Must>bool6.c</Must>
+    <Must>bool6.out</Must>
+    <Must>int6I.out</Must>
+    <Must>int6I.time</Must>
+  </MustElements>
+</Results>

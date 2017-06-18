@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[OK]">
+    <Runtime unit="sec">2.406</Runtime>
+    <IVC>OK</IVC>
+    <IVC>Sofar~0.Sofar</IVC>
+    <IVC>Sofar~0.X</IVC>
+    <IVC>env</IVC>
+    <IVC>excludes4~0.X2</IVC>
+    <IVC>excludes4~0.X3</IVC>
+    <IVC>excludes4~0.X4</IVC>
+    <IVC>excludes4~0.excludes</IVC>
+    <IVC>exclusive_mo</IVC>
+    <IVC>invalid_mo</IVC>
+    <IVC>modified_mo</IVC>
+    <IVC>moesi~0.etat_mo2</IVC>
+    <IVC>moesi~0.etat_mo3</IVC>
+    <IVC>moesi~0.etat_mo4</IVC>
+    <IVC>moesi~0.exclusive_mo</IVC>
+    <IVC>moesi~0.invalid_mo</IVC>
+    <IVC>moesi~0.modified_mo</IVC>
+    <IVC>moesi~0.owned_mo</IVC>
+    <IVC>moesi~0.shared_mo</IVC>
+    <IVC>owned_mo</IVC>
+    <IVC>shared_mo</IVC>
+  </MinimalIvc>
+</Results>

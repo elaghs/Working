@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.009</UcRuntime>
+   <Timeout unit="sec">30.27</Timeout>
+   <ProofTime unit="sec">0.045</ProofTime>
+   <Runtime unit="sec">0.054</Runtime>
+   <IVC>OK</IVC>
+   <IVC>V58_env_always_ok</IVC>
+   <IVC>V59_prop_ok</IVC>
+   <IVC>V60_open_door</IVC>
+   <IVC>V61_close_door</IVC>
+   <IVC>V250_door_doesnt_open_out_of_station</IVC>
+   <IVC>V251_door_opens_before_leaving_station</IVC>
+   <IVC>V253_between_A_and_X</IVC>
+   <IVC>V264_env_ok</IVC>
+   <IVC>V265_door_doesnt_close_if_not_asked</IVC>
+   <IVC>V266_door_doesnt_open_if_not_asked</IVC>
+   <IVC>V268_door_initially_closed</IVC>
+   <IVC>V269_initially_not_in_station</IVC>
+   <IVC>V270_warning_start_and_in_station_go_down_simultaneously</IVC>
+   <IVC>V272_warning_start_cant_become_true_when_door_is_opening</IVC>
+   <IVC>V275_X</IVC>
+   <IVC>V276_X</IVC>
+   <TRIVC>V250_door_doesnt_open_out_of_station</TRIVC>
+   <TRIVC>V266_door_doesnt_open_if_not_asked</TRIVC>
+   <TRIVC>V275_X</TRIVC>
+   <TRIVC>V58_env_always_ok</TRIVC>
+   <TRIVC>V276_X</TRIVC>
+   <TRIVC>V264_env_ok</TRIVC>
+   <TRIVC>V59_prop_ok</TRIVC>
+   <TRIVC>V251_door_opens_before_leaving_station</TRIVC>
+   <TRIVC>V60_open_door</TRIVC>
+   <TRIVC>V265_door_doesnt_close_if_not_asked</TRIVC>
+   <TRIVC>V272_warning_start_cant_become_true_when_door_is_opening</TRIVC>
+   <TRIVC>V268_door_initially_closed</TRIVC>
+   <TRIVC>V270_warning_start_and_in_station_go_down_simultaneously</TRIVC>
+   <TRIVC>V269_initially_not_in_station</TRIVC>
+   <TRIVC>V253_between_A_and_X</TRIVC>
+   <TRIVC>OK</TRIVC>
+   <TRIVC>V61_close_door</TRIVC>
+</Results>

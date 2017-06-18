@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.032</UcRuntime>
+   <Timeout unit="sec">46.195</Timeout>
+   <ProofTime unit="sec">3.207</ProofTime>
+   <Runtime unit="sec">3.239</Runtime>
+   <IVC>nX</IVC>
+   <IVC>nY</IVC>
+   <IVC>ok</IVC>
+   <IVC>pre_x</IVC>
+   <IVC>pre_y</IVC>
+   <IVC>x</IVC>
+   <IVC>y</IVC>
+   <TRIVC>pre_y</TRIVC>
+   <TRIVC>pre_x</TRIVC>
+   <TRIVC>x</TRIVC>
+   <TRIVC>y</TRIVC>
+   <TRIVC>nX</TRIVC>
+   <TRIVC>nY</TRIVC>
+   <TRIVC>ok</TRIVC>
+</Results>

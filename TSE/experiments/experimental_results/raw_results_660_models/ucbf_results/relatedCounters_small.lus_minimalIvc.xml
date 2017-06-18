@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[ok]">
+    <Runtime unit="sec">3.113</Runtime>
+    <IVC>nX</IVC>
+    <IVC>nY</IVC>
+    <IVC>ok</IVC>
+    <IVC>pre_x</IVC>
+    <IVC>pre_y</IVC>
+    <IVC>x</IVC>
+    <IVC>y</IVC>
+  </MinimalIvc>
+</Results>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[__GUARANTEE0]">
+    <Runtime unit="sec">7.933</Runtime>
+    <Must>DEFS__is_idle._outvar</Must>
+    <Must>DEFS__is_idle.mode</Must>
+    <Must>_TOP__ALARM.IM_IN.Current_System_Mode</Must>
+    <Must>_TOP__ALARM.Idle_Time_Counter</Must>
+    <Must>_TOP__ALARM.__ALARM__ASSERT__11</Must>
+    <Must>_TOP__ALARM.__ASSERT</Must>
+    <Must>_TOP__ASSERT__6</Must>
+    <Must>_TOP__OUTPUT.GPCA_SW_OUT.Current_System_Mode</Must>
+    <Must>_TOP__OUTPUT.IM_IN.Current_System_Mode</Must>
+    <Must>_TOP__OUTPUT.__ASSERT</Must>
+    <Must>_TOP__OUTPUT.__ASSUME__CONJ</Must>
+    <Must>_TOP__OUTPUT.__ASSUME__HIST</Must>
+    <Must>_TOP__OUTPUT.__OUTPUT__PROP__27</Must>
+    <Must>__GUARANTEE0</Must>
+  </MustElements>
+</Results>

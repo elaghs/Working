@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">2.512</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>V150_g01</MustElem>
+    <MustElem>V151_g02</MustElem>
+    <MustElem>V74_x3</MustElem>
+    <MustElem>V72_x1</MustElem>
+    <MustElem>V73_x2</MustElem>
+    <MustElem>V153_g04</MustElem>
+    <MustElem>V152_g03</MustElem>
+    <MustElem>V154_g05</MustElem>
+    <MustElem>V155_g06</MustElem>
+    <MustElem>V71_x0</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>V85_env</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Ivc>V153_g04</Ivc>
+    <Ivc>V151_g02</Ivc>
+    <Ivc>V150_g01</Ivc>
+    <Ivc>V74_x3</Ivc>
+    <Ivc>V73_x2</Ivc>
+    <Ivc>V72_x1</Ivc>
+    <Ivc>V155_g06</Ivc>
+    <Ivc>V154_g05</Ivc>
+    <Ivc>V152_g03</Ivc>
+    <Ivc>V71_x0</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V85_env</Ivc>
+    </IvcSet>
+  </Property>

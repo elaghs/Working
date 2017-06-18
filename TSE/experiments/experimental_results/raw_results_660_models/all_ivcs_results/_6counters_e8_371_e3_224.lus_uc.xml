@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.004</UcRuntime>
+   <Timeout unit="sec">30.27</Timeout>
+   <ProofTime unit="sec">0.05</ProofTime>
+   <Runtime unit="sec">0.054000000000000006</Runtime>
+   <IVC>OK</IVC>
+   <IVC>a</IVC>
+   <IVC>b</IVC>
+   <IVC>bool6~0.c</IVC>
+   <IVC>bool6~0.out</IVC>
+   <IVC>int6I~0.out</IVC>
+   <IVC>int6I~0.time</IVC>
+   <TRIVC>int6I~0.time</TRIVC>
+   <TRIVC>a</TRIVC>
+   <TRIVC>b</TRIVC>
+   <TRIVC>bool6~0.out</TRIVC>
+   <TRIVC>bool6~0.c</TRIVC>
+   <TRIVC>int6I~0.out</TRIVC>
+   <TRIVC>OK</TRIVC>
+</Results>

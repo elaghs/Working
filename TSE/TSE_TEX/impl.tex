@@ -1,9 +1,8 @@
 \section{Implementation}
 \label{sec:impl}
-%\subsection{Implementation}
-We have implemented the \aivcalg ~algorithm
-in an industrial model checker called \texttt{JKind} ~\cite{jkind},
-which verifies safety properties of  infinite-state synchronous systems.
+
+We have implemented all of the inductive validity core algorithms from the previous section in an industrial model checker called \texttt{JKind} ~\cite{jkind},
+which verifies safety properties of infinite-state synchronous systems.
 It accepts Lustre programs \cite{Halbwachs91:lustre} as input.  The translation of Lustre
 into a symbolic transition system in \texttt{JKind} is straightforward and is similar to what is described
 in~\cite{Hagen08:FMCAD}.
@@ -19,42 +18,31 @@ multiple properties in parallel.  To implement the engines,
 %----------------------------------------------------------------
 \texttt{Z3}, \texttt{Yices}, \texttt{MathSAT}, \texttt{SMTInterpol}, and \texttt{CVC4} SMT solvers as back-ends.  When a property is
 proved and IVC generation is enabled, an additional parallel engine
-executes the \ucalg ~algorithm \cite{Ghass16} to generate an (approximately) minimal IVC.
+executes one of the {\ucalg, \bfalg, \ucbfalg}~algorithms \cite{Ghass16} to generate an (approximately) minimal IVC.
 %
-To implement our method, we have extended \texttt{JKind} with a new engine that
-implements Algorithm \ref{alg:aivc} on top of \texttt{Z3}.
-%The source code is publicly available on \cite{mygit}.
+To implement the All-IVCs procedure \aivcalg, we have extended \texttt{JKind} with a new engine that implements Algorithm \ref{alg:aivc} using \texttt{Z3}.
 We use the \texttt{JKind} IVC generation engine to implement the \getivc\ procedure in  Algorithm \ref{alg:aivc}.
 %It worth mentioning that we could have employed the \ucbfalg ~algorithm for this purpose as well.
 %One might say that since \ucbfalg ~guarantees minimality, it would help to the \aivcalg ~algorithm terminate more quickly.
 %However, as we will show in the experiments, on the one hand, the \ucbfalg ~algorithm is very expensive. On the other hand, the \ucalg ~algorithm is not only fast, but it also generates \ivc s that are
 %quite close to the \mivc s computed by \ucbfalg.
 
-One technical issue that needs to
-be handled in any implementation of the \aivcalg ~algorithm involves the undecidability of the model checking algorithms;
-in each iteration of the \texttt{while} loop, Algorithm~\ref{alg:aivc}
-has to decide on the adequacy of a given set $S \subseteq T$ (line 8).
-This decision should be made by the use of a proof method that
-tries to prove the property $P$ over $S$. Although we know that $(I, T) \vdash P$,
-there is no guarantee that we can determine whether or not any $S \subset T$ is adequate; it is known~\cite{Ghass16} that
-this problem is as hard as model checking, which is undecidable for infinite state systems.
+As previously discussed, one issue that needs to
+be handled in any implementation of the \bfalg, \ucbfalg, and \aivcalg~algorithms involves the undecidability of the model checking problem;
+in each iteration of Algorithms~\ref{alg:naive} and~\ref{alg:aivc}, we attempt to prove the property with a subset $S$ of the original model.  Although we know that $(I, T) \vdash P$, from Theorem~\ref{thm:minimal-hard}, the problem of determining whether or not any $S \subset T$ is adequate is undecidable.
 %
 Therefore, we have to set timeouts for the model checking algorithm for each iteration of the \aivcalg\ procedure.
 In our implementation, we measure the time required to prove the property and the initial
 given the full model (\emph{proof-time}), and the time required to calculate the first
 (approximate) IVC using \ucalg\ (\emph{\ucalg-time}).
-The timeout we set for each iteration of the \aivcalg\ algorithm is ($30$ sec  $+\ 5\ \times$ (\emph{proof-time} $+$ \emph{\ucalg-time})).
+The timeout we set for each iteration of the \bfalg\ and \aivcalg\ algorithms is ($30$ sec  $+\ 5\ \times$ (\emph{proof-time} $+$ \emph{\ucalg-time})).
 
 If the \texttt{while} loop times out for $S$ in line 8 of Algorithm~\ref{alg:aivc},
 we treat $S$ as an \emph{inadequate} set to ensure that all results support a proof.
 In this case, line 13 will prune off $S$ and all
 its subsets from the search space.  Since the timeout is used by both the brute-force
 algorithm and the \aivcalg\ algorithm, minimality is only guaranteed if there
-are no timeouts.  %In addition, because the analysis problems are slightly different
-%between the two approaches, timeouts can occasionally lead to anomalies where the
-%brute force algorithm discovers a {\em smaller} MIVC than is discovered by the
-%\aivcalg ~procedure.  %This anomaly occurs in one of the benchmark examples within our
-%experiment.
+are no timeouts.  If a timeout occurs during computation, we report a warning to the user that our results are not guaranteed to be minimal.
 It is important to note that by increasing the timeout, it is possible that
 in some cases smaller IVCs can be generated, but the general problem will remain due
 to the undecidability of the model checking problem.

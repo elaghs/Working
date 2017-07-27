@@ -84,8 +84,11 @@
   <Progress source="bmc" trueFor="28">
     <PropertyProgress name="OK"/>
   </Progress>
+  <Progress source="bmc" trueFor="29">
+    <PropertyProgress name="OK"/>
+  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">5.427</Runtime>
+    <Runtime unit="sec">8.028</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -100,15 +103,15 @@
     <MustElem>OK</MustElem>
     <MustElem>V45_retard0</MustElem>
     <IvcSet number="1">
-    <Invariant>((V38_nB0 &lt;= (V40_nS + 13)) or (0 &lt;= (V160_c + (-6))))</Invariant>
-    <Invariant>((not V170_Sofar) or (0 &lt;= (V41_diff0 + 10)))</Invariant>
-    <Invariant>((0 &lt;= (V160_c + (-8))) or (V38_nB0 &lt;= (V40_nS + 14)))</Invariant>
-    <Invariant>((0 &lt;= (V160_c + (-10))) or (V38_nB0 &lt;= (V40_nS + 15)))</Invariant>
-    <Invariant>OK</Invariant>
-    <Invariant>((V38_nB0 &lt;= (V40_nS + 11)) or (0 &lt;= (V160_c + (-2))))</Invariant>
-    <Invariant>((not (((V40_nS + (-V38_nB0)) + 21) &lt;= 0)) or (not V170_Sofar))</Invariant>
     <Invariant>(0 &lt;= V160_c)</Invariant>
-    <Invariant>((0 &lt;= (V160_c + (-4))) or (V38_nB0 &lt;= (V40_nS + 12)))</Invariant>
+    <Invariant>((0 &lt;= (V41_diff0 + 10)) or (not V170_Sofar))</Invariant>
+    <Invariant>((V41_diff0 &lt;= 18) or (0 &lt;= (V160_c + (-8))))</Invariant>
+    <Invariant>((V41_diff0 &lt;= 15) or (0 &lt;= (V160_c + (-2))))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>((V41_diff0 &lt;= 17) or (0 &lt;= (V160_c + (-6))))</Invariant>
+    <Invariant>((0 &lt;= (V160_c + (-4))) or (V41_diff0 &lt;= 16))</Invariant>
+    <Invariant>((V41_diff0 &lt;= 20) or (not V170_Sofar))</Invariant>
+    <Invariant>((V41_diff0 &lt;= 19) or (0 &lt;= (V160_c + (-10))))</Invariant>
     <Ivc>V43_avance0</Ivc>
     <Ivc>V158_H0</Ivc>
     <Ivc>V170_Sofar</Ivc>
@@ -121,3 +124,4 @@
     <Ivc>V45_retard0</Ivc>
     </IvcSet>
   </Property>
+</Results>

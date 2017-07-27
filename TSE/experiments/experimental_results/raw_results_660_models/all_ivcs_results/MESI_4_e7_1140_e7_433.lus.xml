@@ -42,11 +42,8 @@
   <Progress source="bmc" trueFor="14">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="15">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">0.409</Runtime>
+    <Runtime unit="sec">0.42</Runtime>
     <Answer source="invariant-generation">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -59,3 +56,4 @@
     <Ivc>OK</Ivc>
     </IvcSet>
   </Property>
+</Results>

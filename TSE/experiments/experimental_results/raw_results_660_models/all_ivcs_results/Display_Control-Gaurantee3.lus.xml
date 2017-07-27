@@ -6,14 +6,8 @@
   <Progress source="bmc" trueFor="2">
     <PropertyProgress name="__GUARANTEE3"/>
   </Progress>
-  <Progress source="bmc" trueFor="3">
-    <PropertyProgress name="__GUARANTEE3"/>
-  </Progress>
-  <Progress source="bmc" trueFor="4">
-    <PropertyProgress name="__GUARANTEE3"/>
-  </Progress>
   <Property name="__GUARANTEE3">
-    <Runtime unit="sec">0.114</Runtime>
+    <Runtime unit="sec">0.143</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>0</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -23,3 +17,4 @@
     <Ivc>__GUARANTEE3</Ivc>
     </IvcSet>
   </Property>
+</Results>

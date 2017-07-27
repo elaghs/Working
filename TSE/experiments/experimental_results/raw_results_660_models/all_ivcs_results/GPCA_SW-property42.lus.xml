@@ -249,74 +249,8 @@
   <Progress source="bmc" trueFor="83">
     <PropertyProgress name="__GUARANTEE42"/>
   </Progress>
-  <Progress source="bmc" trueFor="84">
-    <PropertyProgress name="__GUARANTEE42"/>
-  </Progress>
-  <Progress source="bmc" trueFor="85">
-    <PropertyProgress name="__GUARANTEE42"/>
-  </Progress>
-  <Progress source="bmc" trueFor="86">
-    <PropertyProgress name="__GUARANTEE42"/>
-  </Progress>
-  <Progress source="bmc" trueFor="87">
-    <PropertyProgress name="__GUARANTEE42"/>
-  </Progress>
-  <Progress source="bmc" trueFor="88">
-    <PropertyProgress name="__GUARANTEE42"/>
-  </Progress>
-  <Progress source="bmc" trueFor="89">
-    <PropertyProgress name="__GUARANTEE42"/>
-  </Progress>
-  <Progress source="bmc" trueFor="90">
-    <PropertyProgress name="__GUARANTEE42"/>
-  </Progress>
-  <Progress source="bmc" trueFor="91">
-    <PropertyProgress name="__GUARANTEE42"/>
-  </Progress>
-  <Progress source="bmc" trueFor="92">
-    <PropertyProgress name="__GUARANTEE42"/>
-  </Progress>
-  <Progress source="bmc" trueFor="93">
-    <PropertyProgress name="__GUARANTEE42"/>
-  </Progress>
-  <Progress source="bmc" trueFor="94">
-    <PropertyProgress name="__GUARANTEE42"/>
-  </Progress>
-  <Progress source="bmc" trueFor="95">
-    <PropertyProgress name="__GUARANTEE42"/>
-  </Progress>
-  <Progress source="bmc" trueFor="96">
-    <PropertyProgress name="__GUARANTEE42"/>
-  </Progress>
-  <Progress source="bmc" trueFor="97">
-    <PropertyProgress name="__GUARANTEE42"/>
-  </Progress>
-  <Progress source="bmc" trueFor="98">
-    <PropertyProgress name="__GUARANTEE42"/>
-  </Progress>
-  <Progress source="bmc" trueFor="99">
-    <PropertyProgress name="__GUARANTEE42"/>
-  </Progress>
-  <Progress source="bmc" trueFor="100">
-    <PropertyProgress name="__GUARANTEE42"/>
-  </Progress>
-  <Progress source="bmc" trueFor="101">
-    <PropertyProgress name="__GUARANTEE42"/>
-  </Progress>
-  <Progress source="bmc" trueFor="102">
-    <PropertyProgress name="__GUARANTEE42"/>
-  </Progress>
-  <Progress source="bmc" trueFor="103">
-    <PropertyProgress name="__GUARANTEE42"/>
-  </Progress>
-  <Progress source="bmc" trueFor="104">
-    <PropertyProgress name="__GUARANTEE42"/>
-  </Progress>
-  <Progress source="bmc" trueFor="105">
-    <PropertyProgress name="__GUARANTEE42"/>
-  </Progress>
   <Property name="__GUARANTEE42">
-    <Runtime unit="sec">17.767</Runtime>
+    <Runtime unit="sec">17.186</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -363,11 +297,11 @@
     <MustElem>_TOP__TLM~0.__ASSERT</MustElem>
     <MustElem>_TOP__TLM~0.OP_CMD_IN.System_Start</MustElem>
     <IvcSet number="1">
-    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__SYS_STAT~0.__ASSUME__HIST</Invariant>
     <Invariant>__GUARANTEE42</Invariant>
     <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
     <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
-    <Invariant>_TOP__SYS_STAT~0.__ASSUME__HIST</Invariant>
     <Ivc>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</Ivc>
     <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Volume_Infused</Ivc>
     <Ivc>_TOP__ALARM~0.__ASSUME__CONJ</Ivc>
@@ -412,3 +346,4 @@
     <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
     </IvcSet>
   </Property>
+</Results>

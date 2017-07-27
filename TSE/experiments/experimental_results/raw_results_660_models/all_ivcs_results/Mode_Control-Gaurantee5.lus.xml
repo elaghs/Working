@@ -48,11 +48,8 @@
   <Progress source="bmc" trueFor="16">
     <PropertyProgress name="__GUARANTEE5"/>
   </Progress>
-  <Progress source="bmc" trueFor="17">
-    <PropertyProgress name="__GUARANTEE5"/>
-  </Progress>
   <Property name="__GUARANTEE5">
-    <Runtime unit="sec">0.819</Runtime>
+    <Runtime unit="sec">0.815</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -74,3 +71,4 @@
     <Ivc>defs__is_setup~0.m</Ivc>
     </IvcSet>
   </Property>
+</Results>

@@ -699,110 +699,8 @@
   <Progress source="bmc" trueFor="233">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="234">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="235">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="236">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="237">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="238">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="239">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="240">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="241">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="242">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="243">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="244">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="245">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="246">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="247">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="248">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="249">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="250">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="251">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="252">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="253">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="254">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="255">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="256">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="257">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="258">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="259">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="260">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="261">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="262">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="263">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="264">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="265">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="266">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="267">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">1.114</Runtime>
+    <Runtime unit="sec">1.014</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -824,3 +722,4 @@
     <Ivc>Age~0.age_of_p</Ivc>
     </IvcSet>
   </Property>
+</Results>

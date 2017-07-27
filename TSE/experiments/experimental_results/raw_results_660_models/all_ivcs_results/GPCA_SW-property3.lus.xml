@@ -84,23 +84,8 @@
   <Progress source="bmc" trueFor="28">
     <PropertyProgress name="__GUARANTEE3"/>
   </Progress>
-  <Progress source="bmc" trueFor="29">
-    <PropertyProgress name="__GUARANTEE3"/>
-  </Progress>
-  <Progress source="bmc" trueFor="30">
-    <PropertyProgress name="__GUARANTEE3"/>
-  </Progress>
-  <Progress source="bmc" trueFor="31">
-    <PropertyProgress name="__GUARANTEE3"/>
-  </Progress>
-  <Progress source="bmc" trueFor="32">
-    <PropertyProgress name="__GUARANTEE3"/>
-  </Progress>
-  <Progress source="bmc" trueFor="33">
-    <PropertyProgress name="__GUARANTEE3"/>
-  </Progress>
   <Property name="__GUARANTEE3">
-    <Runtime unit="sec">12.388</Runtime>
+    <Runtime unit="sec">12.074</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -127,9 +112,9 @@
     <MustElem>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~0.desired_flow_rate</MustElem>
     <MustElem>_TOP__OUTPUT~0.__OUTPUT__PROP__29</MustElem>
     <IvcSet number="1">
-    <Invariant>(IM__IM_OUT.Commanded_Flow_Rate &lt;= GPCA_SW_OUT.Commanded_Flow_Rate)</Invariant>
-    <Invariant>(GPCA_SW_OUT.Commanded_Flow_Rate &lt;= IM__IM_OUT.Commanded_Flow_Rate)</Invariant>
     <Invariant>__GUARANTEE3</Invariant>
+    <Invariant>(GPCA_SW_OUT.Commanded_Flow_Rate &lt;= IM__IM_OUT.Commanded_Flow_Rate)</Invariant>
+    <Invariant>(IM__IM_OUT.Commanded_Flow_Rate &lt;= GPCA_SW_OUT.Commanded_Flow_Rate)</Invariant>
     <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
     <Ivc>__GUARANTEE3</Ivc>
     <Ivc>_TOP__ASSERT__3</Ivc>
@@ -155,3 +140,4 @@
     <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__29</Ivc>
     </IvcSet>
   </Property>
+</Results>

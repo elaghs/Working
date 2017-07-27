@@ -16,12 +16,11 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">4.216</Runtime>
+    <Runtime unit="sec">5.218</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
     <MustElem>V34_shared_me</MustElem>
-    <MustElem>V36_env</MustElem>
     <MustElem>V33_exclusive_me</MustElem>
     <MustElem>V35_invalid_me</MustElem>
     <MustElem>V88_garde_me4</MustElem>
@@ -31,9 +30,23 @@
     <MustElem>OK</MustElem>
     <MustElem>V87_garde_me3</MustElem>
     <IvcSet number="1">
+    <Invariant>(0 &lt;= (V35_invalid_me + 1))</Invariant>
+    <Invariant>(0 &lt;= (V34_shared_me + 1))</Invariant>
+    <Invariant>((not (0 &lt;= (V33_exclusive_me + (-1)))) or ((V33_exclusive_me + (-1)) = 0))</Invariant>
+    <Invariant>((not (0 &lt;= (V33_exclusive_me + (-1)))) or (not ((V33_exclusive_me + V32_modified_me) = 0)))</Invariant>
+    <Invariant>((not (V34_shared_me &lt;= (-1))) or (0 = V32_modified_me))</Invariant>
+    <Invariant>((not ((V35_invalid_me + (-3)) = 0)) or (0 = V32_modified_me))</Invariant>
+    <Invariant>(not (0 &lt;= (((V33_exclusive_me + V32_modified_me) + V34_shared_me) + (-3))))</Invariant>
     <Invariant>OK</Invariant>
+    <Invariant>(0 &lt;= (V32_modified_me + 1))</Invariant>
+    <Invariant>(not (((-V35_invalid_me) + 4) &lt;= 0))</Invariant>
+    <Invariant>(not (V33_exclusive_me &lt;= (-1)))</Invariant>
+    <Invariant>((not (0 &lt;= (V34_shared_me + (-1)))) or (not ((V33_exclusive_me + (-1)) = 0)))</Invariant>
+    <Invariant>((not (0 &lt;= (V35_invalid_me + (-2)))) or (not (V34_shared_me &lt;= (-1))))</Invariant>
+    <Invariant>((not (0 &lt;= (V33_exclusive_me + (-1)))) or (not (V34_shared_me &lt;= (-1))))</Invariant>
+    <Invariant>(not (0 &lt;= ((((V33_exclusive_me + V32_modified_me) + V35_invalid_me) + V34_shared_me) + (-4))))</Invariant>
+    <Invariant>((((-V33_exclusive_me) + (-V32_modified_me)) &lt;= 0) or (not (0 &lt;= (V34_shared_me + (-1)))))</Invariant>
     <Ivc>V34_shared_me</Ivc>
-    <Ivc>V36_env</Ivc>
     <Ivc>V33_exclusive_me</Ivc>
     <Ivc>V35_invalid_me</Ivc>
     <Ivc>V88_garde_me4</Ivc>
@@ -44,3 +57,4 @@
     <Ivc>V87_garde_me3</Ivc>
     </IvcSet>
   </Property>
+</Results>

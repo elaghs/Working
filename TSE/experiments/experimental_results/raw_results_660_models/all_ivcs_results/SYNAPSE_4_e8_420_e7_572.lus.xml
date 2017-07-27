@@ -81,8 +81,20 @@
   <Progress source="bmc" trueFor="27">
     <PropertyProgress name="OK"/>
   </Progress>
+  <Progress source="bmc" trueFor="28">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="29">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="30">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="31">
+    <PropertyProgress name="OK"/>
+  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">1.02</Runtime>
+    <Runtime unit="sec">1.112</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -101,3 +113,4 @@
     <Ivc>dirty_s</Ivc>
     </IvcSet>
   </Property>
+</Results>

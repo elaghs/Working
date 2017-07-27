@@ -138,8 +138,11 @@
   <Progress source="bmc" trueFor="46">
     <PropertyProgress name="OK"/>
   </Progress>
+  <Progress source="bmc" trueFor="47">
+    <PropertyProgress name="OK"/>
+  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">23.258</Runtime>
+    <Runtime unit="sec">23.454</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -215,11 +218,9 @@
     <MustElem>DRAGON~0.dirty</MustElem>
     <MustElem>DRAGON~0.g07</MustElem>
     <IvcSet number="1">
-    <Invariant>((not Sofar~0.Sofar) or (((shared_dirty + dirty) + invalid) &lt;= (DRAGON~0.invalid + 1)))</Invariant>
-    <Invariant>(((not (((-dirty) + 1) &lt;= 0)) or (not Sofar~0.Sofar)) or (not ((DRAGON~0.exclusive + (-dirty)) = 0)))</Invariant>
-    <Invariant>(((exclusive &lt;= 0) or ((DRAGON~0.shared_dirty + (-1)) &lt;&gt; 0)) or (not Sofar~0.Sofar))</Invariant>
-    <Invariant>(((DRAGON~0.exclusive &lt;= 0) or (shared &lt;= 0)) or (not Sofar~0.Sofar))</Invariant>
     <Invariant>OK</Invariant>
+    <Invariant>(((not Sofar~0.Sofar) or (First~0.First &lt;= (DRAGON~0.invalid + 1))) or (DRAGON~0.exclusive &lt;= 0))</Invariant>
+    <Invariant>(((dirty &lt;= 0) or (not Sofar~0.Sofar)) or (DRAGON~0.shared_dirty &lt;= 0))</Invariant>
     <Ivc>excludes12~0.X9</Ivc>
     <Ivc>Sofar~0.Sofar</Ivc>
     <Ivc>excludes12~0.X8</Ivc>
@@ -293,3 +294,4 @@
     <Ivc>DRAGON~0.e09</Ivc>
     </IvcSet>
   </Property>
+</Results>

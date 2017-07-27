@@ -51,27 +51,13 @@
   <Progress source="bmc" trueFor="17">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="18">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="19">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="20">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">93.655</Runtime>
+    <Runtime unit="sec">98.224</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
+    <NumberOfIVCs>2</NumberOfIVCs>
     <MustElem>V72_dirty</MustElem>
-    <MustElem>V145_g06</MustElem>
     <MustElem>V140_g01</MustElem>
-    <MustElem>V148_g09</MustElem>
-    <MustElem>V149_g10</MustElem>
-    <MustElem>V151_g12</MustElem>
-    <MustElem>V150_g11</MustElem>
     <MustElem>V75_env</MustElem>
     <MustElem>V71_shared_dirty</MustElem>
     <MustElem>V69_exclusive</MustElem>
@@ -84,22 +70,45 @@
     <MustElem>OK</MustElem>
     <MustElem>V173_X</MustElem>
     <IvcSet number="1">
-    <Invariant>((V72_dirty &lt;= 1) or (not V75_env))</Invariant>
-    <Invariant>((0 &lt;= (V185_First + (-1))) or (not V75_env))</Invariant>
-    <Invariant>(((V71_shared_dirty = 0) or (V69_exclusive = 0)) or (not V75_env))</Invariant>
-    <Invariant>(((V70_shared = 0) or (not V75_env)) or (V72_dirty = 0))</Invariant>
+    <Invariant>(((V72_dirty &lt;= 0) or (not V75_env)) or (not (((-V70_shared) + 1) &lt;= 0)))</Invariant>
     <Invariant>(V69_exclusive &lt;= 1)</Invariant>
-    <Invariant>(((V69_exclusive = 0) or (not V75_env)) or (not (((-V72_dirty) + 1) &lt;= 0)))</Invariant>
-    <Invariant>(((V70_shared = 0) or (V69_exclusive = 0)) or (not V75_env))</Invariant>
-    <Invariant>(((V71_shared_dirty = 0) or (not V75_env)) or (V72_dirty = 0))</Invariant>
+    <Invariant>((((V72_dirty &lt;= 0) or (V71_shared_dirty &lt;= 0)) or (not (V70_shared = 0))) or (not V75_env))</Invariant>
+    <Invariant>((0 &lt;= (V185_First + (-1))) or (not V75_env))</Invariant>
+    <Invariant>(((V72_dirty &lt;= 0) or (not V75_env)) or (not (((-V69_exclusive) + 1) &lt;= 0)))</Invariant>
+    <Invariant>((((V71_shared_dirty &lt;= 0) or (not (V70_shared = 0))) or (not V75_env)) or (not (((-V69_exclusive) + 1) &lt;= 0)))</Invariant>
+    <Invariant>((V71_shared_dirty &lt;= 1) or (not V75_env))</Invariant>
+    <Invariant>(((not V75_env) or (not (((-V70_shared) + 1) &lt;= 0))) or (not (((-V69_exclusive) + 1) &lt;= 0)))</Invariant>
     <Invariant>OK</Invariant>
+    <Invariant>((not V75_env) or (V72_dirty &lt;= 1))</Invariant>
+    <Ivc>V72_dirty</Ivc>
+    <Ivc>V140_g01</Ivc>
+    <Ivc>V75_env</Ivc>
+    <Ivc>V71_shared_dirty</Ivc>
+    <Ivc>V69_exclusive</Ivc>
+    <Ivc>V143_g04</Ivc>
+    <Ivc>V185_First</Ivc>
+    <Ivc>V144_g05</Ivc>
+    <Ivc>V141_g02</Ivc>
+    <Ivc>V146_g07</Ivc>
+    <Ivc>V70_shared</Ivc>
+    <Ivc>V142_g03</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V173_X</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>(V69_exclusive &lt;= 1)</Invariant>
+    <Invariant>((V72_dirty &lt;= 1) or (not V75_env))</Invariant>
+    <Invariant>((((V71_shared_dirty + (-1)) = 0) or (not V75_env)) or (not (0 &lt;= (V71_shared_dirty + (-1)))))</Invariant>
+    <Invariant>(((V72_dirty &lt;= 0) or (not V75_env)) or (not (0 &lt;= (V70_shared + (-1)))))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>((0 &lt;= (V185_First + (-1))) or (not V75_env))</Invariant>
+    <Invariant>(((V72_dirty &lt;= 0) or (not V75_env)) or (not ((V72_dirty + (-V69_exclusive)) &lt;= 0)))</Invariant>
+    <Invariant>(((V72_dirty &lt;= 0) or (not ((V71_shared_dirty + (-1)) = 0))) or (not V75_env))</Invariant>
+    <Invariant>((((not ((V71_shared_dirty + (-1)) = 0)) or (not V75_env)) or (V72_dirty &lt;&gt; 0)) or (V69_exclusive &lt;= 0))</Invariant>
+    <Invariant>((((not V75_env) or (V72_dirty &lt;&gt; 0)) or (not (0 &lt;= (V70_shared + (-1))))) or (V69_exclusive &lt;= 0))</Invariant>
     <Ivc>V145_g06</Ivc>
     <Ivc>V72_dirty</Ivc>
     <Ivc>V140_g01</Ivc>
-    <Ivc>V148_g09</Ivc>
-    <Ivc>V149_g10</Ivc>
-    <Ivc>V151_g12</Ivc>
-    <Ivc>V150_g11</Ivc>
     <Ivc>V75_env</Ivc>
     <Ivc>V71_shared_dirty</Ivc>
     <Ivc>V69_exclusive</Ivc>
@@ -113,3 +122,4 @@
     <Ivc>V173_X</Ivc>
     </IvcSet>
   </Property>
+</Results>

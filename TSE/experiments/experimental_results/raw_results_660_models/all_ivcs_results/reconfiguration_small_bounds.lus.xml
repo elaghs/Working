@@ -84,14 +84,11 @@
   <Progress source="bmc" trueFor="28">
     <PropertyProgress name="ok"/>
   </Progress>
-  <Progress source="bmc" trueFor="29">
-    <PropertyProgress name="ok"/>
-  </Progress>
   <Property name="ok">
-    <Runtime unit="sec">26.568</Runtime>
+    <Runtime unit="sec">47.817</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>9</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
+    <NumberOfIVCs>4</NumberOfIVCs>
     <MustElem>priority~2.command_failure</MustElem>
     <MustElem>priority~1.in_command</MustElem>
     <MustElem>priority~1.other_in_command</MustElem>
@@ -107,10 +104,7 @@
     <MustElem>priority~2.in_command</MustElem>
     <MustElem>ok</MustElem>
     <MustElem>priority~1.conf1~0.n</MustElem>
-    <MustElem>m1</MustElem>
-    <MustElem>m2</MustElem>
     <MustElem>conf1~0.signal</MustElem>
-    <MustElem>m3</MustElem>
     <MustElem>priority~2.conf1~0.pre_cpt</MustElem>
     <MustElem>priority~1.command_failure</MustElem>
     <MustElem>conf1~0.out</MustElem>
@@ -133,11 +127,190 @@
     <MustElem>no_command</MustElem>
     <MustElem>conf1~0.n</MustElem>
     <IvcSet number="1">
-    <Invariant>((priority~0.conf1~0.pre_cpt &lt;= 0) =&gt; (priority~1.conf1~0.pre_cpt &lt;= 0))</Invariant>
-    <Invariant>((priority~1.conf1~0.pre_cpt &lt;= 0) =&gt; (priority~2.conf1~0.pre_cpt &lt;= 0))</Invariant>
-    <Invariant>((priority~2.conf1~0.pre_cpt &lt;= 0) =&gt; (conf1~0.pre_cpt &lt;= 0))</Invariant>
     <Invariant>ok</Invariant>
+    <Invariant>((0 &lt;= (priority~0.conf1~0.cpt + (-3))) or (conf1~0.cpt &lt;= 4))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 1) or (0 &lt;= (priority~0.conf1~0.cpt + (-2))))</Invariant>
+    <Invariant>(0 &lt;= conf1~0.cpt)</Invariant>
+    <Invariant>((0 &lt;= (priority~0.conf1~0.cpt + (-4))) or (conf1~0.cpt &lt;= 5))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= (conf1~0.cpt + (-2)))) or range_monitor~1.latch~0.out)</Invariant>
+    <Invariant>(conf1~0.cpt &lt;= priority~2.conf1~0.cpt)</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 2) or (0 &lt;= (priority~0.conf1~0.cpt + (-3))))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 1)) or (not (priority~1.conf1~0.cpt &lt;= (conf1~0.cpt + (-2)))))</Invariant>
+    <Invariant>(0 &lt;= (priority~0.conf1~0.cpt + (-1)))</Invariant>
+    <Ivc>priority~2.command_failure</Ivc>
+    <Ivc>priority~1.in_command</Ivc>
+    <Ivc>priority~1.other_in_command</Ivc>
+    <Ivc>priority~0.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~0.conf1~0.signal</Ivc>
+    <Ivc>range_monitor~1.corrupt</Ivc>
+    <Ivc>priority~0.conf1~0.cpt</Ivc>
+    <Ivc>conf1~0.cpt</Ivc>
+    <Ivc>priority~1.conf1~0.cpt</Ivc>
+    <Ivc>priority~0.command_failure</Ivc>
+    <Ivc>conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~2.other_in_command</Ivc>
+    <Ivc>priority~2.conf1~0.cpt</Ivc>
+    <Ivc>priority~2.in_command</Ivc>
+    <Ivc>priority~1.conf1~0.n</Ivc>
+    <Ivc>ok</Ivc>
+    <Ivc>m1</Ivc>
+    <Ivc>range_monitor~1.latch~0.pre_out</Ivc>
+    <Ivc>conf1~0.signal</Ivc>
+    <Ivc>priority~2.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~1.command_failure</Ivc>
+    <Ivc>conf1~0.out</Ivc>
+    <Ivc>corrupt2</Ivc>
+    <Ivc>priority~0.conf1~0.out</Ivc>
+    <Ivc>priority~2.conf1~0.signal</Ivc>
+    <Ivc>range_monitor~1.latch~0.out</Ivc>
+    <Ivc>priority~2.conf1~0.n</Ivc>
+    <Ivc>priority~1.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~1.n</Ivc>
+    <Ivc>priority~0.in_command</Ivc>
+    <Ivc>priority~0.n</Ivc>
+    <Ivc>in_command3</Ivc>
+    <Ivc>in_command2</Ivc>
+    <Ivc>priority~0.conf1~0.n</Ivc>
+    <Ivc>in_command1</Ivc>
+    <Ivc>priority~1.conf1~0.out</Ivc>
+    <Ivc>priority~1.conf1~0.signal</Ivc>
+    <Ivc>priority~0.other_in_command</Ivc>
+    <Ivc>priority~2.conf1~0.out</Ivc>
+    <Ivc>priority~2.n</Ivc>
+    <Ivc>no_command</Ivc>
+    <Ivc>conf1~0.n</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>(priority~1.conf1~0.pre_cpt &gt;= 0)</Invariant>
+    <Invariant>ok</Invariant>
+    <Invariant>(priority~0.conf1~0.pre_cpt &gt;= 0)</Invariant>
+    <Invariant>(conf1~0.pre_cpt &gt;= 0)</Invariant>
     <Invariant>(priority~2.conf1~0.pre_cpt &gt;= 0)</Invariant>
+    <Invariant>((priority~2.conf1~0.pre_cpt &lt;= 0) =&gt; (conf1~0.pre_cpt &lt;= 0))</Invariant>
+    <Ivc>priority~2.command_failure</Ivc>
+    <Ivc>priority~1.in_command</Ivc>
+    <Ivc>priority~1.other_in_command</Ivc>
+    <Ivc>priority~0.conf1~0.pre_cpt</Ivc>
+    <Ivc>range_monitor~0.corrupt</Ivc>
+    <Ivc>priority~0.conf1~0.signal</Ivc>
+    <Ivc>range_monitor~1.corrupt</Ivc>
+    <Ivc>priority~0.conf1~0.cpt</Ivc>
+    <Ivc>conf1~0.cpt</Ivc>
+    <Ivc>priority~1.conf1~0.cpt</Ivc>
+    <Ivc>priority~0.command_failure</Ivc>
+    <Ivc>conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~2.other_in_command</Ivc>
+    <Ivc>priority~2.conf1~0.cpt</Ivc>
+    <Ivc>priority~2.in_command</Ivc>
+    <Ivc>priority~1.conf1~0.n</Ivc>
+    <Ivc>ok</Ivc>
+    <Ivc>range_monitor~0.latch~0.pre_out</Ivc>
+    <Ivc>range_monitor~1.latch~0.pre_out</Ivc>
+    <Ivc>conf1~0.signal</Ivc>
+    <Ivc>m3</Ivc>
+    <Ivc>priority~2.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~1.command_failure</Ivc>
+    <Ivc>conf1~0.out</Ivc>
+    <Ivc>corrupt2</Ivc>
+    <Ivc>priority~0.conf1~0.out</Ivc>
+    <Ivc>corrupt1</Ivc>
+    <Ivc>priority~2.conf1~0.signal</Ivc>
+    <Ivc>range_monitor~1.latch~0.out</Ivc>
+    <Ivc>range_monitor~0.latch~0.out</Ivc>
+    <Ivc>priority~2.conf1~0.n</Ivc>
+    <Ivc>priority~1.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~1.n</Ivc>
+    <Ivc>priority~0.in_command</Ivc>
+    <Ivc>priority~0.n</Ivc>
+    <Ivc>in_command3</Ivc>
+    <Ivc>in_command2</Ivc>
+    <Ivc>priority~0.conf1~0.n</Ivc>
+    <Ivc>in_command1</Ivc>
+    <Ivc>priority~1.conf1~0.out</Ivc>
+    <Ivc>priority~1.conf1~0.signal</Ivc>
+    <Ivc>priority~0.other_in_command</Ivc>
+    <Ivc>priority~2.conf1~0.out</Ivc>
+    <Ivc>priority~2.n</Ivc>
+    <Ivc>no_command</Ivc>
+    <Ivc>conf1~0.n</Ivc>
+    </IvcSet>
+    <IvcSet number="3">
+    <Invariant>(0 &lt;= priority~0.conf1~0.cpt)</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 3) or (not (priority~1.conf1~0.cpt &lt;= 3)))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 0)) or (conf1~0.cpt &lt;= 0))</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 5) or range_monitor~0.latch~0.out) or (0 &lt;= (priority~0.conf1~0.cpt + (-4))))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 4)) or (conf1~0.cpt &lt;= 4))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 2) or (not (priority~1.conf1~0.cpt &lt;= 2)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 6) or (not (priority~1.conf1~0.cpt &lt;= 6)))</Invariant>
+    <Invariant>(0 &lt;= priority~1.conf1~0.cpt)</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 4) or range_monitor~0.latch~0.out) or (0 &lt;= (priority~0.conf1~0.cpt + (-3))))</Invariant>
+    <Invariant>(((not (priority~0.conf1~0.cpt &lt;= 0)) or (conf1~0.cpt &lt;= 0)) or range_monitor~0.latch~0.out)</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 5) or (not (priority~1.conf1~0.cpt &lt;= 5)))</Invariant>
+    <Invariant>(conf1~0.cpt &lt;= priority~2.conf1~0.cpt)</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 1) or (0 &lt;= (priority~1.conf1~0.cpt + (-2))))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (conf1~0.cpt &lt;= 6)) or (0 &lt;= (priority~0.conf1~0.cpt + (-5))))</Invariant>
+    <Invariant>ok</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 3) or range_monitor~0.latch~0.out) or (0 &lt;= (priority~0.conf1~0.cpt + (-2))))</Invariant>
+    <Ivc>priority~2.command_failure</Ivc>
+    <Ivc>priority~1.in_command</Ivc>
+    <Ivc>priority~1.other_in_command</Ivc>
+    <Ivc>priority~0.conf1~0.pre_cpt</Ivc>
+    <Ivc>range_monitor~0.corrupt</Ivc>
+    <Ivc>priority~0.conf1~0.signal</Ivc>
+    <Ivc>priority~0.conf1~0.cpt</Ivc>
+    <Ivc>conf1~0.cpt</Ivc>
+    <Ivc>priority~1.conf1~0.cpt</Ivc>
+    <Ivc>priority~0.command_failure</Ivc>
+    <Ivc>conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~2.other_in_command</Ivc>
+    <Ivc>priority~2.conf1~0.cpt</Ivc>
+    <Ivc>priority~2.in_command</Ivc>
+    <Ivc>priority~1.conf1~0.n</Ivc>
+    <Ivc>ok</Ivc>
+    <Ivc>range_monitor~0.latch~0.pre_out</Ivc>
+    <Ivc>conf1~0.signal</Ivc>
+    <Ivc>m2</Ivc>
+    <Ivc>priority~2.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~1.command_failure</Ivc>
+    <Ivc>conf1~0.out</Ivc>
+    <Ivc>priority~0.conf1~0.out</Ivc>
+    <Ivc>corrupt1</Ivc>
+    <Ivc>priority~2.conf1~0.signal</Ivc>
+    <Ivc>range_monitor~0.latch~0.out</Ivc>
+    <Ivc>priority~2.conf1~0.n</Ivc>
+    <Ivc>priority~1.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~1.n</Ivc>
+    <Ivc>priority~0.in_command</Ivc>
+    <Ivc>priority~0.n</Ivc>
+    <Ivc>in_command3</Ivc>
+    <Ivc>in_command2</Ivc>
+    <Ivc>priority~0.conf1~0.n</Ivc>
+    <Ivc>in_command1</Ivc>
+    <Ivc>priority~1.conf1~0.out</Ivc>
+    <Ivc>priority~1.conf1~0.signal</Ivc>
+    <Ivc>priority~0.other_in_command</Ivc>
+    <Ivc>priority~2.conf1~0.out</Ivc>
+    <Ivc>priority~2.n</Ivc>
+    <Ivc>no_command</Ivc>
+    <Ivc>conf1~0.n</Ivc>
+    </IvcSet>
+    <IvcSet number="4">
+    <Invariant>((not (priority~0.conf1~0.cpt &lt;= 4)) or (conf1~0.cpt &lt;= 6))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 1) or (0 &lt;= (priority~1.conf1~0.cpt + (-2))))</Invariant>
+    <Invariant>(conf1~0.cpt &lt;= priority~2.conf1~0.cpt)</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-1))) or (not (0 &lt;= (priority~2.conf1~0.cpt + (-1)))))</Invariant>
+    <Invariant>((not (priority~0.conf1~0.cpt &lt;= 4)) or (conf1~0.cpt &lt;= 5))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 3)) or (conf1~0.cpt &lt;= 4))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 3) or (not (priority~1.conf1~0.cpt &lt;= 2)))</Invariant>
+    <Invariant>(0 &lt;= priority~1.conf1~0.cpt)</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-5))) or (conf1~0.cpt &lt;= 5))</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-6))) or (conf1~0.cpt &lt;= 6))</Invariant>
+    <Invariant>(0 &lt;= (priority~0.conf1~0.cpt + (-1)))</Invariant>
+    <Invariant>ok</Invariant>
+    <Invariant>((not (priority~0.conf1~0.cpt &lt;= 3)) or (conf1~0.cpt &lt;= 3))</Invariant>
+    <Invariant>((0 &lt;= (priority~0.conf1~0.cpt + (-2))) or (conf1~0.cpt &lt;= 1))</Invariant>
+    <Invariant>((not (priority~0.conf1~0.cpt &lt;= 4)) or (conf1~0.cpt &lt;= 4))</Invariant>
+    <Invariant>((not (priority~0.conf1~0.cpt &lt;= 2)) or (conf1~0.cpt &lt;= 2))</Invariant>
     <Ivc>priority~2.command_failure</Ivc>
     <Ivc>priority~1.in_command</Ivc>
     <Ivc>priority~1.other_in_command</Ivc>
@@ -156,7 +329,6 @@
     <Ivc>m1</Ivc>
     <Ivc>conf1~0.signal</Ivc>
     <Ivc>m2</Ivc>
-    <Ivc>m3</Ivc>
     <Ivc>priority~2.conf1~0.pre_cpt</Ivc>
     <Ivc>priority~1.command_failure</Ivc>
     <Ivc>conf1~0.out</Ivc>
@@ -180,3 +352,4 @@
     <Ivc>conf1~0.n</Ivc>
     </IvcSet>
   </Property>
+</Results>

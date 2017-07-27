@@ -222,44 +222,8 @@
   <Progress source="bmc" trueFor="74">
     <PropertyProgress name="__GUARANTEE7"/>
   </Progress>
-  <Progress source="bmc" trueFor="75">
-    <PropertyProgress name="__GUARANTEE7"/>
-  </Progress>
-  <Progress source="bmc" trueFor="76">
-    <PropertyProgress name="__GUARANTEE7"/>
-  </Progress>
-  <Progress source="bmc" trueFor="77">
-    <PropertyProgress name="__GUARANTEE7"/>
-  </Progress>
-  <Progress source="bmc" trueFor="78">
-    <PropertyProgress name="__GUARANTEE7"/>
-  </Progress>
-  <Progress source="bmc" trueFor="79">
-    <PropertyProgress name="__GUARANTEE7"/>
-  </Progress>
-  <Progress source="bmc" trueFor="80">
-    <PropertyProgress name="__GUARANTEE7"/>
-  </Progress>
-  <Progress source="bmc" trueFor="81">
-    <PropertyProgress name="__GUARANTEE7"/>
-  </Progress>
-  <Progress source="bmc" trueFor="82">
-    <PropertyProgress name="__GUARANTEE7"/>
-  </Progress>
-  <Progress source="bmc" trueFor="83">
-    <PropertyProgress name="__GUARANTEE7"/>
-  </Progress>
-  <Progress source="bmc" trueFor="84">
-    <PropertyProgress name="__GUARANTEE7"/>
-  </Progress>
-  <Progress source="bmc" trueFor="85">
-    <PropertyProgress name="__GUARANTEE7"/>
-  </Progress>
-  <Progress source="bmc" trueFor="86">
-    <PropertyProgress name="__GUARANTEE7"/>
-  </Progress>
   <Property name="__GUARANTEE7">
-    <Runtime unit="sec">9.468</Runtime>
+    <Runtime unit="sec">9.54</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -286,10 +250,10 @@
     <MustElem>_TOP__IM~0.__ASSUME__CONJ</MustElem>
     <MustElem>_TOP__TLM~0.OP_CMD_IN.System_Start</MustElem>
     <IvcSet number="1">
-    <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
-    <Invariant>_TOP__IM~0.__ASSUME__HIST</Invariant>
     <Invariant>__GUARANTEE7</Invariant>
+    <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
     <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__IM~0.__ASSUME__HIST</Invariant>
     <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__27</Ivc>
     <Ivc>_TOP__TLM~0.__TLM__PROP__1</Ivc>
     <Ivc>__GUARANTEE7</Ivc>
@@ -314,3 +278,4 @@
     <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
     </IvcSet>
   </Property>
+</Results>

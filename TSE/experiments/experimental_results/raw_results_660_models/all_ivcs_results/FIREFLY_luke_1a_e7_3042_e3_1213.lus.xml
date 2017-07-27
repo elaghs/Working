@@ -70,7 +70,7 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">1.914</Runtime>
+    <Runtime unit="sec">1.912</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -82,10 +82,10 @@
     <MustElem>V105_garde3</MustElem>
     <MustElem>V107_garde5</MustElem>
     <IvcSet number="1">
-    <Invariant>((V50_exclusive + (-1)) &lt;= 0)</Invariant>
+    <Invariant>(V50_exclusive &lt;= 1)</Invariant>
+    <Invariant>OK</Invariant>
     <Invariant>((not (((-V51_shared) + 1) &lt;= 0)) or (0 &lt;= (V51_shared + (-2))))</Invariant>
     <Invariant>(0 &lt;= V51_shared)</Invariant>
-    <Invariant>OK</Invariant>
     <Ivc>V50_exclusive</Ivc>
     <Ivc>V110_garde8</Ivc>
     <Ivc>V51_shared</Ivc>
@@ -95,3 +95,4 @@
     <Ivc>V107_garde5</Ivc>
     </IvcSet>
   </Property>
+</Results>

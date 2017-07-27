@@ -123,8 +123,14 @@
   <Progress source="bmc" trueFor="41">
     <PropertyProgress name="__GUARANTEE51"/>
   </Progress>
+  <Progress source="bmc" trueFor="42">
+    <PropertyProgress name="__GUARANTEE51"/>
+  </Progress>
+  <Progress source="bmc" trueFor="43">
+    <PropertyProgress name="__GUARANTEE51"/>
+  </Progress>
   <Property name="__GUARANTEE51">
-    <Runtime unit="sec">11.939</Runtime>
+    <Runtime unit="sec">11.344</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -152,10 +158,10 @@
     <MustElem>_TOP__ALARM~0.__ASSUME__HIST</MustElem>
     <MustElem>_TOP__OUTPUT~0.__ASSUME__HIST</MustElem>
     <IvcSet number="1">
-    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
-    <Invariant>(_TOP__ALARM~0.Idle_Time_Counter &lt;= Idle_Time_Counter)</Invariant>
-    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
     <Invariant>__GUARANTEE51</Invariant>
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Invariant>(_TOP__ALARM~0.Idle_Time_Counter &lt;= Idle_Time_Counter)</Invariant>
+    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
     <Ivc>_TOP__ALARM~0.IM_IN.Current_System_Mode</Ivc>
     <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__27</Ivc>
     <Ivc>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</Ivc>
@@ -181,3 +187,4 @@
     <Ivc>_TOP__ALARM~0.__ASSUME__HIST</Ivc>
     </IvcSet>
   </Property>
+</Results>

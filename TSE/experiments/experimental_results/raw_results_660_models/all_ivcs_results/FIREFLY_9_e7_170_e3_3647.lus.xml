@@ -64,7 +64,7 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">1.019</Runtime>
+    <Runtime unit="sec">1.113</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -73,11 +73,12 @@
     <MustElem>V120_mem_invalid</MustElem>
     <MustElem>V56_procs</MustElem>
     <IvcSet number="1">
-    <Invariant>OK</Invariant>
     <Invariant>(V51_invalid &lt;= V56_procs)</Invariant>
+    <Invariant>OK</Invariant>
     <Ivc>V51_invalid</Ivc>
     <Ivc>V120_mem_invalid</Ivc>
     <Ivc>OK</Ivc>
     <Ivc>V56_procs</Ivc>
     </IvcSet>
   </Property>
+</Results>

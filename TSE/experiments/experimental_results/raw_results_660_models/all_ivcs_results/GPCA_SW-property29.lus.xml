@@ -138,8 +138,56 @@
   <Progress source="bmc" trueFor="46">
     <PropertyProgress name="__GUARANTEE29"/>
   </Progress>
+  <Progress source="bmc" trueFor="47">
+    <PropertyProgress name="__GUARANTEE29"/>
+  </Progress>
+  <Progress source="bmc" trueFor="48">
+    <PropertyProgress name="__GUARANTEE29"/>
+  </Progress>
+  <Progress source="bmc" trueFor="49">
+    <PropertyProgress name="__GUARANTEE29"/>
+  </Progress>
+  <Progress source="bmc" trueFor="50">
+    <PropertyProgress name="__GUARANTEE29"/>
+  </Progress>
+  <Progress source="bmc" trueFor="51">
+    <PropertyProgress name="__GUARANTEE29"/>
+  </Progress>
+  <Progress source="bmc" trueFor="52">
+    <PropertyProgress name="__GUARANTEE29"/>
+  </Progress>
+  <Progress source="bmc" trueFor="53">
+    <PropertyProgress name="__GUARANTEE29"/>
+  </Progress>
+  <Progress source="bmc" trueFor="54">
+    <PropertyProgress name="__GUARANTEE29"/>
+  </Progress>
+  <Progress source="bmc" trueFor="55">
+    <PropertyProgress name="__GUARANTEE29"/>
+  </Progress>
+  <Progress source="bmc" trueFor="56">
+    <PropertyProgress name="__GUARANTEE29"/>
+  </Progress>
+  <Progress source="bmc" trueFor="57">
+    <PropertyProgress name="__GUARANTEE29"/>
+  </Progress>
+  <Progress source="bmc" trueFor="58">
+    <PropertyProgress name="__GUARANTEE29"/>
+  </Progress>
+  <Progress source="bmc" trueFor="59">
+    <PropertyProgress name="__GUARANTEE29"/>
+  </Progress>
+  <Progress source="bmc" trueFor="60">
+    <PropertyProgress name="__GUARANTEE29"/>
+  </Progress>
+  <Progress source="bmc" trueFor="61">
+    <PropertyProgress name="__GUARANTEE29"/>
+  </Progress>
+  <Progress source="bmc" trueFor="62">
+    <PropertyProgress name="__GUARANTEE29"/>
+  </Progress>
   <Property name="__GUARANTEE29">
-    <Runtime unit="sec">9.365</Runtime>
+    <Runtime unit="sec">9.636</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -199,3 +247,4 @@
     <Ivc>_TOP__IM~0.__ASSUME__CONJ</Ivc>
     </IvcSet>
   </Property>
+</Results>

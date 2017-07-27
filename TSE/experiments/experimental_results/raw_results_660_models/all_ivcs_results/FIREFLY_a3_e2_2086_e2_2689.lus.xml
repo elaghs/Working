@@ -12,20 +12,13 @@
   <Progress source="bmc" trueFor="4">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="5">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="6">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">5.051</Runtime>
+    <Runtime unit="sec">4.521</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
+    <NumberOfIVCs>2</NumberOfIVCs>
     <MustElem>V59_procs</MustElem>
     <MustElem>V116_garde2</MustElem>
-    <MustElem>V117_garde3</MustElem>
     <MustElem>V52_dirty</MustElem>
     <MustElem>V118_garde4</MustElem>
     <MustElem>V119_garde5</MustElem>
@@ -64,4 +57,28 @@
     <Ivc>V58_A3</Ivc>
     <Ivc>V57_A2</Ivc>
     </IvcSet>
+    <IvcSet number="2">
+    <Invariant>((not V60_env) or ((V54_shared + V53_exclusive) &lt;= V59_procs))</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>V115_garde1</Ivc>
+    <Ivc>V116_garde2</Ivc>
+    <Ivc>V59_procs</Ivc>
+    <Ivc>V52_dirty</Ivc>
+    <Ivc>V118_garde4</Ivc>
+    <Ivc>V119_garde5</Ivc>
+    <Ivc>V54_shared</Ivc>
+    <Ivc>V51_invalid</Ivc>
+    <Ivc>V55_R4</Ivc>
+    <Ivc>V60_env</Ivc>
+    <Ivc>V53_exclusive</Ivc>
+    <Ivc>V142_X</Ivc>
+    <Ivc>V122_garde8</Ivc>
+    <Ivc>V121_garde7</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V56_A1</Ivc>
+    <Ivc>V123_mem_invalid</Ivc>
+    <Ivc>V58_A3</Ivc>
+    <Ivc>V57_A2</Ivc>
+    </IvcSet>
   </Property>
+</Results>

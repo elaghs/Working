@@ -72,8 +72,11 @@
   <Progress source="bmc" trueFor="24">
     <PropertyProgress name="OK"/>
   </Progress>
+  <Progress source="bmc" trueFor="25">
+    <PropertyProgress name="OK"/>
+  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">1.922</Runtime>
+    <Runtime unit="sec">1.813</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -84,11 +87,11 @@
     <MustElem>V62_p1</MustElem>
     <IvcSet number="1">
     <Invariant>(V63_p2 &lt;= 2)</Invariant>
-    <Invariant>((V62_p1 + (-2)) &lt;= 0)</Invariant>
-    <Invariant>(not (V64_p3 &lt;= (-1)))</Invariant>
-    <Invariant>(not (0 &lt;= (V64_p3 + (-3))))</Invariant>
     <Invariant>(not ((V62_p1 + 1) &lt;= 0))</Invariant>
+    <Invariant>((V62_p1 + (-3)) &lt;= 0)</Invariant>
+    <Invariant>(not ((V64_p3 + 1) &lt;= 0))</Invariant>
     <Invariant>(not ((V63_p2 + 1) &lt;= 0))</Invariant>
+    <Invariant>((V64_p3 + (-2)) &lt;= 0)</Invariant>
     <Invariant>OK</Invariant>
     <Ivc>V70_erreur_ticket3i</Ivc>
     <Ivc>V64_p3</Ivc>
@@ -97,3 +100,4 @@
     <Ivc>V62_p1</Ivc>
     </IvcSet>
   </Property>
+</Results>

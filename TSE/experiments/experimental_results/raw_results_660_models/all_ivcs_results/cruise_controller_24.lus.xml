@@ -49,71 +49,190 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">33.329</Runtime>
+    <Runtime unit="sec">43.733</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
+    <NumberOfIVCs>8</NumberOfIVCs>
     <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_states___root</MustElem>
     <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_states___root</MustElem>
-    <MustElem>chart_CruiseController_ModeLogic_mode_logic____wakeup___</MustElem>
-    <MustElem>mode</MustElem>
-    <MustElem>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root2</MustElem>
-    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_5_states___root</MustElem>
-    <MustElem>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root</MustElem>
-    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_outports_mode</MustElem>
-    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_states___root</MustElem>
-    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_mode</MustElem>
-    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root</MustElem>
-    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_10_states___root</MustElem>
-    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_15_states___root</MustElem>
-    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_outports_mode</MustElem>
-    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_outports_mode</MustElem>
-    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_5_states___root</MustElem>
-    <MustElem>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_mode</MustElem>
-    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_states___root</MustElem>
-    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_outports_mode</MustElem>
-    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_outports_setDesiredSpeed</MustElem>
-    <MustElem>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root2</MustElem>
-    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_states___root</MustElem>
-    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_4_outports_mode</MustElem>
-    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root</MustElem>
-    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_1_states___root</MustElem>
     <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_7_states___root</MustElem>
     <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_states___root</MustElem>
+    <MustElem>mode</MustElem>
     <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root</MustElem>
     <MustElem>chart_CruiseController_ModeLogic_mode_logic_rlt_evtInitStep</MustElem>
     <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_8_outports_mode</MustElem>
     <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_outports_mode</MustElem>
     <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_7_states___root</MustElem>
-    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_2</MustElem>
+    <MustElem>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root2</MustElem>
     <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_1</MustElem>
     <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_3</MustElem>
+    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_5_states___root</MustElem>
+    <MustElem>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root</MustElem>
+    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_outports_mode</MustElem>
+    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_states___root</MustElem>
+    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_mode</MustElem>
     <MustElem>OK</MustElem>
     <MustElem>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root</MustElem>
     <MustElem>chart_CruiseController_ModeLogic_mode_logic_final_state_states___root</MustElem>
     <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_2_states___root</MustElem>
-    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_outports_mode</MustElem>
+    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root</MustElem>
+    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_10_states___root</MustElem>
     <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_outports_setDesiredSpeed</MustElem>
     <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_outports_mode</MustElem>
     <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root</MustElem>
+    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_15_states___root</MustElem>
+    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_outports_mode</MustElem>
+    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_outports_mode</MustElem>
     <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_states___root</MustElem>
-    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_fired_1</MustElem>
+    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_5_states___root</MustElem>
     <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_outports_setDesiredSpeed</MustElem>
     <MustElem>chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed</MustElem>
     <MustElem>chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root</MustElem>
     <MustElem>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_02</MustElem>
+    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_states___root</MustElem>
     <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_states___root</MustElem>
     <MustElem>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_setDesiredSpeed</MustElem>
     <MustElem>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_0</MustElem>
     <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_states___root</MustElem>
+    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_outports_setDesiredSpeed</MustElem>
+    <MustElem>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root2</MustElem>
+    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_states___root</MustElem>
     <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root</MustElem>
+    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root</MustElem>
+    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_1_states___root</MustElem>
     <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_setDesiredSpeed</MustElem>
     <IvcSet number="1">
+    <Invariant>((4 = chart_CruiseController_ModeLogic_mode_logic_final_state_states___root) or (chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed &lt;&gt; 1))</Invariant>
+    <Invariant>(((not chart_CruiseController_ModeLogic_mode_logic_rlt_evtInitStep) or chart_CruiseController_ModeLogic_mode_logic____wakeup___) or (0 = chart_CruiseController_ModeLogic_mode_logic_final_state_states___root))</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_1</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_2</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_3</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root2</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_5_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_10_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_15_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_5_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_states___root</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root2</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_7_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_rlt_evtInitStep</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_8_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_7_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_2</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_1</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_3</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_2_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_final_state_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_3</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_fired_1</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_4</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_outports_setDesiredSpeed</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_complete_1</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_02</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_0</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_1</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_3</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_2</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_setDesiredSpeed</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>((not chart_CruiseController_ModeLogic_mode_logic_rlt_evtInitStep) or (chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed &lt;&gt; 1))</Invariant>
     <Invariant>OK</Invariant>
     <Invariant>((4 = chart_CruiseController_ModeLogic_mode_logic_final_state_states___root) or (chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed &lt;&gt; 1))</Invariant>
     <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_states___root</Ivc>
     <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_states___root</Ivc>
-    <Ivc>chart_CruiseController_ModeLogic_mode_logic____wakeup___</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root1</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root2</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_5_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_10_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_15_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_5_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_outports_mode</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root1</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root2</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_4_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_7_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_rlt_evtInitStep</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_8_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_7_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_1</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_3</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_2_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_final_state_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_fired_1</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_outports_setDesiredSpeed</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_02</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_0</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_setDesiredSpeed</Ivc>
+    </IvcSet>
+    <IvcSet number="3">
+    <Invariant>((0 = chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed) or (not chart_CruiseController_ModeLogic_mode_logic_rlt_evtInitStep))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>((4 = chart_CruiseController_ModeLogic_mode_logic_final_state_states___root) or (chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed &lt;&gt; 1))</Invariant>
+    <Invariant>((not (1 = chart_CruiseController_ModeLogic_mode_logic_final_state_states___root)) or (chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed &lt;&gt; 1))</Invariant>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_states___root</Ivc>
     <Ivc>mode</Ivc>
     <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root2</Ivc>
     <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root</Ivc>
@@ -167,4 +286,330 @@
     <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root</Ivc>
     <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_setDesiredSpeed</Ivc>
     </IvcSet>
+    <IvcSet number="4">
+    <Invariant>((4 = chart_CruiseController_ModeLogic_mode_logic_final_state_states___root) or (not (chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed = 1)))</Invariant>
+    <Invariant>((not chart_CruiseController_ModeLogic_mode_logic_rlt_evtInitStep) or (not (chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed = 1)))</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_states___root</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root1</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root2</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_5_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_10_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_15_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_outports_mode</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_5_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_outports_mode</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root1</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root2</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_4_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_7_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_rlt_evtInitStep</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_8_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_7_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_1</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_3</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_2_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_final_state_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_fired_0</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_02</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_0</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_setDesiredSpeed</Ivc>
+    </IvcSet>
+    <IvcSet number="5">
+    <Invariant>((4 = chart_CruiseController_ModeLogic_mode_logic_final_state_states___root) or (chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed &lt;&gt; 1))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>((not chart_CruiseController_ModeLogic_mode_logic_rlt_evtInitStep) or (chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed = 0))</Invariant>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_states___root</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root2</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_5_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_10_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_15_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_outports_mode</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_5_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_outports_mode</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root2</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_4_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_7_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_rlt_evtInitStep</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_8_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_7_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_2</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_1</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_3</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_2_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_final_state_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_fired_0</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_02</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_0</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_setDesiredSpeed</Ivc>
+    </IvcSet>
+    <IvcSet number="6">
+    <Invariant>((chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed = 0) or (4 = mode))</Invariant>
+    <Invariant>(((not chart_CruiseController_ModeLogic_mode_logic_rlt_evtInitStep) or chart_CruiseController_ModeLogic_mode_logic____wakeup___) or (0 = chart_CruiseController_ModeLogic_mode_logic_final_state_states___root))</Invariant>
+    <Invariant>((chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed = 0) or (0 &lt;= (chart_CruiseController_ModeLogic_mode_logic_final_state_states___root + (-4))))</Invariant>
+    <Invariant>((chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed = 0) or (chart_CruiseController_ModeLogic_mode_logic_final_state_states___root &lt;= 4))</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_1</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_2</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_3</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root2</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_5_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_10_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_15_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_5_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_outports_mode</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root2</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_7_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_rlt_evtInitStep</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_8_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_7_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_2</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_1</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_3</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_2_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_final_state_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_3</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_fired_1</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_4</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_outports_setDesiredSpeed</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_02</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_0</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_1</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_3</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_2</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_setDesiredSpeed</Ivc>
+    </IvcSet>
+    <IvcSet number="7">
+    <Invariant>(((not chart_CruiseController_ModeLogic_mode_logic_rlt_evtInitStep) or chart_CruiseController_ModeLogic_mode_logic____wakeup___) or (0 = chart_CruiseController_ModeLogic_mode_logic_final_state_states___root))</Invariant>
+    <Invariant>((chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed = 0) or (4 = chart_CruiseController_ModeLogic_mode_logic_final_state_states___root))</Invariant>
+    <Invariant>((4 = chart_CruiseController_ModeLogic_mode_logic_final_state_states___root) or (chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed &lt;&gt; 1))</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_1</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_2</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_3</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root2</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_5_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_10_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_15_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_outports_mode</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_5_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_outports_mode</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root2</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_7_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_rlt_evtInitStep</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_8_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_7_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_2</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_1</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_3</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_2_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_final_state_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_3</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_4</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_fired_0</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_02</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_0</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_1</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_3</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_2</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_setDesiredSpeed</Ivc>
+    </IvcSet>
+    <IvcSet number="8">
+    <Invariant>((not (1 = chart_CruiseController_ModeLogic_mode_logic_final_state_states___root)) or (chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed &lt;&gt; 1))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>((4 = chart_CruiseController_ModeLogic_mode_logic_final_state_states___root) or (chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed &lt;&gt; 1))</Invariant>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic____wakeup___</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_1</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_2</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_3</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root2</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_5_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_10_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_15_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_5_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_states___root</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root2</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_7_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_rlt_evtInitStep</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_8_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_7_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_2</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_1</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_3</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_2_states___root</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_final_state_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_outports_mode</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_3</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_fired_1</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_4</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_outports_setDesiredSpeed</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_complete_1</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_02</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_0</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_1</Ivc>
+    <Ivc>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_setDesiredSpeed</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_3</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_2</Ivc>
+    <Ivc>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_setDesiredSpeed</Ivc>
+    </IvcSet>
   </Property>
+</Results>

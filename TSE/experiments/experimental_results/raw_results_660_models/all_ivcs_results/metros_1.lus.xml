@@ -37,24 +37,34 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">2.65</Runtime>
+    <Runtime unit="sec">7.123</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>2</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
-    <MustElem>main~0.nB0</MustElem>
-    <MustElem>main~0.avance0</MustElem>
-    <MustElem>main~0.controleur~0.retard</MustElem>
-    <MustElem>main~0.retard0</MustElem>
-    <MustElem>pOK</MustElem>
-    <MustElem>retard0</MustElem>
-    <MustElem>avance0</MustElem>
-    <MustElem>main~0.controleur~0.nS</MustElem>
-    <MustElem>main~0.nS</MustElem>
+    <NumberOfIVCs>3</NumberOfIVCs>
     <MustElem>main~0.controleur~0.diff</MustElem>
     <MustElem>OK</MustElem>
+    <MustElem>pOK</MustElem>
     <MustElem>main~0.controleur~0.nB</MustElem>
-    <MustElem>main~0.controleur~0.avance</MustElem>
+    <MustElem>main~0.controleur~0.nS</MustElem>
     <IvcSet number="1">
+    <Invariant>(Sofar~0.Sofar =&gt; pOK)</Invariant>
+    <Invariant>(main~0.nB0 &gt;= 0)</Invariant>
+    <Invariant>(main~0.controleur~0.retard =&gt; (not Sofar~0.Sofar))</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>main~0.nB0</Ivc>
+    <Ivc>Sofar~0.X</Ivc>
+    <Ivc>main~0.controleur~0.retard</Ivc>
+    <Ivc>nS</Ivc>
+    <Ivc>Sofar~0.Sofar</Ivc>
+    <Ivc>main~0.controleur~0.diff</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>main~0.retard0</Ivc>
+    <Ivc>pOK</Ivc>
+    <Ivc>retard0</Ivc>
+    <Ivc>main~0.controleur~0.nB</Ivc>
+    <Ivc>main~0.controleur~0.nS</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
     <Invariant>OK</Invariant>
     <Ivc>main~0.avance0</Ivc>
     <Ivc>main~0.nB0</Ivc>
@@ -70,4 +80,23 @@
     <Ivc>main~0.controleur~0.nB</Ivc>
     <Ivc>main~0.controleur~0.avance</Ivc>
     </IvcSet>
+    <IvcSet number="3">
+    <Invariant>(Sofar~0.Sofar =&gt; pOK)</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(main~0.controleur~0.avance =&gt; (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(main~0.nS &gt;= 0)</Invariant>
+    <Ivc>main~0.avance0</Ivc>
+    <Ivc>Sofar~0.X</Ivc>
+    <Ivc>main~0.nS</Ivc>
+    <Ivc>Sofar~0.Sofar</Ivc>
+    <Ivc>main~0.controleur~0.diff</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>pOK</Ivc>
+    <Ivc>nB0</Ivc>
+    <Ivc>avance0</Ivc>
+    <Ivc>main~0.controleur~0.nB</Ivc>
+    <Ivc>main~0.controleur~0.nS</Ivc>
+    <Ivc>main~0.controleur~0.avance</Ivc>
+    </IvcSet>
   </Property>
+</Results>

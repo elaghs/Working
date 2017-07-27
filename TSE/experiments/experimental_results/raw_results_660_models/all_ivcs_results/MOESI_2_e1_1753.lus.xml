@@ -15,11 +15,8 @@
   <Progress source="bmc" trueFor="5">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="6">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">2.317</Runtime>
+    <Runtime unit="sec">2.311</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -69,3 +66,4 @@
     <Ivc>moesi~0.exclusive_mo</Ivc>
     </IvcSet>
   </Property>
+</Results>

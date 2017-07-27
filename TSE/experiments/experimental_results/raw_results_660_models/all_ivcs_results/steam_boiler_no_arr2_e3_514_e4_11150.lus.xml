@@ -12,32 +12,8 @@
   <Progress source="bmc" trueFor="4">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="5">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="6">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="7">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="8">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="9">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="10">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="11">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="12">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">1.73</Runtime>
+    <Runtime unit="sec">1.719</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -73,3 +49,4 @@
     <Ivc>ControlMode~0.critical_failure~0.op_mode</Ivc>
     </IvcSet>
   </Property>
+</Results>

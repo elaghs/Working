@@ -102,8 +102,17 @@
   <Progress source="bmc" trueFor="34">
     <PropertyProgress name="OK"/>
   </Progress>
+  <Progress source="bmc" trueFor="35">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="36">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="37">
+    <PropertyProgress name="OK"/>
+  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">12.741</Runtime>
+    <Runtime unit="sec">14.054</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -149,15 +158,15 @@
     <MustElem>V210_First</MustElem>
     <MustElem>V81_R8</MustElem>
     <IvcSet number="1">
-    <Invariant>(((not V89_env) or (V72_dirty &lt;= 0)) or (V69_exclusive &lt;= 0))</Invariant>
+    <Invariant>(((not V89_env) or (V72_dirty &lt;= 0)) or (V71_shared_dirty &lt;= 0))</Invariant>
+    <Invariant>(V231_First = V210_First)</Invariant>
     <Invariant>(V203_First = V231_First)</Invariant>
-    <Invariant>(V231_First = V224_First)</Invariant>
-    <Invariant>(((V69_exclusive &lt;= 0) or (not V89_env)) or (V70_shared &lt;= 0))</Invariant>
+    <Invariant>(((not V89_env) or (V72_dirty &lt;= 0)) or (((V72_dirty + V70_shared) + V69_exclusive) &lt;= 1))</Invariant>
     <Invariant>(V231_First = V217_First)</Invariant>
     <Invariant>OK</Invariant>
-    <Invariant>(V231_First = V210_First)</Invariant>
-    <Invariant>((((V70_shared + V71_shared_dirty) &lt;= 0) or (not V89_env)) or (V72_dirty &lt;= 0))</Invariant>
-    <Invariant>(((V69_exclusive &lt;= 0) or (not V89_env)) or (not (V224_First &lt;= ((2 * V71_shared_dirty) + V73_invalid))))</Invariant>
+    <Invariant>(V231_First = V224_First)</Invariant>
+    <Invariant>(((not V89_env) or (not (0 &lt;= (V70_shared + (-1))))) or (V69_exclusive &lt;= 0))</Invariant>
+    <Invariant>(((not V89_env) or (V71_shared_dirty &lt;= 0)) or (V69_exclusive &lt;= 0))</Invariant>
     <Ivc>V191_X</Ivc>
     <Ivc>V86_R13</Ivc>
     <Ivc>V78_R5</Ivc>
@@ -201,3 +210,4 @@
     <Ivc>V81_R8</Ivc>
     </IvcSet>
   </Property>
+</Results>

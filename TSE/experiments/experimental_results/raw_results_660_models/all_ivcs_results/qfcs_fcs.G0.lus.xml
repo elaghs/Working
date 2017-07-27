@@ -316,8 +316,8 @@
     <PropertyProgress name="__GUARANTEE0"/>
   </Progress>
   <Property name="__GUARANTEE0">
-    <Runtime unit="sec">6482.605</Runtime>
-    <Answer source="pdr">valid</Answer>
+    <Runtime unit="sec">5846.148</Runtime>
+    <Answer source="invariant-generation">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
     <MustElem>_TOP__FCC1_0.acts_fail.STEER</MustElem>
@@ -635,10 +635,10 @@
     <MustElem>FCS_RC1__valids_to_nums_0.num_valids.FLAPLI</MustElem>
     <MustElem>FCS_RC1__valids_to_nums_0.f4.RUDUP</MustElem>
     <IvcSet number="1">
-    <Invariant>__GUARANTEE0</Invariant>
     <Invariant>_TOP__FCC1_0.__ASSUME__HIST</Invariant>
-    <Invariant>_TOP__FCC3_0.__ASSUME__HIST</Invariant>
     <Invariant>_TOP__FCC2_0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__FCC3_0.__ASSUME__HIST</Invariant>
+    <Invariant>__GUARANTEE0</Invariant>
     <Invariant>_TOP__FCC4_0.__ASSUME__HIST</Invariant>
     <Ivc>FCS_RC1__valids_to_nums_0.f3.AILL</Ivc>
     <Ivc>_TOP__FCC1_0.acts_fail.STEER</Ivc>
@@ -956,3 +956,4 @@
     <Ivc>FCS_RC1__valids_to_nums_0.f4.RUDUP</Ivc>
     </IvcSet>
   </Property>
+</Results>

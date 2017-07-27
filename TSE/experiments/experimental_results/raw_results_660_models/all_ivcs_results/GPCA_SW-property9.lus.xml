@@ -171,12 +171,65 @@
   <Progress source="bmc" trueFor="57">
     <PropertyProgress name="__GUARANTEE9"/>
   </Progress>
+  <Progress source="bmc" trueFor="58">
+    <PropertyProgress name="__GUARANTEE9"/>
+  </Progress>
+  <Progress source="bmc" trueFor="59">
+    <PropertyProgress name="__GUARANTEE9"/>
+  </Progress>
+  <Progress source="bmc" trueFor="60">
+    <PropertyProgress name="__GUARANTEE9"/>
+  </Progress>
+  <Progress source="bmc" trueFor="61">
+    <PropertyProgress name="__GUARANTEE9"/>
+  </Progress>
+  <Progress source="bmc" trueFor="62">
+    <PropertyProgress name="__GUARANTEE9"/>
+  </Progress>
+  <Progress source="bmc" trueFor="63">
+    <PropertyProgress name="__GUARANTEE9"/>
+  </Progress>
+  <Progress source="bmc" trueFor="64">
+    <PropertyProgress name="__GUARANTEE9"/>
+  </Progress>
+  <Progress source="bmc" trueFor="65">
+    <PropertyProgress name="__GUARANTEE9"/>
+  </Progress>
+  <Progress source="bmc" trueFor="66">
+    <PropertyProgress name="__GUARANTEE9"/>
+  </Progress>
+  <Progress source="bmc" trueFor="67">
+    <PropertyProgress name="__GUARANTEE9"/>
+  </Progress>
+  <Progress source="bmc" trueFor="68">
+    <PropertyProgress name="__GUARANTEE9"/>
+  </Progress>
+  <Progress source="bmc" trueFor="69">
+    <PropertyProgress name="__GUARANTEE9"/>
+  </Progress>
+  <Progress source="bmc" trueFor="70">
+    <PropertyProgress name="__GUARANTEE9"/>
+  </Progress>
+  <Progress source="bmc" trueFor="71">
+    <PropertyProgress name="__GUARANTEE9"/>
+  </Progress>
+  <Progress source="bmc" trueFor="72">
+    <PropertyProgress name="__GUARANTEE9"/>
+  </Progress>
+  <Progress source="bmc" trueFor="73">
+    <PropertyProgress name="__GUARANTEE9"/>
+  </Progress>
+  <Progress source="bmc" trueFor="74">
+    <PropertyProgress name="__GUARANTEE9"/>
+  </Progress>
+  <Progress source="bmc" trueFor="75">
+    <PropertyProgress name="__GUARANTEE9"/>
+  </Progress>
   <Property name="__GUARANTEE9">
-    <Runtime unit="sec">13.967</Runtime>
+    <Runtime unit="sec">15.645</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
-    <MustElem>_TOP__ASSERT__0</MustElem>
+    <NumberOfIVCs>3</NumberOfIVCs>
     <MustElem>_TOP__OUTPUT~0.__OUTPUT__PROP__27</MustElem>
     <MustElem>_TOP__TLM~0.__TLM__PROP__0</MustElem>
     <MustElem>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</MustElem>
@@ -187,7 +240,6 @@
     <MustElem>_TOP__IM~0.TLM_MODE_IN.System_On</MustElem>
     <MustElem>_TOP__TLM~0.__TLM__ASSERT__0</MustElem>
     <MustElem>_TOP__OUTPUT~0.__ASSERT</MustElem>
-    <MustElem>_TOP__IM~0.__IM__ASSERT__0</MustElem>
     <MustElem>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</MustElem>
     <MustElem>_TOP__TLM~0.__ASSUME__CONJ</MustElem>
     <MustElem>_TOP__OUTPUT~0.__ASSUME__CONJ</MustElem>
@@ -201,10 +253,41 @@
     <MustElem>_TOP__IM~0.__ASSUME__CONJ</MustElem>
     <MustElem>_TOP__TLM~0.OP_CMD_IN.System_Start</MustElem>
     <IvcSet number="1">
+    <Invariant>_TOP__IM~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
+    <Invariant>__GUARANTEE9</Invariant>
+    <Ivc>_TOP__ASSERT__19</Ivc>
+    <Ivc>_TOP__IM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__ASSERT__0</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__0</Ivc>
+    <Ivc>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__3</Ivc>
+    <Ivc>__GUARANTEE9</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__4</Ivc>
+    <Ivc>_TOP__TLM~0.TLM_MODE_OUT.System_On</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__27</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__PROP__0</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</Ivc>
+    <Ivc>_TOP__IM~0.IM_OUT.Current_System_Mode</Ivc>
+    <Ivc>_TOP__IM~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__IM~0.__IM__PROP__1</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__IM~0.__IM__PROP__2</Ivc>
+    <Ivc>_TOP__IM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__IM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
     <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
     <Invariant>_TOP__IM~0.__ASSUME__HIST</Invariant>
     <Invariant>__GUARANTEE9</Invariant>
-    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
     <Ivc>_TOP__ASSERT__0</Ivc>
     <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__27</Ivc>
     <Ivc>_TOP__TLM~0.__TLM__PROP__0</Ivc>
@@ -230,4 +313,36 @@
     <Ivc>_TOP__TLM~0.__ASSERT</Ivc>
     <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
     </IvcSet>
+    <IvcSet number="3">
+    <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__IM~0.__ASSUME__HIST</Invariant>
+    <Invariant>__GUARANTEE9</Invariant>
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Ivc>_TOP__ASSERT__0</Ivc>
+    <Ivc>_TOP__ASSERT__19</Ivc>
+    <Ivc>_TOP__IM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__ASSERT__0</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__3</Ivc>
+    <Ivc>__GUARANTEE9</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__4</Ivc>
+    <Ivc>_TOP__TLM~0.TLM_MODE_OUT.System_On</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__27</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__PROP__0</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</Ivc>
+    <Ivc>_TOP__IM~0.IM_OUT.Current_System_Mode</Ivc>
+    <Ivc>_TOP__IM~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__IM~0.__IM__PROP__1</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__IM~0.__IM__PROP__2</Ivc>
+    <Ivc>_TOP__IM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__IM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
+    </IvcSet>
   </Property>
+</Results>

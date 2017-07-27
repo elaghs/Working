@@ -183,35 +183,8 @@
   <Progress source="bmc" trueFor="61">
     <PropertyProgress name="__GUARANTEE21"/>
   </Progress>
-  <Progress source="bmc" trueFor="62">
-    <PropertyProgress name="__GUARANTEE21"/>
-  </Progress>
-  <Progress source="bmc" trueFor="63">
-    <PropertyProgress name="__GUARANTEE21"/>
-  </Progress>
-  <Progress source="bmc" trueFor="64">
-    <PropertyProgress name="__GUARANTEE21"/>
-  </Progress>
-  <Progress source="bmc" trueFor="65">
-    <PropertyProgress name="__GUARANTEE21"/>
-  </Progress>
-  <Progress source="bmc" trueFor="66">
-    <PropertyProgress name="__GUARANTEE21"/>
-  </Progress>
-  <Progress source="bmc" trueFor="67">
-    <PropertyProgress name="__GUARANTEE21"/>
-  </Progress>
-  <Progress source="bmc" trueFor="68">
-    <PropertyProgress name="__GUARANTEE21"/>
-  </Progress>
-  <Progress source="bmc" trueFor="69">
-    <PropertyProgress name="__GUARANTEE21"/>
-  </Progress>
-  <Progress source="bmc" trueFor="70">
-    <PropertyProgress name="__GUARANTEE21"/>
-  </Progress>
   <Property name="__GUARANTEE21">
-    <Runtime unit="sec">10.331</Runtime>
+    <Runtime unit="sec">10.662</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -243,10 +216,10 @@
     <MustElem>_TOP__ALARM~0.__ALARM__PROP__7</MustElem>
     <MustElem>_TOP__TLM~0.OP_CMD_IN.System_Start</MustElem>
     <IvcSet number="1">
+    <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
     <Invariant>__GUARANTEE21</Invariant>
     <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
     <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
-    <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
     <Ivc>_TOP__ALARM~0.__ASSUME__CONJ</Ivc>
     <Ivc>_TOP__TLM~0.__TLM__ASSERT__0</Ivc>
     <Ivc>_TOP__OUTPUT~0.__ASSERT</Ivc>
@@ -276,3 +249,4 @@
     <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
     </IvcSet>
   </Property>
+</Results>

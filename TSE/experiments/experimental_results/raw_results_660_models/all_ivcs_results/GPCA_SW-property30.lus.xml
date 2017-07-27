@@ -195,8 +195,35 @@
   <Progress source="bmc" trueFor="65">
     <PropertyProgress name="__GUARANTEE30"/>
   </Progress>
+  <Progress source="bmc" trueFor="66">
+    <PropertyProgress name="__GUARANTEE30"/>
+  </Progress>
+  <Progress source="bmc" trueFor="67">
+    <PropertyProgress name="__GUARANTEE30"/>
+  </Progress>
+  <Progress source="bmc" trueFor="68">
+    <PropertyProgress name="__GUARANTEE30"/>
+  </Progress>
+  <Progress source="bmc" trueFor="69">
+    <PropertyProgress name="__GUARANTEE30"/>
+  </Progress>
+  <Progress source="bmc" trueFor="70">
+    <PropertyProgress name="__GUARANTEE30"/>
+  </Progress>
+  <Progress source="bmc" trueFor="71">
+    <PropertyProgress name="__GUARANTEE30"/>
+  </Progress>
+  <Progress source="bmc" trueFor="72">
+    <PropertyProgress name="__GUARANTEE30"/>
+  </Progress>
+  <Progress source="bmc" trueFor="73">
+    <PropertyProgress name="__GUARANTEE30"/>
+  </Progress>
+  <Progress source="bmc" trueFor="74">
+    <PropertyProgress name="__GUARANTEE30"/>
+  </Progress>
   <Property name="__GUARANTEE30">
-    <Runtime unit="sec">10.383</Runtime>
+    <Runtime unit="sec">10.052</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -223,9 +250,9 @@
     <MustElem>_TOP__IM~0.__ASSUME__CONJ</MustElem>
     <MustElem>_TOP__OUTPUT~0.__OUTPUT__PROP__29</MustElem>
     <IvcSet number="1">
+    <Invariant>_TOP__IM~0.__ASSUME__HIST</Invariant>
     <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
     <Invariant>__GUARANTEE30</Invariant>
-    <Invariant>_TOP__IM~0.__ASSUME__HIST</Invariant>
     <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__27</Ivc>
     <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Commanded_Flow_Rate</Ivc>
     <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</Ivc>
@@ -250,3 +277,4 @@
     <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__29</Ivc>
     </IvcSet>
   </Property>
+</Results>

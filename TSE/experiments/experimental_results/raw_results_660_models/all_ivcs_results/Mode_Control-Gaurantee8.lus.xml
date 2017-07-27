@@ -99,26 +99,8 @@
   <Progress source="bmc" trueFor="33">
     <PropertyProgress name="__GUARANTEE8"/>
   </Progress>
-  <Progress source="bmc" trueFor="34">
-    <PropertyProgress name="__GUARANTEE8"/>
-  </Progress>
-  <Progress source="bmc" trueFor="35">
-    <PropertyProgress name="__GUARANTEE8"/>
-  </Progress>
-  <Progress source="bmc" trueFor="36">
-    <PropertyProgress name="__GUARANTEE8"/>
-  </Progress>
-  <Progress source="bmc" trueFor="37">
-    <PropertyProgress name="__GUARANTEE8"/>
-  </Progress>
-  <Progress source="bmc" trueFor="38">
-    <PropertyProgress name="__GUARANTEE8"/>
-  </Progress>
-  <Progress source="bmc" trueFor="39">
-    <PropertyProgress name="__GUARANTEE8"/>
-  </Progress>
   <Property name="__GUARANTEE8">
-    <Runtime unit="sec">1.824</Runtime>
+    <Runtime unit="sec">2.043</Runtime>
     <Answer source="invariant-generation">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -130,12 +112,10 @@
     <MustElem>defs__is_cooking~0.m</MustElem>
     <MustElem>defs__is_suspended~0.m</MustElem>
     <MustElem>defs__is_setup~1._outvar</MustElem>
-    <MustElem>defs__is_running~1.m</MustElem>
     <MustElem>defs__is_running~0.m</MustElem>
-    <MustElem>defs__is_running~1._outvar</MustElem>
     <IvcSet number="1">
-    <Invariant>((not is_setup) = is_running)</Invariant>
     <Invariant>__GUARANTEE8</Invariant>
+    <Invariant>(defs__is_running~0._outvar or (1 = sm))</Invariant>
     <Ivc>defs__is_setup~1.m</Ivc>
     <Ivc>defs__is_running~0._outvar</Ivc>
     <Ivc>defs__is_suspended~0._outvar</Ivc>
@@ -144,8 +124,7 @@
     <Ivc>defs__is_setup~1._outvar</Ivc>
     <Ivc>defs__is_suspended~0.m</Ivc>
     <Ivc>defs__is_cooking~0.m</Ivc>
-    <Ivc>defs__is_running~1.m</Ivc>
-    <Ivc>defs__is_running~1._outvar</Ivc>
     <Ivc>defs__is_running~0.m</Ivc>
     </IvcSet>
   </Property>
+</Results>

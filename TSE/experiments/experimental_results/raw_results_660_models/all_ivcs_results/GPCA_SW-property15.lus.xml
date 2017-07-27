@@ -87,23 +87,11 @@
   <Progress source="bmc" trueFor="29">
     <PropertyProgress name="__GUARANTEE15"/>
   </Progress>
-  <Progress source="bmc" trueFor="30">
-    <PropertyProgress name="__GUARANTEE15"/>
-  </Progress>
-  <Progress source="bmc" trueFor="31">
-    <PropertyProgress name="__GUARANTEE15"/>
-  </Progress>
-  <Progress source="bmc" trueFor="32">
-    <PropertyProgress name="__GUARANTEE15"/>
-  </Progress>
-  <Progress source="bmc" trueFor="33">
-    <PropertyProgress name="__GUARANTEE15"/>
-  </Progress>
   <Property name="__GUARANTEE15">
-    <Runtime unit="sec">22.278</Runtime>
+    <Runtime unit="sec">22.577</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
+    <NumberOfIVCs>2</NumberOfIVCs>
     <MustElem>_TOP__OUTPUT~0.GPCA_SW_OUT.Commanded_Flow_Rate</MustElem>
     <MustElem>__GUARANTEE15</MustElem>
     <MustElem>_TOP__IM~0.ALARM_IN.Highest_Level_Alarm</MustElem>
@@ -142,7 +130,6 @@
     <MustElem>_TOP__ALARM~0.TLM_MODE_IN.System_On</MustElem>
     <MustElem>_TOP__CONFIG~0.CONFIG_OUT.Flow_Rate_KVO</MustElem>
     <MustElem>_TOP__TLM~0.__ASSUME__HIST</MustElem>
-    <MustElem>_TOP__IM~0.TLM_MODE_IN.System_On</MustElem>
     <MustElem>_TOP__IM~0.__IM__PROP__5</MustElem>
     <MustElem>_TOP__IM~0.__IM__PROP__6</MustElem>
     <MustElem>_TOP__ALARM~0.__ASSERT</MustElem>
@@ -160,11 +147,74 @@
     <MustElem>_TOP__OUTPUT~0.__OUTPUT__PROP__29</MustElem>
     <IvcSet number="1">
     <Invariant>_TOP__IM~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__CONFIG~0.__ASSUME__HIST</Invariant>
     <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
     <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
     <Invariant>__GUARANTEE15</Invariant>
-    <Invariant>_TOP__CONFIG~0.__ASSUME__HIST</Invariant>
     <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Commanded_Flow_Rate</Ivc>
+    <Ivc>__GUARANTEE15</Ivc>
+    <Ivc>_TOP__IM~0.ALARM_IN.Highest_Level_Alarm</Ivc>
+    <Ivc>_TOP__IM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__IM~0.IM_OUT.Commanded_Flow_Rate</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__ASSERT__0</Ivc>
+    <Ivc>_TOP__IM~0.CONFIG_IN.Flow_Rate_KVO</Ivc>
+    <Ivc>_TOP__OUTPUT~0.IM_IN.Commanded_Flow_Rate</Ivc>
+    <Ivc>_TOP__IM~0.DEFS__is_therapy~0.mode</Ivc>
+    <Ivc>_TOP__IM~0.DEFS__is_therapy~0._outvar</Ivc>
+    <Ivc>_TOP__ALARM~0.SENSOR_IN.Air_In_Line</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__19</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__PROP__0</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__4</Ivc>
+    <Ivc>_TOP__OUTPUT~0.CONFIG_IN.Flow_Rate_KVO</Ivc>
+    <Ivc>_TOP__CONFIG~0.__CONFIG__PROP__0</Ivc>
+    <Ivc>_TOP__ALARM~0.ALARM_OUT.Highest_Level_Alarm</Ivc>
+    <Ivc>_TOP__CONFIG~0.__ASSERT</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__1</Ivc>
+    <Ivc>_TOP__CONFIG~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__2</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__CONFIG~0.__CONFIG__ASSERT__0</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Flow_Rate_KVO</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__0</Ivc>
+    <Ivc>_TOP__CONFIG~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__ASSERT__25</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__3</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__2</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__8</Ivc>
+    <Ivc>_TOP__CONFIG~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__5</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__7</Ivc>
+    <Ivc>_TOP__TLM~0.TLM_MODE_OUT.System_On</Ivc>
+    <Ivc>_TOP__ALARM~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__CONFIG~0.CONFIG_OUT.Flow_Rate_KVO</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__IM~0.__IM__PROP__5</Ivc>
+    <Ivc>_TOP__IM~0.__IM__PROP__6</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__IM~0.__IM__PROP__1</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__IM~0.__IM__PROP__3</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__16</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__15</Ivc>
+    <Ivc>_TOP__IM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__IM~0.__IM__PROP__0</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__IM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__29</Ivc>
+    <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>_TOP__CONFIG~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__IM~0.__ASSUME__HIST</Invariant>
+    <Invariant>__GUARANTEE15</Invariant>
     <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Commanded_Flow_Rate</Ivc>
     <Ivc>__GUARANTEE15</Ivc>
     <Ivc>_TOP__IM~0.ALARM_IN.Highest_Level_Alarm</Ivc>
@@ -221,3 +271,4 @@
     <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
     </IvcSet>
   </Property>
+</Results>

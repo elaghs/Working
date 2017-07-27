@@ -270,120 +270,17 @@
   <Progress source="bmc" trueFor="90">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="91">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="92">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="93">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="94">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="95">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="96">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="97">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="98">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="99">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="100">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="101">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="102">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="103">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="104">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="105">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="106">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="107">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="108">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="109">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="110">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="111">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="112">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="113">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="114">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="115">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="116">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="117">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="118">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="119">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="120">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="121">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="122">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="123">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">9.227</Runtime>
+    <Runtime unit="sec">12.127</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
+    <NumberOfIVCs>2</NumberOfIVCs>
     <MustElem>properties~0.once_from_to~0.B</MustElem>
     <MustElem>properties~0.once_from_to~0.A</MustElem>
-    <MustElem>close_door</MustElem>
     <MustElem>environment~0.edge~2.edge</MustElem>
     <MustElem>controller~0.request_door</MustElem>
     <MustElem>environment~0.door_initially_closed</MustElem>
-    <MustElem>environment~0.edge~1.X</MustElem>
-    <MustElem>environment~0.door_doesnt_open_if_not_asked</MustElem>
     <MustElem>properties~0.once_from_to~0.between_A_and_X</MustElem>
-    <MustElem>environment~0.edge~1.edge</MustElem>
     <MustElem>controller~0.door_is_open</MustElem>
     <MustElem>properties~0.jafter~0.after</MustElem>
     <MustElem>properties~0.jafter~0.X</MustElem>
@@ -394,7 +291,6 @@
     <MustElem>controller~0.open_door</MustElem>
     <MustElem>door_ok</MustElem>
     <MustElem>open_door</MustElem>
-    <MustElem>controller~0.close_door</MustElem>
     <MustElem>properties~0.OK</MustElem>
     <MustElem>prop_ok</MustElem>
     <MustElem>properties~0.door_opens_before_leaving_station</MustElem>
@@ -412,7 +308,6 @@
     <MustElem>environment~0.warning_start_only_in_station</MustElem>
     <MustElem>environment~0.edge~4.X</MustElem>
     <MustElem>environment~0.edge~2.X</MustElem>
-    <MustElem>environment~0.close_door</MustElem>
     <MustElem>environment~0.edge~0.X</MustElem>
     <MustElem>properties~0.door_doesnt_open_out_of_station</MustElem>
     <MustElem>environment~0.warning_start</MustElem>
@@ -428,16 +323,80 @@
     <MustElem>properties~0.door_is_open</MustElem>
     <MustElem>environment~0.tramway_doesnt_start_if_not_door_ok</MustElem>
     <MustElem>environment~0.edge~4.edge</MustElem>
-    <MustElem>controller~0.switch~0.init</MustElem>
     <MustElem>properties~0.edge~0.edge</MustElem>
     <MustElem>environment~0.env_always_ok</MustElem>
     <MustElem>environment~0.door_ok</MustElem>
     <MustElem>properties~0.once_from_to~0.switch~0.value</MustElem>
     <MustElem>properties~0.edge~0.X</MustElem>
     <IvcSet number="1">
+    <Invariant>((((not controller~0.switch~0.value) or (not properties~0.once_from_to~0.switch~0.value)) or (not environment~0.edge~4.X)) or (not environment~0.env_always_ok))</Invariant>
+    <Invariant>(((controller~0.switch~0.value or (not properties~0.once_from_to~0.switch~0.value)) or properties~0.once_from_to~0.jafter~0.X) or (not environment~0.env_always_ok))</Invariant>
     <Invariant>(((environment~0.edge~0.X or controller~0.switch~0.value) or (not properties~0.once_from_to~0.switch~0.value)) or (not environment~0.env_always_ok))</Invariant>
     <Invariant>OK</Invariant>
-    <Invariant>(((not controller~0.switch~0.value) or (not environment~0.jafter~0.X)) or (not environment~0.env_always_ok))</Invariant>
+    <Ivc>properties~0.once_from_to~0.B</Ivc>
+    <Ivc>properties~0.once_from_to~0.A</Ivc>
+    <Ivc>environment~0.edge~2.edge</Ivc>
+    <Ivc>controller~0.request_door</Ivc>
+    <Ivc>environment~0.door_initially_closed</Ivc>
+    <Ivc>properties~0.once_from_to~0.between_A_and_X</Ivc>
+    <Ivc>controller~0.door_is_open</Ivc>
+    <Ivc>properties~0.once_from_to~0.X</Ivc>
+    <Ivc>properties~0.jafter~0.after</Ivc>
+    <Ivc>properties~0.jafter~0.X</Ivc>
+    <Ivc>environment~0.env_ok</Ivc>
+    <Ivc>environment~0.open_door</Ivc>
+    <Ivc>environment~0.in_station</Ivc>
+    <Ivc>environment~0.jafter~0.after</Ivc>
+    <Ivc>controller~0.open_door</Ivc>
+    <Ivc>door_ok</Ivc>
+    <Ivc>open_door</Ivc>
+    <Ivc>properties~0.OK</Ivc>
+    <Ivc>prop_ok</Ivc>
+    <Ivc>properties~0.door_opens_before_leaving_station</Ivc>
+    <Ivc>controller~0.switch~0.off</Ivc>
+    <Ivc>controller~0.in_station</Ivc>
+    <Ivc>env_always_ok</Ivc>
+    <Ivc>properties~0.in_station</Ivc>
+    <Ivc>controller~0.switch~0.on</Ivc>
+    <Ivc>controller~0.door_ok</Ivc>
+    <Ivc>properties~0.once_from_to~0.switch~0.init</Ivc>
+    <Ivc>environment~0.edge~0.edge</Ivc>
+    <Ivc>controller~0.req_pending</Ivc>
+    <Ivc>properties~0.once_from_to~0.switch~0.off</Ivc>
+    <Ivc>controller~0.warning_start</Ivc>
+    <Ivc>properties~0.once_from_to~0.jafter~0.X</Ivc>
+    <Ivc>environment~0.door_doesnt_close_if_not_asked</Ivc>
+    <Ivc>environment~0.warning_start_only_in_station</Ivc>
+    <Ivc>environment~0.edge~4.X</Ivc>
+    <Ivc>environment~0.edge~2.X</Ivc>
+    <Ivc>environment~0.edge~0.X</Ivc>
+    <Ivc>environment~0.warning_start</Ivc>
+    <Ivc>properties~0.door_doesnt_open_out_of_station</Ivc>
+    <Ivc>properties~0.once_from_to~0.switch~0.on</Ivc>
+    <Ivc>properties~0.jafter~1.X</Ivc>
+    <Ivc>properties~0.once_from_to~0.OK</Ivc>
+    <Ivc>properties~0.warning_start</Ivc>
+    <Ivc>properties~0.request_door</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>environment~0.warning_start_cant_become_true_when_door_is_opening</Ivc>
+    <Ivc>properties~0.once_from_to~0.jafter~0.after</Ivc>
+    <Ivc>environment~0.jafter~0.X</Ivc>
+    <Ivc>environment~0.door_is_open</Ivc>
+    <Ivc>controller~0.switch~0.value</Ivc>
+    <Ivc>properties~0.door_is_open</Ivc>
+    <Ivc>environment~0.tramway_doesnt_start_if_not_door_ok</Ivc>
+    <Ivc>properties~0.jafter~1.after</Ivc>
+    <Ivc>environment~0.edge~4.edge</Ivc>
+    <Ivc>properties~0.edge~0.edge</Ivc>
+    <Ivc>environment~0.env_always_ok</Ivc>
+    <Ivc>environment~0.door_ok</Ivc>
+    <Ivc>properties~0.once_from_to~0.switch~0.value</Ivc>
+    <Ivc>properties~0.edge~0.X</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>OK</Invariant>
+    <Invariant>(((environment~0.edge~0.X or controller~0.switch~0.value) or (not properties~0.once_from_to~0.switch~0.value)) or (not environment~0.env_always_ok))</Invariant>
+    <Invariant>(((not properties~0.once_from_to~0.switch~0.value) or (not environment~0.jafter~0.X)) or (not environment~0.env_always_ok))</Invariant>
     <Ivc>properties~0.once_from_to~0.B</Ivc>
     <Ivc>properties~0.once_from_to~0.A</Ivc>
     <Ivc>close_door</Ivc>
@@ -492,7 +451,6 @@
     <Ivc>properties~0.door_is_open</Ivc>
     <Ivc>environment~0.tramway_doesnt_start_if_not_door_ok</Ivc>
     <Ivc>environment~0.edge~4.edge</Ivc>
-    <Ivc>controller~0.switch~0.init</Ivc>
     <Ivc>properties~0.edge~0.edge</Ivc>
     <Ivc>environment~0.env_always_ok</Ivc>
     <Ivc>environment~0.door_ok</Ivc>
@@ -500,3 +458,4 @@
     <Ivc>properties~0.edge~0.X</Ivc>
     </IvcSet>
   </Property>
+</Results>

@@ -6,26 +6,8 @@
   <Progress source="bmc" trueFor="2">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="3">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="4">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="5">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="6">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="7">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="8">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">1.21</Runtime>
+    <Runtime unit="sec">1.208</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -34,14 +16,17 @@
     <MustElem>V27_dist</MustElem>
     <MustElem>OK</MustElem>
     <MustElem>V28_speed</MustElem>
-    <MustElem>V33_env</MustElem>
     <IvcSet number="1">
+    <Invariant>((V27_dist + (-10)) &lt;= 0)</Invariant>
+    <Invariant>(0 &lt;= V28_speed)</Invariant>
+    <Invariant>(0 &lt;= V27_dist)</Invariant>
+    <Invariant>(V28_speed &lt;= 0)</Invariant>
     <Invariant>OK</Invariant>
     <Ivc>V26_bump</Ivc>
     <Ivc>V30_move</Ivc>
     <Ivc>V27_dist</Ivc>
     <Ivc>OK</Ivc>
-    <Ivc>V33_env</Ivc>
     <Ivc>V28_speed</Ivc>
     </IvcSet>
   </Property>
+</Results>

@@ -13,7 +13,7 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">1.417</Runtime>
+    <Runtime unit="sec">1.614</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -21,15 +21,20 @@
     <MustElem>OK</MustElem>
     <MustElem>V63_p2</MustElem>
     <MustElem>V64_p3</MustElem>
-    <MustElem>V71_env</MustElem>
     <MustElem>V62_p1</MustElem>
     <IvcSet number="1">
+    <Invariant>(not (0 &lt;= (V62_p1 + (-3))))</Invariant>
+    <Invariant>(not (0 &lt;= (V64_p3 + (-3))))</Invariant>
+    <Invariant>(not ((V64_p3 + 1) &lt;= 0))</Invariant>
+    <Invariant>(0 &lt;= V63_p2)</Invariant>
+    <Invariant>(not ((V62_p1 + 1) &lt;= 0))</Invariant>
+    <Invariant>((V63_p2 + (-2)) &lt;= 0)</Invariant>
     <Invariant>OK</Invariant>
     <Ivc>V70_erreur_ticket3i</Ivc>
     <Ivc>V64_p3</Ivc>
     <Ivc>V63_p2</Ivc>
     <Ivc>OK</Ivc>
-    <Ivc>V71_env</Ivc>
     <Ivc>V62_p1</Ivc>
     </IvcSet>
   </Property>
+</Results>

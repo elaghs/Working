@@ -52,16 +52,17 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">0.41</Runtime>
+    <Runtime unit="sec">0.411</Runtime>
     <Answer source="invariant-generation">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
     <MustElem>V29_modified_me</MustElem>
     <MustElem>OK</MustElem>
     <IvcSet number="1">
-    <Invariant>OK</Invariant>
     <Invariant>(V29_modified_me &lt;= 0)</Invariant>
+    <Invariant>OK</Invariant>
     <Ivc>V29_modified_me</Ivc>
     <Ivc>OK</Ivc>
     </IvcSet>
   </Property>
+</Results>

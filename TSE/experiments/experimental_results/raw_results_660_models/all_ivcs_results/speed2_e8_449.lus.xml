@@ -3,35 +3,45 @@
   <Progress source="bmc" trueFor="1">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="2">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="3">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="4">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="5">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">1.212</Runtime>
-    <Answer source="k-induction">valid</Answer>
+    <Runtime unit="sec">2.117</Runtime>
+    <Answer source="invariant-generation">valid</Answer>
     <K>1</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
-    <MustElem>speed~0.early</MustElem>
+    <NumberOfIVCs>3</NumberOfIVCs>
     <MustElem>speed~0.diff</MustElem>
     <MustElem>speed~0.incr</MustElem>
-    <MustElem>speed~0.late</MustElem>
     <MustElem>speed~0.COUNTER~0.PC</MustElem>
     <MustElem>speed~0.COUNTER~0.C</MustElem>
-    <MustElem>late</MustElem>
-    <MustElem>speed~0.COUNTER~0.reset</MustElem>
     <MustElem>speed~0.COUNTER~0.incr</MustElem>
     <MustElem>OK</MustElem>
-    <MustElem>early</MustElem>
     <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Invariant>(not speed~0.early)</Invariant>
+    <Ivc>speed~0.early</Ivc>
+    <Ivc>speed~0.diff</Ivc>
+    <Ivc>speed~0.COUNTER~0.C</Ivc>
+    <Ivc>speed~0.COUNTER~0.PC</Ivc>
+    <Ivc>speed~0.incr</Ivc>
+    <Ivc>speed~0.COUNTER~0.init</Ivc>
+    <Ivc>speed~0.COUNTER~0.X</Ivc>
+    <Ivc>speed~0.COUNTER~0.incr</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>early</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>OK</Invariant>
+    <Invariant>(not speed~0.late)</Invariant>
+    <Ivc>speed~0.diff</Ivc>
+    <Ivc>speed~0.COUNTER~0.C</Ivc>
+    <Ivc>speed~0.COUNTER~0.PC</Ivc>
+    <Ivc>speed~0.late</Ivc>
+    <Ivc>speed~0.incr</Ivc>
+    <Ivc>late</Ivc>
+    <Ivc>speed~0.COUNTER~0.init</Ivc>
+    <Ivc>speed~0.COUNTER~0.incr</Ivc>
+    <Ivc>OK</Ivc>
+    </IvcSet>
+    <IvcSet number="3">
     <Invariant>OK</Invariant>
     <Ivc>speed~0.early</Ivc>
     <Ivc>speed~0.diff</Ivc>
@@ -46,3 +56,4 @@
     <Ivc>early</Ivc>
     </IvcSet>
   </Property>
+</Results>

@@ -81,9 +81,30 @@
   <Progress source="bmc" trueFor="27">
     <PropertyProgress name="OK"/>
   </Progress>
+  <Progress source="bmc" trueFor="28">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="29">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="30">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="31">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="32">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="33">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="34">
+    <PropertyProgress name="OK"/>
+  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">2.825</Runtime>
-    <Answer source="k-induction">valid</Answer>
+    <Runtime unit="sec">3.413</Runtime>
+    <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
     <MustElem>R2</MustElem>
@@ -101,9 +122,10 @@
     <MustElem>R1</MustElem>
     <MustElem>dirty_s</MustElem>
     <IvcSet number="1">
-    <Invariant>((not (((-synapse~0.dirty_s) + 1) &lt;= 0)) or (synapse~0.dirty_s = 1))</Invariant>
     <Invariant>OK</Invariant>
-    <Invariant>((not OK) or (First~0.First = (dirty_s + (valid_s + invalid_s))))</Invariant>
+    <Invariant>((synapse~0.dirty_s = 0) or ((dirty_s + (-1)) = 0))</Invariant>
+    <Invariant>((First~0.First = (synapse~0.valid_s + synapse~0.invalid_s)) or (not (synapse~0.dirty_s = 0)))</Invariant>
+    <Invariant>((First~0.First = (0 + (synapse~0.valid_s + (synapse~0.invalid_s + 1)))) or (synapse~0.dirty_s = 0))</Invariant>
     <Ivc>R2</Ivc>
     <Ivc>R3</Ivc>
     <Ivc>synapse~0.dirty_s</Ivc>
@@ -120,3 +142,4 @@
     <Ivc>dirty_s</Ivc>
     </IvcSet>
   </Property>
+</Results>

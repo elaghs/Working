@@ -159,8 +159,47 @@
   <Progress source="bmc" trueFor="53">
     <PropertyProgress name="__GUARANTEE44"/>
   </Progress>
+  <Progress source="bmc" trueFor="54">
+    <PropertyProgress name="__GUARANTEE44"/>
+  </Progress>
+  <Progress source="bmc" trueFor="55">
+    <PropertyProgress name="__GUARANTEE44"/>
+  </Progress>
+  <Progress source="bmc" trueFor="56">
+    <PropertyProgress name="__GUARANTEE44"/>
+  </Progress>
+  <Progress source="bmc" trueFor="57">
+    <PropertyProgress name="__GUARANTEE44"/>
+  </Progress>
+  <Progress source="bmc" trueFor="58">
+    <PropertyProgress name="__GUARANTEE44"/>
+  </Progress>
+  <Progress source="bmc" trueFor="59">
+    <PropertyProgress name="__GUARANTEE44"/>
+  </Progress>
+  <Progress source="bmc" trueFor="60">
+    <PropertyProgress name="__GUARANTEE44"/>
+  </Progress>
+  <Progress source="bmc" trueFor="61">
+    <PropertyProgress name="__GUARANTEE44"/>
+  </Progress>
+  <Progress source="bmc" trueFor="62">
+    <PropertyProgress name="__GUARANTEE44"/>
+  </Progress>
+  <Progress source="bmc" trueFor="63">
+    <PropertyProgress name="__GUARANTEE44"/>
+  </Progress>
+  <Progress source="bmc" trueFor="64">
+    <PropertyProgress name="__GUARANTEE44"/>
+  </Progress>
+  <Progress source="bmc" trueFor="65">
+    <PropertyProgress name="__GUARANTEE44"/>
+  </Progress>
+  <Progress source="bmc" trueFor="66">
+    <PropertyProgress name="__GUARANTEE44"/>
+  </Progress>
   <Property name="__GUARANTEE44">
-    <Runtime unit="sec">6.958</Runtime>
+    <Runtime unit="sec">6.841</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -181,8 +220,8 @@
     <MustElem>_TOP__ALARM~0.SENSOR_IN.Occlusion</MustElem>
     <IvcSet number="1">
     <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
-    <Invariant>__GUARANTEE44</Invariant>
     <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
+    <Invariant>__GUARANTEE44</Invariant>
     <Ivc>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</Ivc>
     <Ivc>__GUARANTEE44</Ivc>
     <Ivc>_TOP__ALARM~0.__ASSUME__CONJ</Ivc>
@@ -200,3 +239,4 @@
     <Ivc>_TOP__ALARM~0.SENSOR_IN.Occlusion</Ivc>
     </IvcSet>
   </Property>
+</Results>

@@ -58,7 +58,7 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">1.324</Runtime>
+    <Runtime unit="sec">1.21</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -73,3 +73,4 @@
     <Ivc>OK</Ivc>
     </IvcSet>
   </Property>
+</Results>

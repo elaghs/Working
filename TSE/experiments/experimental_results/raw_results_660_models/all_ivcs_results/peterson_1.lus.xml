@@ -16,19 +16,19 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">1.31</Runtime>
+    <Runtime unit="sec">1.112</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
     <MustElem>V150_g01</MustElem>
     <MustElem>V71_x0</MustElem>
     <MustElem>OK</MustElem>
-    <MustElem>V85_env</MustElem>
     <IvcSet number="1">
+    <Invariant>(0 &lt;= V71_x0)</Invariant>
     <Invariant>OK</Invariant>
     <Ivc>V150_g01</Ivc>
     <Ivc>V71_x0</Ivc>
     <Ivc>OK</Ivc>
-    <Ivc>V85_env</Ivc>
     </IvcSet>
   </Property>
+</Results>

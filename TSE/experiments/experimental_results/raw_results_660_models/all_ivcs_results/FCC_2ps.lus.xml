@@ -36,11 +36,8 @@
   <Progress source="bmc" trueFor="12">
     <PropertyProgress name="P_COV"/>
   </Progress>
-  <Progress source="bmc" trueFor="13">
-    <PropertyProgress name="P_COV"/>
-  </Progress>
   <Property name="P_COV">
-    <Runtime unit="sec">3787.238</Runtime>
+    <Runtime unit="sec">3782.755</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -1007,9 +1004,9 @@
     <MustElem>OSAS_S_140__req_0.OSAS_S_140__req_helper_14.act</MustElem>
     <MustElem>_TOP__OSAS_comp_0.OSAS_S_180__req_0.OSAS_S_180__req_helper_3.res</MustElem>
     <IvcSet number="1">
-    <Invariant>_TOP__OSAS_comp_0.__ASSUME__HIST</Invariant>
     <Invariant>_TOP__CLAW_comp_0.__ASSUME__HIST</Invariant>
     <Invariant>P_COV</Invariant>
+    <Invariant>_TOP__OSAS_comp_0.__ASSUME__HIST</Invariant>
     <Ivc>_TOP__OSAS_comp_0.acts_in.SPLLOB</Ivc>
     <Ivc>_TOP__CLAW_comp_0.CLAW__CLAW__bound_rec_0.high</Ivc>
     <Ivc>_TOP__OSAS_comp_0.OSAS_S_180__req_0.acts_gain.AILR</Ivc>
@@ -1974,3 +1971,4 @@
     <Ivc>_TOP__OSAS_comp_0.OSAS_S_180__req_0.OSAS_S_180__req_helper_3.res</Ivc>
     </IvcSet>
   </Property>
+</Results>

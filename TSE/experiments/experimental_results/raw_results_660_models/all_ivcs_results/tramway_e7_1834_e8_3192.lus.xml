@@ -390,84 +390,16 @@
   <Progress source="bmc" trueFor="130">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="131">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="132">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="133">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="134">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="135">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="136">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="137">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="138">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="139">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="140">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="141">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="142">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="143">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="144">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="145">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="146">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="147">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="148">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="149">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="150">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="151">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="152">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">3.114</Runtime>
+    <Runtime unit="sec">2.914</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
+    <NumberOfIVCs>2</NumberOfIVCs>
     <MustElem>V250_door_doesnt_open_out_of_station</MustElem>
-    <MustElem>V266_door_doesnt_open_if_not_asked</MustElem>
     <MustElem>V252_X</MustElem>
     <MustElem>V267_tramway_doesnt_start_if_not_door_ok</MustElem>
     <MustElem>V274_X</MustElem>
     <MustElem>V62_door_ok</MustElem>
-    <MustElem>V273_X</MustElem>
     <MustElem>V287_req_pending</MustElem>
     <MustElem>V271_warning_start_only_in_station</MustElem>
     <MustElem>V58_env_always_ok</MustElem>
@@ -480,11 +412,10 @@
     <MustElem>V272_warning_start_cant_become_true_when_door_is_opening</MustElem>
     <MustElem>OK</MustElem>
     <MustElem>V253_between_A_and_X</MustElem>
-    <MustElem>V61_close_door</MustElem>
     <IvcSet number="1">
-    <Invariant>(((door_is_open or (not V253_between_A_and_X)) or (not V58_env_always_ok)) or V287_req_pending)</Invariant>
-    <Invariant>OK</Invariant>
     <Invariant>((((not warning_start) or (not V253_between_A_and_X)) or (not V58_env_always_ok)) or (not V287_req_pending))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(((door_is_open or (not V253_between_A_and_X)) or (not V58_env_always_ok)) or V287_req_pending)</Invariant>
     <Ivc>V250_door_doesnt_open_out_of_station</Ivc>
     <Ivc>V266_door_doesnt_open_if_not_asked</Ivc>
     <Ivc>V252_X</Ivc>
@@ -506,4 +437,28 @@
     <Ivc>OK</Ivc>
     <Ivc>V61_close_door</Ivc>
     </IvcSet>
+    <IvcSet number="2">
+    <Invariant>((((not V253_between_A_and_X) or ~flatten0) or (not V58_env_always_ok)) or V287_req_pending)</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>((((not warning_start) or (not V253_between_A_and_X)) or (not V58_env_always_ok)) or (not V287_req_pending))</Invariant>
+    <Ivc>V250_door_doesnt_open_out_of_station</Ivc>
+    <Ivc>V252_X</Ivc>
+    <Ivc>V274_X</Ivc>
+    <Ivc>V267_tramway_doesnt_start_if_not_door_ok</Ivc>
+    <Ivc>V62_door_ok</Ivc>
+    <Ivc>V287_req_pending</Ivc>
+    <Ivc>~flatten0</Ivc>
+    <Ivc>V271_warning_start_only_in_station</Ivc>
+    <Ivc>V58_env_always_ok</Ivc>
+    <Ivc>V264_env_ok</Ivc>
+    <Ivc>V59_prop_ok</Ivc>
+    <Ivc>V251_door_opens_before_leaving_station</Ivc>
+    <Ivc>V60_open_door</Ivc>
+    <Ivc>V265_door_doesnt_close_if_not_asked</Ivc>
+    <Ivc>V272_warning_start_cant_become_true_when_door_is_opening</Ivc>
+    <Ivc>V268_door_initially_closed</Ivc>
+    <Ivc>V253_between_A_and_X</Ivc>
+    <Ivc>OK</Ivc>
+    </IvcSet>
   </Property>
+</Results>

@@ -9,9 +9,6 @@
   <Progress source="bmc" trueFor="3">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="4">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
     <Runtime unit="sec">0.811</Runtime>
     <Answer source="k-induction">valid</Answer>
@@ -35,3 +32,4 @@
     <Ivc>env</Ivc>
     </IvcSet>
   </Property>
+</Results>

@@ -9,16 +9,20 @@
   <Progress source="bmc" trueFor="3">
     <PropertyProgress name="OK"/>
   </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">9.053</Runtime>
+    <Runtime unit="sec">7.321</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
     <MustElem>mesi~0.modified_me</MustElem>
     <MustElem>Abs~1.Abs</MustElem>
-    <MustElem>Sofar~0.Sofar</MustElem>
     <MustElem>shared_me</MustElem>
-    <MustElem>env</MustElem>
     <MustElem>Abs~3.Abs</MustElem>
     <MustElem>mesi~0.shared_me</MustElem>
     <MustElem>Abs~2.X</MustElem>
@@ -38,13 +42,23 @@
     <MustElem>modified_me</MustElem>
     <MustElem>OK</MustElem>
     <IvcSet number="1">
+    <Invariant>((mesi~0.exclusive_me &lt;= 0) or (0 &lt;= mesi~0.shared_me))</Invariant>
+    <Invariant>(((0 &lt;= mesi~0.invalid_me) or (not (mesi~0.exclusive_me &lt;= 0))) or (not (mesi~0.modified_me = (-0))))</Invariant>
+    <Invariant>((not (mesi~0.modified_me = (-0))) or (((mesi~0.invalid_me + 0) + mesi~0.exclusive_me) &lt;= (((mesi~0.shared_me + mesi~0.modified_me) + mesi~0.modified_me) + 3)))</Invariant>
+    <Invariant>(not (((-mesi~0.modified_me) + 1) &lt;= 0))</Invariant>
+    <Invariant>(((mesi~0.shared_me + mesi~0.exclusive_me) + mesi~0.invalid_me) &lt;= (mesi~0.modified_me + 3))</Invariant>
+    <Invariant>((mesi~0.modified_me = (-0)) or (0 &lt;= mesi~0.shared_me))</Invariant>
+    <Invariant>(mesi~0.shared_me &lt;= 0)</Invariant>
+    <Invariant>(mesi~0.exclusive_me &lt;= 1)</Invariant>
+    <Invariant>(0 &lt;= (mesi~0.invalid_me + 2))</Invariant>
+    <Invariant>(0 &lt;= mesi~0.exclusive_me)</Invariant>
+    <Invariant>((mesi~0.modified_me = (-0)) or (mesi~0.exclusive_me &lt;= 0))</Invariant>
     <Invariant>OK</Invariant>
+    <Invariant>(0 &lt;= (mesi~0.modified_me + 1))</Invariant>
     <Ivc>Abs~1.Abs</Ivc>
     <Ivc>mesi~0.modified_me</Ivc>
-    <Ivc>Sofar~0.Sofar</Ivc>
     <Ivc>shared_me</Ivc>
     <Ivc>Abs~3.Abs</Ivc>
-    <Ivc>env</Ivc>
     <Ivc>Abs~2.X</Ivc>
     <Ivc>mesi~0.shared_me</Ivc>
     <Ivc>Abs~3.X</Ivc>
@@ -64,3 +78,4 @@
     <Ivc>OK</Ivc>
     </IvcSet>
   </Property>
+</Results>

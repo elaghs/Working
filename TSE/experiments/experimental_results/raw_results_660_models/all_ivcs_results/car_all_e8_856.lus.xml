@@ -25,25 +25,29 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">2.221</Runtime>
+    <Runtime unit="sec">2.614</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
-    <MustElem>V26_bump</MustElem>
     <MustElem>V24_toofast</MustElem>
     <MustElem>V30_move</MustElem>
     <MustElem>V27_dist</MustElem>
     <MustElem>OK</MustElem>
     <MustElem>V28_speed</MustElem>
-    <MustElem>V33_env</MustElem>
     <IvcSet number="1">
+    <Invariant>(0 &lt;= V27_dist)</Invariant>
+    <Invariant>(0 &lt;= V28_speed)</Invariant>
+    <Invariant>(((not (V28_speed &lt;= 1)) or (V27_dist &lt;= 1)) or (not V30_move))</Invariant>
     <Invariant>OK</Invariant>
-    <Ivc>V26_bump</Ivc>
+    <Invariant>((V24_toofast or (V27_dist &lt;= 2)) or (not V30_move))</Invariant>
+    <Invariant>(((V27_dist &lt;= 0) or (not (V28_speed &lt;= 0))) or (not V30_move))</Invariant>
+    <Invariant>(V28_speed &lt;= 3)</Invariant>
+    <Invariant>(V27_dist &lt;= 3)</Invariant>
     <Ivc>V24_toofast</Ivc>
     <Ivc>V30_move</Ivc>
     <Ivc>V27_dist</Ivc>
     <Ivc>OK</Ivc>
-    <Ivc>V33_env</Ivc>
     <Ivc>V28_speed</Ivc>
     </IvcSet>
   </Property>
+</Results>

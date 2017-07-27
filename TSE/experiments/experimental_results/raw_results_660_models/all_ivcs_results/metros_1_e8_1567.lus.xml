@@ -72,56 +72,45 @@
   <Progress source="bmc" trueFor="24">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="25">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="26">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="27">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="28">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="29">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="30">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="31">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="32">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="33">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="34">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="35">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="36">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">0.909</Runtime>
+    <Runtime unit="sec">1.828</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
+    <NumberOfIVCs>3</NumberOfIVCs>
     <MustElem>V47_pOK</MustElem>
-    <MustElem>V43_avance0</MustElem>
     <MustElem>OK</MustElem>
-    <MustElem>V45_retard0</MustElem>
     <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Invariant>(V43_avance0 =&gt; (not V170_Sofar))</Invariant>
+    <Invariant>(V40_nS &gt;= 0)</Invariant>
+    <Invariant>((not V47_pOK) =&gt; (not V170_Sofar))</Invariant>
+    <Ivc>V47_pOK</Ivc>
+    <Ivc>V43_avance0</Ivc>
+    <Ivc>V170_Sofar</Ivc>
+    <Ivc>V41_diff0</Ivc>
+    <Ivc>V40_nS</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V165_X</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
     <Invariant>OK</Invariant>
     <Ivc>V47_pOK</Ivc>
     <Ivc>V43_avance0</Ivc>
     <Ivc>OK</Ivc>
     <Ivc>V45_retard0</Ivc>
     </IvcSet>
+    <IvcSet number="3">
+    <Invariant>((not V47_pOK) =&gt; (not V170_Sofar))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(V170_Sofar =&gt; (not V45_retard0))</Invariant>
+    <Invariant>(V38_nB0 &gt;= 0)</Invariant>
+    <Ivc>V47_pOK</Ivc>
+    <Ivc>V170_Sofar</Ivc>
+    <Ivc>V41_diff0</Ivc>
+    <Ivc>V38_nB0</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V165_X</Ivc>
+    <Ivc>V45_retard0</Ivc>
+    </IvcSet>
   </Property>
+</Results>

@@ -61,18 +61,19 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">1.412</Runtime>
-    <Answer source="invariant-generation">valid</Answer>
+    <Runtime unit="sec">1.416</Runtime>
+    <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
     <MustElem>V69_dirty</MustElem>
     <MustElem>V140_g09</MustElem>
     <MustElem>OK</MustElem>
     <IvcSet number="1">
+    <Invariant>(0 &lt;= V69_dirty)</Invariant>
     <Invariant>OK</Invariant>
-    <Invariant>(V69_dirty &gt;= 0)</Invariant>
     <Ivc>V69_dirty</Ivc>
     <Ivc>V140_g09</Ivc>
     <Ivc>OK</Ivc>
     </IvcSet>
   </Property>
+</Results>

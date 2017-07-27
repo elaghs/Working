@@ -138,32 +138,8 @@
   <Progress source="bmc" trueFor="46">
     <PropertyProgress name="__GUARANTEE0"/>
   </Progress>
-  <Progress source="bmc" trueFor="47">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="48">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="49">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="50">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="51">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="52">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="53">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="54">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
   <Property name="__GUARANTEE0">
-    <Runtime unit="sec">14.498</Runtime>
+    <Runtime unit="sec">12.702</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -183,8 +159,8 @@
     <MustElem>_TOP__OUTPUT~0.__ASSUME__HIST</MustElem>
     <IvcSet number="1">
     <Invariant>(GPCA_SW_OUT.Current_System_Mode = IM__IM_OUT.Current_System_Mode)</Invariant>
-    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
     <Invariant>__GUARANTEE0</Invariant>
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
     <Ivc>_TOP__ALARM~0.IM_IN.Current_System_Mode</Ivc>
     <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__27</Ivc>
     <Ivc>__GUARANTEE0</Ivc>
@@ -201,3 +177,4 @@
     <Ivc>_TOP__OUTPUT~0.__ASSUME__HIST</Ivc>
     </IvcSet>
   </Property>
+</Results>

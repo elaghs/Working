@@ -24,8 +24,14 @@
   <Progress source="bmc" trueFor="8">
     <PropertyProgress name="OK"/>
   </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="OK"/>
+  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">0.709</Runtime>
+    <Runtime unit="sec">0.91</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>2</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -47,3 +53,4 @@
     <Ivc>V45_retard0</Ivc>
     </IvcSet>
   </Property>
+</Results>

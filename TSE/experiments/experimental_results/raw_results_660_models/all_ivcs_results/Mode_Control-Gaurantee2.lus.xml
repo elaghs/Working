@@ -3,21 +3,6 @@
   <Progress source="bmc" trueFor="1">
     <PropertyProgress name="__GUARANTEE2"/>
   </Progress>
-  <Progress source="bmc" trueFor="2">
-    <PropertyProgress name="__GUARANTEE2"/>
-  </Progress>
-  <Progress source="bmc" trueFor="3">
-    <PropertyProgress name="__GUARANTEE2"/>
-  </Progress>
-  <Progress source="bmc" trueFor="4">
-    <PropertyProgress name="__GUARANTEE2"/>
-  </Progress>
-  <Progress source="bmc" trueFor="5">
-    <PropertyProgress name="__GUARANTEE2"/>
-  </Progress>
-  <Progress source="bmc" trueFor="6">
-    <PropertyProgress name="__GUARANTEE2"/>
-  </Progress>
   <Property name="__GUARANTEE2">
     <Runtime unit="sec">0.516</Runtime>
     <Answer source="k-induction">valid</Answer>
@@ -37,3 +22,4 @@
     <Ivc>defs__initially_true~0.b</Ivc>
     </IvcSet>
   </Property>
+</Results>

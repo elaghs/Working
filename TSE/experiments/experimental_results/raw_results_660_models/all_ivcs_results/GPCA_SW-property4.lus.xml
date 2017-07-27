@@ -79,7 +79,7 @@
     <PropertyProgress name="__GUARANTEE4"/>
   </Progress>
   <Property name="__GUARANTEE4">
-    <Runtime unit="sec">11.865</Runtime>
+    <Runtime unit="sec">11.745</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -106,10 +106,10 @@
     <MustElem>_TOP__ALARM~0.Time_FR_Under_Min_Tol</MustElem>
     <MustElem>_TOP__OUTPUT~0.__OUTPUT__PROP__29</MustElem>
     <IvcSet number="1">
-    <Invariant>(IM__IM_OUT.Commanded_Flow_Rate &lt;= GPCA_SW_OUT.Commanded_Flow_Rate)</Invariant>
-    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
-    <Invariant>__GUARANTEE4</Invariant>
     <Invariant>(GPCA_SW_OUT.Commanded_Flow_Rate &lt;= IM__IM_OUT.Commanded_Flow_Rate)</Invariant>
+    <Invariant>__GUARANTEE4</Invariant>
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Invariant>(IM__IM_OUT.Commanded_Flow_Rate &lt;= GPCA_SW_OUT.Commanded_Flow_Rate)</Invariant>
     <Ivc>_TOP__ASSERT__1</Ivc>
     <Ivc>_TOP__ALARM~0.IM_IN.Commanded_Flow_Rate</Ivc>
     <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Commanded_Flow_Rate</Ivc>
@@ -134,3 +134,4 @@
     <Ivc>_TOP__ALARM~0.Time_FR_Under_Min_Tol</Ivc>
     </IvcSet>
   </Property>
+</Results>

@@ -114,14 +114,11 @@
   <Progress source="bmc" trueFor="38">
     <PropertyProgress name="ok"/>
   </Progress>
-  <Progress source="bmc" trueFor="39">
-    <PropertyProgress name="ok"/>
-  </Progress>
   <Property name="ok">
-    <Runtime unit="sec">22.148</Runtime>
+    <Runtime unit="sec">30.87</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>9</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
+    <NumberOfIVCs>3</NumberOfIVCs>
     <MustElem>priority~2.command_failure</MustElem>
     <MustElem>priority~1.in_command</MustElem>
     <MustElem>priority~1.other_in_command</MustElem>
@@ -137,8 +134,6 @@
     <MustElem>priority~2.in_command</MustElem>
     <MustElem>ok</MustElem>
     <MustElem>priority~1.conf1~0.n</MustElem>
-    <MustElem>m1</MustElem>
-    <MustElem>m2</MustElem>
     <MustElem>conf1~0.signal</MustElem>
     <MustElem>m3</MustElem>
     <MustElem>priority~2.conf1~0.pre_cpt</MustElem>
@@ -163,11 +158,116 @@
     <MustElem>no_command</MustElem>
     <MustElem>conf1~0.n</MustElem>
     <IvcSet number="1">
-    <Invariant>((priority~0.conf1~0.pre_cpt &lt;= 0) =&gt; (priority~1.conf1~0.pre_cpt &lt;= 0))</Invariant>
+    <Invariant>(priority~1.conf1~0.pre_cpt &gt;= 0)</Invariant>
     <Invariant>(priority~2.conf1~0.pre_cpt &gt;= 0)</Invariant>
+    <Invariant>((priority~2.conf1~0.pre_cpt &lt;= 0) =&gt; (conf1~0.pre_cpt &lt;= 0))</Invariant>
+    <Invariant>ok</Invariant>
+    <Invariant>(priority~0.conf1~0.pre_cpt &gt;= 0)</Invariant>
+    <Ivc>priority~2.command_failure</Ivc>
+    <Ivc>priority~1.in_command</Ivc>
+    <Ivc>priority~1.other_in_command</Ivc>
+    <Ivc>priority~0.conf1~0.pre_cpt</Ivc>
+    <Ivc>range_monitor~0.corrupt</Ivc>
+    <Ivc>priority~0.conf1~0.signal</Ivc>
+    <Ivc>range_monitor~1.corrupt</Ivc>
+    <Ivc>priority~0.conf1~0.cpt</Ivc>
+    <Ivc>conf1~0.cpt</Ivc>
+    <Ivc>priority~1.conf1~0.cpt</Ivc>
+    <Ivc>priority~0.command_failure</Ivc>
+    <Ivc>conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~2.other_in_command</Ivc>
+    <Ivc>priority~2.conf1~0.cpt</Ivc>
+    <Ivc>priority~2.in_command</Ivc>
+    <Ivc>priority~1.conf1~0.n</Ivc>
+    <Ivc>ok</Ivc>
+    <Ivc>range_monitor~0.latch~0.pre_out</Ivc>
+    <Ivc>range_monitor~1.latch~0.pre_out</Ivc>
+    <Ivc>conf1~0.signal</Ivc>
+    <Ivc>m3</Ivc>
+    <Ivc>priority~2.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~1.command_failure</Ivc>
+    <Ivc>conf1~0.out</Ivc>
+    <Ivc>corrupt2</Ivc>
+    <Ivc>priority~0.conf1~0.out</Ivc>
+    <Ivc>corrupt1</Ivc>
+    <Ivc>priority~2.conf1~0.signal</Ivc>
+    <Ivc>range_monitor~1.latch~0.out</Ivc>
+    <Ivc>range_monitor~0.latch~0.out</Ivc>
+    <Ivc>priority~2.conf1~0.n</Ivc>
+    <Ivc>priority~1.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~1.n</Ivc>
+    <Ivc>priority~0.in_command</Ivc>
+    <Ivc>priority~0.n</Ivc>
+    <Ivc>in_command3</Ivc>
+    <Ivc>in_command2</Ivc>
+    <Ivc>priority~0.conf1~0.n</Ivc>
+    <Ivc>in_command1</Ivc>
+    <Ivc>priority~1.conf1~0.out</Ivc>
+    <Ivc>priority~1.conf1~0.signal</Ivc>
+    <Ivc>priority~0.other_in_command</Ivc>
+    <Ivc>priority~2.conf1~0.out</Ivc>
+    <Ivc>priority~2.n</Ivc>
+    <Ivc>no_command</Ivc>
+    <Ivc>conf1~0.n</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>(priority~2.conf1~0.pre_cpt &gt;= 0)</Invariant>
+    <Invariant>(conf1~0.pre_cpt &gt;= 0)</Invariant>
+    <Invariant>((priority~1.conf1~0.pre_cpt &lt;= 0) =&gt; (priority~2.conf1~0.pre_cpt &lt;= 0))</Invariant>
+    <Invariant>(priority~0.conf1~0.pre_cpt &gt;= 0)</Invariant>
+    <Invariant>((priority~2.conf1~0.pre_cpt &lt;= 0) =&gt; (conf1~0.pre_cpt &lt;= 0))</Invariant>
+    <Invariant>(priority~1.conf1~0.pre_cpt &gt;= 0)</Invariant>
+    <Invariant>ok</Invariant>
+    <Ivc>priority~2.command_failure</Ivc>
+    <Ivc>priority~1.in_command</Ivc>
+    <Ivc>priority~1.other_in_command</Ivc>
+    <Ivc>priority~0.conf1~0.pre_cpt</Ivc>
+    <Ivc>range_monitor~0.corrupt</Ivc>
+    <Ivc>priority~0.conf1~0.signal</Ivc>
+    <Ivc>priority~0.conf1~0.cpt</Ivc>
+    <Ivc>conf1~0.cpt</Ivc>
+    <Ivc>priority~1.conf1~0.cpt</Ivc>
+    <Ivc>priority~0.command_failure</Ivc>
+    <Ivc>conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~2.other_in_command</Ivc>
+    <Ivc>priority~2.conf1~0.cpt</Ivc>
+    <Ivc>priority~2.in_command</Ivc>
+    <Ivc>priority~1.conf1~0.n</Ivc>
+    <Ivc>ok</Ivc>
+    <Ivc>range_monitor~0.latch~0.pre_out</Ivc>
+    <Ivc>conf1~0.signal</Ivc>
+    <Ivc>m2</Ivc>
+    <Ivc>m3</Ivc>
+    <Ivc>priority~2.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~1.command_failure</Ivc>
+    <Ivc>conf1~0.out</Ivc>
+    <Ivc>priority~0.conf1~0.out</Ivc>
+    <Ivc>corrupt1</Ivc>
+    <Ivc>priority~2.conf1~0.signal</Ivc>
+    <Ivc>range_monitor~0.latch~0.out</Ivc>
+    <Ivc>priority~2.conf1~0.n</Ivc>
+    <Ivc>priority~1.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~1.n</Ivc>
+    <Ivc>priority~0.in_command</Ivc>
+    <Ivc>priority~0.n</Ivc>
+    <Ivc>in_command3</Ivc>
+    <Ivc>in_command2</Ivc>
+    <Ivc>priority~0.conf1~0.n</Ivc>
+    <Ivc>in_command1</Ivc>
+    <Ivc>priority~1.conf1~0.out</Ivc>
+    <Ivc>priority~1.conf1~0.signal</Ivc>
+    <Ivc>priority~0.other_in_command</Ivc>
+    <Ivc>priority~2.conf1~0.out</Ivc>
+    <Ivc>priority~2.n</Ivc>
+    <Ivc>no_command</Ivc>
+    <Ivc>conf1~0.n</Ivc>
+    </IvcSet>
+    <IvcSet number="3">
+    <Invariant>((priority~2.conf1~0.pre_cpt &lt;= 0) =&gt; (conf1~0.pre_cpt &lt;= 0))</Invariant>
+    <Invariant>(priority~0.conf1~0.pre_cpt &gt;= 0)</Invariant>
+    <Invariant>(conf1~0.pre_cpt &gt;= 0)</Invariant>
     <Invariant>((priority~1.conf1~0.pre_cpt &lt;= 0) =&gt; (priority~2.conf1~0.pre_cpt &lt;= 0))</Invariant>
     <Invariant>ok</Invariant>
-    <Invariant>((priority~2.conf1~0.pre_cpt &lt;= 0) =&gt; (conf1~0.pre_cpt &lt;= 0))</Invariant>
     <Ivc>priority~2.command_failure</Ivc>
     <Ivc>priority~1.in_command</Ivc>
     <Ivc>priority~1.other_in_command</Ivc>
@@ -185,7 +285,6 @@
     <Ivc>ok</Ivc>
     <Ivc>m1</Ivc>
     <Ivc>conf1~0.signal</Ivc>
-    <Ivc>m2</Ivc>
     <Ivc>m3</Ivc>
     <Ivc>priority~2.conf1~0.pre_cpt</Ivc>
     <Ivc>priority~1.command_failure</Ivc>
@@ -210,3 +309,4 @@
     <Ivc>conf1~0.n</Ivc>
     </IvcSet>
   </Property>
+</Results>

@@ -78,26 +78,8 @@
   <Progress source="bmc" trueFor="26">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="27">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="28">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="29">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="30">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="31">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="32">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">0.612</Runtime>
+    <Runtime unit="sec">0.61</Runtime>
     <Answer source="invariant-generation">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -117,3 +99,4 @@
     <Ivc>Age~0.age_of_p</Ivc>
     </IvcSet>
   </Property>
+</Results>

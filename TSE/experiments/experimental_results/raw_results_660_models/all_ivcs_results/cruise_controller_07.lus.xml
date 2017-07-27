@@ -1,7 +1,16 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">0.315</Runtime>
+    <Runtime unit="sec">0.317</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>0</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -13,3 +22,4 @@
     <Ivc>OK</Ivc>
     </IvcSet>
   </Property>
+</Results>

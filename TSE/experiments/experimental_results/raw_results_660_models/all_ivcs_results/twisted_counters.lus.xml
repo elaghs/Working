@@ -693,23 +693,8 @@
   <Progress source="bmc" trueFor="231">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="232">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="233">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="234">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="235">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="236">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">2.514</Runtime>
+    <Runtime unit="sec">2.42</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -721,19 +706,17 @@
     <MustElem>V14_b</MustElem>
     <MustElem>V45_c</MustElem>
     <IvcSet number="1">
-    <Invariant>((not (V57_time &lt;= 1)) or (not V44_b))</Invariant>
-    <Invariant>((0 &lt;= (V57_time + (-1))) or (not V45_c))</Invariant>
+    <Invariant>(((V57_time &lt;= 1) or V43_a) or V44_b)</Invariant>
+    <Invariant>((not ((V57_time + (-2)) = 0)) or (not V45_c))</Invariant>
     <Invariant>OK</Invariant>
-    <Invariant>((((V57_time &lt;= 2) or (not (V57_time &lt;= 3))) or V43_a) or V45_c)</Invariant>
+    <Invariant>((0 &lt;= (V57_time + (-1))) or (not V45_c))</Invariant>
+    <Invariant>((((V57_time &lt;= 1) or V45_c) or (not V44_b)) or ((V57_time + (-2)) = 0))</Invariant>
+    <Invariant>((not (V57_time &lt;= 3)) or (not V43_a))</Invariant>
     <Invariant>(((not (V57_time &lt;= 4)) or (V57_time &lt;= 3)) or (not V45_c))</Invariant>
     <Invariant>((V57_time &lt;= 4) or V45_c)</Invariant>
-    <Invariant>((not (V57_time &lt;= 3)) or (not V43_a))</Invariant>
     <Invariant>((V57_time &lt;= 4) or (V57_time = 5))</Invariant>
-    <Invariant>(((V57_time &lt;= 2) or V43_a) or V44_b)</Invariant>
-    <Invariant>((((not (V57_time &lt;= 4)) or (V57_time &lt;= 3)) or V43_a) or V45_c)</Invariant>
-    <Invariant>(((not (V57_time &lt;= 2)) or (not V45_c)) or (not V44_b))</Invariant>
+    <Invariant>((not (V57_time &lt;= 1)) or (not V44_b))</Invariant>
     <Invariant>((V57_time &lt;= 3) or (not V44_b))</Invariant>
-    <Invariant>((not ((V57_time + (-2)) = 0)) or V44_b)</Invariant>
     <Ivc>V43_a</Ivc>
     <Ivc>OK</Ivc>
     <Ivc>V44_b</Ivc>
@@ -743,3 +726,4 @@
     <Ivc>V45_c</Ivc>
     </IvcSet>
   </Property>
+</Results>

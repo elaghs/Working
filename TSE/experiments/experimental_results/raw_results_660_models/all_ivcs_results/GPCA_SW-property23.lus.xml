@@ -234,50 +234,11 @@
   <Progress source="bmc" trueFor="78">
     <PropertyProgress name="__GUARANTEE23"/>
   </Progress>
-  <Progress source="bmc" trueFor="79">
-    <PropertyProgress name="__GUARANTEE23"/>
-  </Progress>
-  <Progress source="bmc" trueFor="80">
-    <PropertyProgress name="__GUARANTEE23"/>
-  </Progress>
-  <Progress source="bmc" trueFor="81">
-    <PropertyProgress name="__GUARANTEE23"/>
-  </Progress>
-  <Progress source="bmc" trueFor="82">
-    <PropertyProgress name="__GUARANTEE23"/>
-  </Progress>
-  <Progress source="bmc" trueFor="83">
-    <PropertyProgress name="__GUARANTEE23"/>
-  </Progress>
-  <Progress source="bmc" trueFor="84">
-    <PropertyProgress name="__GUARANTEE23"/>
-  </Progress>
-  <Progress source="bmc" trueFor="85">
-    <PropertyProgress name="__GUARANTEE23"/>
-  </Progress>
-  <Progress source="bmc" trueFor="86">
-    <PropertyProgress name="__GUARANTEE23"/>
-  </Progress>
-  <Progress source="bmc" trueFor="87">
-    <PropertyProgress name="__GUARANTEE23"/>
-  </Progress>
-  <Progress source="bmc" trueFor="88">
-    <PropertyProgress name="__GUARANTEE23"/>
-  </Progress>
-  <Progress source="bmc" trueFor="89">
-    <PropertyProgress name="__GUARANTEE23"/>
-  </Progress>
-  <Progress source="bmc" trueFor="90">
-    <PropertyProgress name="__GUARANTEE23"/>
-  </Progress>
-  <Progress source="bmc" trueFor="91">
-    <PropertyProgress name="__GUARANTEE23"/>
-  </Progress>
   <Property name="__GUARANTEE23">
-    <Runtime unit="sec">30.003</Runtime>
+    <Runtime unit="sec">40.494</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
+    <NumberOfIVCs>6</NumberOfIVCs>
     <MustElem>_TOP__ASSERT__9</MustElem>
     <MustElem>_TOP__TLM~0.__TLM__ASSERT__0</MustElem>
     <MustElem>_TOP__OUTPUT~0.ALARM_IN.Audio_Notification_Command</MustElem>
@@ -292,11 +253,9 @@
     <MustElem>_TOP__SYS_STAT~0.IM_IN.Current_System_Mode</MustElem>
     <MustElem>_TOP__SYS_STAT~0.TLM_MODE_IN.System_On</MustElem>
     <MustElem>_TOP__ALARM~0.ALARM_OUT.Audio_Notification_Command</MustElem>
-    <MustElem>_TOP__ALARM~0.__ALARM__ASSERT__1</MustElem>
     <MustElem>_TOP__ASSERT__33</MustElem>
     <MustElem>_TOP__ALARM~0.OP_CMD_IN.Disable_Audio</MustElem>
     <MustElem>_TOP__ALARM~0.SYS_STAT_IN.Reservoir_Empty</MustElem>
-    <MustElem>_TOP__ALARM~0.__ALARM__PROP__8</MustElem>
     <MustElem>_TOP__ALARM~0.__ALARM__PROP__1</MustElem>
     <MustElem>_TOP__ALARM~0.__ASSUME__CONJ</MustElem>
     <MustElem>_TOP__SYS_STAT~0.SYS_STAT_OUT.Reservoir_Volume</MustElem>
@@ -310,7 +269,6 @@
     <MustElem>DEFS__is_therapy~0.mode</MustElem>
     <MustElem>_TOP__OUTPUT~0.__OUTPUT__PROP__3</MustElem>
     <MustElem>_TOP__OUTPUT~0.__OUTPUT__PROP__5</MustElem>
-    <MustElem>_TOP__ALARM~0.__ALARM__ASSERT__22</MustElem>
     <MustElem>DEFS__is_therapy~0._outvar</MustElem>
     <MustElem>_TOP__SYS_STAT~0.__ASSUME__HIST</MustElem>
     <MustElem>_TOP__ALARM~0.__ASSUME__HIST</MustElem>
@@ -334,12 +292,12 @@
     <MustElem>_TOP__TLM~0.__ASSERT</MustElem>
     <MustElem>_TOP__TLM~0.OP_CMD_IN.System_Start</MustElem>
     <IvcSet number="1">
-    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
-    <Invariant>__GUARANTEE23</Invariant>
     <Invariant>_TOP__SYS_STAT~0.__ASSUME__HIST</Invariant>
-    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
-    <Invariant>(((not _TOP__OUTPUT~0.__ASSUME__HIST) or (not is_therapy)) or (0 &lt;= (IM__IM_OUT.Current_System_Mode + (-2))))</Invariant>
     <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Invariant>(((not _TOP__OUTPUT~0.__ASSUME__HIST) or (not is_therapy)) or (0 &lt;= (IM__IM_OUT.Current_System_Mode + (-2))))</Invariant>
+    <Invariant>__GUARANTEE23</Invariant>
+    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
     <Ivc>_TOP__ASSERT__9</Ivc>
     <Ivc>_TOP__TLM~0.__TLM__ASSERT__0</Ivc>
     <Ivc>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</Ivc>
@@ -396,4 +354,367 @@
     <Ivc>_TOP__TLM~0.__ASSERT</Ivc>
     <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
     </IvcSet>
+    <IvcSet number="2">
+    <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Invariant>((not is_therapy) or (0 &lt;= (IM__IM_OUT.Current_System_Mode + (-2))))</Invariant>
+    <Invariant>__GUARANTEE23</Invariant>
+    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__SYS_STAT~0.__ASSUME__HIST</Invariant>
+    <Ivc>_TOP__ASSERT__9</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__ASSERT__0</Ivc>
+    <Ivc>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</Ivc>
+    <Ivc>_TOP__OUTPUT~0.ALARM_IN.Audio_Notification_Command</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Is_Audio_Disabled</Ivc>
+    <Ivc>_TOP__ALARM~0.SYS_STAT_IN.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.Reservoir_Empty</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__21</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__ASSERT__2</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__ASSERT__0</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__PROP__0</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.CONST_IN.Empty_Reservoir</Ivc>
+    <Ivc>_TOP__ASSUME__2</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.IM_IN.Current_System_Mode</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__5</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__ALARM~0.ALARM_OUT.Audio_Notification_Command</Ivc>
+    <Ivc>_TOP__ASSERT__33</Ivc>
+    <Ivc>_TOP__ALARM~0.OP_CMD_IN.Disable_Audio</Ivc>
+    <Ivc>_TOP__ALARM~0.CONST_IN.Low_Reservoir</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__3</Ivc>
+    <Ivc>_TOP__ALARM~0.SYS_STAT_IN.Reservoir_Empty</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__35</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__8</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__1</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__2</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__ALARM~0.SYS_STAT_IN.In_Therapy</Ivc>
+    <Ivc>_TOP__ALARM~0.CONST_IN.Audio_Level</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.In_Therapy</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Audio_Notification_Command</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__2</Ivc>
+    <Ivc>DEFS__is_therapy~0.mode</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__3</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__5</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__22</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__6</Ivc>
+    <Ivc>DEFS__is_therapy~0._outvar</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__26</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__TLM~0.TLM_MODE_OUT.System_On</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__27</Ivc>
+    <Ivc>__GUARANTEE23</Ivc>
+    <Ivc>_TOP__OUTPUT~0.ALARM_IN.Is_Audio_Disabled</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</Ivc>
+    <Ivc>_TOP__ALARM~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__OUTPUT~0.SYS_STAT_IN.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__PROP__2</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__16</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__15</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__12</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__PROP__0</Ivc>
+    <Ivc>_TOP__ALARM~0.ALARM_OUT.Is_Audio_Disabled</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__17</Ivc>
+    <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
+    </IvcSet>
+    <IvcSet number="3">
+    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
+    <Invariant>__GUARANTEE23</Invariant>
+    <Invariant>_TOP__SYS_STAT~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
+    <Invariant>(((not _TOP__OUTPUT~0.__ASSUME__HIST) or (not is_therapy)) or (0 &lt;= (IM__IM_OUT.Current_System_Mode + (-2))))</Invariant>
+    <Ivc>_TOP__ASSERT__9</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__ASSERT__0</Ivc>
+    <Ivc>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</Ivc>
+    <Ivc>_TOP__OUTPUT~0.ALARM_IN.Audio_Notification_Command</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Is_Audio_Disabled</Ivc>
+    <Ivc>_TOP__ALARM~0.SYS_STAT_IN.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.Reservoir_Empty</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__21</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__ASSERT__2</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__ASSERT__0</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__PROP__0</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.CONST_IN.Empty_Reservoir</Ivc>
+    <Ivc>_TOP__ASSUME__2</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.IM_IN.Current_System_Mode</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__5</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__ALARM~0.ALARM_OUT.Audio_Notification_Command</Ivc>
+    <Ivc>_TOP__ASSERT__33</Ivc>
+    <Ivc>_TOP__ALARM~0.OP_CMD_IN.Disable_Audio</Ivc>
+    <Ivc>_TOP__ALARM~0.CONST_IN.Low_Reservoir</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__6</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__3</Ivc>
+    <Ivc>_TOP__ALARM~0.SYS_STAT_IN.Reservoir_Empty</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__35</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__1</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__2</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__ALARM~0.SYS_STAT_IN.In_Therapy</Ivc>
+    <Ivc>_TOP__ALARM~0.CONST_IN.Audio_Level</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.In_Therapy</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Audio_Notification_Command</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__2</Ivc>
+    <Ivc>DEFS__is_therapy~0.mode</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__3</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__5</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__6</Ivc>
+    <Ivc>DEFS__is_therapy~0._outvar</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__20</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__26</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__TLM~0.TLM_MODE_OUT.System_On</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__27</Ivc>
+    <Ivc>__GUARANTEE23</Ivc>
+    <Ivc>_TOP__OUTPUT~0.ALARM_IN.Is_Audio_Disabled</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</Ivc>
+    <Ivc>_TOP__ALARM~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__OUTPUT~0.SYS_STAT_IN.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__PROP__2</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__16</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__15</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__12</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__PROP__0</Ivc>
+    <Ivc>_TOP__ALARM~0.ALARM_OUT.Is_Audio_Disabled</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__17</Ivc>
+    <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
+    </IvcSet>
+    <IvcSet number="4">
+    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
+    <Invariant>__GUARANTEE23</Invariant>
+    <Invariant>_TOP__SYS_STAT~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
+    <Ivc>_TOP__ASSERT__9</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__ASSERT__0</Ivc>
+    <Ivc>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</Ivc>
+    <Ivc>_TOP__OUTPUT~0.ALARM_IN.Audio_Notification_Command</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Is_Audio_Disabled</Ivc>
+    <Ivc>_TOP__ALARM~0.SYS_STAT_IN.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.Reservoir_Empty</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__21</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__ASSERT__2</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__ASSERT__0</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__PROP__0</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.CONST_IN.Empty_Reservoir</Ivc>
+    <Ivc>_TOP__ASSUME__2</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.IM_IN.Current_System_Mode</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__5</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__ALARM~0.ALARM_OUT.Audio_Notification_Command</Ivc>
+    <Ivc>_TOP__ASSERT__33</Ivc>
+    <Ivc>_TOP__ALARM~0.OP_CMD_IN.Disable_Audio</Ivc>
+    <Ivc>_TOP__ALARM~0.CONST_IN.Low_Reservoir</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__6</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__3</Ivc>
+    <Ivc>_TOP__ALARM~0.SYS_STAT_IN.Reservoir_Empty</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__35</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__9</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__1</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__2</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__ALARM~0.SYS_STAT_IN.In_Therapy</Ivc>
+    <Ivc>_TOP__ALARM~0.CONST_IN.Audio_Level</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.In_Therapy</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Audio_Notification_Command</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__2</Ivc>
+    <Ivc>DEFS__is_therapy~0.mode</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__3</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__5</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__23</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__6</Ivc>
+    <Ivc>DEFS__is_therapy~0._outvar</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__20</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__TLM~0.TLM_MODE_OUT.System_On</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__27</Ivc>
+    <Ivc>__GUARANTEE23</Ivc>
+    <Ivc>_TOP__OUTPUT~0.ALARM_IN.Is_Audio_Disabled</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</Ivc>
+    <Ivc>_TOP__ALARM~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__OUTPUT~0.SYS_STAT_IN.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__PROP__2</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__16</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__15</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__PROP__0</Ivc>
+    <Ivc>_TOP__ALARM~0.ALARM_OUT.Is_Audio_Disabled</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__17</Ivc>
+    <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
+    </IvcSet>
+    <IvcSet number="5">
+    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
+    <Invariant>__GUARANTEE23</Invariant>
+    <Invariant>(((not _TOP__OUTPUT~0.__ASSUME__HIST) or (not is_therapy)) or (0 &lt;= (IM__IM_OUT.Current_System_Mode + (-2))))</Invariant>
+    <Invariant>_TOP__SYS_STAT~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Ivc>_TOP__ASSERT__9</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__ASSERT__0</Ivc>
+    <Ivc>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</Ivc>
+    <Ivc>_TOP__OUTPUT~0.ALARM_IN.Audio_Notification_Command</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Is_Audio_Disabled</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.Reservoir_Empty</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__ASSERT__2</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__ASSERT__0</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__PROP__0</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.CONST_IN.Empty_Reservoir</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.IM_IN.Current_System_Mode</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__ALARM~0.ALARM_OUT.Audio_Notification_Command</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__1</Ivc>
+    <Ivc>_TOP__ASSERT__33</Ivc>
+    <Ivc>_TOP__ALARM~0.OP_CMD_IN.Disable_Audio</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__6</Ivc>
+    <Ivc>_TOP__ALARM~0.SYS_STAT_IN.Reservoir_Empty</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__1</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__ALARM~0.SYS_STAT_IN.In_Therapy</Ivc>
+    <Ivc>_TOP__ALARM~0.CONST_IN.Audio_Level</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.In_Therapy</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Audio_Notification_Command</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__2</Ivc>
+    <Ivc>DEFS__is_therapy~0.mode</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__3</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__5</Ivc>
+    <Ivc>DEFS__is_therapy~0._outvar</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__20</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__TLM~0.TLM_MODE_OUT.System_On</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__27</Ivc>
+    <Ivc>__GUARANTEE23</Ivc>
+    <Ivc>_TOP__OUTPUT~0.ALARM_IN.Is_Audio_Disabled</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</Ivc>
+    <Ivc>_TOP__ALARM~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__OUTPUT~0.SYS_STAT_IN.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__PROP__2</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__15</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__PROP__0</Ivc>
+    <Ivc>_TOP__ALARM~0.ALARM_OUT.Is_Audio_Disabled</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
+    </IvcSet>
+    <IvcSet number="6">
+    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__SYS_STAT~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Invariant>__GUARANTEE23</Invariant>
+    <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
+    <Invariant>(((not _TOP__OUTPUT~0.__ASSUME__HIST) or (not is_therapy)) or (0 &lt;= (IM__IM_OUT.Current_System_Mode + (-2))))</Invariant>
+    <Ivc>_TOP__ASSERT__9</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__ASSERT__0</Ivc>
+    <Ivc>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</Ivc>
+    <Ivc>_TOP__OUTPUT~0.ALARM_IN.Audio_Notification_Command</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Is_Audio_Disabled</Ivc>
+    <Ivc>_TOP__ALARM~0.SYS_STAT_IN.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.Reservoir_Empty</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__21</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__ASSERT__2</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__ASSERT__0</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__PROP__0</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.CONST_IN.Empty_Reservoir</Ivc>
+    <Ivc>_TOP__ASSUME__2</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.IM_IN.Current_System_Mode</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__5</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__ALARM~0.ALARM_OUT.Audio_Notification_Command</Ivc>
+    <Ivc>_TOP__ASSERT__33</Ivc>
+    <Ivc>_TOP__ALARM~0.OP_CMD_IN.Disable_Audio</Ivc>
+    <Ivc>_TOP__ALARM~0.CONST_IN.Low_Reservoir</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__3</Ivc>
+    <Ivc>_TOP__ALARM~0.SYS_STAT_IN.Reservoir_Empty</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__35</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__9</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__8</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__1</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__2</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__ALARM~0.SYS_STAT_IN.In_Therapy</Ivc>
+    <Ivc>_TOP__ALARM~0.CONST_IN.Audio_Level</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.In_Therapy</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Audio_Notification_Command</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__2</Ivc>
+    <Ivc>DEFS__is_therapy~0.mode</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__3</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__5</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__23</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__22</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__6</Ivc>
+    <Ivc>DEFS__is_therapy~0._outvar</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__TLM~0.TLM_MODE_OUT.System_On</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__27</Ivc>
+    <Ivc>__GUARANTEE23</Ivc>
+    <Ivc>_TOP__OUTPUT~0.ALARM_IN.Is_Audio_Disabled</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</Ivc>
+    <Ivc>_TOP__ALARM~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__OUTPUT~0.SYS_STAT_IN.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__PROP__2</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__16</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__15</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__PROP__0</Ivc>
+    <Ivc>_TOP__ALARM~0.ALARM_OUT.Is_Audio_Disabled</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__17</Ivc>
+    <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
+    </IvcSet>
   </Property>
+</Results>

@@ -174,16 +174,25 @@
   <Progress source="bmc" trueFor="58">
     <PropertyProgress name="OK"/>
   </Progress>
+  <Progress source="bmc" trueFor="59">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="60">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="61">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="62">
+    <PropertyProgress name="OK"/>
+  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">0.612</Runtime>
+    <Runtime unit="sec">7.43</Runtime>
     <Answer source="invariant-generation">valid</Answer>
     <K>1</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
-    <MustElem>V284_X</MustElem>
-    <MustElem>V56_env</MustElem>
+    <NumberOfIVCs>11</NumberOfIVCs>
     <MustElem>OK</MustElem>
     <MustElem>V54_empty_section</MustElem>
-    <MustElem>V246_X</MustElem>
     <IvcSet number="1">
     <Invariant>OK</Invariant>
     <Invariant>(not V56_env)</Invariant>
@@ -193,4 +202,200 @@
     <Ivc>V54_empty_section</Ivc>
     <Ivc>V246_X</Ivc>
     </IvcSet>
+    <IvcSet number="2">
+    <Invariant>(not V322_afterA)</Invariant>
+    <Invariant>(not V310_afterA)</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>V180_empty_section</Ivc>
+    <Ivc>V311_alwaysBsinceA</Ivc>
+    <Ivc>V50_no_collision</Ivc>
+    <Ivc>V46_grant_access</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V52_no_derail_AB</Ivc>
+    <Ivc>V53_no_derail_BC</Ivc>
+    <Ivc>V47_grant_exit</Ivc>
+    <Ivc>V322_afterA</Ivc>
+    <Ivc>V323_alwaysBsinceA</Ivc>
+    <Ivc>V310_afterA</Ivc>
+    <Ivc>V51_exclusive_req</Ivc>
+    <Ivc>V48_do_AB</Ivc>
+    <Ivc>V181_only_on_B</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V49_do_BC</Ivc>
+    </IvcSet>
+    <IvcSet number="3">
+    <Invariant>OK</Invariant>
+    <Invariant>(not V321_afterA)</Invariant>
+    <Invariant>(not V310_afterA)</Invariant>
+    <Ivc>V180_empty_section</Ivc>
+    <Ivc>V311_alwaysBsinceA</Ivc>
+    <Ivc>V50_no_collision</Ivc>
+    <Ivc>V46_grant_access</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V52_no_derail_AB</Ivc>
+    <Ivc>V53_no_derail_BC</Ivc>
+    <Ivc>V310_afterA</Ivc>
+    <Ivc>V51_exclusive_req</Ivc>
+    <Ivc>V48_do_AB</Ivc>
+    <Ivc>V181_only_on_B</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V321_afterA</Ivc>
+    <Ivc>V49_do_BC</Ivc>
+    </IvcSet>
+    <IvcSet number="4">
+    <Invariant>(not V321_afterA)</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(not V312_afterA)</Invariant>
+    <Ivc>V180_empty_section</Ivc>
+    <Ivc>V311_alwaysBsinceA</Ivc>
+    <Ivc>V50_no_collision</Ivc>
+    <Ivc>V46_grant_access</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V52_no_derail_AB</Ivc>
+    <Ivc>V53_no_derail_BC</Ivc>
+    <Ivc>V312_afterA</Ivc>
+    <Ivc>V51_exclusive_req</Ivc>
+    <Ivc>V48_do_AB</Ivc>
+    <Ivc>V313_onceCsinceA</Ivc>
+    <Ivc>V181_only_on_B</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V321_afterA</Ivc>
+    <Ivc>V49_do_BC</Ivc>
+    </IvcSet>
+    <IvcSet number="5">
+    <Invariant>OK</Invariant>
+    <Invariant>(not V56_env)</Invariant>
+    <Ivc>V284_X</Ivc>
+    <Ivc>V56_env</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V265_X</Ivc>
+    </IvcSet>
+    <IvcSet number="6">
+    <Invariant>(not V324_afterA)</Invariant>
+    <Invariant>(not V312_afterA)</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>V180_empty_section</Ivc>
+    <Ivc>V311_alwaysBsinceA</Ivc>
+    <Ivc>V50_no_collision</Ivc>
+    <Ivc>V46_grant_access</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V52_no_derail_AB</Ivc>
+    <Ivc>V53_no_derail_BC</Ivc>
+    <Ivc>V47_grant_exit</Ivc>
+    <Ivc>V323_alwaysBsinceA</Ivc>
+    <Ivc>V312_afterA</Ivc>
+    <Ivc>V51_exclusive_req</Ivc>
+    <Ivc>V48_do_AB</Ivc>
+    <Ivc>V313_onceCsinceA</Ivc>
+    <Ivc>V181_only_on_B</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V325_onceCsinceA</Ivc>
+    <Ivc>V49_do_BC</Ivc>
+    <Ivc>V324_afterA</Ivc>
+    </IvcSet>
+    <IvcSet number="7">
+    <Invariant>(not V324_afterA)</Invariant>
+    <Invariant>(not V310_afterA)</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>V180_empty_section</Ivc>
+    <Ivc>V311_alwaysBsinceA</Ivc>
+    <Ivc>V50_no_collision</Ivc>
+    <Ivc>V46_grant_access</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V52_no_derail_AB</Ivc>
+    <Ivc>V53_no_derail_BC</Ivc>
+    <Ivc>V47_grant_exit</Ivc>
+    <Ivc>V323_alwaysBsinceA</Ivc>
+    <Ivc>V310_afterA</Ivc>
+    <Ivc>V51_exclusive_req</Ivc>
+    <Ivc>V48_do_AB</Ivc>
+    <Ivc>V181_only_on_B</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V325_onceCsinceA</Ivc>
+    <Ivc>V49_do_BC</Ivc>
+    <Ivc>V324_afterA</Ivc>
+    </IvcSet>
+    <IvcSet number="8">
+    <Invariant>OK</Invariant>
+    <Invariant>(not V309_afterA)</Invariant>
+    <Invariant>(not V321_afterA)</Invariant>
+    <Ivc>V180_empty_section</Ivc>
+    <Ivc>V50_no_collision</Ivc>
+    <Ivc>V46_grant_access</Ivc>
+    <Ivc>V309_afterA</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V52_no_derail_AB</Ivc>
+    <Ivc>V53_no_derail_BC</Ivc>
+    <Ivc>V51_exclusive_req</Ivc>
+    <Ivc>V48_do_AB</Ivc>
+    <Ivc>V181_only_on_B</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V321_afterA</Ivc>
+    <Ivc>V49_do_BC</Ivc>
+    </IvcSet>
+    <IvcSet number="9">
+    <Invariant>OK</Invariant>
+    <Invariant>(not V309_afterA)</Invariant>
+    <Invariant>(not V322_afterA)</Invariant>
+    <Ivc>V180_empty_section</Ivc>
+    <Ivc>V50_no_collision</Ivc>
+    <Ivc>V46_grant_access</Ivc>
+    <Ivc>V309_afterA</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V52_no_derail_AB</Ivc>
+    <Ivc>V53_no_derail_BC</Ivc>
+    <Ivc>V47_grant_exit</Ivc>
+    <Ivc>V322_afterA</Ivc>
+    <Ivc>V323_alwaysBsinceA</Ivc>
+    <Ivc>V51_exclusive_req</Ivc>
+    <Ivc>V48_do_AB</Ivc>
+    <Ivc>V181_only_on_B</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V49_do_BC</Ivc>
+    </IvcSet>
+    <IvcSet number="10">
+    <Invariant>(not V322_afterA)</Invariant>
+    <Invariant>(not V312_afterA)</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>V180_empty_section</Ivc>
+    <Ivc>V311_alwaysBsinceA</Ivc>
+    <Ivc>V50_no_collision</Ivc>
+    <Ivc>V46_grant_access</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V52_no_derail_AB</Ivc>
+    <Ivc>V53_no_derail_BC</Ivc>
+    <Ivc>V47_grant_exit</Ivc>
+    <Ivc>V322_afterA</Ivc>
+    <Ivc>V323_alwaysBsinceA</Ivc>
+    <Ivc>V312_afterA</Ivc>
+    <Ivc>V51_exclusive_req</Ivc>
+    <Ivc>V48_do_AB</Ivc>
+    <Ivc>V313_onceCsinceA</Ivc>
+    <Ivc>V181_only_on_B</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V49_do_BC</Ivc>
+    </IvcSet>
+    <IvcSet number="11">
+    <Invariant>(not V324_afterA)</Invariant>
+    <Invariant>(not V309_afterA)</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>V180_empty_section</Ivc>
+    <Ivc>V50_no_collision</Ivc>
+    <Ivc>V46_grant_access</Ivc>
+    <Ivc>V309_afterA</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V52_no_derail_AB</Ivc>
+    <Ivc>V53_no_derail_BC</Ivc>
+    <Ivc>V47_grant_exit</Ivc>
+    <Ivc>V323_alwaysBsinceA</Ivc>
+    <Ivc>V51_exclusive_req</Ivc>
+    <Ivc>V48_do_AB</Ivc>
+    <Ivc>V181_only_on_B</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V325_onceCsinceA</Ivc>
+    <Ivc>V49_do_BC</Ivc>
+    <Ivc>V324_afterA</Ivc>
+    </IvcSet>
   </Property>
+</Results>

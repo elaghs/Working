@@ -79,7 +79,7 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">3.121</Runtime>
+    <Runtime unit="sec">3.427</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -93,13 +93,12 @@
     <MustElem>erreur_ticket3i</MustElem>
     <MustElem>OK</MustElem>
     <IvcSet number="1">
-    <Invariant>(not (ticket3i~0.p1 &lt;= (-1)))</Invariant>
-    <Invariant>(((ticket3i~0.p1 &lt;= 0) or ((ticket3i~0.p1 + (-2)) = 0)) or (ticket3i~0.p1 = 1))</Invariant>
-    <Invariant>(not (0 &lt;= (ticket3i~0.p3 + (-3))))</Invariant>
-    <Invariant>(0 &lt;= ticket3i~0.p2)</Invariant>
-    <Invariant>(0 &lt;= ticket3i~0.p3)</Invariant>
     <Invariant>OK</Invariant>
-    <Invariant>(ticket3i~0.p2 &lt;= 2)</Invariant>
+    <Invariant>(((1 = ticket3i~0.p1) or (0 = ticket3i~0.p1)) or (2 = ticket3i~0.p1))</Invariant>
+    <Invariant>(not (ticket3i~0.p2 &lt;= (-1)))</Invariant>
+    <Invariant>(not (0 &lt;= (ticket3i~0.p2 + (-3))))</Invariant>
+    <Invariant>(0 &lt;= ticket3i~0.p3)</Invariant>
+    <Invariant>((2 = ticket3i~0.p3) or (ticket3i~0.p3 &lt;= 1))</Invariant>
     <Ivc>p1</Ivc>
     <Ivc>p2</Ivc>
     <Ivc>ticket3i~0.p1</Ivc>
@@ -111,3 +110,4 @@
     <Ivc>OK</Ivc>
     </IvcSet>
   </Property>
+</Results>

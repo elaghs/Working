@@ -73,7 +73,7 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">1.511</Runtime>
+    <Runtime unit="sec">1.517</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -85,11 +85,11 @@
     <MustElem>V52_age_of_p</MustElem>
     <MustElem>OK</MustElem>
     <IvcSet number="1">
-    <Invariant>((((V68_age_of_p &lt;= (V14_k + (-1))) or (not V16_env)) or q) or (not (V68_age_of_p &lt;= V45_age_of_p)))</Invariant>
     <Invariant>((0 &lt;= ((V52_age_of_p + V14_k) + (-1))) or (not V16_env))</Invariant>
+    <Invariant>(V68_age_of_p &lt;= V45_age_of_p)</Invariant>
     <Invariant>OK</Invariant>
     <Invariant>((not V16_env) or (V68_age_of_p &lt;= (V52_age_of_p + V14_k)))</Invariant>
-    <Invariant>(V68_age_of_p &lt;= V45_age_of_p)</Invariant>
+    <Invariant>((((V68_age_of_p &lt;= (V14_k + (-1))) or (not V16_env)) or q) or (not (V68_age_of_p &lt;= V45_age_of_p)))</Invariant>
     <Ivc>V68_age_of_p</Ivc>
     <Ivc>V16_env</Ivc>
     <Ivc>V45_age_of_p</Ivc>
@@ -99,3 +99,4 @@
     <Ivc>OK</Ivc>
     </IvcSet>
   </Property>
+</Results>

@@ -93,17 +93,8 @@
   <Progress source="bmc" trueFor="31">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="32">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="33">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="34">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">2.317</Runtime>
+    <Runtime unit="sec">1.811</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -114,10 +105,10 @@
     <MustElem>V30_invalid_s</MustElem>
     <MustElem>OK</MustElem>
     <IvcSet number="1">
-    <Invariant>(((V30_invalid_s + V31_valid_s) + V32_dirty_s) = V105_First)</Invariant>
-    <Invariant>((V105_First &lt;= (V30_invalid_s + 1)) or (V32_dirty_s = 0))</Invariant>
     <Invariant>OK</Invariant>
-    <Invariant>((1 = V32_dirty_s) or (V32_dirty_s = 0))</Invariant>
+    <Invariant>(((V30_invalid_s + V31_valid_s) + V32_dirty_s) = V105_First)</Invariant>
+    <Invariant>((not (((-V32_dirty_s) + 1) &lt;= 0)) or ((V32_dirty_s + (-1)) = 0))</Invariant>
+    <Invariant>((not ((V32_dirty_s + (-V31_valid_s)) &lt;= 0)) or (not (((-V32_dirty_s) + 1) &lt;= 0)))</Invariant>
     <Ivc>V105_First</Ivc>
     <Ivc>V31_valid_s</Ivc>
     <Ivc>V32_dirty_s</Ivc>
@@ -126,3 +117,4 @@
     <Ivc>OK</Ivc>
     </IvcSet>
   </Property>
+</Results>

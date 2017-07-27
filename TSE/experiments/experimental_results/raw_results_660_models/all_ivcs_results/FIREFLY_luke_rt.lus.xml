@@ -10,7 +10,7 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">3.817</Runtime>
+    <Runtime unit="sec">3.917</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -88,3 +88,4 @@
     <Ivc>firefly~0.exclusive</Ivc>
     </IvcSet>
   </Property>
+</Results>

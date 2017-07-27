@@ -16,7 +16,7 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">29.318</Runtime>
+    <Runtime unit="sec">31.127</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -24,7 +24,6 @@
     <MustElem>zz161</MustElem>
     <MustElem>zz160</MustElem>
     <MustElem>zz40</MustElem>
-    <MustElem>SP3c</MustElem>
     <MustElem>zz34</MustElem>
     <MustElem>zz77</MustElem>
     <MustElem>zz38</MustElem>
@@ -73,11 +72,11 @@
     <MustElem>zz49</MustElem>
     <IvcSet number="1">
     <Invariant>OK</Invariant>
+    <Invariant>((zz161 &lt;= 1) or (not ((zz161 + (-2)) &lt;= 0)))</Invariant>
     <Ivc>zz120</Ivc>
     <Ivc>zz161</Ivc>
     <Ivc>zz160</Ivc>
     <Ivc>zz40</Ivc>
-    <Ivc>SP3c</Ivc>
     <Ivc>zz34</Ivc>
     <Ivc>zz77</Ivc>
     <Ivc>zz38</Ivc>
@@ -126,3 +125,4 @@
     <Ivc>zz49</Ivc>
     </IvcSet>
   </Property>
+</Results>

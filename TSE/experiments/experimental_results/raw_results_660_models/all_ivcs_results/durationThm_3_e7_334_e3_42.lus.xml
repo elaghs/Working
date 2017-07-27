@@ -76,7 +76,7 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">0.811</Runtime>
+    <Runtime unit="sec">0.814</Runtime>
     <Answer source="invariant-generation">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -88,8 +88,8 @@
     <MustElem>m</MustElem>
     <MustElem>Age~0.age_of_p</MustElem>
     <IvcSet number="1">
-    <Invariant>OK</Invariant>
     <Invariant>(Sofar~0.Sofar =&gt; (k &gt;= 0))</Invariant>
+    <Invariant>OK</Invariant>
     <Invariant>(Sofar~0.Sofar =&gt; (m &gt;= 0))</Invariant>
     <Invariant>(Age~0.age_of_p &lt;= 0)</Invariant>
     <Ivc>Sofar~0.X</Ivc>
@@ -101,3 +101,4 @@
     <Ivc>Age~0.age_of_p</Ivc>
     </IvcSet>
   </Property>
+</Results>

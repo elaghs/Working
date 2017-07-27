@@ -1,4 +1,4 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <AllIvcRuntime unit="sec">1.11</AllIvcRuntime>
+  <AllIvcRuntime unit="sec">1.075</AllIvcRuntime>
 </Results>

@@ -12,21 +12,18 @@
   <Progress source="bmc" trueFor="4">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="5">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">1.011</Runtime>
+    <Runtime unit="sec">1.113</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
     <MustElem>OK</MustElem>
-    <MustElem>V71_env</MustElem>
     <MustElem>V62_p1</MustElem>
     <IvcSet number="1">
     <Invariant>OK</Invariant>
+    <Invariant>(((2 = V62_p1) or (1 = V62_p1)) or (V62_p1 = 0))</Invariant>
     <Ivc>OK</Ivc>
-    <Ivc>V71_env</Ivc>
     <Ivc>V62_p1</Ivc>
     </IvcSet>
   </Property>
+</Results>

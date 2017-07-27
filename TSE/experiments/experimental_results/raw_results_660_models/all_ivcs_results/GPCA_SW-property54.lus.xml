@@ -147,8 +147,80 @@
   <Progress source="bmc" trueFor="49">
     <PropertyProgress name="__GUARANTEE54"/>
   </Progress>
+  <Progress source="bmc" trueFor="50">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="51">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="52">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="53">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="54">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="55">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="56">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="57">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="58">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="59">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="60">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="61">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="62">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="63">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="64">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="65">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="66">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="67">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="68">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="69">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="70">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="71">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="72">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
+  <Progress source="bmc" trueFor="73">
+    <PropertyProgress name="__GUARANTEE54"/>
+  </Progress>
   <Property name="__GUARANTEE54">
-    <Runtime unit="sec">7.028</Runtime>
+    <Runtime unit="sec">7.734</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -192,3 +264,4 @@
     <Ivc>_TOP__ALARM~0.__ASSUME__HIST</Ivc>
     </IvcSet>
   </Property>
+</Results>

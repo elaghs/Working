@@ -1,0 +1,7 @@
+
+#################### ratio of all-ivcs runtime (includes proof) to UCBF ###################
+
+min: 16.312056737588655%
+max: 100540.33022240442%
+stdev: 4494.44728913%
+average: 505.834369857%

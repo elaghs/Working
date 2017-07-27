@@ -82,7 +82,7 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">12.257</Runtime>
+    <Runtime unit="sec">10.633</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -110,15 +110,15 @@
     <MustElem>main~0.controleur~0.nB</MustElem>
     <MustElem>main~0.controleur~0.avance</MustElem>
     <IvcSet number="1">
-    <Invariant>((main~0.nB0 &lt;= (main~0.nS + 18)) or (0 &lt;= (main~0.hypothese~0.c + (-8))))</Invariant>
-    <Invariant>((main~0.nB0 &lt;= (main~0.nS + 14)) or (0 &lt;= (main~0.hypothese~0.c + (-4))))</Invariant>
-    <Invariant>((not Sofar~0.Sofar) or (main~0.nB0 &lt;= (main~0.nS + 20)))</Invariant>
-    <Invariant>((0 &lt;= (main~0.hypothese~0.c + (-9))) or (main~0.nB0 &lt;= (main~0.nS + 19)))</Invariant>
-    <Invariant>((main~0.nB0 &lt;= (main~0.nS + 13)) or (0 &lt;= (main~0.hypothese~0.c + (-2))))</Invariant>
+    <Invariant>((main~0.nB0 &lt;= (main~0.nS + 12)) or (0 &lt;= (main~0.hypothese~0.c + (-2))))</Invariant>
+    <Invariant>((0 &lt;= (main~0.hypothese~0.c + (-10))) or (main~0.nB0 &lt;= (main~0.nS + 19)))</Invariant>
     <Invariant>(0 &lt;= main~0.hypothese~0.c)</Invariant>
-    <Invariant>((main~0.nB0 &lt;= (main~0.nS + 15)) or (0 &lt;= (main~0.hypothese~0.c + (-6))))</Invariant>
     <Invariant>((not Sofar~0.Sofar) or (main~0.nS &lt;= (main~0.nB0 + 10)))</Invariant>
+    <Invariant>((0 &lt;= (main~0.hypothese~0.c + (-6))) or (main~0.nB0 &lt;= (main~0.nS + 14)))</Invariant>
     <Invariant>OK</Invariant>
+    <Invariant>((main~0.nB0 &lt;= (main~0.nS + 15)) or (0 &lt;= (main~0.hypothese~0.c + (-8))))</Invariant>
+    <Invariant>((not Sofar~0.Sofar) or (main~0.nB0 &lt;= (main~0.nS + 20)))</Invariant>
+    <Invariant>((main~0.nB0 &lt;= (main~0.nS + 13)) or (0 &lt;= (main~0.hypothese~0.c + (-4))))</Invariant>
     <Ivc>main~0.avance0</Ivc>
     <Ivc>main~0.nB0</Ivc>
     <Ivc>main~0.hypothese~0.S</Ivc>
@@ -144,3 +144,4 @@
     <Ivc>main~0.controleur~0.avance</Ivc>
     </IvcSet>
   </Property>
+</Results>

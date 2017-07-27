@@ -54,32 +54,14 @@
   <Progress source="bmc" trueFor="18">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="19">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="20">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="21">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="22">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="23">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="24">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">36.993</Runtime>
+    <Runtime unit="sec">148.405</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
-    <MustElem>rlt_condact_resetmicrowave_microwave_KEYPAD_PROCESSING_rlt_init_step</MustElem>
     <MustElem>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_MIDDLE_DIGIT_DIGIT_TO_DISPLAY</MustElem>
     <MustElem>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_RIGHT_DIGIT_DIGIT_TO_DISPLAY</MustElem>
+    <MustElem>rlt_eval_microwave_mode_logic_rlt_fired_0</MustElem>
     <MustElem>rlt_eval_microwave_mode_logic_ON_rlt_fired_5</MustElem>
     <MustElem>STEPS_TO_COOK</MustElem>
     <MustElem>chart_microwave_mode_logic_steps_remaining</MustElem>
@@ -90,14 +72,14 @@
     <MustElem>microwave_microwave_TIME_ON_DISPLAY_SECONDS_TO_MINUTES__QUOTIENT</MustElem>
     <MustElem>rlt_eval_microwave_mode_logic_rlt_state_1_outports_steps_remaining</MustElem>
     <IvcSet number="1">
-    <Invariant>(0 &lt;= ((6 * microwave_microwave_KEYPAD_PROCESSING_DISPLAY_LEFT_DIGIT_DIGIT_TO_DISPLAY) + microwave_microwave_KEYPAD_PROCESSING_DISPLAY_MIDDLE_DIGIT_DIGIT_TO_DISPLAY))</Invariant>
-    <Invariant>((not (microwave_microwave_KEYPAD_PROCESSING_DISPLAY_MIDDLE_DIGIT_DIGIT_TO_DISPLAY &lt;= (microwave_microwave_KEYPAD_PROCESSING_DISPLAY_LEFT_DIGIT_DIGIT_TO_DISPLAY + (-247)))) or (not (0 &lt;= microwave_microwave_KEYPAD_PROCESSING_DISPLAY_MIDDLE_DIGIT_DIGIT_TO_DISPLAY)))</Invariant>
-    <Invariant>(((70 * microwave_microwave_KEYPAD_PROCESSING_DISPLAY_MIDDLE_DIGIT_DIGIT_TO_DISPLAY) + microwave_microwave_KEYPAD_PROCESSING_DISPLAY_RIGHT_DIGIT_DIGIT_TO_DISPLAY) &lt;= 639)</Invariant>
-    <Invariant>OK</Invariant>
-    <Invariant>(0 &lt;= microwave_microwave_KEYPAD_PROCESSING_DISPLAY_RIGHT_DIGIT_DIGIT_TO_DISPLAY)</Invariant>
     <Invariant>(0 &lt;= microwave_microwave_KEYPAD_PROCESSING_DISPLAY_MIDDLE_DIGIT_DIGIT_TO_DISPLAY)</Invariant>
+    <Invariant>(0 &lt;= microwave_microwave_KEYPAD_PROCESSING_DISPLAY_LEFT_DIGIT_DIGIT_TO_DISPLAY)</Invariant>
+    <Invariant>(microwave_microwave_KEYPAD_PROCESSING_DISPLAY_MIDDLE_DIGIT_DIGIT_TO_DISPLAY &lt;= 9)</Invariant>
+    <Invariant>(((60 * microwave_microwave_KEYPAD_PROCESSING_DISPLAY_LEFT_DIGIT_DIGIT_TO_DISPLAY) + microwave_microwave_KEYPAD_PROCESSING_DISPLAY_RIGHT_DIGIT_DIGIT_TO_DISPLAY) &lt;= 549)</Invariant>
+    <Invariant>((STEPS_TO_COOK = 0) or (((((60 * microwave_microwave_KEYPAD_PROCESSING_DISPLAY_LEFT_DIGIT_DIGIT_TO_DISPLAY) + microwave_microwave_KEYPAD_PROCESSING_DISPLAY_RIGHT_DIGIT_DIGIT_TO_DISPLAY) + (10 * microwave_microwave_KEYPAD_PROCESSING_DISPLAY_MIDDLE_DIGIT_DIGIT_TO_DISPLAY)) + (-STEPS_TO_COOK)) = 0))</Invariant>
+    <Invariant>(0 &lt;= microwave_microwave_KEYPAD_PROCESSING_DISPLAY_RIGHT_DIGIT_DIGIT_TO_DISPLAY)</Invariant>
+    <Invariant>OK</Invariant>
     <Invariant>(microwave_microwave_KEYPAD_PROCESSING_DISPLAY_RIGHT_DIGIT_DIGIT_TO_DISPLAY &lt;= 9)</Invariant>
-    <Ivc>rlt_condact_resetmicrowave_microwave_KEYPAD_PROCESSING_rlt_init_step</Ivc>
     <Ivc>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_MIDDLE_DIGIT_DIGIT_TO_DISPLAY</Ivc>
     <Ivc>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_RIGHT_DIGIT_DIGIT_TO_DISPLAY</Ivc>
     <Ivc>STEPS_TO_COOK</Ivc>
@@ -111,3 +93,4 @@
     <Ivc>rlt_eval_microwave_mode_logic_rlt_state_1_outports_steps_remaining</Ivc>
     </IvcSet>
   </Property>
+</Results>

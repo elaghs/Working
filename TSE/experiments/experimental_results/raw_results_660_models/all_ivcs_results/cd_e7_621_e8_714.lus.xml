@@ -60,42 +60,6 @@
   <Progress source="bmc" trueFor="20">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="21">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="22">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="23">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="24">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="25">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="26">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="27">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="28">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="29">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="30">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="31">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="32">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
     <Runtime unit="sec">1.012</Runtime>
     <Answer source="k-induction">valid</Answer>
@@ -123,3 +87,4 @@
     <Ivc>V93_X</Ivc>
     </IvcSet>
   </Property>
+</Results>

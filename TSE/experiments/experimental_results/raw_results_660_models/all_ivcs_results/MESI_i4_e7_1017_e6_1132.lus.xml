@@ -43,7 +43,7 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">6.432</Runtime>
+    <Runtime unit="sec">5.563</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -57,26 +57,26 @@
     <MustElem>V74_garde_me2</MustElem>
     <MustElem>V31_shared_me</MustElem>
     <IvcSet number="1">
-    <Invariant>((not ((V31_shared_me + (-V29_modified_me)) = 0)) or (V31_shared_me = 0))</Invariant>
-    <Invariant>(((not (V30_exclusive_me = 1)) or (not (0 &lt;= (V32_invalid_me + (-1))))) or (0 &lt;= (V32_invalid_me + (-2))))</Invariant>
-    <Invariant>((V31_shared_me &lt;= 1) or (0 &lt;= ((((V29_modified_me + V31_shared_me) + V30_exclusive_me) + V32_invalid_me) + (-3))))</Invariant>
-    <Invariant>(V30_exclusive_me &lt;= 1)</Invariant>
-    <Invariant>((not ((V32_invalid_me + (-3)) = 0)) or (not ((((-V31_shared_me) + V29_modified_me) + 1) &lt;= 0)))</Invariant>
-    <Invariant>(((V31_shared_me + (-V29_modified_me)) = 0) or ((((-V31_shared_me) + V29_modified_me) + 1) &lt;= 0))</Invariant>
-    <Invariant>((V31_shared_me &lt;= 2) or (not (0 &lt;= (V32_invalid_me + (-1)))))</Invariant>
-    <Invariant>(((not (0 &lt;= (((V29_modified_me + V30_exclusive_me) + V32_invalid_me) + (-2)))) or (0 &lt;= (V32_invalid_me + (-2)))) or (V31_shared_me = 0))</Invariant>
-    <Invariant>OK</Invariant>
-    <Invariant>(((not (0 &lt;= (V32_invalid_me + (-1)))) or (0 &lt;= ((((V29_modified_me + V31_shared_me) + V30_exclusive_me) + V32_invalid_me) + (-3)))) or (V31_shared_me = 0))</Invariant>
-    <Invariant>((not (V29_modified_me &lt;= (-1))) or ((V31_shared_me + (-V30_exclusive_me)) = 0))</Invariant>
+    <Invariant>(V31_shared_me &lt;= 3)</Invariant>
     <Invariant>(0 &lt;= V32_invalid_me)</Invariant>
-    <Invariant>((not (0 &lt;= (V32_invalid_me + (-3)))) or ((V32_invalid_me + (-3)) = 0))</Invariant>
-    <Invariant>((not (V30_exclusive_me = 1)) or (V31_shared_me = 0))</Invariant>
-    <Invariant>((V29_modified_me + V31_shared_me) &lt;= 3)</Invariant>
     <Invariant>(0 &lt;= V30_exclusive_me)</Invariant>
-    <Invariant>((((V30_exclusive_me = 1) or (0 &lt;= (V32_invalid_me + (-3)))) or (not ((V31_shared_me + (-V29_modified_me)) = 0))) or (not (0 &lt;= (V32_invalid_me + (-2)))))</Invariant>
-    <Invariant>((not (V30_exclusive_me = 1)) or (not (0 &lt;= (V32_invalid_me + (-3)))))</Invariant>
-    <Invariant>((((not (0 &lt;= (V32_invalid_me + (-1)))) or (not ((((-V31_shared_me) + V29_modified_me) + 1) &lt;= 0))) or (0 &lt;= (V32_invalid_me + (-2)))) or (not (V31_shared_me = 0)))</Invariant>
+    <Invariant>((not (0 &lt;= (((V29_modified_me + V30_exclusive_me) + V32_invalid_me) + (-2)))) or (0 &lt;= (V32_invalid_me + (-2))))</Invariant>
     <Invariant>(0 &lt;= (V29_modified_me + 1))</Invariant>
+    <Invariant>((not (V29_modified_me &lt;= (-1))) or (V31_shared_me = 0))</Invariant>
+    <Invariant>((not (V31_shared_me &lt;= 0)) or (V31_shared_me = 0))</Invariant>
+    <Invariant>((V32_invalid_me &lt;= 2) or ((V32_invalid_me + (-3)) = 0))</Invariant>
+    <Invariant>((V30_exclusive_me = 1) or (V30_exclusive_me &lt;= 0))</Invariant>
+    <Invariant>((not (V30_exclusive_me = 1)) or ((V31_shared_me + (-V29_modified_me)) = 0))</Invariant>
+    <Invariant>(((not (V30_exclusive_me = 1)) or (not (0 &lt;= (V32_invalid_me + (-1))))) or (0 &lt;= (V32_invalid_me + (-2))))</Invariant>
+    <Invariant>(((not (0 &lt;= (((V29_modified_me + V31_shared_me) + V32_invalid_me) + (-2)))) or (0 &lt;= (((V29_modified_me + V30_exclusive_me) + V32_invalid_me) + (-2)))) or (0 &lt;= ((((V29_modified_me + V31_shared_me) + V30_exclusive_me) + V32_invalid_me) + (-3))))</Invariant>
+    <Invariant>(((V29_modified_me &lt;= (-1)) or (0 &lt;= ((((V29_modified_me + V31_shared_me) + V30_exclusive_me) + V32_invalid_me) + (-3)))) or (not (0 &lt;= (V32_invalid_me + (-2)))))</Invariant>
+    <Invariant>(((not (0 &lt;= (V32_invalid_me + (-1)))) or (not (V29_modified_me &lt;= (-1)))) or (0 &lt;= (V32_invalid_me + (-2))))</Invariant>
+    <Invariant>((not (0 &lt;= (V32_invalid_me + (-3)))) or (V31_shared_me = 0))</Invariant>
+    <Invariant>((V31_shared_me &lt;= 2) or (not (0 &lt;= (V32_invalid_me + (-1)))))</Invariant>
+    <Invariant>((not (0 &lt;= (V32_invalid_me + (-3)))) or (not (V29_modified_me &lt;= (-1))))</Invariant>
+    <Invariant>((V32_invalid_me &lt;= 2) or (not (V30_exclusive_me = 1)))</Invariant>
+    <Invariant>((V29_modified_me &lt;= (-1)) or (0 = V29_modified_me))</Invariant>
+    <Invariant>OK</Invariant>
     <Invariant>((V31_shared_me &lt;= 1) or (not (0 &lt;= (V32_invalid_me + (-2)))))</Invariant>
     <Ivc>V75_garde_me3</Ivc>
     <Ivc>V76_garde_me4</Ivc>
@@ -89,3 +89,4 @@
     <Ivc>V31_shared_me</Ivc>
     </IvcSet>
   </Property>
+</Results>

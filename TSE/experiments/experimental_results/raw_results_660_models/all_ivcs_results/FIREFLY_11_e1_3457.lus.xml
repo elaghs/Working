@@ -46,36 +46,54 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">4.121</Runtime>
+    <Runtime unit="sec">4.116</Runtime>
     <Answer source="invariant-generation">valid</Answer>
     <K>2</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
+    <NumberOfIVCs>3</NumberOfIVCs>
     <MustElem>V108_garde5</MustElem>
-    <MustElem>V110_garde7</MustElem>
     <MustElem>V50_exclusive</MustElem>
     <MustElem>V51_shared</MustElem>
-    <MustElem>V52_env</MustElem>
-    <MustElem>V111_garde8</MustElem>
     <MustElem>OK</MustElem>
     <MustElem>V104_garde1</MustElem>
-    <MustElem>V105_garde2</MustElem>
-    <MustElem>V107_garde4</MustElem>
     <IvcSet number="1">
-    <Invariant>(V108_garde5 =&gt; (V51_shared &lt;= 0))</Invariant>
-    <Invariant>(V50_exclusive &gt;= 0)</Invariant>
+    <Invariant>((not (((-V51_shared) + 1) &lt;= 0)) or (0 &lt;= (V51_shared + (-2))))</Invariant>
+    <Invariant>(0 &lt;= V50_exclusive)</Invariant>
     <Invariant>OK</Invariant>
-    <Invariant>(V110_garde7 = V105_garde2)</Invariant>
-    <Invariant>(V108_garde5 =&gt; (V50_exclusive &lt;= 0))</Invariant>
-    <Invariant>(V51_shared &gt;= 0)</Invariant>
-    <Ivc>V110_garde7</Ivc>
+    <Invariant>(0 &lt;= V51_shared)</Invariant>
+    <Invariant>(V50_exclusive &lt;= 1)</Invariant>
     <Ivc>V108_garde5</Ivc>
     <Ivc>V50_exclusive</Ivc>
     <Ivc>V111_garde8</Ivc>
-    <Ivc>V52_env</Ivc>
     <Ivc>V51_shared</Ivc>
     <Ivc>V104_garde1</Ivc>
     <Ivc>OK</Ivc>
-    <Ivc>V105_garde2</Ivc>
     <Ivc>V107_garde4</Ivc>
     </IvcSet>
+    <IvcSet number="2">
+    <Invariant>OK</Invariant>
+    <Invariant>((V51_shared &lt;= 0) or (0 &lt;= (V51_shared + (-2))))</Invariant>
+    <Invariant>(V50_exclusive &lt;= 1)</Invariant>
+    <Invariant>((V51_shared = 0) or (not (V51_shared &lt;= 0)))</Invariant>
+    <Ivc>V108_garde5</Ivc>
+    <Ivc>V50_exclusive</Ivc>
+    <Ivc>V111_garde8</Ivc>
+    <Ivc>V51_shared</Ivc>
+    <Ivc>V104_garde1</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V106_garde3</Ivc>
+    </IvcSet>
+    <IvcSet number="3">
+    <Invariant>((V50_exclusive &lt;= 0) or (0 &lt;= V51_shared))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(((not (V51_shared = V50_exclusive)) or (not (((-V51_shared) + 1) &lt;= 0))) or (not V52_env))</Invariant>
+    <Invariant>(((not OK) or (V50_exclusive &lt;= 1)) or (not V52_env))</Invariant>
+    <Ivc>V108_garde5</Ivc>
+    <Ivc>V50_exclusive</Ivc>
+    <Ivc>V52_env</Ivc>
+    <Ivc>V51_shared</Ivc>
+    <Ivc>V130_X</Ivc>
+    <Ivc>V104_garde1</Ivc>
+    <Ivc>OK</Ivc>
+    </IvcSet>
   </Property>
+</Results>

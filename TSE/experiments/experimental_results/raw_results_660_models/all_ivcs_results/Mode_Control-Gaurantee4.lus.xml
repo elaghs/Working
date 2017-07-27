@@ -45,6 +45,21 @@
   <Progress source="bmc" trueFor="15">
     <PropertyProgress name="__GUARANTEE4"/>
   </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="__GUARANTEE4"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="__GUARANTEE4"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="__GUARANTEE4"/>
+  </Progress>
+  <Progress source="bmc" trueFor="19">
+    <PropertyProgress name="__GUARANTEE4"/>
+  </Progress>
+  <Progress source="bmc" trueFor="20">
+    <PropertyProgress name="__GUARANTEE4"/>
+  </Progress>
   <Property name="__GUARANTEE4">
     <Runtime unit="sec">0.812</Runtime>
     <Answer source="k-induction">valid</Answer>
@@ -68,3 +83,4 @@
     <Ivc>defs__is_suspended~1.m</Ivc>
     </IvcSet>
   </Property>
+</Results>

@@ -237,11 +237,17 @@
   <Progress source="bmc" trueFor="79">
     <PropertyProgress name="__GUARANTEE24"/>
   </Progress>
+  <Progress source="bmc" trueFor="80">
+    <PropertyProgress name="__GUARANTEE24"/>
+  </Progress>
+  <Progress source="bmc" trueFor="81">
+    <PropertyProgress name="__GUARANTEE24"/>
+  </Progress>
   <Property name="__GUARANTEE24">
-    <Runtime unit="sec">24.008</Runtime>
+    <Runtime unit="sec">24.432</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
+    <NumberOfIVCs>2</NumberOfIVCs>
     <MustElem>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</MustElem>
     <MustElem>_TOP__ALARM~0.__ASSUME__CONJ</MustElem>
     <MustElem>_TOP__SYS_STAT~0.SYS_STAT_OUT.Reservoir_Volume</MustElem>
@@ -256,7 +262,6 @@
     <MustElem>DEFS__is_therapy~0.mode</MustElem>
     <MustElem>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</MustElem>
     <MustElem>_TOP__OUTPUT~0.__OUTPUT__PROP__4</MustElem>
-    <MustElem>_TOP__ALARM~0.__ALARM__ASSERT__23</MustElem>
     <MustElem>DEFS__is_therapy~0._outvar</MustElem>
     <MustElem>_TOP__SYS_STAT~0.SYS_STAT_OUT.Reservoir_Empty</MustElem>
     <MustElem>_TOP__SYS_STAT~0.__ASSUME__HIST</MustElem>
@@ -284,16 +289,15 @@
     <MustElem>_TOP__SYS_STAT~0.__SYS_STAT__PROP__2</MustElem>
     <MustElem>_TOP__SYS_STAT~0.__SYS_STAT__PROP__0</MustElem>
     <MustElem>_TOP__ALARM~0.SYS_STAT_IN.Reservoir_Empty</MustElem>
-    <MustElem>_TOP__ALARM~0.__ALARM__PROP__9</MustElem>
     <MustElem>_TOP__OUTPUT~0.__ASSUME__HIST</MustElem>
     <MustElem>_TOP__TLM~0.__ASSERT</MustElem>
     <MustElem>_TOP__TLM~0.OP_CMD_IN.System_Start</MustElem>
     <IvcSet number="1">
     <Invariant>_TOP__SYS_STAT~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
     <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
     <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
     <Invariant>__GUARANTEE24</Invariant>
-    <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
     <Ivc>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</Ivc>
     <Ivc>_TOP__ALARM~0.__ASSUME__CONJ</Ivc>
     <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.Reservoir_Volume</Ivc>
@@ -341,4 +345,59 @@
     <Ivc>_TOP__TLM~0.__ASSERT</Ivc>
     <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
     </IvcSet>
+    <IvcSet number="2">
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
+    <Invariant>(((not _TOP__OUTPUT~0.__ASSUME__HIST) or (not is_therapy)) or (0 &lt;= (IM__IM_OUT.Current_System_Mode + (-2))))</Invariant>
+    <Invariant>__GUARANTEE24</Invariant>
+    <Invariant>_TOP__SYS_STAT~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
+    <Ivc>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__ASSERT__9</Ivc>
+    <Ivc>_TOP__ALARM~0.SYS_STAT_IN.In_Therapy</Ivc>
+    <Ivc>_TOP__ALARM~0.ALARM_OUT.Notification_Message</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__ASSERT__0</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.In_Therapy</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__2</Ivc>
+    <Ivc>DEFS__is_therapy~0.mode</Ivc>
+    <Ivc>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__4</Ivc>
+    <Ivc>DEFS__is_therapy~0._outvar</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.Reservoir_Empty</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__26</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__TLM~0.TLM_MODE_OUT.System_On</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__ASSERT__2</Ivc>
+    <Ivc>__GUARANTEE24</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__27</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__ASSERT__0</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__PROP__0</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.CONST_IN.Empty_Reservoir</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</Ivc>
+    <Ivc>_TOP__ALARM~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.IM_IN.Current_System_Mode</Ivc>
+    <Ivc>_TOP__OUTPUT~0.SYS_STAT_IN.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__ASSERT__34</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__PROP__2</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__12</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__PROP__0</Ivc>
+    <Ivc>_TOP__ALARM~0.SYS_STAT_IN.Reservoir_Empty</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
+    </IvcSet>
   </Property>
+</Results>

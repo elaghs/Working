@@ -390,86 +390,8 @@
   <Progress source="bmc" trueFor="130">
     <PropertyProgress name="__GUARANTEE0"/>
   </Progress>
-  <Progress source="bmc" trueFor="131">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="132">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="133">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="134">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="135">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="136">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="137">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="138">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="139">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="140">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="141">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="142">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="143">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="144">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="145">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="146">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="147">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="148">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="149">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="150">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="151">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="152">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="153">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="154">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="155">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
-  <Progress source="bmc" trueFor="156">
-    <PropertyProgress name="__GUARANTEE0"/>
-  </Progress>
   <Property name="__GUARANTEE0">
-    <Runtime unit="sec">3.02</Runtime>
+    <Runtime unit="sec">3.022</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -494,9 +416,9 @@
     <MustElem>_TOP__MC~0.__ASSUME__HIST</MustElem>
     <MustElem>_TOP__DC~0.seconds_to_cook</MustElem>
     <IvcSet number="1">
+    <Invariant>_TOP__DC~0.__ASSUME__HIST</Invariant>
     <Invariant>_TOP__OP~0.__ASSUME__HIST</Invariant>
     <Invariant>_TOP__MC~0.__ASSUME__HIST</Invariant>
-    <Invariant>_TOP__DC~0.__ASSUME__HIST</Invariant>
     <Invariant>__GUARANTEE0</Invariant>
     <Ivc>_TOP__OP~0.__ASSERT</Ivc>
     <Ivc>__GUARANTEE0</Ivc>
@@ -520,3 +442,4 @@
     <Ivc>_TOP__MC~0.__ASSUME__HIST</Ivc>
     </IvcSet>
   </Property>
+</Results>

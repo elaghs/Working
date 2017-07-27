@@ -117,8 +117,11 @@
   <Progress source="bmc" trueFor="39">
     <PropertyProgress name="__GUARANTEE53"/>
   </Progress>
+  <Progress source="bmc" trueFor="40">
+    <PropertyProgress name="__GUARANTEE53"/>
+  </Progress>
   <Property name="__GUARANTEE53">
-    <Runtime unit="sec">9.463</Runtime>
+    <Runtime unit="sec">9.549</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -144,10 +147,10 @@
     <MustElem>_TOP__ALARM~0.__ASSUME__HIST</MustElem>
     <MustElem>_TOP__OUTPUT~0.__ASSUME__HIST</MustElem>
     <IvcSet number="1">
-    <Invariant>(_TOP__ALARM~0.Config_Timer &lt;= Config_Timer)</Invariant>
+    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
     <Invariant>__GUARANTEE53</Invariant>
     <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
-    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
+    <Invariant>(_TOP__ALARM~0.Config_Timer &lt;= Config_Timer)</Invariant>
     <Ivc>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</Ivc>
     <Ivc>_TOP__OUTPUT~0.CONFIG_IN.Configured</Ivc>
     <Ivc>_TOP__ALARM~0.CONST_IN.Config_Warning_Duration</Ivc>
@@ -171,3 +174,4 @@
     <Ivc>_TOP__ALARM~0.__ASSUME__HIST</Ivc>
     </IvcSet>
   </Property>
+</Results>

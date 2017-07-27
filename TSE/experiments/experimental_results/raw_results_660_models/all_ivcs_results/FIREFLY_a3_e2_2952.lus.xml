@@ -13,10 +13,10 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">8.021</Runtime>
+    <Runtime unit="sec">16.718</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
+    <NumberOfIVCs>2</NumberOfIVCs>
     <MustElem>shared</MustElem>
     <MustElem>procs</MustElem>
     <MustElem>excludes8~0.X7</MustElem>
@@ -53,7 +53,6 @@
     <MustElem>firefly~0.e7</MustElem>
     <MustElem>First~0.First</MustElem>
     <MustElem>invalid</MustElem>
-    <MustElem>firefly~0.garde3</MustElem>
     <MustElem>firefly~0.garde2</MustElem>
     <MustElem>firefly~0.garde5</MustElem>
     <MustElem>firefly~0.garde4</MustElem>
@@ -108,4 +107,56 @@
     <Ivc>firefly~0.exclusive</Ivc>
     <Ivc>firefly~0.garde8</Ivc>
     </IvcSet>
+    <IvcSet number="2">
+    <Invariant>(((not Sofar~0.Sofar) or (firefly~0.shared &lt;= (First~0.First + (-1)))) or (firefly~0.exclusive = 0))</Invariant>
+    <Invariant>(((not (firefly~0.shared = firefly~0.exclusive)) or (not Sofar~0.Sofar)) or (firefly~0.shared = 0))</Invariant>
+    <Invariant>((not Sofar~0.Sofar) or (firefly~0.exclusive &lt;= 1))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(((not Sofar~0.Sofar) or (firefly~0.shared = 0)) or (not (((firefly~0.shared + (-firefly~0.exclusive)) + 1) &lt;= 0)))</Invariant>
+    <Ivc>shared</Ivc>
+    <Ivc>excludes8~0.X7</Ivc>
+    <Ivc>procs</Ivc>
+    <Ivc>excludes8~0.X8</Ivc>
+    <Ivc>excludes8~0.X5</Ivc>
+    <Ivc>excludes8~0.X6</Ivc>
+    <Ivc>excludes8~0.X3</Ivc>
+    <Ivc>excludes8~0.X4</Ivc>
+    <Ivc>excludes8~0.X1</Ivc>
+    <Ivc>Sofar~0.Sofar</Ivc>
+    <Ivc>excludes8~0.X2</Ivc>
+    <Ivc>firefly~0.invalid</Ivc>
+    <Ivc>A1</Ivc>
+    <Ivc>A2</Ivc>
+    <Ivc>A3</Ivc>
+    <Ivc>excludes8~0.excludes</Ivc>
+    <Ivc>exclusive</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>First~0.X</Ivc>
+    <Ivc>dirty</Ivc>
+    <Ivc>R4</Ivc>
+    <Ivc>Sofar~0.X</Ivc>
+    <Ivc>firefly~0.dirty</Ivc>
+    <Ivc>firefly~0.e1</Ivc>
+    <Ivc>firefly~0.i_invalid</Ivc>
+    <Ivc>firefly~0.e4</Ivc>
+    <Ivc>env</Ivc>
+    <Ivc>firefly~0.e5</Ivc>
+    <Ivc>firefly~0.e2</Ivc>
+    <Ivc>firefly~0.e3</Ivc>
+    <Ivc>firefly~0.e8</Ivc>
+    <Ivc>firefly~0.shared</Ivc>
+    <Ivc>firefly~0.e6</Ivc>
+    <Ivc>firefly~0.e7</Ivc>
+    <Ivc>First~0.First</Ivc>
+    <Ivc>firefly~0.garde1</Ivc>
+    <Ivc>invalid</Ivc>
+    <Ivc>firefly~0.garde2</Ivc>
+    <Ivc>firefly~0.garde5</Ivc>
+    <Ivc>firefly~0.garde4</Ivc>
+    <Ivc>firefly~0.garde7</Ivc>
+    <Ivc>firefly~0.mem_invalid</Ivc>
+    <Ivc>firefly~0.exclusive</Ivc>
+    <Ivc>firefly~0.garde8</Ivc>
+    </IvcSet>
   </Property>
+</Results>

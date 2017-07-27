@@ -19,7 +19,7 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">2.314</Runtime>
+    <Runtime unit="sec">2.313</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -69,3 +69,4 @@
     <Ivc>moesi~0.exclusive_mo</Ivc>
     </IvcSet>
   </Property>
+</Results>

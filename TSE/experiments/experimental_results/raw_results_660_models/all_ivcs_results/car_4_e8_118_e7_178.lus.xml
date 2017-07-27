@@ -39,24 +39,6 @@
   <Progress source="bmc" trueFor="13">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="14">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="15">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="16">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="17">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="18">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="19">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
     <Runtime unit="sec">0.21</Runtime>
     <Answer source="invariant-generation">valid</Answer>
@@ -65,9 +47,10 @@
     <MustElem>OK</MustElem>
     <MustElem>V28_speed</MustElem>
     <IvcSet number="1">
-    <Invariant>(V28_speed &gt;= 0)</Invariant>
     <Invariant>OK</Invariant>
+    <Invariant>(V28_speed &gt;= 0)</Invariant>
     <Ivc>OK</Ivc>
     <Ivc>V28_speed</Ivc>
     </IvcSet>
   </Property>
+</Results>

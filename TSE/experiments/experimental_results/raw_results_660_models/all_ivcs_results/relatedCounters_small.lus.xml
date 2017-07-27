@@ -67,7 +67,7 @@
     <PropertyProgress name="ok"/>
   </Progress>
   <Property name="ok">
-    <Runtime unit="sec">4.318</Runtime>
+    <Runtime unit="sec">4.814</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -79,20 +79,13 @@
     <MustElem>nY</MustElem>
     <MustElem>ok</MustElem>
     <IvcSet number="1">
-    <Invariant>(((y + (-1)) &lt;= 8) or (((-(-9)) + 1) = y))</Invariant>
-    <Invariant>(((x + (-1)) &lt;= 12) or (not ((y + (-1)) &lt;= 8)))</Invariant>
+    <Invariant>(((-(-10)) = y) or (x &lt;= (y + 1)))</Invariant>
+    <Invariant>(((x &lt;= 10) or ((-(-10)) = y)) or (not ((y + (-1)) &lt;= 9)))</Invariant>
+    <Invariant>((y + (-1)) &lt;= 9)</Invariant>
+    <Invariant>((((-(-10)) = y) or ((x + (-1)) &lt;= 12)) or (not ((y + (-1)) &lt;= 9)))</Invariant>
+    <Invariant>((0 = y) or (not (y &lt;= 0)))</Invariant>
+    <Invariant>((x &lt;= 0) or (not (y &lt;= 0)))</Invariant>
     <Invariant>ok</Invariant>
-    <Invariant>(((x + (-1)) &lt;= 10) or (not ((y + (-1)) &lt;= 6)))</Invariant>
-    <Invariant>((x &lt;= 0) or (0 &lt;= (y + (-1))))</Invariant>
-    <Invariant>(0 &lt;= y)</Invariant>
-    <Invariant>(((x + (-1)) &lt;= 2) or (not ((y + (-1)) &lt;= 2)))</Invariant>
-    <Invariant>(((x + (-1)) &lt;= 3) or (not ((y + (-1)) &lt;= 2)))</Invariant>
-    <Invariant>((not ((y + (-1)) &lt;= 4)) or ((x + (-1)) &lt;= 8))</Invariant>
-    <Invariant>(((x + (-1)) &lt;= 0) or (0 &lt;= ((y + (-1)) + (-1))))</Invariant>
-    <Invariant>((not ((y + (-1)) &lt;= 7)) or ((x + (-1)) &lt;= 11))</Invariant>
-    <Invariant>((not ((y + (-1)) &lt;= 5)) or ((x + (-1)) &lt;= 9))</Invariant>
-    <Invariant>((x &lt;= 8) or (0 &lt;= ((y + (-1)) + (-4))))</Invariant>
-    <Invariant>(((x + (-1)) &lt;= 1) or (not ((y + (-1)) &lt;= 1)))</Invariant>
     <Ivc>pre_y</Ivc>
     <Ivc>pre_x</Ivc>
     <Ivc>x</Ivc>
@@ -102,3 +95,4 @@
     <Ivc>ok</Ivc>
     </IvcSet>
   </Property>
+</Results>

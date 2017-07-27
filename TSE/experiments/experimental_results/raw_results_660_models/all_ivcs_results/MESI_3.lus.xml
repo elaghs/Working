@@ -13,12 +13,11 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">5.029</Runtime>
+    <Runtime unit="sec">4.93</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
     <MustElem>V34_shared_me</MustElem>
-    <MustElem>V36_env</MustElem>
     <MustElem>V33_exclusive_me</MustElem>
     <MustElem>V35_invalid_me</MustElem>
     <MustElem>V88_garde_me4</MustElem>
@@ -28,9 +27,19 @@
     <MustElem>OK</MustElem>
     <MustElem>V87_garde_me3</MustElem>
     <IvcSet number="1">
+    <Invariant>(0 &lt;= (V32_modified_me + 1))</Invariant>
+    <Invariant>((not ((V34_shared_me + 1) &lt;= 0)) or (0 &lt;= V32_modified_me))</Invariant>
+    <Invariant>((V33_exclusive_me = 0) or ((V33_exclusive_me + (-1)) = 0))</Invariant>
+    <Invariant>((not (V34_shared_me &lt;= (-1))) or (V33_exclusive_me &lt;= 0))</Invariant>
+    <Invariant>(not (V34_shared_me &lt;= (((V33_exclusive_me + V35_invalid_me) + V32_modified_me) + (-4))))</Invariant>
+    <Invariant>(((0 &lt;= (V33_exclusive_me + (-1))) or (not ((V35_invalid_me + 1) &lt;= 0))) or (not (0 &lt;= V32_modified_me)))</Invariant>
     <Invariant>OK</Invariant>
+    <Invariant>((V34_shared_me &lt;= (-1)) or (V34_shared_me = 0))</Invariant>
+    <Invariant>((V35_invalid_me &lt;= 2) or (not (V32_modified_me &lt;= (-1))))</Invariant>
+    <Invariant>((V33_exclusive_me &lt;= 0) or (not (V32_modified_me &lt;= (-1))))</Invariant>
+    <Invariant>(0 &lt;= (V35_invalid_me + 2))</Invariant>
+    <Invariant>((V32_modified_me = 0) or (V32_modified_me &lt;= (-1)))</Invariant>
     <Ivc>V34_shared_me</Ivc>
-    <Ivc>V36_env</Ivc>
     <Ivc>V33_exclusive_me</Ivc>
     <Ivc>V35_invalid_me</Ivc>
     <Ivc>V88_garde_me4</Ivc>
@@ -41,3 +50,4 @@
     <Ivc>V87_garde_me3</Ivc>
     </IvcSet>
   </Property>
+</Results>

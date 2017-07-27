@@ -49,7 +49,7 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">14.452</Runtime>
+    <Runtime unit="sec">14.76</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -59,8 +59,8 @@
     <MustElem>cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed</MustElem>
     <MustElem>OK</MustElem>
     <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_outports_setDesiredSpeed</MustElem>
-    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_setDesiredSpeed</MustElem>
     <MustElem>chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed</MustElem>
+    <MustElem>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_setDesiredSpeed</MustElem>
     <IvcSet number="1">
     <Invariant>((0 = chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed) or (1 = chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed))</Invariant>
     <Invariant>OK</Invariant>
@@ -74,3 +74,4 @@
     <Ivc>chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed</Ivc>
     </IvcSet>
   </Property>
+</Results>

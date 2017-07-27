@@ -90,53 +90,8 @@
   <Progress source="bmc" trueFor="30">
     <PropertyProgress name="__GUARANTEE27"/>
   </Progress>
-  <Progress source="bmc" trueFor="31">
-    <PropertyProgress name="__GUARANTEE27"/>
-  </Progress>
-  <Progress source="bmc" trueFor="32">
-    <PropertyProgress name="__GUARANTEE27"/>
-  </Progress>
-  <Progress source="bmc" trueFor="33">
-    <PropertyProgress name="__GUARANTEE27"/>
-  </Progress>
-  <Progress source="bmc" trueFor="34">
-    <PropertyProgress name="__GUARANTEE27"/>
-  </Progress>
-  <Progress source="bmc" trueFor="35">
-    <PropertyProgress name="__GUARANTEE27"/>
-  </Progress>
-  <Progress source="bmc" trueFor="36">
-    <PropertyProgress name="__GUARANTEE27"/>
-  </Progress>
-  <Progress source="bmc" trueFor="37">
-    <PropertyProgress name="__GUARANTEE27"/>
-  </Progress>
-  <Progress source="bmc" trueFor="38">
-    <PropertyProgress name="__GUARANTEE27"/>
-  </Progress>
-  <Progress source="bmc" trueFor="39">
-    <PropertyProgress name="__GUARANTEE27"/>
-  </Progress>
-  <Progress source="bmc" trueFor="40">
-    <PropertyProgress name="__GUARANTEE27"/>
-  </Progress>
-  <Progress source="bmc" trueFor="41">
-    <PropertyProgress name="__GUARANTEE27"/>
-  </Progress>
-  <Progress source="bmc" trueFor="42">
-    <PropertyProgress name="__GUARANTEE27"/>
-  </Progress>
-  <Progress source="bmc" trueFor="43">
-    <PropertyProgress name="__GUARANTEE27"/>
-  </Progress>
-  <Progress source="bmc" trueFor="44">
-    <PropertyProgress name="__GUARANTEE27"/>
-  </Progress>
-  <Progress source="bmc" trueFor="45">
-    <PropertyProgress name="__GUARANTEE27"/>
-  </Progress>
   <Property name="__GUARANTEE27">
-    <Runtime unit="sec">8.541</Runtime>
+    <Runtime unit="sec">7.998</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -159,9 +114,9 @@
     <MustElem>_TOP__IM~0.__ASSUME__CONJ</MustElem>
     <MustElem>_TOP__OUTPUT~0.__OUTPUT__PROP__29</MustElem>
     <IvcSet number="1">
-    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
-    <Invariant>__GUARANTEE27</Invariant>
     <Invariant>_TOP__IM~0.__ASSUME__HIST</Invariant>
+    <Invariant>__GUARANTEE27</Invariant>
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
     <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__27</Ivc>
     <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Commanded_Flow_Rate</Ivc>
     <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</Ivc>
@@ -182,3 +137,4 @@
     <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__29</Ivc>
     </IvcSet>
   </Property>
+</Results>

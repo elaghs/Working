@@ -168,8 +168,32 @@
   <Progress source="bmc" trueFor="56">
     <PropertyProgress name="OK"/>
   </Progress>
+  <Progress source="bmc" trueFor="57">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="58">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="59">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="60">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="61">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="62">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="63">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="64">
+    <PropertyProgress name="OK"/>
+  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">1.111</Runtime>
+    <Runtime unit="sec">1.31</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -181,9 +205,9 @@
     <MustElem>m</MustElem>
     <MustElem>Age~0.age_of_p</MustElem>
     <IvcSet number="1">
+    <Invariant>(Age~0.age_of_p &lt;= 0)</Invariant>
     <Invariant>((0 &lt;= (k + (-1))) or (not Sofar~0.Sofar))</Invariant>
     <Invariant>OK</Invariant>
-    <Invariant>(Age~0.age_of_p &lt;= 0)</Invariant>
     <Invariant>((not Sofar~0.Sofar) or (0 &lt;= (m + (-1))))</Invariant>
     <Ivc>Sofar~0.X</Ivc>
     <Ivc>Sofar~0.Sofar</Ivc>
@@ -194,3 +218,4 @@
     <Ivc>Age~0.age_of_p</Ivc>
     </IvcSet>
   </Property>
+</Results>

@@ -99,11 +99,8 @@
   <Progress source="bmc" trueFor="33">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="34">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">11.853</Runtime>
+    <Runtime unit="sec">11.626</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -149,17 +146,16 @@
     <MustElem>V210_First</MustElem>
     <MustElem>V81_R8</MustElem>
     <IvcSet number="1">
-    <Invariant>OK</Invariant>
     <Invariant>(V231_First = V217_First)</Invariant>
-    <Invariant>((not V89_env) or (((((V72_dirty + V70_shared) + V71_shared_dirty) + V73_invalid) + V69_exclusive) &lt;= V231_First))</Invariant>
-    <Invariant>((((V70_shared + V71_shared_dirty) &lt;= 0) or (not V89_env)) or (V72_dirty &lt;= 0))</Invariant>
-    <Invariant>(((not V89_env) or (V71_shared_dirty &lt;= 0)) or (V69_exclusive &lt;= 0))</Invariant>
-    <Invariant>((not V89_env) or (V231_First = V210_First))</Invariant>
+    <Invariant>(((not V89_env) or (V72_dirty &lt;= 0)) or ((V70_shared + V71_shared_dirty) &lt;= 0))</Invariant>
     <Invariant>(V231_First = V224_First)</Invariant>
+    <Invariant>(((not V89_env) or (V231_First &lt;= ((((2 * V72_dirty) + V70_shared) + V71_shared_dirty) + V73_invalid))) or (V71_shared_dirty &lt;= 0))</Invariant>
+    <Invariant>OK</Invariant>
     <Invariant>((V231_First &lt;= ((((V72_dirty + V70_shared) + V71_shared_dirty) + V73_invalid) + V69_exclusive)) or (not V89_env))</Invariant>
-    <Invariant>(((not V89_env) or (V72_dirty &lt;= 0)) or (V69_exclusive &lt;= 0))</Invariant>
-    <Invariant>(((((V70_shared + V71_shared_dirty) &lt;= 0) or (not (V70_shared &lt;= ((V72_dirty + V71_shared_dirty) + V69_exclusive)))) or (not V89_env)) or (not (V71_shared_dirty &lt;= 0)))</Invariant>
-    <Invariant>(((not V89_env) or (V69_exclusive &lt;= 0)) or (V231_First &lt;= (V73_invalid + 2)))</Invariant>
+    <Invariant>((not V89_env) or (V231_First = V210_First))</Invariant>
+    <Invariant>(((not V89_env) or (V72_dirty &lt;= 0)) or (V231_First &lt;= ((V72_dirty + V71_shared_dirty) + V73_invalid)))</Invariant>
+    <Invariant>((not V89_env) or (((((V72_dirty + V70_shared) + V71_shared_dirty) + V73_invalid) + V69_exclusive) &lt;= V231_First))</Invariant>
+    <Invariant>(((not V89_env) or (V231_First &lt;= ((((2 * V72_dirty) + V70_shared) + V71_shared_dirty) + V73_invalid))) or (not (0 &lt;= (V70_shared + (-1)))))</Invariant>
     <Ivc>V191_X</Ivc>
     <Ivc>V86_R13</Ivc>
     <Ivc>V78_R5</Ivc>
@@ -203,3 +199,4 @@
     <Ivc>V81_R8</Ivc>
     </IvcSet>
   </Property>
+</Results>

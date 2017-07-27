@@ -72,8 +72,23 @@
   <Progress source="bmc" trueFor="24">
     <PropertyProgress name="OK"/>
   </Progress>
+  <Progress source="bmc" trueFor="25">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="26">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="27">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="28">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="29">
+    <PropertyProgress name="OK"/>
+  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">2.714</Runtime>
+    <Runtime unit="sec">3.02</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -84,10 +99,8 @@
     <MustElem>V103_garde1</MustElem>
     <MustElem>OK</MustElem>
     <MustElem>V107_garde5</MustElem>
-    <MustElem>V106_garde4</MustElem>
     <IvcSet number="1">
-    <Invariant>((((V50_exclusive = 0) or (V51_shared = 0)) or (0 &lt;= (V51_shared + (-2)))) or (not V52_env))</Invariant>
-    <Invariant>(((not OK) or (V50_exclusive &lt;= 1)) or (not V52_env))</Invariant>
+    <Invariant>((((V50_exclusive &lt;= 0) or (V51_shared = 0)) or (not V52_env)) or (0 &lt;= (V51_shared + (-2))))</Invariant>
     <Invariant>OK</Invariant>
     <Ivc>V129_X</Ivc>
     <Ivc>V50_exclusive</Ivc>
@@ -96,6 +109,6 @@
     <Ivc>V103_garde1</Ivc>
     <Ivc>OK</Ivc>
     <Ivc>V107_garde5</Ivc>
-    <Ivc>V106_garde4</Ivc>
     </IvcSet>
   </Property>
+</Results>

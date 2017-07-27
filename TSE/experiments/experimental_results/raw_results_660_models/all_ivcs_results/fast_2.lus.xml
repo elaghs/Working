@@ -57,8 +57,11 @@
   <Progress source="bmc" trueFor="19">
     <PropertyProgress name="OK"/>
   </Progress>
+  <Progress source="bmc" trueFor="20">
+    <PropertyProgress name="OK"/>
+  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">10.126</Runtime>
+    <Runtime unit="sec">10.439</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>2</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -238,3 +241,4 @@
     <Ivc>main~0.battok</Ivc>
     </IvcSet>
   </Property>
+</Results>

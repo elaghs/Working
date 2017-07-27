@@ -4,7 +4,7 @@
     <PropertyProgress name="__GUARANTEE8"/>
   </Progress>
   <Property name="__GUARANTEE8">
-    <Runtime unit="sec">7.734</Runtime>
+    <Runtime unit="sec">7.536</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>0</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -60,3 +60,4 @@
     <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
     </IvcSet>
   </Property>
+</Results>

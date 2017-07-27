@@ -3,8 +3,11 @@
   <Progress source="bmc" trueFor="1">
     <PropertyProgress name="__GUARANTEE4"/>
   </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="__GUARANTEE4"/>
+  </Progress>
   <Property name="__GUARANTEE4">
-    <Runtime unit="sec">2.723</Runtime>
+    <Runtime unit="sec">2.715</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>0</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -60,3 +63,4 @@
     <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</Ivc>
     </IvcSet>
   </Property>
+</Results>

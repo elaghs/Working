@@ -492,116 +492,11 @@
   <Progress source="bmc" trueFor="164">
     <PropertyProgress name="ok"/>
   </Progress>
-  <Progress source="bmc" trueFor="165">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="166">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="167">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="168">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="169">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="170">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="171">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="172">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="173">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="174">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="175">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="176">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="177">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="178">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="179">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="180">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="181">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="182">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="183">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="184">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="185">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="186">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="187">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="188">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="189">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="190">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="191">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="192">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="193">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="194">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="195">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="196">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="197">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="198">
-    <PropertyProgress name="ok"/>
-  </Progress>
-  <Progress source="bmc" trueFor="199">
-    <PropertyProgress name="ok"/>
-  </Progress>
   <Property name="ok">
-    <Runtime unit="sec">2106.261</Runtime>
+    <Runtime unit="sec">5943.225</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>88</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
+    <NumberOfIVCs>4</NumberOfIVCs>
     <MustElem>priority~2.command_failure</MustElem>
     <MustElem>priority~1.in_command</MustElem>
     <MustElem>priority~1.other_in_command</MustElem>
@@ -617,10 +512,7 @@
     <MustElem>priority~2.in_command</MustElem>
     <MustElem>ok</MustElem>
     <MustElem>priority~1.conf1~0.n</MustElem>
-    <MustElem>m1</MustElem>
-    <MustElem>m2</MustElem>
     <MustElem>conf1~0.signal</MustElem>
-    <MustElem>m3</MustElem>
     <MustElem>priority~2.conf1~0.pre_cpt</MustElem>
     <MustElem>priority~1.command_failure</MustElem>
     <MustElem>conf1~0.out</MustElem>
@@ -643,12 +535,107 @@
     <MustElem>no_command</MustElem>
     <MustElem>conf1~0.n</MustElem>
     <IvcSet number="1">
-    <Invariant>((not (priority~0.conf1~0.cpt &lt;= 29)) or (conf1~0.cpt &lt;= 87))</Invariant>
-    <Invariant>((priority~2.conf1~0.pre_cpt &lt;= 0) =&gt; (conf1~0.pre_cpt &lt;= 0))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 50)) or (conf1~0.cpt &lt;= 51))</Invariant>
+    <Invariant>((not (0 &lt;= (priority~2.conf1~0.cpt + (-2)))) or (0 &lt;= (priority~0.conf1~0.cpt + (-2))))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 47)) or (conf1~0.cpt &lt;= 48))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 56) or (0 &lt;= (priority~1.conf1~0.cpt + (-56))))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 52)) or (conf1~0.cpt &lt;= 53))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 32) or (not (priority~1.conf1~0.cpt &lt;= 31)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 39) or (not (priority~1.conf1~0.cpt &lt;= 38)))</Invariant>
+    <Invariant>((0 &lt;= (priority~0.conf1~0.cpt + (-7))) or (conf1~0.cpt &lt;= 6))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 37) or (not (priority~0.conf1~0.cpt &lt;= 29)))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 48)) or (conf1~0.cpt &lt;= 49))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 22) or (0 &lt;= (priority~1.conf1~0.cpt + (-22))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 26) or (not (priority~1.conf1~0.cpt &lt;= 25)))</Invariant>
+    <Invariant>(0 &lt;= priority~1.conf1~0.cpt)</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 24) or (not (priority~0.conf1~0.cpt &lt;= 24)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 21) or (not (priority~0.conf1~0.cpt &lt;= 21)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 35) or (not (priority~0.conf1~0.cpt &lt;= 29)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 4) or (not (priority~1.conf1~0.cpt &lt;= 3)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 44) or (not (priority~1.conf1~0.cpt &lt;= 43)))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 5)) or (conf1~0.cpt &lt;= 6))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 47) or (not (priority~1.conf1~0.cpt &lt;= 46)))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 29)) or (conf1~0.cpt &lt;= 30))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 37) or (0 &lt;= (priority~1.conf1~0.cpt + (-37))))</Invariant>
     <Invariant>(0 &lt;= (priority~0.conf1~0.cpt + (-1)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 14) or (0 &lt;= (priority~0.conf1~0.cpt + (-15))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 34) or (0 &lt;= (priority~1.conf1~0.cpt + (-34))))</Invariant>
+    <Invariant>((not (priority~0.conf1~0.cpt &lt;= 27)) or (conf1~0.cpt &lt;= 27))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 29) or (not (priority~1.conf1~0.cpt &lt;= 28)))</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-16))) or (conf1~0.cpt &lt;= 16))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 37)) or (conf1~0.cpt &lt;= 38))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 19)) or (conf1~0.cpt &lt;= 20))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 34) or (not (priority~0.conf1~0.cpt &lt;= 29)))</Invariant>
+    <Invariant>((not (priority~0.conf1~0.cpt &lt;= 10)) or (conf1~0.cpt &lt;= 10))</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-14))) or (conf1~0.cpt &lt;= 14))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 3) or (0 &lt;= (priority~0.conf1~0.cpt + (-4))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 22) or (not (priority~0.conf1~0.cpt &lt;= 22)))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 17)) or (conf1~0.cpt &lt;= 18))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 9) or (not (priority~0.conf1~0.cpt &lt;= 9)))</Invariant>
+    <Invariant>((not (priority~0.conf1~0.cpt &lt;= 2)) or (not (0 &lt;= (priority~2.conf1~0.cpt + (-3)))))</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-8))) or (conf1~0.cpt &lt;= 8))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 1)) or (conf1~0.cpt &lt;= 1))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 57)) or (conf1~0.cpt &lt;= 58))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 46) or (not (priority~1.conf1~0.cpt &lt;= 45)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 36) or (not (priority~1.conf1~0.cpt &lt;= 35)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 15) or (not (priority~0.conf1~0.cpt &lt;= 15)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 31) or (0 &lt;= (priority~1.conf1~0.cpt + (-31))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 10) or (0 &lt;= (priority~1.conf1~0.cpt + (-10))))</Invariant>
+    <Invariant>((not (priority~0.conf1~0.cpt &lt;= 18)) or (conf1~0.cpt &lt;= 18))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 12) or (not (priority~1.conf1~0.cpt &lt;= 11)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 28) or (0 &lt;= (priority~0.conf1~0.cpt + (-29))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 13) or (not (priority~0.conf1~0.cpt &lt;= 13)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 3) or (not (priority~1.conf1~0.cpt &lt;= 2)))</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-27))) or (conf1~0.cpt &lt;= 27))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 29) or (not (priority~0.conf1~0.cpt &lt;= 29)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 12) or (not (priority~0.conf1~0.cpt &lt;= 12)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 7) or (0 &lt;= (priority~1.conf1~0.cpt + (-7))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 36) or (not (priority~0.conf1~0.cpt &lt;= 29)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 23) or (0 &lt;= (priority~0.conf1~0.cpt + (-24))))</Invariant>
+    <Invariant>((0 &lt;= (priority~0.conf1~0.cpt + (-17))) or (conf1~0.cpt &lt;= 16))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 35) or (not (priority~1.conf1~0.cpt &lt;= 34)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 25) or (0 &lt;= (priority~0.conf1~0.cpt + (-26))))</Invariant>
+    <Invariant>((not (priority~0.conf1~0.cpt &lt;= 19)) or (conf1~0.cpt &lt;= 19))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 33) or (0 &lt;= (priority~1.conf1~0.cpt + (-33))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 59) or (not (priority~0.conf1~0.cpt &lt;= 29)))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 44)) or (conf1~0.cpt &lt;= 45))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 43) or (0 &lt;= (priority~1.conf1~0.cpt + (-43))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 41) or (0 &lt;= (priority~1.conf1~0.cpt + (-41))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 23) or (0 &lt;= (priority~1.conf1~0.cpt + (-23))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 33) or (not (priority~0.conf1~0.cpt &lt;= 29)))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 39)) or (conf1~0.cpt &lt;= 40))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 5) or (0 &lt;= (priority~0.conf1~0.cpt + (-6))))</Invariant>
+    <Invariant>((not (priority~0.conf1~0.cpt &lt;= 20)) or (conf1~0.cpt &lt;= 20))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 24) or (not (priority~1.conf1~0.cpt &lt;= 23)))</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-19))) or (conf1~0.cpt &lt;= 19))</Invariant>
+    <Invariant>((not (priority~0.conf1~0.cpt &lt;= 26)) or (conf1~0.cpt &lt;= 26))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 28) or (0 &lt;= (priority~1.conf1~0.cpt + (-28))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 11) or (not (priority~1.conf1~0.cpt &lt;= 10)))</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-54))) or (conf1~0.cpt &lt;= 54))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 31) or (not (priority~0.conf1~0.cpt &lt;= 29)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 5) or (not (priority~1.conf1~0.cpt &lt;= 4)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 17) or (0 &lt;= (priority~1.conf1~0.cpt + (-17))))</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-25))) or (conf1~0.cpt &lt;= 25))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 0) or (0 &lt;= (priority~1.conf1~0.cpt + (-1))))</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-55))) or (conf1~0.cpt &lt;= 55))</Invariant>
+    <Invariant>(conf1~0.cpt &lt;= priority~2.conf1~0.cpt)</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 8) or (not (priority~0.conf1~0.cpt &lt;= 8)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 15) or (not (priority~1.conf1~0.cpt &lt;= 14)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 42) or (not (priority~1.conf1~0.cpt &lt;= 41)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 32) or (not (priority~0.conf1~0.cpt &lt;= 29)))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 12)) or (conf1~0.cpt &lt;= 13))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 30) or (not (priority~0.conf1~0.cpt &lt;= 29)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 4) or (not (priority~0.conf1~0.cpt &lt;= 4)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 17) or (not (priority~0.conf1~0.cpt &lt;= 17)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 57) or (0 &lt;= (priority~1.conf1~0.cpt + (-57))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 21) or (not (priority~1.conf1~0.cpt &lt;= 20)))</Invariant>
+    <Invariant>((0 &lt;= (priority~0.conf1~0.cpt + (-12))) or (conf1~0.cpt &lt;= 11))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 7) or (not (priority~0.conf1~0.cpt &lt;= 7)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 59) or (0 &lt;= (priority~1.conf1~0.cpt + (-59))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 9) or (not (priority~1.conf1~0.cpt &lt;= 8)))</Invariant>
     <Invariant>ok</Invariant>
-    <Invariant>(priority~2.conf1~0.pre_cpt &gt;= 0)</Invariant>
-    <Invariant>((priority~1.conf1~0.pre_cpt &lt;= 0) =&gt; (priority~2.conf1~0.pre_cpt &lt;= 0))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 52) or (0 &lt;= (priority~1.conf1~0.cpt + (-52))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 50) or (0 &lt;= (priority~1.conf1~0.cpt + (-50))))</Invariant>
     <Ivc>priority~2.command_failure</Ivc>
     <Ivc>priority~1.in_command</Ivc>
     <Ivc>priority~1.other_in_command</Ivc>
@@ -667,7 +654,6 @@
     <Ivc>m1</Ivc>
     <Ivc>conf1~0.signal</Ivc>
     <Ivc>m2</Ivc>
-    <Ivc>m3</Ivc>
     <Ivc>priority~2.conf1~0.pre_cpt</Ivc>
     <Ivc>priority~1.command_failure</Ivc>
     <Ivc>conf1~0.out</Ivc>
@@ -690,4 +676,304 @@
     <Ivc>no_command</Ivc>
     <Ivc>conf1~0.n</Ivc>
     </IvcSet>
+    <IvcSet number="2">
+    <Invariant>(conf1~0.pre_cpt &gt;= 0)</Invariant>
+    <Invariant>(priority~2.conf1~0.pre_cpt &gt;= 0)</Invariant>
+    <Invariant>ok</Invariant>
+    <Invariant>(priority~0.conf1~0.pre_cpt &gt;= 0)</Invariant>
+    <Invariant>((priority~2.conf1~0.pre_cpt &lt;= 0) =&gt; (conf1~0.pre_cpt &lt;= 0))</Invariant>
+    <Invariant>(priority~1.conf1~0.pre_cpt &gt;= 0)</Invariant>
+    <Ivc>priority~2.command_failure</Ivc>
+    <Ivc>priority~1.in_command</Ivc>
+    <Ivc>priority~1.other_in_command</Ivc>
+    <Ivc>priority~0.conf1~0.pre_cpt</Ivc>
+    <Ivc>range_monitor~0.corrupt</Ivc>
+    <Ivc>priority~0.conf1~0.signal</Ivc>
+    <Ivc>range_monitor~1.corrupt</Ivc>
+    <Ivc>priority~0.conf1~0.cpt</Ivc>
+    <Ivc>conf1~0.cpt</Ivc>
+    <Ivc>priority~1.conf1~0.cpt</Ivc>
+    <Ivc>priority~0.command_failure</Ivc>
+    <Ivc>conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~2.other_in_command</Ivc>
+    <Ivc>priority~2.conf1~0.cpt</Ivc>
+    <Ivc>priority~2.in_command</Ivc>
+    <Ivc>priority~1.conf1~0.n</Ivc>
+    <Ivc>ok</Ivc>
+    <Ivc>range_monitor~0.latch~0.pre_out</Ivc>
+    <Ivc>range_monitor~1.latch~0.pre_out</Ivc>
+    <Ivc>conf1~0.signal</Ivc>
+    <Ivc>m3</Ivc>
+    <Ivc>priority~2.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~1.command_failure</Ivc>
+    <Ivc>conf1~0.out</Ivc>
+    <Ivc>corrupt2</Ivc>
+    <Ivc>priority~0.conf1~0.out</Ivc>
+    <Ivc>corrupt1</Ivc>
+    <Ivc>priority~2.conf1~0.signal</Ivc>
+    <Ivc>range_monitor~1.latch~0.out</Ivc>
+    <Ivc>range_monitor~0.latch~0.out</Ivc>
+    <Ivc>priority~2.conf1~0.n</Ivc>
+    <Ivc>priority~1.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~1.n</Ivc>
+    <Ivc>priority~0.in_command</Ivc>
+    <Ivc>priority~0.n</Ivc>
+    <Ivc>in_command3</Ivc>
+    <Ivc>in_command2</Ivc>
+    <Ivc>priority~0.conf1~0.n</Ivc>
+    <Ivc>in_command1</Ivc>
+    <Ivc>priority~1.conf1~0.out</Ivc>
+    <Ivc>priority~1.conf1~0.signal</Ivc>
+    <Ivc>priority~0.other_in_command</Ivc>
+    <Ivc>priority~2.conf1~0.out</Ivc>
+    <Ivc>priority~2.n</Ivc>
+    <Ivc>no_command</Ivc>
+    <Ivc>conf1~0.n</Ivc>
+    </IvcSet>
+    <IvcSet number="3">
+    <Invariant>ok</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (0 &lt;= (priority~0.conf1~0.cpt + (-29)))) or (conf1~0.cpt &lt;= 30))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (0 &lt;= (priority~0.conf1~0.cpt + (-57)))) or (conf1~0.cpt &lt;= 58))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 43)) or (conf1~0.cpt &lt;= 44))</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-25))) or (conf1~0.cpt &lt;= 25))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-43))) or range_monitor~0.latch~0.out) or (conf1~0.cpt &lt;= 44))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (0 &lt;= (priority~0.conf1~0.cpt + (-13)))) or (conf1~0.cpt &lt;= 14))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 19)) or (conf1~0.cpt &lt;= 20))</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-56))) or (conf1~0.cpt &lt;= 56))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 55) or (0 &lt;= (priority~1.conf1~0.cpt + (-55))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 22) or (0 &lt;= (priority~1.conf1~0.cpt + (-22))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 57) or (0 &lt;= (priority~1.conf1~0.cpt + (-57))))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (conf1~0.cpt &lt;= 16)) or (0 &lt;= (priority~0.conf1~0.cpt + (-15))))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-11))) or range_monitor~0.latch~0.out) or (conf1~0.cpt &lt;= 12))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 21) or (not (priority~1.conf1~0.cpt &lt;= 20)))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (0 &lt;= (priority~0.conf1~0.cpt + (-34)))) or (conf1~0.cpt &lt;= 35))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 59) or (0 &lt;= (priority~1.conf1~0.cpt + (-59))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 24) or (not (priority~1.conf1~0.cpt &lt;= 23)))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-44))) or (conf1~0.cpt &lt;= 45)) or range_monitor~0.latch~0.out)</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 10)) or (conf1~0.cpt &lt;= 11))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-7))) or range_monitor~0.latch~0.out) or (conf1~0.cpt &lt;= 8))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 7) or (0 &lt;= (priority~1.conf1~0.cpt + (-7))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 42) or (not (priority~1.conf1~0.cpt &lt;= 41)))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (conf1~0.cpt &lt;= 38)) or (0 &lt;= (priority~0.conf1~0.cpt + (-37))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 10) or (0 &lt;= (priority~1.conf1~0.cpt + (-10))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 32) or (not (priority~1.conf1~0.cpt &lt;= 31)))</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-41))) or (conf1~0.cpt &lt;= 41))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (conf1~0.cpt &lt;= 36)) or (0 &lt;= (priority~0.conf1~0.cpt + (-35))))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (0 &lt;= (priority~0.conf1~0.cpt + (-27)))) or (conf1~0.cpt &lt;= 28))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 31) or (0 &lt;= (priority~1.conf1~0.cpt + (-31))))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 29)) or (conf1~0.cpt &lt;= 30))</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-17))) or (conf1~0.cpt &lt;= 17))</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-37))) or (conf1~0.cpt &lt;= 37))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 23) or (0 &lt;= (priority~1.conf1~0.cpt + (-23))))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 25)) or (conf1~0.cpt &lt;= 26))</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-54))) or (conf1~0.cpt &lt;= 54))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 3)) or (conf1~0.cpt &lt;= 4))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 11)) or (conf1~0.cpt &lt;= 12))</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 52) or (0 &lt;= (priority~0.conf1~0.cpt + (-51)))) or range_monitor~0.latch~0.out)</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 23) or range_monitor~0.latch~0.out) or (0 &lt;= (priority~0.conf1~0.cpt + (-22))))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (0 &lt;= (priority~0.conf1~0.cpt + (-24)))) or (conf1~0.cpt &lt;= 25))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (conf1~0.cpt &lt;= 33)) or (0 &lt;= (priority~0.conf1~0.cpt + (-32))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 3) or (not (priority~1.conf1~0.cpt &lt;= 2)))</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 0) or (0 &lt;= (priority~0.conf1~0.cpt + (-1)))) or range_monitor~0.latch~0.out)</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 49) or (not (priority~1.conf1~0.cpt &lt;= 48)))</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 9) or range_monitor~0.latch~0.out) or (0 &lt;= (priority~0.conf1~0.cpt + (-8))))</Invariant>
+    <Invariant>(0 &lt;= priority~1.conf1~0.cpt)</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 45)) or (conf1~0.cpt &lt;= 46))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 4)) or (conf1~0.cpt &lt;= 5))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-10))) or range_monitor~0.latch~0.out) or (conf1~0.cpt &lt;= 11))</Invariant>
+    <Invariant>(0 &lt;= priority~0.conf1~0.cpt)</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 34)) or (conf1~0.cpt &lt;= 35))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 1) or (not (priority~1.conf1~0.cpt &lt;= 1)))</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 18) or range_monitor~0.latch~0.out) or (0 &lt;= (priority~0.conf1~0.cpt + (-17))))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (conf1~0.cpt &lt;= 15)) or (0 &lt;= (priority~0.conf1~0.cpt + (-14))))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 46)) or (conf1~0.cpt &lt;= 47))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-40))) or range_monitor~0.latch~0.out) or (conf1~0.cpt &lt;= 41))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 18) or (not (priority~1.conf1~0.cpt &lt;= 17)))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (conf1~0.cpt &lt;= 6)) or (0 &lt;= (priority~0.conf1~0.cpt + (-5))))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-33))) or (conf1~0.cpt &lt;= 34)) or range_monitor~0.latch~0.out)</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 34) or (0 &lt;= (priority~1.conf1~0.cpt + (-34))))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (0 &lt;= (priority~0.conf1~0.cpt + (-28)))) or (conf1~0.cpt &lt;= 29))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (conf1~0.cpt &lt;= 26)) or (0 &lt;= (priority~0.conf1~0.cpt + (-25))))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (conf1~0.cpt &lt;= 21)) or (0 &lt;= (priority~0.conf1~0.cpt + (-20))))</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 57) or range_monitor~0.latch~0.out) or (0 &lt;= (priority~0.conf1~0.cpt + (-56))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 33) or (0 &lt;= (priority~1.conf1~0.cpt + (-33))))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-30))) or range_monitor~0.latch~0.out) or (conf1~0.cpt &lt;= 31))</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-16))) or (conf1~0.cpt &lt;= 16))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 57)) or (conf1~0.cpt &lt;= 58))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (0 &lt;= (priority~0.conf1~0.cpt + (-39)))) or (conf1~0.cpt &lt;= 40))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (conf1~0.cpt &lt;= 50)) or (0 &lt;= (priority~0.conf1~0.cpt + (-49))))</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 22) or range_monitor~0.latch~0.out) or (0 &lt;= (priority~0.conf1~0.cpt + (-21))))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 52)) or (conf1~0.cpt &lt;= 53))</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 48) or range_monitor~0.latch~0.out) or (0 &lt;= (priority~0.conf1~0.cpt + (-47))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 50) or (0 &lt;= (priority~1.conf1~0.cpt + (-50))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 29) or (not (priority~1.conf1~0.cpt &lt;= 28)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 0) or (0 &lt;= (priority~1.conf1~0.cpt + (-1))))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-53))) or range_monitor~0.latch~0.out) or (conf1~0.cpt &lt;= 54))</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-27))) or (conf1~0.cpt &lt;= 27))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-23))) or range_monitor~0.latch~0.out) or (conf1~0.cpt &lt;= 24))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-6))) or (conf1~0.cpt &lt;= 7)) or range_monitor~0.latch~0.out)</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (conf1~0.cpt &lt;= 5)) or (0 &lt;= (priority~0.conf1~0.cpt + (-4))))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (conf1~0.cpt &lt;= 53)) or (0 &lt;= (priority~0.conf1~0.cpt + (-52))))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-3))) or range_monitor~0.latch~0.out) or (conf1~0.cpt &lt;= 4))</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 39) or range_monitor~0.latch~0.out) or (0 &lt;= (priority~0.conf1~0.cpt + (-38))))</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-14))) or (conf1~0.cpt &lt;= 14))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (conf1~0.cpt &lt;= 43)) or (0 &lt;= (priority~0.conf1~0.cpt + (-42))))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 35)) or (conf1~0.cpt &lt;= 36))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 44)) or (conf1~0.cpt &lt;= 45))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 5)) or (conf1~0.cpt &lt;= 6))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (conf1~0.cpt &lt;= 46)) or (0 &lt;= (priority~0.conf1~0.cpt + (-45))))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-46))) or range_monitor~0.latch~0.out) or (conf1~0.cpt &lt;= 47))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 19) or (0 &lt;= (priority~1.conf1~0.cpt + (-19))))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-36))) or range_monitor~0.latch~0.out) or (conf1~0.cpt &lt;= 37))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-31))) or range_monitor~0.latch~0.out) or (conf1~0.cpt &lt;= 32))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-16))) or (conf1~0.cpt &lt;= 17)) or range_monitor~0.latch~0.out)</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 19) or range_monitor~0.latch~0.out) or (0 &lt;= (priority~0.conf1~0.cpt + (-18))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 48) or (not (priority~1.conf1~0.cpt &lt;= 47)))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (0 &lt;= (priority~0.conf1~0.cpt + (-55)))) or (conf1~0.cpt &lt;= 56))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (conf1~0.cpt &lt;= 42)) or (0 &lt;= (priority~0.conf1~0.cpt + (-41))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 9) or (not (priority~1.conf1~0.cpt &lt;= 8)))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (conf1~0.cpt &lt;= 10)) or (0 &lt;= (priority~0.conf1~0.cpt + (-9))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 8) or (0 &lt;= (priority~1.conf1~0.cpt + (-8))))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 50)) or (conf1~0.cpt &lt;= 51))</Invariant>
+    <Invariant>(conf1~0.cpt &lt;= priority~2.conf1~0.cpt)</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-48))) or range_monitor~0.latch~0.out) or (conf1~0.cpt &lt;= 49))</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 59) or range_monitor~0.latch~0.out) or (0 &lt;= (priority~0.conf1~0.cpt + (-58))))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 39)) or (conf1~0.cpt &lt;= 40))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 39) or (not (priority~1.conf1~0.cpt &lt;= 38)))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 37)) or (conf1~0.cpt &lt;= 38))</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-28))) or (conf1~0.cpt &lt;= 28))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 12)) or (conf1~0.cpt &lt;= 13))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 43) or (0 &lt;= (priority~1.conf1~0.cpt + (-43))))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (0 &lt;= (priority~0.conf1~0.cpt + (-19)))) or (conf1~0.cpt &lt;= 20))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 15) or (not (priority~1.conf1~0.cpt &lt;= 14)))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (0 &lt;= (priority~0.conf1~0.cpt + (-26)))) or (conf1~0.cpt &lt;= 27))</Invariant>
+    <Invariant>((range_monitor~0.latch~0.out or (0 &lt;= (priority~0.conf1~0.cpt + (-54)))) or (conf1~0.cpt &lt;= 55))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 52) or (0 &lt;= (priority~1.conf1~0.cpt + (-52))))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-12))) or range_monitor~0.latch~0.out) or (conf1~0.cpt &lt;= 13))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-50))) or range_monitor~0.latch~0.out) or (conf1~0.cpt &lt;= 51))</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 3) or range_monitor~0.latch~0.out) or (0 &lt;= (priority~0.conf1~0.cpt + (-2))))</Invariant>
+    <Ivc>priority~2.command_failure</Ivc>
+    <Ivc>priority~1.in_command</Ivc>
+    <Ivc>priority~1.other_in_command</Ivc>
+    <Ivc>priority~0.conf1~0.pre_cpt</Ivc>
+    <Ivc>range_monitor~0.corrupt</Ivc>
+    <Ivc>priority~0.conf1~0.signal</Ivc>
+    <Ivc>priority~0.conf1~0.cpt</Ivc>
+    <Ivc>conf1~0.cpt</Ivc>
+    <Ivc>priority~1.conf1~0.cpt</Ivc>
+    <Ivc>priority~0.command_failure</Ivc>
+    <Ivc>conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~2.other_in_command</Ivc>
+    <Ivc>priority~2.conf1~0.cpt</Ivc>
+    <Ivc>priority~2.in_command</Ivc>
+    <Ivc>priority~1.conf1~0.n</Ivc>
+    <Ivc>ok</Ivc>
+    <Ivc>range_monitor~0.latch~0.pre_out</Ivc>
+    <Ivc>conf1~0.signal</Ivc>
+    <Ivc>m2</Ivc>
+    <Ivc>priority~2.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~1.command_failure</Ivc>
+    <Ivc>conf1~0.out</Ivc>
+    <Ivc>priority~0.conf1~0.out</Ivc>
+    <Ivc>corrupt1</Ivc>
+    <Ivc>priority~2.conf1~0.signal</Ivc>
+    <Ivc>range_monitor~0.latch~0.out</Ivc>
+    <Ivc>priority~2.conf1~0.n</Ivc>
+    <Ivc>priority~1.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~1.n</Ivc>
+    <Ivc>priority~0.in_command</Ivc>
+    <Ivc>priority~0.n</Ivc>
+    <Ivc>in_command3</Ivc>
+    <Ivc>in_command2</Ivc>
+    <Ivc>priority~0.conf1~0.n</Ivc>
+    <Ivc>in_command1</Ivc>
+    <Ivc>priority~1.conf1~0.out</Ivc>
+    <Ivc>priority~1.conf1~0.signal</Ivc>
+    <Ivc>priority~0.other_in_command</Ivc>
+    <Ivc>priority~2.conf1~0.out</Ivc>
+    <Ivc>priority~2.n</Ivc>
+    <Ivc>no_command</Ivc>
+    <Ivc>conf1~0.n</Ivc>
+    </IvcSet>
+    <IvcSet number="4">
+    <Invariant>((not (0 &lt;= (priority~2.conf1~0.cpt + (-19)))) or (not (priority~0.conf1~0.cpt &lt;= 18)))</Invariant>
+    <Invariant>((priority~1.conf1~0.cpt &lt;= 1) or (0 &lt;= (priority~0.conf1~0.cpt + (-2))))</Invariant>
+    <Invariant>((0 &lt;= (priority~0.conf1~0.cpt + (-17))) or (priority~2.conf1~0.cpt &lt;= 16))</Invariant>
+    <Invariant>((priority~2.conf1~0.cpt &lt;= 26) or (not (priority~0.conf1~0.cpt &lt;= 26)))</Invariant>
+    <Invariant>((not (0 &lt;= (priority~2.conf1~0.cpt + (-3)))) or (not (priority~0.conf1~0.cpt &lt;= 2)))</Invariant>
+    <Invariant>((priority~2.conf1~0.cpt &lt;= 25) or (0 &lt;= (priority~0.conf1~0.cpt + (-26))))</Invariant>
+    <Invariant>((not (priority~0.conf1~0.cpt &lt;= 15)) or (not (0 &lt;= (priority~2.conf1~0.cpt + (-16)))))</Invariant>
+    <Invariant>((0 &lt;= (priority~0.conf1~0.cpt + (-7))) or (priority~2.conf1~0.cpt &lt;= 6))</Invariant>
+    <Invariant>((not (priority~0.conf1~0.cpt &lt;= 13)) or (not (0 &lt;= (priority~2.conf1~0.cpt + (-14)))))</Invariant>
+    <Invariant>((priority~2.conf1~0.cpt &lt;= 30) or (not (priority~0.conf1~0.cpt &lt;= 29)))</Invariant>
+    <Invariant>(conf1~0.cpt &lt;= priority~2.conf1~0.cpt)</Invariant>
+    <Invariant>((0 &lt;= (priority~0.conf1~0.cpt + (-12))) or (not (0 &lt;= (priority~2.conf1~0.cpt + (-12)))))</Invariant>
+    <Invariant>((priority~2.conf1~0.cpt &lt;= 19) or (not (priority~0.conf1~0.cpt &lt;= 19)))</Invariant>
+    <Invariant>(range_monitor~1.latch~0.out or (conf1~0.cpt &lt;= (priority~1.conf1~0.cpt + 1)))</Invariant>
+    <Invariant>((not (0 &lt;= (priority~2.conf1~0.cpt + (-24)))) or (0 &lt;= (priority~0.conf1~0.cpt + (-24))))</Invariant>
+    <Invariant>(0 &lt;= priority~1.conf1~0.cpt)</Invariant>
+    <Invariant>((not (0 &lt;= (priority~2.conf1~0.cpt + (-10)))) or (not (priority~0.conf1~0.cpt &lt;= 9)))</Invariant>
+    <Invariant>((not (priority~0.conf1~0.cpt &lt;= 4)) or (priority~2.conf1~0.cpt &lt;= 4))</Invariant>
+    <Invariant>((not (0 &lt;= (priority~2.conf1~0.cpt + (-21)))) or (not (priority~0.conf1~0.cpt &lt;= 20)))</Invariant>
+    <Invariant>((not (priority~0.conf1~0.cpt &lt;= 24)) or (priority~2.conf1~0.cpt &lt;= 24))</Invariant>
+    <Invariant>((0 &lt;= (priority~0.conf1~0.cpt + (-15))) or (not (0 &lt;= (priority~2.conf1~0.cpt + (-15)))))</Invariant>
+    <Invariant>((not (priority~0.conf1~0.cpt &lt;= 12)) or (not (0 &lt;= (priority~2.conf1~0.cpt + (-13)))))</Invariant>
+    <Invariant>((priority~2.conf1~0.cpt &lt;= 7) or (not (priority~0.conf1~0.cpt &lt;= 7)))</Invariant>
+    <Invariant>((priority~2.conf1~0.cpt &lt;= 27) or (not (priority~0.conf1~0.cpt &lt;= 27)))</Invariant>
+    <Invariant>((not (priority~1.conf1~0.cpt &lt;= 1)) or (0 &lt;= (priority~0.conf1~0.cpt + (-1))))</Invariant>
+    <Invariant>((not (priority~0.conf1~0.cpt &lt;= 22)) or (priority~2.conf1~0.cpt &lt;= 22))</Invariant>
+    <Invariant>((not (priority~0.conf1~0.cpt &lt;= 8)) or (priority~2.conf1~0.cpt &lt;= 8))</Invariant>
+    <Invariant>((not (0 &lt;= (priority~2.conf1~0.cpt + (-2)))) or (0 &lt;= (priority~0.conf1~0.cpt + (-2))))</Invariant>
+    <Invariant>((not (0 &lt;= (priority~2.conf1~0.cpt + (-30)))) or (not (priority~0.conf1~0.cpt &lt;= 29)))</Invariant>
+    <Invariant>ok</Invariant>
+    <Invariant>((not (0 &lt;= (priority~2.conf1~0.cpt + (-11)))) or (not (priority~0.conf1~0.cpt &lt;= 10)))</Invariant>
+    <Invariant>((0 &lt;= (priority~0.conf1~0.cpt + (-6))) or (priority~2.conf1~0.cpt &lt;= 5))</Invariant>
+    <Invariant>((not (priority~0.conf1~0.cpt &lt;= 21)) or (priority~2.conf1~0.cpt &lt;= 21))</Invariant>
+    <Invariant>((not (0 &lt;= (priority~2.conf1~0.cpt + (-29)))) or (0 &lt;= (priority~0.conf1~0.cpt + (-29))))</Invariant>
+    <Invariant>((not (0 &lt;= (priority~2.conf1~0.cpt + (-18)))) or (not (priority~0.conf1~0.cpt &lt;= 17)))</Invariant>
+    <Invariant>((priority~2.conf1~0.cpt &lt;= 3) or (0 &lt;= (priority~0.conf1~0.cpt + (-4))))</Invariant>
+    <Ivc>priority~2.command_failure</Ivc>
+    <Ivc>priority~1.in_command</Ivc>
+    <Ivc>priority~1.other_in_command</Ivc>
+    <Ivc>priority~0.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~0.conf1~0.signal</Ivc>
+    <Ivc>range_monitor~1.corrupt</Ivc>
+    <Ivc>priority~0.conf1~0.cpt</Ivc>
+    <Ivc>conf1~0.cpt</Ivc>
+    <Ivc>priority~1.conf1~0.cpt</Ivc>
+    <Ivc>priority~0.command_failure</Ivc>
+    <Ivc>conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~2.other_in_command</Ivc>
+    <Ivc>priority~2.conf1~0.cpt</Ivc>
+    <Ivc>priority~2.in_command</Ivc>
+    <Ivc>priority~1.conf1~0.n</Ivc>
+    <Ivc>ok</Ivc>
+    <Ivc>m1</Ivc>
+    <Ivc>range_monitor~1.latch~0.pre_out</Ivc>
+    <Ivc>conf1~0.signal</Ivc>
+    <Ivc>priority~2.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~1.command_failure</Ivc>
+    <Ivc>conf1~0.out</Ivc>
+    <Ivc>corrupt2</Ivc>
+    <Ivc>priority~0.conf1~0.out</Ivc>
+    <Ivc>priority~2.conf1~0.signal</Ivc>
+    <Ivc>range_monitor~1.latch~0.out</Ivc>
+    <Ivc>priority~2.conf1~0.n</Ivc>
+    <Ivc>priority~1.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~1.n</Ivc>
+    <Ivc>priority~0.in_command</Ivc>
+    <Ivc>priority~0.n</Ivc>
+    <Ivc>in_command3</Ivc>
+    <Ivc>in_command2</Ivc>
+    <Ivc>priority~0.conf1~0.n</Ivc>
+    <Ivc>in_command1</Ivc>
+    <Ivc>priority~1.conf1~0.out</Ivc>
+    <Ivc>priority~1.conf1~0.signal</Ivc>
+    <Ivc>priority~0.other_in_command</Ivc>
+    <Ivc>priority~2.conf1~0.out</Ivc>
+    <Ivc>priority~2.n</Ivc>
+    <Ivc>no_command</Ivc>
+    <Ivc>conf1~0.n</Ivc>
+    </IvcSet>
   </Property>
+</Results>

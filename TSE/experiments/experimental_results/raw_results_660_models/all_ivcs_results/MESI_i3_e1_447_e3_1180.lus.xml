@@ -30,31 +30,23 @@
   <Progress source="bmc" trueFor="10">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="11">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="12">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">1.916</Runtime>
+    <Runtime unit="sec">3.028</Runtime>
     <Answer source="invariant-generation">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
     <MustElem>V29_modified_me</MustElem>
     <MustElem>V30_exclusive_me</MustElem>
     <MustElem>OK</MustElem>
-    <MustElem>V74_garde_me2</MustElem>
     <MustElem>V31_shared_me</MustElem>
     <IvcSet number="1">
-    <Invariant>(V29_modified_me &lt;= 0)</Invariant>
-    <Invariant>(V30_exclusive_me &gt;= 0)</Invariant>
+    <Invariant>(V29_modified_me &lt;= V30_exclusive_me)</Invariant>
     <Invariant>OK</Invariant>
-    <Invariant>(V31_shared_me &gt;= 0)</Invariant>
+    <Invariant>((0 &lt;= (V31_shared_me + (-1))) or (V31_shared_me = 0))</Invariant>
     <Ivc>V30_exclusive_me</Ivc>
     <Ivc>V29_modified_me</Ivc>
     <Ivc>OK</Ivc>
-    <Ivc>V74_garde_me2</Ivc>
     <Ivc>V31_shared_me</Ivc>
     </IvcSet>
   </Property>
+</Results>

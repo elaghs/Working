@@ -114,8 +114,14 @@
   <Progress source="bmc" trueFor="38">
     <PropertyProgress name="OK"/>
   </Progress>
+  <Progress source="bmc" trueFor="39">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="40">
+    <PropertyProgress name="OK"/>
+  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">2.213</Runtime>
+    <Runtime unit="sec">2.515</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -130,11 +136,11 @@
     <MustElem>Age~2.age_of_p</MustElem>
     <MustElem>Age~0.age_of_p</MustElem>
     <IvcSet number="1">
-    <Invariant>(((Age~2.age_of_p + (-Age~0.age_of_p)) = 0) or (Age~0.age_of_p &lt;= (Age~2.age_of_p + (-2))))</Invariant>
-    <Invariant>(0 &lt;= Age~1.age_of_p)</Invariant>
     <Invariant>((Age~2.age_of_p = 0) or (0 &lt;= (Age~2.age_of_p + (-2))))</Invariant>
     <Invariant>(Age~0.age_of_p &lt;= Age~1.age_of_p)</Invariant>
+    <Invariant>(((Age~2.age_of_p + (-Age~0.age_of_p)) = 0) or (Age~0.age_of_p &lt;= (Age~2.age_of_p + (-2))))</Invariant>
     <Invariant>OK</Invariant>
+    <Invariant>(0 &lt;= Age~1.age_of_p)</Invariant>
     <Ivc>Age~1.age_of_p</Ivc>
     <Ivc>Age~0.p</Ivc>
     <Ivc>Sofar~0.X</Ivc>
@@ -147,3 +153,4 @@
     <Ivc>Age~0.age_of_p</Ivc>
     </IvcSet>
   </Property>
+</Results>

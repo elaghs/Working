@@ -16,7 +16,7 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">1.812</Runtime>
+    <Runtime unit="sec">1.814</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -58,3 +58,4 @@
     <Ivc>V160_First</Ivc>
     </IvcSet>
   </Property>
+</Results>

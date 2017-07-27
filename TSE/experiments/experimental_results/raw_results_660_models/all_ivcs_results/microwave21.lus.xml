@@ -123,45 +123,9 @@
   <Progress source="bmc" trueFor="41">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="42">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="43">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="44">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="45">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="46">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="47">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="48">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="49">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="50">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="51">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="52">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="53">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">58.684</Runtime>
-    <Answer source="pdr">valid</Answer>
+    <Runtime unit="sec">35.378</Runtime>
+    <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
     <MustElem>chart_microwave_mode_logic_mode</MustElem>
@@ -205,8 +169,8 @@
     <MustElem>rlt_eval_microwave_mode_logic_ON_rlt_state_7_states___root</MustElem>
     <MustElem>chart_microwave_mode_logic_rlt_evtInitStep</MustElem>
     <IvcSet number="1">
+    <Invariant>((1 &lt;&gt; microwave_microwave_mode_logic_mode) or (4 = chart_microwave_mode_logic_final_state_states___root))</Invariant>
     <Invariant>OK</Invariant>
-    <Invariant>((4 = chart_microwave_mode_logic_final_state_states___root) or (1 &lt;&gt; microwave_microwave_mode_logic_mode))</Invariant>
     <Ivc>chart_microwave_mode_logic_mode</Ivc>
     <Ivc>STEPS_TO_COOK</Ivc>
     <Ivc>rlt_enter_microwave_mode_logic_ON_rlt_state_2_outports_mode</Ivc>
@@ -249,3 +213,4 @@
     <Ivc>chart_microwave_mode_logic_rlt_evtInitStep</Ivc>
     </IvcSet>
   </Property>
+</Results>

@@ -18,32 +18,8 @@
   <Progress source="bmc" trueFor="6">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="7">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="8">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="9">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="10">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="11">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="12">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="13">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="14">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">0.912</Runtime>
+    <Runtime unit="sec">1.013</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -51,13 +27,13 @@
     <MustElem>V30_move</MustElem>
     <MustElem>OK</MustElem>
     <MustElem>V28_speed</MustElem>
-    <MustElem>V33_env</MustElem>
     <IvcSet number="1">
+    <Invariant>((V28_speed + (-1)) &lt;= 2)</Invariant>
     <Invariant>OK</Invariant>
     <Ivc>V24_toofast</Ivc>
     <Ivc>V30_move</Ivc>
     <Ivc>OK</Ivc>
-    <Ivc>V33_env</Ivc>
     <Ivc>V28_speed</Ivc>
     </IvcSet>
   </Property>
+</Results>

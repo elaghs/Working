@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Property name="OK">
-    <Runtime unit="sec">0.814</Runtime>
+    <Runtime unit="sec">0.812</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>0</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -25,3 +25,4 @@
     <Ivc>V33_modified_mo</Ivc>
     </IvcSet>
   </Property>
+</Results>

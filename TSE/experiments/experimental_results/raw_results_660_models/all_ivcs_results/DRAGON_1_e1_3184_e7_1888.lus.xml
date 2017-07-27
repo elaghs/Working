@@ -51,11 +51,8 @@
   <Progress source="bmc" trueFor="17">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="18">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">1.612</Runtime>
+    <Runtime unit="sec">1.71</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -65,8 +62,8 @@
     <MustElem>DRAGON~0.erreur</MustElem>
     <MustElem>DRAGON~0.g01</MustElem>
     <IvcSet number="1">
+    <Invariant>(DRAGON~0.exclusive &lt;= 1)</Invariant>
     <Invariant>OK</Invariant>
-    <Invariant>((not OK) or (DRAGON~0.exclusive &lt;= 1))</Invariant>
     <Ivc>DRAGON~0.exclusive</Ivc>
     <Ivc>erreur</Ivc>
     <Ivc>DRAGON~0.erreur</Ivc>
@@ -74,3 +71,4 @@
     <Ivc>DRAGON~0.g01</Ivc>
     </IvcSet>
   </Property>
+</Results>

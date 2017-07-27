@@ -264,8 +264,38 @@
   <Progress source="bmc" trueFor="88">
     <PropertyProgress name="__GUARANTEE6"/>
   </Progress>
+  <Progress source="bmc" trueFor="89">
+    <PropertyProgress name="__GUARANTEE6"/>
+  </Progress>
+  <Progress source="bmc" trueFor="90">
+    <PropertyProgress name="__GUARANTEE6"/>
+  </Progress>
+  <Progress source="bmc" trueFor="91">
+    <PropertyProgress name="__GUARANTEE6"/>
+  </Progress>
+  <Progress source="bmc" trueFor="92">
+    <PropertyProgress name="__GUARANTEE6"/>
+  </Progress>
+  <Progress source="bmc" trueFor="93">
+    <PropertyProgress name="__GUARANTEE6"/>
+  </Progress>
+  <Progress source="bmc" trueFor="94">
+    <PropertyProgress name="__GUARANTEE6"/>
+  </Progress>
+  <Progress source="bmc" trueFor="95">
+    <PropertyProgress name="__GUARANTEE6"/>
+  </Progress>
+  <Progress source="bmc" trueFor="96">
+    <PropertyProgress name="__GUARANTEE6"/>
+  </Progress>
+  <Progress source="bmc" trueFor="97">
+    <PropertyProgress name="__GUARANTEE6"/>
+  </Progress>
+  <Progress source="bmc" trueFor="98">
+    <PropertyProgress name="__GUARANTEE6"/>
+  </Progress>
   <Property name="__GUARANTEE6">
-    <Runtime unit="sec">7.662</Runtime>
+    <Runtime unit="sec">7.334</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -284,8 +314,8 @@
     <MustElem>_TOP__OUTPUT~0.__ASSUME__HIST</MustElem>
     <MustElem>_TOP__IM~0.__ASSUME__CONJ</MustElem>
     <IvcSet number="1">
-    <Invariant>_TOP__IM~0.__ASSUME__HIST</Invariant>
     <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__IM~0.__ASSUME__HIST</Invariant>
     <Invariant>__GUARANTEE6</Invariant>
     <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__27</Ivc>
     <Ivc>__GUARANTEE6</Ivc>
@@ -303,3 +333,4 @@
     <Ivc>_TOP__IM~0.__ASSUME__CONJ</Ivc>
     </IvcSet>
   </Property>
+</Results>

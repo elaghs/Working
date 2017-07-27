@@ -21,8 +21,44 @@
   <Progress source="bmc" trueFor="7">
     <PropertyProgress name="__GUARANTEE1"/>
   </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="19">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
   <Property name="__GUARANTEE1">
-    <Runtime unit="sec">0.521</Runtime>
+    <Runtime unit="sec">0.518</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -40,3 +76,4 @@
     <Ivc>defs__is_cooking~1.m</Ivc>
     </IvcSet>
   </Property>
+</Results>

@@ -70,44 +70,45 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">6.559</Runtime>
+    <Runtime unit="sec">5.326</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
     <MustElem>V26_bump</MustElem>
     <MustElem>V24_toofast</MustElem>
-    <MustElem>V32_meter</MustElem>
     <MustElem>V30_move</MustElem>
     <MustElem>V25_stop</MustElem>
     <MustElem>V27_dist</MustElem>
     <MustElem>OK</MustElem>
-    <MustElem>V31_second</MustElem>
     <MustElem>V29_time</MustElem>
     <MustElem>V28_speed</MustElem>
     <IvcSet number="1">
-    <Invariant>(((V24_toofast or (0 &lt;= (V29_time + (-3)))) or (not V30_move)) or (V27_dist &lt;= 3))</Invariant>
+    <Invariant>(((V24_toofast or (0 &lt;= (V29_time + (-3)))) or (V27_dist &lt;= 7)) or (not V30_move))</Invariant>
+    <Invariant>(((V24_toofast or (V27_dist &lt;= 6)) or (not (V29_time = V28_speed))) or (not V30_move))</Invariant>
+    <Invariant>((((V27_dist &lt;= 6) or (0 &lt;= (V29_time + (-3)))) or (not (V28_speed = 0))) or (not V30_move))</Invariant>
+    <Invariant>((((not (V29_time = 0)) or V24_toofast) or (not V30_move)) or (V27_dist &lt;= 2))</Invariant>
+    <Invariant>(((V24_toofast or V25_stop) or (V27_dist &lt;= 8)) or (not V30_move))</Invariant>
+    <Invariant>((((not V30_move) or V25_stop) or (not (V28_speed = 0))) or (V27_dist &lt;= 7))</Invariant>
     <Invariant>(0 &lt;= V28_speed)</Invariant>
-    <Invariant>((((0 &lt;= (V29_time + (-3))) or (not (V28_speed = 0))) or (V27_dist &lt;= 2)) or (not V30_move))</Invariant>
-    <Invariant>((((0 &lt;= (V29_time + (-2))) or (not (V28_speed = 0))) or (V27_dist &lt;= 1)) or (not V30_move))</Invariant>
-    <Invariant>((((not (V29_time = 0)) or (V27_dist &lt;= 0)) or (not (V28_speed = 0))) or (not V30_move))</Invariant>
-    <Invariant>OK</Invariant>
-    <Invariant>((V24_toofast or (not (0 &lt;= (V27_dist + (-5))))) or (not V30_move))</Invariant>
-    <Invariant>((((not (V29_time = 0)) or V24_toofast) or (V27_dist &lt;= 1)) or (not V30_move))</Invariant>
-    <Invariant>(((V24_toofast or (0 &lt;= (V29_time + (-2)))) or (V27_dist &lt;= 2)) or (not V30_move))</Invariant>
-    <Invariant>((((0 &lt;= ((V29_time + (-1)) + (-3))) or (not (V28_speed = 0))) or (not V30_move)) or (V27_dist &lt;= 3))</Invariant>
+    <Invariant>((V28_speed = 0) or (0 &lt;= (V28_speed + (-2))))</Invariant>
+    <Invariant>((((not (V29_time = 0)) or V24_toofast) or (V27_dist &lt;= 3)) or (not (0 &lt;= (V28_speed + (-2)))))</Invariant>
+    <Invariant>((((not (0 &lt;= (V28_speed + (-2)))) or V24_toofast) or (0 &lt;= (V29_time + (-2)))) or (V27_dist &lt;= 5))</Invariant>
+    <Invariant>((((0 &lt;= (V29_time + (-2))) or (not (V28_speed = 0))) or (V27_dist &lt;= 3)) or (not V30_move))</Invariant>
+    <Invariant>(not V26_bump)</Invariant>
     <Invariant>((V29_time = 0) or (0 &lt;= (V29_time + (-1))))</Invariant>
-    <Invariant>(((V24_toofast or (0 &lt;= (V29_time + (-2)))) or (not V30_move)) or (V27_dist &lt;= 3))</Invariant>
-    <Invariant>(not ((V27_dist + (-10)) = 0))</Invariant>
-    <Invariant>((((not (V29_time = 0)) or V24_toofast) or (V27_dist &lt;= 2)) or (not V30_move))</Invariant>
+    <Invariant>(((((V29_time = V28_speed) or V24_toofast) or (not (0 &lt;= (V28_speed + (-2))))) or (0 &lt;= (V29_time + (-3)))) or (not (0 &lt;= (V29_time + (-2)))))</Invariant>
+    <Invariant>((((0 &lt;= (V29_time + (-3))) or (not (V28_speed = 0))) or (not V30_move)) or (V27_dist &lt;= 5))</Invariant>
+    <Invariant>(((V24_toofast or (0 &lt;= (V29_time + (-2)))) or (not V30_move)) or (V27_dist &lt;= 4))</Invariant>
+    <Invariant>((((not (V29_time = 0)) or (not (V28_speed = 0))) or (V27_dist &lt;= 1)) or (not V30_move))</Invariant>
+    <Invariant>OK</Invariant>
     <Ivc>V26_bump</Ivc>
     <Ivc>V24_toofast</Ivc>
-    <Ivc>V32_meter</Ivc>
     <Ivc>V30_move</Ivc>
     <Ivc>V25_stop</Ivc>
     <Ivc>V27_dist</Ivc>
     <Ivc>OK</Ivc>
-    <Ivc>V31_second</Ivc>
     <Ivc>V29_time</Ivc>
     <Ivc>V28_speed</Ivc>
     </IvcSet>
   </Property>
+</Results>

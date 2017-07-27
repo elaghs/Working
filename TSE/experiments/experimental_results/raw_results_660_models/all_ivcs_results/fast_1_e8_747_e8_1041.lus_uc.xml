@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-   <UcRuntime unit="sec">0.004</UcRuntime>
-   <Timeout unit="sec">30.09</Timeout>
-   <ProofTime unit="sec">0.014</ProofTime>
-   <Runtime unit="sec">0.018000000000000002</Runtime>
+   <UcRuntime unit="sec">0.016</UcRuntime>
+   <Timeout unit="sec">30.18</Timeout>
+   <ProofTime unit="sec">0.02</ProofTime>
+   <Runtime unit="sec">0.036000000000000004</Runtime>
    <IVC>OK</IVC>
    <IVC>V83_cca</IVC>
    <IVC>V294_ob</IVC>

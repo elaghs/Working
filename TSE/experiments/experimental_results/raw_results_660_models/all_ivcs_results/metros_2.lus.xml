@@ -82,8 +82,8 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">6.425</Runtime>
-    <Answer source="pdr">valid</Answer>
+    <Runtime unit="sec">6.528</Runtime>
+    <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
     <MustElem>V43_avance0</MustElem>
@@ -97,19 +97,19 @@
     <MustElem>OK</MustElem>
     <MustElem>V45_retard0</MustElem>
     <IvcSet number="1">
-    <Invariant>((V41_diff0 &lt;= 19) or (0 &lt;= (V160_c + (-9))))</Invariant>
-    <Invariant>((V41_diff0 &lt;= 11) or (0 &lt;= (V160_c + (-1))))</Invariant>
-    <Invariant>((0 &lt;= (V160_c + (-4))) or (V41_diff0 &lt;= 14))</Invariant>
-    <Invariant>((V41_diff0 &lt;= 20) or (not V170_Sofar))</Invariant>
-    <Invariant>((V41_diff0 &lt;= 17) or (0 &lt;= (V160_c + (-7))))</Invariant>
-    <Invariant>((V41_diff0 &lt;= 15) or (0 &lt;= (V160_c + (-5))))</Invariant>
-    <Invariant>(0 &lt;= V160_c)</Invariant>
-    <Invariant>((not V170_Sofar) or (0 &lt;= (V41_diff0 + 10)))</Invariant>
     <Invariant>OK</Invariant>
-    <Invariant>((V41_diff0 &lt;= 18) or (0 &lt;= (V160_c + (-8))))</Invariant>
+    <Invariant>((V38_nB0 &lt;= (V40_nS + 19)) or (0 &lt;= (V160_c + (-9))))</Invariant>
+    <Invariant>((V41_diff0 &lt;= 20) or (not V170_Sofar))</Invariant>
     <Invariant>((0 &lt;= (V160_c + (-3))) or (V41_diff0 &lt;= 13))</Invariant>
+    <Invariant>(V160_c &gt;= 0)</Invariant>
+    <Invariant>(((V41_diff0 + (-12)) &lt;= 0) or (0 &lt;= (V160_c + (-2))))</Invariant>
+    <Invariant>((not V170_Sofar) or (0 &lt;= (V41_diff0 + 10)))</Invariant>
+    <Invariant>((V38_nB0 &lt;= (V40_nS + 18)) or (0 &lt;= (V160_c + (-8))))</Invariant>
+    <Invariant>((0 &lt;= (V160_c + (-1))) or (V38_nB0 &lt;= (V40_nS + 11)))</Invariant>
     <Invariant>((V41_diff0 &lt;= 16) or (0 &lt;= (V160_c + (-6))))</Invariant>
-    <Invariant>((V41_diff0 &lt;= 12) or (0 &lt;= (V160_c + (-2))))</Invariant>
+    <Invariant>((V38_nB0 &lt;= (V40_nS + 17)) or (0 &lt;= (V160_c + (-7))))</Invariant>
+    <Invariant>((V38_nB0 &lt;= (V40_nS + 14)) or (0 &lt;= (V160_c + (-4))))</Invariant>
+    <Invariant>((V38_nB0 &lt;= (V40_nS + 15)) or (0 &lt;= (V160_c + (-5))))</Invariant>
     <Ivc>V43_avance0</Ivc>
     <Ivc>V158_H0</Ivc>
     <Ivc>V170_Sofar</Ivc>
@@ -122,3 +122,4 @@
     <Ivc>V45_retard0</Ivc>
     </IvcSet>
   </Property>
+</Results>

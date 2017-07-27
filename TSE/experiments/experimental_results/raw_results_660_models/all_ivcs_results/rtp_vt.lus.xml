@@ -78,8 +78,11 @@
   <Progress source="bmc" trueFor="26">
     <PropertyProgress name="OK"/>
   </Progress>
+  <Progress source="bmc" trueFor="27">
+    <PropertyProgress name="OK"/>
+  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">17.556</Runtime>
+    <Runtime unit="sec">19.081</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -112,53 +115,53 @@
     <MustElem>V152_g09</MustElem>
     <MustElem>V144_g01</MustElem>
     <IvcSet number="1">
-    <Invariant>(((not V81_env) or (V75_X9 &lt;= 0)) or (V68_X2 &lt;= 0))</Invariant>
-    <Invariant>(((V73_X7 + (-1)) &lt;= 0) or (not V81_env))</Invariant>
-    <Invariant>((not V81_env) or (V72_X6 &lt;= 1))</Invariant>
-    <Invariant>(((V75_X9 = 0) or (V69_X3 &lt;= 0)) or (not V81_env))</Invariant>
-    <Invariant>(((V69_X3 &lt;= 0) or (V71_X5 &lt;= 0)) or (not V81_env))</Invariant>
-    <Invariant>(((not (0 &lt;= (V70_X4 + (-1)))) or (not V81_env)) or (V72_X6 &lt;= 0))</Invariant>
-    <Invariant>((V75_X9 = 0) or (not (V75_X9 &lt;= 0)))</Invariant>
-    <Invariant>(((not ((V67_X1 + (-1)) = 0)) or (not V81_env)) or (V69_X3 &lt;= 0))</Invariant>
-    <Invariant>(((V67_X1 &lt;= 0) or (V74_X8 &lt;= 0)) or (not V81_env))</Invariant>
-    <Invariant>((V71_X5 &lt;= 1) or (not V81_env))</Invariant>
-    <Invariant>(((not (((-V75_X9) + V72_X6) &lt;= 0)) or (not V81_env)) or (V72_X6 &lt;= 0))</Invariant>
-    <Invariant>((((((-V75_X9) + V74_X8) + 1) &lt;= 0) or (V75_X9 = 0)) or (not V81_env))</Invariant>
-    <Invariant>(((V67_X1 &lt;= 0) or (not V81_env)) or (V72_X6 &lt;= 0))</Invariant>
-    <Invariant>(((V74_X8 &lt;= 0) or (V69_X3 &lt;= 0)) or (not V81_env))</Invariant>
-    <Invariant>((((not V81_env) or (not ((V67_X1 + (-1)) = 0))) or ((V75_X9 + (-V70_X4)) = 0)) or ((((-V75_X9) + V70_X4) + 1) &lt;= 0))</Invariant>
-    <Invariant>(((V74_X8 &lt;= 0) or (not V81_env)) or (V72_X6 &lt;= 0))</Invariant>
-    <Invariant>(((V68_X2 &lt;= 0) or (not V81_env)) or (V72_X6 &lt;= 0))</Invariant>
-    <Invariant>(((V67_X1 &lt;= 0) or (((-V75_X9) + V73_X7) &lt;= 0)) or (not V81_env))</Invariant>
-    <Invariant>(((not (0 &lt;= (V70_X4 + (-1)))) or (V71_X5 &lt;= 0)) or (not V81_env))</Invariant>
-    <Invariant>(((not (0 &lt;= (V70_X4 + (-1)))) or (V69_X3 &lt;= 0)) or (not V81_env))</Invariant>
-    <Invariant>(((V75_X9 &lt;= 0) or (not V81_env)) or (V71_X5 &lt;= 0))</Invariant>
-    <Invariant>(((V75_X9 &lt;= 0) or (not V81_env)) or (not ((V75_X9 + (-V73_X7)) = 0)))</Invariant>
-    <Invariant>(((V68_X2 &lt;= 0) or (not V81_env)) or (V71_X5 &lt;= 0))</Invariant>
-    <Invariant>(((not (0 &lt;= (V70_X4 + (-1)))) or (not (((-V75_X9) + V70_X4) &lt;= 0))) or (not V81_env))</Invariant>
     <Invariant>((not V81_env) or (V70_X4 &lt;= 1))</Invariant>
-    <Invariant>(((not ((V67_X1 + (-1)) = 0)) or (V75_X9 &lt;= 0)) or (not V81_env))</Invariant>
-    <Invariant>(((V68_X2 &lt;= 0) or (V69_X3 &lt;= 0)) or (not V81_env))</Invariant>
+    <Invariant>(((V69_X3 &lt;= 0) or (not (0 &lt;= (V70_X4 + (-1))))) or (not V81_env))</Invariant>
+    <Invariant>((not V81_env) or (V72_X6 &lt;= 1))</Invariant>
+    <Invariant>((V71_X5 &lt;= 1) or (not V81_env))</Invariant>
+    <Invariant>((not V81_env) or (not (0 &lt;= (V73_X7 + (-2)))))</Invariant>
+    <Invariant>(((V74_X8 &lt;= 0) or (V69_X3 &lt;= 0)) or (not V81_env))</Invariant>
     <Invariant>OK</Invariant>
-    <Invariant>(V67_X1 &lt;= 1)</Invariant>
-    <Invariant>(((V75_X9 &lt;= 0) or (not V81_env)) or (((-V75_X9) + V72_X6) &lt;= 0))</Invariant>
-    <Invariant>(((V73_X7 &lt;= 0) or (not V81_env)) or (V72_X6 &lt;= 0))</Invariant>
-    <Invariant>(((V73_X7 &lt;= 0) or (not V81_env)) or (V74_X8 &lt;= 0))</Invariant>
-    <Invariant>(((not V81_env) or (V71_X5 &lt;= 0)) or (V72_X6 &lt;= 0))</Invariant>
-    <Invariant>((V69_X3 &lt;= 1) or (not V81_env))</Invariant>
-    <Invariant>(((V68_X2 &lt;= 0) or (V74_X8 &lt;= 0)) or (not V81_env))</Invariant>
-    <Invariant>((V74_X8 &lt;= 1) or (not V81_env))</Invariant>
-    <Invariant>(((not (0 &lt;= (V70_X4 + (-1)))) or (V68_X2 &lt;= 0)) or (not V81_env))</Invariant>
-    <Invariant>(((V71_X5 &lt;= 0) or (((-V75_X9) + V73_X7) &lt;= 0)) or (not V81_env))</Invariant>
-    <Invariant>(((V69_X3 &lt;= 0) or (((-V75_X9) + V73_X7) &lt;= 0)) or (not V81_env))</Invariant>
-    <Invariant>(((V74_X8 &lt;= 0) or (not V81_env)) or (V71_X5 &lt;= 0))</Invariant>
-    <Invariant>((V75_X9 &lt;= 1) or (not V81_env))</Invariant>
-    <Invariant>(((((-V75_X9) + V70_X4) &lt;= 0) or (((-V75_X9) + V73_X7) &lt;= 0)) or (not V81_env))</Invariant>
+    <Invariant>(((V75_X9 = 0) or (V69_X3 &lt;= 0)) or (not V81_env))</Invariant>
+    <Invariant>((((not V81_env) or (not (V75_X9 &lt;= 0))) or ((V75_X9 + (-V73_X7)) = 0)) or (V71_X5 &lt;= 0))</Invariant>
+    <Invariant>(((V75_X9 &lt;= 0) or (not V81_env)) or (V70_X4 &lt;= 0))</Invariant>
+    <Invariant>(((not (0 &lt;= (V70_X4 + (-1)))) or (not V81_env)) or (not (0 &lt;= (V71_X5 + (-1)))))</Invariant>
+    <Invariant>(((not V81_env) or (V68_X2 &lt;= 0)) or (V72_X6 &lt;= 0))</Invariant>
+    <Invariant>(((not V81_env) or (not (((V75_X9 + (-V70_X4)) + 1) &lt;= 0))) or (V72_X6 &lt;= 0))</Invariant>
+    <Invariant>(((V67_X1 + (-1)) = 0) or (V67_X1 &lt;= 0))</Invariant>
+    <Invariant>(((not (0 &lt;= (V70_X4 + (-1)))) or (V73_X7 &lt;= 0)) or (not V81_env))</Invariant>
+    <Invariant>(((V73_X7 &lt;= 0) or (V75_X9 &lt;= 0)) or (not V81_env))</Invariant>
+    <Invariant>(((V68_X2 &lt;= 0) or (V69_X3 &lt;= 0)) or (not V81_env))</Invariant>
+    <Invariant>(((V73_X7 &lt;= 0) or (V68_X2 &lt;= 0)) or (not V81_env))</Invariant>
+    <Invariant>((not ((V67_X1 + (-1)) = 0)) or (V69_X3 &lt;= 0))</Invariant>
+    <Invariant>(((V74_X8 &lt;= 0) or (V75_X9 &lt;= 0)) or (not V81_env))</Invariant>
     <Invariant>(((V69_X3 &lt;= 0) or (not V81_env)) or (V72_X6 &lt;= 0))</Invariant>
-    <Invariant>(((V68_X2 &lt;= 0) or (((-V75_X9) + V73_X7) &lt;= 0)) or (not V81_env))</Invariant>
-    <Invariant>(((not ((V67_X1 + (-1)) = 0)) or (not V81_env)) or (V68_X2 &lt;= 0))</Invariant>
-    <Invariant>(((V74_X8 &lt;= 0) or (((-V75_X9) + V70_X4) &lt;= 0)) or (not V81_env))</Invariant>
-    <Invariant>(((V71_X5 &lt;= 0) or (V67_X1 &lt;= 0)) or (not V81_env))</Invariant>
+    <Invariant>((V68_X2 &lt;= 0) or (not ((V67_X1 + (-1)) = 0)))</Invariant>
+    <Invariant>(((not V81_env) or (V73_X7 &lt;= 0)) or (V72_X6 &lt;= 0))</Invariant>
+    <Invariant>(((V68_X2 &lt;= 0) or (not V81_env)) or (not (((V75_X9 + (-V70_X4)) + 1) &lt;= 0)))</Invariant>
+    <Invariant>(((V74_X8 &lt;= 0) or (not V81_env)) or (V72_X6 &lt;= 0))</Invariant>
+    <Invariant>(((V74_X8 &lt;= 0) or (not V81_env)) or (not (((V75_X9 + (-V70_X4)) + 1) &lt;= 0)))</Invariant>
+    <Invariant>((V75_X9 &lt;= 1) or (not V81_env))</Invariant>
+    <Invariant>(((V73_X7 &lt;= 0) or (not V81_env)) or (not (((V75_X9 + (-V74_X8)) + 1) &lt;= 0)))</Invariant>
+    <Invariant>((V67_X1 &lt;= 0) or (V75_X9 &lt;= 0))</Invariant>
+    <Invariant>((V67_X1 &lt;= 0) or (V74_X8 &lt;= 0))</Invariant>
+    <Invariant>((V67_X1 &lt;= 0) or (V72_X6 &lt;= 0))</Invariant>
+    <Invariant>((((V75_X9 + (-V73_X7)) = 0) or (V69_X3 &lt;= 0)) or (not V81_env))</Invariant>
+    <Invariant>(0 &lt;= V73_X7)</Invariant>
+    <Invariant>(((not (0 &lt;= (V71_X5 + (-1)))) or (V69_X3 &lt;= 0)) or (not V81_env))</Invariant>
+    <Invariant>(((V74_X8 &lt;= 0) or (V68_X2 &lt;= 0)) or (not V81_env))</Invariant>
+    <Invariant>(((not (0 &lt;= (V71_X5 + (-1)))) or (not V81_env)) or (V72_X6 &lt;= 0))</Invariant>
+    <Invariant>(((V74_X8 &lt;= 0) or (not V81_env)) or (not (0 &lt;= (V71_X5 + (-1)))))</Invariant>
+    <Invariant>((not ((V67_X1 + (-1)) = 0)) or (V70_X4 &lt;= 0))</Invariant>
+    <Invariant>(((not (((-V75_X9) + V72_X6) &lt;= 0)) or (not V81_env)) or (V72_X6 &lt;= 0))</Invariant>
+    <Invariant>((V67_X1 &lt;= 0) or (V73_X7 &lt;= 0))</Invariant>
+    <Invariant>((V67_X1 &lt;= 0) or (V71_X5 &lt;= 0))</Invariant>
+    <Invariant>(((not (0 &lt;= (V71_X5 + (-1)))) or (V75_X9 &lt;= 0)) or (not V81_env))</Invariant>
+    <Invariant>((V74_X8 &lt;= 1) or (not V81_env))</Invariant>
+    <Invariant>(((V68_X2 &lt;= 0) or (V75_X9 &lt;= 0)) or (not V81_env))</Invariant>
+    <Invariant>(((V68_X2 &lt;= 0) or (not V81_env)) or (not (0 &lt;= (V71_X5 + (-1)))))</Invariant>
+    <Invariant>(not (V75_X9 &lt;= (-1)))</Invariant>
+    <Invariant>((not V81_env) or (V69_X3 &lt;= 1))</Invariant>
     <Ivc>V76_R1</Ivc>
     <Ivc>V78_R3</Ivc>
     <Ivc>V149_g06</Ivc>
@@ -189,3 +192,4 @@
     <Ivc>V144_g01</Ivc>
     </IvcSet>
   </Property>
+</Results>

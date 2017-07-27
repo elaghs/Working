@@ -30,17 +30,8 @@
   <Progress source="bmc" trueFor="10">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="11">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="12">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="13">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">2.624</Runtime>
+    <Runtime unit="sec">2.027</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -48,21 +39,22 @@
     <MustElem>voiture~0.speed</MustElem>
     <MustElem>voiture~0.bump</MustElem>
     <MustElem>voiture~0.move</MustElem>
-    <MustElem>Sofar~0.Sofar</MustElem>
     <MustElem>dist</MustElem>
     <MustElem>OK</MustElem>
-    <MustElem>env</MustElem>
     <MustElem>speed</MustElem>
     <IvcSet number="1">
+    <Invariant>(not (((-voiture~0.dist) + 11) &lt;= 0))</Invariant>
     <Invariant>OK</Invariant>
+    <Invariant>(voiture~0.speed &gt;= 0)</Invariant>
+    <Invariant>(voiture~0.speed &lt;= 0)</Invariant>
+    <Invariant>(voiture~0.dist &gt;= 0)</Invariant>
     <Ivc>voiture~0.dist</Ivc>
     <Ivc>voiture~0.speed</Ivc>
     <Ivc>voiture~0.bump</Ivc>
     <Ivc>voiture~0.move</Ivc>
-    <Ivc>Sofar~0.Sofar</Ivc>
     <Ivc>dist</Ivc>
     <Ivc>OK</Ivc>
-    <Ivc>env</Ivc>
     <Ivc>speed</Ivc>
     </IvcSet>
   </Property>
+</Results>

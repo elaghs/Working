@@ -6,26 +6,77 @@
   <Progress source="bmc" trueFor="2">
     <PropertyProgress name="OK"/>
   </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="OK"/>
+  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">3.015</Runtime>
+    <Runtime unit="sec">5.921</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
-    <MustElem>V26_bump</MustElem>
+    <NumberOfIVCs>2</NumberOfIVCs>
     <MustElem>V24_toofast</MustElem>
     <MustElem>V30_move</MustElem>
     <MustElem>V27_dist</MustElem>
     <MustElem>OK</MustElem>
     <MustElem>V28_speed</MustElem>
-    <MustElem>V33_env</MustElem>
     <IvcSet number="1">
+    <Invariant>(V27_dist &lt;= 10)</Invariant>
     <Invariant>OK</Invariant>
+    <Invariant>(0 &lt;= V27_dist)</Invariant>
+    <Invariant>(0 &lt;= V28_speed)</Invariant>
     <Ivc>V26_bump</Ivc>
     <Ivc>V24_toofast</Ivc>
     <Ivc>V30_move</Ivc>
     <Ivc>V27_dist</Ivc>
     <Ivc>OK</Ivc>
-    <Ivc>V33_env</Ivc>
+    <Ivc>V28_speed</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>(((V24_toofast or (not (0 &lt;= (V27_dist + (-6))))) or (0 &lt;= (V29_time + (-2)))) or (not V30_move))</Invariant>
+    <Invariant>(0 &lt;= V27_dist)</Invariant>
+    <Invariant>(((V27_dist &lt;= 8) or (V28_speed &lt;= 0)) or (not (V28_speed &lt;= 1)))</Invariant>
+    <Invariant>(V27_dist &lt;= 10)</Invariant>
+    <Invariant>((((0 &lt;= ((V29_time + (-1)) + (-3))) or (not V30_move)) or (not (V28_speed &lt;= 0))) or (V27_dist &lt;= 7))</Invariant>
+    <Invariant>((((not (V29_time = 0)) or (V27_dist &lt;= 1)) or (not V30_move)) or (not (V28_speed &lt;= 0)))</Invariant>
+    <Invariant>((((not (V29_time = 0)) or V24_toofast) or (V27_dist &lt;= 3)) or (not V30_move))</Invariant>
+    <Invariant>((((V27_dist &lt;= 4) or (0 &lt;= (V29_time + (-2)))) or (not V30_move)) or (not (V28_speed &lt;= 1)))</Invariant>
+    <Invariant>((((0 &lt;= (V29_time + (-2))) or (V27_dist &lt;= 3)) or (not V30_move)) or (not (V28_speed &lt;= 0)))</Invariant>
+    <Invariant>(0 &lt;= V28_speed)</Invariant>
+    <Invariant>(((V24_toofast or (0 &lt;= (V29_time + (-3)))) or (not V30_move)) or (V27_dist &lt;= 7))</Invariant>
+    <Invariant>((((0 &lt;= (V29_time + (-3))) or (not (0 &lt;= (V27_dist + (-6))))) or (not V30_move)) or (not (V28_speed &lt;= 0)))</Invariant>
+    <Invariant>((V24_toofast or (V27_dist &lt;= 9)) or (not V30_move))</Invariant>
+    <Invariant>((((V27_dist &lt;= 6) or (0 &lt;= (V29_time + (-3)))) or (not V30_move)) or (not (V28_speed &lt;= 1)))</Invariant>
+    <Invariant>((((0 &lt;= ((V29_time + (-1)) + (-3))) or (V27_dist &lt;= 8)) or (not V30_move)) or (not (V28_speed &lt;= 0)))</Invariant>
+    <Invariant>((((not (V29_time = 0)) or (not V30_move)) or (not (V28_speed &lt;= 1))) or (V27_dist &lt;= 2))</Invariant>
+    <Invariant>((V29_time = 0) or (0 &lt;= (V29_time + (-1))))</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>V24_toofast</Ivc>
+    <Ivc>V32_meter</Ivc>
+    <Ivc>V30_move</Ivc>
+    <Ivc>V25_stop</Ivc>
+    <Ivc>V27_dist</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V31_second</Ivc>
+    <Ivc>V29_time</Ivc>
     <Ivc>V28_speed</Ivc>
     </IvcSet>
   </Property>
+</Results>

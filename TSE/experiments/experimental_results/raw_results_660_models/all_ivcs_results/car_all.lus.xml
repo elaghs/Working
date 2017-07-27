@@ -15,44 +15,63 @@
   <Progress source="bmc" trueFor="5">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="6">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="7">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="8">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="9">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">5.838</Runtime>
+    <Runtime unit="sec">6.918</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
+    <NumberOfIVCs>2</NumberOfIVCs>
     <MustElem>voiture~0.toofast</MustElem>
     <MustElem>voiture~0.dist</MustElem>
     <MustElem>voiture~0.speed</MustElem>
-    <MustElem>voiture~0.bump</MustElem>
     <MustElem>voiture~0.move</MustElem>
-    <MustElem>Sofar~0.Sofar</MustElem>
     <MustElem>dist</MustElem>
     <MustElem>OK</MustElem>
-    <MustElem>env</MustElem>
     <MustElem>speed</MustElem>
     <IvcSet number="1">
+    <Invariant>((((0 &lt;= (voiture~0.speed + (-3))) or (not (0 &lt;= (voiture~0.dist + (-5))))) or (0 &lt;= (voiture~0.time + (-2)))) or (voiture~0.speed &lt;= 1))</Invariant>
+    <Invariant>((((voiture~0.speed &lt;= 0) or (not (voiture~0.speed &lt;= 1))) or (0 &lt;= (voiture~0.time + (-1)))) or (voiture~0.dist &lt;= 1))</Invariant>
+    <Invariant>(voiture~0.dist &lt;= 9)</Invariant>
+    <Invariant>((((voiture~0.speed &lt;= 0) or (voiture~0.dist &lt;= 5)) or (not (voiture~0.speed &lt;= 1))) or (0 &lt;= (voiture~0.time + (-3))))</Invariant>
+    <Invariant>((((not (voiture~0.speed &lt;= 0)) or (not voiture~0.move)) or (0 &lt;= (voiture~0.time + (-2)))) or (voiture~0.dist &lt;= 2))</Invariant>
+    <Invariant>((((not (voiture~0.speed &lt;= 0)) or (not (0 &lt;= (voiture~0.dist + (-7))))) or (not voiture~0.move)) or voiture~0.stop)</Invariant>
+    <Invariant>((((not (voiture~0.speed &lt;= 0)) or (not voiture~0.move)) or (voiture~0.dist &lt;= 0)) or (0 &lt;= (voiture~0.time + (-1))))</Invariant>
+    <Invariant>(((0 &lt;= (voiture~0.speed + (-3))) or (voiture~0.speed &lt;= 0)) or (voiture~0.dist &lt;= 8))</Invariant>
+    <Invariant>((((not (voiture~0.speed &lt;= 0)) or (not (0 &lt;= (voiture~0.dist + (-5))))) or (not voiture~0.move)) or (0 &lt;= (voiture~0.time + (-3))))</Invariant>
+    <Invariant>(0 &lt;= voiture~0.dist)</Invariant>
+    <Invariant>((((voiture~0.speed &lt;= 0) or (0 &lt;= (voiture~0.time + (-2)))) or (not (voiture~0.speed &lt;= 1))) or (voiture~0.dist &lt;= 3))</Invariant>
+    <Invariant>((((not (voiture~0.speed &lt;= 0)) or (not voiture~0.move)) or voiture~0.stop) or (voiture~0.dist &lt;= 7))</Invariant>
+    <Invariant>(0 &lt;= voiture~0.time)</Invariant>
+    <Invariant>((((0 &lt;= (voiture~0.speed + (-3))) or (not (0 &lt;= (voiture~0.dist + (-7))))) or (voiture~0.speed &lt;= 1)) or (0 &lt;= (voiture~0.time + (-3))))</Invariant>
     <Invariant>OK</Invariant>
+    <Invariant>((((0 &lt;= (voiture~0.speed + (-3))) or (voiture~0.dist &lt;= 2)) or (voiture~0.speed &lt;= 1)) or (0 &lt;= (voiture~0.time + (-1))))</Invariant>
+    <Invariant>(0 &lt;= voiture~0.speed)</Invariant>
+    <Invariant>(((voiture~0.speed &lt;= 0) or (voiture~0.dist &lt;= 7)) or (not (voiture~0.speed &lt;= 1)))</Invariant>
+    <Ivc>voiture~0.meter</Ivc>
+    <Ivc>voiture~0.toofast</Ivc>
+    <Ivc>voiture~0.time</Ivc>
+    <Ivc>voiture~0.dist</Ivc>
+    <Ivc>voiture~0.second</Ivc>
+    <Ivc>voiture~0.speed</Ivc>
+    <Ivc>voiture~0.move</Ivc>
+    <Ivc>dist</Ivc>
+    <Ivc>voiture~0.stop</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>speed</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>(not (((-voiture~0.dist) + 11) &lt;= 0))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(not (voiture~0.dist &lt;= (-1)))</Invariant>
+    <Invariant>(not (0 &lt;= (voiture~0.speed + (-4))))</Invariant>
+    <Invariant>(0 &lt;= voiture~0.speed)</Invariant>
     <Ivc>voiture~0.toofast</Ivc>
     <Ivc>voiture~0.dist</Ivc>
     <Ivc>voiture~0.speed</Ivc>
     <Ivc>voiture~0.bump</Ivc>
     <Ivc>voiture~0.move</Ivc>
-    <Ivc>Sofar~0.Sofar</Ivc>
     <Ivc>dist</Ivc>
     <Ivc>OK</Ivc>
-    <Ivc>env</Ivc>
     <Ivc>speed</Ivc>
     </IvcSet>
   </Property>
+</Results>

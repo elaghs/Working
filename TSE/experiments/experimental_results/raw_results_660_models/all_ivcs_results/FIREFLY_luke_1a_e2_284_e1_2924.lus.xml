@@ -52,7 +52,39 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">0.613</Runtime>
-    <Answer>unknown</Answer>
-    <TrueFor>17</TrueFor>
+    <Runtime unit="sec">3.725</Runtime>
+    <Answer source="invariant-generation">valid</Answer>
+    <K>2</K>
+    <NumberOfIVCs>2</NumberOfIVCs>
+    <MustElem>V50_exclusive</MustElem>
+    <MustElem>V51_shared</MustElem>
+    <MustElem>V103_garde1</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>V107_garde5</MustElem>
+    <IvcSet number="1">
+    <Invariant>((((not (V51_shared &lt;= (V50_exclusive + (-1)))) or (not (V51_shared &lt;&gt; 0))) or (V50_exclusive &lt;= 0)) or (not V52_env))</Invariant>
+    <Invariant>(((V51_shared &lt;= 0) or (not (V51_shared = V50_exclusive))) or (not V52_env))</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>V129_X</Ivc>
+    <Ivc>V50_exclusive</Ivc>
+    <Ivc>V52_env</Ivc>
+    <Ivc>V51_shared</Ivc>
+    <Ivc>V103_garde1</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V107_garde5</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>((V51_shared &lt;= 0) or (0 &lt;= (V51_shared + (-2))))</Invariant>
+    <Invariant>(V50_exclusive &lt;= 1)</Invariant>
+    <Invariant>((V51_shared = 0) or (not (V51_shared &lt;= 0)))</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>V50_exclusive</Ivc>
+    <Ivc>V110_garde8</Ivc>
+    <Ivc>V51_shared</Ivc>
+    <Ivc>V103_garde1</Ivc>
+    <Ivc>V105_garde3</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V107_garde5</Ivc>
+    </IvcSet>
   </Property>
+</Results>

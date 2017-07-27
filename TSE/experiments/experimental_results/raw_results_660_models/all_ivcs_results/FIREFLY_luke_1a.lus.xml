@@ -51,42 +51,41 @@
   <Progress source="bmc" trueFor="17">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="18">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="19">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="20">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="21">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">4.822</Runtime>
+    <Runtime unit="sec">3.915</Runtime>
     <Answer source="invariant-generation">valid</Answer>
     <K>2</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
+    <NumberOfIVCs>2</NumberOfIVCs>
     <MustElem>V50_exclusive</MustElem>
     <MustElem>V51_shared</MustElem>
-    <MustElem>V52_env</MustElem>
-    <MustElem>V110_garde8</MustElem>
     <MustElem>V103_garde1</MustElem>
     <MustElem>OK</MustElem>
-    <MustElem>V105_garde3</MustElem>
     <MustElem>V107_garde5</MustElem>
     <IvcSet number="1">
-    <Invariant>(V51_shared &gt;= 0)</Invariant>
-    <Invariant>(V107_garde5 =&gt; (V51_shared &lt;= 0))</Invariant>
+    <Invariant>((V51_shared = 0) or (not (V51_shared &lt;= 0)))</Invariant>
+    <Invariant>((V51_shared &lt;= 0) or (0 &lt;= (V51_shared + (-2))))</Invariant>
     <Invariant>OK</Invariant>
+    <Invariant>(V50_exclusive &lt;= 1)</Invariant>
     <Ivc>V50_exclusive</Ivc>
     <Ivc>V110_garde8</Ivc>
-    <Ivc>V52_env</Ivc>
     <Ivc>V51_shared</Ivc>
     <Ivc>V103_garde1</Ivc>
     <Ivc>V105_garde3</Ivc>
     <Ivc>OK</Ivc>
     <Ivc>V107_garde5</Ivc>
     </IvcSet>
+    <IvcSet number="2">
+    <Invariant>OK</Invariant>
+    <Invariant>(((not OK) or (V50_exclusive &lt;= 1)) or (not V52_env))</Invariant>
+    <Invariant>(((not (0 &lt;= (V51_shared + (-1)))) or (V50_exclusive &lt;= (V51_shared + (-1)))) or (not V52_env))</Invariant>
+    <Invariant>((not (0 &lt;= (V50_exclusive + (-1)))) or (0 &lt;= V51_shared))</Invariant>
+    <Ivc>V129_X</Ivc>
+    <Ivc>V50_exclusive</Ivc>
+    <Ivc>V52_env</Ivc>
+    <Ivc>V51_shared</Ivc>
+    <Ivc>V103_garde1</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V107_garde5</Ivc>
+    </IvcSet>
   </Property>
+</Results>

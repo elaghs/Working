@@ -7,7 +7,7 @@
     <PropertyProgress name="__GUARANTEE18"/>
   </Progress>
   <Property name="__GUARANTEE18">
-    <Runtime unit="sec">0.716</Runtime>
+    <Runtime unit="sec">0.718</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>0</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -19,3 +19,4 @@
     <Ivc>_TOP__ASSERT__28</Ivc>
     </IvcSet>
   </Property>
+</Results>

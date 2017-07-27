@@ -174,11 +174,167 @@
   <Progress source="bmc" trueFor="58">
     <PropertyProgress name="__GUARANTEE37"/>
   </Progress>
+  <Progress source="bmc" trueFor="59">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="60">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="61">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="62">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="63">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="64">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="65">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="66">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="67">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="68">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="69">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="70">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="71">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="72">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="73">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="74">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="75">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="76">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="77">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="78">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="79">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="80">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="81">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="82">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="83">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="84">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="85">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="86">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="87">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="88">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="89">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="90">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="91">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="92">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="93">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="94">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="95">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="96">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="97">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="98">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="99">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="100">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="101">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="102">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="103">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="104">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="105">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="106">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="107">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="108">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="109">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
+  <Progress source="bmc" trueFor="110">
+    <PropertyProgress name="__GUARANTEE37"/>
+  </Progress>
   <Property name="__GUARANTEE37">
-    <Runtime unit="sec">27.462</Runtime>
+    <Runtime unit="sec">26.988</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
+    <NumberOfIVCs>3</NumberOfIVCs>
     <MustElem>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</MustElem>
     <MustElem>_TOP__ALARM~0.__ASSUME__CONJ</MustElem>
     <MustElem>_TOP__SYS_STAT~0.SYS_STAT_OUT.Reservoir_Volume</MustElem>
@@ -206,31 +362,28 @@
     <MustElem>_TOP__OUTPUT~0.__OUTPUT__PROP__27</MustElem>
     <MustElem>_TOP__SYS_STAT~0.__SYS_STAT__ASSERT__3</MustElem>
     <MustElem>_TOP__SYS_STAT~0.CONST_IN.Empty_Reservoir</MustElem>
-    <MustElem>_TOP__SYS_STAT~0.__SYS_STAT__ASSERT__1</MustElem>
     <MustElem>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</MustElem>
-    <MustElem>_TOP__ALARM~0.TLM_MODE_IN.System_On</MustElem>
     <MustElem>_TOP__SYS_STAT~0.__ASSERT</MustElem>
     <MustElem>_TOP__SYS_STAT~0.IM_IN.Current_System_Mode</MustElem>
     <MustElem>_TOP__OUTPUT~0.SYS_STAT_IN.Reservoir_Volume</MustElem>
-    <MustElem>_TOP__SYS_STAT~0.TLM_MODE_IN.System_On</MustElem>
     <MustElem>_TOP__TLM~0.__ASSUME__HIST</MustElem>
     <MustElem>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</MustElem>
     <MustElem>_TOP__ALARM~0.__ASSERT</MustElem>
     <MustElem>_TOP__TLM~0.__ASSUME__CONJ</MustElem>
     <MustElem>_TOP__SYS_STAT~0.__SYS_STAT__PROP__3</MustElem>
     <MustElem>_TOP__OUTPUT~0.__ASSUME__CONJ</MustElem>
-    <MustElem>_TOP__SYS_STAT~0.__SYS_STAT__PROP__1</MustElem>
     <MustElem>_TOP__ALARM~0.SYS_STAT_IN.Reservoir_Empty</MustElem>
     <MustElem>_TOP__ALARM~0.__ALARM__PROP__9</MustElem>
     <MustElem>_TOP__OUTPUT~0.__ASSUME__HIST</MustElem>
     <MustElem>_TOP__TLM~0.__ASSERT</MustElem>
     <MustElem>_TOP__TLM~0.OP_CMD_IN.System_Start</MustElem>
     <IvcSet number="1">
-    <Invariant>_TOP__SYS_STAT~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
+    <Invariant>(is_therapy or (IM__IM_OUT.Current_System_Mode &lt;= 1))</Invariant>
     <Invariant>__GUARANTEE37</Invariant>
+    <Invariant>_TOP__SYS_STAT~0.__ASSUME__HIST</Invariant>
     <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
     <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
-    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
     <Ivc>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</Ivc>
     <Ivc>_TOP__ALARM~0.__ASSUME__CONJ</Ivc>
     <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.Reservoir_Volume</Ivc>
@@ -278,4 +431,109 @@
     <Ivc>_TOP__TLM~0.__ASSERT</Ivc>
     <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
     </IvcSet>
+    <IvcSet number="2">
+    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__SYS_STAT~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Invariant>__GUARANTEE37</Invariant>
+    <Ivc>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>__GUARANTEE37</Ivc>
+    <Ivc>_TOP__ASSERT__9</Ivc>
+    <Ivc>_TOP__ALARM~0.SYS_STAT_IN.In_Therapy</Ivc>
+    <Ivc>_TOP__ALARM~0.ALARM_OUT.Notification_Message</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.In_Therapy</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__ASSERT__1</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__2</Ivc>
+    <Ivc>DEFS__is_therapy~0.mode</Ivc>
+    <Ivc>_TOP__ASSERT__47</Ivc>
+    <Ivc>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__4</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__23</Ivc>
+    <Ivc>DEFS__is_therapy~0._outvar</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.Reservoir_Empty</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__TLM~0.TLM_MODE_OUT.System_On</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__27</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__ASSERT__3</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__PROP__1</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__ASSERT__0</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.CONST_IN.Empty_Reservoir</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.IM_IN.Current_System_Mode</Ivc>
+    <Ivc>_TOP__OUTPUT~0.SYS_STAT_IN.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__PROP__3</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__PROP__0</Ivc>
+    <Ivc>_TOP__ALARM~0.SYS_STAT_IN.Reservoir_Empty</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__9</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
+    </IvcSet>
+    <IvcSet number="3">
+    <Invariant>_TOP__SYS_STAT~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Invariant>__GUARANTEE37</Invariant>
+    <Ivc>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>__GUARANTEE37</Ivc>
+    <Ivc>_TOP__ASSERT__9</Ivc>
+    <Ivc>_TOP__ALARM~0.SYS_STAT_IN.In_Therapy</Ivc>
+    <Ivc>_TOP__ALARM~0.ALARM_OUT.Notification_Message</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.In_Therapy</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__ASSERT__1</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__2</Ivc>
+    <Ivc>DEFS__is_therapy~0.mode</Ivc>
+    <Ivc>_TOP__ASSERT__47</Ivc>
+    <Ivc>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__4</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__23</Ivc>
+    <Ivc>DEFS__is_therapy~0._outvar</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.SYS_STAT_OUT.Reservoir_Empty</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__TLM~0.TLM_MODE_OUT.System_On</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__27</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__ASSERT__3</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__PROP__1</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__ASSERT__0</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.CONST_IN.Empty_Reservoir</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</Ivc>
+    <Ivc>_TOP__ALARM~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.IM_IN.Current_System_Mode</Ivc>
+    <Ivc>_TOP__OUTPUT~0.SYS_STAT_IN.Reservoir_Volume</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__PROP__3</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__SYS_STAT~0.__SYS_STAT__PROP__0</Ivc>
+    <Ivc>_TOP__ALARM~0.SYS_STAT_IN.Reservoir_Empty</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__9</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
+    </IvcSet>
   </Property>
+</Results>

@@ -9,38 +9,8 @@
   <Progress source="bmc" trueFor="3">
     <PropertyProgress name="__GUARANTEE3"/>
   </Progress>
-  <Progress source="bmc" trueFor="4">
-    <PropertyProgress name="__GUARANTEE3"/>
-  </Progress>
-  <Progress source="bmc" trueFor="5">
-    <PropertyProgress name="__GUARANTEE3"/>
-  </Progress>
-  <Progress source="bmc" trueFor="6">
-    <PropertyProgress name="__GUARANTEE3"/>
-  </Progress>
-  <Progress source="bmc" trueFor="7">
-    <PropertyProgress name="__GUARANTEE3"/>
-  </Progress>
-  <Progress source="bmc" trueFor="8">
-    <PropertyProgress name="__GUARANTEE3"/>
-  </Progress>
-  <Progress source="bmc" trueFor="9">
-    <PropertyProgress name="__GUARANTEE3"/>
-  </Progress>
-  <Progress source="bmc" trueFor="10">
-    <PropertyProgress name="__GUARANTEE3"/>
-  </Progress>
-  <Progress source="bmc" trueFor="11">
-    <PropertyProgress name="__GUARANTEE3"/>
-  </Progress>
-  <Progress source="bmc" trueFor="12">
-    <PropertyProgress name="__GUARANTEE3"/>
-  </Progress>
-  <Progress source="bmc" trueFor="13">
-    <PropertyProgress name="__GUARANTEE3"/>
-  </Progress>
   <Property name="__GUARANTEE3">
-    <Runtime unit="sec">1.021</Runtime>
+    <Runtime unit="sec">1.016</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -66,3 +36,4 @@
     <Ivc>defs__is_running~1._outvar</Ivc>
     </IvcSet>
   </Property>
+</Results>

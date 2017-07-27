@@ -58,7 +58,7 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">1.012</Runtime>
+    <Runtime unit="sec">0.91</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -66,10 +66,11 @@
     <MustElem>V38_erreur_mo</MustElem>
     <MustElem>OK</MustElem>
     <IvcSet number="1">
-    <Invariant>OK</Invariant>
     <Invariant>(V34_exclusive_mo &lt;= 1)</Invariant>
+    <Invariant>OK</Invariant>
     <Ivc>V34_exclusive_mo</Ivc>
     <Ivc>V38_erreur_mo</Ivc>
     <Ivc>OK</Ivc>
     </IvcSet>
   </Property>
+</Results>

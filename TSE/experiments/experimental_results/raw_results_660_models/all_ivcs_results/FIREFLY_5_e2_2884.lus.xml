@@ -9,26 +9,30 @@
   <Progress source="bmc" trueFor="3">
     <PropertyProgress name="OK"/>
   </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">1.625</Runtime>
+    <Runtime unit="sec">1.22</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
     <MustElem>dirty</MustElem>
     <MustElem>firefly~0.dirty</MustElem>
-    <MustElem>Sofar~0.Sofar</MustElem>
     <MustElem>firefly~0.garde2</MustElem>
     <MustElem>OK</MustElem>
-    <MustElem>env</MustElem>
     <MustElem>firefly~0.garde7</MustElem>
     <IvcSet number="1">
     <Invariant>OK</Invariant>
+    <Invariant>(0 &lt;= firefly~0.dirty)</Invariant>
     <Ivc>dirty</Ivc>
     <Ivc>firefly~0.dirty</Ivc>
-    <Ivc>Sofar~0.Sofar</Ivc>
     <Ivc>firefly~0.garde2</Ivc>
     <Ivc>firefly~0.garde7</Ivc>
     <Ivc>OK</Ivc>
-    <Ivc>env</Ivc>
     </IvcSet>
   </Property>
+</Results>

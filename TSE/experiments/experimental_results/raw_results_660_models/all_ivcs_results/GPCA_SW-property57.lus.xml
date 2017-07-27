@@ -168,8 +168,26 @@
   <Progress source="bmc" trueFor="56">
     <PropertyProgress name="__GUARANTEE57"/>
   </Progress>
+  <Progress source="bmc" trueFor="57">
+    <PropertyProgress name="__GUARANTEE57"/>
+  </Progress>
+  <Progress source="bmc" trueFor="58">
+    <PropertyProgress name="__GUARANTEE57"/>
+  </Progress>
+  <Progress source="bmc" trueFor="59">
+    <PropertyProgress name="__GUARANTEE57"/>
+  </Progress>
+  <Progress source="bmc" trueFor="60">
+    <PropertyProgress name="__GUARANTEE57"/>
+  </Progress>
+  <Progress source="bmc" trueFor="61">
+    <PropertyProgress name="__GUARANTEE57"/>
+  </Progress>
+  <Progress source="bmc" trueFor="62">
+    <PropertyProgress name="__GUARANTEE57"/>
+  </Progress>
   <Property name="__GUARANTEE57">
-    <Runtime unit="sec">6.03</Runtime>
+    <Runtime unit="sec">6.739</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -189,9 +207,9 @@
     <MustElem>_TOP__OUTPUT~0.__ASSUME__HIST</MustElem>
     <MustElem>_TOP__OUTPUT~0.CONFIG_IN.Request_Config_Type</MustElem>
     <IvcSet number="1">
-    <Invariant>_TOP__CONFIG~0.__ASSUME__HIST</Invariant>
-    <Invariant>__GUARANTEE57</Invariant>
     <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Invariant>__GUARANTEE57</Invariant>
+    <Invariant>_TOP__CONFIG~0.__ASSUME__HIST</Invariant>
     <Ivc>__GUARANTEE57</Ivc>
     <Ivc>_TOP__CONFIG~0.__ASSERT</Ivc>
     <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__23</Ivc>
@@ -209,3 +227,4 @@
     <Ivc>_TOP__OUTPUT~0.CONFIG_IN.Request_Config_Type</Ivc>
     </IvcSet>
   </Property>
+</Results>

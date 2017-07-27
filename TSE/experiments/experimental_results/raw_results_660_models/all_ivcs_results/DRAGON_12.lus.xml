@@ -57,17 +57,19 @@
   <Progress source="bmc" trueFor="19">
     <PropertyProgress name="OK"/>
   </Progress>
+  <Progress source="bmc" trueFor="20">
+    <PropertyProgress name="OK"/>
+  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">114.872</Runtime>
+    <Runtime unit="sec">477.105</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
+    <NumberOfIVCs>7</NumberOfIVCs>
     <MustElem>DRAGON~0.exclusive</MustElem>
     <MustElem>DRAGON~0.shared_dirty</MustElem>
     <MustElem>Sofar~0.Sofar</MustElem>
     <MustElem>excludes12~0.X8</MustElem>
     <MustElem>excludes12~0.X7</MustElem>
-    <MustElem>DRAGON~0.e02</MustElem>
     <MustElem>DRAGON~0.g01</MustElem>
     <MustElem>DRAGON~0.e03</MustElem>
     <MustElem>DRAGON~0.e01</MustElem>
@@ -76,10 +78,8 @@
     <MustElem>First~0.X</MustElem>
     <MustElem>shared_dirty</MustElem>
     <MustElem>Sofar~0.X</MustElem>
-    <MustElem>DRAGON~0.g11</MustElem>
     <MustElem>env</MustElem>
     <MustElem>excludes12~0.excludes</MustElem>
-    <MustElem>DRAGON~0.g10</MustElem>
     <MustElem>DRAGON~0.g04</MustElem>
     <MustElem>excludes12~0.X1</MustElem>
     <MustElem>DRAGON~0.e07</MustElem>
@@ -88,24 +88,221 @@
     <MustElem>DRAGON~0.g03</MustElem>
     <MustElem>DRAGON~0.e05</MustElem>
     <MustElem>excludes12~0.X5</MustElem>
-    <MustElem>DRAGON~0.g09</MustElem>
     <MustElem>excludes12~0.X4</MustElem>
     <MustElem>DRAGON~0.e08</MustElem>
-    <MustElem>DRAGON~0.g06</MustElem>
     <MustElem>First~0.First</MustElem>
     <MustElem>excludes12~0.X3</MustElem>
     <MustElem>DRAGON~0.dirty</MustElem>
     <MustElem>DRAGON~0.g07</MustElem>
-    <MustElem>excludes12~0.X2</MustElem>
     <IvcSet number="1">
+    <Invariant>(((((((0 &lt;= (First~0.First + (-2))) or (not (0 &lt;= DRAGON~0.shared))) or (DRAGON~0.exclusive &lt;= 0)) or (not Sofar~0.Sofar)) or (DRAGON~0.dirty &lt;= (-2))) or (DRAGON~0.invalid &lt;= 1)) or ((DRAGON~0.shared_dirty + 1) &lt;= 0))</Invariant>
+    <Invariant>(DRAGON~0.exclusive &lt;= 1)</Invariant>
+    <Invariant>((((DRAGON~0.shared_dirty &lt;= 0) or (not Sofar~0.Sofar)) or (0 &lt;= (First~0.First + (-2)))) or (not (0 &lt;= DRAGON~0.shared)))</Invariant>
+    <Invariant>((((not (0 &lt;= (DRAGON~0.dirty + (-1)))) or (DRAGON~0.shared_dirty &lt;= 0)) or (not Sofar~0.Sofar)) or ((DRAGON~0.shared_dirty + (-1)) = 0))</Invariant>
+    <Invariant>(((DRAGON~0.exclusive &lt;= 0) or (not (0 &lt;= (DRAGON~0.dirty + (-1))))) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(((((((0 &lt;= (First~0.First + (-2))) or (not (0 &lt;= DRAGON~0.shared))) or (DRAGON~0.exclusive &lt;= 0)) or (not Sofar~0.Sofar)) or ((DRAGON~0.shared_dirty + 1) &lt;= 0)) or (not (0 &lt;= DRAGON~0.dirty))) or (DRAGON~0.invalid &lt;= (First~0.First + (-1))))</Invariant>
+    <Invariant>(((((((0 &lt;= (First~0.First + (-2))) or (DRAGON~0.shared &lt;= (-2))) or (not (DRAGON~0.shared_dirty = DRAGON~0.exclusive))) or (DRAGON~0.shared_dirty &lt;= 0)) or (not Sofar~0.Sofar)) or (not (0 &lt;= DRAGON~0.dirty))) or (DRAGON~0.invalid &lt;= (First~0.First + (-1))))</Invariant>
+    <Invariant>((((not (((-DRAGON~0.dirty) + 1) &lt;= 0)) or (DRAGON~0.shared &lt;= (-1))) or (not (DRAGON~0.shared_dirty = DRAGON~0.dirty))) or (not Sofar~0.Sofar))</Invariant>
     <Invariant>OK</Invariant>
-    <Invariant>(((DRAGON~0.exclusive &lt;= 0) or (DRAGON~0.shared_dirty = DRAGON~0.dirty)) or (not Sofar~0.Sofar))</Invariant>
-    <Invariant>(((not Sofar~0.Sofar) or (DRAGON~0.shared_dirty = 0)) or (DRAGON~0.dirty &lt;= 0))</Invariant>
-    <Invariant>(((DRAGON~0.exclusive &lt;= 0) or ((DRAGON~0.shared_dirty + (-DRAGON~0.shared)) = 0)) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(((not Sofar~0.Sofar) or (not (0 &lt;= (DRAGON~0.shared + (-1))))) or (DRAGON~0.exclusive &lt;= 0))</Invariant>
+    <Invariant>(((not (0 &lt;= (DRAGON~0.dirty + (-1)))) or (not Sofar~0.Sofar)) or (not (0 &lt;= (DRAGON~0.shared + (-1)))))</Invariant>
+    <Invariant>((not Sofar~0.Sofar) or (DRAGON~0.dirty &lt;= 1))</Invariant>
+    <Invariant>(((DRAGON~0.exclusive &lt;= 0) or (not ((((-DRAGON~0.shared_dirty) + DRAGON~0.exclusive) + 1) &lt;= 0))) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(((((((DRAGON~0.shared &lt;= (-2)) or (not (0 &lt;= (DRAGON~0.invalid + (-1))))) or (DRAGON~0.shared_dirty &lt;= 0)) or (not (DRAGON~0.shared_dirty = DRAGON~0.dirty))) or (not Sofar~0.Sofar)) or (not (0 &lt;= DRAGON~0.exclusive))) or (0 &lt;= (First~0.First + (-2))))</Invariant>
+    <Invariant>((((DRAGON~0.shared_dirty &lt;= 0) or (not Sofar~0.Sofar)) or (DRAGON~0.exclusive &lt;= 0)) or (not (0 &lt;= DRAGON~0.shared)))</Invariant>
+    <Invariant>(((((((0 &lt;= (First~0.First + (-2))) or (not (0 &lt;= DRAGON~0.shared))) or (not Sofar~0.Sofar)) or (not (0 &lt;= DRAGON~0.exclusive))) or (DRAGON~0.invalid &lt;= 1)) or ((DRAGON~0.shared_dirty + 1) &lt;= 0)) or (not (0 &lt;= DRAGON~0.dirty)))</Invariant>
+    <Invariant>(((((((not Sofar~0.Sofar) or (not (0 &lt;= (DRAGON~0.dirty + (-1))))) or (not (0 &lt;= (DRAGON~0.invalid + (-1))))) or (not (0 &lt;= DRAGON~0.exclusive))) or (not (DRAGON~0.shared_dirty = 0))) or (not (0 &lt;= DRAGON~0.shared))) or (0 &lt;= (First~0.First + (-2))))</Invariant>
+    <Invariant>((0 &lt;= (First~0.First + (-1))) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(((not (0 &lt;= (DRAGON~0.shared + (-1)))) or (0 &lt;= (First~0.First + (-2)))) or (not Sofar~0.Sofar))</Invariant>
+    <Ivc>DRAGON~0.exclusive</Ivc>
+    <Ivc>DRAGON~0.shared_dirty</Ivc>
+    <Ivc>excludes12~0.X11</Ivc>
+    <Ivc>excludes12~0.X9</Ivc>
+    <Ivc>Sofar~0.Sofar</Ivc>
+    <Ivc>excludes12~0.X12</Ivc>
+    <Ivc>excludes12~0.X8</Ivc>
+    <Ivc>excludes12~0.X7</Ivc>
+    <Ivc>excludes12~0.X10</Ivc>
+    <Ivc>excludes12~0.X6</Ivc>
+    <Ivc>DRAGON~0.e02</Ivc>
+    <Ivc>DRAGON~0.g01</Ivc>
+    <Ivc>DRAGON~0.e03</Ivc>
+    <Ivc>DRAGON~0.e01</Ivc>
+    <Ivc>DRAGON~0.shared</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>First~0.X</Ivc>
+    <Ivc>DRAGON~0.init_invalid</Ivc>
+    <Ivc>DRAGON~0.invalid</Ivc>
+    <Ivc>DRAGON~0.mem_init</Ivc>
+    <Ivc>shared_dirty</Ivc>
+    <Ivc>Sofar~0.X</Ivc>
+    <Ivc>DRAGON~0.e10</Ivc>
+    <Ivc>env</Ivc>
+    <Ivc>excludes12~0.excludes</Ivc>
+    <Ivc>DRAGON~0.e11</Ivc>
+    <Ivc>DRAGON~0.e12</Ivc>
+    <Ivc>excludes12~0.X1</Ivc>
+    <Ivc>DRAGON~0.g04</Ivc>
+    <Ivc>DRAGON~0.e06</Ivc>
+    <Ivc>DRAGON~0.g05</Ivc>
+    <Ivc>DRAGON~0.e07</Ivc>
+    <Ivc>DRAGON~0.g02</Ivc>
+    <Ivc>DRAGON~0.e04</Ivc>
+    <Ivc>DRAGON~0.g03</Ivc>
+    <Ivc>DRAGON~0.e05</Ivc>
+    <Ivc>excludes12~0.X5</Ivc>
+    <Ivc>DRAGON~0.g08</Ivc>
+    <Ivc>excludes12~0.X4</Ivc>
+    <Ivc>excludes12~0.X3</Ivc>
+    <Ivc>First~0.First</Ivc>
+    <Ivc>DRAGON~0.e08</Ivc>
+    <Ivc>excludes12~0.X2</Ivc>
+    <Ivc>DRAGON~0.dirty</Ivc>
+    <Ivc>DRAGON~0.g07</Ivc>
+    <Ivc>DRAGON~0.e09</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>(((not (0 &lt;= (DRAGON~0.dirty + (-1)))) or (not Sofar~0.Sofar)) or (DRAGON~0.shared_dirty &lt;= (First~0.First + (-1))))</Invariant>
     <Invariant>((not Sofar~0.Sofar) or (0 &lt;= (First~0.First + (-1))))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(((((((not Sofar~0.Sofar) or (DRAGON~0.invalid &lt;= 1)) or ((DRAGON~0.exclusive + DRAGON~0.shared) &lt;= 0)) or (DRAGON~0.dirty &lt;= (-2))) or (0 &lt;= DRAGON~0.dirty)) or (0 &lt;= (First~0.First + (-2)))) or (not ((DRAGON~0.shared_dirty + (-DRAGON~0.shared)) = 0)))</Invariant>
+    <Invariant>((DRAGON~0.dirty &lt;= First~0.First) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(DRAGON~0.exclusive &lt;= 1)</Invariant>
+    <Invariant>(((DRAGON~0.shared_dirty &lt;= 0) or (not Sofar~0.Sofar)) or (DRAGON~0.dirty &lt;= 1))</Invariant>
+    <Invariant>(((not (0 &lt;= (DRAGON~0.shared + (-1)))) or (not Sofar~0.Sofar)) or (0 &lt;= (First~0.First + (-2))))</Invariant>
+    <Invariant>(((not Sofar~0.Sofar) or (DRAGON~0.exclusive &lt;= 0)) or (DRAGON~0.dirty &lt;= 1))</Invariant>
+    <Invariant>(((((((0 &lt;= (First~0.First + (-2))) or (not Sofar~0.Sofar)) or (not (0 &lt;= (DRAGON~0.invalid + (-1))))) or (not (DRAGON~0.shared_dirty = 0))) or (not (0 = DRAGON~0.dirty))) or (DRAGON~0.exclusive &lt;= 0)) or (not ((DRAGON~0.shared_dirty + (-DRAGON~0.shared)) = 0)))</Invariant>
+    <Invariant>(((not Sofar~0.Sofar) or (DRAGON~0.shared &lt;= 0)) or (DRAGON~0.dirty &lt;= 1))</Invariant>
+    <Invariant>(((((((not ((DRAGON~0.shared_dirty + (-DRAGON~0.shared)) = 0)) or (not Sofar~0.Sofar)) or (not (DRAGON~0.shared_dirty = DRAGON~0.exclusive))) or (not (0 &lt;= (DRAGON~0.dirty + (-1))))) or (not (DRAGON~0.shared_dirty = 0))) or (DRAGON~0.invalid &lt;= (First~0.First + (-1)))) or (0 &lt;= (First~0.First + (-2))))</Invariant>
+    <Invariant>((((not (0 &lt;= (DRAGON~0.dirty + (-1)))) or (DRAGON~0.shared_dirty &lt;= 0)) or (not Sofar~0.Sofar)) or (DRAGON~0.exclusive &lt;= 0))</Invariant>
+    <Invariant>(((((((0 &lt;= (First~0.First + (-2))) or (not Sofar~0.Sofar)) or (DRAGON~0.invalid &lt;= 1)) or (not (DRAGON~0.shared_dirty = 0))) or (not (0 &lt;= DRAGON~0.exclusive))) or (not (0 = DRAGON~0.dirty))) or (not ((DRAGON~0.shared_dirty + (-DRAGON~0.shared)) = 0)))</Invariant>
+    <Invariant>(((DRAGON~0.exclusive &lt;= 0) or (not Sofar~0.Sofar)) or (DRAGON~0.shared_dirty &lt;= (First~0.First + (-1))))</Invariant>
+    <Invariant>((((DRAGON~0.exclusive &lt;= 0) or (DRAGON~0.shared &lt;= 0)) or (not (0 &lt;= (DRAGON~0.dirty + (-1))))) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(((DRAGON~0.shared_dirty &lt;= 0) or (not Sofar~0.Sofar)) or (0 &lt;= (First~0.First + (-2))))</Invariant>
+    <Invariant>((((not Sofar~0.Sofar) or (DRAGON~0.dirty &lt;= 0)) or (0 &lt;= (First~0.First + (-2)))) or (DRAGON~0.exclusive &lt;= 0))</Invariant>
+    <Ivc>DRAGON~0.exclusive</Ivc>
+    <Ivc>DRAGON~0.shared_dirty</Ivc>
+    <Ivc>excludes12~0.X11</Ivc>
+    <Ivc>excludes12~0.X9</Ivc>
+    <Ivc>Sofar~0.Sofar</Ivc>
+    <Ivc>excludes12~0.X12</Ivc>
+    <Ivc>excludes12~0.X8</Ivc>
+    <Ivc>excludes12~0.X7</Ivc>
+    <Ivc>excludes12~0.X10</Ivc>
+    <Ivc>excludes12~0.X6</Ivc>
+    <Ivc>DRAGON~0.g01</Ivc>
+    <Ivc>DRAGON~0.e03</Ivc>
+    <Ivc>DRAGON~0.e01</Ivc>
+    <Ivc>DRAGON~0.shared</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>First~0.X</Ivc>
+    <Ivc>DRAGON~0.init_invalid</Ivc>
+    <Ivc>DRAGON~0.invalid</Ivc>
+    <Ivc>DRAGON~0.mem_init</Ivc>
+    <Ivc>shared_dirty</Ivc>
+    <Ivc>Sofar~0.X</Ivc>
+    <Ivc>DRAGON~0.e10</Ivc>
+    <Ivc>env</Ivc>
+    <Ivc>excludes12~0.excludes</Ivc>
+    <Ivc>DRAGON~0.e11</Ivc>
+    <Ivc>DRAGON~0.e12</Ivc>
+    <Ivc>excludes12~0.X1</Ivc>
+    <Ivc>DRAGON~0.g04</Ivc>
+    <Ivc>DRAGON~0.e06</Ivc>
+    <Ivc>DRAGON~0.g05</Ivc>
+    <Ivc>DRAGON~0.e07</Ivc>
+    <Ivc>DRAGON~0.g02</Ivc>
+    <Ivc>DRAGON~0.e04</Ivc>
+    <Ivc>DRAGON~0.g03</Ivc>
+    <Ivc>DRAGON~0.e05</Ivc>
+    <Ivc>excludes12~0.X5</Ivc>
+    <Ivc>DRAGON~0.g08</Ivc>
+    <Ivc>excludes12~0.X4</Ivc>
+    <Ivc>excludes12~0.X3</Ivc>
+    <Ivc>First~0.First</Ivc>
+    <Ivc>DRAGON~0.g06</Ivc>
+    <Ivc>DRAGON~0.e08</Ivc>
+    <Ivc>DRAGON~0.dirty</Ivc>
+    <Ivc>DRAGON~0.g07</Ivc>
+    <Ivc>DRAGON~0.e09</Ivc>
+    </IvcSet>
+    <IvcSet number="3">
+    <Invariant>((((not Sofar~0.Sofar) or (not (DRAGON~0.shared_dirty = DRAGON~0.exclusive))) or (DRAGON~0.shared_dirty &lt;= 0)) or (not (DRAGON~0.shared_dirty = DRAGON~0.dirty)))</Invariant>
+    <Invariant>((not ((DRAGON~0.exclusive + DRAGON~0.shared) &lt;= 0)) or (DRAGON~0.exclusive &lt;= 0))</Invariant>
+    <Invariant>(((DRAGON~0.dirty &lt;= 1) or (not Sofar~0.Sofar)) or ((DRAGON~0.exclusive + DRAGON~0.shared) &lt;= 0))</Invariant>
+    <Invariant>((((((DRAGON~0.exclusive &lt;= 0) or (not Sofar~0.Sofar)) or (DRAGON~0.invalid &lt;= 1)) or (DRAGON~0.dirty &lt;= (-2))) or (not (DRAGON~0.shared_dirty = 0))) or (0 &lt;= (First~0.First + (-2))))</Invariant>
+    <Invariant>((0 &lt;= (First~0.First + (-1))) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>((((DRAGON~0.shared &lt;= 0) or (DRAGON~0.exclusive &lt;= 0)) or (not Sofar~0.Sofar)) or (not (0 &lt;= (DRAGON~0.dirty + (-1)))))</Invariant>
+    <Invariant>((DRAGON~0.dirty &lt;= 2) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>((((((not Sofar~0.Sofar) or (not (0 &lt;= (DRAGON~0.invalid + (-1))))) or (not (DRAGON~0.shared_dirty = DRAGON~0.dirty))) or (not (DRAGON~0.dirty = 0))) or (0 &lt;= (First~0.First + (-2)))) or ((DRAGON~0.exclusive + DRAGON~0.shared) &lt;= 0))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(((DRAGON~0.shared_dirty &lt;= 0) or (DRAGON~0.dirty &lt;= 1)) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>((((DRAGON~0.exclusive &lt;= 0) or (not Sofar~0.Sofar)) or (DRAGON~0.shared_dirty &lt;= 0)) or (1 = DRAGON~0.shared_dirty))</Invariant>
+    <Invariant>(((DRAGON~0.shared &lt;= 0) or (DRAGON~0.dirty &lt;= 1)) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>((((((not Sofar~0.Sofar) or (not (0 &lt;= (DRAGON~0.dirty + (-1))))) or (not (0 &lt;= (DRAGON~0.invalid + (-1))))) or (not (0 &lt;= DRAGON~0.exclusive))) or (not (DRAGON~0.shared_dirty = 0))) or (0 &lt;= (First~0.First + (-2))))</Invariant>
+    <Invariant>((((((not Sofar~0.Sofar) or (DRAGON~0.invalid &lt;= 1)) or (not (DRAGON~0.shared_dirty = DRAGON~0.dirty))) or (not (0 &lt;= DRAGON~0.exclusive))) or (not (DRAGON~0.dirty = 0))) or (0 &lt;= (First~0.First + (-2))))</Invariant>
+    <Invariant>(((DRAGON~0.shared &lt;= 0) or (0 &lt;= (First~0.First + (-2)))) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>((((not (0 &lt;= (DRAGON~0.dirty + (-1)))) or (DRAGON~0.shared_dirty &lt;= 0)) or (1 = DRAGON~0.shared_dirty)) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(((DRAGON~0.dirty &lt;= 1) or (0 &lt;= (First~0.First + (-2)))) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(not (0 &lt;= (DRAGON~0.exclusive + (-2))))</Invariant>
+    <Invariant>((((not (0 &lt;= (DRAGON~0.dirty + (-1)))) or (DRAGON~0.exclusive &lt;= 0)) or (0 &lt;= (First~0.First + (-2)))) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(((DRAGON~0.shared_dirty &lt;= 0) or (0 &lt;= (First~0.First + (-2)))) or (not Sofar~0.Sofar))</Invariant>
+    <Ivc>DRAGON~0.exclusive</Ivc>
+    <Ivc>DRAGON~0.shared_dirty</Ivc>
+    <Ivc>excludes12~0.X11</Ivc>
+    <Ivc>excludes12~0.X9</Ivc>
+    <Ivc>Sofar~0.Sofar</Ivc>
+    <Ivc>excludes12~0.X12</Ivc>
+    <Ivc>excludes12~0.X8</Ivc>
+    <Ivc>excludes12~0.X7</Ivc>
+    <Ivc>excludes12~0.X6</Ivc>
+    <Ivc>DRAGON~0.g01</Ivc>
+    <Ivc>DRAGON~0.e03</Ivc>
+    <Ivc>DRAGON~0.e01</Ivc>
+    <Ivc>DRAGON~0.shared</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>First~0.X</Ivc>
+    <Ivc>DRAGON~0.init_invalid</Ivc>
+    <Ivc>DRAGON~0.invalid</Ivc>
+    <Ivc>DRAGON~0.mem_init</Ivc>
+    <Ivc>shared_dirty</Ivc>
+    <Ivc>Sofar~0.X</Ivc>
+    <Ivc>env</Ivc>
+    <Ivc>excludes12~0.excludes</Ivc>
+    <Ivc>DRAGON~0.e11</Ivc>
+    <Ivc>DRAGON~0.g10</Ivc>
+    <Ivc>DRAGON~0.e12</Ivc>
+    <Ivc>excludes12~0.X1</Ivc>
+    <Ivc>DRAGON~0.g04</Ivc>
+    <Ivc>DRAGON~0.e06</Ivc>
+    <Ivc>DRAGON~0.g05</Ivc>
+    <Ivc>DRAGON~0.e07</Ivc>
+    <Ivc>DRAGON~0.g02</Ivc>
+    <Ivc>DRAGON~0.e04</Ivc>
+    <Ivc>DRAGON~0.g03</Ivc>
+    <Ivc>DRAGON~0.e05</Ivc>
+    <Ivc>excludes12~0.X5</Ivc>
+    <Ivc>DRAGON~0.g08</Ivc>
+    <Ivc>excludes12~0.X4</Ivc>
+    <Ivc>excludes12~0.X3</Ivc>
+    <Ivc>First~0.First</Ivc>
+    <Ivc>DRAGON~0.g06</Ivc>
+    <Ivc>DRAGON~0.e08</Ivc>
+    <Ivc>DRAGON~0.dirty</Ivc>
+    <Ivc>DRAGON~0.g07</Ivc>
+    <Ivc>DRAGON~0.e09</Ivc>
+    </IvcSet>
+    <IvcSet number="4">
+    <Invariant>(((DRAGON~0.shared_dirty &lt;= 0) or (not (0 &lt;= (DRAGON~0.exclusive + (-1))))) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>OK</Invariant>
     <Invariant>(DRAGON~0.exclusive &lt;= 1)</Invariant>
     <Invariant>((not Sofar~0.Sofar) or (DRAGON~0.dirty &lt;= 1))</Invariant>
-    <Invariant>((((DRAGON~0.shared_dirty + (-DRAGON~0.shared)) = 0) or (not Sofar~0.Sofar)) or (DRAGON~0.dirty &lt;= 0))</Invariant>
+    <Invariant>(((not (0 &lt;= (DRAGON~0.dirty + (-1)))) or (not Sofar~0.Sofar)) or (not (0 &lt;= (DRAGON~0.shared + (-1)))))</Invariant>
+    <Invariant>(((not (0 &lt;= (DRAGON~0.exclusive + (-1)))) or (not Sofar~0.Sofar)) or (not (0 &lt;= (DRAGON~0.dirty + (-1)))))</Invariant>
+    <Invariant>((not Sofar~0.Sofar) or (0 &lt;= (First~0.First + (-1))))</Invariant>
+    <Invariant>(((not (0 &lt;= (DRAGON~0.dirty + (-1)))) or (DRAGON~0.shared_dirty &lt;= 0)) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(((DRAGON~0.shared_dirty &lt;= 0) or ((DRAGON~0.shared_dirty + (-1)) = 0)) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(((not (0 &lt;= (DRAGON~0.exclusive + (-1)))) or (not Sofar~0.Sofar)) or (not (0 &lt;= (DRAGON~0.shared + (-1)))))</Invariant>
     <Ivc>DRAGON~0.exclusive</Ivc>
     <Ivc>DRAGON~0.shared_dirty</Ivc>
     <Ivc>Sofar~0.Sofar</Ivc>
@@ -120,10 +317,8 @@
     <Ivc>First~0.X</Ivc>
     <Ivc>shared_dirty</Ivc>
     <Ivc>Sofar~0.X</Ivc>
-    <Ivc>DRAGON~0.g11</Ivc>
     <Ivc>env</Ivc>
     <Ivc>excludes12~0.excludes</Ivc>
-    <Ivc>DRAGON~0.g10</Ivc>
     <Ivc>excludes12~0.X1</Ivc>
     <Ivc>DRAGON~0.g04</Ivc>
     <Ivc>DRAGON~0.g05</Ivc>
@@ -133,7 +328,6 @@
     <Ivc>DRAGON~0.e05</Ivc>
     <Ivc>excludes12~0.X5</Ivc>
     <Ivc>excludes12~0.X4</Ivc>
-    <Ivc>DRAGON~0.g09</Ivc>
     <Ivc>excludes12~0.X3</Ivc>
     <Ivc>First~0.First</Ivc>
     <Ivc>DRAGON~0.g06</Ivc>
@@ -142,4 +336,197 @@
     <Ivc>DRAGON~0.dirty</Ivc>
     <Ivc>DRAGON~0.g07</Ivc>
     </IvcSet>
+    <IvcSet number="5">
+    <Invariant>((((((not (First~0.First &lt;= 1)) or (DRAGON~0.exclusive &lt;= 0)) or (not ((DRAGON~0.shared_dirty + (-DRAGON~0.shared)) = 0))) or (not Sofar~0.Sofar)) or (not (0 &lt;= DRAGON~0.dirty))) or (DRAGON~0.invalid &lt;= (First~0.First + (-1))))</Invariant>
+    <Invariant>((not Sofar~0.Sofar) or (DRAGON~0.dirty &lt;= First~0.First))</Invariant>
+    <Invariant>(((((DRAGON~0.shared &lt;= (-1)) or (DRAGON~0.exclusive &lt;= 0)) or (not (0 &lt;= (DRAGON~0.dirty + (-1))))) or (not Sofar~0.Sofar)) or (not (0 &lt;&gt; DRAGON~0.shared)))</Invariant>
+    <Invariant>(((not (DRAGON~0.shared_dirty = DRAGON~0.dirty)) or (not Sofar~0.Sofar)) or (DRAGON~0.dirty &lt;= 1))</Invariant>
+    <Invariant>(((not Sofar~0.Sofar) or (DRAGON~0.dirty &lt;= 1)) or (DRAGON~0.exclusive &lt;= 0))</Invariant>
+    <Invariant>((((DRAGON~0.dirty &lt;= 0) or (not Sofar~0.Sofar)) or (not (First~0.First &lt;= 1))) or (DRAGON~0.exclusive &lt;= 0))</Invariant>
+    <Invariant>((((not Sofar~0.Sofar) or (DRAGON~0.shared_dirty = 0)) or (not (First~0.First &lt;= 1))) or (DRAGON~0.exclusive &lt;= 0))</Invariant>
+    <Invariant>(((((((not ((DRAGON~0.shared_dirty + (-DRAGON~0.exclusive)) = 0)) or (not Sofar~0.Sofar)) or (not (DRAGON~0.shared_dirty = DRAGON~0.dirty))) or (DRAGON~0.invalid &lt;= 1)) or (0 &lt;&gt; DRAGON~0.shared)) or (not (First~0.First &lt;= 1))) or (not ((DRAGON~0.shared_dirty + (-DRAGON~0.shared)) = 0)))</Invariant>
+    <Invariant>(((not (0 &lt;= (DRAGON~0.shared + (-1)))) or (not Sofar~0.Sofar)) or (DRAGON~0.dirty &lt;= 1))</Invariant>
+    <Invariant>((((DRAGON~0.dirty &lt;= 0) or (DRAGON~0.shared_dirty &lt;= 0)) or (not Sofar~0.Sofar)) or (DRAGON~0.shared_dirty = DRAGON~0.dirty))</Invariant>
+    <Invariant>(((not Sofar~0.Sofar) or (not (First~0.First &lt;= 1))) or (DRAGON~0.shared &lt;= 0))</Invariant>
+    <Invariant>(DRAGON~0.exclusive &lt;= 1)</Invariant>
+    <Invariant>((((((not Sofar~0.Sofar) or (DRAGON~0.invalid &lt;= 1)) or (DRAGON~0.dirty &lt;= (-2))) or (0 &lt;&gt; DRAGON~0.shared)) or (not (First~0.First &lt;= 1))) or (DRAGON~0.exclusive &lt;= 0))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(((((((not ((DRAGON~0.shared_dirty + (-DRAGON~0.exclusive)) = 0)) or (DRAGON~0.dirty &lt;= 0)) or (not Sofar~0.Sofar)) or (not (DRAGON~0.shared_dirty = 0))) or (DRAGON~0.invalid &lt;= (First~0.First + (-1)))) or (0 &lt;&gt; DRAGON~0.shared)) or (not (First~0.First &lt;= 1)))</Invariant>
+    <Invariant>(((not (First~0.First &lt;= 1)) or (DRAGON~0.shared_dirty &lt;= 0)) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(((not Sofar~0.Sofar) or (DRAGON~0.exclusive &lt;= 0)) or (DRAGON~0.shared_dirty &lt;= 1))</Invariant>
+    <Invariant>((0 &lt;= (First~0.First + (-1))) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>((((DRAGON~0.exclusive &lt;= 0) or (not (0 &lt;= (DRAGON~0.dirty + (-1))))) or (DRAGON~0.shared_dirty &lt;= 0)) or (not Sofar~0.Sofar))</Invariant>
+    <Ivc>DRAGON~0.exclusive</Ivc>
+    <Ivc>DRAGON~0.shared_dirty</Ivc>
+    <Ivc>excludes12~0.X9</Ivc>
+    <Ivc>Sofar~0.Sofar</Ivc>
+    <Ivc>excludes12~0.X12</Ivc>
+    <Ivc>excludes12~0.X8</Ivc>
+    <Ivc>excludes12~0.X7</Ivc>
+    <Ivc>excludes12~0.X10</Ivc>
+    <Ivc>excludes12~0.X6</Ivc>
+    <Ivc>DRAGON~0.g01</Ivc>
+    <Ivc>DRAGON~0.e03</Ivc>
+    <Ivc>DRAGON~0.e01</Ivc>
+    <Ivc>DRAGON~0.shared</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>First~0.X</Ivc>
+    <Ivc>DRAGON~0.init_invalid</Ivc>
+    <Ivc>DRAGON~0.invalid</Ivc>
+    <Ivc>DRAGON~0.mem_init</Ivc>
+    <Ivc>shared_dirty</Ivc>
+    <Ivc>Sofar~0.X</Ivc>
+    <Ivc>DRAGON~0.e10</Ivc>
+    <Ivc>DRAGON~0.g11</Ivc>
+    <Ivc>env</Ivc>
+    <Ivc>excludes12~0.excludes</Ivc>
+    <Ivc>DRAGON~0.e12</Ivc>
+    <Ivc>excludes12~0.X1</Ivc>
+    <Ivc>DRAGON~0.g04</Ivc>
+    <Ivc>DRAGON~0.e06</Ivc>
+    <Ivc>DRAGON~0.g05</Ivc>
+    <Ivc>DRAGON~0.e07</Ivc>
+    <Ivc>DRAGON~0.g02</Ivc>
+    <Ivc>DRAGON~0.e04</Ivc>
+    <Ivc>DRAGON~0.g03</Ivc>
+    <Ivc>DRAGON~0.e05</Ivc>
+    <Ivc>excludes12~0.X5</Ivc>
+    <Ivc>DRAGON~0.g08</Ivc>
+    <Ivc>excludes12~0.X4</Ivc>
+    <Ivc>excludes12~0.X3</Ivc>
+    <Ivc>First~0.First</Ivc>
+    <Ivc>DRAGON~0.g06</Ivc>
+    <Ivc>DRAGON~0.e08</Ivc>
+    <Ivc>DRAGON~0.dirty</Ivc>
+    <Ivc>DRAGON~0.g07</Ivc>
+    <Ivc>DRAGON~0.e09</Ivc>
+    </IvcSet>
+    <IvcSet number="6">
+    <Invariant>((((DRAGON~0.shared &lt;= 0) or (DRAGON~0.exclusive &lt;= 0)) or (not Sofar~0.Sofar)) or (DRAGON~0.dirty &lt;= 0))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>((not Sofar~0.Sofar) or (0 &lt;= (First~0.First + (-1))))</Invariant>
+    <Invariant>(((not Sofar~0.Sofar) or (DRAGON~0.shared &lt;= 0)) or (0 &lt;= (First~0.First + (-2))))</Invariant>
+    <Invariant>(((not (0 &lt;= (DRAGON~0.dirty + (-1)))) or (not Sofar~0.Sofar)) or (DRAGON~0.shared_dirty &lt;= (First~0.First + (-1))))</Invariant>
+    <Invariant>(((not Sofar~0.Sofar) or (DRAGON~0.dirty &lt;= 1)) or (DRAGON~0.shared &lt;= 0))</Invariant>
+    <Invariant>(((((((not Sofar~0.Sofar) or (not (DRAGON~0.shared_dirty = DRAGON~0.exclusive))) or (not (DRAGON~0.invalid &lt;= 1))) or (not (0 &lt;= (DRAGON~0.dirty + (-1))))) or (not (0 &lt;= (DRAGON~0.invalid + (-1))))) or (not (DRAGON~0.shared_dirty = 0))) or (0 &lt;= (First~0.First + (-2))))</Invariant>
+    <Invariant>(((DRAGON~0.shared_dirty &lt;= 0) or (not Sofar~0.Sofar)) or (0 &lt;= (First~0.First + (-2))))</Invariant>
+    <Invariant>(((((not (0 &lt;= (DRAGON~0.invalid + (-1)))) or (DRAGON~0.exclusive &lt;= 0)) or (not Sofar~0.Sofar)) or (not (0 &lt;= DRAGON~0.dirty))) or (0 &lt;= (First~0.First + (-2))))</Invariant>
+    <Invariant>(not (0 &lt;= (DRAGON~0.exclusive + (-2))))</Invariant>
+    <Invariant>((((not (0 &lt;= (DRAGON~0.dirty + (-1)))) or (DRAGON~0.exclusive &lt;= 0)) or (not Sofar~0.Sofar)) or (0 &lt;= (First~0.First + (-2))))</Invariant>
+    <Invariant>(((not Sofar~0.Sofar) or (DRAGON~0.dirty &lt;= 1)) or (DRAGON~0.exclusive &lt;= 0))</Invariant>
+    <Invariant>((DRAGON~0.dirty &lt;= 2) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>((((DRAGON~0.dirty + DRAGON~0.shared_dirty) &lt;= 1) or (DRAGON~0.exclusive &lt;= 0)) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(((not Sofar~0.Sofar) or (DRAGON~0.dirty &lt;= 1)) or (0 &lt;= (First~0.First + (-2))))</Invariant>
+    <Invariant>((((((not (DRAGON~0.shared_dirty = DRAGON~0.exclusive)) or (DRAGON~0.invalid &lt;= 1)) or (not Sofar~0.Sofar)) or (not (0 &lt;= DRAGON~0.dirty))) or (not (DRAGON~0.shared_dirty = 0))) or (0 &lt;= (First~0.First + (-2))))</Invariant>
+    <Invariant>(((((DRAGON~0.invalid &lt;= 1) or (not (0 &lt;= (DRAGON~0.dirty + 1)))) or (DRAGON~0.exclusive &lt;= 0)) or (not Sofar~0.Sofar)) or (0 &lt;= (First~0.First + (-2))))</Invariant>
+    <Invariant>(((DRAGON~0.shared_dirty &lt;= 0) or (not Sofar~0.Sofar)) or (DRAGON~0.dirty &lt;= 1))</Invariant>
+    <Ivc>DRAGON~0.exclusive</Ivc>
+    <Ivc>DRAGON~0.shared_dirty</Ivc>
+    <Ivc>excludes12~0.X9</Ivc>
+    <Ivc>Sofar~0.Sofar</Ivc>
+    <Ivc>excludes12~0.X12</Ivc>
+    <Ivc>excludes12~0.X8</Ivc>
+    <Ivc>excludes12~0.X7</Ivc>
+    <Ivc>DRAGON~0.g01</Ivc>
+    <Ivc>DRAGON~0.e03</Ivc>
+    <Ivc>DRAGON~0.e01</Ivc>
+    <Ivc>DRAGON~0.shared</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>First~0.X</Ivc>
+    <Ivc>DRAGON~0.init_invalid</Ivc>
+    <Ivc>DRAGON~0.invalid</Ivc>
+    <Ivc>DRAGON~0.mem_init</Ivc>
+    <Ivc>shared_dirty</Ivc>
+    <Ivc>Sofar~0.X</Ivc>
+    <Ivc>DRAGON~0.g11</Ivc>
+    <Ivc>env</Ivc>
+    <Ivc>excludes12~0.excludes</Ivc>
+    <Ivc>DRAGON~0.g10</Ivc>
+    <Ivc>DRAGON~0.e12</Ivc>
+    <Ivc>excludes12~0.X1</Ivc>
+    <Ivc>DRAGON~0.g04</Ivc>
+    <Ivc>DRAGON~0.g05</Ivc>
+    <Ivc>DRAGON~0.e07</Ivc>
+    <Ivc>DRAGON~0.g02</Ivc>
+    <Ivc>DRAGON~0.e04</Ivc>
+    <Ivc>DRAGON~0.g03</Ivc>
+    <Ivc>DRAGON~0.e05</Ivc>
+    <Ivc>excludes12~0.X5</Ivc>
+    <Ivc>DRAGON~0.g08</Ivc>
+    <Ivc>excludes12~0.X4</Ivc>
+    <Ivc>excludes12~0.X3</Ivc>
+    <Ivc>First~0.First</Ivc>
+    <Ivc>DRAGON~0.g06</Ivc>
+    <Ivc>DRAGON~0.e08</Ivc>
+    <Ivc>DRAGON~0.dirty</Ivc>
+    <Ivc>DRAGON~0.g07</Ivc>
+    <Ivc>DRAGON~0.e09</Ivc>
+    </IvcSet>
+    <IvcSet number="7">
+    <Invariant>(((0 &lt;= (First~0.First + (-2))) or (not Sofar~0.Sofar)) or (not (0 &lt;= (DRAGON~0.shared + (-1)))))</Invariant>
+    <Invariant>((((not (0 &lt;= DRAGON~0.shared)) or (not (DRAGON~0.shared_dirty = DRAGON~0.dirty))) or (not Sofar~0.Sofar)) or (not (1 = DRAGON~0.shared_dirty)))</Invariant>
+    <Invariant>((((((0 &lt;= (First~0.First + (-2))) or (not (0 &lt;= (DRAGON~0.exclusive + DRAGON~0.shared)))) or (not (0 &lt;= (DRAGON~0.dirty + (-1))))) or (not (0 &lt;= (DRAGON~0.invalid + (-1))))) or (not Sofar~0.Sofar)) or ((DRAGON~0.shared_dirty + 1) &lt;= 0))</Invariant>
+    <Invariant>((((not (0 &lt;= DRAGON~0.shared)) or (not (DRAGON~0.shared_dirty = DRAGON~0.exclusive))) or (not Sofar~0.Sofar)) or (not (1 = DRAGON~0.shared_dirty)))</Invariant>
+    <Invariant>(((DRAGON~0.exclusive &lt;= 0) or (DRAGON~0.shared_dirty &lt;= 1)) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(((not Sofar~0.Sofar) or (DRAGON~0.shared_dirty &lt;= 1)) or (not (((-DRAGON~0.dirty) + 1) &lt;= 0)))</Invariant>
+    <Invariant>((not Sofar~0.Sofar) or (DRAGON~0.dirty &lt;= 1))</Invariant>
+    <Invariant>(((((((DRAGON~0.shared &lt;= (-2)) or (0 &lt;= (First~0.First + (-2)))) or (DRAGON~0.exclusive &lt;= (-1))) or (not (0 &lt;= (DRAGON~0.invalid + (-1))))) or (not (DRAGON~0.shared_dirty = DRAGON~0.dirty))) or (not (1 = DRAGON~0.shared_dirty))) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(((not Sofar~0.Sofar) or (not (((-DRAGON~0.dirty) + 1) &lt;= 0))) or (not (0 &lt;= (DRAGON~0.shared + (-1)))))</Invariant>
+    <Invariant>((not Sofar~0.Sofar) or (0 &lt;= (First~0.First + (-1))))</Invariant>
+    <Invariant>(DRAGON~0.exclusive &lt;= 1)</Invariant>
+    <Invariant>(((((((DRAGON~0.invalid &lt;= (First~0.First + (-1))) or (0 &lt;= (First~0.First + (-2)))) or (not Sofar~0.Sofar)) or (DRAGON~0.shared &lt;= (-2))) or (not (DRAGON~0.shared_dirty = DRAGON~0.exclusive))) or (not (1 = DRAGON~0.shared_dirty))) or (not (0 &lt;= DRAGON~0.dirty)))</Invariant>
+    <Invariant>(((((((0 &lt;= (First~0.First + (-2))) or (not (0 &lt;= DRAGON~0.shared))) or (not (DRAGON~0.shared_dirty = DRAGON~0.exclusive))) or (DRAGON~0.invalid &lt;= 1)) or (not (DRAGON~0.shared_dirty = DRAGON~0.dirty))) or (not (DRAGON~0.dirty = 0))) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(((((((DRAGON~0.invalid &lt;= (First~0.First + (-1))) or (not (DRAGON~0.invalid &lt;= 1))) or (not (DRAGON~0.shared_dirty = DRAGON~0.dirty))) or (DRAGON~0.exclusive &lt;= 0)) or (not ((DRAGON~0.shared_dirty + (-DRAGON~0.shared)) = 0))) or (not (DRAGON~0.dirty = 0))) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(((not Sofar~0.Sofar) or (not (0 &lt;= (DRAGON~0.shared + (-1))))) or (DRAGON~0.exclusive &lt;= 0))</Invariant>
+    <Invariant>(((((((0 &lt;= (First~0.First + (-2))) or (not (0 &lt;= DRAGON~0.shared))) or (DRAGON~0.exclusive &lt;= 0)) or (not Sofar~0.Sofar)) or (DRAGON~0.dirty &lt;= (-2))) or (DRAGON~0.invalid &lt;= 1)) or ((DRAGON~0.shared_dirty + 1) &lt;= 0))</Invariant>
+    <Invariant>(((DRAGON~0.exclusive &lt;= 0) or (not Sofar~0.Sofar)) or (not (((-DRAGON~0.dirty) + 1) &lt;= 0)))</Invariant>
+    <Invariant>((((0 &lt;= (First~0.First + (-2))) or (not (0 &lt;= DRAGON~0.shared))) or (not (1 = DRAGON~0.shared_dirty))) or (not Sofar~0.Sofar))</Invariant>
+    <Ivc>DRAGON~0.exclusive</Ivc>
+    <Ivc>DRAGON~0.shared_dirty</Ivc>
+    <Ivc>excludes12~0.X11</Ivc>
+    <Ivc>excludes12~0.X9</Ivc>
+    <Ivc>Sofar~0.Sofar</Ivc>
+    <Ivc>excludes12~0.X12</Ivc>
+    <Ivc>excludes12~0.X8</Ivc>
+    <Ivc>excludes12~0.X7</Ivc>
+    <Ivc>excludes12~0.X6</Ivc>
+    <Ivc>DRAGON~0.e02</Ivc>
+    <Ivc>DRAGON~0.g01</Ivc>
+    <Ivc>DRAGON~0.e03</Ivc>
+    <Ivc>DRAGON~0.e01</Ivc>
+    <Ivc>DRAGON~0.shared</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>First~0.X</Ivc>
+    <Ivc>DRAGON~0.init_invalid</Ivc>
+    <Ivc>DRAGON~0.invalid</Ivc>
+    <Ivc>DRAGON~0.mem_init</Ivc>
+    <Ivc>shared_dirty</Ivc>
+    <Ivc>Sofar~0.X</Ivc>
+    <Ivc>env</Ivc>
+    <Ivc>excludes12~0.excludes</Ivc>
+    <Ivc>DRAGON~0.e11</Ivc>
+    <Ivc>DRAGON~0.g10</Ivc>
+    <Ivc>DRAGON~0.e12</Ivc>
+    <Ivc>excludes12~0.X1</Ivc>
+    <Ivc>DRAGON~0.g04</Ivc>
+    <Ivc>DRAGON~0.e06</Ivc>
+    <Ivc>DRAGON~0.g05</Ivc>
+    <Ivc>DRAGON~0.e07</Ivc>
+    <Ivc>DRAGON~0.g02</Ivc>
+    <Ivc>DRAGON~0.e04</Ivc>
+    <Ivc>DRAGON~0.g03</Ivc>
+    <Ivc>DRAGON~0.e05</Ivc>
+    <Ivc>excludes12~0.X5</Ivc>
+    <Ivc>DRAGON~0.g08</Ivc>
+    <Ivc>excludes12~0.X4</Ivc>
+    <Ivc>excludes12~0.X3</Ivc>
+    <Ivc>First~0.First</Ivc>
+    <Ivc>DRAGON~0.e08</Ivc>
+    <Ivc>excludes12~0.X2</Ivc>
+    <Ivc>DRAGON~0.dirty</Ivc>
+    <Ivc>DRAGON~0.g07</Ivc>
+    <Ivc>DRAGON~0.e09</Ivc>
+    </IvcSet>
   </Property>
+</Results>

@@ -246,68 +246,11 @@
   <Progress source="bmc" trueFor="82">
     <PropertyProgress name="__GUARANTEE11"/>
   </Progress>
-  <Progress source="bmc" trueFor="83">
-    <PropertyProgress name="__GUARANTEE11"/>
-  </Progress>
-  <Progress source="bmc" trueFor="84">
-    <PropertyProgress name="__GUARANTEE11"/>
-  </Progress>
-  <Progress source="bmc" trueFor="85">
-    <PropertyProgress name="__GUARANTEE11"/>
-  </Progress>
-  <Progress source="bmc" trueFor="86">
-    <PropertyProgress name="__GUARANTEE11"/>
-  </Progress>
-  <Progress source="bmc" trueFor="87">
-    <PropertyProgress name="__GUARANTEE11"/>
-  </Progress>
-  <Progress source="bmc" trueFor="88">
-    <PropertyProgress name="__GUARANTEE11"/>
-  </Progress>
-  <Progress source="bmc" trueFor="89">
-    <PropertyProgress name="__GUARANTEE11"/>
-  </Progress>
-  <Progress source="bmc" trueFor="90">
-    <PropertyProgress name="__GUARANTEE11"/>
-  </Progress>
-  <Progress source="bmc" trueFor="91">
-    <PropertyProgress name="__GUARANTEE11"/>
-  </Progress>
-  <Progress source="bmc" trueFor="92">
-    <PropertyProgress name="__GUARANTEE11"/>
-  </Progress>
-  <Progress source="bmc" trueFor="93">
-    <PropertyProgress name="__GUARANTEE11"/>
-  </Progress>
-  <Progress source="bmc" trueFor="94">
-    <PropertyProgress name="__GUARANTEE11"/>
-  </Progress>
-  <Progress source="bmc" trueFor="95">
-    <PropertyProgress name="__GUARANTEE11"/>
-  </Progress>
-  <Progress source="bmc" trueFor="96">
-    <PropertyProgress name="__GUARANTEE11"/>
-  </Progress>
-  <Progress source="bmc" trueFor="97">
-    <PropertyProgress name="__GUARANTEE11"/>
-  </Progress>
-  <Progress source="bmc" trueFor="98">
-    <PropertyProgress name="__GUARANTEE11"/>
-  </Progress>
-  <Progress source="bmc" trueFor="99">
-    <PropertyProgress name="__GUARANTEE11"/>
-  </Progress>
-  <Progress source="bmc" trueFor="100">
-    <PropertyProgress name="__GUARANTEE11"/>
-  </Progress>
-  <Progress source="bmc" trueFor="101">
-    <PropertyProgress name="__GUARANTEE11"/>
-  </Progress>
   <Property name="__GUARANTEE11">
-    <Runtime unit="sec">26.912</Runtime>
+    <Runtime unit="sec">40.809</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
+    <NumberOfIVCs>5</NumberOfIVCs>
     <MustElem>_TOP__ALARM~0.ALARM_OUT.Highest_Level_Alarm</MustElem>
     <MustElem>__GUARANTEE11</MustElem>
     <MustElem>_TOP__ALARM~0.__ALARM__PROP__1</MustElem>
@@ -317,38 +260,151 @@
     <MustElem>_TOP__ALARM~0.SENSOR_IN.Air_Pressure</MustElem>
     <MustElem>_TOP__IM~0.__ASSERT</MustElem>
     <MustElem>_TOP__IM~0.IM_OUT.Commanded_Flow_Rate</MustElem>
-    <MustElem>_TOP__TLM~0.__TLM__ASSERT__0</MustElem>
     <MustElem>_TOP__OUTPUT~0.__ASSERT</MustElem>
     <MustElem>_TOP__OUTPUT~0.IM_IN.Commanded_Flow_Rate</MustElem>
     <MustElem>_TOP__ASSERT__21</MustElem>
     <MustElem>_TOP__ALARM~0.__ASSUME__HIST</MustElem>
-    <MustElem>_TOP__TLM~0.TLM_MODE_OUT.System_On</MustElem>
     <MustElem>_TOP__IM~0.__IM__ASSERT__7</MustElem>
-    <MustElem>_TOP__TLM~0.__TLM__PROP__0</MustElem>
     <MustElem>_TOP__ALARM~0.TLM_MODE_IN.System_On</MustElem>
     <MustElem>_TOP__ALARM~0.SENSOR_IN.Humidity</MustElem>
     <MustElem>_TOP__ALARM~0.SENSOR_IN.Temp</MustElem>
-    <MustElem>_TOP__TLM~0.__ASSUME__HIST</MustElem>
-    <MustElem>_TOP__IM~0.TLM_MODE_IN.System_On</MustElem>
     <MustElem>_TOP__ALARM~0.__ALARM__ASSERT__1</MustElem>
     <MustElem>_TOP__IM~0.__IM__PROP__5</MustElem>
     <MustElem>_TOP__ALARM~0.__ASSERT</MustElem>
     <MustElem>_TOP__ALARM~0.SENSOR_IN.CPU_Error</MustElem>
-    <MustElem>_TOP__TLM~0.__ASSUME__CONJ</MustElem>
     <MustElem>_TOP__OUTPUT~0.__ASSUME__CONJ</MustElem>
     <MustElem>_TOP__ALARM~0.__ALARM__ASSERT__15</MustElem>
     <MustElem>_TOP__IM~0.__ASSUME__HIST</MustElem>
     <MustElem>_TOP__OUTPUT~0.__ASSUME__HIST</MustElem>
-    <MustElem>_TOP__TLM~0.__ASSERT</MustElem>
     <MustElem>_TOP__IM~0.__ASSUME__CONJ</MustElem>
-    <MustElem>_TOP__TLM~0.OP_CMD_IN.System_Start</MustElem>
     <MustElem>_TOP__OUTPUT~0.__OUTPUT__PROP__29</MustElem>
     <IvcSet number="1">
+    <Invariant>__GUARANTEE11</Invariant>
+    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__IM~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
+    <Ivc>_TOP__ALARM~0.ALARM_OUT.Highest_Level_Alarm</Ivc>
+    <Ivc>__GUARANTEE11</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Commanded_Flow_Rate</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__1</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__IM~0.ALARM_IN.Highest_Level_Alarm</Ivc>
+    <Ivc>_TOP__ALARM~0.SENSOR_IN.Air_Pressure</Ivc>
+    <Ivc>_TOP__IM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__IM~0.IM_OUT.Commanded_Flow_Rate</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__ASSERT__0</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__OUTPUT~0.IM_IN.Commanded_Flow_Rate</Ivc>
+    <Ivc>_TOP__ASSERT__21</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__5</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__7</Ivc>
+    <Ivc>_TOP__TLM~0.TLM_MODE_OUT.System_On</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__6</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__PROP__0</Ivc>
+    <Ivc>_TOP__ALARM~0.SENSOR_IN.Humidity</Ivc>
+    <Ivc>_TOP__ALARM~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__ALARM~0.SENSOR_IN.Temp</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__1</Ivc>
+    <Ivc>_TOP__IM~0.__IM__PROP__5</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__ALARM~0.SENSOR_IN.CPU_Error</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__IM~0.__IM__PROP__3</Ivc>
+    <Ivc>_TOP__IM~0.__IM__PROP__4</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__15</Ivc>
+    <Ivc>_TOP__IM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__IM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__29</Ivc>
+    <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
     <Invariant>_TOP__IM~0.__ASSUME__HIST</Invariant>
     <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
     <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
     <Invariant>__GUARANTEE11</Invariant>
+    <Ivc>_TOP__ALARM~0.ALARM_OUT.Highest_Level_Alarm</Ivc>
+    <Ivc>__GUARANTEE11</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Commanded_Flow_Rate</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__1</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__IM~0.ALARM_IN.Highest_Level_Alarm</Ivc>
+    <Ivc>_TOP__ALARM~0.SENSOR_IN.Air_Pressure</Ivc>
+    <Ivc>_TOP__IM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__IM~0.IM_OUT.Commanded_Flow_Rate</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__OUTPUT~0.IM_IN.Commanded_Flow_Rate</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__2</Ivc>
+    <Ivc>_TOP__ASSERT__21</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__5</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__7</Ivc>
+    <Ivc>_TOP__ALARM~0.SENSOR_IN.Humidity</Ivc>
+    <Ivc>_TOP__ALARM~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__ALARM~0.SENSOR_IN.Temp</Ivc>
+    <Ivc>_TOP__IM~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__1</Ivc>
+    <Ivc>_TOP__IM~0.__IM__PROP__5</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__ALARM~0.SENSOR_IN.CPU_Error</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__IM~0.__IM__PROP__3</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__15</Ivc>
+    <Ivc>_TOP__IM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__IM~0.__IM__PROP__0</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__IM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__29</Ivc>
+    </IvcSet>
+    <IvcSet number="3">
+    <Invariant>__GUARANTEE11</Invariant>
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__IM~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
+    <Ivc>_TOP__ALARM~0.ALARM_OUT.Highest_Level_Alarm</Ivc>
+    <Ivc>__GUARANTEE11</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Commanded_Flow_Rate</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__1</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__IM~0.ALARM_IN.Highest_Level_Alarm</Ivc>
+    <Ivc>_TOP__ALARM~0.SENSOR_IN.Air_Pressure</Ivc>
+    <Ivc>_TOP__IM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__IM~0.IM_OUT.Commanded_Flow_Rate</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__OUTPUT~0.IM_IN.Commanded_Flow_Rate</Ivc>
+    <Ivc>_TOP__ASSERT__21</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__5</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__7</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__6</Ivc>
+    <Ivc>_TOP__ALARM~0.SENSOR_IN.Humidity</Ivc>
+    <Ivc>_TOP__ALARM~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__ALARM~0.SENSOR_IN.Temp</Ivc>
+    <Ivc>_TOP__IM~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__1</Ivc>
+    <Ivc>_TOP__IM~0.__IM__PROP__5</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__ALARM~0.SENSOR_IN.CPU_Error</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__IM~0.__IM__PROP__3</Ivc>
+    <Ivc>_TOP__IM~0.__IM__PROP__4</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__15</Ivc>
+    <Ivc>_TOP__IM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__IM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__29</Ivc>
+    </IvcSet>
+    <IvcSet number="4">
+    <Invariant>_TOP__IM~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
     <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
+    <Invariant>__GUARANTEE11</Invariant>
+    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
     <Ivc>_TOP__ALARM~0.ALARM_OUT.Highest_Level_Alarm</Ivc>
     <Ivc>__GUARANTEE11</Ivc>
     <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Commanded_Flow_Rate</Ivc>
@@ -385,4 +441,50 @@
     <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__29</Ivc>
     <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
     </IvcSet>
+    <IvcSet number="5">
+    <Invariant>__GUARANTEE11</Invariant>
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__TLM~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__IM~0.__ASSUME__HIST</Invariant>
+    <Ivc>_TOP__ALARM~0.ALARM_OUT.Highest_Level_Alarm</Ivc>
+    <Ivc>__GUARANTEE11</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Commanded_Flow_Rate</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__1</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__IM~0.ALARM_IN.Highest_Level_Alarm</Ivc>
+    <Ivc>_TOP__ALARM~0.SENSOR_IN.Air_Pressure</Ivc>
+    <Ivc>_TOP__IM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__IM~0.IM_OUT.Commanded_Flow_Rate</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__ASSERT__0</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__OUTPUT~0.IM_IN.Commanded_Flow_Rate</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__2</Ivc>
+    <Ivc>_TOP__ASSERT__21</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__5</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__IM~0.__IM__ASSERT__7</Ivc>
+    <Ivc>_TOP__TLM~0.TLM_MODE_OUT.System_On</Ivc>
+    <Ivc>_TOP__TLM~0.__TLM__PROP__0</Ivc>
+    <Ivc>_TOP__ALARM~0.SENSOR_IN.Humidity</Ivc>
+    <Ivc>_TOP__ALARM~0.TLM_MODE_IN.System_On</Ivc>
+    <Ivc>_TOP__ALARM~0.SENSOR_IN.Temp</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__1</Ivc>
+    <Ivc>_TOP__IM~0.__IM__PROP__5</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__ALARM~0.SENSOR_IN.CPU_Error</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__IM~0.__IM__PROP__3</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__15</Ivc>
+    <Ivc>_TOP__IM~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__IM~0.__IM__PROP__0</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__IM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__TLM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__29</Ivc>
+    <Ivc>_TOP__TLM~0.OP_CMD_IN.System_Start</Ivc>
+    </IvcSet>
   </Property>
+</Results>

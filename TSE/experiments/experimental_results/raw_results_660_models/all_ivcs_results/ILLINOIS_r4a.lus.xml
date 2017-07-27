@@ -72,16 +72,20 @@
   <Progress source="bmc" trueFor="24">
     <PropertyProgress name="OK"/>
   </Progress>
+  <Progress source="bmc" trueFor="25">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="26">
+    <PropertyProgress name="OK"/>
+  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">4.327</Runtime>
+    <Runtime unit="sec">6.125</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
     <MustElem>V53_exclusive</MustElem>
     <MustElem>V109_g3</MustElem>
-    <MustElem>V114_g8</MustElem>
     <MustElem>V107_g1</MustElem>
-    <MustElem>V108_g2</MustElem>
     <MustElem>V52_dirty</MustElem>
     <MustElem>V55_env</MustElem>
     <MustElem>V54_shared</MustElem>
@@ -90,24 +94,22 @@
     <MustElem>V110_g4</MustElem>
     <MustElem>V135_X</MustElem>
     <IvcSet number="1">
-    <Invariant>((not V55_env) or (V53_exclusive &lt;= 1))</Invariant>
-    <Invariant>(not (V54_shared &lt;= (-1)))</Invariant>
-    <Invariant>(((not V55_env) or (V54_shared = 0)) or (V53_exclusive &lt;= 0))</Invariant>
-    <Invariant>(((not V55_env) or (V52_dirty &lt;= 0)) or (V54_shared = 0))</Invariant>
-    <Invariant>(((not V55_env) or (V52_dirty &lt;= 0)) or (V53_exclusive &lt;= 0))</Invariant>
+    <Invariant>((((1 = V52_dirty) or (V54_shared &lt;= 0)) or (not V55_env)) or (V52_dirty &lt;= 0))</Invariant>
+    <Invariant>((not V55_env) or (V52_dirty &lt;= 2))</Invariant>
+    <Invariant>((V53_exclusive + (-1)) &lt;= 0)</Invariant>
+    <Invariant>((((V54_shared &lt;= 0) or (not V55_env)) or (V52_dirty &lt;= 0)) or (V53_exclusive &lt;= 0))</Invariant>
+    <Invariant>(((not (0 &lt;= (V53_exclusive + (-1)))) or (V52_dirty &lt;= 1)) or (not V55_env))</Invariant>
     <Invariant>OK</Invariant>
-    <Invariant>(((not ((V52_dirty + (-1)) &lt;&gt; 0)) or (not V55_env)) or (V52_dirty &lt;= 0))</Invariant>
     <Ivc>V53_exclusive</Ivc>
-    <Ivc>V114_g8</Ivc>
     <Ivc>V109_g3</Ivc>
-    <Ivc>V108_g2</Ivc>
     <Ivc>V107_g1</Ivc>
     <Ivc>V55_env</Ivc>
     <Ivc>V52_dirty</Ivc>
     <Ivc>V54_shared</Ivc>
     <Ivc>OK</Ivc>
+    <Ivc>V135_X</Ivc>
     <Ivc>V111_g5</Ivc>
     <Ivc>V110_g4</Ivc>
-    <Ivc>V135_X</Ivc>
     </IvcSet>
   </Property>
+</Results>

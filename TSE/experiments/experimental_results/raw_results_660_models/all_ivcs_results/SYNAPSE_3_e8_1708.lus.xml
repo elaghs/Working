@@ -16,37 +16,37 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">3.015</Runtime>
+    <Runtime unit="sec">2.915</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
-    <MustElem>synapse~0.dirty_s</MustElem>
-    <MustElem>synapse~0.invalid_s</MustElem>
-    <MustElem>Sofar~0.Sofar</MustElem>
-    <MustElem>env</MustElem>
-    <MustElem>synapse~0.mem_init_s</MustElem>
     <MustElem>invalid_s</MustElem>
     <MustElem>First~0.First</MustElem>
+    <MustElem>synapse~0.dirty_s</MustElem>
     <MustElem>synapse~0.valid_s</MustElem>
+    <MustElem>synapse~0.invalid_s</MustElem>
     <MustElem>valid_s</MustElem>
     <MustElem>synapse~0.init_invalid_s</MustElem>
     <MustElem>OK</MustElem>
+    <MustElem>synapse~0.mem_init_s</MustElem>
     <MustElem>First~0.X</MustElem>
     <MustElem>dirty_s</MustElem>
     <IvcSet number="1">
+    <Invariant>((synapse~0.dirty_s = 1) or (First~0.First = (synapse~0.valid_s + synapse~0.invalid_s)))</Invariant>
+    <Invariant>((First~0.First = (synapse~0.invalid_s + 1)) or (synapse~0.dirty_s = 0))</Invariant>
     <Invariant>OK</Invariant>
-    <Ivc>synapse~0.dirty_s</Ivc>
-    <Ivc>Sofar~0.Sofar</Ivc>
-    <Ivc>synapse~0.invalid_s</Ivc>
-    <Ivc>env</Ivc>
-    <Ivc>synapse~0.mem_init_s</Ivc>
+    <Invariant>((0 = synapse~0.valid_s) or (synapse~0.dirty_s = 0))</Invariant>
     <Ivc>invalid_s</Ivc>
     <Ivc>First~0.First</Ivc>
+    <Ivc>synapse~0.dirty_s</Ivc>
     <Ivc>synapse~0.valid_s</Ivc>
+    <Ivc>synapse~0.invalid_s</Ivc>
     <Ivc>valid_s</Ivc>
     <Ivc>synapse~0.init_invalid_s</Ivc>
     <Ivc>OK</Ivc>
     <Ivc>First~0.X</Ivc>
+    <Ivc>synapse~0.mem_init_s</Ivc>
     <Ivc>dirty_s</Ivc>
     </IvcSet>
   </Property>
+</Results>

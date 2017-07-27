@@ -1,19 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Progress source="bmc" trueFor="1">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="2">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="3">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="4">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">0.313</Runtime>
+    <Runtime unit="sec">0.311</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>0</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -27,3 +15,4 @@
     <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_rltCheckEntryStateConsistency_0</Ivc>
     </IvcSet>
   </Property>
+</Results>

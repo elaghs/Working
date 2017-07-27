@@ -51,20 +51,11 @@
   <Progress source="bmc" trueFor="17">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="18">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="19">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="20">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">10.469</Runtime>
+    <Runtime unit="sec">15.54</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
+    <NumberOfIVCs>2</NumberOfIVCs>
     <MustElem>DRAGON~0.exclusive</MustElem>
     <MustElem>DRAGON~0.shared_dirty</MustElem>
     <MustElem>Sofar~0.Sofar</MustElem>
@@ -78,7 +69,6 @@
     <MustElem>OK</MustElem>
     <MustElem>dirty</MustElem>
     <MustElem>Sofar~0.X</MustElem>
-    <MustElem>DRAGON~0.g11</MustElem>
     <MustElem>env</MustElem>
     <MustElem>excludes12~0.excludes</MustElem>
     <MustElem>DRAGON~0.g04</MustElem>
@@ -89,25 +79,65 @@
     <MustElem>DRAGON~0.g03</MustElem>
     <MustElem>DRAGON~0.e05</MustElem>
     <MustElem>excludes12~0.X5</MustElem>
-    <MustElem>DRAGON~0.g09</MustElem>
     <MustElem>excludes12~0.X4</MustElem>
     <MustElem>DRAGON~0.e08</MustElem>
-    <MustElem>DRAGON~0.g06</MustElem>
     <MustElem>excludes12~0.X3</MustElem>
     <MustElem>DRAGON~0.dirty</MustElem>
     <MustElem>DRAGON~0.g07</MustElem>
     <MustElem>excludes12~0.X2</MustElem>
     <IvcSet number="1">
-    <Invariant>(((DRAGON~0.shared_dirty &lt;= 0) or (not Sofar~0.Sofar)) or (DRAGON~0.dirty &lt;= 0))</Invariant>
-    <Invariant>(((DRAGON~0.exclusive &lt;= 0) or (not Sofar~0.Sofar)) or (DRAGON~0.dirty &lt;= 0))</Invariant>
+    <Invariant>(((not ((DRAGON~0.dirty + (-DRAGON~0.shared)) = 0)) or (DRAGON~0.shared &lt;= 0)) or (not Sofar~0.Sofar))</Invariant>
     <Invariant>OK</Invariant>
-    <Invariant>(((DRAGON~0.shared &lt;= 0) or (not Sofar~0.Sofar)) or (DRAGON~0.dirty &lt;= 0))</Invariant>
-    <Invariant>(((DRAGON~0.dirty = DRAGON~0.shared_dirty) or (not (((DRAGON~0.dirty + (-DRAGON~0.exclusive)) + 1) &lt;= 0))) or (not Sofar~0.Sofar))</Invariant>
-    <Invariant>(((DRAGON~0.exclusive &lt;= 0) or (DRAGON~0.dirty = 0)) or (not Sofar~0.Sofar))</Invariant>
-    <Invariant>(((not OK) or (not Sofar~0.Sofar)) or (DRAGON~0.dirty &lt;= 1))</Invariant>
+    <Invariant>((((DRAGON~0.dirty = 0) or (DRAGON~0.shared &lt;= 0)) or ((DRAGON~0.dirty + 1) &lt;= 0)) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>((((DRAGON~0.dirty = 0) or (DRAGON~0.exclusive &lt;= 0)) or ((DRAGON~0.dirty + 1) &lt;= 0)) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(((DRAGON~0.exclusive &lt;= 0) or (DRAGON~0.shared &lt;= 0)) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>((((((DRAGON~0.shared_dirty + (-1)) &lt;&gt; 0) or (DRAGON~0.dirty = 0)) or (DRAGON~0.shared &lt;= (-1))) or ((DRAGON~0.dirty + 1) &lt;= 0)) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(((((DRAGON~0.shared_dirty + (-1)) &lt;&gt; 0) or (DRAGON~0.shared &lt;= (-1))) or (DRAGON~0.exclusive &lt;= 0)) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(((((not ((DRAGON~0.shared_dirty + (-1)) &lt;&gt; 0)) or (DRAGON~0.shared_dirty &lt;= 0)) or (DRAGON~0.dirty = 0)) or ((DRAGON~0.dirty + 1) &lt;= 0)) or (not Sofar~0.Sofar))</Invariant>
     <Invariant>(DRAGON~0.exclusive &lt;= 1)</Invariant>
-    <Invariant>(((DRAGON~0.shared &lt;= 0) or (not (((DRAGON~0.dirty + (-DRAGON~0.exclusive)) + 1) &lt;= 0))) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>((((not ((DRAGON~0.shared_dirty + (-1)) &lt;&gt; 0)) or (DRAGON~0.shared_dirty &lt;= 0)) or (DRAGON~0.exclusive &lt;= 0)) or (not Sofar~0.Sofar))</Invariant>
+    <Ivc>DRAGON~0.exclusive</Ivc>
+    <Ivc>DRAGON~0.shared_dirty</Ivc>
+    <Ivc>Sofar~0.Sofar</Ivc>
+    <Ivc>excludes12~0.X8</Ivc>
+    <Ivc>excludes12~0.X7</Ivc>
+    <Ivc>excludes12~0.X6</Ivc>
+    <Ivc>DRAGON~0.e02</Ivc>
+    <Ivc>DRAGON~0.g01</Ivc>
+    <Ivc>DRAGON~0.e03</Ivc>
+    <Ivc>DRAGON~0.e01</Ivc>
+    <Ivc>DRAGON~0.shared</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>dirty</Ivc>
+    <Ivc>Sofar~0.X</Ivc>
+    <Ivc>env</Ivc>
+    <Ivc>excludes12~0.excludes</Ivc>
+    <Ivc>excludes12~0.X1</Ivc>
+    <Ivc>DRAGON~0.g04</Ivc>
+    <Ivc>DRAGON~0.e06</Ivc>
+    <Ivc>DRAGON~0.g05</Ivc>
+    <Ivc>DRAGON~0.e07</Ivc>
+    <Ivc>DRAGON~0.e04</Ivc>
+    <Ivc>DRAGON~0.g03</Ivc>
+    <Ivc>DRAGON~0.e05</Ivc>
+    <Ivc>excludes12~0.X5</Ivc>
+    <Ivc>excludes12~0.X4</Ivc>
+    <Ivc>excludes12~0.X3</Ivc>
+    <Ivc>DRAGON~0.e08</Ivc>
+    <Ivc>excludes12~0.X2</Ivc>
+    <Ivc>DRAGON~0.dirty</Ivc>
+    <Ivc>DRAGON~0.g07</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>(DRAGON~0.exclusive &lt;= 1)</Invariant>
+    <Invariant>(((DRAGON~0.shared_dirty &lt;= 0) or (not Sofar~0.Sofar)) or (not ((DRAGON~0.dirty + (-DRAGON~0.shared_dirty)) = 0)))</Invariant>
+    <Invariant>((((DRAGON~0.exclusive &lt;= 0) or ((DRAGON~0.dirty + 1) &lt;= 0)) or (DRAGON~0.dirty = 0)) or (not Sofar~0.Sofar))</Invariant>
     <Invariant>(((DRAGON~0.shared &lt;= 0) or (DRAGON~0.exclusive &lt;= 0)) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(((not OK) or (not Sofar~0.Sofar)) or ((DRAGON~0.dirty + (-1)) &lt;= 0))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>((((DRAGON~0.shared_dirty &lt;= 0) or ((DRAGON~0.dirty + 1) &lt;= 0)) or (DRAGON~0.dirty = 0)) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>(((DRAGON~0.exclusive &lt;= 0) or (DRAGON~0.shared_dirty &lt;= 0)) or (not Sofar~0.Sofar))</Invariant>
+    <Invariant>((((DRAGON~0.shared &lt;= 0) or ((DRAGON~0.dirty + 1) &lt;= 0)) or (DRAGON~0.dirty = 0)) or (not Sofar~0.Sofar))</Invariant>
     <Ivc>DRAGON~0.exclusive</Ivc>
     <Ivc>DRAGON~0.shared_dirty</Ivc>
     <Ivc>Sofar~0.Sofar</Ivc>
@@ -121,7 +151,6 @@
     <Ivc>OK</Ivc>
     <Ivc>dirty</Ivc>
     <Ivc>Sofar~0.X</Ivc>
-    <Ivc>DRAGON~0.g11</Ivc>
     <Ivc>env</Ivc>
     <Ivc>excludes12~0.excludes</Ivc>
     <Ivc>excludes12~0.X1</Ivc>
@@ -133,7 +162,6 @@
     <Ivc>DRAGON~0.e05</Ivc>
     <Ivc>excludes12~0.X5</Ivc>
     <Ivc>excludes12~0.X4</Ivc>
-    <Ivc>DRAGON~0.g09</Ivc>
     <Ivc>excludes12~0.X3</Ivc>
     <Ivc>DRAGON~0.g06</Ivc>
     <Ivc>DRAGON~0.e08</Ivc>
@@ -142,3 +170,4 @@
     <Ivc>DRAGON~0.g07</Ivc>
     </IvcSet>
   </Property>
+</Results>

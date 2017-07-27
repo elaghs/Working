@@ -49,23 +49,41 @@
     <PropertyProgress name="OK"/>
   </Progress>
   <Property name="OK">
-    <Runtime unit="sec">4.62</Runtime>
+    <Runtime unit="sec">7.032</Runtime>
     <Answer source="invariant-generation">valid</Answer>
     <K>1</K>
-    <NumberOfIVCs>1</NumberOfIVCs>
-    <MustElem>V69_dirty</MustElem>
+    <NumberOfIVCs>2</NumberOfIVCs>
     <MustElem>V68_shared_dirty</MustElem>
-    <MustElem>V140_g09</MustElem>
     <MustElem>OK</MustElem>
     <MustElem>V142_g11</MustElem>
     <IvcSet number="1">
-    <Invariant>(V69_dirty &gt;= 0)</Invariant>
-    <Invariant>(V68_shared_dirty &gt;= 0)</Invariant>
+    <Invariant>(0 &lt;= V69_dirty)</Invariant>
     <Invariant>OK</Invariant>
+    <Invariant>(0 &lt;= V68_shared_dirty)</Invariant>
     <Ivc>V69_dirty</Ivc>
     <Ivc>V140_g09</Ivc>
     <Ivc>V68_shared_dirty</Ivc>
     <Ivc>OK</Ivc>
     <Ivc>V142_g11</Ivc>
     </IvcSet>
+    <IvcSet number="2">
+    <Invariant>(0 &lt;= V67_shared)</Invariant>
+    <Invariant>(0 &lt;= V68_shared_dirty)</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(0 &lt;= V66_exclusive)</Invariant>
+    <Invariant>(V66_exclusive &lt;= 1)</Invariant>
+    <Ivc>V134_g03</Ivc>
+    <Ivc>V66_exclusive</Ivc>
+    <Ivc>V132_g01</Ivc>
+    <Ivc>V68_shared_dirty</Ivc>
+    <Ivc>V139_g08</Ivc>
+    <Ivc>V137_g06</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V133_g02</Ivc>
+    <Ivc>V67_shared</Ivc>
+    <Ivc>V143_g12</Ivc>
+    <Ivc>V141_g10</Ivc>
+    <Ivc>V142_g11</Ivc>
+    </IvcSet>
   </Property>
+</Results>

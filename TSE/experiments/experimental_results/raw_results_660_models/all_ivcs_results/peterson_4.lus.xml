@@ -15,26 +15,20 @@
   <Progress source="bmc" trueFor="5">
     <PropertyProgress name="OK"/>
   </Progress>
-  <Progress source="bmc" trueFor="6">
-    <PropertyProgress name="OK"/>
-  </Progress>
-  <Progress source="bmc" trueFor="7">
-    <PropertyProgress name="OK"/>
-  </Progress>
   <Property name="OK">
-    <Runtime unit="sec">1.112</Runtime>
+    <Runtime unit="sec">1.116</Runtime>
     <Answer source="k-induction">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
     <MustElem>V155_g06</MustElem>
     <MustElem>V74_x3</MustElem>
     <MustElem>OK</MustElem>
-    <MustElem>V85_env</MustElem>
     <IvcSet number="1">
     <Invariant>OK</Invariant>
+    <Invariant>(0 &lt;= V74_x3)</Invariant>
     <Ivc>V155_g06</Ivc>
     <Ivc>V74_x3</Ivc>
     <Ivc>OK</Ivc>
-    <Ivc>V85_env</Ivc>
     </IvcSet>
   </Property>
+</Results>

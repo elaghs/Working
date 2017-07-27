@@ -201,11 +201,8 @@
   <Progress source="bmc" trueFor="67">
     <PropertyProgress name="__GUARANTEE45"/>
   </Progress>
-  <Progress source="bmc" trueFor="68">
-    <PropertyProgress name="__GUARANTEE45"/>
-  </Progress>
   <Property name="__GUARANTEE45">
-    <Runtime unit="sec">7.047</Runtime>
+    <Runtime unit="sec">7.338</Runtime>
     <Answer source="pdr">valid</Answer>
     <K>1</K>
     <NumberOfIVCs>1</NumberOfIVCs>
@@ -225,9 +222,9 @@
     <MustElem>_TOP__ALARM~0.__ASSUME__HIST</MustElem>
     <MustElem>_TOP__OUTPUT~0.__ASSUME__HIST</MustElem>
     <IvcSet number="1">
-    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
     <Invariant>__GUARANTEE45</Invariant>
     <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
     <Ivc>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</Ivc>
     <Ivc>__GUARANTEE45</Ivc>
     <Ivc>_TOP__ALARM~0.SENSOR_IN.Door_Open</Ivc>
@@ -245,3 +242,4 @@
     <Ivc>_TOP__ALARM~0.__ASSUME__HIST</Ivc>
     </IvcSet>
   </Property>
+</Results>

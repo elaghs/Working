@@ -1,0 +1,24 @@
+
+min size of minimum IVCs: 1
+max size of minimum IVCs: 962
+stdev size of minimum IVCs: 43.0142429217
+average size of minimum IVCs: 17.1257575758
+###############################################################
+
+min size of minimal IVCs from IVC_UCBF: 1
+max size of minimal IVCs from IVC_UCBF: 962
+stdev size of minimal IVCs from IVC_UCBF: 43.3508528634
+average size of minimal IVCs from IVC_UCBF: 18.0712121212
+###############################################################
+
+min size of IVCs from IVC_UC: 1
+max size of IVCs from IVC_UC: 962
+stdev size of IVCs from IVC_UC: 43.3508528634
+average size of IVCs from IVC_UC: 18.0712121212
+###############################################################
+
+min size of IVCs from All_IVCs: 1
+max size of IVCs from All_IVCs: 962
+stdev size of IVCs from All_IVCs: 1.23222445486
+average size of IVCs from All_IVCs: 17.7771033922
+-----------------------------------------------------------------

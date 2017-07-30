@@ -12,10 +12,8 @@ We would like to evaluate both the {\em efficiency} and {\em
 
 \subsection{Experimental Setup}
 
-To compare our new coverage notion (\ivccov) with previous work (\nondetcovalt), we designed an experiment from a suite of 475 Lustre models from a set of academic benchmarks~\cite{Hagen08:FMCAD} and a smaller set
-of industrial-grade benchmarks~\cite{QFCS15:backes,hilt2013}.\footnote{For the review process, results and tools (in binary) are accessible from \cite{anoexpr}. We will link to the code and scripts in the camera-ready version.}
-The academic benchmarks contain a range of hardware benchmarks and
-software problems involving counters. Each benchmark model has a single property to analyze.
+The benchmark contains 475 Lustre models, 395 from~\cite{Hagen08:FMCAD} and 80 industrial models derived from \cite{hilt2013} and other sources.  Most of the benchmark models from~\cite{Hagen08:FMCAD} are small (10kB or less, with 6-40 equations) and include a range of hardware benchmarks and software problems involving counters that are difficult to solve inductively.
+The 80 industrial models each contain over 600 equations and are each $\geq$80kB in size.\footnote{Tools and results are accessible from \cite{anoexpr}.}
 
 For each test model, we computed \ucalg, \ucbfalg, and \mustalg in a configuration with
 the Z3 solver and the ``fastest'' mode of \texttt{JKind} (which involves running the $k$-induction and PDR engines

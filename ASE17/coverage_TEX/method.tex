@@ -64,13 +64,13 @@ Using the notions of $MAY$ and $MUST$, we can introduce additional coverage metr
 \begin{definition} {\emph{(\maycov):}}
   \label{def:comp-1}
  $T_i \in T$ is covered by $P$ \emph{iff} $T_i \in \maycov (P)$, where
-   $\maycov (P) = \{T_i ~|~ \exists S \in AIVC(P)~.~T_i \in S \}$.
+   $\maycov (P) = \{T_i ~|~ \exists S \in AIVC(P) \cdot T_i \in S \}$.
 \end{definition}
 
 \begin{definition} {\emph{(\mustcov):}}
   \label{def:mustcov}
  $T_i \in T$ is covered by $P$ \emph{iff} $T_i \in \mustcov (P)$, where
-   $\mustcov (P) = \{T_i ~|~ \forall S \in AIVC(P)~.~T_i \in S \}$.
+   $\mustcov (P) = \{T_i ~|~ \forall S \in AIVC(P) \cdot T_i \in S \}$.
 \end{definition}
 
 The $\maycov$ notion aims to deal with the fact that a property $P$ may have
@@ -218,9 +218,9 @@ Immediate from Definition~\ref{def:minimal-ivc} and Definition \ref{def:coverage
 To conclude this section, we should mention that one can define many more proof-based coverage metrics based on the $\mivc /AIVC$ idea. Metrics that make use of the $AIVC$ relation are computationally more expensive to compute than \ivccov\ although they might be easier to satisfy (i.e., result in higher coverage scores).
 
 %\ela{please read the following paragraph and improve it. I've been trying to justify why we only have implementation for \ivccov \\}
-The proposed coverage metrics can be ranked in terms of their scores as follows:
+In general, when coverage scores of a given property are obtained from the proposed metrics, the following relationship holds:
 $$\nondetcovalt\ \leq \ivccov\ \leq \maycov\ \leq \allcov$$
-\ivccov\ and \nondetcovalt\ are equivalent when all elements within the model are covered: if all model elements are MUST elements, then there can only be one \mivc , and this \mivc ~uses all of the model elements.   In the implementation and experiments, we will focus on the \ivccov\ and \nondetcovalt\ metrics.  Both metrics are fairly rigorous and can be computed reasonably efficiently.  The equivalence of \mustcov\ and \nondetcovalt\ allows us to compare our algorithms against state-of-the-art mutation based coverage. 
+\ivccov\ and \nondetcovalt\ are equivalent when all elements within the model are covered: if all model elements are MUST elements, then there can only be one \mivc , and this \mivc ~uses all of the model elements.   In the implementation and experiments, we will focus on the \ivccov\ and \nondetcovalt\ metrics.  Both metrics are fairly rigorous and can be computed reasonably efficiently.  The equivalence of \mustcov\ and \nondetcovalt\ allows us to compare our algorithms against state-of-the-art mutation based coverage.
 
 
 %However, we will show \ivccov\ is a lot cheaper to compute

@@ -17,7 +17,7 @@ predicate $T : U \times U \to \bool$. We define the notion of
 reachability for $(I, T)$ as the smallest predicate $\reach : U \to
 \bool$ which satisfies the following formulas:
 \begin{gather*}
-  \forall s.~ I(u) \Rightarrow \reach(u) \\
+  \forall u.~ I(u) \Rightarrow \reach(u) \\
   \forall u, u'.~ \reach(u) \land T(u, u') \Rightarrow \reach(u')
 \end{gather*}
 A safety property $P : U \to \bool$ is a state predicate that holds on a transition system $(I, T)$ if it holds on all

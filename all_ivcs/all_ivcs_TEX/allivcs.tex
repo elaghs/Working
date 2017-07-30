@@ -221,15 +221,14 @@ formula is satisfiable or not\footnote{We assume readers are familiar
   \cite{cook1971complexity}.}.
 %$$\checksat : Boolean \rightarrow \{ true~(\sat), false~(\unsat) \}$$
 As long as $map$ is satisfiable, the algorithm computes a
-\emph{maximal} \sat model for it (line 5). A maximal SAT model is a
+\emph{maximal} \sat model for it (line 5). In this context,  a maximal SAT model is a
 model with as many $true$ assignment as possible without violating a
 clause; this problem, is equivalent
 to the MaxSAT problem, which has been well studied in the
 literature \cite{davies2011solving,
   morgado2013iterative}. \footnote{MaxSAT is defined as the problem of satisfying as many
-(weighted) clauses as possible in a SAT instance. A maximal model of a satisfiable formula is a model such that the set of variables set to true is maximal w.r.t. set inclusion. We look for a maximum model (which is also maximal, but with the largest cardinality). Similar to the MaxSAT problem, with $N$
-variables, each clauses is weighted at $N+1$ and extra unit-weight clauses are
-added forcing each variable to $true$.} So, we assume there is a method by which we
+(weighted) clauses as possible in a SAT instance. For $N$
+variables, similar to the MaxSAT problem, each clauses is weighted at $N+1$ and extra unit-weight clauses are added forcing each variable to $1$.} So, we assume there is a method by which we
 are able to have a maximal model of $map$. Line 6 extracts a set $M
 \in \mathcal{P} (\mathcal{A})$ of literals assigned to $true$ in the
 model. Then, we need to obtain the corresponding set of $S$ in

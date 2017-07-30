@@ -1,0 +1,298 @@
+
+\documentclass[10pt, conference]{IEEEtran}
+% Add the compsocconf option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+\usepackage{cite}
+
+\ifCLASSINFOpdf
+\usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+\usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+\usepackage[cmex10]{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{amsthm}
+\usepackage{algorithmic}
+\usepackage{array}
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+\usepackage{eqparbox}
+%\usepackage[tight,normalsize]{subfigure}
+%\usepackage[font=normalsize]{caption}
+%\usepackage{tabularx,colortbl}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{flushend}
+\usepackage{cite}
+\usepackage{amsmath}
+%\usepackage[font=footnotesize]{subfig}
+%\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage{fixltx2e}
+\usepackage[ruled, vlined, linesnumbered]{algorithm2e}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{xspace}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\newcommand{\mkeyword}[1]{\mbox{\texttt{#1}}}
+\DeclareMathOperator{\kuop}{uop}
+\DeclareMathOperator{\kbop}{bop}
+\DeclareMathOperator{\kite}{ite}
+\DeclareMathOperator{\kpre}{pre}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\ktrue}{true}
+\DeclareMathOperator{\kfalse}{false}
+\DeclareMathOperator{\kselect}{select}
+\DeclareMathOperator{\ran}{range}
+\newcommand{\lbb}{[\![}
+\newcommand{\rbb}{]\!]}
+\newcommand{\expr}{\phi}
+\newcommand{\exprS}{\Phi}
+\newcommand{\nondetcov}{\text{\sc Nondet-Cov}}
+\newcommand{\nondetcovalt}{\text{\sc Nondet-Cov$^{*}$}}
+\newcommand{\ivccov}{\text{\sc IVC-Cov}}
+\newcommand{\maycov}{\text{\sc May-Cov}}
+\newcommand{\mustcov}{\text{\sc Must-Cov}}
+\newcommand{\allcov}{\text{\sc Model-Cov}}
+\newcommand{\mutcov}{\text{\sc Mutant-Cov}}
+
+\begin{document}
+
+\definecolor{gold}{rgb}{0.90,.66,0}
+\definecolor{dgreen}{rgb}{0,0.6,0}
+\newcommand{\mike}[1]{\textcolor{red}{#1}}
+\newcommand{\fixed}[1]{\textcolor{purple}{#1}}
+\newcommand{\andrew}[1]{\textcolor{green}{#1}}
+\newcommand{\ela}[1]{\textcolor{blue}{#1}}
+\newcommand{\stateequiv}{\equiv_{s}}
+\newcommand{\traceequiv}{\equiv_{\sigma}}
+\newcommand{\ta}{\text{TA}}
+\newcommand{\cta}{\text{TA$_{C}$}}
+\newcommand{\tta}{\text{TA$_{T}$}}
+
+\newcommand{\bfalg}{{IVC\_BF}\xspace}
+\newcommand{\ucalg}{{IVC\_UC}\xspace}
+\newcommand{\ucbfalg}{{IVC\_UCBF}\xspace}
+\newcommand{\mustalg}{{IVC\_MUST}\xspace}
+
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{coroll}{Corollary}
+%\newdef{lemma}{Lemma}
+%\newdef{definition}{Definition}
+%\newdef{theorem}{Theorem}
+\newtheorem{note}{Note}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{Proof-based Coverage Metrics for Formal Verification}
+
+
+% author names and affiliations
+% use a multiple column layout for up to two different
+% affiliations
+
+\author{\IEEEauthorblockN 
+{
+%Elaheh Ghassabani, Michael Whalen, Mats Heimdahl
+}
+%\IEEEauthorblockA{Department of Computer Science \& Engineering\\
+%University of Minnesota\\
+%MN, USA\\
+%ghass013, mwwhalen, heimdahl@umn.edu}
+\and
+\IEEEauthorblockN{
+%Andrew Gacek, Lucas Wagner
+}
+%\IEEEauthorblockA{Rockwell Collins\\
+%Advanced Technology Center\\
+%IA, USA\\
+%andrew.gacek, lucas.wagner@rockwellcollins.com}
+}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+%
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3},
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+
+\begin{abstract}
+ When using formal verification on critical software, an important question involves whether the properties
+used for analysis are sufficient to adequately constrain the behavior of an implementation model. To address
+this question, coverage metrics for property-based formal verification have been proposed.  Existing metrics
+are usually based on {\em mutation}, where the implementation model is repeatedly modified and
+re-analyzed to determine whether mutant models are ``killed'' by the property set.
+These metrics tend to be very expensive to compute, as they involve many additional verification problems.
+%In addition, the set of design elements marked as necessary for these metrics (the residual model)
+%is often insufficient to re-prove the original properties; that is, if we remove the unnecessary elements, we no longer
+%can prove the original property set.
+
+This paper proposes an alternate family of metrics that can be computed using the recently introduced idea of
+Inductive Validity Cores (IVCs).  IVCs determine a minimal set of model elements necessary to
+establish a proof. One of the proposed metrics is both rigorous and substantially
+cheaper to compute than mutation-based metrics.  In addition, unlike the mutation-based techniques, the design
+elements marked as necessary by the metric are guaranteed to preserve provability.  %Other possible metrics
+%are more expensive to compute and provide more- or less-rigorous
+%definitions.
+We demonstrate the metrics on a large corpus of examples.
+
+%that use the proofs themselves to determine adequacy.
+%It uses the recently introduced idea Inductive Validity Cores (IVCs) to find minimal sets of model elements necessary to establish proofs.
+%One of the proposed metrics is rigorous, substantially cheaper to compute than previous metrics, and
+%is guaranteed to yield a residual model that leads to a proof.  Other possible metrics are more expensive
+%to compute and provide  more- or less-rigorous completeness definitions.  We demonstrate the metrics on
+%a large corpus of examples.
+
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+coverage; requirements completeness; formal verification; SAT-based model checking;
+  inductive proofs; inductive validity cores;
+\end{IEEEkeywords}
+
+\IEEEpeerreviewmaketitle
+
+\input{introduction}
+
+%\ifdefined\TECHREPORT
+%\input{description}
+%\fi
+\input{example}
+
+%\input{background}
+
+\input{formalization}
+
+\input{method}
+
+\input{Illustration}
+
+\input{impl}
+
+\input{experiments}
+
+\input{discussion}
+
+\input{related}
+
+\input{conclusion}
+
+%\section*{Acknowledgment}
+%\textbf{Acknowledgments: Will complete later:
+%This work was carried out within the HACMS and SOSITE Phase 2
+%(DARPA FA8750-12-9-0179 and (I didn't find the SOSITE grant# in your resume)).
+%The authors would like to thank John Backes for his comments.}
+
+
+\bibliographystyle{abbrv}
+\bibliography{biblio}
+
+% This ~ seems to fix an odd bibliography alignment issue
+~
+\end{document}
+
+
+

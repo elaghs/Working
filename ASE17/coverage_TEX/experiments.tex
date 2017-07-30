@@ -1,0 +1,27 @@
+\section{Experiments}
+\label{sec:experiments}
+
+We would like to evaluate both the {\em efficiency} and {\em
+  effectiveness} of the proof-based metric (\ivccov)~comparing it with previous work (\nondetcov) using the three described algorithms: \ucalg, \ucbfalg, and \mustalg. To this end, we investigate the following research questions:
+\begin{itemize}
+    \item \textbf{RQ1:} How computationally expensive is it to perform coverage analysis using the \ucalg, \ucbfalg, and \mustalg\ algorithms?
+    \item \textbf{RQ2:} What are the differences in coverage for different models produced by the \ucalg, \ucbfalg, and \mustalg algorithms?
+    \item \textbf{RQ3:} How often does the previously proposed \nondetcov\ metric (\mustalg algorithm) not preserve provability?
+    %How much does the potential \emph{non-minimality} of \ucalg affect coverage scores?
+\end{itemize}
+
+\subsection{Experimental Setup}
+
+To compare our new coverage notion (\ivccov) with previous work (\nondetcovalt), we designed an experiment from a suite of 475 Lustre models from a set of academic benchmarks~\cite{Hagen08:FMCAD} and a smaller set
+of industrial-grade benchmarks~\cite{QFCS15:backes,hilt2013}.\footnote{For the review process, results and tools (in binary) are accessible from \cite{anoexpr}. We will link to the code and scripts in the camera-ready version.}
+The academic benchmarks contain a range of hardware benchmarks and
+software problems involving counters. Each benchmark model has a single property to analyze.
+
+For each test model, we computed \ucalg, \ucbfalg, and \mustalg in a configuration with
+the Z3 solver and the ``fastest'' mode of \texttt{JKind} (which involves running the $k$-induction and PDR engines
+in parallel and terminating when a solution is found). The experiments were run on an
+Intel(R) i5-4690, 3.50GHz, 16 GB memory machine running Linux.
+
+\input{results}
+
+

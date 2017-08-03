@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">3.025</Runtime>
+    <Must>DRAGON.exclusive</Must>
+    <Must>DRAGON.g03</Must>
+    <Must>DRAGON.g06</Must>
+    <Must>DRAGON.g10</Must>
+    <Must>DRAGON.g12</Must>
+    <Must>DRAGON.shared</Must>
+    <Must>OK</Must>
+    <Must>exclusive</Must>
+    <Must>shared</Must>
+  </MustElements>
+</Results>

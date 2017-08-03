@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Property name="OK">
+    <Runtime unit="sec">0.721</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>0</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>cruiseThrottle</MustElem>
+    <MustElem>zz226</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>zz232</MustElem>
+    <MustElem>zz231</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Ivc>cruiseThrottle</Ivc>
+    <Ivc>zz226</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>zz232</Ivc>
+    <Ivc>zz231</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

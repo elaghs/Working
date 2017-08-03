@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">36.647</Runtime>
+    <Must>OK</Must>
+    <Must>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_setDesiredSpeed</Must>
+    <Must>chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed</Must>
+    <Must>cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed</Must>
+    <Must>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_outports_setDesiredSpeed</Must>
+    <Must>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_setDesiredSpeed</Must>
+    <Must>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_outports_setDesiredSpeed</Must>
+    <Must>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_outports_setDesiredSpeed</Must>
+  </MustElements>
+</Results>

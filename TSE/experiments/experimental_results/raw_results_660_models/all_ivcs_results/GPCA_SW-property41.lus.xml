@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="__GUARANTEE41"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="__GUARANTEE41"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="__GUARANTEE41"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="__GUARANTEE41"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="__GUARANTEE41"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="__GUARANTEE41"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="__GUARANTEE41"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="__GUARANTEE41"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="__GUARANTEE41"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="__GUARANTEE41"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="__GUARANTEE41"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="__GUARANTEE41"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="__GUARANTEE41"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="__GUARANTEE41"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="__GUARANTEE41"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="__GUARANTEE41"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="__GUARANTEE41"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="__GUARANTEE41"/>
+  </Progress>
+  <Property name="__GUARANTEE41">
+    <Runtime unit="sec">16.949</Runtime>
+    <Answer source="pdr">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</MustElem>
+    <MustElem>_TOP__ASSERT__3</MustElem>
+    <MustElem>_TOP__ALARM~0.IM_IN.Commanded_Flow_Rate</MustElem>
+    <MustElem>_TOP__OUTPUT~0.GPCA_SW_OUT.Commanded_Flow_Rate</MustElem>
+    <MustElem>_TOP__ALARM~0.__ASSUME__CONJ</MustElem>
+    <MustElem>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~1.tol</MustElem>
+    <MustElem>_TOP__ALARM~0.CONST_IN.Tolerance_Min</MustElem>
+    <MustElem>DEFS__Is_Infusion_above_tolerance~1.desired_flow_rate</MustElem>
+    <MustElem>_TOP__ALARM~0.ALARM_OUT.Notification_Message</MustElem>
+    <MustElem>_TOP__ASSERT__4</MustElem>
+    <MustElem>_TOP__ALARM~0.SENSOR_IN.Flow_Rate</MustElem>
+    <MustElem>_TOP__OUTPUT~0.__ASSERT</MustElem>
+    <MustElem>_TOP__OUTPUT~0.IM_IN.Commanded_Flow_Rate</MustElem>
+    <MustElem>DEFS__Is_Infusion_above_tolerance~0.desired_flow_rate</MustElem>
+    <MustElem>_TOP__OUTPUT~0.__OUTPUT__PROP__4</MustElem>
+    <MustElem>DEFS__Is_Infusion_above_tolerance~1.actual_flow_rate</MustElem>
+    <MustElem>_TOP__ALARM~0.DB_IN.Flow_Rate_High</MustElem>
+    <MustElem>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~1.actual_flow_rate</MustElem>
+    <MustElem>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~0.tol</MustElem>
+    <MustElem>_TOP__ALARM~0.CONST_IN.Max_Duration_Over_Infusion</MustElem>
+    <MustElem>_TOP__ALARM~0.__ASSUME__HIST</MustElem>
+    <MustElem>DEFS__Is_Infusion_above_tolerance~1.over</MustElem>
+    <MustElem>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~0.desired_flow_rate</MustElem>
+    <MustElem>DEFS__Is_Infusion_above_tolerance~1.tol</MustElem>
+    <MustElem>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~0.actual_flow_rate</MustElem>
+    <MustElem>_TOP__ALARM~0.__ALARM__ASSERT__3</MustElem>
+    <MustElem>_TOP__ALARM~0.__ALARM__ASSERT__2</MustElem>
+    <MustElem>DEFS__Is_Infusion_above_tolerance~0.over</MustElem>
+    <MustElem>__GUARANTEE41</MustElem>
+    <MustElem>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~1.over</MustElem>
+    <MustElem>_TOP__ALARM~0.__ALARM__ASSERT__30</MustElem>
+    <MustElem>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</MustElem>
+    <MustElem>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~1.desired_flow_rate</MustElem>
+    <MustElem>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~0.over</MustElem>
+    <MustElem>_TOP__ALARM~0.__ASSERT</MustElem>
+    <MustElem>DEFS__Is_Infusion_above_tolerance~0.tol</MustElem>
+    <MustElem>_TOP__ASSERT__51</MustElem>
+    <MustElem>_TOP__ALARM~0.__ALARM__PROP__16</MustElem>
+    <MustElem>_TOP__OUTPUT~0.__ASSUME__CONJ</MustElem>
+    <MustElem>DEFS__Is_Infusion_above_tolerance~0.actual_flow_rate</MustElem>
+    <MustElem>_TOP__ALARM~0.CONST_IN.Tolerance_Max</MustElem>
+    <MustElem>_TOP__OUTPUT~0.__ASSUME__HIST</MustElem>
+    <MustElem>_TOP__OUTPUT~0.__OUTPUT__PROP__29</MustElem>
+    <IvcSet number="1">
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Invariant>__GUARANTEE41</Invariant>
+    <Invariant>(_TOP__ALARM~0.Time_FR_Over_Min_Tol &lt;= Time_FR_Over_Min_Tol)</Invariant>
+    <Invariant>_TOP__ALARM~0.__ASSUME__HIST</Invariant>
+    <Ivc>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</Ivc>
+    <Ivc>_TOP__ASSERT__3</Ivc>
+    <Ivc>_TOP__ALARM~0.IM_IN.Commanded_Flow_Rate</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Commanded_Flow_Rate</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~1.tol</Ivc>
+    <Ivc>_TOP__ALARM~0.CONST_IN.Tolerance_Min</Ivc>
+    <Ivc>DEFS__Is_Infusion_above_tolerance~1.desired_flow_rate</Ivc>
+    <Ivc>_TOP__ALARM~0.ALARM_OUT.Notification_Message</Ivc>
+    <Ivc>_TOP__ASSERT__4</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSERT</Ivc>
+    <Ivc>_TOP__ALARM~0.SENSOR_IN.Flow_Rate</Ivc>
+    <Ivc>DEFS__Is_Infusion_above_tolerance~0.desired_flow_rate</Ivc>
+    <Ivc>_TOP__OUTPUT~0.IM_IN.Commanded_Flow_Rate</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__4</Ivc>
+    <Ivc>DEFS__Is_Infusion_above_tolerance~1.actual_flow_rate</Ivc>
+    <Ivc>_TOP__ALARM~0.DB_IN.Flow_Rate_High</Ivc>
+    <Ivc>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~1.actual_flow_rate</Ivc>
+    <Ivc>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~0.tol</Ivc>
+    <Ivc>_TOP__ALARM~0.CONST_IN.Max_Duration_Over_Infusion</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSUME__HIST</Ivc>
+    <Ivc>DEFS__Is_Infusion_above_tolerance~1.over</Ivc>
+    <Ivc>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~0.desired_flow_rate</Ivc>
+    <Ivc>DEFS__Is_Infusion_above_tolerance~1.tol</Ivc>
+    <Ivc>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~0.actual_flow_rate</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__3</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__2</Ivc>
+    <Ivc>DEFS__Is_Infusion_above_tolerance~0.over</Ivc>
+    <Ivc>__GUARANTEE41</Ivc>
+    <Ivc>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~1.over</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__30</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</Ivc>
+    <Ivc>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~1.desired_flow_rate</Ivc>
+    <Ivc>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~0.over</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSERT</Ivc>
+    <Ivc>DEFS__Is_Infusion_above_tolerance~0.tol</Ivc>
+    <Ivc>_TOP__ASSERT__51</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__PROP__16</Ivc>
+    <Ivc>DEFS__Is_Infusion_above_tolerance~0.actual_flow_rate</Ivc>
+    <Ivc>_TOP__ALARM~0.CONST_IN.Tolerance_Max</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__29</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

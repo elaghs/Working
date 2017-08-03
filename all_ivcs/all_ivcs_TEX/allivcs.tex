@@ -102,7 +102,7 @@ $\mathcal{P}(T)$. For each $S \in \mathcal{P}(T)$ that the algorithm
 determines to be adequate or inadequate, a corresponding clause is
 added to $map$ which blocks $S$ and all supersets or subsets,
 respectively, from consideration. When a clause is added to $map$, the
-corresonding $S \in \mathcal{P}(T)$ is called \emph{explored}.
+corresponding $S \in \mathcal{P}(T)$ is called \emph{explored}.
 The supersets or subsets of $S$ which are blocked from
 consideration are called \emph{excluded}. The remaining elements
 of $\mathcal{P}(T)$ are \emph{unexplored}.
@@ -145,7 +145,7 @@ When $map$ is satisfiable with model $M$, set $S = \bigcup_{a_i \in M} \actlit ^
 inadequate (adequate) explored set in $\mathcal{P}(T)$.
 \end{lemma}
 \begin{IEEEproof}
-Proof by contradiction. Case 1: Suppose there is an adequate set $Ex \subseteq S$ that has been already explored. Therefore, according to the definition, $map$ contains a clause $C = \bigvee_{T_{i}\in Ex} \neg {\actlit (T_i)}$, and since $Ex \subseteq S$, it is impossible for the model $M = \bigcup_{T_i \in S} \actlit (T_i)$ to satisfy $C$; hence, the assumption is false.
+Proof by contradiction. Case 1: Suppose there is an adequate set $Ex \subseteq S$ that has been already explored. Therefore, according to the definition, $map$ contains a clause $C = \bigvee_{T_{i}\in Ex} \neg {\actlit (T_i)}$, and since $Ex \subseteq S$, it is impossible for the model $M = \bigcup_{T_i \in Ex} \actlit (T_i)$ to satisfy $C$; hence, the assumption is false.
 
 Case 2: Suppose there is an inadequate set $Ex$ such that $S \subseteq Ex$ and $Ex$ has been already explored. Therefore, according to the definition, $map$ contains a clause $C = \bigvee_{T_{i}\in (T \setminus S)} \actlit (T_i)$, and since $S \subseteq Ex$, it is impossible for the model $M = \bigcup_{T_i \in S} \actlit (T_i)$ to satisfy $C$; so, the assumption is false.
 
@@ -221,11 +221,14 @@ formula is satisfiable or not\footnote{We assume readers are familiar
   \cite{cook1971complexity}.}.
 %$$\checksat : Boolean \rightarrow \{ true~(\sat), false~(\unsat) \}$$
 As long as $map$ is satisfiable, the algorithm computes a
-\emph{maximal} \sat model for it (line 5). A maximal SAT model is a
+\emph{maximal} \sat model for it (line 5). In this context,  a maximal SAT model is a
 model with as many $true$ assignment as possible without violating a
-clause; this problem, known as MaxSAT, has been well studied in the
+clause; this problem, is equivalent
+to the MaxSAT problem, which has been well studied in the
 literature \cite{davies2011solving,
-  morgado2013iterative}, so we assume there is a method by which we
+  morgado2013iterative}. \footnote{MaxSAT is defined as the problem of satisfying as many
+(weighted) clauses as possible in a SAT instance. For $N$
+variables, similar to the MaxSAT problem, each clauses is weighted at $N+1$ and extra unit-weight clauses are added forcing each variable to $1$.} So, we assume there is a method by which we
 are able to have a maximal model of $map$. Line 6 extracts a set $M
 \in \mathcal{P} (\mathcal{A})$ of literals assigned to $true$ in the
 model. Then, we need to obtain the corresponding set of $S$ in

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">0.768</Runtime>
+    <Must>OK</Must>
+    <Must>STEPS_TO_COOK</Must>
+    <Must>rlt_condact_resetmicrowave_microwave_KEYPAD_PROCESSING_rlt_clock</Must>
+    <Must>rlt_condact_resetmicrowave_microwave_KEYPAD_PROCESSING_rlt_init_step</Must>
+  </MustElements>
+</Results>

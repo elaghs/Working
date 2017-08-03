@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[ok]">
+    <Runtime unit="sec">1693.988</Runtime>
+    <Must>conf1.cpt</Must>
+    <Must>conf1.n</Must>
+    <Must>conf1.out</Must>
+    <Must>conf1.pre_cpt</Must>
+    <Must>conf1.signal</Must>
+    <Must>in_command1</Must>
+    <Must>in_command2</Must>
+    <Must>in_command3</Must>
+    <Must>m3</Must>
+    <Must>no_command</Must>
+    <Must>ok</Must>
+    <Must>priority.command_failure</Must>
+    <Must>priority.conf1.cpt</Must>
+    <Must>priority.conf1.n</Must>
+    <Must>priority.conf1.out</Must>
+    <Must>priority.conf1.pre_cpt</Must>
+    <Must>priority.conf1.signal</Must>
+    <Must>priority.in_command</Must>
+    <Must>priority.n</Must>
+    <Must>priority.other_in_command</Must>
+  </MustElements>
+</Results>

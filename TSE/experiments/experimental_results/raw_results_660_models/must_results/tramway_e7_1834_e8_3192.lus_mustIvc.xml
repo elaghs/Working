@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">2.62</Runtime>
+    <Must>OK</Must>
+    <Must>V58_env_always_ok</Must>
+    <Must>V59_prop_ok</Must>
+    <Must>V60_open_door</Must>
+    <Must>V62_door_ok</Must>
+    <Must>V250_door_doesnt_open_out_of_station</Must>
+    <Must>V251_door_opens_before_leaving_station</Must>
+    <Must>V252_X</Must>
+    <Must>V253_between_A_and_X</Must>
+    <Must>V264_env_ok</Must>
+    <Must>V265_door_doesnt_close_if_not_asked</Must>
+    <Must>V267_tramway_doesnt_start_if_not_door_ok</Must>
+    <Must>V268_door_initially_closed</Must>
+    <Must>V271_warning_start_only_in_station</Must>
+    <Must>V272_warning_start_cant_become_true_when_door_is_opening</Must>
+    <Must>V274_X</Must>
+    <Must>V287_req_pending</Must>
+  </MustElements>
+</Results>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">1.213</Runtime>
+    <Must>OK</Must>
+    <Must>V70_invalid</Must>
+    <Must>V72_env</Must>
+    <Must>V132_g01</Must>
+    <Must>V133_g02</Must>
+    <Must>V138_g07</Must>
+    <Must>V139_g08</Must>
+    <Must>V144_mem_init</Must>
+    <Must>V165_X</Must>
+  </MustElements>
+</Results>

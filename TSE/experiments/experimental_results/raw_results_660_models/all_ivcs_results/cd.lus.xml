@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="19">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="20">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="21">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="22">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="23">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="24">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="25">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="26">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="27">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="28">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="29">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="30">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="31">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="32">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">2.116</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>9</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>Environment~0.minus</MustElem>
+    <MustElem>minus</MustElem>
+    <MustElem>Environment~0.ok</MustElem>
+    <MustElem>Controller~0.minus</MustElem>
+    <MustElem>Environment~0.diff</MustElem>
+    <MustElem>Sofar~0.X</MustElem>
+    <MustElem>Property~0.cpt</MustElem>
+    <MustElem>Sofar~0.Sofar</MustElem>
+    <MustElem>Controller~0.diff</MustElem>
+    <MustElem>Controller~0.speed</MustElem>
+    <MustElem>plus</MustElem>
+    <MustElem>speed</MustElem>
+    <MustElem>Environment~0.plus</MustElem>
+    <MustElem>Property~0.ok</MustElem>
+    <MustElem>realistic</MustElem>
+    <MustElem>Controller~0.plus</MustElem>
+    <MustElem>Property~0.acceptable</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>Property~0.speed</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Ivc>Environment~0.ok</Ivc>
+    <Ivc>Environment~0.minus</Ivc>
+    <Ivc>minus</Ivc>
+    <Ivc>Controller~0.minus</Ivc>
+    <Ivc>Sofar~0.X</Ivc>
+    <Ivc>Environment~0.diff</Ivc>
+    <Ivc>Property~0.cpt</Ivc>
+    <Ivc>Sofar~0.Sofar</Ivc>
+    <Ivc>Controller~0.diff</Ivc>
+    <Ivc>Controller~0.speed</Ivc>
+    <Ivc>plus</Ivc>
+    <Ivc>speed</Ivc>
+    <Ivc>Environment~0.plus</Ivc>
+    <Ivc>Property~0.ok</Ivc>
+    <Ivc>realistic</Ivc>
+    <Ivc>Controller~0.plus</Ivc>
+    <Ivc>Property~0.acceptable</Ivc>
+    <Ivc>Property~0.speed</Ivc>
+    <Ivc>OK</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

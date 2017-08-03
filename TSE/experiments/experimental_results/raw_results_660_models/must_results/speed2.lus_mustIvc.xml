@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">1.418</Runtime>
+    <Must>OK</Must>
+    <Must>late</Must>
+    <Must>speed.COUNTER.C</Must>
+    <Must>speed.COUNTER.PC</Must>
+    <Must>speed.COUNTER.incr</Must>
+    <Must>speed.diff</Must>
+    <Must>speed.incr</Must>
+    <Must>speed.late</Must>
+  </MustElements>
+</Results>

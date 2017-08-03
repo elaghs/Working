@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">4.638</Runtime>
+    <Must>OK</Must>
+    <Must>V69_exclusive</Must>
+    <Must>V70_shared</Must>
+    <Must>V71_shared_dirty</Must>
+    <Must>V72_dirty</Must>
+    <Must>V73_invalid</Must>
+    <Must>V74_R1</Must>
+    <Must>V75_R2</Must>
+    <Must>V76_R3</Must>
+    <Must>V77_R4</Must>
+    <Must>V78_R5</Must>
+    <Must>V79_R6</Must>
+    <Must>V80_R7</Must>
+    <Must>V81_R8</Must>
+    <Must>V82_R9</Must>
+    <Must>V83_R10</Must>
+    <Must>V84_R11</Must>
+    <Must>V85_R12</Must>
+    <Must>V86_R13</Must>
+    <Must>V87_R14</Must>
+    <Must>V88_erreur</Must>
+    <Must>V89_env</Must>
+    <Must>V158_g01</Must>
+    <Must>V159_g02</Must>
+    <Must>V160_g03</Must>
+    <Must>V161_g04</Must>
+    <Must>V162_g05</Must>
+    <Must>V163_g06</Must>
+    <Must>V164_g07</Must>
+    <Must>V165_g08</Must>
+    <Must>V166_g09</Must>
+    <Must>V167_g10</Must>
+    <Must>V168_g11</Must>
+    <Must>V169_g12</Must>
+    <Must>V170_mem_init</Must>
+    <Must>V191_X</Must>
+    <Must>V203_First</Must>
+    <Must>V210_First</Must>
+    <Must>V217_First</Must>
+    <Must>V224_First</Must>
+    <Must>V231_First</Must>
+  </MustElements>
+</Results>

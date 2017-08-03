@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">1.716</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>op_mode</MustElem>
+    <MustElem>dangerous_level~0.dangerous_level</MustElem>
+    <MustElem>ControlMode~0.critical_failure~0.dangerous_level~0.dangerous_level</MustElem>
+    <MustElem>ControlMode~0.critical_failure~0.dangerous_level~0.q</MustElem>
+    <MustElem>ControlMode~0.op_mode</MustElem>
+    <MustElem>dangerous_level~0.q</MustElem>
+    <MustElem>ControlMode~0.critical_failure~0.q</MustElem>
+    <MustElem>ControlMode~0.critical_failure~0.critical_failure</MustElem>
+    <MustElem>mode_normal_then_no_stop_request</MustElem>
+    <MustElem>ControlMode~0.stop_request</MustElem>
+    <MustElem>ControlMode~0.q</MustElem>
+    <MustElem>mode_normal_then_water_level_ok</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>ControlMode~0.critical_failure~0.op_mode</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Ivc>dangerous_level~0.dangerous_level</Ivc>
+    <Ivc>op_mode</Ivc>
+    <Ivc>ControlMode~0.critical_failure~0.dangerous_level~0.dangerous_level</Ivc>
+    <Ivc>ControlMode~0.critical_failure~0.dangerous_level~0.q</Ivc>
+    <Ivc>ControlMode~0.op_mode</Ivc>
+    <Ivc>dangerous_level~0.q</Ivc>
+    <Ivc>ControlMode~0.critical_failure~0.q</Ivc>
+    <Ivc>ControlMode~0.critical_failure~0.critical_failure</Ivc>
+    <Ivc>mode_normal_then_no_stop_request</Ivc>
+    <Ivc>ControlMode~0.stop_request</Ivc>
+    <Ivc>ControlMode~0.q</Ivc>
+    <Ivc>mode_normal_then_water_level_ok</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>ControlMode~0.critical_failure~0.op_mode</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

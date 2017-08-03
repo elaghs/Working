@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">12.32</Runtime>
+    <Must>OK</Must>
+    <Must>V38_nB0</Must>
+    <Must>V40_nS</Must>
+    <Must>V41_diff0</Must>
+    <Must>V43_avance0</Must>
+    <Must>V45_retard0</Must>
+    <Must>V47_ast</Must>
+    <Must>V158_H0</Must>
+    <Must>V160_c</Must>
+    <Must>V170_Sofar</Must>
+  </MustElements>
+</Results>

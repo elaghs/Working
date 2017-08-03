@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">3.17</Runtime>
+    <Must>OK</Must>
+    <Must>V71_x0</Must>
+    <Must>V72_x1</Must>
+    <Must>V73_x2</Must>
+    <Must>V74_x3</Must>
+    <Must>V150_g01</Must>
+    <Must>V151_g02</Must>
+    <Must>V152_g03</Must>
+    <Must>V153_g04</Must>
+    <Must>V154_g05</Must>
+    <Must>V155_g06</Must>
+  </MustElements>
+</Results>

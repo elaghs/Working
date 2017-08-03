@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">2.523</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>V105_First</MustElem>
+    <MustElem>V31_valid_s</MustElem>
+    <MustElem>V32_dirty_s</MustElem>
+    <MustElem>V33_mem_init_s</MustElem>
+    <MustElem>V30_invalid_s</MustElem>
+    <MustElem>OK</MustElem>
+    <IvcSet number="1">
+    <Invariant>(((V30_invalid_s + V31_valid_s) + V32_dirty_s) = V105_First)</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(((V32_dirty_s + (-1)) = 0) or (0 = V32_dirty_s))</Invariant>
+    <Invariant>((0 = V32_dirty_s) or (V31_valid_s &lt;= 0))</Invariant>
+    <Ivc>V105_First</Ivc>
+    <Ivc>V31_valid_s</Ivc>
+    <Ivc>V32_dirty_s</Ivc>
+    <Ivc>V33_mem_init_s</Ivc>
+    <Ivc>V30_invalid_s</Ivc>
+    <Ivc>OK</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

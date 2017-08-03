@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[OK]">
+    <Runtime unit="sec">2.459</Runtime>
+    <IVC>Controller~0.diff</IVC>
+    <IVC>Controller~0.minus</IVC>
+    <IVC>Controller~0.plus</IVC>
+    <IVC>Controller~0.speed</IVC>
+    <IVC>Environment~0.diff</IVC>
+    <IVC>Environment~0.minus</IVC>
+    <IVC>Environment~0.ok</IVC>
+    <IVC>Environment~0.plus</IVC>
+    <IVC>OK</IVC>
+    <IVC>Property~0.acceptable</IVC>
+    <IVC>Property~0.cpt</IVC>
+    <IVC>Property~0.ok</IVC>
+    <IVC>Property~0.speed</IVC>
+    <IVC>Sofar~0.Sofar</IVC>
+    <IVC>Sofar~0.X</IVC>
+    <IVC>minus</IVC>
+    <IVC>plus</IVC>
+    <IVC>realistic</IVC>
+    <IVC>speed</IVC>
+  </MinimalIvc>
+</Results>

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.133</UcRuntime>
+   <Timeout unit="sec">31.19</Timeout>
+   <ProofTime unit="sec">0.105</ProofTime>
+   <Runtime unit="sec">0.238</Runtime>
+   <IVC>_TOP__ASSERT__0</IVC>
+   <IVC>_TOP__ASSERT__18</IVC>
+   <IVC>_TOP__IM~0.IM_OUT.Current_System_Mode</IVC>
+   <IVC>_TOP__IM~0.TLM_MODE_IN.System_On</IVC>
+   <IVC>_TOP__IM~0.__ASSERT</IVC>
+   <IVC>_TOP__IM~0.__ASSUME__CONJ</IVC>
+   <IVC>_TOP__IM~0.__ASSUME__HIST</IVC>
+   <IVC>_TOP__IM~0.__IM__ASSERT__0</IVC>
+   <IVC>_TOP__IM~0.__IM__ASSERT__3</IVC>
+   <IVC>_TOP__IM~0.__IM__PROP__1</IVC>
+   <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</IVC>
+   <IVC>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSERT</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSUME__CONJ</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSUME__HIST</IVC>
+   <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__27</IVC>
+   <IVC>_TOP__TLM~0.OP_CMD_IN.System_Start</IVC>
+   <IVC>_TOP__TLM~0.TLM_MODE_OUT.System_On</IVC>
+   <IVC>_TOP__TLM~0.__ASSERT</IVC>
+   <IVC>_TOP__TLM~0.__ASSUME__CONJ</IVC>
+   <IVC>_TOP__TLM~0.__ASSUME__HIST</IVC>
+   <IVC>_TOP__TLM~0.__TLM__ASSERT__0</IVC>
+   <IVC>_TOP__TLM~0.__TLM__PROP__0</IVC>
+   <IVC>__GUARANTEE8</IVC>
+   <TRIVC>_TOP__ASSERT__0</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__OUTPUT__PROP__27</TRIVC>
+   <TRIVC>_TOP__TLM~0.__TLM__PROP__0</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</TRIVC>
+   <TRIVC>_TOP__IM~0.IM_OUT.Current_System_Mode</TRIVC>
+   <TRIVC>_TOP__IM~0.__ASSERT</TRIVC>
+   <TRIVC>_TOP__IM~0.TLM_MODE_IN.System_On</TRIVC>
+   <TRIVC>_TOP__TLM~0.__ASSUME__HIST</TRIVC>
+   <TRIVC>_TOP__ASSERT__18</TRIVC>
+   <TRIVC>_TOP__TLM~0.__TLM__ASSERT__0</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSERT</TRIVC>
+   <TRIVC>_TOP__IM~0.__IM__ASSERT__0</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</TRIVC>
+   <TRIVC>_TOP__IM~0.__IM__ASSERT__3</TRIVC>
+   <TRIVC>_TOP__IM~0.__IM__PROP__1</TRIVC>
+   <TRIVC>_TOP__TLM~0.__ASSUME__CONJ</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSUME__CONJ</TRIVC>
+   <TRIVC>__GUARANTEE8</TRIVC>
+   <TRIVC>_TOP__IM~0.__ASSUME__HIST</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSUME__HIST</TRIVC>
+   <TRIVC>_TOP__IM~0.__ASSUME__CONJ</TRIVC>
+   <TRIVC>_TOP__TLM~0.__ASSERT</TRIVC>
+   <TRIVC>_TOP__TLM~0.TLM_MODE_OUT.System_On</TRIVC>
+   <TRIVC>_TOP__TLM~0.OP_CMD_IN.System_Start</TRIVC>
+</Results>

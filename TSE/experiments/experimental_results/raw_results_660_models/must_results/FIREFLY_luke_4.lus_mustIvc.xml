@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">3.597</Runtime>
+    <Must>OK</Must>
+    <Must>exclusive</Must>
+    <Must>firefly.exclusive</Must>
+    <Must>firefly.garde1</Must>
+    <Must>firefly.garde5</Must>
+    <Must>firefly.shared</Must>
+  </MustElements>
+</Results>

@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">7.321</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>mesi~0.modified_me</MustElem>
+    <MustElem>Abs~1.Abs</MustElem>
+    <MustElem>shared_me</MustElem>
+    <MustElem>Abs~3.Abs</MustElem>
+    <MustElem>mesi~0.shared_me</MustElem>
+    <MustElem>Abs~2.X</MustElem>
+    <MustElem>Abs~3.X</MustElem>
+    <MustElem>Abs~0.X</MustElem>
+    <MustElem>invalid_me</MustElem>
+    <MustElem>Abs~1.X</MustElem>
+    <MustElem>mesi~0.invalid_me</MustElem>
+    <MustElem>Abs~2.Abs</MustElem>
+    <MustElem>Abs~0.Abs</MustElem>
+    <MustElem>mesi~0.garde_me1</MustElem>
+    <MustElem>mesi~0.garde_me2</MustElem>
+    <MustElem>mesi~0.garde_me3</MustElem>
+    <MustElem>mesi~0.garde_me4</MustElem>
+    <MustElem>exclusive_me</MustElem>
+    <MustElem>mesi~0.exclusive_me</MustElem>
+    <MustElem>modified_me</MustElem>
+    <MustElem>OK</MustElem>
+    <IvcSet number="1">
+    <Invariant>((mesi~0.exclusive_me &lt;= 0) or (0 &lt;= mesi~0.shared_me))</Invariant>
+    <Invariant>(((0 &lt;= mesi~0.invalid_me) or (not (mesi~0.exclusive_me &lt;= 0))) or (not (mesi~0.modified_me = (-0))))</Invariant>
+    <Invariant>((not (mesi~0.modified_me = (-0))) or (((mesi~0.invalid_me + 0) + mesi~0.exclusive_me) &lt;= (((mesi~0.shared_me + mesi~0.modified_me) + mesi~0.modified_me) + 3)))</Invariant>
+    <Invariant>(not (((-mesi~0.modified_me) + 1) &lt;= 0))</Invariant>
+    <Invariant>(((mesi~0.shared_me + mesi~0.exclusive_me) + mesi~0.invalid_me) &lt;= (mesi~0.modified_me + 3))</Invariant>
+    <Invariant>((mesi~0.modified_me = (-0)) or (0 &lt;= mesi~0.shared_me))</Invariant>
+    <Invariant>(mesi~0.shared_me &lt;= 0)</Invariant>
+    <Invariant>(mesi~0.exclusive_me &lt;= 1)</Invariant>
+    <Invariant>(0 &lt;= (mesi~0.invalid_me + 2))</Invariant>
+    <Invariant>(0 &lt;= mesi~0.exclusive_me)</Invariant>
+    <Invariant>((mesi~0.modified_me = (-0)) or (mesi~0.exclusive_me &lt;= 0))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(0 &lt;= (mesi~0.modified_me + 1))</Invariant>
+    <Ivc>Abs~1.Abs</Ivc>
+    <Ivc>mesi~0.modified_me</Ivc>
+    <Ivc>shared_me</Ivc>
+    <Ivc>Abs~3.Abs</Ivc>
+    <Ivc>Abs~2.X</Ivc>
+    <Ivc>mesi~0.shared_me</Ivc>
+    <Ivc>Abs~3.X</Ivc>
+    <Ivc>Abs~0.X</Ivc>
+    <Ivc>invalid_me</Ivc>
+    <Ivc>Abs~1.X</Ivc>
+    <Ivc>mesi~0.invalid_me</Ivc>
+    <Ivc>Abs~2.Abs</Ivc>
+    <Ivc>Abs~0.Abs</Ivc>
+    <Ivc>mesi~0.garde_me1</Ivc>
+    <Ivc>mesi~0.garde_me2</Ivc>
+    <Ivc>mesi~0.garde_me3</Ivc>
+    <Ivc>mesi~0.garde_me4</Ivc>
+    <Ivc>exclusive_me</Ivc>
+    <Ivc>mesi~0.exclusive_me</Ivc>
+    <Ivc>modified_me</Ivc>
+    <Ivc>OK</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

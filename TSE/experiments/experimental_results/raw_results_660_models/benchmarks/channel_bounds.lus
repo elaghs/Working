@@ -1,0 +1,177 @@
+-- |===| TRIPLEX VOTER SYSTEM.
+
+node voter(input1, input2, input3: real) returns (output: real);
+var
+  equalized1,    equalized2,    equalized3 : real;
+  equalization1, equalization2, equalization3 : real;
+  satCentering, centering : real;
+  df1, df2, df3 : real;
+  st1, st2, st3 : real;
+  three_output: real;
+  c1, c2, c3 : bool;
+  d1, d2, d3 : bool;
+  eqs_stable, out_stable: bool;
+let
+
+  assert (input1 <  1.2); 
+  assert (input1 > -1.2); 
+  assert (input2 <  1.2); 
+  assert (input2 > -1.2); 
+  assert (input3 <  1.2); 
+  assert (input3 > -1.2);
+
+  equalized1 = input1 - equalization1;
+  df1 = equalized1 - three_output;
+  st1 = if (df1 > 0.5) then 0.5 else (if (df1 < -0.5) then -0.5 else df1);
+  equalization1 =
+    0.0 -> pre (equalization1) +
+          (pre (st1) - pre (satCentering)) * 0.05;
+ 
+  equalized2 = input2 - equalization2;
+  df2 = equalized2 - three_output;
+  st2 = if (df2 > 0.5) then 0.5 else (if (df2 < -0.5) then -0.5 else df2);
+  equalization2 =
+    0.0 -> pre (equalization2) +
+          (pre (st2) - pre (satCentering)) * 0.05;
+
+  equalized3 = input3 - equalization3;
+  df3 = equalized3 - three_output;
+  st3 = if (df3 > 0.5) then 0.5 else (if (df3 < -0.5) then -0.5 else df3);
+  equalization3 =
+    0.0 -> pre (equalization3) +
+          (pre (st3) - pre (satCentering)) * 0.05;
+
+  c1 = equalized1 > equalized2;
+  c2 = equalized2 > equalized3;
+  c3 = equalized3 > equalized1;
+
+  three_output = if (c1 = c2) then equalized2
+                        else (if (c2 = c3) then equalized3
+                                           else equalized1);
+
+  d1 = equalization1 > equalization2;
+  d2 = equalization2 > equalization3;
+  d3 = equalization3 > equalization1;
+
+  centering = if (d1 = d2) then equalization2
+                           else (if (d2 = d3) then equalization3
+                                              else equalization1);
+  satCentering =
+    if (centering > 0.25) then 0.25
+                          else (if (centering < -0.25) then -0.25
+                                                       else centering);
+
+  output = three_output / 3.0 ;
+
+  -- Stability property.
+  out_stable = (-1.2 <= output) and (output <= 1.2);
+
+  -- Lemma usually known easing the process of proving the property.
+  eqs_stable = ( equalization1 <=  2.0 * 1.2) and
+               ( equalization1 >= -2.0 * 1.2) and
+               ( equalization2 <=  2.0 * 1.2) and
+               ( equalization2 >= -2.0 * 1.2) and
+               ( equalization3 <=  2.0 * 1.2) and
+               ( equalization3 >= -2.0 * 1.2);
+
+-- --%PROPERTY out_stable;
+  
+-- --%PROPERTY eqs_stable;
+  
+
+tel
+
+
+
+
+
+-- |===| CONTROL LAW.
+
+
+
+node controlLaw(in1, in2 : real) returns (integ : real);
+var
+  inp,sum1,dtf : real;
+  c1,c2,c3 : bool;
+  out_stable: bool;
+let
+
+  assert((-3.6 <= in1) and (in1 <= 3.6) and
+         (-3.6 <= in2) and (in2 <= 3.6));
+
+  inp = in1 - 0.0392 * dtf;
+  sum1 = 0.0 -> 0.04 * (pre integ) + 0.15 * inp;
+
+  c1 = (sum1 <=  1.0 and sum1 >= -1.0);
+  c2 = (sum1 >=  1.0 and inp < 0.0);
+  c3 = (sum1 <= -1.0 and inp > 0.0);
+
+  integ = 0.0 -> pre integ + if (c1 or c2 or c3) then inp else 0.0;
+  dtf = 0.0 -> in2 + 0.9608 * pre dtf;
+
+  out_stable = ((-25.0 <= integ) and (integ <= 25.0));
+
+  --%PROPERTY out_stable;
+  
+tel
+
+
+
+
+
+-- |===| SATURATION.
+
+node saturation(in, min, max: real) returns (out: real);
+let
+  out = if (in < min) then min
+                      else (if (in > max) then max
+                                          else in);
+tel
+
+node saturation3(
+  inA, inB, inC, min, max: real
+) returns (
+  outA, outB, outC: real
+);
+let
+  (outA, outB, outC) = (saturation(inA, min, max),
+                        saturation(inB, min, max),
+                        saturation(inC, min, max));
+tel
+
+
+
+
+-- |===| CHANNEL NODE.
+
+node channel(
+  in1a, in1b, in1c,
+  in2a, in2b, in2c: real
+) returns (
+  output: real
+);
+var
+  satMin, satMax,
+  sat1a, sat1b, sat1c,
+  sat2a, sat2b, sat2c,
+  v1, v2: real;
+  out_stable: bool;
+let
+
+  (satMin, satMax) = (-1.2, 1.2);
+
+  -- Saturating the input sensor signals.
+  (sat1a, sat1b, sat1c) = saturation3(in1a, in1b, in1c, satMin, satMax);
+  (sat2a, sat2b, sat2c) = saturation3(in2a, in2b, in2c, satMin, satMax);
+
+  -- Values after voting takes place.
+  v1 = voter(sat1a, sat1b, sat1c);
+  v2 = voter(sat2a, sat2b, sat2c);
+
+  -- Control law.
+  output = controlLaw(v1, v2);
+
+  out_stable = (-25.0 <= output) and (output <= 25.0);
+
+tel
+

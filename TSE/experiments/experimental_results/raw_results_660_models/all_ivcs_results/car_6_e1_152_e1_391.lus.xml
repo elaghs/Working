@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="19">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="20">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="21">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="22">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="23">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="24">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="25">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="26">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">3.917</Runtime>
+    <Answer source="pdr">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>V26_bump</MustElem>
+    <MustElem>V24_toofast</MustElem>
+    <MustElem>V30_move</MustElem>
+    <MustElem>V25_stop</MustElem>
+    <MustElem>V27_dist</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>V29_time</MustElem>
+    <MustElem>V28_speed</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Invariant>(((V24_toofast or (V27_dist &lt;= 8)) or (not V30_move)) or V25_stop)</Invariant>
+    <Invariant>((((not V30_move) or V25_stop) or (0 &lt;= (V28_speed + (-2)))) or (V27_dist &lt;= 7))</Invariant>
+    <Invariant>(0 &lt;= V28_speed)</Invariant>
+    <Invariant>(not (10 = V27_dist))</Invariant>
+    <Invariant>((((V27_dist &lt;= 5) or (0 &lt;= (V29_time + (-2)))) or (not V30_move)) or (0 &lt;= (V28_speed + (-2))))</Invariant>
+    <Invariant>(((V24_toofast or (0 &lt;= (V29_time + (-2)))) or (not V30_move)) or (V27_dist &lt;= 7))</Invariant>
+    <Invariant>(((V24_toofast or (V27_dist &lt;= 6)) or (0 &lt;= (V29_time + (-2)))) or (not V30_move))</Invariant>
+    <Invariant>(0 &lt;= V29_time)</Invariant>
+    <Ivc>V26_bump</Ivc>
+    <Ivc>V24_toofast</Ivc>
+    <Ivc>V30_move</Ivc>
+    <Ivc>V25_stop</Ivc>
+    <Ivc>V27_dist</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V29_time</Ivc>
+    <Ivc>V28_speed</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

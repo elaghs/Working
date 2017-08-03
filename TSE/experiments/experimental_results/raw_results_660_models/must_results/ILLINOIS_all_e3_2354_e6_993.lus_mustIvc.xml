@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">1.414</Runtime>
+    <Must>OK</Must>
+    <Must>V54_invalid</Must>
+    <Must>V55_dirty</Must>
+    <Must>V56_exclusive</Must>
+    <Must>V57_shared</Must>
+    <Must>V58_env</Must>
+    <Must>V116_g1</Must>
+    <Must>V119_g4</Must>
+    <Must>V124_g9</Must>
+    <Must>V142_X</Must>
+    <Must>V155_First</Must>
+  </MustElements>
+</Results>

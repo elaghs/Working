@@ -1,0 +1,46 @@
+\section{Related work}
+\label{sec:related}
+
+%\mike{place in related work}
+%{\em Mutations and Universal Properties} It is important to note that some mutations {\em reduce} the state space of the system to be explored; in this case, any universal property (such as the safety properties in~\ref{sec:ts}) that was true of the original system must, by definition, be true of the mutated system.  For such mutations, an alternate notion of {\em vacuity coverage}
+%\mike{end placement}
+
+
+%Different notions of coverage have been well defined in software testing. However, in formal verification, it is very complex to define and compute this notion.
+%Usually, coverage techniques in the property-based verification try to measure the quality of the specification in regard to the completeness of a set of properties.
+
+Coverage in verification was introduced in \cite{hoskote1999coverage, katz1999have}. Hoskote et al. \cite{hoskote1999coverage} suggested a state-based metric in model checking based on FSM mutations, which are small atomic changes to the design. Then, the method for measuring coverage is to model check a given property for each mutant design.
+Later in \cite{chockler_coverage_2003}, Chockler et al. provided corresponding notions of metrics used in simulation-based verification for formal verification. In fact, they improved the same idea of mutation-based coverage where each mutation is generated to check if a specific
+design element is necessary for the proof of the property.
+ However, the proposed algorithm is both computationally expensive and approximately linear
+ in the number of mutations. Note that most of the mutation-based metrics, including \cite{kupferman_theory_2008, chockler2001practical}, are focused on finite state systems and hardware systems.
+
+A more recent work in \cite{chockler2010coverage} performs coverage analysis through interpolation \cite{mcmillan2003interpolation}. This work is also based on design-dependent mutations \cite{chockler_coverage_2003}, where a design is considered as a net-list with nodes of types \{AND, INVERTER, REGISTER, INPUT\}.
+%Each mutant design changes the type of a single node to INPUT. When property $\phi$ satisfied by the original net-list fails on the mutant design, it is said that a mutant is discovered for $\phi$, which is the same as a \emph{must} element.
+%Then, the coverage metric for $\phi$ is defined as the fraction of the discovered mutants, based on which the coverage of a set of properties is measured as the fraction of mutants discovered by at least one property.
+To decrease the cost of computation, coverage analysis is performed at several stages; first, all the nodes that do not appear in the resolution proof of a given property are marked as \emph{not-covered}, and the rest of the nodes are marked as \emph{unknown}. Then, for the unknown nodes, the basic mutation check is performed: if a corresponding mutant design violates the property, it will be considered as \emph{covered}. Otherwise, the algorithm tries to drive an inductive invariant to prove that the node is not covered. Finally, an interpolant-based model checking is applied to the nodes that are still unknown. This algorithm is basically the same as the \mustalg algorithm as discussed in \ref{subsec:method-disc} except that our implementation uses PDR and $k$-induction rather than interpolation.
+
+A different approach to measure coverage involves checking whether each output signal is fully constrained by the specification \cite{das2005formal, claessen2007coverage, grosse2007estimating}. For example, in \cite{claessen2007coverage}, authors propose a design-independent coverage analysis where missing properties are identified by unconstrained output signals. Given a property list and a specific computed signal $s$ (usually drawn from the circuit outputs), if there is a trace with a point in time when $s$ is not constrained to be a single value by the set of properties and the input trace, then the property set is incomplete. Alternately, given two traces that differ only in the value of signal $s$ at a particular time step, if both traces satisfy property $P$, then $s$ is not covered by $P$.
+ The work in \cite{haedicke2012guiding} refines this notion of coverage by providing a numeric score for each incompletely covered signal $s$.  Such metrics are very rigorous but can lead to overspecification: the specification must completely define the input/output function of the implementation.
+
+A similar notion to ours was outlined in a patent~\cite{hanna2015formal}, which sketches a family of {\em proof core}-based metrics for use in hardware verification.  While the approach described by the patent is general, it is quite underspecified:
+no formal description of the models, metrics, or algorithms are provided, nor in fact are any concrete metrics specified. In addition, no implementations or experimental results are provided, so it is not possible to compare their approach and ours. In addition, in commercial hardware verification frameworks do different forms of coverage analysis: Cadence JasperGold~\cite{jasper_gold} does some form of proof core coverage and Synopsys VC Formal~\cite{Synopsys_VC_formal} does a mutation-based coverage approach.  These coverage measurement approaches may be similar to the approaches defined in the paper but are not described in sufficient depth to be compared.
+
+ % a coverage metric that computes a numerical value to describe how much of the circuit behavior is constrained by a given set of properties. \ela{I really didn't understand the work well. I didn't read it carefully. For sure irrelevant though. we could remove this or I'll read it later}
+
+%This methods investigates, given property $\phi$ and a specific output $s$, if there exist two traces $\sigma_{1}$ and $\sigma_{2}$ that: (1) $\sigma_{1} \vDash \phi$ and $\sigma_{2} \vDash \phi$ (2) $\forall$ signals $s' \neq s, \forall t. \sigma_{1}(t, s') = \sigma_{2}(t, s')$ (3) $\exists t. \sigma_{1}(t, s) \neq \sigma_{2}(t, s)$. This method was implemented in SMV model checker \cite{smv}.
+
+Another technique to measure requirements completeness is to employ several surrogate models; for example, Zowghi and Gervasi~\cite{zowghi2003three} use refinement to show {\em relative completeness} with respect to a {\em domain} model, which describes the behavior of the real world, irrespective of change induced by software.  In their model, each iteration of refinement of requirements and domain models must be sufficient to prove the requirements of the previous iteration.  However, this idea has two problems: first it provides no notion of absolute completeness, and second, it requires construction of a domain model, which is often difficult and/or expensive to construct.
+
+Outside the context of formal verification, many authors have theorised and empirically validated conceptual model completeness, which are mostly dependent on a subjective judgement \cite{drechsler2012completeness, firesmith2005your, chang2007finding,katta2013investigating, zowghi2003three, espana2009evaluating}.
+%For instance, Espana et al. \cite{espana2009evaluating} also studied the granularity and completeness of specification by defining some metrics to measure completeness.
+
+%MORE RECENT: \cite{yang2013minimal} \cite{chockler2011incremental} \cite{brillout2009mutation} \cite{bao2014coverage}: not sure if they are super relevant...
+%
+%MORE:
+%\cite{Kupferman:2006:SCF} ? ...
+
+%
+%\cite{Whalen07:FMICS} ...
+
+

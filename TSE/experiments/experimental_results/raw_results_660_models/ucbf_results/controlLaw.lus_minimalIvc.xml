@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[check]">
+    <Runtime unit="sec">0.633</Runtime>
+    <IVC>c1</IVC>
+    <IVC>c2</IVC>
+    <IVC>c3</IVC>
+    <IVC>check</IVC>
+    <IVC>integ</IVC>
+    <IVC>sum1</IVC>
+  </MinimalIvc>
+</Results>

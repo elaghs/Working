@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">0.82</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>0</K>
+    <NumberOfIVCs>2</NumberOfIVCs>
+    <MustElem>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_MIDDLE_DIGIT_DIGIT_TO_DISPLAY</MustElem>
+    <MustElem>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_RIGHT_DIGIT_DIGIT_TO_DISPLAY</MustElem>
+    <MustElem>STEPS_TO_COOK</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_LEFT_DIGIT_DIGIT_TO_DISPLAY</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Ivc>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_MIDDLE_DIGIT_DIGIT_TO_DISPLAY</Ivc>
+    <Ivc>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_RIGHT_DIGIT_DIGIT_TO_DISPLAY</Ivc>
+    <Ivc>STEPS_TO_COOK</Ivc>
+    <Ivc>rlt_condact_resetmicrowave_microwave_KEYPAD_PROCESSING_rlt_clock</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_LEFT_DIGIT_DIGIT_TO_DISPLAY</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>OK</Invariant>
+    <Ivc>rlt_condact_resetmicrowave_microwave_KEYPAD_PROCESSING_rlt_init_step</Ivc>
+    <Ivc>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_MIDDLE_DIGIT_DIGIT_TO_DISPLAY</Ivc>
+    <Ivc>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_RIGHT_DIGIT_DIGIT_TO_DISPLAY</Ivc>
+    <Ivc>STEPS_TO_COOK</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_LEFT_DIGIT_DIGIT_TO_DISPLAY</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

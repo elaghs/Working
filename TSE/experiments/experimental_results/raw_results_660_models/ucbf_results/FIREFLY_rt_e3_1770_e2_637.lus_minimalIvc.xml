@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[OK]">
+    <Runtime unit="sec">2.072</Runtime>
+    <IVC>OK</IVC>
+    <IVC>V49_dirty</IVC>
+    <IVC>V50_exclusive</IVC>
+    <IVC>V51_shared</IVC>
+    <IVC>V52_RT</IVC>
+    <IVC>V53_A1</IVC>
+    <IVC>V54_A2</IVC>
+    <IVC>V55_env</IVC>
+    <IVC>V106_garde1</IVC>
+    <IVC>V107_garde2</IVC>
+    <IVC>V109_garde4</IVC>
+    <IVC>V110_garde5</IVC>
+    <IVC>V111_garde6</IVC>
+    <IVC>V112_garde7</IVC>
+    <IVC>V113_garde8</IVC>
+    <IVC>V132_X</IVC>
+  </MinimalIvc>
+</Results>

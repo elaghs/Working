@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[__GUARANTEE54]">
+    <Runtime unit="sec">6.378</Runtime>
+    <Must>_TOP__ALARM.ALARM_OUT.Notification_Message</Must>
+    <Must>_TOP__ALARM.SENSOR_IN.Battery_Low</Must>
+    <Must>_TOP__ALARM.SENSOR_IN.Battery_Unable_To_Charge</Must>
+    <Must>_TOP__ALARM.SENSOR_IN.Supply_Voltage</Must>
+    <Must>_TOP__ALARM.__ALARM__ASSERT__43</Must>
+    <Must>_TOP__ALARM.__ALARM__PROP__29</Must>
+    <Must>_TOP__ALARM.__ASSERT</Must>
+    <Must>_TOP__ALARM.__ASSUME__CONJ</Must>
+    <Must>_TOP__ALARM.__ASSUME__HIST</Must>
+    <Must>_TOP__ASSERT__64</Must>
+    <Must>_TOP__OUTPUT.ALARM_IN.Notification_Message</Must>
+    <Must>_TOP__OUTPUT.GPCA_SW_OUT.Notification_Message</Must>
+    <Must>_TOP__OUTPUT.__ASSERT</Must>
+    <Must>_TOP__OUTPUT.__ASSUME__CONJ</Must>
+    <Must>_TOP__OUTPUT.__ASSUME__HIST</Must>
+    <Must>_TOP__OUTPUT.__OUTPUT__PROP__4</Must>
+    <Must>__GUARANTEE54</Must>
+  </MustElements>
+</Results>

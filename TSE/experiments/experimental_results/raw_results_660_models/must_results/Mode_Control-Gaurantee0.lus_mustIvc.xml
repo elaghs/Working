@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[__GUARANTEE0]">
+    <Runtime unit="sec">0.119</Runtime>
+    <Must>__GUARANTEE0</Must>
+  </MustElements>
+</Results>

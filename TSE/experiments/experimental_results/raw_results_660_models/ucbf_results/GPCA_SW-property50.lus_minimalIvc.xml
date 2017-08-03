@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[__GUARANTEE50]">
+    <Runtime unit="sec">1.98</Runtime>
+    <IVC>_TOP__ALARM~0.ALARM_OUT.Notification_Message</IVC>
+    <IVC>_TOP__ALARM~0.SENSOR_IN.Flow_Rate_Not_Stable</IVC>
+    <IVC>_TOP__ALARM~0.__ALARM__ASSERT__39</IVC>
+    <IVC>_TOP__ALARM~0.__ALARM__PROP__25</IVC>
+    <IVC>_TOP__ALARM~0.__ASSERT</IVC>
+    <IVC>_TOP__ALARM~0.__ASSUME__CONJ</IVC>
+    <IVC>_TOP__ALARM~0.__ASSUME__HIST</IVC>
+    <IVC>_TOP__ASSERT__60</IVC>
+    <IVC>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</IVC>
+    <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSERT</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSUME__CONJ</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSUME__HIST</IVC>
+    <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__4</IVC>
+    <IVC>__GUARANTEE50</IVC>
+  </MinimalIvc>
+</Results>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">1.756</Runtime>
+    <Must>ControlMode.critical_failure.critical_failure</Must>
+    <Must>ControlMode.critical_failure.dangerous_level.dangerous_level</Must>
+    <Must>ControlMode.critical_failure.dangerous_level.q</Must>
+    <Must>ControlMode.critical_failure.op_mode</Must>
+    <Must>ControlMode.critical_failure.q</Must>
+    <Must>ControlMode.op_mode</Must>
+    <Must>ControlMode.q</Must>
+    <Must>ControlMode.stop_request</Must>
+    <Must>OK</Must>
+    <Must>dangerous_level.dangerous_level</Must>
+    <Must>dangerous_level.q</Must>
+    <Must>mode_normal_then_no_stop_request</Must>
+    <Must>mode_normal_then_water_level_ok</Must>
+    <Must>op_mode</Must>
+  </MustElements>
+</Results>

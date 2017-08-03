@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">1.286</Runtime>
+    <Must>OK</Must>
+    <Must>V22_speed</Must>
+    <Must>V23_plus</Must>
+    <Must>V24_minus</Must>
+    <Must>V25_realistic</Must>
+    <Must>V93_X</Must>
+    <Must>V98_Sofar</Must>
+    <Must>V109_cpt</Must>
+    <Must>V110_acceptable</Must>
+  </MustElements>
+</Results>

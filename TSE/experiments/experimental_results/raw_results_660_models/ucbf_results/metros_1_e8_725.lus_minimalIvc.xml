@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[OK]">
+    <Runtime unit="sec">0.851</Runtime>
+    <IVC>OK</IVC>
+    <IVC>avance0</IVC>
+    <IVC>main~0.avance0</IVC>
+    <IVC>main~0.controleur~0.avance</IVC>
+    <IVC>main~0.controleur~0.retard</IVC>
+    <IVC>main~0.retard0</IVC>
+    <IVC>pOK</IVC>
+    <IVC>retard0</IVC>
+  </MinimalIvc>
+</Results>

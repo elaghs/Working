@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[OK]">
+    <Runtime unit="sec">1.405</Runtime>
+    <IVC>OK</IVC>
+    <IVC>V54_invalid</IVC>
+    <IVC>V55_dirty</IVC>
+    <IVC>V56_exclusive</IVC>
+    <IVC>V57_shared</IVC>
+    <IVC>V58_env</IVC>
+    <IVC>V116_g1</IVC>
+    <IVC>V119_g4</IVC>
+    <IVC>V124_g9</IVC>
+    <IVC>V142_X</IVC>
+    <IVC>V155_First</IVC>
+  </MinimalIvc>
+</Results>

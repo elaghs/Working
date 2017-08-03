@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[__GUARANTEE12]">
+    <Runtime unit="sec">4.936</Runtime>
+    <IVC>_TOP__ALARM~0.ALARM_OUT.Highest_Level_Alarm</IVC>
+    <IVC>_TOP__ALARM~0.SENSOR_IN.Battery_Depleted</IVC>
+    <IVC>_TOP__ALARM~0.SENSOR_IN.CPU_Error</IVC>
+    <IVC>_TOP__ALARM~0.SENSOR_IN.Memory_Corrupted</IVC>
+    <IVC>_TOP__ALARM~0.SENSOR_IN.Pump_Too_Hot</IVC>
+    <IVC>_TOP__ALARM~0.SENSOR_IN.RTC_Error</IVC>
+    <IVC>_TOP__ALARM~0.SENSOR_IN.Watchdog_Interrupted</IVC>
+    <IVC>_TOP__ALARM~0.TLM_MODE_IN.System_On</IVC>
+    <IVC>_TOP__ALARM~0.__ALARM__ASSERT__1</IVC>
+    <IVC>_TOP__ALARM~0.__ALARM__ASSERT__15</IVC>
+    <IVC>_TOP__ALARM~0.__ALARM__PROP__1</IVC>
+    <IVC>_TOP__ALARM~0.__ASSERT</IVC>
+    <IVC>_TOP__ALARM~0.__ASSUME__CONJ</IVC>
+    <IVC>_TOP__ALARM~0.__ASSUME__HIST</IVC>
+    <IVC>_TOP__ASSERT__22</IVC>
+    <IVC>_TOP__IM~0.ALARM_IN.Highest_Level_Alarm</IVC>
+    <IVC>_TOP__IM~0.IM_OUT.Commanded_Flow_Rate</IVC>
+    <IVC>_TOP__IM~0.TLM_MODE_IN.System_On</IVC>
+    <IVC>_TOP__IM~0.__ASSERT</IVC>
+    <IVC>_TOP__IM~0.__ASSUME__CONJ</IVC>
+    <IVC>_TOP__IM~0.__ASSUME__HIST</IVC>
+    <IVC>_TOP__IM~0.__IM__ASSERT__7</IVC>
+    <IVC>_TOP__IM~0.__IM__PROP__5</IVC>
+    <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Commanded_Flow_Rate</IVC>
+    <IVC>_TOP__OUTPUT~0.IM_IN.Commanded_Flow_Rate</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSERT</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSUME__CONJ</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSUME__HIST</IVC>
+    <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__29</IVC>
+    <IVC>_TOP__TLM~0.OP_CMD_IN.System_Start</IVC>
+    <IVC>_TOP__TLM~0.TLM_MODE_OUT.System_On</IVC>
+    <IVC>_TOP__TLM~0.__ASSERT</IVC>
+    <IVC>_TOP__TLM~0.__ASSUME__CONJ</IVC>
+    <IVC>_TOP__TLM~0.__ASSUME__HIST</IVC>
+    <IVC>_TOP__TLM~0.__TLM__ASSERT__0</IVC>
+    <IVC>_TOP__TLM~0.__TLM__PROP__0</IVC>
+    <IVC>__GUARANTEE12</IVC>
+  </MinimalIvc>
+</Results>

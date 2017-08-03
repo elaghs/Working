@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">0.764</Runtime>
+    <Must>OK</Must>
+    <Must>Sofar.X</Must>
+    <Must>Sofar.Y</Must>
+    <Must>Store.Delta</Must>
+    <Must>Store.Prev</Must>
+    <Must>Store.Total</Must>
+    <Must>Total</Must>
+  </MustElements>
+</Results>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[ok]">
+    <Runtime unit="sec">6138.208</Runtime>
+    <IVC>conf1~0.cpt</IVC>
+    <IVC>conf1~0.n</IVC>
+    <IVC>conf1~0.out</IVC>
+    <IVC>conf1~0.pre_cpt</IVC>
+    <IVC>conf1~0.signal</IVC>
+    <IVC>in_command1</IVC>
+    <IVC>in_command2</IVC>
+    <IVC>in_command3</IVC>
+    <IVC>m1</IVC>
+    <IVC>m2</IVC>
+    <IVC>m3</IVC>
+    <IVC>no_command</IVC>
+    <IVC>ok</IVC>
+    <IVC>priority~0.command_failure</IVC>
+    <IVC>priority~0.conf1~0.cpt</IVC>
+    <IVC>priority~0.conf1~0.n</IVC>
+    <IVC>priority~0.conf1~0.out</IVC>
+    <IVC>priority~0.conf1~0.pre_cpt</IVC>
+    <IVC>priority~0.conf1~0.signal</IVC>
+    <IVC>priority~0.in_command</IVC>
+    <IVC>priority~0.n</IVC>
+    <IVC>priority~0.other_in_command</IVC>
+    <IVC>priority~1.command_failure</IVC>
+    <IVC>priority~1.conf1~0.cpt</IVC>
+    <IVC>priority~1.conf1~0.n</IVC>
+    <IVC>priority~1.conf1~0.out</IVC>
+    <IVC>priority~1.conf1~0.pre_cpt</IVC>
+    <IVC>priority~1.conf1~0.signal</IVC>
+    <IVC>priority~1.in_command</IVC>
+    <IVC>priority~1.n</IVC>
+    <IVC>priority~1.other_in_command</IVC>
+    <IVC>priority~2.command_failure</IVC>
+    <IVC>priority~2.conf1~0.cpt</IVC>
+    <IVC>priority~2.conf1~0.n</IVC>
+    <IVC>priority~2.conf1~0.out</IVC>
+    <IVC>priority~2.conf1~0.pre_cpt</IVC>
+    <IVC>priority~2.conf1~0.signal</IVC>
+    <IVC>priority~2.in_command</IVC>
+    <IVC>priority~2.n</IVC>
+    <IVC>priority~2.other_in_command</IVC>
+  </MinimalIvc>
+</Results>

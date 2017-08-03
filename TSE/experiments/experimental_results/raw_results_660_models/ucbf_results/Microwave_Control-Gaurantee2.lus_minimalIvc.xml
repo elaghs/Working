@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[__GUARANTEE2]">
+    <Runtime unit="sec">2.417</Runtime>
+    <IVC>_TOP__DC~0.__ASSERT</IVC>
+    <IVC>_TOP__DC~0.__ASSUME__CONJ</IVC>
+    <IVC>_TOP__DC~0.__ASSUME__HIST</IVC>
+    <IVC>_TOP__DC~0.left_digit</IVC>
+    <IVC>_TOP__DC~0.middle_digit</IVC>
+    <IVC>_TOP__DC~0.right_digit</IVC>
+    <IVC>_TOP__DC~0.seconds_to_cook</IVC>
+    <IVC>_TOP__MC~0.__ASSERT</IVC>
+    <IVC>_TOP__MC~0.__ASSUME__CONJ</IVC>
+    <IVC>_TOP__MC~0.__ASSUME__HIST</IVC>
+    <IVC>_TOP__MC~0.cooking_mode</IVC>
+    <IVC>_TOP__MC~0.defs__is_setup~0._outvar</IVC>
+    <IVC>_TOP__MC~0.defs__is_setup~0.m</IVC>
+    <IVC>_TOP__MC~0.seconds_to_cook</IVC>
+    <IVC>_TOP__OP~0.__ASSERT</IVC>
+    <IVC>_TOP__OP~0.__ASSUME__CONJ</IVC>
+    <IVC>_TOP__OP~0.__ASSUME__HIST</IVC>
+    <IVC>_TOP__OP~0.cooking_mode</IVC>
+    <IVC>_TOP__OP~0.defs__is_cooking~0._outvar</IVC>
+    <IVC>_TOP__OP~0.defs__is_cooking~0.m</IVC>
+    <IVC>_TOP__OP~0.heating_element_on</IVC>
+    <IVC>__GUARANTEE2</IVC>
+  </MinimalIvc>
+</Results>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">2.523</Runtime>
+    <Must>Controller.diff</Must>
+    <Must>Controller.minus</Must>
+    <Must>Controller.plus</Must>
+    <Must>Controller.speed</Must>
+    <Must>Environment.diff</Must>
+    <Must>Environment.minus</Must>
+    <Must>Environment.ok</Must>
+    <Must>Environment.plus</Must>
+    <Must>OK</Must>
+    <Must>Property.acceptable</Must>
+    <Must>Property.cpt</Must>
+    <Must>Property.ok</Must>
+    <Must>Property.speed</Must>
+    <Must>Sofar.Sofar</Must>
+    <Must>Sofar.X</Must>
+    <Must>minus</Must>
+    <Must>plus</Must>
+    <Must>realistic</Must>
+    <Must>speed</Must>
+  </MustElements>
+</Results>

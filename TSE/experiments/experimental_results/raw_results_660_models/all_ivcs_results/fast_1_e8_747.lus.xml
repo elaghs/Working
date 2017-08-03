@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Property name="OK">
+    <Runtime unit="sec">0.411</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>0</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>V83_cca</MustElem>
+    <MustElem>V295_pnb</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>V294_ob</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Ivc>V83_cca</Ivc>
+    <Ivc>V295_pnb</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V294_ob</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

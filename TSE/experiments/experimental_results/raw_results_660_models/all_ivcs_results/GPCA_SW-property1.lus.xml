@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="19">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="20">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="21">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="22">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="23">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="24">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="25">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="26">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="27">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="28">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="29">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="30">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Progress source="bmc" trueFor="31">
+    <PropertyProgress name="__GUARANTEE1"/>
+  </Progress>
+  <Property name="__GUARANTEE1">
+    <Runtime unit="sec">9.165</Runtime>
+    <Answer source="pdr">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>__GUARANTEE1</MustElem>
+    <MustElem>_TOP__ALARM~0.__ASSERT</MustElem>
+    <MustElem>_TOP__OUTPUT~0.CONFIG_IN.Configured</MustElem>
+    <MustElem>_TOP__ALARM~0.__ALARM__ASSERT__12</MustElem>
+    <MustElem>_TOP__OUTPUT~0.__ASSUME__CONJ</MustElem>
+    <MustElem>_TOP__OUTPUT~0.GPCA_SW_OUT.Configured</MustElem>
+    <MustElem>_TOP__OUTPUT~0.__OUTPUT__PROP__21</MustElem>
+    <MustElem>_TOP__ALARM~0.Config_Timer</MustElem>
+    <MustElem>_TOP__OUTPUT~0.__ASSUME__HIST</MustElem>
+    <MustElem>_TOP__ALARM~0.CONFIG_IN.Configured</MustElem>
+    <MustElem>_TOP__ASSERT__7</MustElem>
+    <MustElem>_TOP__OUTPUT~0.__ASSERT</MustElem>
+    <IvcSet number="1">
+    <Invariant>__GUARANTEE1</Invariant>
+    <Invariant>(GPCA_SW_OUT.Configured &lt;= CONFIG__CONFIG_OUT.Configured)</Invariant>
+    <Invariant>_TOP__OUTPUT~0.__ASSUME__HIST</Invariant>
+    <Invariant>(CONFIG__CONFIG_OUT.Configured &lt;= GPCA_SW_OUT.Configured)</Invariant>
+    <Ivc>__GUARANTEE1</Ivc>
+    <Ivc>_TOP__ALARM~0.__ASSERT</Ivc>
+    <Ivc>_TOP__OUTPUT~0.CONFIG_IN.Configured</Ivc>
+    <Ivc>_TOP__ALARM~0.__ALARM__ASSERT__12</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__CONJ</Ivc>
+    <Ivc>_TOP__OUTPUT~0.GPCA_SW_OUT.Configured</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__OUTPUT__PROP__21</Ivc>
+    <Ivc>_TOP__ALARM~0.Config_Timer</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSUME__HIST</Ivc>
+    <Ivc>_TOP__ASSERT__7</Ivc>
+    <Ivc>_TOP__ALARM~0.CONFIG_IN.Configured</Ivc>
+    <Ivc>_TOP__OUTPUT~0.__ASSERT</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

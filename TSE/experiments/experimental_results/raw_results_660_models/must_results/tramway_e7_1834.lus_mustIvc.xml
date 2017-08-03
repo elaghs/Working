@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">1.393</Runtime>
+    <Must>OK</Must>
+    <Must>V58_env_always_ok</Must>
+    <Must>V59_prop_ok</Must>
+    <Must>V250_door_doesnt_open_out_of_station</Must>
+    <Must>V251_door_opens_before_leaving_station</Must>
+    <Must>V264_env_ok</Must>
+    <Must>V268_door_initially_closed</Must>
+  </MustElements>
+</Results>

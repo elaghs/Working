@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="19">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="20">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="21">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="22">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="23">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">10.333</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>5</NumberOfIVCs>
+    <MustElem>V284_X</MustElem>
+    <MustElem>V56_env</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>V54_empty_section</MustElem>
+    <IvcSet number="1">
+    <Invariant>((V311_alwaysBsinceA or (not V56_env)) or V313_onceCsinceA)</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>((ack_AB or (not V56_env)) or V313_onceCsinceA)</Invariant>
+    <Invariant>((V323_alwaysBsinceA or V325_onceCsinceA) or (not V56_env))</Invariant>
+    <Invariant>((ack_BC or V325_onceCsinceA) or (not V56_env))</Invariant>
+    <Ivc>V311_alwaysBsinceA</Ivc>
+    <Ivc>V46_grant_access</Ivc>
+    <Ivc>V56_env</Ivc>
+    <Ivc>V206_onceCsinceA</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V204_alwaysBsinceA</Ivc>
+    <Ivc>V53_no_derail_BC</Ivc>
+    <Ivc>V47_grant_exit</Ivc>
+    <Ivc>V323_alwaysBsinceA</Ivc>
+    <Ivc>V55_only_on_B</Ivc>
+    <Ivc>V191_alwaysBsinceA</Ivc>
+    <Ivc>V312_afterA</Ivc>
+    <Ivc>V51_exclusive_req</Ivc>
+    <Ivc>V48_do_AB</Ivc>
+    <Ivc>V313_onceCsinceA</Ivc>
+    <Ivc>V181_only_on_B</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V325_onceCsinceA</Ivc>
+    <Ivc>V49_do_BC</Ivc>
+    <Ivc>V203_afterA</Ivc>
+    <Ivc>V202_afterA</Ivc>
+    <Ivc>V180_empty_section</Ivc>
+    <Ivc>V50_no_collision</Ivc>
+    <Ivc>V284_X</Ivc>
+    <Ivc>V205_afterA</Ivc>
+    <Ivc>V52_no_derail_AB</Ivc>
+    <Ivc>V189_afterA</Ivc>
+    <Ivc>V192_afterA</Ivc>
+    <Ivc>V190_afterA</Ivc>
+    <Ivc>V193_onceCsinceA</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>(not V56_env)</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>V284_X</Ivc>
+    <Ivc>V56_env</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V265_X</Ivc>
+    </IvcSet>
+    <IvcSet number="3">
+    <Invariant>(not V56_env)</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>V284_X</Ivc>
+    <Ivc>V56_env</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V246_X</Ivc>
+    </IvcSet>
+    <IvcSet number="4">
+    <Invariant>(((not V56_env) or V323_alwaysBsinceA) or V325_onceCsinceA)</Invariant>
+    <Invariant>(((not V206_onceCsinceA) or (not V56_env)) or V325_onceCsinceA)</Invariant>
+    <Invariant>((ack_BC or V206_onceCsinceA) or (not V56_env))</Invariant>
+    <Invariant>((((not V309_afterA) or ack_AB) or (not V56_env)) or V313_onceCsinceA)</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>V311_alwaysBsinceA</Ivc>
+    <Ivc>V46_grant_access</Ivc>
+    <Ivc>V56_env</Ivc>
+    <Ivc>V206_onceCsinceA</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V204_alwaysBsinceA</Ivc>
+    <Ivc>V53_no_derail_BC</Ivc>
+    <Ivc>V47_grant_exit</Ivc>
+    <Ivc>V323_alwaysBsinceA</Ivc>
+    <Ivc>V55_only_on_B</Ivc>
+    <Ivc>V191_alwaysBsinceA</Ivc>
+    <Ivc>V51_exclusive_req</Ivc>
+    <Ivc>V48_do_AB</Ivc>
+    <Ivc>V313_onceCsinceA</Ivc>
+    <Ivc>V181_only_on_B</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V325_onceCsinceA</Ivc>
+    <Ivc>V49_do_BC</Ivc>
+    <Ivc>V203_afterA</Ivc>
+    <Ivc>V202_afterA</Ivc>
+    <Ivc>V180_empty_section</Ivc>
+    <Ivc>V50_no_collision</Ivc>
+    <Ivc>V309_afterA</Ivc>
+    <Ivc>V284_X</Ivc>
+    <Ivc>V205_afterA</Ivc>
+    <Ivc>V52_no_derail_AB</Ivc>
+    <Ivc>V189_afterA</Ivc>
+    <Ivc>V192_afterA</Ivc>
+    <Ivc>V190_afterA</Ivc>
+    <Ivc>V193_onceCsinceA</Ivc>
+    </IvcSet>
+    <IvcSet number="5">
+    <Invariant>((V311_alwaysBsinceA or (not V56_env)) or V313_onceCsinceA)</Invariant>
+    <Invariant>((ack_BC or V206_onceCsinceA) or (not V56_env))</Invariant>
+    <Invariant>((V323_alwaysBsinceA or V325_onceCsinceA) or (not V56_env))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(((not V206_onceCsinceA) or V325_onceCsinceA) or (not V56_env))</Invariant>
+    <Ivc>V311_alwaysBsinceA</Ivc>
+    <Ivc>V46_grant_access</Ivc>
+    <Ivc>V56_env</Ivc>
+    <Ivc>V206_onceCsinceA</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V204_alwaysBsinceA</Ivc>
+    <Ivc>V53_no_derail_BC</Ivc>
+    <Ivc>V47_grant_exit</Ivc>
+    <Ivc>V323_alwaysBsinceA</Ivc>
+    <Ivc>V55_only_on_B</Ivc>
+    <Ivc>V191_alwaysBsinceA</Ivc>
+    <Ivc>V310_afterA</Ivc>
+    <Ivc>V51_exclusive_req</Ivc>
+    <Ivc>V48_do_AB</Ivc>
+    <Ivc>V313_onceCsinceA</Ivc>
+    <Ivc>V181_only_on_B</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V325_onceCsinceA</Ivc>
+    <Ivc>V49_do_BC</Ivc>
+    <Ivc>V203_afterA</Ivc>
+    <Ivc>V202_afterA</Ivc>
+    <Ivc>V180_empty_section</Ivc>
+    <Ivc>V50_no_collision</Ivc>
+    <Ivc>V284_X</Ivc>
+    <Ivc>V205_afterA</Ivc>
+    <Ivc>V52_no_derail_AB</Ivc>
+    <Ivc>V189_afterA</Ivc>
+    <Ivc>V192_afterA</Ivc>
+    <Ivc>V190_afterA</Ivc>
+    <Ivc>V193_onceCsinceA</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

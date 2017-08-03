@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[__GUARANTEE0]">
+    <Runtime unit="sec">0.117</Runtime>
+    <IVC>__GUARANTEE0</IVC>
+  </MinimalIvc>
+</Results>

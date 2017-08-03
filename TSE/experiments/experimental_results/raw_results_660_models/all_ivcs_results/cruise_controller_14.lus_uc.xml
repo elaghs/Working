@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.072</UcRuntime>
+   <Timeout unit="sec">37.57</Timeout>
+   <ProofTime unit="sec">1.442</ProofTime>
+   <Runtime unit="sec">1.514</Runtime>
+   <IVC>OK</IVC>
+   <IVC>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_setDesiredSpeed</IVC>
+   <IVC>chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed</IVC>
+   <IVC>cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed</IVC>
+   <IVC>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_outports_setDesiredSpeed</IVC>
+   <IVC>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_setDesiredSpeed</IVC>
+   <IVC>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_outports_setDesiredSpeed</IVC>
+   <IVC>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_outports_setDesiredSpeed</IVC>
+   <TRIVC>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_outports_setDesiredSpeed</TRIVC>
+   <TRIVC>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_setDesiredSpeed</TRIVC>
+   <TRIVC>cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed</TRIVC>
+   <TRIVC>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_outports_setDesiredSpeed</TRIVC>
+   <TRIVC>OK</TRIVC>
+   <TRIVC>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_outports_setDesiredSpeed</TRIVC>
+   <TRIVC>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_setDesiredSpeed</TRIVC>
+   <TRIVC>chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed</TRIVC>
+</Results>

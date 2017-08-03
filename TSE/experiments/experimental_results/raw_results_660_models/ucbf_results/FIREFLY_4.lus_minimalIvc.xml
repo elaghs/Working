@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[OK]">
+    <Runtime unit="sec">4.04</Runtime>
+    <IVC>First~0.First</IVC>
+    <IVC>First~0.X</IVC>
+    <IVC>OK</IVC>
+    <IVC>Sofar~0.Sofar</IVC>
+    <IVC>Sofar~0.X</IVC>
+    <IVC>dirty</IVC>
+    <IVC>env</IVC>
+    <IVC>excludes8~0.X1</IVC>
+    <IVC>excludes8~0.X2</IVC>
+    <IVC>excludes8~0.X3</IVC>
+    <IVC>excludes8~0.X4</IVC>
+    <IVC>excludes8~0.X5</IVC>
+    <IVC>excludes8~0.X6</IVC>
+    <IVC>excludes8~0.X7</IVC>
+    <IVC>excludes8~0.X8</IVC>
+    <IVC>excludes8~0.excludes</IVC>
+    <IVC>exclusive</IVC>
+    <IVC>firefly~0.dirty</IVC>
+    <IVC>firefly~0.e1</IVC>
+    <IVC>firefly~0.e2</IVC>
+    <IVC>firefly~0.e3</IVC>
+    <IVC>firefly~0.e4</IVC>
+    <IVC>firefly~0.e5</IVC>
+    <IVC>firefly~0.e6</IVC>
+    <IVC>firefly~0.e7</IVC>
+    <IVC>firefly~0.e8</IVC>
+    <IVC>firefly~0.exclusive</IVC>
+    <IVC>firefly~0.garde5</IVC>
+    <IVC>firefly~0.garde6</IVC>
+    <IVC>firefly~0.i_invalid</IVC>
+    <IVC>firefly~0.invalid</IVC>
+    <IVC>firefly~0.mem_invalid</IVC>
+    <IVC>firefly~0.shared</IVC>
+    <IVC>invalid</IVC>
+    <IVC>procs</IVC>
+    <IVC>shared</IVC>
+  </MinimalIvc>
+</Results>

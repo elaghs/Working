@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">8.522</Runtime>
+    <Must>OK</Must>
+    <Must>V51_invalid</Must>
+    <Must>V52_dirty</Must>
+    <Must>V53_exclusive</Must>
+    <Must>V54_shared</Must>
+    <Must>V55_env</Must>
+    <Must>V56_procs</Must>
+    <Must>V113_garde2</Must>
+    <Must>V114_garde3</Must>
+    <Must>V115_garde4</Must>
+    <Must>V116_garde5</Must>
+    <Must>V118_garde7</Must>
+    <Must>V119_garde8</Must>
+    <Must>V120_mem_invalid</Must>
+    <Must>V139_X</Must>
+  </MustElements>
+</Results>

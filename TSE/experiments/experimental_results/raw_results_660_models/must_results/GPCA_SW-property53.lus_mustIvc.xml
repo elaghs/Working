@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[__GUARANTEE53]">
+    <Runtime unit="sec">8.451</Runtime>
+    <Must>_TOP__ALARM.ALARM_OUT.Notification_Message</Must>
+    <Must>_TOP__ALARM.CONFIG_IN.Configured</Must>
+    <Must>_TOP__ALARM.CONST_IN.Config_Warning_Duration</Must>
+    <Must>_TOP__ALARM.__ALARM__ASSERT__12</Must>
+    <Must>_TOP__ALARM.__ALARM__ASSERT__42</Must>
+    <Must>_TOP__ALARM.__ALARM__PROP__28</Must>
+    <Must>_TOP__ALARM.__ASSERT</Must>
+    <Must>_TOP__ALARM.__ASSUME__CONJ</Must>
+    <Must>_TOP__ALARM.__ASSUME__HIST</Must>
+    <Must>_TOP__ASSERT__7</Must>
+    <Must>_TOP__ASSERT__63</Must>
+    <Must>_TOP__OUTPUT.ALARM_IN.Notification_Message</Must>
+    <Must>_TOP__OUTPUT.CONFIG_IN.Configured</Must>
+    <Must>_TOP__OUTPUT.GPCA_SW_OUT.Configured</Must>
+    <Must>_TOP__OUTPUT.GPCA_SW_OUT.Notification_Message</Must>
+    <Must>_TOP__OUTPUT.__ASSERT</Must>
+    <Must>_TOP__OUTPUT.__ASSUME__CONJ</Must>
+    <Must>_TOP__OUTPUT.__ASSUME__HIST</Must>
+    <Must>_TOP__OUTPUT.__OUTPUT__PROP__4</Must>
+    <Must>_TOP__OUTPUT.__OUTPUT__PROP__21</Must>
+    <Must>__GUARANTEE53</Must>
+  </MustElements>
+</Results>

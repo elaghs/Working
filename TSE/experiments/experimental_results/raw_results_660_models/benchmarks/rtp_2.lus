@@ -1,0 +1,35 @@
+node top(
+  e01 : bool;
+  e02 : bool;
+  e03 : bool;
+  e04 : bool;
+  e05 : bool;
+  e06 : bool;
+  e07 : bool;
+  e08 : bool;
+  e09 : bool;
+  e10 : bool;
+  e11 : bool;
+  e12 : bool
+) returns (
+  OK : bool
+);
+var
+  V67_X1 : int;
+  V77_env : bool;
+  V139_g01 : bool;
+  V171_X : bool;
+let
+  OK = (V77_env => ((0 <= V67_X1) and (V67_X1 <= 1)));
+
+  V67_X1 = (1 -> (if e01 then (if V139_g01 then ((pre V67_X1) - 1) else (pre V67_X1)) else (pre V67_X1)));
+
+  V77_env = (V171_X -> (V171_X and (pre V77_env)));
+
+  V139_g01 = ((pre V67_X1) >= 1);
+
+  V171_X = ((((((((((((((((((((((((not e01) and (not e02)) and (not e03)) and (not e04)) and (not e05)) and (not e06)) and (not e07)) and (not e08)) and (not e09)) and (not e10)) and (not e11)) and (not e12)) or (((((((((((e01 and (not e02)) and (not e03)) and (not e04)) and (not e05)) and (not e06)) and (not e07)) and (not e08)) and (not e09)) and (not e10)) and (not e11)) and (not e12))) or ((((((((((((not e01) and e02) and (not e03)) and (not e04)) and (not e05)) and (not e06)) and (not e07)) and (not e08)) and (not e09)) and (not e10)) and (not e11)) and (not e12))) or ((((((((((((not e01) and (not e02)) and e03) and (not e04)) and (not e05)) and (not e06)) and (not e07)) and (not e08)) and (not e09)) and (not e10)) and (not e11)) and (not e12))) or ((((((((((((not e01) and (not e02)) and (not e03)) and e04) and (not e05)) and (not e06)) and (not e07)) and (not e08)) and (not e09)) and (not e10)) and (not e11)) and (not e12))) or ((((((((((((not e01) and (not e02)) and (not e03)) and (not e04)) and e05) and (not e06)) and (not e07)) and (not e08)) and (not e09)) and (not e10)) and (not e11)) and (not e12))) or ((((((((((((not e01) and (not e02)) and (not e03)) and (not e04)) and (not e05)) and e06) and (not e07)) and (not e08)) and (not e09)) and (not e10)) and (not e11)) and (not e12))) or ((((((((((((not e01) and (not e02)) and (not e03)) and (not e04)) and (not e05)) and (not e06)) and e07) and (not e08)) and (not e09)) and (not e10)) and (not e11)) and (not e12))) or ((((((((((((not e01) and (not e02)) and (not e03)) and (not e04)) and (not e05)) and (not e06)) and (not e07)) and e08) and (not e09)) and (not e10)) and (not e11)) and (not e12))) or ((((((((((((not e01) and (not e02)) and (not e03)) and (not e04)) and (not e05)) and (not e06)) and (not e07)) and (not e08)) and e09) and (not e10)) and (not e11)) and (not e12))) or ((((((((((((not e01) and (not e02)) and (not e03)) and (not e04)) and (not e05)) and (not e06)) and (not e07)) and (not e08)) and (not e09)) and e10) and (not e11)) and (not e12))) or ((((((((((((not e01) and (not e02)) and (not e03)) and (not e04)) and (not e05)) and (not e06)) and (not e07)) and (not e08)) and (not e09)) and (not e10)) and e11) and (not e12))) or ((((((((((((not e01) and (not e02)) and (not e03)) and (not e04)) and (not e05)) and (not e06)) and (not e07)) and (not e08)) and (not e09)) and (not e10)) and (not e11)) and e12));
+
+  --%PROPERTY OK;
+
+tel;

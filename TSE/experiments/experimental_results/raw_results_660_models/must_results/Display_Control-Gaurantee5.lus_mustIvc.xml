@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[__GUARANTEE5]">
+    <Runtime unit="sec">10.834</Runtime>
+    <Must>Microwave_SEng5861__Display_Control__Impl__update_digit.clear_pressed</Must>
+    <Must>Microwave_SEng5861__Display_Control__Impl__update_digit.defs__is_cooking._outvar</Must>
+    <Must>Microwave_SEng5861__Display_Control__Impl__update_digit.defs__is_cooking.m</Must>
+    <Must>Microwave_SEng5861__Display_Control__Impl__update_digit.digit</Must>
+    <Must>Microwave_SEng5861__Display_Control__Impl__update_digit.digit_pressed</Must>
+    <Must>Microwave_SEng5861__Display_Control__Impl__update_digit.mode</Must>
+    <Must>__GUARANTEE5</Must>
+    <Must>defs__is_setup._outvar</Must>
+    <Must>defs__is_setup.m</Must>
+  </MustElements>
+</Results>

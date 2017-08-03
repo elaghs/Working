@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">8.33</Runtime>
+    <Answer source="pdr">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>V116_garde5</MustElem>
+    <MustElem>V115_garde4</MustElem>
+    <MustElem>V114_garde3</MustElem>
+    <MustElem>V55_env</MustElem>
+    <MustElem>V52_dirty</MustElem>
+    <MustElem>V119_garde8</MustElem>
+    <MustElem>V118_garde7</MustElem>
+    <MustElem>V54_shared</MustElem>
+    <MustElem>V51_invalid</MustElem>
+    <MustElem>V113_garde2</MustElem>
+    <MustElem>V120_mem_invalid</MustElem>
+    <MustElem>V53_exclusive</MustElem>
+    <MustElem>V139_X</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>V56_procs</MustElem>
+    <IvcSet number="1">
+    <Invariant>(((V52_dirty &lt;= 1) or (not V55_env)) or (V51_invalid &lt;= (V56_procs + (-2))))</Invariant>
+    <Invariant>((((not (0 &lt;= (V53_exclusive + (-1)))) or (not V55_env)) or (V51_invalid &lt;= 0)) or ((V51_invalid + V54_shared) &lt;= (V56_procs + (-1))))</Invariant>
+    <Invariant>((((not V55_env) or (V51_invalid &lt;= 0)) or (not (0 &lt;= (V54_shared + (-2))))) or ((V53_exclusive + (-1)) &lt;= 0))</Invariant>
+    <Invariant>(0 &lt;= V53_exclusive)</Invariant>
+    <Invariant>(((V52_dirty &lt;= 1) or (not V55_env)) or ((V53_exclusive + V51_invalid) &lt;= (V56_procs + (-1))))</Invariant>
+    <Invariant>(((not V55_env) or (not ((V52_dirty + (-1)) = 0))) or ((V53_exclusive + V51_invalid) &lt;= (V56_procs + (-1))))</Invariant>
+    <Invariant>((V53_exclusive + V51_invalid) &lt;= V56_procs)</Invariant>
+    <Invariant>((not V55_env) or ((V51_invalid + V54_shared) &lt;= V56_procs))</Invariant>
+    <Invariant>((((V52_dirty &lt;= 1) or (not V55_env)) or (V51_invalid &lt;= 0)) or ((V51_invalid + V54_shared) &lt;= (V56_procs + (-1))))</Invariant>
+    <Invariant>((V54_shared = 0) or (0 &lt;= (V54_shared + (-2))))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>((((not V55_env) or (V51_invalid &lt;= 0)) or ((V51_invalid + V54_shared) &lt;= (V56_procs + (-1)))) or (not ((V52_dirty + (-1)) = 0)))</Invariant>
+    <Invariant>((V56_procs &lt;= 4) or (not V55_env))</Invariant>
+    <Ivc>V116_garde5</Ivc>
+    <Ivc>V115_garde4</Ivc>
+    <Ivc>V114_garde3</Ivc>
+    <Ivc>V55_env</Ivc>
+    <Ivc>V52_dirty</Ivc>
+    <Ivc>V119_garde8</Ivc>
+    <Ivc>V118_garde7</Ivc>
+    <Ivc>V54_shared</Ivc>
+    <Ivc>V51_invalid</Ivc>
+    <Ivc>V120_mem_invalid</Ivc>
+    <Ivc>V113_garde2</Ivc>
+    <Ivc>V53_exclusive</Ivc>
+    <Ivc>V139_X</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V56_procs</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

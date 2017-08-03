@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[__GUARANTEE2]">
+    <Runtime unit="sec">2.598</Runtime>
+    <Must>_TOP__DC.__ASSERT</Must>
+    <Must>_TOP__DC.__ASSUME__CONJ</Must>
+    <Must>_TOP__DC.__ASSUME__HIST</Must>
+    <Must>_TOP__DC.left_digit</Must>
+    <Must>_TOP__DC.middle_digit</Must>
+    <Must>_TOP__DC.right_digit</Must>
+    <Must>_TOP__DC.seconds_to_cook</Must>
+    <Must>_TOP__MC.__ASSERT</Must>
+    <Must>_TOP__MC.__ASSUME__CONJ</Must>
+    <Must>_TOP__MC.__ASSUME__HIST</Must>
+    <Must>_TOP__MC.cooking_mode</Must>
+    <Must>_TOP__MC.defs__is_setup._outvar</Must>
+    <Must>_TOP__MC.defs__is_setup.m</Must>
+    <Must>_TOP__MC.seconds_to_cook</Must>
+    <Must>_TOP__OP.__ASSERT</Must>
+    <Must>_TOP__OP.__ASSUME__CONJ</Must>
+    <Must>_TOP__OP.__ASSUME__HIST</Must>
+    <Must>_TOP__OP.cooking_mode</Must>
+    <Must>_TOP__OP.defs__is_cooking._outvar</Must>
+    <Must>_TOP__OP.defs__is_cooking.m</Must>
+    <Must>_TOP__OP.heating_element_on</Must>
+    <Must>__GUARANTEE2</Must>
+  </MustElements>
+</Results>

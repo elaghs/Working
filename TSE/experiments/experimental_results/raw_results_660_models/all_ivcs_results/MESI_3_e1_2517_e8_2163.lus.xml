@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">4.323</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>V34_shared_me</MustElem>
+    <MustElem>V33_exclusive_me</MustElem>
+    <MustElem>V35_invalid_me</MustElem>
+    <MustElem>V88_garde_me4</MustElem>
+    <MustElem>V86_garde_me2</MustElem>
+    <MustElem>V32_modified_me</MustElem>
+    <MustElem>V85_garde_me1</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>V87_garde_me3</MustElem>
+    <IvcSet number="1">
+    <Invariant>((0 = V34_shared_me) or (not (V32_modified_me &lt;= (-1))))</Invariant>
+    <Invariant>(not (0 &lt;= ((((V33_exclusive_me + V35_invalid_me) + V34_shared_me) + V32_modified_me) + (-4))))</Invariant>
+    <Invariant>(not (0 &lt;= (V32_modified_me + (-1))))</Invariant>
+    <Invariant>(0 &lt;= (V32_modified_me + 1))</Invariant>
+    <Invariant>(0 &lt;= (V35_invalid_me + 1))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(0 &lt;= (V34_shared_me + 1))</Invariant>
+    <Invariant>((not (0 &lt;= (V35_invalid_me + (-3)))) or (not (V32_modified_me &lt;= (-1))))</Invariant>
+    <Invariant>((not ((V33_exclusive_me + (-1)) = 0)) or (not (V32_modified_me &lt;= (-1))))</Invariant>
+    <Invariant>((0 = V34_shared_me) or (not (0 &lt;= (V35_invalid_me + (-3)))))</Invariant>
+    <Invariant>(0 &lt;= V33_exclusive_me)</Invariant>
+    <Invariant>((not (V34_shared_me &lt;= (-1))) or (V33_exclusive_me &lt;= 0))</Invariant>
+    <Invariant>((V33_exclusive_me &lt;= 0) or ((V33_exclusive_me + (-1)) = 0))</Invariant>
+    <Invariant>(((0 &lt;= ((V35_invalid_me + 1) + (-1))) or (not (((-V34_shared_me) + V33_exclusive_me) &lt;= 0))) or (not (0 &lt;= V32_modified_me)))</Invariant>
+    <Invariant>((V33_exclusive_me &lt;= 0) or (not (((-V34_shared_me) + V33_exclusive_me) &lt;= 0)))</Invariant>
+    <Ivc>V34_shared_me</Ivc>
+    <Ivc>V33_exclusive_me</Ivc>
+    <Ivc>V35_invalid_me</Ivc>
+    <Ivc>V88_garde_me4</Ivc>
+    <Ivc>V86_garde_me2</Ivc>
+    <Ivc>V32_modified_me</Ivc>
+    <Ivc>V85_garde_me1</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V87_garde_me3</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

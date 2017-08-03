@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">3.586</Runtime>
+    <Must>OK</Must>
+    <Must>Sofar.Sofar</Must>
+    <Must>Sofar.X</Must>
+    <Must>dirty</Must>
+    <Must>env</Must>
+    <Must>excludes8.X1</Must>
+    <Must>excludes8.X2</Must>
+    <Must>excludes8.X3</Must>
+    <Must>excludes8.X4</Must>
+    <Must>excludes8.X5</Must>
+    <Must>excludes8.X6</Must>
+    <Must>excludes8.X7</Must>
+    <Must>excludes8.X8</Must>
+    <Must>excludes8.excludes</Must>
+    <Must>exclusive</Must>
+    <Must>firefly.dirty</Must>
+    <Must>firefly.e1</Must>
+    <Must>firefly.e2</Must>
+    <Must>firefly.e3</Must>
+    <Must>firefly.e4</Must>
+    <Must>firefly.e5</Must>
+    <Must>firefly.e6</Must>
+    <Must>firefly.e7</Must>
+    <Must>firefly.e8</Must>
+    <Must>firefly.exclusive</Must>
+    <Must>firefly.garde5</Must>
+    <Must>firefly.garde6</Must>
+    <Must>firefly.invalid</Must>
+    <Must>firefly.shared</Must>
+    <Must>invalid</Must>
+    <Must>shared</Must>
+  </MustElements>
+</Results>

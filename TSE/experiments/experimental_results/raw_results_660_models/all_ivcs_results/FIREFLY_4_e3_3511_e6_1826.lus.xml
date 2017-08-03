@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">1.833</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>2</NumberOfIVCs>
+    <MustElem>V53_exclusive</MustElem>
+    <MustElem>V116_garde5</MustElem>
+    <MustElem>V139_X</MustElem>
+    <MustElem>V55_env</MustElem>
+    <MustElem>V52_dirty</MustElem>
+    <MustElem>V54_shared</MustElem>
+    <MustElem>V51_invalid</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>V120_mem_invalid</MustElem>
+    <MustElem>V56_procs</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Ivc>V117_garde6</Ivc>
+    <Ivc>V53_exclusive</Ivc>
+    <Ivc>V139_X</Ivc>
+    <Ivc>V116_garde5</Ivc>
+    <Ivc>V55_env</Ivc>
+    <Ivc>V52_dirty</Ivc>
+    <Ivc>V54_shared</Ivc>
+    <Ivc>V51_invalid</Ivc>
+    <Ivc>V120_mem_invalid</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V56_procs</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>OK</Invariant>
+    <Invariant>(V52_dirty &gt;= 0)</Invariant>
+    <Ivc>V53_exclusive</Ivc>
+    <Ivc>V116_garde5</Ivc>
+    <Ivc>V139_X</Ivc>
+    <Ivc>V55_env</Ivc>
+    <Ivc>V52_dirty</Ivc>
+    <Ivc>V118_garde7</Ivc>
+    <Ivc>V54_shared</Ivc>
+    <Ivc>V51_invalid</Ivc>
+    <Ivc>V120_mem_invalid</Ivc>
+    <Ivc>V113_garde2</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V56_procs</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

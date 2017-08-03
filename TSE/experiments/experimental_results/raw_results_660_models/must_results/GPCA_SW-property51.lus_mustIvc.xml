@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[__GUARANTEE51]">
+    <Runtime unit="sec">11.269</Runtime>
+    <Must>DEFS__is_idle._outvar</Must>
+    <Must>DEFS__is_idle.mode</Must>
+    <Must>_TOP__ALARM.ALARM_OUT.Notification_Message</Must>
+    <Must>_TOP__ALARM.CONST_IN.Max_Idle_Duration</Must>
+    <Must>_TOP__ALARM.IM_IN.Current_System_Mode</Must>
+    <Must>_TOP__ALARM.__ALARM__ASSERT__11</Must>
+    <Must>_TOP__ALARM.__ALARM__ASSERT__40</Must>
+    <Must>_TOP__ALARM.__ALARM__PROP__26</Must>
+    <Must>_TOP__ALARM.__ASSERT</Must>
+    <Must>_TOP__ALARM.__ASSUME__CONJ</Must>
+    <Must>_TOP__ALARM.__ASSUME__HIST</Must>
+    <Must>_TOP__ASSERT__6</Must>
+    <Must>_TOP__ASSERT__61</Must>
+    <Must>_TOP__OUTPUT.ALARM_IN.Notification_Message</Must>
+    <Must>_TOP__OUTPUT.GPCA_SW_OUT.Current_System_Mode</Must>
+    <Must>_TOP__OUTPUT.GPCA_SW_OUT.Notification_Message</Must>
+    <Must>_TOP__OUTPUT.IM_IN.Current_System_Mode</Must>
+    <Must>_TOP__OUTPUT.__ASSERT</Must>
+    <Must>_TOP__OUTPUT.__ASSUME__CONJ</Must>
+    <Must>_TOP__OUTPUT.__ASSUME__HIST</Must>
+    <Must>_TOP__OUTPUT.__OUTPUT__PROP__4</Must>
+    <Must>_TOP__OUTPUT.__OUTPUT__PROP__27</Must>
+    <Must>__GUARANTEE51</Must>
+  </MustElements>
+</Results>

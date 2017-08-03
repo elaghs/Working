@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">0.636</Runtime>
+    <Must>DRAGON.erreur</Must>
+    <Must>DRAGON.exclusive</Must>
+    <Must>DRAGON.g01</Must>
+    <Must>OK</Must>
+    <Must>erreur</Must>
+  </MustElements>
+</Results>

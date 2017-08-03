@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[OK]">
+    <Runtime unit="sec">0.432</Runtime>
+    <IVC>OK</IVC>
+    <IVC>STEPS_TO_COOK</IVC>
+    <IVC>rlt_condact_resetmicrowave_microwave_KEYPAD_PROCESSING_rlt_clock</IVC>
+    <IVC>rlt_condact_resetmicrowave_microwave_KEYPAD_PROCESSING_rlt_init_step</IVC>
+  </MinimalIvc>
+</Results>

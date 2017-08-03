@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[__GUARANTEE2]">
+    <Runtime unit="sec">6.658</Runtime>
+    <Must>_TOP__ALARM.IM_IN.Current_System_Mode</Must>
+    <Must>_TOP__ALARM.Paused_Time_Counter</Must>
+    <Must>_TOP__ALARM.__ALARM__ASSERT__10</Must>
+    <Must>_TOP__ALARM.__ASSERT</Must>
+    <Must>_TOP__ASSERT__5</Must>
+    <Must>_TOP__OUTPUT.GPCA_SW_OUT.Current_System_Mode</Must>
+    <Must>_TOP__OUTPUT.IM_IN.Current_System_Mode</Must>
+    <Must>_TOP__OUTPUT.__ASSERT</Must>
+    <Must>_TOP__OUTPUT.__ASSUME__CONJ</Must>
+    <Must>_TOP__OUTPUT.__ASSUME__HIST</Must>
+    <Must>_TOP__OUTPUT.__OUTPUT__PROP__27</Must>
+    <Must>__GUARANTEE2</Must>
+  </MustElements>
+</Results>

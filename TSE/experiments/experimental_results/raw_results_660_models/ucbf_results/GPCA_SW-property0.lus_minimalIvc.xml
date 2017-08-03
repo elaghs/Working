@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[__GUARANTEE0]">
+    <Runtime unit="sec">1.816</Runtime>
+    <IVC>DEFS__is_idle~0._outvar</IVC>
+    <IVC>DEFS__is_idle~0.mode</IVC>
+    <IVC>_TOP__ALARM~0.IM_IN.Current_System_Mode</IVC>
+    <IVC>_TOP__ALARM~0.Idle_Time_Counter</IVC>
+    <IVC>_TOP__ALARM~0.__ALARM__ASSERT__11</IVC>
+    <IVC>_TOP__ALARM~0.__ASSERT</IVC>
+    <IVC>_TOP__ASSERT__6</IVC>
+    <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Current_System_Mode</IVC>
+    <IVC>_TOP__OUTPUT~0.IM_IN.Current_System_Mode</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSERT</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSUME__CONJ</IVC>
+    <IVC>_TOP__OUTPUT~0.__ASSUME__HIST</IVC>
+    <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__27</IVC>
+    <IVC>__GUARANTEE0</IVC>
+  </MinimalIvc>
+</Results>

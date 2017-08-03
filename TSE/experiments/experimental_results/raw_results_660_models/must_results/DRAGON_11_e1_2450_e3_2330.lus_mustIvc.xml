@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">311.676</Runtime>
+    <Must>OK</Must>
+    <Must>V69_exclusive</Must>
+    <Must>V70_shared</Must>
+    <Must>V71_shared_dirty</Must>
+    <Must>V72_dirty</Must>
+    <Must>V73_invalid</Must>
+    <Must>V75_env</Must>
+    <Must>V140_g01</Must>
+    <Must>V141_g02</Must>
+    <Must>V142_g03</Must>
+    <Must>V143_g04</Must>
+    <Must>V144_g05</Must>
+    <Must>V146_g07</Must>
+    <Must>V147_g08</Must>
+    <Must>V148_g09</Must>
+    <Must>V150_g11</Must>
+    <Must>V151_g12</Must>
+    <Must>V152_mem_init</Must>
+    <Must>V173_X</Must>
+    <Must>V185_First</Must>
+  </MustElements>
+</Results>

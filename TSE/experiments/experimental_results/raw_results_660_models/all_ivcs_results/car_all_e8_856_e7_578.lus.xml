@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">2.717</Runtime>
+    <Answer source="invariant-generation">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>V24_toofast</MustElem>
+    <MustElem>V30_move</MustElem>
+    <MustElem>V27_dist</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>V28_speed</MustElem>
+    <IvcSet number="1">
+    <Invariant>(((V27_dist &lt;= 1) or (not (V28_speed &lt;= 1))) or (not V30_move))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(((not ((V28_speed + (-2)) &lt;= 0)) or (V27_dist &lt;= 2)) or (not V30_move))</Invariant>
+    <Invariant>((V28_speed &lt;= 1) or (not (V27_dist &lt;= 1)))</Invariant>
+    <Invariant>(V27_dist &lt;= 10)</Invariant>
+    <Invariant>((not OK) or (V28_speed &lt;= 3))</Invariant>
+    <Invariant>(((V27_dist &lt;= 0) or (not (V28_speed &lt;= 0))) or (not V30_move))</Invariant>
+    <Invariant>(((V28_speed + (-2)) &lt;= 0) or V24_toofast)</Invariant>
+    <Invariant>(0 &lt;= V28_speed)</Invariant>
+    <Invariant>(0 &lt;= V27_dist)</Invariant>
+    <Invariant>((not (V27_dist &lt;= 0)) or (V28_speed &lt;= 0))</Invariant>
+    <Ivc>V24_toofast</Ivc>
+    <Ivc>V30_move</Ivc>
+    <Ivc>V27_dist</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V28_speed</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

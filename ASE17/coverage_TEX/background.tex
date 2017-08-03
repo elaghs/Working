@@ -1,0 +1,106 @@
+\subsection{Preliminaries}
+\label{sec:background}
+
+\newcommand{\bool}[0]{\mathit{bool}}
+\newcommand{\reach}[0]{\mathit{R}}
+\newcommand{\ite}[3]{\mathit{if}\ {#1}\ \mathit{then}\ {#2}\ \mathit{else}\ {#3}}
+
+%\subsection{Transition Systems and Safety Properties}
+
+Given a state space $S$, a transition system $(I,T)$ consists of an
+initial state predicate $I : S \to \bool$ and a transition step
+predicate $T : S \times S \to \bool$. We define the notion of
+reachability for $(I, T)$ as the smallest predicate $\reach : S \to
+\bool$ which satisfies the following formulas:
+\begin{gather*}
+  \forall s.~ I(s) \Rightarrow \reach(s) \\
+  \forall s, s'.~ \reach(s) \land T(s, s') \Rightarrow \reach(s')
+\end{gather*}
+A safety property $P : S \to \bool$ is a state predicate. A safety
+property $P$ holds on a transition system $(I, T)$ if it holds on all
+reachable states, i.e., $\forall s.~ \reach(s) \Rightarrow P(s)$,
+written as $\reach \Rightarrow P$ for short. When this is the case, we
+write $(I, T)\vdash P$.
+
+For an arbitrary transition system $(I, T)$, computing reachability
+can be very expensive or even impossible. Thus, we need a more
+effective way of checking if a safety property $P$ is satisfied by the
+system. The key idea is to over-approximate reachability. If we can
+find an over-approximation that implies the property, then the
+property must hold. Otherwise, the approximation needs to be refined.
+
+A good first approximation for reachability is the property itself.
+That is, we can check if the following formulas hold:
+\begin{gather}
+  \forall s.~ I(s) \Rightarrow P(s)
+  \label{eq:1-ind-base} \\
+  \forall s, s'.~ P(s) \land T(s, s') \Rightarrow P(s')
+  \label{eq:1-ind-step}
+\end{gather}
+If both formulas hold then $P$ is {\em inductive} and holds over the
+system. If (\ref{eq:1-ind-base}) fails to hold, then $P$ is violated
+by an initial state of the system. If (\ref{eq:1-ind-step}) fails to
+hold, then $P$ is too much of an over-approximation and needs to be
+refined.
+
+One way to refine our over-approximation is to add additional lemmas
+to the property of interest. For example, given another property $L :
+S \to bool$ we can consider the extended property $P'(s) = P(s) \land
+L(s)$, written as $P' = P \land L$ for short. If $P'$ holds on the
+system, then $P$ must hold as well. The hope is that the addition of
+$L$ makes formula (\ref{eq:1-ind-step}) provable because the
+antecedent is more constrained. However, the consequent of
+(\ref{eq:1-ind-step}) is also more constrained, so the lemma $L$ may
+require additional lemmas of its own. Finding and proving these
+lemmas is the means by which property directed reachability (PDR)
+strengthens and proves a safety property.
+
+Another way to refine our over-approximation is to use use {\em
+  $k$-induction} which unrolls the property over $k$ steps of the
+transition system. For example, 1-induction consists of formulas
+(\ref{eq:1-ind-base}) and (\ref{eq:1-ind-step}) above, whereas
+2-induction consists of the following formulas:
+\begin{gather*}
+\forall s.~ I(s) \Rightarrow P(s) \\
+\forall s, s'.~ I(s) \land T(s, s') \Rightarrow P(s') \\
+\forall s, s', s''.~ P(s) \land T(s, s') \land P(s') \land T(s',
+  s'') \Rightarrow P(s'')
+\end{gather*}
+That is, there are two base step checks and one inductive step check.
+In general, for an arbitrary $k$, $k$-induction consists of $k$
+base step checks and one inductive step check as shown in
+Figure~\ref{fig:k-induction} (the universal quantifiers on $s_i$ have
+been elided for space). We say that a property is $k$-inductive if it
+satisfies the $k$-induction constraints for the given value of $k$.
+The hope is that the additional formulas in the antecedent of the
+inductive step make it provable.
+
+\begin{figure}
+\begin{gather*}
+I(s_0) \Rightarrow P(s_0) \\[-2pt]
+%
+\vdots \\[2pt]
+%
+I(s_0) \land T(s_0, s_1) \land \cdots \land T(s_{k-2}, s_{k-1})
+\Rightarrow P(s_{k-1}) \\[2pt]
+%
+P(s_0) \land T(s_0, s_1) \land \cdots \land P(s_{k-1}) \land
+T(s_{k-1}, s_k) \Rightarrow P(s_k)
+\end{gather*}
+\caption{$k$-induction formulas: $k$ base cases and one inductive
+  step}
+\label{fig:k-induction}
+\end{figure}
+
+In practice, inductive model checkers often use a combination of the
+above techniques. Thus, a typical conclusion is of the form ``$P$ with
+lemmas $L_1, \ldots, L_n$ is $k$-inductive''.
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main.tex"
+%%% End
+
+%%  LocalWords:  bool reachability JKind Lustre PDR Yices MathSAT ok
+%%  LocalWords:  SMTInterpol dataflow init

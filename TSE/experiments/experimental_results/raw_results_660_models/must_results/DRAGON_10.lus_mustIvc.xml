@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">1.514</Runtime>
+    <Must>DRAGON.g01</Must>
+    <Must>DRAGON.g02</Must>
+    <Must>DRAGON.g07</Must>
+    <Must>DRAGON.g08</Must>
+    <Must>DRAGON.init_invalid</Must>
+    <Must>DRAGON.invalid</Must>
+    <Must>DRAGON.mem_init</Must>
+    <Must>OK</Must>
+    <Must>Sofar.Sofar</Must>
+    <Must>Sofar.X</Must>
+    <Must>env</Must>
+    <Must>invalid</Must>
+  </MustElements>
+</Results>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">2.767</Runtime>
+    <Must>First.First</Must>
+    <Must>First.X</Must>
+    <Must>OK</Must>
+    <Must>dirty_s</Must>
+    <Must>invalid_s</Must>
+    <Must>synapse.dirty_s</Must>
+    <Must>synapse.init_invalid_s</Must>
+    <Must>synapse.invalid_s</Must>
+    <Must>synapse.mem_init_s</Must>
+    <Must>synapse.valid_s</Must>
+    <Must>valid_s</Must>
+  </MustElements>
+</Results>

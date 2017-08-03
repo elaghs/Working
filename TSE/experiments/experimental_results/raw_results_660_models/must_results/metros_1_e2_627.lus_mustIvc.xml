@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">2.74</Runtime>
+    <Must>OK</Must>
+    <Must>main.controleur.diff</Must>
+    <Must>main.controleur.nB</Must>
+    <Must>main.controleur.nS</Must>
+    <Must>pOK</Must>
+  </MustElements>
+</Results>

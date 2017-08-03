@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.053</UcRuntime>
+   <Timeout unit="sec">30.755</Timeout>
+   <ProofTime unit="sec">0.098</ProofTime>
+   <Runtime unit="sec">0.151</Runtime>
+   <IVC>Controller~0.diff</IVC>
+   <IVC>Controller~0.minus</IVC>
+   <IVC>Controller~0.plus</IVC>
+   <IVC>Controller~0.speed</IVC>
+   <IVC>Environment~0.diff</IVC>
+   <IVC>Environment~0.minus</IVC>
+   <IVC>Environment~0.ok</IVC>
+   <IVC>Environment~0.plus</IVC>
+   <IVC>OK</IVC>
+   <IVC>Property~0.acceptable</IVC>
+   <IVC>Property~0.cpt</IVC>
+   <IVC>Property~0.ok</IVC>
+   <IVC>Property~0.speed</IVC>
+   <IVC>Sofar~0.Sofar</IVC>
+   <IVC>Sofar~0.X</IVC>
+   <IVC>minus</IVC>
+   <IVC>plus</IVC>
+   <IVC>realistic</IVC>
+   <IVC>speed</IVC>
+   <TRIVC>Environment~0.ok</TRIVC>
+   <TRIVC>Environment~0.minus</TRIVC>
+   <TRIVC>minus</TRIVC>
+   <TRIVC>Controller~0.minus</TRIVC>
+   <TRIVC>Sofar~0.X</TRIVC>
+   <TRIVC>Environment~0.diff</TRIVC>
+   <TRIVC>Property~0.cpt</TRIVC>
+   <TRIVC>Sofar~0.Sofar</TRIVC>
+   <TRIVC>Controller~0.diff</TRIVC>
+   <TRIVC>Controller~0.speed</TRIVC>
+   <TRIVC>plus</TRIVC>
+   <TRIVC>speed</TRIVC>
+   <TRIVC>Environment~0.plus</TRIVC>
+   <TRIVC>Property~0.ok</TRIVC>
+   <TRIVC>realistic</TRIVC>
+   <TRIVC>Controller~0.plus</TRIVC>
+   <TRIVC>Property~0.acceptable</TRIVC>
+   <TRIVC>Property~0.speed</TRIVC>
+   <TRIVC>OK</TRIVC>
+</Results>

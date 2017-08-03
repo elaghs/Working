@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[OK]">
+    <Runtime unit="sec">1.262</Runtime>
+    <Must>OK</Must>
+    <Must>V16_MayMove1</Must>
+    <Must>V17_MayMove2</Must>
+    <Must>V18_start1</Must>
+    <Must>V19_start2</Must>
+    <Must>V20_stop</Must>
+    <Must>V21_moving</Must>
+    <Must>V58_on</Must>
+    <Must>V66_signal</Must>
+    <Must>V75_signal</Must>
+    <Must>V86_signal</Must>
+    <Must>V90_signal</Must>
+  </MustElements>
+</Results>

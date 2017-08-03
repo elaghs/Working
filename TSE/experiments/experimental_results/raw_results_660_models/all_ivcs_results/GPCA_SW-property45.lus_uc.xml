@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.385</UcRuntime>
+   <Timeout unit="sec">43.81</Timeout>
+   <ProofTime unit="sec">2.377</ProofTime>
+   <Runtime unit="sec">2.7619999999999996</Runtime>
+   <IVC>_TOP__ALARM~0.ALARM_OUT.Notification_Message</IVC>
+   <IVC>_TOP__ALARM~0.SENSOR_IN.Door_Open</IVC>
+   <IVC>_TOP__ALARM~0.__ALARM__ASSERT__34</IVC>
+   <IVC>_TOP__ALARM~0.__ALARM__PROP__20</IVC>
+   <IVC>_TOP__ALARM~0.__ASSERT</IVC>
+   <IVC>_TOP__ALARM~0.__ASSUME__CONJ</IVC>
+   <IVC>_TOP__ALARM~0.__ASSUME__HIST</IVC>
+   <IVC>_TOP__ASSERT__55</IVC>
+   <IVC>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</IVC>
+   <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSERT</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSUME__CONJ</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSUME__HIST</IVC>
+   <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__4</IVC>
+   <IVC>__GUARANTEE45</IVC>
+   <TRIVC>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</TRIVC>
+   <TRIVC>__GUARANTEE45</TRIVC>
+   <TRIVC>_TOP__ALARM~0.SENSOR_IN.Door_Open</TRIVC>
+   <TRIVC>_TOP__ALARM~0.__ASSUME__CONJ</TRIVC>
+   <TRIVC>_TOP__ALARM~0.ALARM_OUT.Notification_Message</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSERT</TRIVC>
+   <TRIVC>_TOP__ASSERT__55</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__OUTPUT__PROP__4</TRIVC>
+   <TRIVC>_TOP__ALARM~0.__ASSERT</TRIVC>
+   <TRIVC>_TOP__ALARM~0.__ALARM__ASSERT__34</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSUME__CONJ</TRIVC>
+   <TRIVC>_TOP__ALARM~0.__ALARM__PROP__20</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSUME__HIST</TRIVC>
+   <TRIVC>_TOP__ALARM~0.__ASSUME__HIST</TRIVC>
+</Results>

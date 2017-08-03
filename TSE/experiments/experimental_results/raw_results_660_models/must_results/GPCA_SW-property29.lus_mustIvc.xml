@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MustElements property="[__GUARANTEE29]">
+    <Runtime unit="sec">9.331</Runtime>
+    <Must>DEFS__is_on._outvar</Must>
+    <Must>DEFS__is_on.mode</Must>
+    <Must>_TOP__ASSERT__8</Must>
+    <Must>_TOP__ASSERT__39</Must>
+    <Must>_TOP__IM.CONFIG_IN.Configured</Must>
+    <Must>_TOP__IM.IM_OUT.Current_System_Mode</Must>
+    <Must>_TOP__IM.IM_OUT.New_Infusion</Must>
+    <Must>_TOP__IM.__ASSERT</Must>
+    <Must>_TOP__IM.__ASSUME__CONJ</Must>
+    <Must>_TOP__IM.__ASSUME__HIST</Must>
+    <Must>_TOP__IM.__IM__ASSERT__14</Must>
+    <Must>_TOP__IM.__IM__PROP__12</Must>
+    <Must>_TOP__OUTPUT.CONFIG_IN.Configured</Must>
+    <Must>_TOP__OUTPUT.GPCA_SW_OUT.Configured</Must>
+    <Must>_TOP__OUTPUT.GPCA_SW_OUT.Current_System_Mode</Must>
+    <Must>_TOP__OUTPUT.GPCA_SW_OUT.New_Infusion</Must>
+    <Must>_TOP__OUTPUT.IM_IN.Current_System_Mode</Must>
+    <Must>_TOP__OUTPUT.IM_IN.New_Infusion</Must>
+    <Must>_TOP__OUTPUT.__ASSERT</Must>
+    <Must>_TOP__OUTPUT.__ASSUME__CONJ</Must>
+    <Must>_TOP__OUTPUT.__ASSUME__HIST</Must>
+    <Must>_TOP__OUTPUT.__OUTPUT__PROP__21</Must>
+    <Must>_TOP__OUTPUT.__OUTPUT__PROP__27</Must>
+    <Must>_TOP__OUTPUT.__OUTPUT__PROP__30</Must>
+    <Must>__GUARANTEE29</Must>
+  </MustElements>
+</Results>

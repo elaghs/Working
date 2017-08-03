@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MinimalIvc property="[OK]">
+    <Runtime unit="sec">1.505</Runtime>
+    <IVC>OK</IVC>
+    <IVC>Sofar~0.Sofar</IVC>
+    <IVC>Sofar~0.X</IVC>
+    <IVC>env</IVC>
+    <IVC>firefly~0.garde1</IVC>
+    <IVC>firefly~0.garde2</IVC>
+    <IVC>firefly~0.garde3</IVC>
+    <IVC>firefly~0.garde6</IVC>
+    <IVC>firefly~0.garde7</IVC>
+    <IVC>firefly~0.garde8</IVC>
+    <IVC>firefly~0.i_invalid</IVC>
+    <IVC>firefly~0.invalid</IVC>
+    <IVC>firefly~0.mem_invalid</IVC>
+    <IVC>invalid</IVC>
+  </MinimalIvc>
+</Results>

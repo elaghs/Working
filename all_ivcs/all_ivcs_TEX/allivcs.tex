@@ -19,10 +19,7 @@
 
 Considering the definition of a \mivc, a brute-force technique for enumerating all \mivc s would be the same as exploring the power set of $T$ (denoted by $ \mathcal{P}(T) $).
 Basically, the algorithm needs to explore the provability of a
-given property by any subset of $T$, which would be computationally expensive.
-However, this section proposes a complete
-enumeration algorithm that only needs to explore a (small) portion of $\mathcal{P}(T)$
-in order to compute $AIVC$. To this end, we begin with introducing several additional notions and definitions, most of which are inspired by the MUS enumeration technique proposed in \cite{marco2016fast}.
+given property by any subset of $T$, which would be computationally expensive.  Our approach is an adaptation of the the work of MARCO for generating all minimal unsatisfiable subsets (MUSes) in~\cite{marco2016fast}, and only needs to explore a (small) portion of $\mathcal{P}(T)$ in order to compute $AIVC$.  In fact, it can be viewed as an instantiation of the MARCO proof schema for the richer theory of sequential model checking.  We begin by introducing several additional notions and definitions, most of which are analogous or equivalent to those in~\cite{marco2016fast}.
 
 
 \begin{definition}{\emph{Maximal Inadequate Set (\mis):}}
@@ -152,10 +149,11 @@ Case 2: Suppose there is an inadequate set $Ex$ such that $S \subseteq Ex$ and $
 From Case 1 and Case 2, there is no model of $map$ whose corresponding set in $\mathcal{P}(T)$ is a non-strict subset (superset) of any inadequate (adequate) explored set.
 \end{IEEEproof}
 
+Next, we tie the {\em map} results back to the minimal IVCs problem. Note that from Theorem~\ref{thm:minimal-hard}, finding a minimal IVC may be undecidable if the original checking problem is undecidable.  In most cases, if we are able to prove a property against a full model, we are able to conclusively determine its MIVCs, but it is not guaranteed.  For a given set $S$, if our implementation is unable to prove the property, we conservatively assume that the property is falsifiable and note to the user that the results may be approximate.  We discuss how our implementation manages undecidability in more detail in Section~\ref{sec:impl}.
 
 \begin{lemma}
 \label{lem:map:comp}
-For $(I, T) \vdash P$, $map$ is satisfiable iff
+For decidable model checking problems $(I, T) \vdash P$, $map$ is satisfiable iff
 at least one $S \in AIVC(P)$ or one \mis\ of $T$ is unexplored.
 \end{lemma}
 \begin{IEEEproof}
@@ -199,7 +197,7 @@ for an unexplored \mis\ is symmetric.
 
 \begin{corollary}
 \label{cor:map:cc}
-For $(I, T) \vdash P$, $map$ is unsatisfiable iff every $S \in
+For decidable model checking problems $(I, T) \vdash P$, $map$ is unsatisfiable iff every $S \in
 \mathcal{P}(T)$ has been explored or excluded.
 \end{corollary}
 \begin{IEEEproof}
@@ -285,7 +283,7 @@ literals from $T \setminus S$ in lines (12-13).
 
 \begin{theorem}
 \label{theorem:termination}
-  Algorithm~\ref{alg:aivc} will terminate.
+  For decidable model checking problems, Algorithm~\ref{alg:aivc} will terminate.
 \end{theorem}
 \begin{IEEEproof}
 Each iteration of the while loop in Algorithm~\ref{alg:aivc} blocks at
@@ -295,7 +293,7 @@ blocked. Since $\mathcal{P}(T)$ is finite, the algorithm terminates.
 
 \begin{theorem}
 \label{theorem:aivc}
-  Algorithm \ref{alg:aivc} enumerates all \mis es and \mivc s.
+  For decidable model checking problems, Algorithm \ref{alg:aivc} enumerates all \mis es and \mivc s.
 \end{theorem}
 \begin{IEEEproof}
 By Theorem~\ref{theorem:termination} the algorithm terminates. This
@@ -341,8 +339,8 @@ explored and are elements of $A$ by the end of the algorithm.
 
 Note that none of the proofs above require that \getivc\ returns a minimal IVC.
 From \cite{Ghass16}, it is computationally cheap to find an
-approximately minimal \ivc\ using the algorithm \ucalg; however, finding a {\em guaranteed}
-minimal \ivc\ using the \ucbfalg\ algorithm is computationally expensive.  For efficiency
+approximately minimal \ivc\ using the algorithm \ucalg; however, using the better,  
+usually minimal \ivc\ using the \ucbfalg\ algorithm is computationally expensive.  For efficiency
 reasons, it is much better to use the approximate \ucalg\ algorithm to compute the set of
 all \mivc s.  The \ucbfalg\ algorithm attempts to repeatedly prove the property by brute-force removing elements (BF = ``brute force''), so does much of the work of Algorithm~\ref{alg:aivc} in a way that is not effective towards finding other IVCs.  The overhead of the \ucalg\ algorithm is on average 10\% over the baseline proof, as opposed to 882\% for the \ucbfalg\ algorithm.  In addition, the average increase in size of IVCs returned by \ucalg\ is approximately 10\% of the \ucbfalg\ algorithm.
 

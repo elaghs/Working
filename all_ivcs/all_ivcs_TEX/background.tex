@@ -29,7 +29,7 @@ T$ means that $T_i$ is a top-level conjunct of $T$, and $S
 \subseteq T$ means all top-level conjuncts of $S$ are top-level
 conjuncts of $T$. When a top-level conjunct $T_i$ is removed from $T$, we write $T \setminus \{T_i\}$. Such a transition system can easily encode our example model in Section~\ref{sec:example}, where each equation defines a conjunct within $T$ that we will denote by the variable assigned; so, $T = \{$ {\small \texttt{a1\_below, a2\_below, a1\_above, a2\_above, one\_below, both\_above, doi\_on, on\_p}} $\}$.
 
-The idea behind finding an IVC for a given property $P$ \cite{Ghass16} is based on inductive proof methods used in SMT-based model checking, such as $K$-induction and IC3/PDR \cite{NFM2012:KaGaTiWh, amla2005analysis, Een2011:PDR}. Generally, an IVC computation technique aims to determine, for any subset $S \subseteq T$, whether $P$ is provable by $S$. Then, a minimal subset that satisfies $P$ is seen as a minimal proof explanation called a minimal Inductive Validity Core.
+The idea behind finding an IVC for a given property $P$ \cite{Ghass16} is based on inductive proof methods used in SMT-based model checking, such as $K$-induction and IC3/PDR \cite{NFM2012:KaGaTiWh, amla2005analysis, Een2011:PDR}. Generally, an IVC computation technique aims to determine, for any subset $S \subseteq T$, whether $P$ is provable by $S$. Then, a minimal subset that satisfies $P$ is seen as a minimal proof explanation called a minimal Inductive Validity Core.  Theorem~\ref{thm:minimal-hard} demonstrates that the minimization process is as hard as model checking, so finding a minimal inductive validity core may not be possible for some model checking problems.
 
 \begin{definition}{\emph{Inductive Validity Core (\ivc)\cite{Ghass16}:}}
   \label{def:ivc}
@@ -43,6 +43,11 @@ The idea behind finding an IVC for a given property $P$ \cite{Ghass16} is based 
   denoted by $\mivc(P, S)$, iff ~$\ivc(P, S) \wedge \forall T_i \in S.~ (I, S\setminus\{ T_i \}) \nvdash P$.
 \end{definition}
 
+\begin{theorem}
+\label{thm:minimal-hard}
+Determining if an IVC is minimal is as hard as model checking.  \\
+Proof: see \cite{Ghass16}. \qed
+\end{theorem}
 
 Note that, given $(I, T) \vdash P$, $P$ always has at least one \mivc, and it may also have many distinct \mivc s corresponding to different proof paths. To capture the latter, the \emph{all \mivc s ($AIVC$)} relation has been introduced in \cite{Murugesan16:renext}.
 \begin{definition}{\emph{All \mivc s ($AIVC$):}}
@@ -51,7 +56,6 @@ Note that, given $(I, T) \vdash P$, $P$ always has at least one \mivc, and it ma
     $$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  MIVC(P, S)\} $$
 \end{definition}
 
-Note that minimality of all $IVCs$ is decidable for finite models and undecidable for problems involving infinite theories (as is model checking).
 
 Fig.~\ref{fig:ivcs} illustrates these notions by a graphical representation of IVCs for property $P = ({\small{\texttt{on\_p}}})$ in the example presented in Section~\ref{sec:example}. As shown in the picture, this property has two distinct \mivc s, which means the model satisfies $P$ in two different ways:  {\small \texttt{\{\{a1\_below, one\_below, doi\_on, on\_p\}, \{a2\_below, one\_below, doi\_on, on\_p\}\}}}, This is because in the implementation, the DOI is turned on when either of the altimeters is below the threshold, while our property states that they both must be below.
 Note that there is a subset of model elements, $\{{\small \texttt{a1\_above, a2\_above, both\_above}}\}$, that does not show up in $AIVC(P)$. Elements in such a subset
@@ -70,12 +74,12 @@ do not affect the satisfaction of $P$.  In the complete ASW model in~\cite{HCW02
 
 \begin{figure}[t]
  \centering
-  \includegraphics[width=0.9\columnwidth]{figs/ivcs.jpg}
+  \includegraphics[width=0.8\columnwidth]{figs/ivcs.jpg}
   \vspace{-0.1in}
   \caption{Graphical representation of \mivc s for the model in Fig.~\ref{fig:asw}
   with  $P = ({\small \texttt{on\_p}})$}
   \label{fig:ivcs}
-  %\vspace{-0.2in}
+  \vspace{-0.1in}
 \end{figure}
 
 %\subsection{Satisfiability}

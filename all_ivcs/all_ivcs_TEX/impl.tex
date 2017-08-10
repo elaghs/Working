@@ -30,24 +30,15 @@ We use the \texttt{JKind} IVC generation engine to implement the \getivc\ proced
 %However, as we will show in the experiments, on the one hand, the \ucbfalg ~algorithm is very expensive. On the other hand, the \ucalg ~algorithm is not only fast, but it also generates \ivc s that are
 %quite close to the \mivc s computed by \ucbfalg.
 
-As mentioned in Theorem~\ref{thm:minimal-hard}, finding a minimal IVC is as hard as model checking,
-so the \getivc\ procedure (Line 9 of Algorithm~\ref{alg:aivc}) is not guaranteed to
-terminate.
-Therefore, we have added timeouts for each iteration of the \aivcalg\ procedure.
+As mentioned in Section~\ref{sec:allivcs} the \isadeq\ procedure may not terminate.
 In our implementation, we measure the time required to prove the property and the initial
 given the full model (\emph{proof-time}), and the time required to calculate the first
 (approximate) IVC using \ucalg\ (\emph{\ucalg-time}).
 We then set a timeout for each iteration of the \aivcalg\ algorithm to
 ($30$ sec  $+\ 5\ \times$ (\emph{proof-time} $+$ \emph{\ucalg-time})).
-If the \texttt{while} loop times out for $S$ in line 8 of Algorithm~\ref{alg:aivc},
-we treat $S$ as an \emph{inadequate} set to ensure that all results support a proof.
-In this case, line 13 will prune off $S$ and all
-its subsets from the search space.
-
-In almost all cases
-in our experiment and our use of the tools, this timeout is sufficient to ensure exact
-results. if a timeout occurs, the tool reports a warning that the results may be
-approximate. In the experiment, only 15 models contained inter-loops that timed out although the number of such loops is different across these models.
+In almost all cases in our experiment and our use of the tools, 
+this timeout is sufficient to ensure exact results. In the experiment, only 15 of 475 
+models (3\%) had potentially approximate results.
 %Since the timeout is used by both the brute-force
 %algorithm and the \aivcalg\ algorithm, minimality is only guaranteed if there
 %are no timeouts.  %In addition, because the analysis problems are slightly different

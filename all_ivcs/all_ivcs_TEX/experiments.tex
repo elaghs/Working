@@ -13,7 +13,7 @@ Therefore, we investigate the following research questions:
 \begin{itemize}
   \item \textbf{RQ1:} How expensive is it to compute the \aivcalg ~algorithm for determining all minimal IVCs when compared to the \ucalg ~and \ucbfalg ~algorithms, which find a single approximately minimal and guaranteed minimal IVC?
   \item \textbf{RQ2:} How is the verification time of the \aivcalg ~algorithm affected by the baseline proof time and the number of IVCs that can be found for a property?
-  \item \textbf{RQ3:} How large are the IVCs produced by the \aivcalg\ algorithm 
+  \item \textbf{RQ3:} How large are the IVCs produced by the \aivcalg\ algorithm
     compared to those of \ucalg\ and \ucbfalg ?
 %
 %  \item \textbf{RQ3)} How does approximating minimality influence the performance of the \aivcalg ~algorithm?
@@ -29,7 +29,7 @@ The 80 industrial models each contain over 600 equations and are each $\geq$80kB
 
 We selected only benchmark problems consisting of a Lustre model with
 properties that \texttt{JKind} could prove with an hour timeout.
-For each test model, we computed \aivcalg, \ucalg, and \ucbfalg ~algorithms in a configuration with the \texttt{Z3} solver and the ``fastest'' mode of \texttt{JKind} (which involves running the $k$-induction and PDR engines in parallel and terminating when a solution is found). The experiments were run on an  Intel(R) i5-4690, 3.50GHz, 16 GB memory machine running Linux, and are available at~\cite{expr}.%\footnote{The benchmarks, tools, and experimental results are available on \cite{expr}.}
+For each test model, we computed \aivcalg, \ucalg, and \ucbfalg ~algorithms in a configuration with the \texttt{Z3} solver and the ``fastest'' mode of \texttt{JKind} (which involves running the $k$-induction and PDR engines in parallel and terminating when a solution is found). The experiments were run on an  Intel(R) i5-4690, 3.50GHz, 16 GB memory machine running Linux, and are available at {\small \texttt{https://github.com/elaghs/Working/tree/ master/all\_ivcs/experiments}}.%\footnote{The benchmarks, tools, and experimental results are available on \cite{expr}.}
 
 
 

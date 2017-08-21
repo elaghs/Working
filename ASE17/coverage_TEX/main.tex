@@ -120,13 +120,13 @@
 \newcommand{\rbb}{]\!]}
 \newcommand{\expr}{\phi}
 \newcommand{\exprS}{\Phi}
-\newcommand{\nondetcov}{\text{\sc Nondet-Cov}}
-\newcommand{\nondetcovalt}{\text{\sc Nondet-Cov$^{*}$}}
-\newcommand{\ivccov}{\text{\sc IVC-Cov}}
-\newcommand{\maycov}{\text{\sc May-Cov}}
-\newcommand{\mustcov}{\text{\sc Must-Cov}}
-\newcommand{\allcov}{\text{\sc Model-Cov}}
-\newcommand{\mutcov}{\text{\sc Mutant-Cov}}
+\newcommand{\nondetcov}{{\small \text{\sc Nondet-Cov}}}
+\newcommand{\nondetcovalt}{{\small \text{\sc Nondet-Cov$^{*}$}}}
+\newcommand{\ivccov}{{\small \text{\sc IVC-Cov}}}
+\newcommand{\maycov}{{\small \text{\sc May-Cov}}}
+\newcommand{\mustcov}{{\small \text{\sc Must-Cov}}}
+\newcommand{\allcov}{{\small \text{\sc Model-Cov}}}
+\newcommand{\mutcov}{{\small \text{\sc Mutant-Cov}}}
 
 \begin{document}
 
@@ -142,10 +142,10 @@
 \newcommand{\cta}{\text{TA$_{C}$}}
 \newcommand{\tta}{\text{TA$_{T}$}}
 
-\newcommand{\bfalg}{{IVC\_BF}\xspace}
-\newcommand{\ucalg}{{IVC\_UC}\xspace}
-\newcommand{\ucbfalg}{{IVC\_UCBF}\xspace}
-\newcommand{\mustalg}{{IVC\_MUST}\xspace}
+\newcommand{\bfalg}{{\small {IVC\_BF}}\xspace}
+\newcommand{\ucalg}{{\small {IVC\_UC}}\xspace}
+\newcommand{\ucbfalg}{{\small {IVC\_UCBF}}\xspace}
+\newcommand{\mustalg}{{\small {IVC\_MUST}}\xspace}
 
 \newtheorem{definition}{Definition}
 \newtheorem{lemma}{Lemma}
@@ -219,8 +219,8 @@ andrew.gacek, lucas.wagner@rockwellcollins.com}
 
 
 \begin{abstract}
- When using formal verification on critical software, an important question involves whether the properties
-used for analysis are sufficient to adequately constrain the behavior of an implementation model. To address
+ When using formal verification on critical software, an important question involves whether
+we have we specified enough properties for a given implementation model. To address
 this question, coverage metrics for property-based formal verification have been proposed.  Existing metrics
 are usually based on {\em mutation}, where the implementation model is repeatedly modified and
 re-analyzed to determine whether mutant models are ``killed'' by the property set.
@@ -249,7 +249,7 @@ We demonstrate the metrics on a large corpus of examples.
 \end{abstract}
 
 \begin{IEEEkeywords}
-coverage; requirements completeness; formal verification; SAT-based model checking;
+coverage; requirements completeness; formal verification;
   inductive proofs; inductive validity cores;
 \end{IEEEkeywords}
 
@@ -282,9 +282,7 @@ coverage; requirements completeness; formal verification; SAT-based model checki
 
 %\section*{Acknowledgment}
 
-\small{\textbf{Acknowledgments:} This work was carried out within the HACMS and SOSITE Phase 2
-(DARPA FA8750-12-9-0179 and (I didn't find the SOSITE grant num in your resume)).
-The authors would like to thank John Backes for his comments.}
+\textbf{Acknowledgments:} This work was carried out within the HACMS and SOSITE Phase II grants (DARPA FA8750-12-9-0179 and FA8650-16-C-7656).
 
 
 \bibliographystyle{abbrv}

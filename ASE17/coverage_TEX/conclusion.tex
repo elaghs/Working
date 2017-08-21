@@ -2,18 +2,30 @@
 \label{sec:conclusion}
 
 In this paper, we have examined the use of proof-based coverage notions for formal verification.  These provide an alternate way of measuring property completeness than previously proposed metrics based on mutation or functional traces of outputs.
-Further we have implemented these notions in terms of checking safety properties using inductive model checking tools through Inductive Validity Cores (IVCs).  We have shown that these metrics complement existing methods, and in some cases are much more computationally efficient than previous metrics, while still providing accurate information about the covered parts of a given design.
+%Further we have implemented these notions in terms of checking safety properties using inductive model
+%checking tools through Inductive Validity Cores (IVCs).
+We have shown that these metrics complement existing methods, and in some cases are much more computationally efficient than previous metrics, while still providing accurate information about the covered parts of a given design.
+Most of our proposed metrics preserve provability, which means that the set of elements considered covered by our algorithm is sufficient to establish the validity proof for every requirement in the set of specifications.  
+The notion of proof preservation is appealing because it allows a concrete demonstration to the user of the irrelevance of portions of the implementation. Since some of the proposed metrics need to compute all IVCs,
+we have investigated efficient algorithms for computing all IVCs \cite{Ghass17}. In cases where there are multiple minimal satisfying sets, the all IVCs give insight on multiple ways by which the model meets a requirement.
+%Finally, if the user decides that the only behavior of interest is that provided by the properties, it may allow new notions of synthesis that simply remove unnecessary behaviors. 
+%For implementation, we have made use of the open source model checker \texttt{JKind} and its IVC generation capability. 
+%We have evaluated our approach comparing it to another recent approach from the literature.  Our results show that the \ivccov\ computation imposes a small overhead to the verification process and so it is reasonable to measure completeness as part of the normal analysis process.
 
-Most of our proposed metrics preserve provability, which means that the set of elements considered covered by our algorithm is sufficient to establish the validity proof for every requirement in the set of specifications.  The notion of proof preservation is appealing because it allows a concrete demonstration to the user of the irrelevance of portions of the implementation.  The IVC coverage notion also allows, in cases where there are multiple minimal satisfying sets, insight on multiple ways by which the model meets a requirement.
-Finally, if the user decides that the only behavior of interest is that provided by the properties, it may allow new notions of synthesis that simply remove unnecessary behaviors.
+%We are now in the process of exploiting an efficient algorithm for enumerating the space of MIVCs,
+%e.g., finding a minimum, rather than minimal IVC, or finding all MIVCs \cite{Ghass17}. As part of this
+%process, we are also investigating the relationship among the size of IVCs, coverage score of \ivccov\, and vacuity metrics for models and properties.  We hope to eventually map the level of rigor of
+%adequacy metrics to the levels of software criticality identified in DO178C as reasonable targets for
+%certification.
 
-For implementation, we have made use of the open source model checker \texttt{JKind} and its IVC generation capability. We have evaluated our approach comparing it to another recent approach from the literature.  Our results show that the \ivccov\ computation imposes a small overhead to the verification process and so it is reasonable to measure completeness as part of the normal analysis process.
-
-We are now in the process of exploiting an efficient algorithm for enumerating the space of MIVCs, e.g., finding a minimum, rather than minimal IVC, or finding all MIVCs \cite{ghass17}. As part of this process, we are also investigating the relationship among the size of IVCs, coverage score of \ivccov\, and vacuity metrics for models and properties.  We hope to eventually map the level of rigor of adequacy metrics to the levels of software criticality identified in DO178C as reasonable targets for certification.
-
-We will also more closely examine the {\em granularity} of models.  We hope to construct algorithms that can create models that are sufficiently granular and maximally efficient in terms of verification time.  A proper formalization of these notions will be necessary and valuable in constructing sound algorithms that establish sufficient granularity.
-
-Finally, we plan to investigate completeness results for bounded verification runs (bounded verification cores, or BVCs), to provide information as to the completeness of the analysis even when an inductive proof cannot be established.
+%We will also more closely examine the {\em granularity} of models.  We hope to construct algorithms
+%that can create models that are sufficiently granular and maximally efficient in terms of verification
+%time.  A proper formalization of these notions will be necessary and valuable in constructing sound
+%algorithms that establish sufficient granularity.
+%
+%Finally, we plan to investigate completeness results for bounded verification runs (bounded
+%verification cores, or BVCs), to provide information as to the completeness of the analysis even when
+%an inductive proof cannot be established.
 \clearpage
 %We believe in most of the cases that the $\ucalg$ algorithm results in a coverage score much higher
 %than the $\ucbfalg$ (i.e., the real score that \ivccov\ is intended to report), the problem

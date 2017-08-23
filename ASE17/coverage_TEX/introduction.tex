@@ -5,22 +5,27 @@
 %%, involving formalized requirements and proofs of implementation correctness,
 %should be applied to gain higher assurance than is possible with testing~\cite{Miller10:CACM,Rushby09:SEFM,Hardin09:Security}.  For these formal approaches, testing may still be performed, but the verification effort is primarily focused on performing proofs.  Unfortunately, proof-based approaches tend not to answer the question as to whether implementations have {\em additional functionality} that is not covered by requirements.  Testing, despite its faults, can measure {\em structural coverage} to find untested functionality and can find some errors by {\em serendipity}, in which problems not directly related to the requirement under test are exposed.  Therefore, in formal verification approaches, it is even more important that requirements be adequate.
 
-Relatively recently, techniques have been devised for analyzing completeness of requirements against formal implementation models specified as transition systems or Kripke structures \cite{chockler2001practical,das2005formal, claessen2007coverage, grosse2007estimating}.  These models are agnostic to the abstraction level of the implementation: implementations can be lower-level requirements, software architectures, or concrete implementations of system behavior.  The mechanism used is based on {\em mutation} and {\em proof}: is it possible to prove that the requirements still hold of the system after mutating the model in some way?  If so, then the requirements are incomplete with respect to the mutated part of the model.
+For critical systems, it has been argued that formal methods should be applied to gain higher assurance than is possible with testing~\cite{Miller10:CACM}. Unfortunately, proof-based approaches tend not to answer the question as to whether implementations have functionality that is not covered by requirements.
+Relatively recently, techniques have been devised for analyzing adequacy of requirements against formal implementation models specified as transition systems or Kripke structures \cite{chockler2001practical,das2005formal, claessen2007coverage, grosse2007estimating}.  %These models are agnostic to the abstraction level of the implementation: implementations can be lower-level requirements, software architectures, or concrete implementations of system behavior.  
+The mechanism used is based on {\em mutation} and {\em proof}: is it possible to prove that the requirements still hold of the system after mutating the model in some way?  If so, then the requirements are incomplete with respect to the mutated part of the model.
 
-Unfortunately, previous approaches to computing coverage metrics can {\em underapproximate} which portions of a program are necessary to fulfill the requirements. Thus, the feedback provided to the developer may be somewhat misleading.
+Unfortunately, previous approaches to computing coverage metrics can {\em underapproximate} which portions of a program are necessary to prove the requirements. %Thus, the feedback provided to the developer may be somewhat misleading.
 In addition, the mutation-based analyses tend to be computationally very expensive because there are many possible mutant models to verify.  For example, for model checkers, state of the art techniques have runtimes of (in the best case) several times more than is required for proof~\cite{chockler2010coverage}.
 
 What we would like to have is a graduated set of metrics for checking the adequacy of requirements against an implementation model that:
-\begin{itemize}
-    \item can be applied early and throughout a development cycle on different implementation artifacts,
-    \item are {\em proof preserving}: the portion of the implementation that is identified as covered demonstrates the
+%\begin{itemize}
+    (1) can be applied early and throughout a development cycle on different implementation artifacts,
+    (2) are {\em proof preserving}: the portion of the implementation that is identified as covered demonstrates the
         fulfillment of the requirement but does not contain irrelevant information, and
-    \item are efficient to compute.
-\end{itemize}
+    (3) are efficient to compute.
+%\end{itemize}
+%
+%\noindent 
+Towards this end, we propose several notions of requirements adequacy based on {\em minimal proofs of requirements}.  We measure the adequacy of a set of requirements by examining an (approximately) minimal set of model elements necessary to construct a proof of all the requirements.
 
-\noindent Towards this end, we propose several notions of requirements adequacy based on {\em minimal proofs of requirements}.  We measure the adequacy of a set of requirements by examining an (approximately) minimal set of model elements necessary to construct a proof of all the requirements.  
-
-Our approach is applicable to {\em reactive systems} that do a bounded amount of computation in response to an input, and which describe most embedded and especially safety-critical software.  The idea is implementation agnostic so it can be applied early in the development cycle against abstract implementation models as well as programs.  It is implemented using {\em Inductive Validity Cores} (IVCs)~\cite{Ghass16} for transition systems.
+Our approach is applicable to {\em reactive software} that does a bounded amount of computation in response to an input for an unbounded sequence of inputs.  This set contains most embedded and especially safety-critical software, and can be described as transition systems (equivalently, infinite-state ``circuits'' that compute next states given an input and current state).
+%The idea is implementation agnostic so it can be applied early in the development cycle against abstract implementation models as well as programs.
+It is implemented using {\em Inductive Validity Cores} (IVCs)~\cite{Ghass16} for transition systems.
 We have built support for generating these metrics into a branch of the JKind model checker~\cite{jkind}.  Using a large benchmark suite, we demonstrate that one of the proof-based metrics is considerably more computationally tractable than previous approaches based on mutation, averaging ${\sim}$20\% overhead over model-checking alone, rather than (for our benchmark problems) the up to ${\sim}$2300\% overhead required for the state of the art of the mutation-based metrics.  
 Thus, the contributions of this work are:
 \begin{enumerate}
@@ -29,8 +34,8 @@ Thus, the contributions of this work are:
 \item An implementation that efficiently computes property coverage over symbolic transition systems,
 \item An experiment that compares our technique against a state of the art mutation-based notion of completeness.
 \end{enumerate}
-\vspace{-0.01in}
-\noindent Our goal is to provide a range of metrics for describing requirements adequacy using formal methods that are acceptable to certification authorities.  %Toward this end, the metrics are now being used by our industrial partner \ela{cite?} in a pilot project towards building safety-critical avionics software.  %We discuss how the metrics are being used and how they might satisfy certification guidance.
+%\vspace{-0.01in}
+%\noindent Our goal is to provide a range of metrics for describing requirements adequacy using formal methods that are acceptable to certification authorities.  %Toward this end, the metrics are now being used by our industrial partner \ela{cite?} in a pilot project towards building safety-critical avionics software.  %We discuss how the metrics are being used and how they might satisfy certification guidance.
 
 
 %\mike{something here about certification?}

@@ -18,23 +18,24 @@ What we would like to have is a graduated set of metrics for checking the adequa
     \item are efficient to compute.
 \end{itemize}
 
-\noindent Towards this end, we propose several notions of requirements adequacy based on {\em minimal proofs of requirements}.  We measure the adequacy of a set of requirements by examining an (approximately) minimal set of model elements necessary to construct a proof of all the requirements.  Like earlier approaches proposed for formal verification, this idea is implementation agnostic so it can be applied early in the development cycle against abstract implementation models.  The approach is implemented using {\em Inductive Validity Cores} (IVCs)~\cite{Ghass16} for transition systems.
-We have built support for generating these metrics into a branch of the JKind model checker~\cite{jkind}.  Using a large benchmark suite, we demonstrate that one of the proof-based metrics is considerably more computationally tractable than previous approaches based on mutation, averaging ${\sim}$20\% overhead over model-checking alone, rather than (for our benchmark problems) the up to ${\sim}$2300\% overhead required for the state of the art of the mutation-based metrics.
+\noindent Towards this end, we propose several notions of requirements adequacy based on {\em minimal proofs of requirements}.  We measure the adequacy of a set of requirements by examining an (approximately) minimal set of model elements necessary to construct a proof of all the requirements.  
 
-%Thus, the contributions of this work are:
-%\begin{enumerate}
-%\item A family of coverage metrics for formal verification based on \emph{minimal} Inductive Validity Cores (MIVCs).  Most of the proposed metrics are {\em proof preserving},
-%\item A discussion of the relationship between proof-based metrics and mutation-based metrics, including a proof of equivalence between non-deterministic mutation coverage and one of the proof-based metrics (\mustcov).
-%\item An implementation that efficiently computes property coverage over symbolic transition systems,
-%\item An experiment that compares our technique against a state of the art mutation-based notion of completeness.
-%\end{enumerate}
-%\vspace{-0.01in}
-\noindent Our goal is to provide a range of metrics for describing requirements adequacy using formal methods that are acceptable to certification authorities.  Toward this end, the metrics are now being used by our industrial partner \ela{cite?} in a pilot project towards building safety-critical avionics software.  We discuss how the metrics are being used and how they might satisfy certification guidance.
+Our approach is applicable to {\em reactive systems} that do a bounded amount of computation in response to an input, and which describe most embedded and especially safety-critical software.  The idea is implementation agnostic so it can be applied early in the development cycle against abstract implementation models as well as programs.  It is implemented using {\em Inductive Validity Cores} (IVCs)~\cite{Ghass16} for transition systems.
+We have built support for generating these metrics into a branch of the JKind model checker~\cite{jkind}.  Using a large benchmark suite, we demonstrate that one of the proof-based metrics is considerably more computationally tractable than previous approaches based on mutation, averaging ${\sim}$20\% overhead over model-checking alone, rather than (for our benchmark problems) the up to ${\sim}$2300\% overhead required for the state of the art of the mutation-based metrics.  
+Thus, the contributions of this work are:
+\begin{enumerate}
+\item A family of coverage metrics for formal verification based on \emph{minimal} Inductive Validity Cores (MIVCs).  Most of the proposed metrics are {\em proof preserving},
+\item A discussion of the relationship between proof-based metrics and mutation-based metrics, including a proof of equivalence between non-deterministic mutation coverage and one of the proof-based metrics (\mustcov).
+\item An implementation that efficiently computes property coverage over symbolic transition systems,
+\item An experiment that compares our technique against a state of the art mutation-based notion of completeness.
+\end{enumerate}
+\vspace{-0.01in}
+\noindent Our goal is to provide a range of metrics for describing requirements adequacy using formal methods that are acceptable to certification authorities.  %Toward this end, the metrics are now being used by our industrial partner \ela{cite?} in a pilot project towards building safety-critical avionics software.  %We discuss how the metrics are being used and how they might satisfy certification guidance.
 
 
 %\mike{something here about certification?}
-
+\iffalse
 The rest of the paper is organized as follows.  In Section~\ref{sec:example}, we present a running example to illustrate the concepts formalized throughout the paper.  In Section~\ref{sec:background}, we provide the formal preliminaries for the approach and some background on mutation-based coverage notions.  Section~\ref{sec:method} presents proof-based coverage metrics.
 Section~\ref{sec:illust} illustrates the assessment of requirements completeness with the new metrics. Section~\ref{sec:impl} provides detail on implementation. Section~\ref{sec:experiments} describes an experiment to evaluate our algorithm.
 Section~\ref{sec:discussion} provides a discussion.  In Section~\ref{sec:related}, we cover related work.  Finally, Section~\ref{sec:conclusion} mentions some conclusions.
-
+\fi

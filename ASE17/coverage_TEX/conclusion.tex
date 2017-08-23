@@ -5,11 +5,13 @@ In this paper, we have examined the use of proof-based coverage notions for form
 %Further we have implemented these notions in terms of checking safety properties using inductive model
 %checking tools through Inductive Validity Cores (IVCs).
 We have shown that these metrics complement existing methods, and in some cases are much more computationally efficient than previous metrics, while still providing accurate information about the covered parts of a given design.
-Most of our proposed metrics preserve provability, which means that the set of elements considered covered by our algorithm is sufficient to establish the validity proof for every requirement in the set of specifications.  
-The notion of proof preservation is appealing because it allows a concrete demonstration to the user of the irrelevance of portions of the implementation. Since some of the proposed metrics need to compute all IVCs,
+Most of our proposed metrics preserve provability, which means that the set of elements considered covered by our algorithm is sufficient to establish the validity proof for every requirement in the set of specifications.
+The notion of proof preservation is appealing because it allows a concrete demonstration to the user of the irrelevance of portions of the implementation. 
+
+Since some of the proposed metrics need to compute all IVCs,
 we have investigated efficient algorithms for computing all IVCs \cite{Ghass17}. In cases where there are multiple minimal satisfying sets, the all IVCs give insight on multiple ways by which the model meets a requirement.
-%Finally, if the user decides that the only behavior of interest is that provided by the properties, it may allow new notions of synthesis that simply remove unnecessary behaviors. 
-%For implementation, we have made use of the open source model checker \texttt{JKind} and its IVC generation capability. 
+%Finally, if the user decides that the only behavior of interest is that provided by the properties, it may allow new notions of synthesis that simply remove unnecessary behaviors.
+%For implementation, we have made use of the open source model checker \texttt{JKind} and its IVC generation capability.
 %We have evaluated our approach comparing it to another recent approach from the literature.  Our results show that the \ivccov\ computation imposes a small overhead to the verification process and so it is reasonable to measure completeness as part of the normal analysis process.
 
 %We are now in the process of exploiting an efficient algorithm for enumerating the space of MIVCs,
@@ -26,7 +28,7 @@ we have investigated efficient algorithms for computing all IVCs \cite{Ghass17}.
 %Finally, we plan to investigate completeness results for bounded verification runs (bounded
 %verification cores, or BVCs), to provide information as to the completeness of the analysis even when
 %an inductive proof cannot be established.
-\clearpage
+%\clearpage
 %We believe in most of the cases that the $\ucalg$ algorithm results in a coverage score much higher
 %than the $\ucbfalg$ (i.e., the real score that \ivccov\ is intended to report), the problem
 %could have roots in some vacuous properties. This intuition helps us to decrease the error rate of the \ucalg algorithm significantly by having some fast techniques to detect vacuity. We have already developed a  fast property-directed vacuity check

@@ -15,8 +15,8 @@
 
 %\subsection{Granularity}
 
-As we described in Section \ref{sec:background}, transition relation is considered
-as the conjunction of Boolean formulas. The granularity of these formulas substantially affects the analysis results.  In our running example in Section~\ref{sec:illust}, it was possible to have a ``complete'' specification of the model involving only the hysteresis property \hystp.  The way that the model was structured, in order to determine the validity of the property, all of the equations in the model were required.  However, for this property certain subexpressions of the equations were irrelevant, notably the value assigned to the {\small{ \texttt{doi\_on}}} variable in the {\small{ \texttt{then}}} branches of equations (7) and (8).  If we decompose the equations into smaller pieces, e.g., creating separate equations for the {\small{ \texttt{then}}} and {\small{ \texttt{else}}} branches, this incompleteness becomes visible and the model is no longer completely covered.
+%As we described in Section \ref{sec:background}, transition relation is considered
+%as the conjunction of Boolean formulas. The granularity of these formulas substantially affects the analysis results.  In our running example in Section~\ref{sec:illust}, it was possible to have a ``complete'' specification of the model involving only the hysteresis property \hystp.  The way that the model was structured, in order to determine the validity of the property, all of the equations in the model were required.  However, for this property certain subexpressions of the equations were irrelevant, notably the value assigned to the {\small{ \texttt{doi\_on}}} variable in the {\small{ \texttt{then}}} branches of equations (7) and (8).  If we decompose the equations into smaller pieces, e.g., creating separate equations for the {\small{ \texttt{then}}} and {\small{ \texttt{else}}} branches, this incompleteness becomes visible and the model is no longer completely covered.
 
 %Splitting a model into more conjuncts will make coverage scores more accurate and usually lower, though it will not always lower coverage scores.
 %
@@ -34,7 +34,7 @@ Airborne software must undergo a rigorous software development process to ensure
 %starts with an abstract requirements artifact that is iteratively refined into a software designs,
 %source code, and finally, object code, and a set of {\em objectives} that should be met by critical
 %avionics software.
-Two of the key tenets of this process are traceability and adequacy; that is, each refinement of an artifact must be traceable to the artifact if was derived from. Further, each refinement must be shown not to introduce functionality not present in the artifact from which it was derived (adequacy). 
+Two of the key tenets of this process are traceability and adequacy; that is, each refinement of an artifact must be traceable to the artifact if was derived from. Further, each refinement must be shown not to introduce functionality not present in the artifact from which it was derived (adequacy).
 %For example, DO-178C objectives A-3.6 (traceability of high-level requirements to system requirements)
 %and A-4.6 (traceability of software design to high-level requirements) specifically require applicants
 %to demonstrate bi-directional traceability.

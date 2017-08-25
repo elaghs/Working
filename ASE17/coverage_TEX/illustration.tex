@@ -42,10 +42,10 @@ all_p = on_p and off_p;
   \vspace{-0.1in}
   \label{fig:propertyset1}
 \end{figure}
-\fi 
+\fi
 
 \noindent %Informally, when both altimeters are below the threshold and not inhibited, then the DOI should be on ({\small \onp}), and when both altimeters are below the threshold and the ASW is inhibited, then the DOI should be off ({\small \offp}).
-For each of the \ivccov, \maycov, and \mustcov\ metrics, {\small \allp} ~only requires {\small \texttt{\{below, d1, doi\_on\}}}, as shown in Figure~\ref{fig:propertyset1}.
+For each of the \ivccov, \maycov, and \mustcov\ metrics, {\small \allp} ~only requires {\small \texttt{\{below, d1, doi\_on\}}}. %, as shown in Figure~\ref{fig:propertyset1}.
 This small set of elements is due to a classic specification problem: using computed variables as the antecedents of implications.  %If these values are computed incorrectly (say, we choose the wrong threshold for {\small \aonebelow }), it may cause the property to be valid for incorrect reasons.
 %
 %This is alarming, and somewhat puzzling, because one would think that at least the definitions of the `below' or `above' would be necessary.  However, because the specification used the model variables \aonebelow, \atwobelow, \aoneabove, and \atwoabove, the actual valuations of the thresholds do not matter.  This situation illustrates a classic specification problem: using computed variables in the antecedents of implications.
@@ -66,7 +66,7 @@ off_p = ((alt1 >= T_HYST) and (alt2 >= T_HYST))
 
 \noindent In this version, distinctions emerge between the metrics.  {\small \allp } ~has two \mivc s: {\small{ \texttt{\{\{a1\_below, below, doi\_on, d1\}, \{a2\_below, below, doi\_on, d1\}\}}}},
 because of the {\small { \onp }} ~property: in the implementation, the DOI is turned on when either of the altimeters is below the threshold, while our property states that they both must be below.
-%Domain experts determine that the requirement is correctly specified and that our implementation is a reasonable refinement %, so there is no need to change the model or the property.  
+%Domain experts determine that the requirement is correctly specified and that our implementation is a reasonable refinement %, so there is no need to change the model or the property.
 The MUST elements remain the same: {\small{ \texttt{\{below, doi\_on, d1\}}}}, because neither {\small \aonebelow }~ or {\small {\atwobelow}} ~is required for all proofs, and   %However, given the MUST elements, we can no longer construct a proof, because at one of these definitions is necessary for either proof.
 the MAY elements contain both {\small \aonebelow } ~and {\small \atwobelow }.
 
@@ -123,7 +123,8 @@ all_p = on_p and off_p;
 
 \noindent The hysteresis property states that if the antecedent conditions hold, then in the initial state, the {\small{\doion}}
 variable is assigned false, and in subsequent steps, it retains the same value as it previously had.  %As shown in Figure~\ref{fig:propertyset4},
-For this property set, the measures coincide and include all variables, and we have constructed a reasonably complete specification.
+This property set, which includes all variables for all measures, can reasonably be seen as describing the interesting behavior of the model.
+%For this property set, the measures coincide and include all variables.
 
 
 
@@ -136,7 +137,7 @@ For this property set, the measures coincide and include all variables, and we h
   \vspace{-0.1in}
   \label{fig:propertyset4}
 \end{figure}
-\fi 
+\fi
   %However, the measures are certainly not foolproof; it turns out that using {\em only} the hysteresis property {\small{ \hystp}} ~will {\em also} yield a ``complete'' result for all of the metrics: to establish its validity, all of the equations that we have defined in the model are required.  This is because the partitioning of the transition system (i.e., the equations) is insufficiently {\em granular} to detect the incompleteness.
 %However, this one property would not reasonably be considered a complete specification.
 %We will examine this situation further in Section~\ref{sec:discussion}.

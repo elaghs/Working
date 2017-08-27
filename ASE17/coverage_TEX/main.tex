@@ -5,7 +5,7 @@
 % If IEEEtran.cls has not been installed into the LaTeX system files,
 % manually specify the path to it like:
 % \documentclass[conference]{../sty/IEEEtran}
-
+\IEEEoverridecommandlockouts
 
 
 
@@ -160,7 +160,6 @@
 % can use linebreaks \\ within to get better formatting as desired
 \title{Proof-based Coverage Metrics for Formal Verification}
 
-
 % author names and affiliations
 % use a multiple column layout for up to two different
 % affiliations
@@ -181,6 +180,7 @@ Andrew Gacek, Lucas Wagner
 Advanced Technology Center\\
 IA, USA\\
 andrew.gacek, lucas.wagner@rockwellcollins.com}
+\thanks{This work was carried out within the HACMS and SOSITE Phase II grants (DARPA FA8750-12-9-0179 and FA8650-16-C-7656).}
 }
 
 % conference papers do not typically use \thanks and this command
@@ -282,10 +282,10 @@ coverage; requirements completeness; formal verification;
 
 %\section*{Acknowledgment}
 
-\textbf{Acknowledgments:} This work was carried out within the HACMS and SOSITE Phase II grants (DARPA FA8750-12-9-0179 and FA8650-16-C-7656).
+%{\small \textbf{Acknowledgments:} This work was carried out within the HACMS and SOSITE Phase II grants (DARPA FA8750-12-9-0179 and FA8650-16-C-7656).}
 
 
-%\bibliographystyle{abbrv}
+\bibliographystyle{abbrv}
 \bibliography{biblio}
 
 % This ~ seems to fix an odd bibliography alignment issue

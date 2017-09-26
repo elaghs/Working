@@ -1,9 +1,8 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[OK]">
-    <Runtime unit="sec">17.568</Runtime>
+    <Runtime unit="sec">14.084</Runtime>
     <IVC>OK</IVC>
-    <IVC>chart_CruiseController_ModeLogic_mode_logic____wakeup___</IVC>
     <IVC>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_mode</IVC>
     <IVC>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_setDesiredSpeed</IVC>
     <IVC>chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root</IVC>
@@ -20,10 +19,8 @@
     <IVC>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_0</IVC>
     <IVC>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_02</IVC>
     <IVC>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root</IVC>
-    <IVC>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root1</IVC>
     <IVC>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root2</IVC>
     <IVC>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root</IVC>
-    <IVC>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root1</IVC>
     <IVC>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root2</IVC>
     <IVC>rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_fired_0</IVC>
     <IVC>rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root</IVC>
@@ -44,7 +41,6 @@
     <IVC>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_states___root</IVC>
     <IVC>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_10_states___root</IVC>
     <IVC>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_15_states___root</IVC>
-    <IVC>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_0</IVC>
     <IVC>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_1</IVC>
     <IVC>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_2</IVC>
     <IVC>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_3</IVC>

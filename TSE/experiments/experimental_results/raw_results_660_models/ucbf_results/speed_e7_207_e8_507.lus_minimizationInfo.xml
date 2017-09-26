@@ -9,7 +9,7 @@
     <Status>INVALID</Status>
   </Run>
   <Run id="3">
-    <Runtime unit="sec">0.002</Runtime>
+    <Runtime unit="sec">0.106</Runtime>
     <Status>INVALID</Status>
   </Run>
 </Results>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[__GUARANTEE5]">
-    <Runtime unit="sec">2.478</Runtime>
+    <Runtime unit="sec">2.452</Runtime>
     <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.clear_pressed</IVC>
     <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.defs__is_cooking~0._outvar</IVC>
     <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.defs__is_cooking~0.m</IVC>

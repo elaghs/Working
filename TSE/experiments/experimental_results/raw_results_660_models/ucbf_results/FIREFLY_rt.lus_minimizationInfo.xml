@@ -1,31 +1,31 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Run id="1">
-    <Runtime unit="sec">0.105</Runtime>
+    <Runtime unit="sec">0.205</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="2">
-    <Runtime unit="sec">1.212</Runtime>
-    <Status>NOT_YET_CHECKED</Status>
+    <Runtime unit="sec">1.632</Runtime>
+    <Status>VALID</Status>
   </Run>
   <Run id="3">
-    <Runtime unit="sec">1.151</Runtime>
-    <Status>NOT_YET_CHECKED</Status>
+    <Runtime unit="sec">1.131</Runtime>
+    <Status>VALID</Status>
   </Run>
   <Run id="4">
-    <Runtime unit="sec">0.844</Runtime>
-    <Status>NOT_YET_CHECKED</Status>
+    <Runtime unit="sec">0.816</Runtime>
+    <Status>VALID</Status>
   </Run>
   <Run id="5">
     <Runtime unit="sec">0.101</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="6">
-    <Runtime unit="sec">0.103</Runtime>
+    <Runtime unit="sec">0.026</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="7">
-    <Runtime unit="sec">0.02</Runtime>
+    <Runtime unit="sec">0.121</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="8">
@@ -33,119 +33,119 @@
     <Status>INVALID</Status>
   </Run>
   <Run id="9">
-    <Runtime unit="sec">0.021</Runtime>
+    <Runtime unit="sec">0.018</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="10">
-    <Runtime unit="sec">1.127</Runtime>
-    <Status>NOT_YET_CHECKED</Status>
+    <Runtime unit="sec">0.527</Runtime>
+    <Status>VALID</Status>
   </Run>
   <Run id="11">
-    <Runtime unit="sec">0.005</Runtime>
+    <Runtime unit="sec">0.102</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="12">
-    <Runtime unit="sec">0.002</Runtime>
+    <Runtime unit="sec">0.005</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="13">
-    <Runtime unit="sec">0.007</Runtime>
+    <Runtime unit="sec">0.01</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="14">
-    <Runtime unit="sec">0.102</Runtime>
+    <Runtime unit="sec">0.01</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="15">
-    <Runtime unit="sec">0.102</Runtime>
+    <Runtime unit="sec">0.101</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="16">
-    <Runtime unit="sec">0.101</Runtime>
-    <Status>INVALID</Status>
-  </Run>
-  <Run id="17">
-    <Runtime unit="sec">0.012</Runtime>
-    <Status>INVALID</Status>
-  </Run>
-  <Run id="18">
     <Runtime unit="sec">0.003</Runtime>
     <Status>INVALID</Status>
   </Run>
+  <Run id="17">
+    <Runtime unit="sec">0.01</Runtime>
+    <Status>INVALID</Status>
+  </Run>
+  <Run id="18">
+    <Runtime unit="sec">0.1</Runtime>
+    <Status>INVALID</Status>
+  </Run>
   <Run id="19">
-    <Runtime unit="sec">0.102</Runtime>
+    <Runtime unit="sec">0.101</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="20">
-    <Runtime unit="sec">0.006</Runtime>
+    <Runtime unit="sec">0.1</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="21">
-    <Runtime unit="sec">0.013</Runtime>
+    <Runtime unit="sec">0.101</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="22">
-    <Runtime unit="sec">1.039</Runtime>
-    <Status>NOT_YET_CHECKED</Status>
+    <Runtime unit="sec">0.611</Runtime>
+    <Status>VALID</Status>
   </Run>
   <Run id="23">
-    <Runtime unit="sec">0.736</Runtime>
-    <Status>NOT_YET_CHECKED</Status>
+    <Runtime unit="sec">0.617</Runtime>
+    <Status>VALID</Status>
   </Run>
   <Run id="24">
-    <Runtime unit="sec">0.013</Runtime>
+    <Runtime unit="sec">0.011</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="25">
-    <Runtime unit="sec">0.435</Runtime>
-    <Status>NOT_YET_CHECKED</Status>
+    <Runtime unit="sec">0.602</Runtime>
+    <Status>VALID</Status>
   </Run>
   <Run id="26">
-    <Runtime unit="sec">0.009</Runtime>
+    <Runtime unit="sec">0.008</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="27">
-    <Runtime unit="sec">0.104</Runtime>
+    <Runtime unit="sec">0.111</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="28">
-    <Runtime unit="sec">0.741</Runtime>
-    <Status>NOT_YET_CHECKED</Status>
+    <Runtime unit="sec">0.605</Runtime>
+    <Status>VALID</Status>
   </Run>
   <Run id="29">
-    <Runtime unit="sec">0.016</Runtime>
-    <Status>INVALID</Status>
-  </Run>
-  <Run id="30">
-    <Runtime unit="sec">0.102</Runtime>
-    <Status>INVALID</Status>
-  </Run>
-  <Run id="31">
-    <Runtime unit="sec">0.019</Runtime>
-    <Status>INVALID</Status>
-  </Run>
-  <Run id="32">
-    <Runtime unit="sec">0.011</Runtime>
-    <Status>INVALID</Status>
-  </Run>
-  <Run id="33">
-    <Runtime unit="sec">0.004</Runtime>
-    <Status>INVALID</Status>
-  </Run>
-  <Run id="34">
-    <Runtime unit="sec">0.012</Runtime>
-    <Status>INVALID</Status>
-  </Run>
-  <Run id="35">
     <Runtime unit="sec">0.113</Runtime>
     <Status>INVALID</Status>
   </Run>
+  <Run id="30">
+    <Runtime unit="sec">0.1</Runtime>
+    <Status>INVALID</Status>
+  </Run>
+  <Run id="31">
+    <Runtime unit="sec">0.006</Runtime>
+    <Status>INVALID</Status>
+  </Run>
+  <Run id="32">
+    <Runtime unit="sec">0.104</Runtime>
+    <Status>INVALID</Status>
+  </Run>
+  <Run id="33">
+    <Runtime unit="sec">0.1</Runtime>
+    <Status>INVALID</Status>
+  </Run>
+  <Run id="34">
+    <Runtime unit="sec">0.101</Runtime>
+    <Status>INVALID</Status>
+  </Run>
+  <Run id="35">
+    <Runtime unit="sec">0.103</Runtime>
+    <Status>INVALID</Status>
+  </Run>
   <Run id="36">
-    <Runtime unit="sec">0.011</Runtime>
+    <Runtime unit="sec">0.002</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="37">
-    <Runtime unit="sec">0.101</Runtime>
+    <Runtime unit="sec">0.103</Runtime>
     <Status>INVALID</Status>
   </Run>
 </Results>

@@ -1,18 +1,16 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[OK]">
-    <Runtime unit="sec">1.912</Runtime>
+    <Runtime unit="sec">1.805</Runtime>
     <IVC>OK</IVC>
     <IVC>V58_env_always_ok</IVC>
     <IVC>V59_prop_ok</IVC>
     <IVC>V60_open_door</IVC>
-    <IVC>V61_close_door</IVC>
     <IVC>V250_door_doesnt_open_out_of_station</IVC>
     <IVC>V251_door_opens_before_leaving_station</IVC>
     <IVC>V253_between_A_and_X</IVC>
     <IVC>V264_env_ok</IVC>
     <IVC>V265_door_doesnt_close_if_not_asked</IVC>
-    <IVC>V266_door_doesnt_open_if_not_asked</IVC>
     <IVC>V268_door_initially_closed</IVC>
     <IVC>V269_initially_not_in_station</IVC>
     <IVC>V270_warning_start_and_in_station_go_down_simultaneously</IVC>

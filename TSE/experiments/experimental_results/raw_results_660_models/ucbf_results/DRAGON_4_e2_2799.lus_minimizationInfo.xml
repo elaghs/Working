@@ -1,63 +1,63 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Run id="1">
-    <Runtime unit="sec">0.206</Runtime>
+    <Runtime unit="sec">0.316</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="2">
-    <Runtime unit="sec">0.113</Runtime>
+    <Runtime unit="sec">0.101</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="3">
-    <Runtime unit="sec">0.017</Runtime>
+    <Runtime unit="sec">0.101</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="4">
-    <Runtime unit="sec">0.124</Runtime>
+    <Runtime unit="sec">0.114</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="5">
-    <Runtime unit="sec">0.135</Runtime>
+    <Runtime unit="sec">0.129</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="6">
-    <Runtime unit="sec">1.604</Runtime>
-    <Status>NOT_YET_CHECKED</Status>
+    <Runtime unit="sec">1.519</Runtime>
+    <Status>VALID</Status>
   </Run>
   <Run id="7">
-    <Runtime unit="sec">1.332</Runtime>
-    <Status>NOT_YET_CHECKED</Status>
+    <Runtime unit="sec">1.314</Runtime>
+    <Status>VALID</Status>
   </Run>
   <Run id="8">
-    <Runtime unit="sec">0.012</Runtime>
+    <Runtime unit="sec">0.013</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="9">
-    <Runtime unit="sec">0.012</Runtime>
+    <Runtime unit="sec">0.102</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="10">
-    <Runtime unit="sec">0.105</Runtime>
+    <Runtime unit="sec">0.106</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="11">
-    <Runtime unit="sec">0.007</Runtime>
+    <Runtime unit="sec">0.002</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="12">
-    <Runtime unit="sec">0.105</Runtime>
+    <Runtime unit="sec">0.118</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="13">
-    <Runtime unit="sec">3.063</Runtime>
-    <Status>NOT_YET_CHECKED</Status>
+    <Runtime unit="sec">3.9</Runtime>
+    <Status>VALID</Status>
   </Run>
   <Run id="14">
-    <Runtime unit="sec">0.116</Runtime>
+    <Runtime unit="sec">0.105</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="15">
-    <Runtime unit="sec">0.007</Runtime>
+    <Runtime unit="sec">0.101</Runtime>
     <Status>INVALID</Status>
   </Run>
 </Results>

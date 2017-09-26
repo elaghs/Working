@@ -5,47 +5,47 @@
     <Status>INVALID</Status>
   </Run>
   <Run id="2">
-    <Runtime unit="sec">0.117</Runtime>
+    <Runtime unit="sec">0.102</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="3">
-    <Runtime unit="sec">0.101</Runtime>
+    <Runtime unit="sec">0.125</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="4">
-    <Runtime unit="sec">0.202</Runtime>
+    <Runtime unit="sec">0.2</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="5">
-    <Runtime unit="sec">0.124</Runtime>
+    <Runtime unit="sec">0.218</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="6">
-    <Runtime unit="sec">0.113</Runtime>
+    <Runtime unit="sec">0.104</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="7">
-    <Runtime unit="sec">0.311</Runtime>
+    <Runtime unit="sec">0.42</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="8">
-    <Runtime unit="sec">1.213</Runtime>
-    <Status>NOT_YET_CHECKED</Status>
+    <Runtime unit="sec">1.137</Runtime>
+    <Status>VALID</Status>
   </Run>
   <Run id="9">
-    <Runtime unit="sec">0.138</Runtime>
+    <Runtime unit="sec">0.201</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="10">
-    <Runtime unit="sec">0.61</Runtime>
-    <Status>NOT_YET_CHECKED</Status>
+    <Runtime unit="sec">1.209</Runtime>
+    <Status>VALID</Status>
   </Run>
   <Run id="11">
     <Runtime unit="sec">0.001</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="12">
-    <Runtime unit="sec">0.011</Runtime>
+    <Runtime unit="sec">0.102</Runtime>
     <Status>INVALID</Status>
   </Run>
 </Results>

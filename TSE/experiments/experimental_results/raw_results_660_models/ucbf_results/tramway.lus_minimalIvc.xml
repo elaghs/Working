@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[OK]">
-    <Runtime unit="sec">6.828</Runtime>
+    <Runtime unit="sec">6.699</Runtime>
     <IVC>OK</IVC>
     <IVC>close_door</IVC>
     <IVC>controller~0.close_door</IVC>
@@ -11,7 +11,6 @@
     <IVC>controller~0.open_door</IVC>
     <IVC>controller~0.req_pending</IVC>
     <IVC>controller~0.request_door</IVC>
-    <IVC>controller~0.switch~0.init</IVC>
     <IVC>controller~0.switch~0.off</IVC>
     <IVC>controller~0.switch~0.on</IVC>
     <IVC>controller~0.switch~0.value</IVC>

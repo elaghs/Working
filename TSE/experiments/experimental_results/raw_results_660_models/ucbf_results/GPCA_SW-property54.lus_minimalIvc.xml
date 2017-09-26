@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[__GUARANTEE54]">
-    <Runtime unit="sec">2.155</Runtime>
+    <Runtime unit="sec">2.348</Runtime>
     <IVC>_TOP__ALARM~0.ALARM_OUT.Notification_Message</IVC>
     <IVC>_TOP__ALARM~0.SENSOR_IN.Battery_Low</IVC>
     <IVC>_TOP__ALARM~0.SENSOR_IN.Battery_Unable_To_Charge</IVC>

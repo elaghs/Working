@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[__GUARANTEE59]">
-    <Runtime unit="sec">3.836</Runtime>
+    <Runtime unit="sec">3.806</Runtime>
     <IVC>_TOP__ASSERT__69</IVC>
     <IVC>_TOP__CONFIG~0.CONFIG_OUT.Configured</IVC>
     <IVC>_TOP__CONFIG~0.CONFIG_OUT.Request_Patient_Drug_Info</IVC>

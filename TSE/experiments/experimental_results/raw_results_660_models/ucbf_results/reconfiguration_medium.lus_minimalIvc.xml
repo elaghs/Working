@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[ok]">
-    <Runtime unit="sec">52.371</Runtime>
+    <Runtime unit="sec">42.343</Runtime>
     <IVC>conf1~0.cpt</IVC>
     <IVC>conf1~0.n</IVC>
     <IVC>conf1~0.out</IVC>
@@ -12,7 +12,6 @@
     <IVC>in_command3</IVC>
     <IVC>m1</IVC>
     <IVC>m2</IVC>
-    <IVC>m3</IVC>
     <IVC>no_command</IVC>
     <IVC>ok</IVC>
     <IVC>priority~0.command_failure</IVC>

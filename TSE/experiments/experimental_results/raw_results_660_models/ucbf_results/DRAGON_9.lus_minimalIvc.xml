@@ -1,12 +1,10 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[OK]">
-    <Runtime unit="sec">0.938</Runtime>
+    <Runtime unit="sec">0.839</Runtime>
     <IVC>DRAGON~0.dirty</IVC>
     <IVC>DRAGON~0.g09</IVC>
     <IVC>OK</IVC>
-    <IVC>Sofar~0.Sofar</IVC>
     <IVC>dirty</IVC>
-    <IVC>env</IVC>
   </MinimalIvc>
 </Results>

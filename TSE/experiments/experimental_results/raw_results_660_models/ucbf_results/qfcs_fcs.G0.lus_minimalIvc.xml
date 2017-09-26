@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[__GUARANTEE0]">
-    <Runtime unit="sec">40.651</Runtime>
+    <Runtime unit="sec">38.751</Runtime>
     <IVC>FCS_RC1__valids_to_nums_0.FCS_RC1__valid_to_num_0.f1</IVC>
     <IVC>FCS_RC1__valids_to_nums_0.FCS_RC1__valid_to_num_0.f2</IVC>
     <IVC>FCS_RC1__valids_to_nums_0.FCS_RC1__valid_to_num_0.f3</IVC>

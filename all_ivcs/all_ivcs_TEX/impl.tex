@@ -36,9 +36,10 @@ given the full model (\emph{proof-time}), and the time required to calculate the
 (approximate) IVC using \ucalg\ (\emph{\ucalg-time}).
 We then set a timeout for each iteration of the \aivcalg\ algorithm to
 ($30$ sec  $+\ 5\ \times$ (\emph{proof-time} $+$ \emph{\ucalg-time})).
-In almost all cases in our experiment and our use of the tools, 
-this timeout is sufficient to ensure exact results. In the experiment, only 15 of 475 
-models (3\%) had potentially approximate results.
+In almost all cases in our experiment and our use of the tools,
+this timeout is sufficient to ensure exact results. 
+%In the experiment, only 15 of 475
+%models (3\%) had potentially approximate results.
 %Since the timeout is used by both the brute-force
 %algorithm and the \aivcalg\ algorithm, minimality is only guaranteed if there
 %are no timeouts.  %In addition, because the analysis problems are slightly different

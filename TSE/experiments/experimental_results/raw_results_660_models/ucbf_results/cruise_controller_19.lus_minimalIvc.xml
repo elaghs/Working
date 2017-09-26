@@ -1,14 +1,12 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[OK]">
-    <Runtime unit="sec">13.493</Runtime>
+    <Runtime unit="sec">13.946</Runtime>
     <IVC>OK</IVC>
-    <IVC>chart_CruiseController_ModeLogic_mode_logic____wakeup___</IVC>
     <IVC>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_mode</IVC>
     <IVC>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_setDesiredSpeed</IVC>
     <IVC>chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root</IVC>
     <IVC>chart_CruiseController_ModeLogic_mode_logic_final_state_states___root</IVC>
-    <IVC>chart_CruiseController_ModeLogic_mode_logic_rlt_evtInitStep</IVC>
     <IVC>chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed</IVC>
     <IVC>cruise_controller_CruiseController_SetDesiredSpeed_GOTOL_prevDesiredSpeed</IVC>
     <IVC>cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed</IVC>
@@ -17,12 +15,8 @@
     <IVC>mode</IVC>
     <IVC>newDesiredSpeed</IVC>
     <IVC>rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeIncreaseInDesiredSpeed_rlt_clock</IVC>
-    <IVC>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root</IVC>
     <IVC>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root1</IVC>
-    <IVC>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root2</IVC>
-    <IVC>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root</IVC>
     <IVC>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root1</IVC>
-    <IVC>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root2</IVC>
     <IVC>rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root</IVC>
     <IVC>rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root</IVC>
     <IVC>rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_1</IVC>

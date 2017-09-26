@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[OK]">
-    <Runtime unit="sec">4.74</Runtime>
+    <Runtime unit="sec">4.523</Runtime>
     <IVC>MIDDLE_DIGIT</IVC>
     <IVC>OK</IVC>
     <IVC>chart_microwave_mode_logic____wakeup___</IVC>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[__GUARANTEE7]">
-    <Runtime unit="sec">2.997</Runtime>
+    <Runtime unit="sec">2.986</Runtime>
     <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_in</IVC>
     <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_out</IVC>
     <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</IVC>

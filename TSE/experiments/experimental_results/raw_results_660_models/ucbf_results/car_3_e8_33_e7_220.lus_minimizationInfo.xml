@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Run id="1">
-    <Runtime unit="sec">0.406</Runtime>
-    <Status>NOT_YET_CHECKED</Status>
+    <Runtime unit="sec">0.512</Runtime>
+    <Status>VALID</Status>
   </Run>
   <Run id="2">
-    <Runtime unit="sec">0.012</Runtime>
+    <Runtime unit="sec">0.123</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="3">
-    <Runtime unit="sec">0.106</Runtime>
+    <Runtime unit="sec">0.101</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="4">
@@ -18,14 +18,14 @@
   </Run>
   <Run id="5">
     <Runtime unit="sec">0.201</Runtime>
-    <Status>NOT_YET_CHECKED</Status>
+    <Status>VALID</Status>
   </Run>
   <Run id="6">
-    <Runtime unit="sec">0.003</Runtime>
+    <Runtime unit="sec">0.002</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="7">
-    <Runtime unit="sec">0.203</Runtime>
-    <Status>NOT_YET_CHECKED</Status>
+    <Runtime unit="sec">0.215</Runtime>
+    <Status>VALID</Status>
   </Run>
 </Results>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[OK]">
-    <Runtime unit="sec">6.511</Runtime>
+    <Runtime unit="sec">6.699</Runtime>
     <IVC>OK</IVC>
     <IVC>V66_exclusive</IVC>
     <IVC>V67_shared</IVC>
@@ -12,10 +12,7 @@
     <IVC>V134_g03</IVC>
     <IVC>V135_g04</IVC>
     <IVC>V136_g05</IVC>
-    <IVC>V137_g06</IVC>
     <IVC>V138_g07</IVC>
-    <IVC>V140_g09</IVC>
-    <IVC>V141_g10</IVC>
     <IVC>V165_X</IVC>
   </MinimalIvc>
 </Results>

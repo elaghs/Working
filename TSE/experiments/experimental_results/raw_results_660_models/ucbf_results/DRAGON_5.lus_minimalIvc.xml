@@ -1,13 +1,12 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[OK]">
-    <Runtime unit="sec">10.596</Runtime>
+    <Runtime unit="sec">12.329</Runtime>
     <IVC>DRAGON~0.dirty</IVC>
     <IVC>DRAGON~0.e01</IVC>
     <IVC>DRAGON~0.e02</IVC>
     <IVC>DRAGON~0.e03</IVC>
     <IVC>DRAGON~0.e04</IVC>
-    <IVC>DRAGON~0.e05</IVC>
     <IVC>DRAGON~0.e07</IVC>
     <IVC>DRAGON~0.e08</IVC>
     <IVC>DRAGON~0.exclusive</IVC>
@@ -15,10 +14,7 @@
     <IVC>DRAGON~0.g03</IVC>
     <IVC>DRAGON~0.g04</IVC>
     <IVC>DRAGON~0.g05</IVC>
-    <IVC>DRAGON~0.g06</IVC>
     <IVC>DRAGON~0.g07</IVC>
-    <IVC>DRAGON~0.g09</IVC>
-    <IVC>DRAGON~0.g12</IVC>
     <IVC>DRAGON~0.shared</IVC>
     <IVC>DRAGON~0.shared_dirty</IVC>
     <IVC>OK</IVC>
@@ -30,7 +26,6 @@
     <IVC>excludes12~0.X2</IVC>
     <IVC>excludes12~0.X3</IVC>
     <IVC>excludes12~0.X4</IVC>
-    <IVC>excludes12~0.X5</IVC>
     <IVC>excludes12~0.X7</IVC>
     <IVC>excludes12~0.X8</IVC>
     <IVC>excludes12~0.excludes</IVC>

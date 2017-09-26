@@ -1,9 +1,8 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[OK]">
-    <Runtime unit="sec">7.106</Runtime>
+    <Runtime unit="sec">6.924</Runtime>
     <IVC>OK</IVC>
-    <IVC>chart_CruiseController_ModeLogic_mode_logic____wakeup___</IVC>
     <IVC>chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root</IVC>
     <IVC>chart_CruiseController_ModeLogic_mode_logic_final_state_states___root</IVC>
     <IVC>rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rltCheckEntryStateConsistency_02</IVC>
@@ -37,8 +36,6 @@
     <IVC>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_7_states___root</IVC>
     <IVC>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_states___root</IVC>
     <IVC>rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_states___root</IVC>
-    <IVC>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_complete_1</IVC>
-    <IVC>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_fired_1</IVC>
     <IVC>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_1_states___root</IVC>
     <IVC>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root</IVC>
     <IVC>rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_states___root</IVC>

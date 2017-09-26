@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[P_COV]">
-    <Runtime unit="sec">283.948</Runtime>
+    <Runtime unit="sec">279.63</Runtime>
     <IVC>FCC_RC_2__req_0.FCC_RC_2__output_range_0.act</IVC>
     <IVC>FCC_RC_2__req_0.FCC_RC_2__output_range_0.high</IVC>
     <IVC>FCC_RC_2__req_0.FCC_RC_2__output_range_0.low</IVC>

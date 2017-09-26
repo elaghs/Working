@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Run id="1">
-    <Runtime unit="sec">2.458</Runtime>
+    <Runtime unit="sec">2.622</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="2">
-    <Runtime unit="sec">1.12</Runtime>
+    <Runtime unit="sec">0.955</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="3">
-    <Runtime unit="sec">0.736</Runtime>
+    <Runtime unit="sec">0.835</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="4">
@@ -17,27 +17,27 @@
     <Status>INVALID</Status>
   </Run>
   <Run id="5">
-    <Runtime unit="sec">1.409</Runtime>
+    <Runtime unit="sec">1.559</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="6">
-    <Runtime unit="sec">0.104</Runtime>
+    <Runtime unit="sec">0.009</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="7">
-    <Runtime unit="sec">0.014</Runtime>
+    <Runtime unit="sec">0.1</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="8">
-    <Runtime unit="sec">0.725</Runtime>
+    <Runtime unit="sec">0.774</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="9">
-    <Runtime unit="sec">0.107</Runtime>
+    <Runtime unit="sec">0.101</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="10">
-    <Runtime unit="sec">1.045</Runtime>
+    <Runtime unit="sec">1.002</Runtime>
     <Status>INVALID</Status>
   </Run>
 </Results>

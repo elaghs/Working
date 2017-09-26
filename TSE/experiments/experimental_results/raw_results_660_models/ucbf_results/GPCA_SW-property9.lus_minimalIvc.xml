@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[__GUARANTEE9]">
-    <Runtime unit="sec">2.998</Runtime>
+    <Runtime unit="sec">2.895</Runtime>
     <IVC>_TOP__ASSERT__0</IVC>
     <IVC>_TOP__ASSERT__19</IVC>
     <IVC>_TOP__IM~0.IM_OUT.Current_System_Mode</IVC>

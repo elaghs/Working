@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[OK]">
-    <Runtime unit="sec">2.459</Runtime>
+    <Runtime unit="sec">2.507</Runtime>
     <IVC>Controller~0.diff</IVC>
     <IVC>Controller~0.minus</IVC>
     <IVC>Controller~0.plus</IVC>

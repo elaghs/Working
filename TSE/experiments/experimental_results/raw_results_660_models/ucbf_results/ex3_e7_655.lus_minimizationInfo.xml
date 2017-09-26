@@ -5,7 +5,7 @@
     <Status>INVALID</Status>
   </Run>
   <Run id="2">
-    <Runtime unit="sec">0.105</Runtime>
+    <Runtime unit="sec">0.101</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="3">
@@ -13,27 +13,27 @@
     <Status>INVALID</Status>
   </Run>
   <Run id="4">
-    <Runtime unit="sec">0.1</Runtime>
+    <Runtime unit="sec">0.101</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="5">
-    <Runtime unit="sec">0.105</Runtime>
+    <Runtime unit="sec">0.1</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="6">
-    <Runtime unit="sec">0.108</Runtime>
+    <Runtime unit="sec">0.109</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="7">
-    <Runtime unit="sec">0.009</Runtime>
+    <Runtime unit="sec">0.108</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="8">
-    <Runtime unit="sec">0.105</Runtime>
+    <Runtime unit="sec">0.106</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="9">
-    <Runtime unit="sec">0.115</Runtime>
+    <Runtime unit="sec">0.11</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="10">
@@ -41,7 +41,7 @@
     <Status>INVALID</Status>
   </Run>
   <Run id="11">
-    <Runtime unit="sec">0.101</Runtime>
+    <Runtime unit="sec">0.105</Runtime>
     <Status>INVALID</Status>
   </Run>
 </Results>

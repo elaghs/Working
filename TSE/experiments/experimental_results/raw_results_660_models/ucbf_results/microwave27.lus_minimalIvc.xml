@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[OK]">
-    <Runtime unit="sec">94.356</Runtime>
+    <Runtime unit="sec">93.588</Runtime>
     <IVC>CLEAR_PRESSED</IVC>
     <IVC>KP_01</IVC>
     <IVC>KP_11</IVC>

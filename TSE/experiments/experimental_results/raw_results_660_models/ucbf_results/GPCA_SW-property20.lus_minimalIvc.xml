@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[__GUARANTEE20]">
-    <Runtime unit="sec">5.459</Runtime>
+    <Runtime unit="sec">5.033</Runtime>
     <IVC>_TOP__ASSERT__30</IVC>
     <IVC>_TOP__CONFIG~0.CONFIG_OUT.Flow_Rate_KVO</IVC>
     <IVC>_TOP__CONFIG~0.TLM_MODE_IN.System_On</IVC>

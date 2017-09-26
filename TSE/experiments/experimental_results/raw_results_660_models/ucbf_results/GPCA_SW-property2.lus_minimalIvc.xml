@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[__GUARANTEE2]">
-    <Runtime unit="sec">1.577</Runtime>
+    <Runtime unit="sec">1.61</Runtime>
     <IVC>_TOP__ALARM~0.IM_IN.Current_System_Mode</IVC>
     <IVC>_TOP__ALARM~0.Paused_Time_Counter</IVC>
     <IVC>_TOP__ALARM~0.__ALARM__ASSERT__10</IVC>

@@ -1,9 +1,8 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[OK]">
-    <Runtime unit="sec">7.528</Runtime>
+    <Runtime unit="sec">7.056</Runtime>
     <IVC>OK</IVC>
-    <IVC>chart_CruiseController_ModeLogic_mode_logic____wakeup___</IVC>
     <IVC>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_mode</IVC>
     <IVC>chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_setDesiredSpeed</IVC>
     <IVC>chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root</IVC>

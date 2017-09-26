@@ -1,13 +1,32 @@
+\emph{Requirements traceability} can be defined as \\
+\begin{quotation}
+\textit{``the ability to describe and follow the life of a requirement, in both forwards and backwards direction (i.e., from its origins, through its development and specification, to its subsequent deployment and use, and through all periods of on-going refinement and iteration in any of these phases).''}~\cite{gotel}. \\
+\end{quotation}
 
-Through formal definitions in the previous section we highlight two critical facets -- the semantics and completeness -- in establishing traceability. 
-In practice, just being able to trace a requirement to a target artifact that satisfies it, say a line of code, is not useful~\cite{guo2015trace}; a holistic view of how that line of code in conjunction with other related lines of code satisfy 
-the requirement provides meaningful information to perform analysis such as assessing the impact of a change~\cite{hull2010requirements}. 
-By defining a trace from requirements to the set of target artifacts, we advocate that traceability be captured in a way that upholds its semantic rationale. Further, we also found that performing analysis, such as impact analysis, using a partial set of trace links may result in imprecise results and misplaced confidence about the system. 
-By considering $MIVC$ trace links and complete traces for each requirement, 
+This topic has been of great interest in research and practice for several decades. Intuitively, it concerns establishing relationships, called \emph{trace links}, between the requirements and one or more artifacts (design elements) of the system. 
+Among the several different development artifacts and the relationships that be can established from/to the requirements, being able to establish trace links from requirements to artifacts that realize or \emph{satisfy} those requirements---particularly to entities within those artifacts called \emph{target artifacts}~\cite{gotel2012traceability}---has been enormously useful in practice. 
+For instance, it helps analyze the impact of changes in one artifact on the other, assess the quality of the system, 
+aid in creating assurance arguments for the system, etc. 
+In this section, we focus our attention to this subset of requirement traceability, that we call \emph{Requirements Satisfaction Traceability.}  While research into this type of
+traceability has been an active research area for some time, none of the
+literature discusses the fact that there are often multiple ways in which a requirement can be satisfied, i.e., there are multiple satisfaction arguments.
+The distinction between establishing a single satisfaction argument
+between a requirement and its implementation (tracing \textbf{one} way the requirement is implemented) vs. tracing \textbf{all} satisfaction arguments, and the possible ramifications for how the trace
+links can be used in analysis, has not been well studied.  We examine how this distinction
+changes the way traceability is perceived, established, maintained, and used.  We discuss the notion of ``complete" traceability, which considers \textbf{all} trace
+links between the requirements and the artifacts that work to satisfy the
+requirements, and contrast it with the partial traceability common in
+practice. We examine how this notion of completeness in traceability changes the way traceability is perceived, established, maintained, and used.
+
+Through formal definitions in the previous section we highlight two critical facets -- the semantics and completeness -- in establishing traceability.
+In practice, just being able to trace a requirement to a target artifact that satisfies it, say a line of code, is not useful~\cite{guo2015trace}; a holistic view of how that line of code in conjunction with other related lines of code satisfy
+the requirement provides meaningful information to perform analysis such as assessing the impact of a change~\cite{hull2010requirements}.
+By defining a trace from requirements to the set of target artifacts, we advocate that traceability be captured in a way that upholds its semantic rationale. Further, we also found that performing analysis, such as impact analysis, using a partial set of trace links may result in imprecise results and misplaced confidence about the system.
+By considering $MIVC$ trace links and complete traces for each requirement,
 we can assess analyses related to requirements satisfaction traceability on a proper semantic foundation. In this section, we elaborate on how the semantic foundations in the previous section help us understand, assess, and use traceability precisely.
 
-Given {\em all} proofs of a particular property, it is possible to define additional, complementary coverage notions.  
-To do so, we use the following categorization of the model elements based on \mivc ~and 
+Given {\em all} proofs of a particular property, it is possible to define additional, complementary coverage notions.
+To do so, we use the following categorization of the model elements based on \mivc ~and
 $AIVC$ relations for $P$:
 
 \begin{itemize}
@@ -22,7 +41,7 @@ The categorization of the set of support to be useful in several analyses:
 
 The $AIVC$ set improves understanding of how a change in the requirement will affect the target artifacts and vice versa. While the $AIVC$ of a requirement gives a clear picture of various ways a requirement is satisfied by the system, the categorization of target artifacts helps precisely assess and plan when and where the changes have to be implemented. The $MUST$ elements are those target artifacts that are highly likely to change with any change in the requirement, whereas not all $MAY$ elements may need to be changed.
 
-If a requirement has elements only in its $MAY$ set, that is if $MUST$ set is empty 
+If a requirement has elements only in its $MAY$ set, that is if $MUST$ set is empty
 ($MUST(r) = \emptyset$), it indicates that the requirement has been (intentionally or unintentionally) implemented in independent ways, such as fault tolerant systems. For such requirements, one has to carefully analyze and decide if the target artifacts in all or one disjoint set needs to be changed. These analysis could be performed either from the perspective of one or all requirements of the system.
 
 From the target artifact side, this categorization helps analyze the impact of changes to the artifact. Suppose we decide to change a target artifact in the $MAY$ set for a requirement. While one might think that it is safe to change this artifact since it does not affect that requirement's satisfaction, an examination of the $AIVC$ sets of other requirements helps identify if it is indeed safe to change that artifact. If it is present in the $MUST$ set for another requirement, then a change to this artifact will definitely impact the other requirement. However, if it is in the $MAY$ sets for all the requirements, then it is clearly safe to change. Hence, this categorization helps us to assess critical dependencies between the target artifacts and the satisfaction of requirements and thus enables a precise bi-directional impact analysis of a change.

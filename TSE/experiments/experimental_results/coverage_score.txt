@@ -1,0 +1,19 @@
+min IVC smaller than UCBF: #of models: 47
+in the most dramatic case, the number of elements shrank from 62 to 35
+the smallest MIVC is 44.44444444444444 the size of the MIVC produced by UCBF
+
+
+min in UC: 0.002188183807439825
+max in UC: 1.0
+stdev in UC: 0.302007533938
+average  in UC: 0.475900544695
+-----------------------------------------------------------------
+min in UCBF: 0.002188183807439825
+max in UCBF: 1.0
+stdev in UCBF: 0.291759938569
+average in UCBF: 0.445649883219
+------------------------------------------------------------------
+min in IVC_MUST: 0.002188183807439825
+max in IVC_MUST: 1.0
+stdev in IVC_MUST: 0.291105728713
+average in IVC_MUST: 0.417399890156

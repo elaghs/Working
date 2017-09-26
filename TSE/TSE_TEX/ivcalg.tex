@@ -18,7 +18,7 @@
 \end{algorithm}
 
 Lemma \ref{lem:ivc-monotonic} gives us a simple, brute-force algorithm for computing
-a minimal inductive validity core, Algorithm \bfalg~(\ref{alg:naive}). The
+a minimal inductive validity core, Algorithm \ref{alg:naive} ~(\bfalg). The
 resulting set of this algorithm is obviously an inductive validity
 core for $(I, T)\vdash P$. The following lemma shows that it is also
 minimal.
@@ -117,7 +117,7 @@ have a function $\unsatcore()$ which returns a minimal subset of the
 activation literals such that the formula is unsatisfiable with those
 activation literals held true. In practice, SMT solvers often return a
 non-minimal set, but we can minimize the set via repeated calls to
-\checksat. We assume both \checksat and \unsatcore are always
+\checksat. We assume both \checksat\ and \unsatcore\ are always
 terminating.
 
 \begin{algorithm}[t]
@@ -217,9 +217,7 @@ that \reduceinv does not guarantee a minimal set of invariants. A
 larger reason is that we only consider the invariants that the
 algorithm is given at the outset. It is possible that there are other
 invariants which could lead to a smaller inductive validity core, but
-we do not search for them. In Sections~\ref{sec:experiment} and
-\ref{sec:results}, we show that in practice our algorithm is nearly
-minimal and much more efficient than the naive algorithm. The
+we do not search for them. The
 following theorem shows that minimality checking is at least as hard
 as model checking and therefore undecidable in many settings.
 
@@ -246,10 +244,27 @@ Therefore, $S$ is minimal if and only if $(I, T)\nvdash P$.
 
 When minimality is very important, we can combine \bfalg\ and \ucalg\ into
 a single algorithm which aims to more efficiently determine minimality.  The
-hybrid algorithm, \ucbfalg, consists of running \ucalg to generate an
-initial nearly minimal IVC which is then run through \bfalg to
-attempt to achieve minimality.   For sequential model checking problems with infinite theories, neither \bfalg\ or \ucbfalg\ is guaranteed to terminate, so our implementations simply time out after a set threshold (discussed in more detail in the implementation Section~\ref{sec:impl}).  If no proof can be found within a certain time threshold after removing a model element, we declare that element necessary to the proof.
+hybrid algorithm, \ucbfalg\ (Algorithm \ref{alg:ucbf}), consists of running \ucalg\ to generate an
+initial nearly minimal IVC which is then run through \bfalg\ to
+attempt to achieve minimality.   For sequential model checking problems with infinite theories, neither \bfalg\ or \ucbfalg\ is guaranteed to terminate, so our implementations simply time out after a set threshold (discussed in more detail in the implementation Section~\ref{sec:impl}).  If no proof can be found within a certain time threshold after removing a model element, we declare that element necessary to the proof. In Section~\ref{sec:experiment} we show that in practice our algorithm is nearly
+minimal and much more efficient than the brute-force approach. 
 
+\begin{algorithm}
+  \SetKwInOut{Input}{input}
+  \SetKwInOut{Output}{output}
+  \Input{$(I, T) \vdash P$}
+  \Output{Minimal IVC for $(I, T) \vdash P$}
+  \BlankLine
+  $S \leftarrow \ucalg((I, T) \vdash P)$ \\
+  \For{$x \in S$} {
+    \If{$(I, S\setminus\{x\}) \vdash P$}{
+      $S \leftarrow S\setminus \{x\}$
+    }
+  }
+  \Return{S}
+\caption{An abstract representation of \ucbfalg }
+\label{alg:ucbf}
+\end{algorithm}
 
 
 %%% Local Variables:

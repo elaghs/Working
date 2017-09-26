@@ -1,9 +1,5 @@
-#of models for which min IVC is smaller than UCBF: 245
-in the most dramatic case, the number of elements shrank from 66 to 35
-the smallest MIVC is 66.66666666666666 the size of the MIVC produced by UCBF
-
 
 min : 100.0%
-max : 100.0%
-stdev: 0.0%
-average : 100.0%
+max : 300.0%
+stdev: 17.8008386609%
+average : 108.324600992%

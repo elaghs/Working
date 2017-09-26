@@ -5,7 +5,7 @@
     <Status>INVALID</Status>
   </Run>
   <Run id="2">
-    <Runtime unit="sec">0.101</Runtime>
+    <Runtime unit="sec">0.1</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="3">
@@ -17,15 +17,15 @@
     <Status>INVALID</Status>
   </Run>
   <Run id="5">
-    <Runtime unit="sec">0.101</Runtime>
+    <Runtime unit="sec">0.007</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="6">
-    <Runtime unit="sec">0.101</Runtime>
+    <Runtime unit="sec">0.1</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="7">
-    <Runtime unit="sec">0.101</Runtime>
+    <Runtime unit="sec">0.1</Runtime>
     <Status>INVALID</Status>
   </Run>
 </Results>

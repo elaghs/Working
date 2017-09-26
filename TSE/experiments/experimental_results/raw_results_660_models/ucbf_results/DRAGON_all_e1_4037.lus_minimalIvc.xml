@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[OK]">
-    <Runtime unit="sec">5.753</Runtime>
+    <Runtime unit="sec">5.701</Runtime>
     <IVC>DRAGON~0.dirty</IVC>
     <IVC>DRAGON~0.e01</IVC>
     <IVC>DRAGON~0.e02</IVC>

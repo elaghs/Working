@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Run id="1">
-    <Runtime unit="sec">0.207</Runtime>
-    <Status>NOT_YET_CHECKED</Status>
+    <Runtime unit="sec">0.206</Runtime>
+    <Status>VALID</Status>
   </Run>
   <Run id="2">
-    <Runtime unit="sec">0.005</Runtime>
+    <Runtime unit="sec">0.101</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="3">

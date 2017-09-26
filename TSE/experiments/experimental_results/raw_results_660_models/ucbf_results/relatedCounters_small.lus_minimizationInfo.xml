@@ -1,31 +1,31 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Run id="1">
-    <Runtime unit="sec">1.32</Runtime>
+    <Runtime unit="sec">1.308</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="2">
-    <Runtime unit="sec">0.008</Runtime>
+    <Runtime unit="sec">0.102</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="3">
-    <Runtime unit="sec">0.101</Runtime>
+    <Runtime unit="sec">0.001</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="4">
-    <Runtime unit="sec">0.541</Runtime>
+    <Runtime unit="sec">0.701</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="5">
-    <Runtime unit="sec">0.1</Runtime>
+    <Runtime unit="sec">0.002</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="6">
-    <Runtime unit="sec">0.626</Runtime>
+    <Runtime unit="sec">0.709</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="7">
-    <Runtime unit="sec">0.001</Runtime>
+    <Runtime unit="sec">0.0</Runtime>
     <Status>INVALID</Status>
   </Run>
 </Results>

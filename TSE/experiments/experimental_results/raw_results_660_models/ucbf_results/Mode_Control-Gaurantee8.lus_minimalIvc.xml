@@ -1,14 +1,12 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[__GUARANTEE8]">
-    <Runtime unit="sec">1.626</Runtime>
+    <Runtime unit="sec">1.571</Runtime>
     <IVC>__GUARANTEE8</IVC>
     <IVC>defs__is_cooking~0._outvar</IVC>
     <IVC>defs__is_cooking~0.m</IVC>
     <IVC>defs__is_running~0._outvar</IVC>
     <IVC>defs__is_running~0.m</IVC>
-    <IVC>defs__is_running~1._outvar</IVC>
-    <IVC>defs__is_running~1.m</IVC>
     <IVC>defs__is_setup~1._outvar</IVC>
     <IVC>defs__is_setup~1.m</IVC>
     <IVC>defs__is_suspended~0._outvar</IVC>

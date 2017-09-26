@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[__GUARANTEE3]">
-    <Runtime unit="sec">2.939</Runtime>
+    <Runtime unit="sec">2.809</Runtime>
     <IVC>DEFS__Is_Infusion_above_tolerance~0.actual_flow_rate</IVC>
     <IVC>DEFS__Is_Infusion_above_tolerance~0.desired_flow_rate</IVC>
     <IVC>DEFS__Is_Infusion_above_tolerance~0.over</IVC>

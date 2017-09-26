@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[OK]">
-    <Runtime unit="sec">39.831</Runtime>
+    <Runtime unit="sec">27.736</Runtime>
     <IVC>OK</IVC>
     <IVC>SP3c</IVC>
     <IVC>cruiseThrottle</IVC>
@@ -9,42 +9,27 @@
     <IVC>zz6</IVC>
     <IVC>zz9</IVC>
     <IVC>zz12</IVC>
-    <IVC>zz13</IVC>
-    <IVC>zz14</IVC>
     <IVC>zz16</IVC>
-    <IVC>zz17</IVC>
-    <IVC>zz18</IVC>
     <IVC>zz20</IVC>
     <IVC>zz25</IVC>
     <IVC>zz28</IVC>
-    <IVC>zz29</IVC>
     <IVC>zz32</IVC>
     <IVC>zz34</IVC>
-    <IVC>zz35</IVC>
     <IVC>zz38</IVC>
     <IVC>zz40</IVC>
-    <IVC>zz41</IVC>
     <IVC>zz44</IVC>
     <IVC>zz45</IVC>
-    <IVC>zz46</IVC>
     <IVC>zz49</IVC>
     <IVC>zz50</IVC>
-    <IVC>zz51</IVC>
     <IVC>zz53</IVC>
     <IVC>zz55</IVC>
-    <IVC>zz56</IVC>
     <IVC>zz58</IVC>
-    <IVC>zz60</IVC>
     <IVC>zz61</IVC>
     <IVC>zz63</IVC>
-    <IVC>zz64</IVC>
     <IVC>zz66</IVC>
-    <IVC>zz68</IVC>
     <IVC>zz69</IVC>
     <IVC>zz71</IVC>
-    <IVC>zz72</IVC>
     <IVC>zz74</IVC>
-    <IVC>zz76</IVC>
     <IVC>zz77</IVC>
     <IVC>zz78</IVC>
     <IVC>zz86</IVC>
@@ -66,14 +51,8 @@
     <IVC>zz109</IVC>
     <IVC>zz110</IVC>
     <IVC>zz111</IVC>
-    <IVC>zz113</IVC>
     <IVC>zz114</IVC>
-    <IVC>zz115</IVC>
-    <IVC>zz116</IVC>
-    <IVC>zz118</IVC>
     <IVC>zz119</IVC>
-    <IVC>zz120</IVC>
-    <IVC>zz121</IVC>
     <IVC>zz122</IVC>
     <IVC>zz137</IVC>
     <IVC>zz140</IVC>
@@ -86,9 +65,7 @@
     <IVC>zz148</IVC>
     <IVC>zz149</IVC>
     <IVC>zz150</IVC>
-    <IVC>zz153</IVC>
     <IVC>zz154</IVC>
-    <IVC>zz155</IVC>
     <IVC>zz156</IVC>
     <IVC>zz157</IVC>
     <IVC>zz160</IVC>

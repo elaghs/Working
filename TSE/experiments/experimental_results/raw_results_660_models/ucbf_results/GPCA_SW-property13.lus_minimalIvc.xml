@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[__GUARANTEE13]">
-    <Runtime unit="sec">10.035</Runtime>
+    <Runtime unit="sec">9.414</Runtime>
     <IVC>DEFS__is_therapy~0._outvar</IVC>
     <IVC>DEFS__is_therapy~0.mode</IVC>
     <IVC>_TOP__ALARM~0.ALARM_OUT.Highest_Level_Alarm</IVC>

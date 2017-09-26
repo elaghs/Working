@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[__GUARANTEE11]">
-    <Runtime unit="sec">4.649</Runtime>
+    <Runtime unit="sec">4.442</Runtime>
     <IVC>_TOP__ALARM~0.ALARM_OUT.Highest_Level_Alarm</IVC>
     <IVC>_TOP__ALARM~0.SENSOR_IN.Air_Pressure</IVC>
     <IVC>_TOP__ALARM~0.SENSOR_IN.CPU_Error</IVC>

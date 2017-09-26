@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[__GUARANTEE25]">
-    <Runtime unit="sec">3.314</Runtime>
+    <Runtime unit="sec">3.23</Runtime>
     <IVC>_TOP__ASSERT__35</IVC>
     <IVC>_TOP__IM~0.IM_OUT.Current_System_Mode</IVC>
     <IVC>_TOP__IM~0.PATIENT_IN.Patient_Bolus_Request</IVC>

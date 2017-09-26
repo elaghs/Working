@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[__GUARANTEE53]">
-    <Runtime unit="sec">3.072</Runtime>
+    <Runtime unit="sec">2.861</Runtime>
     <IVC>_TOP__ALARM~0.ALARM_OUT.Notification_Message</IVC>
     <IVC>_TOP__ALARM~0.CONFIG_IN.Configured</IVC>
     <IVC>_TOP__ALARM~0.CONST_IN.Config_Warning_Duration</IVC>

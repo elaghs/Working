@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[__GUARANTEE6]">
-    <Runtime unit="sec">1.305</Runtime>
+    <Runtime unit="sec">1.272</Runtime>
     <IVC>__GUARANTEE6</IVC>
     <IVC>defs__is_cooking~0._outvar</IVC>
     <IVC>defs__is_cooking~0.m</IVC>

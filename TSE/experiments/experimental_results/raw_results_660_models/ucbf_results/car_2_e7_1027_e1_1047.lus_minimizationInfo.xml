@@ -1,31 +1,31 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Run id="1">
-    <Runtime unit="sec">0.614</Runtime>
+    <Runtime unit="sec">0.607</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="2">
-    <Runtime unit="sec">0.718</Runtime>
-    <Status>NOT_YET_CHECKED</Status>
+    <Runtime unit="sec">0.804</Runtime>
+    <Status>VALID</Status>
   </Run>
   <Run id="3">
-    <Runtime unit="sec">0.514</Runtime>
-    <Status>NOT_YET_CHECKED</Status>
+    <Runtime unit="sec">0.436</Runtime>
+    <Status>VALID</Status>
   </Run>
   <Run id="4">
-    <Runtime unit="sec">0.321</Runtime>
+    <Runtime unit="sec">0.205</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="5">
-    <Runtime unit="sec">0.001</Runtime>
+    <Runtime unit="sec">0.003</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="6">
-    <Runtime unit="sec">0.001</Runtime>
+    <Runtime unit="sec">0.1</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="7">
-    <Runtime unit="sec">0.422</Runtime>
-    <Status>NOT_YET_CHECKED</Status>
+    <Runtime unit="sec">0.407</Runtime>
+    <Status>VALID</Status>
   </Run>
 </Results>

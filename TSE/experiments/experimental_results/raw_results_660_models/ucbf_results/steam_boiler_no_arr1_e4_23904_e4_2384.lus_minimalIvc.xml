@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[OK]">
-    <Runtime unit="sec">14.256</Runtime>
+    <Runtime unit="sec">13.91</Runtime>
     <IVC>AND~0.AND</IVC>
     <IVC>AND~0.a_0</IVC>
     <IVC>AND~0.a_1</IVC>

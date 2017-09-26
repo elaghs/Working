@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[OK]">
-    <Runtime unit="sec">0.219</Runtime>
+    <Runtime unit="sec">0.22</Runtime>
     <IVC>OK</IVC>
     <IVC>microwave_microwave_TIME_ON_DISPLAY_SECONDS_TO_TENS__QUOTIENT</IVC>
   </MinimalIvc>

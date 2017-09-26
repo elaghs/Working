@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[OK]">
-    <Runtime unit="sec">2.383</Runtime>
+    <Runtime unit="sec">2.403</Runtime>
     <IVC>OK</IVC>
     <IVC>Sofar~0.Sofar</IVC>
     <IVC>Sofar~0.X</IVC>

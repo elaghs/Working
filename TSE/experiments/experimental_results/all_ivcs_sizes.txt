@@ -7,8 +7,8 @@ average size of minimum IVCs: 17.1257575758
 
 min size of minimal IVCs from IVC_UCBF: 1
 max size of minimal IVCs from IVC_UCBF: 962
-stdev size of minimal IVCs from IVC_UCBF: 43.3508528634
-average size of minimal IVCs from IVC_UCBF: 18.0712121212
+stdev size of minimal IVCs from IVC_UCBF: 43.234907928
+average size of minimal IVCs from IVC_UCBF: 17.4303030303
 ###############################################################
 
 min size of IVCs from IVC_UC: 1

@@ -5,15 +5,15 @@
     <Status>INVALID</Status>
   </Run>
   <Run id="2">
-    <Runtime unit="sec">0.206</Runtime>
-    <Status>NOT_YET_CHECKED</Status>
+    <Runtime unit="sec">0.201</Runtime>
+    <Status>VALID</Status>
   </Run>
   <Run id="3">
     <Runtime unit="sec">0.002</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="4">
-    <Runtime unit="sec">0.001</Runtime>
+    <Runtime unit="sec">0.007</Runtime>
     <Status>INVALID</Status>
   </Run>
 </Results>

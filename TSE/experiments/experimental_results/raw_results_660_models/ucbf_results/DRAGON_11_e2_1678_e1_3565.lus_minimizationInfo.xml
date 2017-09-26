@@ -1,51 +1,51 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Run id="1">
-    <Runtime unit="sec">0.211</Runtime>
+    <Runtime unit="sec">0.206</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="2">
-    <Runtime unit="sec">58.084</Runtime>
-    <Status>UNKNOWN</Status>
+    <Runtime unit="sec">11.811</Runtime>
+    <Status>VALID</Status>
   </Run>
   <Run id="3">
-    <Runtime unit="sec">58.098</Runtime>
+    <Runtime unit="sec">58.04</Runtime>
     <Status>UNKNOWN</Status>
   </Run>
   <Run id="4">
-    <Runtime unit="sec">0.209</Runtime>
+    <Runtime unit="sec">0.12</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="5">
-    <Runtime unit="sec">5.048</Runtime>
-    <Status>NOT_YET_CHECKED</Status>
+    <Runtime unit="sec">40.051</Runtime>
+    <Status>VALID</Status>
   </Run>
   <Run id="6">
-    <Runtime unit="sec">0.113</Runtime>
+    <Runtime unit="sec">0.202</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="7">
-    <Runtime unit="sec">58.091</Runtime>
+    <Runtime unit="sec">58.076</Runtime>
     <Status>UNKNOWN</Status>
   </Run>
   <Run id="8">
-    <Runtime unit="sec">0.004</Runtime>
-    <Status>INVALID</Status>
-  </Run>
-  <Run id="9">
     <Runtime unit="sec">0.1</Runtime>
     <Status>INVALID</Status>
   </Run>
-  <Run id="10">
+  <Run id="9">
     <Runtime unit="sec">0.101</Runtime>
+    <Status>INVALID</Status>
+  </Run>
+  <Run id="10">
+    <Runtime unit="sec">0.109</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="11">
-    <Runtime unit="sec">0.101</Runtime>
+    <Runtime unit="sec">0.004</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="12">
-    <Runtime unit="sec">0.102</Runtime>
+    <Runtime unit="sec">0.113</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="13">
@@ -53,39 +53,39 @@
     <Status>INVALID</Status>
   </Run>
   <Run id="14">
-    <Runtime unit="sec">0.108</Runtime>
+    <Runtime unit="sec">0.103</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="15">
-    <Runtime unit="sec">0.101</Runtime>
+    <Runtime unit="sec">0.115</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="16">
-    <Runtime unit="sec">58.043</Runtime>
+    <Runtime unit="sec">58.003</Runtime>
     <Status>UNKNOWN</Status>
   </Run>
   <Run id="17">
-    <Runtime unit="sec">0.104</Runtime>
+    <Runtime unit="sec">0.108</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="18">
-    <Runtime unit="sec">0.002</Runtime>
+    <Runtime unit="sec">0.101</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="19">
-    <Runtime unit="sec">58.02</Runtime>
+    <Runtime unit="sec">58.028</Runtime>
     <Status>UNKNOWN</Status>
   </Run>
   <Run id="20">
-    <Runtime unit="sec">0.002</Runtime>
+    <Runtime unit="sec">0.001</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="21">
-    <Runtime unit="sec">0.107</Runtime>
+    <Runtime unit="sec">0.101</Runtime>
     <Status>INVALID</Status>
   </Run>
   <Run id="22">
-    <Runtime unit="sec">0.004</Runtime>
+    <Runtime unit="sec">0.002</Runtime>
     <Status>INVALID</Status>
   </Run>
 </Results>

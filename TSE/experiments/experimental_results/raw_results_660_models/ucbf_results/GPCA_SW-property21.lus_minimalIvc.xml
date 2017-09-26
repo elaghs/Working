@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MinimalIvc property="[__GUARANTEE21]">
-    <Runtime unit="sec">3.538</Runtime>
+    <Runtime unit="sec">3.295</Runtime>
     <IVC>_TOP__ALARM~0.ALARM_OUT.Audio_Notification_Command</IVC>
     <IVC>_TOP__ALARM~0.ALARM_OUT.Is_Audio_Disabled</IVC>
     <IVC>_TOP__ALARM~0.OP_CMD_IN.Disable_Audio</IVC>

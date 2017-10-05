@@ -66,7 +66,7 @@
 \usepackage{stfloats}
 \usepackage{url}
 \usepackage{xspace}
-
+\theoremstyle{definition}
 \hyphenation{op-tical net-works semi-conduc-tor}
 \newcommand{\mkeyword}[1]{\mbox{\texttt{#1}}}
 \DeclareMathOperator{\kuop}{uop}
@@ -99,6 +99,21 @@
 \newcommand{\ucalg}{\texttt{\small{IVC\_UC}}}
 \newcommand{\ucbfalg}{\texttt{\small{IVC\_UCBF}}}
 \newcommand{\mustalg}{\texttt{\small{IVC\_MUST}}}
+
+\newcommand{\nondetcov}{\text{\sc Nondet-Cov}}
+\newcommand{\nondetcovalt}{\text{\sc Nondet-Cov$^{*}$}}
+\newcommand{\ivccov}{\text{\sc IVC-Cov}}
+\newcommand{\maycov}{\text{\sc May-Cov}}
+\newcommand{\mustcov}{\text{\sc Must-Cov}}
+\newcommand{\allcov}{\text{\sc Model-Cov}}
+\newcommand{\mutcov}{\text{\sc Mutant-Cov}}
+
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem{coroll}{Corollary}
+\newtheorem{theorem}{Theorem}
+\newtheorem{note}{Note}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ADDITIONAL PREABLE MATERIAL

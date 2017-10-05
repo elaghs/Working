@@ -5,15 +5,18 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 5
 \BOOKMARK [1][-]{section.1.1}{Objectives and Intended Contributions}{chapter.1}% 6
 \BOOKMARK [2][-]{subsection.1.1.1}{Contributions and Evaluation}{section.1.1}% 7
-\BOOKMARK [1][-]{section.1.2}{State of the Art}{chapter.1}% 8
-\BOOKMARK [0][-]{chapter.2}{Existing Approaches}{}% 9
-\BOOKMARK [1][-]{section.2.1}{Minimal UNSAT Subformulae}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.2}{Vacuity Detection}{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.3}{Slicing}{chapter.2}% 12
-\BOOKMARK [1][-]{section.2.4}{Traceability}{chapter.2}% 13
-\BOOKMARK [2][-]{subsection.2.4.1}{System Modeling and Verification}{section.2.4}% 14
-\BOOKMARK [1][-]{section.2.5}{Requirements Completeness}{chapter.2}% 15
-\BOOKMARK [2][-]{subsection.2.5.1}{Coverage and Mutations}{section.2.5}% 16
-\BOOKMARK [0][-]{chapter.3}{Proposed Approach}{}% 17
-\BOOKMARK [0][-]{chapter.4}{Timeline and Conclusion}{}% 18
-\BOOKMARK [0][-]{chapter*.5}{References}{}% 19
+\BOOKMARK [0][-]{chapter.2}{Existing Approaches}{}% 8
+\BOOKMARK [1][-]{section.2.1}{Minimal UNSAT Subformulae}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.2}{Vacuity Detection}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.3}{Slicing}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.4}{Traceability}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.4.1}{System Modeling and Verification}{section.2.4}% 13
+\BOOKMARK [1][-]{section.2.5}{Requirements Completeness}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.5.1}{Coverage and Mutations}{section.2.5}% 15
+\BOOKMARK [0][-]{chapter.3}{Proposed Approach}{}% 16
+\BOOKMARK [1][-]{section.3.1}{Models, Requirements, and Provability}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.2}{Inductive Validity Cores}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.3}{Traceability}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.4}{Coverage Metrics}{chapter.3}% 20
+\BOOKMARK [0][-]{chapter.4}{Conclusions}{}% 21
+\BOOKMARK [0][-]{chapter*.5}{References}{}% 22

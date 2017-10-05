@@ -1,0 +1,15 @@
+Increasing usage of computer systems in safety-critical applications demands the utmost care in their specification, design, and implementation.  Formal verification is a useful method for mathematical/systematic examination of the requirements a system must meet. However, due to the complexity of modern systems, safety analysis is challenging. One of the most successful and powerful methods for formal verification is symbolic model checking.
+Symbolic model checkers can construct proofs of safety properties over complex
+models, but when a proof succeeds, the results do not generally provide much
+insight to the user. It is often useful for users to have traceability information related to the proof: which portions of the model were necessary to construct it.  This traceability information can be used to diagnose a variety of modeling problems such as overconstrained axioms and underconstrained properties, and can also be used to measure {\em completeness} of a set of requirements over a model.  
+IVCs are intended to trace a property to a \emph{minimal} set of model elements necessary for proof. Besides minimality, computing \emph{all} minimal IVCs of a given property is
+another interesting problem that provides several useful analyses, including
+regression analysis for testing/proof, determination of the minimum (as
+opposed to minimal) number of model elements necessary for proof, the
+diversity examination of model elements leading to proof, and analyzing fault
+tolerance.
+We, fisrt, propose a method to efficiently compute a single {\em inductive validity core} (IVC) within a model necessary for inductive proofs of safety properties for sequential systems.  The algorithm is based on the UNSAT core support built into current SMT solvers and a novel encoding of the inductive problem to try to generate a minimal inductive validity core.
+Then, we propose an efficient method for finding \emph{all minimal} IVCs of a
+given property. We introduce several applications of this. We prove our algorithms are correct, and describe their implementation in the JKind model checker for Lustre models.  
+ JKind is an infinite-state model checker that is intended to verify functional requirements, in particular safety requirements. In the back-end, JKind uses an SMT solver such as Z3~\cite{DeMoura08:z3}, Yices~\cite{Dutertre06:yices}, MathSAT~\cite{Cimatti2013:MathSAT}, or SMTInterpol~\cite{Christ2012:SMTInterpol}.
+We then present an experiment in which we benchmark the algorithms in terms of speed, diversity of produced cores, and minimality, with promising results.

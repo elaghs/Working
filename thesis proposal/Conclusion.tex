@@ -1,15 +1,30 @@
 \chapter{Conclusions}
-  
-In this proposal, we introduce the idea of extracting a minimal IVC for a given property and its applications.  However, a single IVC often does not provide a complete picture of the traceability from a property to a model.  We would also like to address the problem of extracting {\em all minimal} IVCs. 
+
+In this proposal, we introduce the idea of extracting a minimal IVC for a given property and its applications.  However, a single IVC often does not provide a complete picture of the traceability from a property to a model.  We would also like to address the problem of extracting {\em all minimal} IVCs.
 We will show
-the correctness and completeness of our methods and algorithms.  In addition, we plan to have a substantial evaluation that shows that the practicality and efficiency of our technique. For this purpose, we have collected a large set of benchmarks from different sources. Our experiments are conducted on a set of benchmarks containing 660 Lustre models, 530 from~\cite{Hagen08:FMCAD, piskac2016} and 130 industrial models derived from \cite{hilt2013} and other sources \cite{piskac2016, NFM2015:backes}.  Most of the academic benchmark models are small (10kB or less, with 6-40 equations) and include a range of hardware benchmarks and software problems involving counters that are difficult to solve inductively.
+the correctness and completeness of our methods and algorithms.
+
+We implement all of the inductive validity core algorithms in an industrial model checker called JKind ~\cite{jkind},
+which verifies safety properties of infinite-state synchronous systems.
+It accepts Lustre programs \cite{Halbwachs91:lustre} as input.  The translation of Lustre
+into a symbolic transition system in JKind is straightforward and is similar to what is described
+in~\cite{Hagen08:FMCAD}.
+Verification is supported by multiple ``proof engines'' that execute in parallel, including $k$-induction,
+property directed reachability (PDR), and lemma generation engines that attempt to prove
+multiple properties in parallel.  To implement the engines,
+JKind emits SMT problems using the theories of linear integer and real arithmetic. JKind supports the \texttt{Z3}, \texttt{Yices}, \texttt{MathSAT}, \texttt{SMTInterpol}, and \texttt{CVC4} SMT solvers as back-ends.  We extend JKind with new engines that implement our IVC generation algorithms. When a property is
+proved and IVC generation is enabled, an additional parallel engine
+executes one of the IVC algorithms.
+
+
+In addition, we plan to have a substantial evaluation that shows that the practicality and efficiency of our technique. For this purpose, we have collected a large set of benchmarks from different sources. Our experiments are conducted on a set of benchmarks containing 660 Lustre models, 530 from~\cite{Hagen08:FMCAD, piskac2016} and 130 industrial models derived from \cite{hilt2013} and other sources \cite{piskac2016, NFM2015:backes}.  Most of the academic benchmark models are small (10kB or less, with 6-40 equations) and include a range of hardware benchmarks and software problems involving counters that are difficult to solve inductively.
 The industrial models are much larger; for example, each 80 models from \cite{hilt2013} contain over 600 equations and are each $\geq$80kB in size. The benchmark includes 2 models from NASA Quad-redundant Flight Control System (QFCS)~\cite{NFM2015:backes}: the Flight Control System (FCS) with 5259 Lustre equations and the Flight Control Computer (FCC) with 10969 equations.
 
 We selected only benchmark problems consisting of a Lustre model with
 properties that JKind could prove with a 3-hour timeout.
 Experiments are run in a configuration with the \texttt{Z3} solver and the ``fastest'' mode of JKind (which involves running the $k$-induction and PDR engines in parallel and terminating when a solution is found). The experiments are expected to be run on an  Intel(R) i5-4690, 3.50GHz, 16 GB memory machine running Linux, and available online.
 
-Our method for computing all MIVCs is inspired by a recent work in the domain of satisfiability analysis \cite{marco2016fast}. One interesting future direction is to devise similar MIVC enumeration algorithms based on other studies on MUSes extraction such as \cite{nadel2014accelerated}. 
+Our method for computing all MIVCs is inspired by a recent work in the domain of satisfiability analysis \cite{marco2016fast}. One interesting future direction is to devise similar MIVC enumeration algorithms based on other studies on MUSes extraction such as \cite{nadel2014accelerated}.
 Another interesting direction for this project is to parallelize the enumeration process: it is certainly possible to ask for multiple distinct maximal models to be solved in parallel.
 %, though this may result in unnecessary work performed by some of the parallel solvers.
 

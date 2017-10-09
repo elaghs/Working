@@ -3,7 +3,8 @@
 Computer systems have become an integral part of our daily life being used in various environments (such as homes, hospitals, factories) and application areas (such as medical devices, aircraft flight control, weapons, and nuclear systems). The increasing reliance of critical applications on information processing makes it vital to verify the soundness and safety of the computer systems because failure in these systems could be disastrous leading to financial loss, loss of life, or damage to the environment. To address this issue, formal verification comes into play. Formal verification is the process of mathematically proving or disproving the correctness of a system with respect to certain requirements or properties.
 
 One of the most successful and powerful methods for formal verification is symbolic model checking. Symbolic model checking using induction-based techniques such as IC3/PDR~\cite{Een2011:PDR} and $k$-induction~\cite{SheeranSS00} can often determine whether safety properties hold of complex finite or infinite-state systems.  Model checking tools are attractive both because they are automated, requiring little or no interaction with the user, and if the answer to a correctness query is negative, they provide a counterexample to the satisfaction of the property.  These counterexamples can be used both to illustrate subtle errors in complex hardware and software designs~\cite{hilt2013,McMillan99:compositional, Miller10:CACM} and to support automated test case generation~\cite{Whalen13:OMCDC, You15:dse}.
-In the event that a property is proved, however, it is not always clear what level of assurance should be invested in the result.  Given that these kinds of analyses are performed for safety- and security-critical software, this can lead to overconfidence in the behavior of the fielded system.  It is well known that issues such as vacuity~\cite{Kupferman03:Vacuity} can cause verification to succeed despite errors in a property specification or in the model. Even for non-vacuous specifications, it is possible to over-constrain the specification of the {\em environment} in the model such that the implementation will not work in the actual operating environment. 
+
+In the event that a property is proved, however, it is not always clear what level of assurance should be invested in the result.  Given that these kinds of analyses are performed for safety- and security-critical software, this can lead to overconfidence in the behavior of the fielded system.  It is well known that issues such as vacuity~\cite{Kupferman03:Vacuity} can cause verification to succeed despite errors in a property specification or in the model. Even for non-vacuous specifications, it is possible to over-constrain the specification of the {\em environment} in the model such that the implementation will not work in the actual operating environment.
 %In such cases, a system or subsystem component will not exhibit the expected behavior in the operating environment although the analyst gains over-confidence or false assumption on the correctness of the system, which may bring about serious damage. Therefore, the level of feedback provided by the tool to the user matters.
 
 At issue is the level of feedback provided by the tool to the user. In
@@ -14,7 +15,9 @@ the proof, in much the same way that a counterexample explains the
 negative result. This is not a new idea: UNSAT cores~\cite{zhang2003extracting}
 provide the same kind of information for individual SAT or
 SMT queries, and this approach has been lifted to bounded analysis
-for Alloy in~\cite{Torlak08:cores}. What we propose is a generic and efficient
+for Alloy in~\cite{Torlak08:cores}. 
+
+What we propose is a generic and efficient
 mechanism for extracting supporting information, similar to an UNSAT
 core, from the proofs of safety properties using inductive techniques
 such as PDR and $k$-induction. Because many
@@ -28,10 +31,10 @@ a minimal IVC (MIVC) is a set of constraints that is sufficient to construct a p
 
 \section{Objectives and Intended Contributions}
 
-The IVC idea makes a lot of useful system analyses/engineering tasks possible and more efficient. Specifically, it is useful when the validity of a safety requirement has been stablished by the model checker. In this case, IVCs provide usable information both formal and human-understandable that explains why the requirement is satisfied. Such information is valuable in analyzing safety-critical systems and can be used for many purposes in the software verification process, including at least the following:
+The IVC idea facilitates a lot of useful system analyses/engineering tasks. Specifically, it is useful when the validity of a safety requirement has been stablished by the model checker. In this case, IVCs provide usable information both formal and human-understandable that explains why the requirement is satisfied. Such information is valuable in analyzing safety-critical systems and can be used for many purposes in the software verification process, including at least the following:
 \begin{description}
     \item[Vacuity detection:] The idea of syntactic vacuity detection (checking whether all subformulae within a property are necessary for its satisfaction) has been well studied~\cite{Kupferman03:Vacuity}.   However, even if a property is not syntactically vacuous, it may not require substantial portions of the model.  This in turn may indicate that either a.) the model is incorrectly constructed or b.) the property is weaker than expected.  We have seen several examples of this mis-specification in our verification work, especially when variables computed by the model are used as part of antecedents to implications.
-    \item[Completeness checking:] Closely related to vacuity detection is the idea of {\em completeness checking}, e.g., are all atoms in the model necessary for at least one of the properties proven about the model?  Several different notions of completeness checking have been proposed~\cite{chockler_coverage_2003, kupferman_theory_2008}, but these are very expensive to compute, and in some cases, provide an overly strict answer (e.g., checking can only be performed on non-vacuous models for~\cite{kupferman_theory_2008}).  
+    \item[Completeness checking:] Closely related to vacuity detection is the idea of {\em completeness checking}, e.g., are all atoms in the model necessary for at least one of the properties proven about the model?  Several different notions of completeness checking have been proposed~\cite{chockler_coverage_2003, kupferman_theory_2008}, but these are very expensive to compute, and in some cases, provide an overly strict answer (e.g., checking can only be performed on non-vacuous models for~\cite{kupferman_theory_2008}).
     \item[Traceability:] Certification standards for safety-critical systems (e.g.,~\cite{DO178C, MOD:00-55}) usually require {\em traceability matrices} that map high-level requirements to lower-level requirements and (eventually) leaf-level requirements to code or models.  Current traceability approaches involve either manual mappings between requirements and code/models~\cite{SimulinkTraceability} or a heuristic approach involving natural language processing~\cite{Keenan12:Tracelab}.  Both of these approaches tend to be inaccurate.  For functional properties that can be proven with inductive model checkers, inductive validity cores can provide accurate traceability matrices with no user effort.
     \item[Symbolic Simulation / Test Case Generation:]  Model checkers are now often used for symbolic simulation and structural-coverage-based test case generation~\cite{SimulinkDesignVerifier,Whalen13:OMCDC}.  For either of these purposes, the model checker is supposed to produce a witness trace for a given coverage obligation using a ``trap property'' which is expected to be falsifiable.  In systems of sufficient size, there is often ``dead code'' that cannot ever be reached.  In this case, a proof of non-reachability is produced, and the IVC provides the reason why this code is unreachable.
 \end{description}
@@ -41,7 +44,7 @@ accurate and precise (that is, sound and close to minimal).  The requirement for
 
 %\ela{should we add this: (?)}
 In addition, %\fixed{ a property can have as many unique minimal IVC sets as the possible paths through which it can be proved. Therefore,}
-we are also interested in {\em diversity}:  how many different IVCs can be computed for a given property and model? Requirements engineers often talk about ``the traceability matrix'' or ``the satisfaction argument''.  If proofs are regularly diverse, then there are potentially many equally valid traceability matrices, and this may lead to changes in traceability research. 
+we are also interested in {\em diversity}:  how many different IVCs can be computed for a given property and model? Requirements engineers often talk about ``the traceability matrix'' or ``the satisfaction argument''.  If proofs are regularly diverse, then there are potentially many equally valid traceability matrices, and this may lead to changes in traceability research.
 It is often the case that there are multiple MIVCs for a given property.  In this case, computing a single IVC provides, at best, an incomplete picture of the traceability information associated with the proof.  Depending on the model and property to be analyzed, there is often substantial diversity between the IVCs used for proof, and there can also be a substantive difference in the size of a {\em minimal} IVC and a {\em minimum} IVC, which is the (not necessarily unique) smallest MIVC.
  If {\em all} MIVCs can be found, then several additional analyses can be performed:
 \begin{description}
@@ -54,29 +57,37 @@ It is often the case that there are multiple MIVCs for a given property.  In thi
 
 \noindent In addition, the Requirements Engineering community is keenly interested in approaches to manage requirements traceability.  In most cases, it is assumed that there is a single ``golden'' set of trace links that describes how requirements are implemented in software~\cite{COEST,hayes2003improving,cleland2007best}. However, if there are multiple MIVCs, then it is possible that there are several equally valid sets of trace links.  Examining the diversity of all MIVCs could lead to changes in how traceability is performed for critical systems.
 
-\subsection{Contributions and Evaluation}
-First, we propose a new method for extracting a single IVC from the inductive proof of a given property. This method is intended to be very efficient and impose a negligible overhead on the verification process.
+\subsection{Use in Certification}
+Airborne software must undergo a rigorous software development process to ensure its airworthiness. This process is governed by DO-178C: Software Considerations in Airborne Systems and Equipment Certification and when formal methods tools are used, DO-333: Formal Methods Supplement to DO-178C and DO-278A \cite{DO178C}. DO-178C proposes a rigorous software development process that starts with an abstract requirements artifact that is iteratively refined into a software designs, source code, and finally, object code, and a set of {\em objectives} that should be met by critical avionics software.  Two of the key tenets of this process are traceability and adequacy; that is, each refinement of an artifact must be traceable to the artifact if was derived from. Further, each refinement must be shown not to introduce functionality not present in the artifact from which it was derived (adequacy). For example, DO-178C objectives A-3.6 (traceability of high-level requirements to system requirements) and A-4.6 (traceability of software design to high-level requirements) specifically require applicants to demonstrate bi-directional traceability.
+
+DO178C currently uses a variety of metrics to determine adequacy of requirements, but much of the effort involves code-level testing.  Test suites are derived from requirements and used to test the software and measured using different structural coverage test metrics.  If code-level test suites do not achieve full coverage, then an analysis is performed to determine whether there are missing requirements and test cases.  The kind of structural coverage required (e.g., statement, branch, MCDC) for adequate testing is driven by the criticality of the software in question.
+
+With the idea of IVCs, we propose a set of proof-based coverage metrics suitable for analyzing requirements competentness. Then, we will have the utility of the proposed approach evaluated by an industrial partner.
+
+
+\section{Contributions and Evaluation}
+First, we propose a new method for extracting a single IVC from the inductive proof of a given property. This method is intended to be very efficient imposing a negligible overhead on the verification process.
 Then, we propose a new method for computing \emph{all} MIVCs that is {\em always} minimal for decidable model checking problems and {\em usually} (and detectably) minimal for model-checking problems that are generally undecidable. We would like to evaluate the usability of our idea by examining its different applications.
 The contributions of the work are therefore as follows:
 \begin{itemize}
-    \item We present a fast technique for extracting inductive validity
+    \item A fast technique for extracting inductive validity
       cores from an inductive verification of a safety property over a sequential model involving lemmas.
     \item An algorithm for computing all minimal IVCs with a proof of correctness and completeness of the algorithm.
-    \item We formalize all the techniques and present their implementations in the JKind model checker~\cite{jkind}.
-    \item We present an experiment over our implementation and measure the efficiency, minimality, and robustness of the IVC generation process.
+    \item Formalization and implementation of all the techniques.
+    \item An experiment over our implementation to evaluate the efficiency, minimality, and robustness of the IVC generation process.
     %\item An evaluation of the algorithm for performance and diversity of result sets against a benchmark suite.
-   \item A family of coverage metrics for formal verification based on \emph{minimal} Inductive Validity Cores (MIVCs).  Most of the proposed metrics are {\em proof preserving},
+   \item A family of coverage metrics for formal verification based on \emph{minimal} Inductive Validity Cores (MIVCs).
 \item A discussion of the relationship between proof-based metrics and mutation-based metrics, including a proof of equivalence between non-deterministic mutation coverage and one of the proof-based metrics.
 \item An experiment that compares our proof-based metrics against a state of the art mutation-based notion of completeness.
-    \item We examine how the notion of IVCs changes the way traceability is perceived, established, maintained, and used.
+    \item A study to show how the notion of IVCs changes the way traceability is perceived, established, maintained, and used.
 \end{itemize}
 
 
 %\section{State of the Art}
 %Our work builds on top of a substantial foundation provided by special tools known as constraint solvers. Constraint solving is a powerful mathematical method that allows the computer to solve a problem formulated by the user. Many verification problems can be reduced to constraint satisfaction problems and solved with tools known as SMT  solvers.  A lot of useful formal methods are built on top of SMT solvers, such as model checking algorithms, abstraction techniques, and proof-certificate generation. There is significant amount of valuable research on these topics in the literature. Although such reasoning techniques are helpful, they are not expressive enough to provide good insights into the quality of a system or specification. With the IVC idea, we are able to bridge the gap between verification techniques and the user insight into the results provided by the tools. The goal behind this idea is different from existing applications of constraint solving. The IVC idea shares many similarities with existing approaches for computing proof certificates, and in fact the IVC algorithm performs this computation as well. However, there is a substantive difference; to find a guaranteed minimal set of certificates, it is usually necessary to find new proofs involving new invariants not used in the original proof, which existing techniques do not deal with.
- 
 
- 
+
+
 %% We put the image here so it shows up side-by-side with fig:ex-after
 %\begin{figure}[t]
 %\centering
@@ -94,4 +105,4 @@ The contributions of the work are therefore as follows:
 %\vspace{-0.1in}
 %\caption{Model with property $y \geq 0$, before IVC analysis}
 %\label{fig:ex-before}
-%\end{figure}
+%\end{figure} 

@@ -1,0 +1,60 @@
+const THRESHOLD = 10000; 
+const THRESHOLD_HYST = THRESHOLD + 500; 
+
+node asw(alt1, alt2: int; inhibit: bool; r1, r2: bool) returns (sw_on: bool);
+var
+   alt1_below, alt2_below, alt1_above, alt2_above: bool;
+   one_below_alt, all_above_hyst: bool;
+   prop1, prop2, prop3, prop4: bool;
+   sw1, sw2, sw3: bool;
+let
+   --%MAIN
+   alt1_below = (alt1 < THRESHOLD); 
+   -- alt1_below = r1;
+   alt2_below = (alt2 < THRESHOLD);
+   alt1_above = (alt1 >= THRESHOLD_HYST); 
+   alt2_above = (alt2 >= THRESHOLD_HYST);    
+   -- alt2_above = r1;
+   one_below_alt = alt1_below or alt2_below ;
+   all_above_hyst = alt1_above and alt2_above;   
+   sw_on = if (inhibit) then false else sw1;
+   sw1 = if (one_below_alt) then true else sw2;
+   sw2 = if (all_above_hyst) then false else sw3;
+   sw3 = (false -> pre(sw_on)); 
+	
+   -- incorrect prop1 for illustration purposes.	
+   -- This is a pretty good illustration!
+   -- prop1 = inhibit and (alt1_above and alt2_above) => sw_on = false;
+   prop1 = inhibit => sw_on = false;
+   prop2 = (alt1_above and alt2_above) => sw_on = false;
+   prop3 = (alt1_below or alt2_below) and not inhibit => sw_on = true;
+   prop4 = ((alt1 < THRESHOLD) and (alt2 < THRESHOLD)) => alt1_below ;
+   --%PROPERTY prop1;
+   --%PROPERTY prop2;
+   --%PROPERTY prop3;
+   --%PROPERTY prop4;
+   --%IVC sw_on, sw1, sw2, sw3, alt1_below, alt2_below, alt1_above, alt2_above, one_below_alt, all_above_hyst;
+tel;
+
+
+-- Things to note: IVC for prop2 contains 'all_above_hyst' even though this declaration is not explicitly
+-- referenced in the property;
+
+-- requirements:
+
+-- test cases:
+-- 
+-- inhibit						T T F
+-- alt1_below					F F F 
+-- alt2_below					F F F
+-- alt1_above					T T F  
+-- alt2_above					F T T
+-- sw_on						F F T
+-- one_above_hyst_no_below     F F T
+
+-- alt1_above independent: true
+-- alt2_above independent: true
+-- inhibit independent: true
+
+-- 'and' vs. 'or' error caught: false.
+-- proof: requires only one true.

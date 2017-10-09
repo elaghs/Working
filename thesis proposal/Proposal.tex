@@ -78,9 +78,7 @@ $AIVC$ relations for $P$:
 \item $IRR(P) = T \setminus (\bigcup AIVC (P))$
 \end{itemize}
 
-\noindent This categorization helps to identify the role and relevance of each design element in satisfying a property. Function $MUST$ specifies the parts of the model absolutely necessary for the property satisfaction.  Any change to these parts will affect provability of the property. On the other hand, any single element in $MAY (P)$, may be modified without affecting satisfaction of $P$(though modifying multiple elements may require re-proof). The $IRR$ denotes model elements that are irrelevant to the validity of $P$.
-
-The categorization of the set of support to be useful in several analyses:
+\noindent This categorization helps to identify the role and relevance of each design element in satisfying a property. Function $MUST$ specifies the parts of the model absolutely necessary for the property satisfaction.  Any change to these parts will affect provability of the property. On the other hand, any single element in $MAY (P)$, may be modified without affecting satisfaction of $P$(though modifying multiple elements may require re-proof). The $IRR$ denotes model elements that are irrelevant to the validity of $P$. 
 
 The $AIVC$ set improves understanding of how a change in the requirement will affect the target artifacts and vice versa. While the $AIVC$ of a requirement gives a clear picture of various ways a requirement is satisfied by the system, the categorization of target artifacts helps precisely assess and plan when and where the changes have to be implemented. The $MUST$ elements are those target artifacts that are highly likely to change with any change in the requirement, whereas not all $MAY$ elements may need to be changed.
 
@@ -136,7 +134,7 @@ Given $S \in AIVC(P)$, $T_i$ is covered by $P$ via $S$ \emph{iff} $T_i \in S$.
 %For the sake of simplicity, we refer to the coverage function
 %formalized in Definition \ref{def:coverage-justi} as \ivccov\.
 %
-We call Definition \ref{def:coverage-justi} a \emph{proof-preserving} metric because, with a set of the model elements marked as covered by \ivccov, $P$ is provable.   
+We call Definition \ref{def:coverage-justi} a \emph{proof-preserving} metric because, with a set of the model elements marked as covered by \ivccov, $P$ is provable.
 %\footnote{\noindent ~Throughout the paper, when a coverage metric is justifiable, like \ivccov, we say that it preserves provability of the property.}
 %Thus, the coverage score for \ivccov\ is often higher than the score for \nondetcov.
 The coverage score for \ivccov\ can be calculated with: $$\frac{|S|}{|T|}$$

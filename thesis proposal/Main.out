@@ -3,22 +3,24 @@
 \BOOKMARK [0][-]{chapter*.3}{List of Tables}{}% 3
 \BOOKMARK [0][-]{chapter*.4}{List of Figures}{}% 4
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 5
-\BOOKMARK [1][-]{section.1.1}{Objectives and Intended Contributions}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.1}{Objectives and Significance}{chapter.1}% 6
 \BOOKMARK [2][-]{subsection.1.1.1}{Use in Certification}{section.1.1}% 7
-\BOOKMARK [1][-]{section.1.2}{Contributions and Evaluation}{chapter.1}% 8
-\BOOKMARK [0][-]{chapter.2}{Existing Approaches}{}% 9
-\BOOKMARK [1][-]{section.2.1}{Minimal UNSAT Subformulae}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.2}{Slicing}{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.3}{Traceability}{chapter.2}% 12
-\BOOKMARK [2][-]{subsection.2.3.1}{System Modeling and Verification}{section.2.3}% 13
-\BOOKMARK [1][-]{section.2.4}{Requirements Completeness}{chapter.2}% 14
-\BOOKMARK [2][-]{subsection.2.4.1}{Coverage and Mutations}{section.2.4}% 15
-\BOOKMARK [1][-]{section.2.5}{Vacuity Detection}{chapter.2}% 16
-\BOOKMARK [1][-]{section.2.6}{Commercial Model Checkers}{chapter.2}% 17
-\BOOKMARK [0][-]{chapter.3}{Proposed Approach}{}% 18
-\BOOKMARK [1][-]{section.3.1}{Models, Requirements, and Provability}{chapter.3}% 19
-\BOOKMARK [1][-]{section.3.2}{Inductive Validity Cores}{chapter.3}% 20
-\BOOKMARK [1][-]{section.3.3}{Traceability}{chapter.3}% 21
-\BOOKMARK [1][-]{section.3.4}{Coverage Metrics}{chapter.3}% 22
-\BOOKMARK [0][-]{chapter.4}{Conclusions}{}% 23
-\BOOKMARK [0][-]{chapter*.5}{References}{}% 24
+\BOOKMARK [1][-]{section.1.2}{Intended Contributions}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.3}{Evaluation}{chapter.1}% 9
+\BOOKMARK [1][-]{section.1.4}{Chapters}{chapter.1}% 10
+\BOOKMARK [0][-]{chapter.2}{Related Work}{}% 11
+\BOOKMARK [1][-]{section.2.1}{UNSAT cores and Minimal UNSAT Subformulae}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.2}{Proof/Lemma Minimization}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.3}{Conformance}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.3.1}{Commercial Model Checkers}{section.2.3}% 15
+\BOOKMARK [1][-]{section.2.4}{Slicing}{chapter.2}% 16
+\BOOKMARK [1][-]{section.2.5}{Traceability}{chapter.2}% 17
+\BOOKMARK [1][-]{section.2.6}{Requirements Adequacy}{chapter.2}% 18
+\BOOKMARK [2][-]{subsection.2.6.1}{Coverage and Mutations}{section.2.6}% 19
+\BOOKMARK [1][-]{section.2.7}{Vacuity Detection}{chapter.2}% 20
+\BOOKMARK [0][-]{chapter.3}{Proposed Approach}{}% 21
+\BOOKMARK [1][-]{section.3.1}{Background}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.2}{Inductive Validity Cores}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.3}{Traceability}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.4}{Coverage Metrics in Formal Verification}{chapter.3}% 25
+\BOOKMARK [0][-]{chapter*.5}{References}{}% 26

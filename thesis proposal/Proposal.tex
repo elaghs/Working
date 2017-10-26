@@ -1,6 +1,11 @@
 \chapter{Proposed Approach}
 
-\section{Models, Requirements, and Provability}
+The idea of inductive validity cores was introduced in Chapter \ref{ch:intro}. 
+This idea is applicable to the context of symbolic model checking using inductive proof methods. The idea is, after proving the correctness of a given property, to extract a minimal portion of the system (model) necessary for the proof of the property. In other words, we would like to determine why the property is satisfied by the system. Since this information is obtained from the inductive proofs, we call it \emph{inductive} validity core. With minimal IVCs, we are able to abstract away the part of the system irrelevant to the proof of the property.
+
+This chapter, first, mentions some required background, then provides a formal description of the IVC notion. Using this formalization, we explain how IVCs can be used in traceability and adequacy checking.
+
+\section{Background}
 
 \newcommand{\satisfies}{\vdash_{\!\!s}}
 \newcommand{\nsatisfies}{\nvdash_{\!\!s}}
@@ -67,6 +72,8 @@ $$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  \mivc(P, S)\} $$
 %$AIVC ({\tt P}) = \{\{{\tt P}, {\tt c2}, {\tt c3}\}, \{{\tt P}, {\tt x}, {\tt c3}\}\}$.
 \noindent
 
+ %We adapt the recent work by Liffiton et al. \cite{marco2016fast} from the generation of MUSes from UNSAT-cores to all IVCs for inductive model checking.  This requires changing the underlying mechanisms that are used to construct candidate solutions and also changing the structure of the proof of correctness.  In addition, we demonstrate that the approach can terminate with all minimal IVCs even if the witness generator only generates approximately minimal IVCs (utilizing a ``fast''  algorithm for a single IVC computation).
+
 
 \section{Traceability}
 Given {\em all} proofs of a particular property, we are able to categorize the model elements based on \mivc ~and
@@ -78,7 +85,7 @@ $AIVC$ relations for $P$:
 \item $IRR(P) = T \setminus (\bigcup AIVC (P))$
 \end{itemize}
 
-\noindent This categorization helps to identify the role and relevance of each design element in satisfying a property. Function $MUST$ specifies the parts of the model absolutely necessary for the property satisfaction.  Any change to these parts will affect provability of the property. On the other hand, any single element in $MAY (P)$, may be modified without affecting satisfaction of $P$(though modifying multiple elements may require re-proof). The $IRR$ denotes model elements that are irrelevant to the validity of $P$. 
+\noindent This categorization helps to identify the role and relevance of each design element in satisfying a property. Function $MUST$ specifies the parts of the model absolutely necessary for the property satisfaction.  Any change to these parts will affect provability of the property. On the other hand, any single element in $MAY (P)$, may be modified without affecting satisfaction of $P$(though modifying multiple elements may require re-proof). The $IRR$ denotes model elements that are irrelevant to the validity of $P$.
 
 The $AIVC$ set improves understanding of how a change in the requirement will affect the target artifacts and vice versa. While the $AIVC$ of a requirement gives a clear picture of various ways a requirement is satisfied by the system, the categorization of target artifacts helps precisely assess and plan when and where the changes have to be implemented. The $MUST$ elements are those target artifacts that are highly likely to change with any change in the requirement, whereas not all $MAY$ elements may need to be changed.
 
@@ -89,7 +96,7 @@ From the target artifact side, this categorization helps analyze the impact of c
 
 Complete traceability can assist in tailoring verification and validation in systems. For instance, if several requirements have a certain target artifact in their $MUST$ set, say an particular assumption, it reveals the importance of focusing V\&V attention on that artifact. Along the same lines, for a system with a complex architecture (components that each have functionality) such as  system of systems, this categorization helps identify components that is critical to satisfy most requirements. This categorization helps plan verification strategies.
 
-\section{Coverage Metrics}
+\section{Coverage Metrics in Formal Verification}
 
 Mutations for hardware are discussed in~\cite{chockler2010coverage,Kupferman:2006:SCF,kupferman_theory_2008}.  In most of this work, the hardware model is formalized as an and-inverter-graph net-list, a graph representation of circuits in which vertices are \{\andnode, \invnode\} gates or memory elements (registers) and edges are connections between gates (signals).  Formally, A net-list $N$ is a directed graph $(V_N,E_N, \tau_N)$ where $V_N$ is a finite set of vertices, $E_N \subseteq V_N \times V_N$ is the set of directed edges and $\tau_N : V_N \rightarrow \{$\andnode, \invnode, \regnode, \inpnode$\}$ maps a node to its type, where \andnode\ is an ``and'' gate, \invnode\ is an inverter, \regnode\ is a register, and \inpnode\ is a primary input.  The in-degree of a vertex of type \andnode\ is at least two, of type \invnode\ and \regnode\ is exactly one and of type \inpnode\ is zero. Any cycle in $N$ must contain at least one \regnode\ node~\cite{chockler2010coverage}.
 
@@ -167,4 +174,20 @@ $\nondetcovalt (P) = \{T_i~|~ (I, T) \vdash P \wedge (I, T \setminus \{T_i\}) \n
 
 
 
+
+
+
+
+
+
+%
+% Mathematically, if we think of the argument as a proof in which the requirement is the claim, then the set of support is the set of axioms (or clauses) that were necessary to prove the claim, and the trace links are means to associate the claim to those clauses. Such proofs are not, in general, unique, and often there are multiple sets of clauses that could be used to construct a proof.  The existing traceability literature does not discuss multiple alternative satisfaction arguments or sets of trace links for one system design.
+%
+%In our opinion, in the context of satisfaction arguments and {\em satisfied by} trace links, it is beneficial to distinguish between trace links to \textit{``a''} set of support (containing the clauses needed to make a satisfaction argument) vs. \textit{``the''} sets of support (all clauses needed to make all possible satisfaction arguments).
+%
+%
+%Establishing trace links to all sets of support (all MIVCs), that we call \emph{complete} traceability, provides insight into the elements of the set of support---elements that are necessary for any satisfaction argument, elements that are needed for some satisfaction arguments, and elements that do not contribute to the satisfaction of the requirement of interest.  We categorize the elements as \emph{Must}, \emph{May} and \emph{Irrelevant} support elements for each requirement.
+%
+%
+%While precise and complete traceability is beneficial but has been considered impossible to establish in practice~\cite{stravsunskas2002traceability}, our hypothesis is that, in the realm of model based development (MBD), it can be achieved in an automated and efficient manner. We base our hypothesis on the fact that in MBD, the artifacts - both models and requirements - are captured using some form of formal notation and sophisticated tools automatically verify if the requirements are satisfied in the models. We believe that the mathematics underlying the verification tools can be leveraged to establish traceability. In this section, we briefly explain some of the prior work that lead us to pursue our hypothesis.
 

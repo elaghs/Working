@@ -1,0 +1,2495 @@
+models with more than 20x overhead
+
+SYNAPSE_2_e8_1118.lus
+aivc time:  0.324
+prooftime:  0.016
+num of IVCs:  1
+aivc overhead:  20.25
+ucbf overhead:  27.125
+uc overhead:  0.5
+num of eq:  10
+--------------------------
+MOESI_2_e3_1523.lus
+aivc time:  0.747
+prooftime:  0.017
+num of IVCs:  1
+aivc overhead:  43.94117647058823
+ucbf overhead:  56.47058823529411
+uc overhead:  0.5294117647058822
+num of eq:  12
+--------------------------
+speed_e7_207.lus
+aivc time:  0.525
+prooftime:  0.017
+num of IVCs:  2
+aivc overhead:  30.88235294117647
+ucbf overhead:  19.352941176470587
+uc overhead:  0.3529411764705882
+num of eq:  6
+--------------------------
+speed_e8_649.lus
+aivc time:  3.428
+prooftime:  0.017
+num of IVCs:  3
+aivc overhead:  201.6470588235294
+ucbf overhead:  31.470588235294116
+uc overhead:  0.47058823529411764
+num of eq:  15
+--------------------------
+MOESI_2_e8_101.lus
+aivc time:  0.751
+prooftime:  0.018
+num of IVCs:  1
+aivc overhead:  41.72222222222223
+ucbf overhead:  55.00000000000001
+uc overhead:  0.4444444444444445
+num of eq:  12
+--------------------------
+speed_e8_136.lus
+aivc time:  0.972
+prooftime:  0.018
+num of IVCs:  3
+aivc overhead:  54.0
+ucbf overhead:  18.111111111111114
+uc overhead:  0.33333333333333337
+num of eq:  6
+--------------------------
+MOESI_2_e1_1753_e8_1769.lus
+aivc time:  0.757
+prooftime:  0.019
+num of IVCs:  1
+aivc overhead:  39.8421052631579
+ucbf overhead:  52.789473684210535
+uc overhead:  0.8421052631578948
+num of eq:  12
+--------------------------
+MOESI_2_e3_929_e5_1826.lus
+aivc time:  0.759
+prooftime:  0.019
+num of IVCs:  1
+aivc overhead:  39.94736842105263
+ucbf overhead:  50.05263157894737
+uc overhead:  0.47368421052631576
+num of eq:  12
+--------------------------
+speed_e7_207_e7_538.lus
+aivc time:  0.534
+prooftime:  0.019
+num of IVCs:  2
+aivc overhead:  28.10526315789474
+ucbf overhead:  17.0
+uc overhead:  0.15789473684210528
+num of eq:  6
+--------------------------
+speed_e8_649_e7_709.lus
+aivc time:  0.643
+prooftime:  0.019
+num of IVCs:  2
+aivc overhead:  33.8421052631579
+ucbf overhead:  17.05263157894737
+uc overhead:  0.2105263157894737
+num of eq:  6
+--------------------------
+FIREFLY_luke_1b_e1_1139_e2_2893.lus
+aivc time:  0.905
+prooftime:  0.02
+num of IVCs:  1
+aivc overhead:  45.25
+ucbf overhead:  53.949999999999996
+uc overhead:  0.8500000000000001
+num of eq:  16
+--------------------------
+ILLINOIS_2_e2_2367_e1_3182.lus
+aivc time:  0.675
+prooftime:  0.02
+num of IVCs:  1
+aivc overhead:  33.75
+ucbf overhead:  44.6
+uc overhead:  1.05
+num of eq:  16
+--------------------------
+MOESI_2_e2_1599_e8_1334.lus
+aivc time:  0.758
+prooftime:  0.02
+num of IVCs:  1
+aivc overhead:  37.9
+ucbf overhead:  48.199999999999996
+uc overhead:  0.5
+num of eq:  12
+--------------------------
+DRAGON_2_e1_2316.lus
+aivc time:  1.002
+prooftime:  0.022
+num of IVCs:  1
+aivc overhead:  45.54545454545455
+ucbf overhead:  57.27272727272727
+uc overhead:  1.5000000000000002
+num of eq:  21
+--------------------------
+FIREFLY_luke_1b_e2_3049_e1_946.lus
+aivc time:  0.863
+prooftime:  0.023
+num of IVCs:  1
+aivc overhead:  37.52173913043478
+ucbf overhead:  46.739130434782616
+uc overhead:  0.6521739130434783
+num of eq:  16
+--------------------------
+MOESI_2_e2_155.lus
+aivc time:  0.774
+prooftime:  0.023
+num of IVCs:  1
+aivc overhead:  33.65217391304348
+ucbf overhead:  41.52173913043478
+uc overhead:  0.34782608695652173
+num of eq:  12
+--------------------------
+PRODUCER_CONSUMER_2.lus
+aivc time:  0.635
+prooftime:  0.023
+num of IVCs:  1
+aivc overhead:  27.608695652173914
+ucbf overhead:  33.04347826086956
+uc overhead:  0.2608695652173913
+num of eq:  8
+--------------------------
+DRAGON_2_e7_25_e8_3171.lus
+aivc time:  1.013
+prooftime:  0.024
+num of IVCs:  1
+aivc overhead:  42.20833333333333
+ucbf overhead:  50.04166666666666
+uc overhead:  1.2916666666666667
+num of eq:  21
+--------------------------
+FIREFLY_1_e1_1092_e2_1853.lus
+aivc time:  0.868
+prooftime:  0.024
+num of IVCs:  1
+aivc overhead:  36.166666666666664
+ucbf overhead:  45.45833333333333
+uc overhead:  0.5416666666666666
+num of eq:  16
+--------------------------
+DRAGON_2_e2_3183_e2_3580.lus
+aivc time:  1.0499999999999998
+prooftime:  0.025
+num of IVCs:  1
+aivc overhead:  41.99999999999999
+ucbf overhead:  48.84
+uc overhead:  1.32
+num of eq:  21
+--------------------------
+speed2.lus
+aivc time:  1.296
+prooftime:  0.025
+num of IVCs:  2
+aivc overhead:  51.839999999999996
+ucbf overhead:  51.239999999999995
+uc overhead:  0.39999999999999997
+num of eq:  15
+--------------------------
+traffic.lus
+aivc time:  0.656
+prooftime:  0.025
+num of IVCs:  1
+aivc overhead:  26.24
+ucbf overhead:  29.479999999999997
+uc overhead:  0.19999999999999998
+num of eq:  7
+--------------------------
+ex3_e8_120.lus
+aivc time:  0.638
+prooftime:  0.026
+num of IVCs:  2
+aivc overhead:  24.53846153846154
+ucbf overhead:  28.461538461538463
+uc overhead:  0.19230769230769232
+num of eq:  6
+--------------------------
+DRAGON_2_e2_3183.lus
+aivc time:  1.017
+prooftime:  0.027
+num of IVCs:  1
+aivc overhead:  37.666666666666664
+ucbf overhead:  46.18518518518519
+uc overhead:  0.888888888888889
+num of eq:  21
+--------------------------
+ex3_e8_381_e7_224.lus
+aivc time:  0.545
+prooftime:  0.027
+num of IVCs:  1
+aivc overhead:  20.185185185185187
+ucbf overhead:  53.81481481481482
+uc overhead:  0.22222222222222224
+num of eq:  6
+--------------------------
+fast_2_e7_2526_e8_1145.lus
+aivc time:  1.185
+prooftime:  0.027
+num of IVCs:  1
+aivc overhead:  43.88888888888889
+ucbf overhead:  51.074074074074076
+uc overhead:  0.3703703703703704
+num of eq:  14
+--------------------------
+car_2.lus
+aivc time:  4.1739999999999995
+prooftime:  0.028
+num of IVCs:  2
+aivc overhead:  149.07142857142856
+ucbf overhead:  62.39285714285714
+uc overhead:  0.17857142857142858
+num of eq:  12
+--------------------------
+car_all_e2_142_e8_194.lus
+aivc time:  1.3579999999999999
+prooftime:  0.028
+num of IVCs:  1
+aivc overhead:  48.49999999999999
+ucbf overhead:  73.78571428571429
+uc overhead:  0.39285714285714285
+num of eq:  12
+--------------------------
+FIREFLY_3_e2_2236_e1_2305.lus
+aivc time:  1.557
+prooftime:  0.028
+num of IVCs:  2
+aivc overhead:  55.607142857142854
+ucbf overhead:  30.21428571428571
+uc overhead:  0.39285714285714285
+num of eq:  16
+--------------------------
+MOESI_2_e1_1121.lus
+aivc time:  0.758
+prooftime:  0.028
+num of IVCs:  1
+aivc overhead:  27.07142857142857
+ucbf overhead:  34.32142857142857
+uc overhead:  0.3214285714285714
+num of eq:  12
+--------------------------
+MOESI_2_e3_929_e8_1167.lus
+aivc time:  0.769
+prooftime:  0.028
+num of IVCs:  1
+aivc overhead:  27.464285714285715
+ucbf overhead:  34.107142857142854
+uc overhead:  0.3214285714285714
+num of eq:  12
+--------------------------
+speed2_e8_449.lus
+aivc time:  2.034
+prooftime:  0.028
+num of IVCs:  3
+aivc overhead:  72.64285714285714
+ucbf overhead:  46.0
+uc overhead:  0.5714285714285714
+num of eq:  15
+--------------------------
+DRAGON_2_e2_3183_e3_5972.lus
+aivc time:  1.0
+prooftime:  0.029
+num of IVCs:  1
+aivc overhead:  34.48275862068965
+ucbf overhead:  43.13793103448276
+uc overhead:  0.8965517241379309
+num of eq:  21
+--------------------------
+speed2_e8_750.lus
+aivc time:  1.926
+prooftime:  0.029
+num of IVCs:  3
+aivc overhead:  66.41379310344827
+ucbf overhead:  44.0
+uc overhead:  0.3793103448275862
+num of eq:  15
+--------------------------
+SYNAPSE_2.lus
+aivc time:  0.67
+prooftime:  0.029
+num of IVCs:  1
+aivc overhead:  23.103448275862068
+ucbf overhead:  29.482758620689655
+uc overhead:  0.41379310344827586
+num of eq:  22
+--------------------------
+Display_Control-Gaurantee4.lus
+aivc time:  2.59
+prooftime:  0.03
+num of IVCs:  1
+aivc overhead:  86.33333333333333
+ucbf overhead:  96.36666666666667
+uc overhead:  0.8
+num of eq:  64
+--------------------------
+metros_1_e2_1102_e8_311.lus
+aivc time:  1.781
+prooftime:  0.03
+num of IVCs:  3
+aivc overhead:  59.36666666666667
+ucbf overhead:  14.433333333333332
+uc overhead:  0.23333333333333334
+num of eq:  18
+--------------------------
+speed_e7_492.lus
+aivc time:  1.6260000000000001
+prooftime:  0.03
+num of IVCs:  2
+aivc overhead:  54.2
+ucbf overhead:  17.533333333333335
+uc overhead:  0.13333333333333333
+num of eq:  15
+--------------------------
+SYNAPSE_all.lus
+aivc time:  3.8200000000000003
+prooftime:  0.03
+num of IVCs:  1
+aivc overhead:  127.33333333333334
+ucbf overhead:  162.96666666666664
+uc overhead:  0.5
+num of eq:  24
+--------------------------
+ILLINOIS_2_e3_1554_e6_2223.lus
+aivc time:  0.675
+prooftime:  0.031
+num of IVCs:  1
+aivc overhead:  21.7741935483871
+ucbf overhead:  28.322580645161292
+uc overhead:  0.5161290322580645
+num of eq:  16
+--------------------------
+rtp_9.lus
+aivc time:  0.868
+prooftime:  0.031
+num of IVCs:  1
+aivc overhead:  28.0
+ucbf overhead:  20.451612903225808
+uc overhead:  0.3225806451612903
+num of eq:  24
+--------------------------
+speed2_e7_223_e8_329.lus
+aivc time:  1.286
+prooftime:  0.031
+num of IVCs:  2
+aivc overhead:  41.483870967741936
+ucbf overhead:  40.774193548387096
+uc overhead:  0.25806451612903225
+num of eq:  15
+--------------------------
+car_all_e3_1068_e4_275.lus
+aivc time:  1.057
+prooftime:  0.032
+num of IVCs:  1
+aivc overhead:  33.03125
+ucbf overhead:  64.46875
+uc overhead:  0.375
+num of eq:  12
+--------------------------
+ILLINOIS_4.lus
+aivc time:  1.0419999999999998
+prooftime:  0.032
+num of IVCs:  1
+aivc overhead:  32.56249999999999
+ucbf overhead:  20.0625
+uc overhead:  0.40625
+num of eq:  16
+--------------------------
+MOESI_2_e3_929_e4_578.lus
+aivc time:  0.775
+prooftime:  0.032
+num of IVCs:  1
+aivc overhead:  24.21875
+ucbf overhead:  29.781249999999996
+uc overhead:  0.3125
+num of eq:  12
+--------------------------
+MOESI_2_e8_926_e8_2138.lus
+aivc time:  0.746
+prooftime:  0.032
+num of IVCs:  1
+aivc overhead:  23.3125
+ucbf overhead:  30.4375
+uc overhead:  0.3125
+num of eq:  12
+--------------------------
+rtp_2.lus
+aivc time:  0.823
+prooftime:  0.032
+num of IVCs:  1
+aivc overhead:  25.718749999999996
+ucbf overhead:  22.9375
+uc overhead:  0.21875
+num of eq:  5
+--------------------------
+speed2_e7_496.lus
+aivc time:  1.275
+prooftime:  0.032
+num of IVCs:  2
+aivc overhead:  39.84374999999999
+ucbf overhead:  39.96875
+uc overhead:  0.34375
+num of eq:  15
+--------------------------
+SYNAPSE_3_e8_1329_e8_320.lus
+aivc time:  5.666
+prooftime:  0.032
+num of IVCs:  1
+aivc overhead:  177.0625
+ucbf overhead:  64.25
+uc overhead:  0.25
+num of eq:  11
+--------------------------
+SYNAPSE_4_e8_974.lus
+aivc time:  0.934
+prooftime:  0.032
+num of IVCs:  1
+aivc overhead:  29.1875
+ucbf overhead:  19.75
+uc overhead:  0.25
+num of eq:  10
+--------------------------
+DRAGON_2_e2_3183_e1_2644.lus
+aivc time:  1.031
+prooftime:  0.033
+num of IVCs:  1
+aivc overhead:  31.24242424242424
+ucbf overhead:  37.18181818181818
+uc overhead:  0.7878787878787878
+num of eq:  21
+--------------------------
+microwave16.lus
+aivc time:  0.715
+prooftime:  0.033
+num of IVCs:  2
+aivc overhead:  21.666666666666664
+ucbf overhead:  22.757575757575758
+uc overhead:  0.36363636363636365
+num of eq:  67
+--------------------------
+Mode_Control-Gaurantee3.lus
+aivc time:  0.867
+prooftime:  0.033
+num of IVCs:  1
+aivc overhead:  26.27272727272727
+ucbf overhead:  29.878787878787875
+uc overhead:  0.24242424242424243
+num of eq:  23
+--------------------------
+MOESI_2_e3_929_e6_2707.lus
+aivc time:  0.789
+prooftime:  0.033
+num of IVCs:  1
+aivc overhead:  23.90909090909091
+ucbf overhead:  29.09090909090909
+uc overhead:  0.24242424242424243
+num of eq:  12
+--------------------------
+SYNAPSE_123_e7_837_e8_12.lus
+aivc time:  1.7639999999999998
+prooftime:  0.033
+num of IVCs:  1
+aivc overhead:  53.454545454545446
+ucbf overhead:  44.909090909090914
+uc overhead:  0.3939393939393939
+num of eq:  14
+--------------------------
+DRAGON_7_e2_2872_e3_2640.lus
+aivc time:  3.816
+prooftime:  0.034
+num of IVCs:  2
+aivc overhead:  112.23529411764704
+ucbf overhead:  37.41176470588235
+uc overhead:  0.5294117647058822
+num of eq:  21
+--------------------------
+DRAGON_9_e7_1843_e8_3031.lus
+aivc time:  1.455
+prooftime:  0.034
+num of IVCs:  1
+aivc overhead:  42.794117647058826
+ucbf overhead:  18.823529411764707
+uc overhead:  0.47058823529411764
+num of eq:  21
+--------------------------
+fast_2_e8_460.lus
+aivc time:  1.1789999999999998
+prooftime:  0.034
+num of IVCs:  1
+aivc overhead:  34.67647058823529
+ucbf overhead:  43.67647058823529
+uc overhead:  0.20588235294117646
+num of eq:  14
+--------------------------
+FIREFLY_luke_rt_e2_3460_e1_1455.lus
+aivc time:  1.092
+prooftime:  0.034
+num of IVCs:  1
+aivc overhead:  32.11764705882353
+ucbf overhead:  42.29411764705882
+uc overhead:  0.5294117647058822
+num of eq:  17
+--------------------------
+metros_1_e1_846_e2_1394.lus
+aivc time:  2.2369999999999997
+prooftime:  0.034
+num of IVCs:  3
+aivc overhead:  65.79411764705881
+ucbf overhead:  33.94117647058823
+uc overhead:  0.4117647058823529
+num of eq:  18
+--------------------------
+metros_1_e7_1255_e8_598.lus
+aivc time:  2.4339999999999997
+prooftime:  0.034
+num of IVCs:  3
+aivc overhead:  71.58823529411764
+ucbf overhead:  73.47058823529412
+uc overhead:  0.4117647058823529
+num of eq:  18
+--------------------------
+car_all_e2_108.lus
+aivc time:  1.144
+prooftime:  0.035
+num of IVCs:  1
+aivc overhead:  32.68571428571428
+ucbf overhead:  61.7142857142857
+uc overhead:  0.1714285714285714
+num of eq:  12
+--------------------------
+DRAGON_3_e3_5422_e1_2288.lus
+aivc time:  1.2309999999999999
+prooftime:  0.035
+num of IVCs:  1
+aivc overhead:  35.171428571428564
+ucbf overhead:  41.08571428571429
+uc overhead:  0.8285714285714285
+num of eq:  22
+--------------------------
+FIREFLY_5_e2_2884.lus
+aivc time:  1.089
+prooftime:  0.035
+num of IVCs:  1
+aivc overhead:  31.11428571428571
+ucbf overhead:  24.34285714285714
+uc overhead:  0.4857142857142857
+num of eq:  36
+--------------------------
+FIREFLY_luke_1b_e3_671_e6_1974.lus
+aivc time:  0.892
+prooftime:  0.035
+num of IVCs:  1
+aivc overhead:  25.485714285714284
+ucbf overhead:  31.2
+uc overhead:  0.3714285714285714
+num of eq:  16
+--------------------------
+metros_1_e8_725_e2_1144.lus
+aivc time:  7.518999999999999
+prooftime:  0.035
+num of IVCs:  3
+aivc overhead:  214.8285714285714
+ucbf overhead:  27.65714285714285
+uc overhead:  0.5714285714285714
+num of eq:  47
+--------------------------
+MOESI_2_e2_1599.lus
+aivc time:  2.178
+prooftime:  0.035
+num of IVCs:  1
+aivc overhead:  62.22857142857142
+ucbf overhead:  69.08571428571427
+uc overhead:  0.7428571428571428
+num of eq:  28
+--------------------------
+SYNAPSE_3_e8_1708.lus
+aivc time:  2.816
+prooftime:  0.035
+num of IVCs:  1
+aivc overhead:  80.45714285714284
+ucbf overhead:  82.57142857142856
+uc overhead:  0.39999999999999997
+num of eq:  24
+--------------------------
+car_all_e3_1068_e6_790.lus
+aivc time:  5.880000000000001
+prooftime:  0.036
+num of IVCs:  2
+aivc overhead:  163.33333333333337
+ucbf overhead:  65.72222222222223
+uc overhead:  0.25
+num of eq:  12
+--------------------------
+FIREFLY_10.lus
+aivc time:  0.752
+prooftime:  0.036
+num of IVCs:  1
+aivc overhead:  20.88888888888889
+ucbf overhead:  14.944444444444446
+uc overhead:  0.22222222222222224
+num of eq:  16
+--------------------------
+FIREFLY_8_e2_1711_e2_2673.lus
+aivc time:  1.0919999999999999
+prooftime:  0.036
+num of IVCs:  1
+aivc overhead:  30.333333333333332
+ucbf overhead:  35.97222222222222
+uc overhead:  0.47222222222222227
+num of eq:  16
+--------------------------
+FIREFLY_8_e2_1711_e3_1753.lus
+aivc time:  1.113
+prooftime:  0.036
+num of IVCs:  1
+aivc overhead:  30.916666666666668
+ucbf overhead:  35.77777777777778
+uc overhead:  0.38888888888888895
+num of eq:  16
+--------------------------
+MESI_all.lus
+aivc time:  1.1449999999999998
+prooftime:  0.036
+num of IVCs:  2
+aivc overhead:  31.805555555555554
+ucbf overhead:  23.722222222222225
+uc overhead:  0.3611111111111111
+num of eq:  11
+--------------------------
+metros_1_e1_846_e8_1253.lus
+aivc time:  1.8739999999999999
+prooftime:  0.036
+num of IVCs:  3
+aivc overhead:  52.05555555555556
+ucbf overhead:  11.88888888888889
+uc overhead:  0.1388888888888889
+num of eq:  18
+--------------------------
+MOESI_2_e8_926_e1_1065.lus
+aivc time:  2.1969999999999996
+prooftime:  0.036
+num of IVCs:  1
+aivc overhead:  61.02777777777777
+ucbf overhead:  67.77777777777779
+uc overhead:  0.6111111111111112
+num of eq:  28
+--------------------------
+rtp_10.lus
+aivc time:  0.754
+prooftime:  0.036
+num of IVCs:  1
+aivc overhead:  20.944444444444446
+ucbf overhead:  14.861111111111112
+uc overhead:  0.3055555555555556
+num of eq:  24
+--------------------------
+SYNAPSE_123.lus
+aivc time:  3.8760000000000003
+prooftime:  0.036
+num of IVCs:  1
+aivc overhead:  107.66666666666669
+ucbf overhead:  106.61111111111111
+uc overhead:  0.638888888888889
+num of eq:  27
+--------------------------
+SYNAPSE_123_e8_953.lus
+aivc time:  2.7670000000000003
+prooftime:  0.036
+num of IVCs:  1
+aivc overhead:  76.86111111111113
+ucbf overhead:  111.77777777777779
+uc overhead:  0.5277777777777778
+num of eq:  27
+--------------------------
+DRAGON_6.lus
+aivc time:  1.554
+prooftime:  0.037
+num of IVCs:  1
+aivc overhead:  42.0
+ucbf overhead:  22.945945945945947
+uc overhead:  0.32432432432432434
+num of eq:  21
+--------------------------
+ex3_e7_655.lus
+aivc time:  1.297
+prooftime:  0.037
+num of IVCs:  2
+aivc overhead:  35.054054054054056
+ucbf overhead:  34.78378378378378
+uc overhead:  0.21621621621621623
+num of eq:  15
+--------------------------
+FIREFLY_2_e1_3099_e2_846.lus
+aivc time:  1.1079999999999999
+prooftime:  0.037
+num of IVCs:  1
+aivc overhead:  29.945945945945944
+ucbf overhead:  38.05405405405406
+uc overhead:  0.6216216216216216
+num of eq:  17
+--------------------------
+FIREFLY_3.lus
+aivc time:  1.2759999999999998
+prooftime:  0.037
+num of IVCs:  2
+aivc overhead:  34.486486486486484
+ucbf overhead:  20.054054054054053
+uc overhead:  0.5135135135135135
+num of eq:  16
+--------------------------
+FIREFLY_3_e2_2236_e2_1058.lus
+aivc time:  1.18
+prooftime:  0.037
+num of IVCs:  2
+aivc overhead:  31.89189189189189
+ucbf overhead:  19.945945945945947
+uc overhead:  0.35135135135135137
+num of eq:  16
+--------------------------
+FIREFLY_9.lus
+aivc time:  0.953
+prooftime:  0.037
+num of IVCs:  1
+aivc overhead:  25.756756756756758
+ucbf overhead:  22.594594594594597
+uc overhead:  0.2972972972972973
+num of eq:  17
+--------------------------
+FIREFLY_luke_1b.lus
+aivc time:  3.2600000000000002
+prooftime:  0.037
+num of IVCs:  1
+aivc overhead:  88.10810810810811
+ucbf overhead:  94.8918918918919
+uc overhead:  1.1891891891891893
+num of eq:  39
+--------------------------
+metros_1_e2_1102_e3_961.lus
+aivc time:  1.179
+prooftime:  0.037
+num of IVCs:  2
+aivc overhead:  31.864864864864867
+ucbf overhead:  31.594594594594597
+uc overhead:  0.5405405405405406
+num of eq:  18
+--------------------------
+metros_1_e7_1255_e7_12.lus
+aivc time:  0.78
+prooftime:  0.037
+num of IVCs:  1
+aivc overhead:  21.081081081081084
+ucbf overhead:  59.18918918918919
+uc overhead:  0.35135135135135137
+num of eq:  18
+--------------------------
+speed2_e8_449_e7_353.lus
+aivc time:  1.3929999999999998
+prooftime:  0.037
+num of IVCs:  2
+aivc overhead:  37.648648648648646
+ucbf overhead:  34.37837837837838
+uc overhead:  0.40540540540540543
+num of eq:  15
+--------------------------
+car_all.lus
+aivc time:  6.8149999999999995
+prooftime:  0.038
+num of IVCs:  2
+aivc overhead:  179.3421052631579
+ucbf overhead:  73.05263157894737
+uc overhead:  0.39473684210526316
+num of eq:  20
+--------------------------
+DRAGON_10_e3_144_e5_2046.lus
+aivc time:  0.898
+prooftime:  0.038
+num of IVCs:  1
+aivc overhead:  23.63157894736842
+ucbf overhead:  29.94736842105263
+uc overhead:  0.9736842105263158
+num of eq:  21
+--------------------------
+ex3.lus
+aivc time:  1.309
+prooftime:  0.038
+num of IVCs:  2
+aivc overhead:  34.44736842105263
+ucbf overhead:  33.18421052631579
+uc overhead:  0.1842105263157895
+num of eq:  15
+--------------------------
+fast_2_e8_460_e8_1920.lus
+aivc time:  1.2129999999999999
+prooftime:  0.038
+num of IVCs:  1
+aivc overhead:  31.921052631578945
+ucbf overhead:  39.05263157894737
+uc overhead:  0.1842105263157895
+num of eq:  14
+--------------------------
+FIREFLY_3_e2_2236.lus
+aivc time:  1.384
+prooftime:  0.038
+num of IVCs:  2
+aivc overhead:  36.421052631578945
+ucbf overhead:  19.789473684210527
+uc overhead:  0.34210526315789475
+num of eq:  16
+--------------------------
+MOESI_2_e8_926_e2_349.lus
+aivc time:  2.1689999999999996
+prooftime:  0.038
+num of IVCs:  1
+aivc overhead:  57.07894736842104
+ucbf overhead:  62.07894736842106
+uc overhead:  0.5789473684210527
+num of eq:  28
+--------------------------
+ticket3i_1.lus
+aivc time:  1.27
+prooftime:  0.038
+num of IVCs:  1
+aivc overhead:  33.421052631578945
+ucbf overhead:  28.026315789473685
+uc overhead:  0.6315789473684211
+num of eq:  21
+--------------------------
+FIREFLY_8_e2_1692.lus
+aivc time:  1.091
+prooftime:  0.039
+num of IVCs:  1
+aivc overhead:  27.974358974358974
+ucbf overhead:  33.333333333333336
+uc overhead:  0.4615384615384615
+num of eq:  16
+--------------------------
+rtp_4.lus
+aivc time:  0.959
+prooftime:  0.039
+num of IVCs:  1
+aivc overhead:  24.589743589743588
+ucbf overhead:  13.846153846153845
+uc overhead:  0.4615384615384615
+num of eq:  24
+--------------------------
+SYNAPSE_all_e3_1864_e6_1336.lus
+aivc time:  1.351
+prooftime:  0.039
+num of IVCs:  1
+aivc overhead:  34.64102564102564
+ucbf overhead:  63.87179487179486
+uc overhead:  0.25641025641025644
+num of eq:  11
+--------------------------
+car_all_e8_856.lus
+aivc time:  2.5549999999999997
+prooftime:  0.04
+num of IVCs:  1
+aivc overhead:  63.87499999999999
+ucbf overhead:  56.05
+uc overhead:  0.15
+num of eq:  12
+--------------------------
+DRAGON_1_e1_5070.lus
+aivc time:  1.496
+prooftime:  0.04
+num of IVCs:  1
+aivc overhead:  37.4
+ucbf overhead:  21.425
+uc overhead:  0.42500000000000004
+num of eq:  49
+--------------------------
+MOESI_2_e8_926_e3_1758.lus
+aivc time:  2.2030000000000003
+prooftime:  0.04
+num of IVCs:  1
+aivc overhead:  55.075
+ucbf overhead:  61.175
+uc overhead:  0.575
+num of eq:  28
+--------------------------
+peterson_3.lus
+aivc time:  1.053
+prooftime:  0.04
+num of IVCs:  1
+aivc overhead:  26.325
+ucbf overhead:  16.35
+uc overhead:  0.42500000000000004
+num of eq:  29
+--------------------------
+peterson_all.lus
+aivc time:  2.419
+prooftime:  0.04
+num of IVCs:  1
+aivc overhead:  60.475
+ucbf overhead:  55.37500000000001
+uc overhead:  0.6749999999999999
+num of eq:  29
+--------------------------
+PRODUCER_CONSUMER_1.lus
+aivc time:  0.853
+prooftime:  0.04
+num of IVCs:  1
+aivc overhead:  21.325
+ucbf overhead:  20.849999999999998
+uc overhead:  0.22499999999999998
+num of eq:  14
+--------------------------
+ticket3i_4.lus
+aivc time:  1.033
+prooftime:  0.04
+num of IVCs:  1
+aivc overhead:  25.824999999999996
+ucbf overhead:  15.75
+uc overhead:  0.27499999999999997
+num of eq:  20
+--------------------------
+tramway_e7_3304.lus
+aivc time:  536.851
+prooftime:  0.04
+num of IVCs:  56
+aivc overhead:  13421.275
+ucbf overhead:  104.22500000000001
+uc overhead:  0.625
+num of eq:  70
+--------------------------
+ums.lus
+aivc time:  10.219
+prooftime:  0.04
+num of IVCs:  5
+aivc overhead:  255.475
+ucbf overhead:  110.4
+uc overhead:  0.35
+num of eq:  38
+--------------------------
+DRAGON_3_e3_5422_e2_3135.lus
+aivc time:  1.252
+prooftime:  0.041
+num of IVCs:  1
+aivc overhead:  30.536585365853657
+ucbf overhead:  34.68292682926829
+uc overhead:  0.7317073170731707
+num of eq:  22
+--------------------------
+FIREFLY_4.lus
+aivc time:  6.798
+prooftime:  0.041
+num of IVCs:  4
+aivc overhead:  165.8048780487805
+ucbf overhead:  99.51219512195122
+uc overhead:  1.097560975609756
+num of eq:  42
+--------------------------
+ILLINOIS_1.lus
+aivc time:  1.341
+prooftime:  0.041
+num of IVCs:  1
+aivc overhead:  32.70731707317073
+ucbf overhead:  15.609756097560975
+uc overhead:  0.26829268292682923
+num of eq:  16
+--------------------------
+ILLINOIS_5.lus
+aivc time:  0.837
+prooftime:  0.041
+num of IVCs:  1
+aivc overhead:  20.414634146341463
+ucbf overhead:  15.731707317073171
+uc overhead:  0.3414634146341463
+num of eq:  16
+--------------------------
+MESI_3_e1_2517_e8_2163.lus
+aivc time:  4.226999999999999
+prooftime:  0.041
+num of IVCs:  1
+aivc overhead:  103.09756097560974
+ucbf overhead:  199.31707317073167
+uc overhead:  1.2195121951219512
+num of eq:  11
+--------------------------
+metros_1_e8_725_e3_556.lus
+aivc time:  1.8699999999999999
+prooftime:  0.041
+num of IVCs:  3
+aivc overhead:  45.60975609756097
+ucbf overhead:  10.512195121951219
+uc overhead:  0.17073170731707316
+num of eq:  18
+--------------------------
+SYNAPSE_123_e8_953_e8_941.lus
+aivc time:  1.7839999999999998
+prooftime:  0.041
+num of IVCs:  1
+aivc overhead:  43.512195121951216
+ucbf overhead:  35.97560975609756
+uc overhead:  0.36585365853658536
+num of eq:  14
+--------------------------
+ticket3i_5.lus
+aivc time:  1.0359999999999998
+prooftime:  0.041
+num of IVCs:  1
+aivc overhead:  25.268292682926823
+ucbf overhead:  13.195121951219512
+uc overhead:  0.26829268292682923
+num of eq:  20
+--------------------------
+FIREFLY_a3.lus
+aivc time:  1.964
+prooftime:  0.042
+num of IVCs:  1
+aivc overhead:  46.76190476190476
+ucbf overhead:  53.73809523809524
+uc overhead:  0.7142857142857142
+num of eq:  21
+--------------------------
+metros_1_e8_725.lus
+aivc time:  7.6049999999999995
+prooftime:  0.042
+num of IVCs:  3
+aivc overhead:  181.07142857142856
+ucbf overhead:  20.57142857142857
+uc overhead:  0.2857142857142857
+num of eq:  47
+--------------------------
+rtp_6.lus
+aivc time:  0.9450000000000001
+prooftime:  0.042
+num of IVCs:  1
+aivc overhead:  22.5
+ucbf overhead:  15.214285714285714
+uc overhead:  0.26190476190476186
+num of eq:  24
+--------------------------
+speed2_e8_449_e8_517.lus
+aivc time:  1.2009999999999998
+prooftime:  0.042
+num of IVCs:  1
+aivc overhead:  28.59523809523809
+ucbf overhead:  35.45238095238095
+uc overhead:  0.26190476190476186
+num of eq:  15
+--------------------------
+SYNAPSE_3.lus
+aivc time:  2.792
+prooftime:  0.042
+num of IVCs:  1
+aivc overhead:  66.47619047619047
+ucbf overhead:  92.38095238095238
+uc overhead:  0.3095238095238095
+num of eq:  24
+--------------------------
+car_all_e8_856_e2_585.lus
+aivc time:  1.289
+prooftime:  0.043
+num of IVCs:  1
+aivc overhead:  29.976744186046513
+ucbf overhead:  65.5813953488372
+uc overhead:  0.186046511627907
+num of eq:  20
+--------------------------
+DRAGON_3_e1_4783_e2_158.lus
+aivc time:  1.214
+prooftime:  0.043
+num of IVCs:  1
+aivc overhead:  28.232558139534884
+ucbf overhead:  34.51162790697675
+uc overhead:  0.8139534883720931
+num of eq:  22
+--------------------------
+FIREFLY_4_e3_3511_e6_1826.lus
+aivc time:  1.7089999999999999
+prooftime:  0.043
+num of IVCs:  2
+aivc overhead:  39.74418604651163
+ucbf overhead:  32.697674418604656
+uc overhead:  0.4418604651162791
+num of eq:  17
+--------------------------
+FIREFLY_a3_e1_3233_e3_2970.lus
+aivc time:  4.258
+prooftime:  0.044
+num of IVCs:  2
+aivc overhead:  96.77272727272728
+ucbf overhead:  49.409090909090914
+uc overhead:  0.7045454545454546
+num of eq:  21
+--------------------------
+FIREFLY_a3_e2_2952.lus
+aivc time:  16.573999999999998
+prooftime:  0.044
+num of IVCs:  2
+aivc overhead:  376.6818181818182
+ucbf overhead:  119.22727272727275
+uc overhead:  1.3636363636363638
+num of eq:  46
+--------------------------
+FIREFLY_luke_rt_e1_913_e2_3353.lus
+aivc time:  3.746
+prooftime:  0.044
+num of IVCs:  1
+aivc overhead:  85.13636363636364
+ucbf overhead:  92.20454545454547
+uc overhead:  1.0454545454545454
+num of eq:  41
+--------------------------
+metros_1_e2_1102.lus
+aivc time:  2.022
+prooftime:  0.044
+num of IVCs:  3
+aivc overhead:  45.95454545454545
+ucbf overhead:  54.590909090909086
+uc overhead:  0.40909090909090906
+num of eq:  18
+--------------------------
+MOESI_2_e8_926.lus
+aivc time:  2.197
+prooftime:  0.044
+num of IVCs:  1
+aivc overhead:  49.93181818181819
+ucbf overhead:  55.43181818181819
+uc overhead:  0.5681818181818182
+num of eq:  28
+--------------------------
+rtp_8.lus
+aivc time:  1.16
+prooftime:  0.044
+num of IVCs:  1
+aivc overhead:  26.363636363636363
+ucbf overhead:  19.454545454545453
+uc overhead:  0.4545454545454546
+num of eq:  24
+--------------------------
+Display_Control-Gaurantee7.lus
+aivc time:  4.498
+prooftime:  0.045
+num of IVCs:  2
+aivc overhead:  99.95555555555556
+ucbf overhead:  67.26666666666667
+uc overhead:  0.9111111111111112
+num of eq:  66
+--------------------------
+DRAGON_2_e2_4481.lus
+aivc time:  4.473
+prooftime:  0.045
+num of IVCs:  1
+aivc overhead:  99.4
+ucbf overhead:  106.22222222222223
+uc overhead:  1.777777777777778
+num of eq:  53
+--------------------------
+FIREFLY_8.lus
+aivc time:  1.108
+prooftime:  0.045
+num of IVCs:  1
+aivc overhead:  24.622222222222224
+ucbf overhead:  28.555555555555554
+uc overhead:  0.35555555555555557
+num of eq:  16
+--------------------------
+FIREFLY_a3_e1_3233_e2_2392.lus
+aivc time:  1.954
+prooftime:  0.045
+num of IVCs:  1
+aivc overhead:  43.422222222222224
+ucbf overhead:  49.33333333333334
+uc overhead:  0.8666666666666667
+num of eq:  21
+--------------------------
+FIREFLY_all_e2_2924_e1_768.lus
+aivc time:  1.7369999999999999
+prooftime:  0.045
+num of IVCs:  1
+aivc overhead:  38.6
+ucbf overhead:  45.57777777777778
+uc overhead:  0.7777777777777779
+num of eq:  18
+--------------------------
+FIREFLY_luke_rt.lus
+aivc time:  3.8089999999999997
+prooftime:  0.045
+num of IVCs:  1
+aivc overhead:  84.64444444444445
+ucbf overhead:  88.17777777777778
+uc overhead:  1.0
+num of eq:  41
+--------------------------
+ILLINOIS_all_e3_2354_e6_993.lus
+aivc time:  1.0999999999999999
+prooftime:  0.045
+num of IVCs:  1
+aivc overhead:  24.444444444444443
+ucbf overhead:  33.26666666666667
+uc overhead:  0.5111111111111111
+num of eq:  17
+--------------------------
+MESI_3.lus
+aivc time:  4.83
+prooftime:  0.045
+num of IVCs:  1
+aivc overhead:  107.33333333333334
+ucbf overhead:  114.6888888888889
+uc overhead:  1.1333333333333333
+num of eq:  11
+--------------------------
+MOESI_2_e3_929.lus
+aivc time:  2.189
+prooftime:  0.045
+num of IVCs:  1
+aivc overhead:  48.644444444444446
+ucbf overhead:  53.400000000000006
+uc overhead:  0.5555555555555556
+num of eq:  28
+--------------------------
+MOESI_2_e7_2910_e8_2590.lus
+aivc time:  2.229
+prooftime:  0.045
+num of IVCs:  1
+aivc overhead:  49.53333333333334
+ucbf overhead:  53.088888888888896
+uc overhead:  0.6888888888888889
+num of eq:  28
+--------------------------
+PRODUCER_CONSUMER_all.lus
+aivc time:  0.9430000000000001
+prooftime:  0.045
+num of IVCs:  1
+aivc overhead:  20.95555555555556
+ucbf overhead:  28.15555555555556
+uc overhead:  0.24444444444444444
+num of eq:  13
+--------------------------
+ticket3i_all.lus
+aivc time:  1.468
+prooftime:  0.045
+num of IVCs:  1
+aivc overhead:  32.62222222222222
+ucbf overhead:  25.666666666666668
+uc overhead:  0.28888888888888886
+num of eq:  21
+--------------------------
+tramway_e7_1834_e7_2363.lus
+aivc time:  4.73
+prooftime:  0.045
+num of IVCs:  5
+aivc overhead:  105.11111111111113
+ucbf overhead:  40.31111111111112
+uc overhead:  0.19999999999999998
+num of eq:  25
+--------------------------
+DRAGON_1.lus
+aivc time:  1.272
+prooftime:  0.047
+num of IVCs:  1
+aivc overhead:  27.06382978723404
+ucbf overhead:  13.617021276595745
+uc overhead:  0.2978723404255319
+num of eq:  22
+--------------------------
+DRAGON_1_e1_3184.lus
+aivc time:  1.254
+prooftime:  0.047
+num of IVCs:  1
+aivc overhead:  26.680851063829788
+ucbf overhead:  13.787234042553193
+uc overhead:  0.2765957446808511
+num of eq:  22
+--------------------------
+DRAGON_3_e1_4783.lus
+aivc time:  1.23
+prooftime:  0.047
+num of IVCs:  1
+aivc overhead:  26.170212765957448
+ucbf overhead:  30.042553191489365
+uc overhead:  0.6595744680851063
+num of eq:  22
+--------------------------
+MESI_3_e2_819_e1_1145.lus
+aivc time:  5.3020000000000005
+prooftime:  0.047
+num of IVCs:  1
+aivc overhead:  112.80851063829789
+ucbf overhead:  110.19148936170214
+uc overhead:  0.9787234042553191
+num of eq:  11
+--------------------------
+MESI_3_e3_2669.lus
+aivc time:  7.224
+prooftime:  0.047
+num of IVCs:  1
+aivc overhead:  153.70212765957447
+ucbf overhead:  225.08510638297872
+uc overhead:  1.297872340425532
+num of eq:  33
+--------------------------
+MOESI_2_e1_1753.lus
+aivc time:  2.167
+prooftime:  0.047
+num of IVCs:  1
+aivc overhead:  46.1063829787234
+ucbf overhead:  51.19148936170212
+uc overhead:  0.5319148936170213
+num of eq:  28
+--------------------------
+peterson_2.lus
+aivc time:  1.166
+prooftime:  0.047
+num of IVCs:  1
+aivc overhead:  24.80851063829787
+ucbf overhead:  13.957446808510639
+uc overhead:  0.2978723404255319
+num of eq:  29
+--------------------------
+FIREFLY_8_e2_1711_e1_1489.lus
+aivc time:  1.089
+prooftime:  0.048
+num of IVCs:  1
+aivc overhead:  22.6875
+ucbf overhead:  29.249999999999996
+uc overhead:  0.2708333333333333
+num of eq:  16
+--------------------------
+FIREFLY_a3_e2_2086_e3_2542.lus
+aivc time:  3.903
+prooftime:  0.048
+num of IVCs:  2
+aivc overhead:  81.3125
+ucbf overhead:  48.04166666666666
+uc overhead:  0.625
+num of eq:  21
+--------------------------
+MESI_3_e3_2584.lus
+aivc time:  3.8280000000000003
+prooftime:  0.048
+num of IVCs:  1
+aivc overhead:  79.75
+ucbf overhead:  103.81250000000001
+uc overhead:  1.0625
+num of eq:  11
+--------------------------
+metros_1_e2_627.lus
+aivc time:  5.986000000000001
+prooftime:  0.048
+num of IVCs:  3
+aivc overhead:  124.70833333333334
+ucbf overhead:  101.04166666666667
+uc overhead:  0.5208333333333334
+num of eq:  47
+--------------------------
+Mode_Control-Gaurantee6.lus
+aivc time:  1.134
+prooftime:  0.048
+num of IVCs:  1
+aivc overhead:  23.624999999999996
+ucbf overhead:  26.666666666666668
+uc overhead:  0.16666666666666666
+num of eq:  21
+--------------------------
+SYNAPSE_4.lus
+aivc time:  1.156
+prooftime:  0.048
+num of IVCs:  1
+aivc overhead:  24.083333333333332
+ucbf overhead:  21.895833333333332
+uc overhead:  0.20833333333333334
+num of eq:  21
+--------------------------
+DRAGON_1_e2_1997.lus
+aivc time:  1.186
+prooftime:  0.049
+num of IVCs:  1
+aivc overhead:  24.204081632653057
+ucbf overhead:  13.448979591836732
+uc overhead:  0.5102040816326531
+num of eq:  22
+--------------------------
+FIREFLY_a3_e2_2086.lus
+aivc time:  4.273000000000001
+prooftime:  0.049
+num of IVCs:  2
+aivc overhead:  87.20408163265307
+ucbf overhead:  44.48979591836735
+uc overhead:  0.6122448979591836
+num of eq:  21
+--------------------------
+FIREFLY_all_e3_1600_e6_1569.lus
+aivc time:  1.7329999999999999
+prooftime:  0.049
+num of IVCs:  1
+aivc overhead:  35.367346938775505
+ucbf overhead:  43.755102040816325
+uc overhead:  0.5510204081632653
+num of eq:  18
+--------------------------
+SYNAPSE_all_e8_251.lus
+aivc time:  2.3859999999999997
+prooftime:  0.049
+num of IVCs:  1
+aivc overhead:  48.6938775510204
+ucbf overhead:  41.75510204081633
+uc overhead:  0.2857142857142857
+num of eq:  11
+--------------------------
+ex3_e8_381.lus
+aivc time:  2.029
+prooftime:  0.05
+num of IVCs:  3
+aivc overhead:  40.58
+ucbf overhead:  25.299999999999997
+uc overhead:  0.19999999999999998
+num of eq:  15
+--------------------------
+fast_1.lus
+aivc time:  3.218
+prooftime:  0.05
+num of IVCs:  1
+aivc overhead:  64.36
+ucbf overhead:  62.0
+uc overhead:  0.39999999999999997
+num of eq:  67
+--------------------------
+FIREFLY_2.lus
+aivc time:  1.1019999999999999
+prooftime:  0.051
+num of IVCs:  1
+aivc overhead:  21.6078431372549
+ucbf overhead:  27.50980392156863
+uc overhead:  0.37254901960784315
+num of eq:  17
+--------------------------
+FIREFLY_8_e2_1711.lus
+aivc time:  1.449
+prooftime:  0.051
+num of IVCs:  1
+aivc overhead:  28.411764705882355
+ucbf overhead:  31.372549019607845
+uc overhead:  0.3137254901960785
+num of eq:  36
+--------------------------
+speed2_e7_223_e7_213.lus
+aivc time:  1.282
+prooftime:  0.051
+num of IVCs:  2
+aivc overhead:  25.137254901960787
+ucbf overhead:  24.686274509803923
+uc overhead:  0.15686274509803924
+num of eq:  15
+--------------------------
+car_all_e2_142.lus
+aivc time:  1.9749999999999999
+prooftime:  0.052
+num of IVCs:  1
+aivc overhead:  37.98076923076923
+ucbf overhead:  49.86538461538462
+uc overhead:  0.17307692307692307
+num of eq:  20
+--------------------------
+DRAGON_3_e1_4783_e1_3755.lus
+aivc time:  1.2510000000000001
+prooftime:  0.052
+num of IVCs:  1
+aivc overhead:  24.05769230769231
+ucbf overhead:  28.403846153846157
+uc overhead:  0.7307692307692308
+num of eq:  22
+--------------------------
+fast_1_e8_751.lus
+aivc time:  3.0439999999999996
+prooftime:  0.052
+num of IVCs:  1
+aivc overhead:  58.53846153846153
+ucbf overhead:  57.980769230769226
+uc overhead:  0.34615384615384615
+num of eq:  67
+--------------------------
+FIREFLY_a3_e3_314_e2_2812.lus
+aivc time:  1.848
+prooftime:  0.052
+num of IVCs:  1
+aivc overhead:  35.53846153846154
+ucbf overhead:  39.86538461538461
+uc overhead:  0.6153846153846154
+num of eq:  21
+--------------------------
+MESI_3_e2_819_e4_1595.lus
+aivc time:  4.508
+prooftime:  0.052
+num of IVCs:  1
+aivc overhead:  86.6923076923077
+ucbf overhead:  88.96153846153847
+uc overhead:  1.0576923076923077
+num of eq:  11
+--------------------------
+Mode_Control-Gaurantee7.lus
+aivc time:  1.901
+prooftime:  0.052
+num of IVCs:  2
+aivc overhead:  36.55769230769231
+ucbf overhead:  18.67307692307692
+uc overhead:  0.11538461538461539
+num of eq:  21
+--------------------------
+DRAGON_all_e2_6104_e3_2607.lus
+aivc time:  1.693
+prooftime:  0.053
+num of IVCs:  1
+aivc overhead:  31.943396226415096
+ucbf overhead:  39.49056603773585
+uc overhead:  0.7547169811320755
+num of eq:  23
+--------------------------
+DRAGON_all_e3_4821_e1_1318.lus
+aivc time:  1.645
+prooftime:  0.053
+num of IVCs:  1
+aivc overhead:  31.037735849056606
+ucbf overhead:  39.16981132075472
+uc overhead:  0.7924528301886793
+num of eq:  23
+--------------------------
+fast_2_e8_976.lus
+aivc time:  9.496
+prooftime:  0.053
+num of IVCs:  1
+aivc overhead:  179.16981132075472
+ucbf overhead:  165.64150943396226
+uc overhead:  1.150943396226415
+num of eq:  93
+--------------------------
+FIREFLY_all.lus
+aivc time:  4.364
+prooftime:  0.053
+num of IVCs:  1
+aivc overhead:  82.33962264150944
+ucbf overhead:  90.13207547169812
+uc overhead:  1.0188679245283019
+num of eq:  42
+--------------------------
+metros_1_e2_1102_e1_317.lus
+aivc time:  2.012
+prooftime:  0.053
+num of IVCs:  3
+aivc overhead:  37.9622641509434
+ucbf overhead:  35.58490566037736
+uc overhead:  0.4150943396226415
+num of eq:  18
+--------------------------
+metros_1_e8_1567.lus
+aivc time:  1.702
+prooftime:  0.053
+num of IVCs:  3
+aivc overhead:  32.113207547169814
+ucbf overhead:  8.056603773584905
+uc overhead:  0.11320754716981132
+num of eq:  18
+--------------------------
+tramway_e7_1834.lus
+aivc time:  10.345
+prooftime:  0.053
+num of IVCs:  16
+aivc overhead:  195.18867924528303
+ucbf overhead:  30.13207547169812
+uc overhead:  0.16981132075471697
+num of eq:  25
+--------------------------
+DRAGON_all_e2_1514.lus
+aivc time:  1.654
+prooftime:  0.054
+num of IVCs:  1
+aivc overhead:  30.62962962962963
+ucbf overhead:  39.425925925925924
+uc overhead:  1.0185185185185186
+num of eq:  23
+--------------------------
+metros_1_e1_846_e1_1317.lus
+aivc time:  2.199
+prooftime:  0.054
+num of IVCs:  3
+aivc overhead:  40.72222222222222
+ucbf overhead:  34.53703703703704
+uc overhead:  0.25925925925925924
+num of eq:  18
+--------------------------
+FIREFLY_all_e1_1207_e2_3220.lus
+aivc time:  1.733
+prooftime:  0.055
+num of IVCs:  1
+aivc overhead:  31.50909090909091
+ucbf overhead:  35.690909090909095
+uc overhead:  0.5090909090909091
+num of eq:  18
+--------------------------
+MESI_3_e2_819_e6_1459.lus
+aivc time:  5.103
+prooftime:  0.055
+num of IVCs:  1
+aivc overhead:  92.78181818181818
+ucbf overhead:  133.52727272727273
+uc overhead:  1.0181818181818183
+num of eq:  11
+--------------------------
+metros_1_e2_1102_e2_943.lus
+aivc time:  2.2350000000000003
+prooftime:  0.055
+num of IVCs:  3
+aivc overhead:  40.63636363636364
+ucbf overhead:  21.236363636363638
+uc overhead:  0.19999999999999998
+num of eq:  18
+--------------------------
+ticket3i_7.lus
+aivc time:  2.862
+prooftime:  0.055
+num of IVCs:  1
+aivc overhead:  52.03636363636364
+ucbf overhead:  45.50909090909091
+uc overhead:  0.5090909090909091
+num of eq:  20
+--------------------------
+DRAGON_3_e1_4783_e3_511.lus
+aivc time:  1.25
+prooftime:  0.056
+num of IVCs:  1
+aivc overhead:  22.32142857142857
+ucbf overhead:  26.0
+uc overhead:  0.5178571428571429
+num of eq:  22
+--------------------------
+FIREFLY_a3_e2_2086_e1_3235.lus
+aivc time:  1.944
+prooftime:  0.056
+num of IVCs:  1
+aivc overhead:  34.714285714285715
+ucbf overhead:  38.482142857142854
+uc overhead:  0.5178571428571429
+num of eq:  21
+--------------------------
+FIREFLY_a3_e2_2086_e2_2689.lus
+aivc time:  4.431
+prooftime:  0.056
+num of IVCs:  2
+aivc overhead:  79.125
+ucbf overhead:  40.92857142857143
+uc overhead:  0.5535714285714286
+num of eq:  21
+--------------------------
+ILLINOIS_3.lus
+aivc time:  3.6260000000000003
+prooftime:  0.056
+num of IVCs:  1
+aivc overhead:  64.75
+ucbf overhead:  69.19642857142857
+uc overhead:  0.8392857142857143
+num of eq:  43
+--------------------------
+steam_boiler_no_arr2_e1_17214_e5_18600.lus
+aivc time:  1.574
+prooftime:  0.056
+num of IVCs:  1
+aivc overhead:  28.107142857142858
+ucbf overhead:  28.964285714285715
+uc overhead:  0.42857142857142855
+num of eq:  109
+--------------------------
+DRAGON_7.lus
+aivc time:  3.714
+prooftime:  0.057
+num of IVCs:  2
+aivc overhead:  65.1578947368421
+ucbf overhead:  24.263157894736842
+uc overhead:  0.3157894736842105
+num of eq:  21
+--------------------------
+metros_1_e8_725_e1_919.lus
+aivc time:  7.554
+prooftime:  0.057
+num of IVCs:  3
+aivc overhead:  132.52631578947367
+ucbf overhead:  14.754385964912277
+uc overhead:  0.19298245614035087
+num of eq:  47
+--------------------------
+DRAGON_all_e1_4037.lus
+aivc time:  5.447
+prooftime:  0.059
+num of IVCs:  1
+aivc overhead:  92.3220338983051
+ucbf overhead:  98.13559322033898
+uc overhead:  1.5084745762711864
+num of eq:  57
+--------------------------
+DRAGON_all_e3_4821_e2_1089.lus
+aivc time:  1.646
+prooftime:  0.059
+num of IVCs:  1
+aivc overhead:  27.89830508474576
+ucbf overhead:  37.96610169491525
+uc overhead:  0.8983050847457628
+num of eq:  23
+--------------------------
+ILLINOIS_all.lus
+aivc time:  3.9459999999999997
+prooftime:  0.059
+num of IVCs:  1
+aivc overhead:  66.88135593220339
+ucbf overhead:  72.15254237288136
+uc overhead:  1.033898305084746
+num of eq:  43
+--------------------------
+DRAGON_all_e1_4022_e3_3628.lus
+aivc time:  1.6660000000000001
+prooftime:  0.061
+num of IVCs:  1
+aivc overhead:  27.311475409836067
+ucbf overhead:  34.47540983606558
+uc overhead:  0.7213114754098361
+num of eq:  23
+--------------------------
+microwave01.lus
+aivc time:  3.499
+prooftime:  0.061
+num of IVCs:  1
+aivc overhead:  57.360655737704924
+ucbf overhead:  42.81967213114754
+uc overhead:  0.8524590163934426
+num of eq:  67
+--------------------------
+channel_str.lus
+aivc time:  120.509
+prooftime:  0.062
+num of IVCs:  1
+aivc overhead:  1943.6935483870968
+ucbf overhead:  10.741935483870966
+uc overhead:  0.5967741935483871
+num of eq:  110
+--------------------------
+ILLINOIS_2.lus
+aivc time:  3.313
+prooftime:  0.062
+num of IVCs:  1
+aivc overhead:  53.435483870967744
+ucbf overhead:  56.854838709677416
+uc overhead:  0.7096774193548386
+num of eq:  41
+--------------------------
+channel_bounds.lus
+aivc time:  120.424
+prooftime:  0.063
+num of IVCs:  1
+aivc overhead:  1911.4920634920636
+ucbf overhead:  10.841269841269842
+uc overhead:  0.6349206349206349
+num of eq:  110
+--------------------------
+metros_1.lus
+aivc time:  6.988
+prooftime:  0.063
+num of IVCs:  3
+aivc overhead:  110.92063492063492
+ucbf overhead:  75.15873015873017
+uc overhead:  0.38095238095238093
+num of eq:  47
+--------------------------
+MOESI_2.lus
+aivc time:  2.212
+prooftime:  0.063
+num of IVCs:  1
+aivc overhead:  35.111111111111114
+ucbf overhead:  38.65079365079365
+uc overhead:  0.5079365079365079
+num of eq:  28
+--------------------------
+Display_Control-Gaurantee5.lus
+aivc time:  55.622
+prooftime:  0.064
+num of IVCs:  5
+aivc overhead:  869.09375
+ucbf overhead:  38.78124999999999
+uc overhead:  0.46875
+num of eq:  64
+--------------------------
+steam_boiler_no_arr1.lus
+aivc time:  31.66
+prooftime:  0.064
+num of IVCs:  2
+aivc overhead:  494.6875
+ucbf overhead:  218.17187499999997
+uc overhead:  3.515625
+num of eq:  466
+--------------------------
+DRAGON_all_e1_4022_e1_1759.lus
+aivc time:  1.6729999999999998
+prooftime:  0.065
+num of IVCs:  1
+aivc overhead:  25.738461538461536
+ucbf overhead:  31.753846153846155
+uc overhead:  0.6307692307692307
+num of eq:  23
+--------------------------
+DRAGON_all_e2_6104_e2_3308.lus
+aivc time:  1.689
+prooftime:  0.065
+num of IVCs:  1
+aivc overhead:  25.984615384615385
+ucbf overhead:  32.323076923076925
+uc overhead:  0.7692307692307693
+num of eq:  23
+--------------------------
+DRAGON_all_e3_4821.lus
+aivc time:  1.7049999999999998
+prooftime:  0.065
+num of IVCs:  1
+aivc overhead:  26.230769230769226
+ucbf overhead:  32.21538461538462
+uc overhead:  0.7230769230769231
+num of eq:  23
+--------------------------
+DRAGON_2.lus
+aivc time:  4.429
+prooftime:  0.066
+num of IVCs:  1
+aivc overhead:  67.10606060606061
+ucbf overhead:  71.13636363636364
+uc overhead:  1.106060606060606
+num of eq:  53
+--------------------------
+DRAGON_all_e2_6104.lus
+aivc time:  5.474
+prooftime:  0.066
+num of IVCs:  1
+aivc overhead:  82.93939393939394
+ucbf overhead:  86.57575757575758
+uc overhead:  1.409090909090909
+num of eq:  57
+--------------------------
+DRAGON_9.lus
+aivc time:  1.58
+prooftime:  0.068
+num of IVCs:  1
+aivc overhead:  23.235294117647058
+ucbf overhead:  12.573529411764705
+uc overhead:  0.23529411764705882
+num of eq:  49
+--------------------------
+FIREFLY_luke_1b_e7_3191_e8_2830.lus
+aivc time:  3.322
+prooftime:  0.068
+num of IVCs:  1
+aivc overhead:  48.85294117647059
+ucbf overhead:  51.338235294117645
+uc overhead:  0.5735294117647058
+num of eq:  39
+--------------------------
+rtp_all.lus
+aivc time:  3.798
+prooftime:  0.069
+num of IVCs:  1
+aivc overhead:  55.04347826086956
+ucbf overhead:  104.49275362318839
+uc overhead:  0.5797101449275361
+num of eq:  25
+--------------------------
+cruise_controller_04.lus
+aivc time:  18.457
+prooftime:  0.07
+num of IVCs:  1
+aivc overhead:  263.6714285714286
+ucbf overhead:  67.4142857142857
+uc overhead:  1.614285714285714
+num of eq:  69
+--------------------------
+DRAGON_all_e3_4821_e4_1791.lus
+aivc time:  1.648
+prooftime:  0.071
+num of IVCs:  1
+aivc overhead:  23.211267605633804
+ucbf overhead:  31.43661971830986
+uc overhead:  0.6338028169014085
+num of eq:  23
+--------------------------
+ccp15.lus
+aivc time:  2.234
+prooftime:  0.072
+num of IVCs:  1
+aivc overhead:  31.02777777777778
+ucbf overhead:  22.458333333333336
+uc overhead:  0.47222222222222227
+num of eq:  198
+--------------------------
+DRAGON_all_e1_4022_e2_267.lus
+aivc time:  1.675
+prooftime:  0.073
+num of IVCs:  1
+aivc overhead:  22.945205479452056
+ucbf overhead:  28.575342465753426
+uc overhead:  0.6027397260273972
+num of eq:  23
+--------------------------
+cruise_controller_02.lus
+aivc time:  31.733
+prooftime:  0.074
+num of IVCs:  6
+aivc overhead:  428.8243243243244
+ucbf overhead:  88.44594594594595
+uc overhead:  1.6486486486486487
+num of eq:  69
+--------------------------
+DRAGON_all_e3_4821_e5_1536.lus
+aivc time:  1.668
+prooftime:  0.074
+num of IVCs:  1
+aivc overhead:  22.54054054054054
+ucbf overhead:  28.540540540540544
+uc overhead:  0.5540540540540541
+num of eq:  23
+--------------------------
+DRAGON_7_e2_2872_e2_5844.lus
+aivc time:  3.855
+prooftime:  0.075
+num of IVCs:  2
+aivc overhead:  51.4
+ucbf overhead:  18.46666666666667
+uc overhead:  0.24
+num of eq:  21
+--------------------------
+steam_boiler_no_arr2_e8_21449_e5_18210.lus
+aivc time:  1.6139999999999999
+prooftime:  0.075
+num of IVCs:  1
+aivc overhead:  21.52
+ucbf overhead:  22.000000000000004
+uc overhead:  0.33333333333333337
+num of eq:  109
+--------------------------
+DRAGON_all_e2_6104_e1_6205.lus
+aivc time:  1.66
+prooftime:  0.076
+num of IVCs:  1
+aivc overhead:  21.842105263157894
+ucbf overhead:  27.56578947368421
+uc overhead:  0.5921052631578947
+num of eq:  23
+--------------------------
+SYNAPSE_3_e7_1444_e8_1581.lus
+aivc time:  2.645
+prooftime:  0.076
+num of IVCs:  1
+aivc overhead:  34.80263157894737
+ucbf overhead:  25.526315789473685
+uc overhead:  0.11842105263157894
+num of eq:  11
+--------------------------
+car_all_e2_142_e7_209.lus
+aivc time:  1.843
+prooftime:  0.077
+num of IVCs:  1
+aivc overhead:  23.935064935064936
+ucbf overhead:  48.064935064935064
+uc overhead:  0.14285714285714285
+num of eq:  12
+--------------------------
+car_2_e7_1027_e1_1047.lus
+aivc time:  6.987
+prooftime:  0.08
+num of IVCs:  2
+aivc overhead:  87.3375
+ucbf overhead:  37.3
+uc overhead:  0.075
+num of eq:  12
+--------------------------
+ccp04.lus
+aivc time:  30.983
+prooftime:  0.08
+num of IVCs:  1
+aivc overhead:  387.2875
+ucbf overhead:  77.4375
+uc overhead:  2.0
+num of eq:  122
+--------------------------
+car_all_e8_856_e7_578.lus
+aivc time:  2.5749999999999997
+prooftime:  0.086
+num of IVCs:  1
+aivc overhead:  29.941860465116278
+ucbf overhead:  40.25581395348838
+uc overhead:  0.11627906976744187
+num of eq:  12
+--------------------------
+ccp02.lus
+aivc time:  46.027
+prooftime:  0.088
+num of IVCs:  8
+aivc overhead:  523.034090909091
+ucbf overhead:  96.6818181818182
+uc overhead:  2.147727272727273
+num of eq:  122
+--------------------------
+cruise_controller_01.lus
+aivc time:  17.7
+prooftime:  0.089
+num of IVCs:  8
+aivc overhead:  198.87640449438203
+ucbf overhead:  79.23595505617978
+uc overhead:  1.4382022471910114
+num of eq:  69
+--------------------------
+steam_boiler_no_arr1_e4_23904_e4_2384.lus
+aivc time:  31.796999999999997
+prooftime:  0.089
+num of IVCs:  2
+aivc overhead:  357.2696629213483
+ucbf overhead:  159.05617977528092
+uc overhead:  2.764044943820225
+num of eq:  466
+--------------------------
+DRAGON_all_e3_5957.lus
+aivc time:  5.4590000000000005
+prooftime:  0.09
+num of IVCs:  1
+aivc overhead:  60.655555555555566
+ucbf overhead:  62.72222222222223
+uc overhead:  0.9555555555555555
+num of eq:  57
+--------------------------
+production_cell_e8_792.lus
+aivc time:  2.891
+prooftime:  0.094
+num of IVCs:  1
+aivc overhead:  30.75531914893617
+ucbf overhead:  30.734042553191493
+uc overhead:  0.11702127659574467
+num of eq:  26
+--------------------------
+ccp01.lus
+aivc time:  48.227999999999994
+prooftime:  0.096
+num of IVCs:  8
+aivc overhead:  502.37499999999994
+ucbf overhead:  90.67708333333331
+uc overhead:  1.8541666666666665
+num of eq:  122
+--------------------------
+car_2_e8_491_e7_826.lus
+aivc time:  2.4499999999999997
+prooftime:  0.098
+num of IVCs:  2
+aivc overhead:  24.999999999999996
+ucbf overhead:  29.346938775510207
+uc overhead:  0.061224489795918366
+num of eq:  12
+--------------------------
+cd.lus
+aivc time:  1.9689999999999999
+prooftime:  0.098
+num of IVCs:  1
+aivc overhead:  20.091836734693874
+ucbf overhead:  26.122448979591837
+uc overhead:  0.5408163265306122
+num of eq:  19
+--------------------------
+fast_2.lus
+aivc time:  10.241
+prooftime:  0.098
+num of IVCs:  1
+aivc overhead:  104.49999999999999
+ucbf overhead:  93.5612244897959
+uc overhead:  0.6326530612244897
+num of eq:  93
+--------------------------
+GPCA_SW-property8.lus
+aivc time:  7.365
+prooftime:  0.105
+num of IVCs:  1
+aivc overhead:  70.14285714285715
+ucbf overhead:  29.171428571428574
+uc overhead:  1.2666666666666668
+num of eq:  564
+--------------------------
+ccp03.lus
+aivc time:  39.696
+prooftime:  0.106
+num of IVCs:  8
+aivc overhead:  374.49056603773585
+ucbf overhead:  80.59433962264153
+uc overhead:  1.5660377358490567
+num of eq:  122
+--------------------------
+ums_e8_1032.lus
+aivc time:  7.243
+prooftime:  0.106
+num of IVCs:  11
+aivc overhead:  68.33018867924528
+ucbf overhead:  5.132075471698114
+uc overhead:  0.07547169811320754
+num of eq:  38
+--------------------------
+cruise_controller_03.lus
+aivc time:  17.581
+prooftime:  0.107
+num of IVCs:  8
+aivc overhead:  164.30841121495328
+ucbf overhead:  59.65420560747663
+uc overhead:  1.102803738317757
+num of eq:  69
+--------------------------
+DRAGON_all.lus
+aivc time:  5.492999999999999
+prooftime:  0.118
+num of IVCs:  1
+aivc overhead:  46.550847457627114
+ucbf overhead:  49.22881355932203
+uc overhead:  0.7118644067796611
+num of eq:  57
+--------------------------
+reconfiguration_small_bounds.lus
+aivc time:  47.255
+prooftime:  0.491
+num of IVCs:  4
+aivc overhead:  96.24236252545826
+ucbf overhead:  15.372708757637476
+uc overhead:  1.5519348268839104
+num of eq:  90
+--------------------------
+reconfiguration_small.lus
+aivc time:  30.302
+prooftime:  0.552
+num of IVCs:  3
+aivc overhead:  54.894927536231876
+ucbf overhead:  12.701086956521737
+uc overhead:  1.2989130434782608
+num of eq:  90
+--------------------------
+FIREFLY_4_e3_3511.lus
+aivc time:  17.202
+prooftime:  0.689
+num of IVCs:  4
+aivc overhead:  24.96661828737301
+ucbf overhead:  6.300435413642962
+uc overhead:  0.09724238026124819
+num of eq:  42
+--------------------------
+microwave22.lus
+aivc time:  500.03299999999996
+prooftime:  1.526
+num of IVCs:  4
+aivc overhead:  327.67562254259497
+ucbf overhead:  8.790956749672345
+uc overhead:  1.0340760157273918
+num of eq:  69
+--------------------------
+microwave19.lus
+aivc time:  128.339
+prooftime:  1.708
+num of IVCs:  6
+aivc overhead:  75.13992974238876
+ucbf overhead:  3.0766978922716626
+uc overhead:  0.06557377049180328
+num of eq:  69
+--------------------------
+cruise_controller_12.lus
+aivc time:  43.019999999999996
+prooftime:  1.775
+num of IVCs:  8
+aivc overhead:  24.236619718309857
+ucbf overhead:  4.0338028169014075
+uc overhead:  0.1087323943661972
+num of eq:  86
+--------------------------
+ccp18.lus
+aivc time:  265.23699999999997
+prooftime:  1.784
+num of IVCs:  76
+aivc overhead:  148.67544843049325
+ucbf overhead:  6.132847533632288
+uc overhead:  0.15246636771300448
+num of eq:  177
+--------------------------
+microwave24.lus
+aivc time:  132.381
+prooftime:  1.844
+num of IVCs:  7
+aivc overhead:  71.79013015184381
+ucbf overhead:  2.7744034707158347
+uc overhead:  0.10954446854663774
+num of eq:  69
+--------------------------
+cruise_controller_24.lus
+aivc time:  41.763999999999996
+prooftime:  1.983
+num of IVCs:  8
+aivc overhead:  21.06101865859808
+ucbf overhead:  3.6510337871911247
+uc overhead:  0.09278870398386282
+num of eq:  86
+--------------------------
+microwave29.lus
+aivc time:  110.876
+prooftime:  2.237
+num of IVCs:  8
+aivc overhead:  49.56459544032186
+ucbf overhead:  2.3375055878408584
+uc overhead:  0.19848010728654447
+num of eq:  69
+--------------------------
+DRAGON_13.lus
+aivc time:  354.384
+prooftime:  2.284
+num of IVCs:  6
+aivc overhead:  155.15936952714537
+ucbf overhead:  2.3432574430823117
+uc overhead:  0.041155866900175135
+num of eq:  51
+--------------------------
+DRAGON_12_e2_1618.lus
+aivc time:  95.82400000000001
+prooftime:  2.35
+num of IVCs:  2
+aivc overhead:  40.77617021276596
+ucbf overhead:  6.2519148936170215
+uc overhead:  0.023404255319148935
+num of eq:  22
+--------------------------
+ccp08.lus
+aivc time:  2995.7599999999998
+prooftime:  2.461
+num of IVCs:  388
+aivc overhead:  1217.2937830150345
+ucbf overhead:  4.382771231206827
+uc overhead:  0.13693620479479887
+num of eq:  179
+--------------------------
+DRAGON_12_e2_1618_e3_2012.lus
+aivc time:  104.705
+prooftime:  2.47
+num of IVCs:  2
+aivc overhead:  42.39068825910931
+ucbf overhead:  4.330364372469635
+uc overhead:  0.02145748987854251
+num of eq:  22
+--------------------------
+microwave30.lus
+aivc time:  163.39800000000002
+prooftime:  2.538
+num of IVCs:  8
+aivc overhead:  64.38061465721042
+ucbf overhead:  2.062253743104807
+uc overhead:  0.12765957446808512
+num of eq:  69
+--------------------------
+DRAGON_12_e2_1618_e2_138.lus
+aivc time:  118.292
+prooftime:  2.921
+num of IVCs:  2
+aivc overhead:  40.49709003765834
+ucbf overhead:  5.729887024991442
+uc overhead:  0.03937007874015749
+num of eq:  22
+--------------------------
+DRAGON_12.lus
+aivc time:  473.656
+prooftime:  2.941
+num of IVCs:  7
+aivc overhead:  161.05270316218974
+ucbf overhead:  3.642298537912275
+uc overhead:  0.036722203332199936
+num of eq:  51
+--------------------------
+reconfiguration_medium_bounds.lus
+aivc time:  80.15899999999999
+prooftime:  3.09
+num of IVCs:  2
+aivc overhead:  25.941423948220063
+ucbf overhead:  22.654368932038835
+uc overhead:  2.332686084142395
+num of eq:  90
+--------------------------
+ccp17.lus
+aivc time:  13752.08
+prooftime:  3.241
+num of IVCs:  892
+aivc overhead:  4243.1595186670775
+ucbf overhead:  8.888614625115705
+uc overhead:  0.15735883986423943
+num of eq:  198
+--------------------------
+DRAGON_12_e2_1618_e1_6030.lus
+aivc time:  169.85399999999998
+prooftime:  3.353
+num of IVCs:  2
+aivc overhead:  50.6573218013719
+ucbf overhead:  4.397554428869668
+uc overhead:  0.03489412466447957
+num of eq:  22
+--------------------------
+DRAGON_11_e1_2450.lus
+aivc time:  321.975
+prooftime:  3.494
+num of IVCs:  1
+aivc overhead:  92.1508299942759
+ucbf overhead:  76.95993131081853
+uc overhead:  0.031482541499713794
+num of eq:  22
+--------------------------
+GPCA_SW-property10.lus
+aivc time:  77.261
+prooftime:  3.638
+num of IVCs:  15
+aivc overhead:  21.237218251786697
+ucbf overhead:  2.0313358988455192
+uc overhead:  0.20450797141286423
+num of eq:  564
+--------------------------
+reconfiguration_medium.lus
+aivc time:  169.322
+prooftime:  3.863
+num of IVCs:  4
+aivc overhead:  43.83173699197515
+ucbf overhead:  13.091897488998189
+uc overhead:  2.1307274139269996
+num of eq:  90
+--------------------------
+DRAGON_12_e7_4611_e8_5145.lus
+aivc time:  170.916
+prooftime:  4.18
+num of IVCs:  2
+aivc overhead:  40.888995215311006
+ucbf overhead:  3.494019138755981
+uc overhead:  0.0145933014354067
+num of eq:  22
+--------------------------
+DRAGON_11_e1_2450_e2_1483.lus
+aivc time:  292.76599999999996
+prooftime:  4.745
+num of IVCs:  1
+aivc overhead:  61.69989462592201
+ucbf overhead:  55.95258166491043
+uc overhead:  0.04172813487881981
+num of eq:  22
+--------------------------
+DRAGON_11_e1_2450_e1_5887.lus
+aivc time:  327.37899999999996
+prooftime:  4.853
+num of IVCs:  1
+aivc overhead:  67.45909746548526
+ucbf overhead:  61.5874716670101
+uc overhead:  0.033793529775396666
+num of eq:  22
+--------------------------
+DRAGON_11_e2_1678_e1_3565.lus
+aivc time:  265.419
+prooftime:  5.508
+num of IVCs:  1
+aivc overhead:  48.18790849673202
+ucbf overhead:  51.989651416122
+uc overhead:  0.02269426289034132
+num of eq:  22
+--------------------------
+microwave27.lus
+aivc time:  105460.16100000001
+prooftime:  5.64
+num of IVCs:  3
+aivc overhead:  18698.61010638298
+ucbf overhead:  17.462943262411347
+uc overhead:  0.8693262411347518
+num of eq:  69
+--------------------------
+DRAGON_11_e2_5396_e3_282.lus
+aivc time:  2038.212
+prooftime:  5.763
+num of IVCs:  1
+aivc overhead:  353.67204580947424
+ucbf overhead:  45.59430851986812
+uc overhead:  0.02828387992365088
+num of eq:  22
+--------------------------
+DRAGON_11_e1_2450_e3_2330.lus
+aivc time:  314.497
+prooftime:  6.17
+num of IVCs:  1
+aivc overhead:  50.971961102106974
+ucbf overhead:  50.687034035656396
+uc overhead:  0.02220421393841167
+num of eq:  22
+--------------------------
+GPCA_SW-property48.lus
+aivc time:  148.52300000000002
+prooftime:  6.474
+num of IVCs:  16
+aivc overhead:  22.941458140253324
+ucbf overhead:  4.456132221192462
+uc overhead:  0.20265678097003398
+num of eq:  564
+--------------------------
+DRAGON_11.lus
+aivc time:  248.604
+prooftime:  6.706
+num of IVCs:  1
+aivc overhead:  37.07187593200119
+ucbf overhead:  43.98150909633164
+uc overhead:  0.020429466149716673
+num of eq:  22
+--------------------------
+DRAGON_11_e3_382_e1_505.lus
+aivc time:  386.392
+prooftime:  7.169
+num of IVCs:  1
+aivc overhead:  53.89761473008788
+ucbf overhead:  55.2089552238806
+uc overhead:  0.01604128888268936
+num of eq:  22
+--------------------------
+DRAGON_11_e3_382_e4_4421.lus
+aivc time:  500.309
+prooftime:  11.259
+num of IVCs:  1
+aivc overhead:  44.43636202149392
+ucbf overhead:  39.51070254907185
+uc overhead:  0.015365485389466204
+num of eq:  22
+--------------------------
+cruise_controller_19.lus
+aivc time:  785.3789999999999
+prooftime:  14.762
+num of IVCs:  24
+aivc overhead:  53.202750304836734
+ucbf overhead:  0.9640970058257687
+uc overhead:  0.019374068554396422
+num of eq:  96
+--------------------------
+cruise_controller_18.lus
+aivc time:  1072.608
+prooftime:  22.731
+num of IVCs:  24
+aivc overhead:  47.18701332981391
+ucbf overhead:  0.6382913202234833
+uc overhead:  0.018696933702872728
+num of eq:  96
+--------------------------
+FCC_2ps.lus
+aivc time:  3749.43
+prooftime:  32.3
+num of IVCs:  1
+aivc overhead:  116.08142414860681
+ucbf overhead:  9.470866873065017
+uc overhead:  0.8135913312693499
+num of eq:  2149
+--------------------------
+reconfiguration_large_bound.lus
+aivc time:  3890.971
+prooftime:  60.595
+num of IVCs:  4
+aivc overhead:  64.21274032510934
+ucbf overhead:  74.69662513408697
+uc overhead:  2.859955441868141
+num of eq:  90
+--------------------------
+reconfiguration_large.lus
+aivc time:  5918.896
+prooftime:  82.498
+num of IVCs:  4
+aivc overhead:  71.74593323474508
+ucbf overhead:  38.49132100172125
+uc overhead:  2.2817644064098523
+num of eq:  90
+--------------------------

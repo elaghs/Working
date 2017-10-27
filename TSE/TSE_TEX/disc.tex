@@ -16,17 +16,17 @@
 \newcommand{\abovehyst}{\texttt{above\_hyst}}
 \newcommand{\inhibit}{\texttt{inhibit}}
 
-In this section we show how traceability and coverage analyses can be performed using IVCs. 
-The goal of this section is to both illustrate the techniques and discuss the potential pitfalls of the analysis. Here we adapt the same ASW example presented in Section \ref{sec:example}. The code is slightly changed so we can discuss how IVCs help to improve the design and specification. The new code is presented in Fig. \ref{fig:asw2}.
+In this section we show how traceability and coverage analyses can be performed using IVCs.
+The goal of this section is to both illustrate the techniques and discuss the potential pitfalls of the analysis. Here we adapt the same ASW example presented in Section \ref{sec:example}. The code is slightly changed so we can discuss how IVCs help to improve the design and specification. 
 
- \begin{figure}[t]
-\centering
-\includegraphics[width=0.9\columnwidth]{figs/code.jpg}
-\vspace{-0.1in}
-\caption{Altitude Switch Model}
-\vspace{-0.1in}
-\label{fig:asw2}
-\end{figure}
+% \begin{figure}[t]
+%\centering
+%\includegraphics[width=0.9\columnwidth]{figs/code.jpg}
+%\vspace{-0.1in}
+%\caption{Altitude Switch Model}
+%\vspace{-0.1in}
+%\label{fig:asw2}
+%\end{figure}
 
  We illustrate the results with traceability matrices produced by the  \texttt{Spear} requirements specification tool~\cite{Spear}.  \texttt{JKind} is used as the model checker for the  \texttt{AADL AGREE} tool suite~\cite{NFM2012:CoGaMiWhLaLu} and also \texttt{Spear} ~\cite{Spear}.  We have extended both tools to add graphical support for displaying adequacy and traceability results.  We show screenshots for the  \texttt{Spear} tool for our running example in Figures~\ref{fig:propertyset1} and~\ref{fig:propertyset4}.
 
@@ -133,7 +133,7 @@ Now we will examine this situation.
 Since some of the proposed metrics need to compute all IVCs ($AIVC(P)$),
 we have investigated efficient algorithms for computing all IVCs.
 Based on our preliminary evaluation, computing $AIVC$ is computationally feasible for realistic models. In addition, we believe that it is possible to obtain MIVCs directly while computing $AIVC$.
-We have implemented an efficient algorithm for this purpose, not yet published though. Once the author names are revealed, we can provide a detailed report about it.  
+We have implemented an efficient algorithm for this purpose, not yet published though. Once the author names are revealed, we can provide a detailed report about it.
 %which would remove any concern about minimality. %\ela{this is also mentioned in the RE paper. I don't know if it would be problematic for double-blind reviewing}
 
 \subsection{Granularity}

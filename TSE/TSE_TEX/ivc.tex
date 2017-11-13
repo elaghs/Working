@@ -1,7 +1,7 @@
 \section{Inductive Validity Cores}
 \label{sec:ivc}
-\newcommand{\ivc}{\textit{IVC}}
-\newcommand{\mivc}{\textit{MIVC}}
+\newcommand{\ivc}{\textit{IVC}\xspace}
+\newcommand{\mivc}{\textit{MIVC}\xspace}
 
 \newcommand{\bq}{\textsc{BaseQuery}\xspace}
 \newcommand{\iq}{\textsc{IndQuery}\xspace}
@@ -69,8 +69,7 @@ Note that, given $(I, T) \vdash P$, $P$ always has at least one \mivc, and it ma
     $$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  MIVC(P, S)\} $$
 \end{definition}
 
-However, inductive validity cores do have
-the following monotonicity property.
+Inductive validity cores have the following monotonicity property.
 
 \begin{lemma}
   \label{lem:ivc-monotonic}

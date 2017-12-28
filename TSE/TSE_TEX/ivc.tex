@@ -49,17 +49,18 @@ conjuncts of $T$. When a top-level conjunct $T_i$ is removed from $T$, we write 
 \begin{definition}{\emph{Inductive Validity Core (\ivc):}}
   \label{def:ivc}
   Let $(I, T)$ be a transition system and let $P$ be a
-  safety property with $(I, T)\vdash P$. We say $S \subseteq
-  T$ is an {\em inductive validity core} for $(I, T)\vdash P$ \emph{iff} $(I,
-  S) \vdash P$. When $I$, $T$, and $P$ can be inferred from
+  safety property with $(I, T)\vdash P$. 
+  We say $S \subseteq T$ for $(I, T)\vdash P$ is an Inductive Validity Core,
+  denoted by $\ivc(P, S)$, iff $(I, S) \vdash P $.
+  When $I$, $T$, and $P$ can be inferred from
   context we will simply say $S$ is an inductive validity core.
 \end{definition}
 
 \begin{definition}{\emph{Minimal Inductive Validity Core (\mivc):}}
   \label{def:minimal-ivc}
-  An inductive validity core $S$ for $(I, T)\vdash P$ is minimal \emph{iff}
-  there does not exist $M \subset S$ such that $M$ is an inductive validity core
-  for $(I, T)\vdash P$.
+  $S \subseteq T$ is a minimal Inductive Validity Core,
+  denoted by $\mivc(P, S)$, iff ~
+  $\ivc(P, S) \wedge \forall T_i \in S.~ (I, S\setminus\{ T_i \}) \nvdash P$.
 \end{definition}
 
 Note that, given $(I, T) \vdash P$, $P$ always has at least one \mivc, and it may also have many distinct \mivc s corresponding to different proof paths. To capture the latter, the \emph{all \mivc s ($AIVC$)} relation has been introduced in \cite{Murugesan16:renext}.
@@ -112,4 +113,4 @@ Generally, an IVC computation technique aims to determine, for any subset $S \su
 
 \subsection{Algorithm for computing all minimal inductive validity core}
 %\label{sec:allivcs}
-\input{allivcs} 
+\input{allivcs}

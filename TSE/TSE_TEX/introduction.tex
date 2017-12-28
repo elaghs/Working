@@ -27,6 +27,9 @@ Once generated, IVCs can be used for many purposes in the software verification 
 
 \noindent To be useful for these tasks, the generation process must be efficient and the generated IVC must be accurate and precise (that is, sound and close to minimal).  The requirement for accuracy is obvious; otherwise the ``minimal'' set of model elements is no longer sufficient to produce a proof, so it no longer meets our IVC definition.  Minimality is important because (for traceability) we do not want unnecessary model elements in the trace matrix, and (for completeness) it may give us a false level of confidence that we have enough requirements.
 
+
+\input{motivex}
+
 It is often the case that there are more than one minimal IVCs (MIVCs) for a given property.  In this case, computing a single MIVC provides, at best, an incomplete picture of the traceability information associated with the proof.  Depending on the model and property to be analyzed, there is often substantial diversity between the IVCs used for proof, and there can also be a substantive difference in the size of a {\em minimal} IVC and a {\em minimum} IVC, which is the (not necessarily unique) smallest MIVC.  If {\em all} MIVCs can be found, then several additional analyses can be performed:
 
 \begin{itemize}
@@ -40,24 +43,5 @@ It is often the case that there are more than one minimal IVCs (MIVCs) for a giv
 \end{itemize}
 
 This paper presents a comprehensive explanation of algorithms and applications for inductive validity cores, providing a unified treatment of material from several conference papers~\cite{Ghass16,Murugesan16:renext,Ghass17Cov,Ghass17AllIVCs}, as well as a significantly larger experimental evaluation, revised proofs, and a discussion of {\em granularity} of the model elements on the results produced by IVC algorithms, to provide a definitive treatment of the topic.
-
-%% We put the image here so it shows up side-by-side with fig:ex-after
-\begin{figure}[t]
-\centering
-\includegraphics[width=\columnwidth]{figs/simulink.png}
-{\smaller
-\begin{verbatim}
-node filter(x : real) returns (a, b, y : real);
-let
-  a = f(x, 0.0 -> pre y);
-  b = if a >= 0.0 then a else -a;
-  y = b + (0.0 -> pre y);
-tel;
-\end{verbatim}
-}
-\vspace{-0.1in}
-\caption{Model with property $y \geq 0$, before IVC analysis}
-\label{fig:ex-before}
-\end{figure}
 
 The remainder of the paper is organized as follows...

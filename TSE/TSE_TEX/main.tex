@@ -59,13 +59,15 @@
 \usepackage{stmaryrd}
 \usepackage{amsthm}
 \usepackage{algorithmic}
+\usepackage{relsize}
 \usepackage{array}
 %\usepackage{mdwmath}
 %\usepackage{mdwtab}
 \usepackage{eqparbox}
 %\usepackage[tight,normalsize]{subfigure}
 %\usepackage[font=normalsize]{caption}
-%\usepackage{tabularx,colortbl}
+ 
+\usepackage{tabularx,colortbl} 
 \usepackage[dvipsnames]{xcolor}
 \usepackage{flushend}
 \usepackage{cite}
@@ -93,6 +95,9 @@
 \newcommand{\rbb}{]\!]}
 \newcommand{\expr}{\phi}
 \newcommand{\exprS}{\Phi}
+\newcommand{\bool}[0]{\mathit{bool}}
+\newcommand{\reach}[0]{\mathit{R}}
+\newcommand{\ite}[3]{\mathit{if}\ {#1}\ \mathit{then}\ {#2}\ \mathit{else}\ {#3}}
 
 \definecolor{gold}{rgb}{0.90,.66,0}
 \definecolor{dgreen}{rgb}{0,0.6,0}
@@ -178,6 +183,7 @@ Inductive validity cores, SMT-based model checking, requirements analysis, proof
 \IEEEdisplaynontitleabstractindextext
 \IEEEpeerreviewmaketitle
 \input{introduction}
+
 
 %\ifdefined\TECHREPORT
 %\input{description}

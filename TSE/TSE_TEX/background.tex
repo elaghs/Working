@@ -1,20 +1,18 @@
 \section{Preliminaries}
 \label{sec:background}
 
-\newcommand{\bool}[0]{\mathit{bool}}
-\newcommand{\reach}[0]{\mathit{R}}
-\newcommand{\ite}[3]{\mathit{if}\ {#1}\ \mathit{then}\ {#2}\ \mathit{else}\ {#3}} 
-
 Given a state space $U$, a transition system $(I,T)$ consists of an
-initial state predicate $I : U \to \bool$ and a transition step
-predicate $T : U \times U \to \bool$.
+initial state predicate $ I : U \to \bool $ and a transition step
+predicate $ T : U \times U \to \bool $.
 We define the notion of
 reachability for $(I, T)$ as the smallest predicate $\reach : U \to
 \bool$ which satisfies the following formulas:
+
 \begin{gather*}
   \forall u.~ I(u) \Rightarrow \reach(u) \\
   \forall u, u'.~ \reach(u) \land T(u, u') \Rightarrow \reach(u')
 \end{gather*}
+
 A safety property $P : U \to \bool$ is a state predicate. A safety
 property $P$ holds on a transition system $(I, T)$ if it holds on all
 reachable states, i.e., $\forall u.~ \reach(u) \Rightarrow P(u)$,

@@ -34,16 +34,16 @@ Note that every \ivc ~is an adequate set for $P$, and every \mis ~is an inadequa
 %Note that $MCS$ is more of syntactic sugar that specifies sets that can also be specified by $MIS$; i.e. for any $MIS$ of $T$, there is a corresponding $MCS$ such that adding any element of that $MCS$ to the $MIS$, makes the property provable by the $MIS$.
 %And, that's why it is called the ``minimal correction'' set.
 
-\begin{lemma}
-\label{lem:adeq}
-For $(I, T) \vdash P$, if $S \subseteq T$ is adequate for property $P$, then all of its supersets are adequate for $P$ as well:
-\allowbreak $$\forall S_1 \subseteq S_2 \subseteq T.~ (I, S_1) \vdash P \Rightarrow (I, S_2) \vdash P$$
-\end{lemma}
-\begin{IEEEproof}
-From $S_1 \subseteq S_2$ we have $S_2 \Rightarrow S_1$. Thus the
-  reachable states of $(I, S_2)$ are a subset of the reachable states
-  of $(I, S_1)$.
-\end{IEEEproof}
+%\begin{lemma}
+%\label{lem:adeq}
+%For $(I, T) \vdash P$, if $S \subseteq T$ is adequate for property $P$, then all of its supersets are adequate for $P$ as well:
+%\allowbreak $$\forall S_1 \subseteq S_2 \subseteq T.~ (I, S_1) \vdash P \Rightarrow (I, S_2) \vdash P$$
+%\end{lemma}
+%\begin{IEEEproof}
+%From $S_1 \subseteq S_2$ we have $S_2 \Rightarrow S_1$. Thus the
+%  reachable states of $(I, S_2)$ are a subset of the reachable states
+%  of $(I, S_1)$.
+%\end{IEEEproof}
 
 \begin{corollary}
 \label{lem:inadeq}

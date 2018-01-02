@@ -226,7 +226,7 @@ $\mathcal{P}(T)$, which is done with function $\actlit ^{-1}$ in line
 7.
 
 We also assume there is a function \isadeq\ that checks whether or
-not $P$ is provable by a given subset of $T$.  Note that from Theorem~\ref{thm:minimal-hard}, finding a minimal is undecidable if the original checking problem is undecidable.  Thus, for undecidable model checking problems, \isadeq\  can return \unknown ~(after a user-defined timeout) as well as \adequate\ or \inadequate.
+not $P$ is provable by a given subset of $T$.  Note that from Theorem~\ref{thm:minimal-hard}, finding a minimal IVC is (in general) undecidable if the original checking problem is undecidable.  Thus, for undecidable model checking problems, \isadeq\  can return \unknown ~(after a user-defined timeout) as well as \adequate\ or \inadequate.
 For a given set $S$, if our implementation is unable to prove the property, we conservatively assume that the property is falsifiable and set a warning flag $w$ to the user that the results may be approximate.  %Using this function, the
 %adequacy of $S$ is determined in line 8.
 if $S$ is adequate, a \mivc

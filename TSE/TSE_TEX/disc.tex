@@ -17,7 +17,7 @@
 \newcommand{\inhibit}{\texttt{inhibit}}
 
 In this section we show how traceability and coverage analyses can be performed using IVCs.
-The goal of this section is to both illustrate the techniques and discuss the potential pitfalls of the analysis. Here we adapt the same ASW example presented in Section \ref{sec:example}. The code is slightly changed so we can discuss how IVCs help to improve the design and specification. 
+The goal of this section is to both illustrate the techniques and discuss the potential pitfalls of the analysis. Here we adapt the same ASW example presented in Section \ref{sec:example}. The code is slightly changed so we can discuss how IVCs help to improve the design and specification.
 
 % \begin{figure}[t]
 %\centering
@@ -140,6 +140,8 @@ We have implemented an efficient algorithm for this purpose, not yet published t
 
 As we described in Section \ref{sec:background}, transition relation is considered
 as the conjunction of Boolean formulas. The granularity of these formulas substantially affects the analysis results.  In the presented example, it was possible to have a ``complete'' specification of the model involving only the hysteresis property \hystp.  The way that the model was structured, in order to determine the validity of the property, all of the equations in the model were required.  However, for this property certain subexpressions of the equations were irrelevant, notably the value assigned to the \texttt{doi\_on} variable in the \texttt{then} branches of equations (7) and (8).  If we decompose the equations into smaller pieces, e.g., creating separate equations for the \texttt{then} and \texttt{else} branches, this incompleteness becomes visible and the model is no longer completely covered.
+
+\mike{Oy...this section needs improvement}
 
 %Splitting a model into more conjuncts will make coverage scores more accurate and usually lower, though it will not always lower coverage scores.
 %

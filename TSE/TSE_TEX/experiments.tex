@@ -13,7 +13,7 @@ Then, we are interested in examining the {\em efficacy} and {\em efficiency} of 
 %
 Therefore, we investigate the following research questions:
 \begin{itemize}
-  \item \textbf{RQ1:} How expensive is it to compute the \aivcalg ~algorithm for determining all minimal IVCs when compared to the \ucalg ~and \ucbfalg ~algorithms, which find a single approximately minimal and guaranteed minimal IVC?
+  \item \textbf{RQ1:} How expensive is it to compute IVCs?  For this question we examine the cost of the \ucalg ~and \ucbfalg ~algorithms, which find a single approximately minimal and guaranteed minimal IVC, as well as the \aivcalg ~algorithm for determining all minimal IVCs.  
   \item \textbf{RQ2:} How is the verification time of the \aivcalg ~algorithm affected by the baseline proof time and the number of IVCs that can be found for a property?
    \item \textbf{RQ3:} How close to minimal are the IVCs computed by \ucalg\ as opposed to the (guaranteed minimal) \ucbfalg\ and the \emph{minimum} IVC computed by \aivcalg ?  How do the sizes of IVCs compare to static slices of the model?
  % \item \textbf{RQ4:} How large are the IVCs produced by the \aivcalg\ algorithm
@@ -27,7 +27,8 @@ Therefore, we investigate the following research questions:
 
 \subsection{Experimental Setup}
 
-Our experiments are conducted on a set of benchmarks containing 660 Lustre models, 530 from~\cite{Hagen08:FMCAD, piskac2016} and 130 industrial models derived from \cite{hilt2013} and other sources \cite{piskac2016, NFM2015:backes}.  Most of the academic benchmark models are small (10kB or less, with 6-40 equations) and include a range of hardware benchmarks and software problems involving counters that are difficult to solve inductively.
+Our experiments are conducted on a set of benchmarks containing 660 Lustre models, including all of the benchmark models yielding a valid result (530 in total) from~\cite{Hagen08:FMCAD, piskac2016} and 130 industrial models yielding valid results derived from \cite{hilt2013} and other sources \cite{piskac2016, NFM2015:backes}.  \mike{Is this still true for the ``new'' benchmark models?} 
+Most of the academic benchmark models are small (10kB or less, with 6-40 equations) and include a range of hardware benchmarks and software problems involving counters that are difficult to solve inductively.
 The industrial models are much larger; for example, each 80 models from \cite{hilt2013} contain over 600 equations and are each $\geq$80kB in size. The benchmark includes 2 models from NASA Quad-redundant Flight Control System (QFCS)~\cite{NFM2015:backes}: the Flight Control System (FCS) with 5259 Lustre equations and the Flight Control Computer (FCC) with 10969 equations.
 
 We selected only benchmark problems consisting of a Lustre model with

@@ -49,7 +49,7 @@ conjuncts of $T$. When a top-level conjunct $T_i$ is removed from $T$, we write 
 \begin{definition}{\emph{Inductive Validity Core (\ivc):}}
   \label{def:ivc}
   Let $(I, T)$ be a transition system and let $P$ be a
-  safety property with $(I, T)\vdash P$. 
+  safety property with $(I, T)\vdash P$.
   We say $S \subseteq T$ for $(I, T)\vdash P$ is an Inductive Validity Core,
   denoted by $\ivc(P, S)$, iff $(I, S) \vdash P $.
   When $I$, $T$, and $P$ can be inferred from
@@ -105,12 +105,12 @@ do not affect the satisfaction of $P$.  For comparison, note that a backwards st
 Generally, an IVC computation technique aims to determine, for any subset $S \subseteq T$, whether $P$ is provable by $S$. Then, a minimal subset that satisfies $P$ is seen as a minimal proof explanation called a minimal Inductive Validity Core.
 
 
-\subsection{Algorithm for computing an inductive validity core}
+\subsection{Algorithms for computing an inductive validity core}
 %\label{subsec:ivcalg}
 \input{ivcalg}
 
 
 
-\subsection{Algorithm for computing all minimal inductive validity core}
+\subsection{Algorithm for computing all minimal inductive validity cores}
 %\label{sec:allivcs}
 \input{allivcs}

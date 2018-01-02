@@ -153,7 +153,7 @@ $\mathcal{P}(T)$. If $S$ is adequate, then it contains a \mivc. That
 \mivc\ must not be explored since otherwise $S$ would have been blocked
 from consideration. The \mivc\ must not be excluded since it is not a
 strict superset of any adequate set (by minimality) nor a subset of
-any inadequate set (by Corollary~\ref{lem:adeq}). Thus the \mivc\ must
+any inadequate set (by \mike{Why is this ??} Corollary~\ref{lem:adeq}). Thus the \mivc\ must
 be unexplored. The case where $S$ is inadequate is symmetric.
 
 In the other direction, let $S \subseteq T$ be an unexplored \mivc.
@@ -300,7 +300,7 @@ blocked. Since $\mathcal{P}(T)$ is finite, the algorithm terminates.
 By Theorem~\ref{theorem:termination} the algorithm terminates. This
 means $map$ is eventually unsatisfiable.  If $w = \false$ then all model checking problems are solved definitively (no \unknown\ results), so by Lemma~\ref{lem:map:comp},
 all \mis es and \mivc s are either explored or excluded.
-However, by maximality and Lemma~\ref{lem:adeq}, an \mis~ can never be
+However, by maximality and \mike{Why is this ??} Lemma~\ref{lem:adeq}, an \mis~ can never be
 excluded. Similarily, by minimality and Corollary~\ref{lem:inadeq}, a
 \mivc~ can never be excluded. Thus all \mis es and \mivc s are
 explored and are elements of $A$ by the end of the algorithm.

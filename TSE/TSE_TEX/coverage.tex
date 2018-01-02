@@ -2,6 +2,8 @@ For critical systems, it has been argued that formal methods
 %, involving formalized requirements and proofs of implementation correctness,
 should be applied to gain higher assurance than is possible with testing~\cite{Miller10:CACM,Rushby09:SEFM,Hardin09:Security}.  For these approaches, testing may still be performed, but the verification effort is primarily focused on performing proofs.  Unfortunately, proof-based approaches tend not to answer the question as to whether implementations have {\em additional functionality} that is not covered by requirements.  Testing, despite its faults, can measure {\em structural coverage} to find untested functionality and can find some errors by {\em serendipity}, in which problems not directly related to the requirement under test are exposed.  Therefore, in formal verification approaches, it is even more important that requirements be complete.
 
+\mike{Does this belong back in the preliminaries section??}
+
 In general, specification completeness can be defined with
 regard to the notion of coverage. In fact, the way that coverage
 is formalized plays a key part in the strength/effectiveness of
@@ -289,7 +291,7 @@ we were interested in the number of models in the benchmark for which
 \mustalg\ resulted in the sets not equal to an MIVC (i.e. models for which
 \mustalg\ did not preserve provability).
 Obviously properties are provable by 100\% of the IVCs computed by \ucalg\ (and \ucbfalg).
-As for the \mustalg\ algorithm, the properties of 290 models in the benchmarks were not provable by the output of \mustalg\. In practice, for larger models, \mustcov\ is more likely not to maintain provability,
+As for the \mustalg\ algorithm, the properties of 290 models in the benchmarks were not provable by the output of \mustalg. In practice, for larger models, \mustcov\ is more likely not to maintain provability,
  and since more than half of the models are small, 43\% may still not reveal the actual degree
  to which \mustcov\ underapproximates the covered parts of a model.
   The notion of proof preservation is appealing because it allows a concrete demonstration to the user of the irrelevance of portions of the implementation.  The IVC coverage notion also allows, in cases where there are multiple minimal satisfying sets, insight on multiple ways by which the model meets a requirement.

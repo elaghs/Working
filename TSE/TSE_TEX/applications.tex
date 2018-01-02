@@ -1,12 +1,14 @@
 \section{Applications}
 \label{sec:apps}
-As described in Section \ref{sec:intro}, IVCs can facilitate several engineering tasks in different phases of a system development process. 
-Safety-critical systems, like an airborne software, must undergo a rigorous software development process usually governed by particular standards, such as DO-178C for Software Considerations in Airborne Systems and Equipment Certification \cite{DO178C} and DO-333 for Formal Methods Supplement to DO-178C and DO-278A \cite{DO333}. 
+As described in Section \ref{sec:intro}, IVCs can facilitate several engineering tasks in different phases of a system development process.
+\iffalse 
+Safety-critical systems, like an airborne software, must undergo a rigorous software development process usually governed by particular standards, such as DO-178C for Software Considerations in Airborne Systems and Equipment Certification \cite{DO178C} and DO-333 for Formal Methods Supplement to DO-178C and DO-278A \cite{DO333}.
 DO-178C proposes a rigorous software development process that starts with an abstract requirements artifact that is iteratively refined into a software designs, source code, and finally, object code, and a set of {\em objectives} that should be met by critical avionics software.  Two of the key tenets of this process are traceability and adequacy; that is, each refinement of an artifact must be traceable to the artifact if was derived from. Further, each refinement must be shown not to introduce functionality not present in the artifact from which it was derived (adequacy). For example, DO-178C objectives A-3.6 (traceability of high-level requirements to system requirements) and A-4.6 (traceability of software design to high-level requirements) specifically require applicants to demonstrate bi-directional traceability.
 
 DO178C currently uses a variety of metrics to determine adequacy of requirements, but much of the effort involves code-level testing.  Test suites are derived from requirements and used to test the software and measured using different structural coverage test metrics.  If code-level test suites do not achieve full coverage, then an analysis is performed to determine whether there are missing requirements and test cases.  The kind of structural coverage required (e.g., statement, branch, MCDC) for adequate testing is driven by the criticality of the software in question.
 
 The utility of the IVCs are being evaluated by Rockwell Collins on a pilot project for both traceability and adequacy checking \cite{lucas17}. Previously, bi-directional traceability between artifacts involved tedious manual peer review to determine that requirements were adequate and that additional functionality was not introduced in the implementation model. IVCs offer automation to satisfy the DO178C objectives related to traceability and adequacy, which is a very important use in providing certifications. This section describes how IVCs can be employed for traceability and adequacy checking.
+\fi 
 
 \subsection{Automatic Proof-Based Traceability}
 

@@ -26,7 +26,7 @@
 \newcommand{\mis}{\textit{MIS}}
 \newcommand{\mcs}{\textit{MCS}}
 
-Given a transition system which satisfies a safety property $P$, we
+Given a transition system that satisfies a safety property $P$, we
 want to know which parts of the system are necessary for satisfying
 the safety property. One possible way of asking this is, ``What is the
 most general version of this transition system that still satisfies
@@ -63,7 +63,7 @@ conjuncts of $T$. When a top-level conjunct $T_i$ is removed from $T$, we write 
   $\ivc(P, S) \wedge \forall T_i \in S.~ (I, S\setminus\{ T_i \}) \nvdash P$.
 \end{definition}
 
-Note that, given $(I, T) \vdash P$, $P$ always has at least one \mivc, and it may also have many distinct \mivc s corresponding to different proof paths. To capture the latter, the \emph{all \mivc s ($AIVC$)} relation has been introduced in \cite{Murugesan16:renext}.
+Note that, given $(I, T) \vdash P$, $P$ always has at least one \mivc, and it may also have many distinct {\mivc}s corresponding to different proof paths. To capture the latter, the \emph{all \mivc s ($AIVC$)} relation has been introduced in \cite{Murugesan16:renext}.
 \begin{definition}{\emph{All \mivc s ($AIVC$):}}
     \label{def:allivcs}
     Given $(I, T) \vdash P$, $AIVC(P)$ is the set of all \mivc s for $P$:

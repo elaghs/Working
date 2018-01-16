@@ -13,7 +13,7 @@ Then, we are interested in examining the {\em efficacy} and {\em efficiency} of 
 %
 Therefore, we investigate the following research questions:
 \begin{itemize}
-  \item \textbf{RQ1:} How expensive is it to compute IVCs?  For this question we examine the cost of the \ucalg ~and \ucbfalg ~algorithms, which find a single approximately minimal and guaranteed minimal IVC, as well as the \aivcalg ~algorithm for determining all minimal IVCs.
+  \item \textbf{RQ1:} How expensive is it to compute IVCs?  For this question we examine the cost of the \ucalg ~and \ucbfalg ~algorithms, that find a single approximately minimal and guaranteed minimal IVC,respectively, as well as the \aivcalg ~algorithm for determining all minimal IVCs.
   \item \textbf{RQ2:} How is the verification time of the \aivcalg ~algorithm affected by the baseline proof time and the number of IVCs that can be found for a property?
    \item \textbf{RQ3:} How close to minimal are the IVCs computed by \ucalg\ as opposed to the (guaranteed minimal) \ucbfalg\ and the \emph{minimum} IVC computed by \aivcalg ?  How do the sizes of IVCs compare to static slices of the model?
  % \item \textbf{RQ4:} How large are the IVCs produced by the \aivcalg\ algorithm
@@ -27,13 +27,13 @@ Therefore, we investigate the following research questions:
 
 \subsection{Experimental Setup}
 
-Our experiments are conducted on a set of benchmarks containing 660 Lustre models, including all of the benchmark models yielding a valid result (530 in total) from~\cite{Hagen08:FMCAD, piskac2016} and 130 industrial models yielding valid results derived from \cite{hilt2013} and other sources \cite{piskac2016, NFM2015:backes}.  \mike{Is this still true for the ``new'' benchmark models?} \ela{well, the new benchmark from Cesare's paper also contains industrial cases. but I don't think any of the academic ones are large... although first you need to say which model is industrial}
+Our experiments are conducted on a set of benchmarks containing 660 Lustre models, including all of the benchmark models yielding a valid result (530 in total) from~\cite{Hagen08:FMCAD, piskac2016} and 130 industrial models yielding valid results derived from \cite{hilt2013} and other sources \cite{piskac2016, NFM2015:backes}.  
 Most of the academic benchmark models are small (10kB or less, with 6-40 equations) and include a range of hardware benchmarks and software problems involving counters that are difficult to solve inductively.
-The industrial models are much larger; for example, each 80 models from \cite{hilt2013} contain over 600 equations and are each $\geq$80kB in size. The benchmark includes 2 models from NASA Quad-redundant Flight Control System (QFCS)~\cite{NFM2015:backes}: the Flight Control System (FCS) with 5259 Lustre equations and the Flight Control Computer (FCC) with 10969 equations.
+The industrial models are much larger; for example, each 80 of the models from \cite{hilt2013} contain over 600 equations and are each $\geq$80kB in size. The benchmark includes 2 models from the NASA Quad-redundant Flight Control System (QFCS)~\cite{NFM2015:backes}: the Flight Control System (FCS) with 5259 Lustre equations and the Flight Control Computer (FCC) with 10969 equations.
 
 We selected only benchmark problems consisting of a Lustre model with
 properties that \texttt{JKind} could prove with a 3-hour timeout.
-For each test model, we computed \aivcalg, \ucalg, and \ucbfalg ~algorithms in a configuration with the \texttt{Z3} solver and the ``fastest'' mode of \texttt{JKind} (which involves running the $k$-induction and PDR engines in parallel and terminating when a solution is found). The experiments were run on an  Intel(R) i5-4690, 3.50GHz, 16 GB memory machine running Linux, and are available at~\cite{expr}.%\footnote{The benchmarks, tools, and experimental results are available on \cite{expr}.}
+For each test model, we computed \aivcalg, \ucalg, and \ucbfalg ~algorithms in a configuration with the \texttt{Z3} solver and the ``fastest'' mode of \texttt{JKind} (which involves running the $k$-induction and PDR engines in parallel and terminating when a solution is found). The experiments were run on an  Intel(R) i5-4690, 3.50GHz, 16 GB memory machine running Linux, and are available on~\cite{expr}.%\footnote{The benchmarks, tools, and experimental results are available on \cite{expr}.}
 
 
 

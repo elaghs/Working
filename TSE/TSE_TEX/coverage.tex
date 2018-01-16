@@ -2,9 +2,6 @@ For critical systems, it has been argued that formal methods
 %, involving formalized requirements and proofs of implementation correctness,
 should be applied to gain higher assurance than is possible with testing~\cite{Miller10:CACM,Rushby09:SEFM,Hardin09:Security}.  For these approaches, testing may still be performed, but the verification effort is primarily focused on performing proofs.  Unfortunately, proof-based approaches tend not to answer the question as to whether implementations have {\em additional functionality} that is not covered by requirements.  Testing, despite its faults, can measure {\em structural coverage} to find untested functionality and can find some errors by {\em serendipity}, in which problems not directly related to the requirement under test are exposed.  Therefore, in formal verification approaches, it is even more important that requirements be complete.
 
-\mike{Does this belong back in the preliminaries section??}
-\ela{I think it would be better if we don't merge these with the background. If we put these things in the background, the reader may just feel there are too many irrelevant/useless formalizations in the beginning... but still if you'd like, I could merge them}
-
 In general, specification completeness can be defined with
 regard to the notion of coverage. In fact, the way that coverage
 is formalized plays a key part in the strength/effectiveness of
@@ -33,7 +30,7 @@ We assume each element $T_i \in T$ has a set of possible mutations associated wi
 
 \noindent Note that without loss of generality, we consider a single property $P$, which can be viewed as the conjunction of all the properties of the model.
 
-The state of the art of mutation-based coverage can be found in \cite{chockler2010coverage}, where a design is considered as a net-list with nodes of types {\small \texttt{\{AND, INVERTER, REGISTER, INPUT\}}}.
+The state of the art of mutation-based coverage can be found in Chockler \textit{et al.} \cite{chockler2010coverage}, where a design is considered as a net-list with nodes of types {\small \texttt{\{AND, INVERTER, REGISTER, INPUT\}}}.
 Each mutant design changes the type of a single node to {\small \texttt{INPUT}}. When property $\phi$ satisfied by the original net-list fails on the mutant design, it is said that a mutant is discovered for $\phi$. Then, the coverage metric for $\phi$ is defined as the fraction of the discovered mutants, based on which the coverage of a set of properties is measured as the fraction of mutants discovered by at least one property.
 To decrease the cost of computation, coverage analysis is performed at several stages; first, all the nodes that do not appear in the resolution proof of a given property are marked as \emph{not-covered}, and the rest of the nodes are marked as \emph{unknown}. Then, for the unknown nodes, the basic mutation check is performed: if a corresponding mutant design violates the property, it will be considered as \emph{covered}.
 
@@ -87,7 +84,7 @@ Using the notions of $MAY$ and $MUST$, we can introduce additional coverage metr
 \end{definition}
 
 The $\maycov$ notion aims to deal with the fact that a property $P$ may have
-several distinct \mivc s. In such cases, \ivccov\ only looks at an arbitrary \mivc\
+several distinct {\mivc}s. In such cases, \ivccov\ only looks at an arbitrary \mivc\
 that may contain a subset of $MAY(P)$, which means, depending on
 which \mivc\ it considers, every time it may report a different part of $MAY(P)$
 as uncovered. However, \maycov\ resolves this issue reporting the entire set of $MAY(P)$ as covered, which also leads to higher coverage scores.  \mustcov\ takes the opposite view, considering a model element as covered only if it affects all the proofs of $P$.

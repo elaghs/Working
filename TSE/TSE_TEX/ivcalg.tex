@@ -41,7 +41,7 @@ minimal.
 \end{proof}
 
 This algorithm has two problems. First, checking if a safety property
-holds is undecidable in general thus the algorithm may never terminate
+holds is undecidable in general, thus, the algorithm may never terminate
 even when the safety property is easily provable over the original
 transition system. Second, this algorithm is very inefficient since it
 attempts to re-prove the property multiple times.
@@ -242,12 +242,12 @@ the property $x \Rightarrow P$ if and only if $(I, T)\vdash P$.
 Therefore, $S$ is minimal if and only if $(I, T)\nvdash P$.
 \end{proof}
 
-When minimality is very important, we can combine \bfalg\ and \ucalg\ into
+When minimality is a matter of concern, we can combine \bfalg\ and \ucalg\ into
 a single algorithm which aims to more efficiently determine minimality.  The
 hybrid algorithm, \ucbfalg\ (Algorithm \ref{alg:ucbf}), consists of running \ucalg\ to generate an
 initial nearly minimal IVC which is then run through \bfalg\ to
 attempt to achieve minimality.   For sequential model checking problems with infinite theories, neither \bfalg\ or \ucbfalg\ is guaranteed to terminate, so our implementations simply time out after a set threshold (discussed in more detail in the implementation Section~\ref{sec:impl}).  If no proof can be found within a certain time threshold after removing a model element, we declare that element necessary to the proof. In Section~\ref{sec:experiment} we show that in practice our algorithm is nearly
-minimal and much more efficient than the brute-force approach. 
+minimal and much more efficient than the brute-force approach.
 
 \begin{algorithm}
   \SetKwInOut{Input}{input}

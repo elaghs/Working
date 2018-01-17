@@ -63,8 +63,8 @@ conjuncts of $T$. When a top-level conjunct $T_i$ is removed from $T$, we write 
   $\ivc(P, S) \wedge \forall T_i \in S.~ (I, S\setminus\{ T_i \}) \nvdash P$.
 \end{definition}
 
-Note that, given $(I, T) \vdash P$, $P$ always has at least one \mivc, and it may also have many distinct {\mivc}s corresponding to different proof paths. To capture the latter, the \emph{all \mivc s ($AIVC$)} relation has been introduced in \cite{Murugesan16:renext}.
-\begin{definition}{\emph{All \mivc s ($AIVC$):}}
+Note that, given $(I, T) \vdash P$, $P$ always has at least one \mivc, and it may also have many distinct {\mivc}s corresponding to different proof paths. To capture the latter, the \emph{all {\mivc}s ($AIVC$)} relation has been introduced in \cite{Murugesan16:renext}.
+\begin{definition}{\emph{All {\mivc}s ($AIVC$):}}
     \label{def:allivcs}
     Given $(I, T) \vdash P$, $AIVC(P)$ is the set of all \mivc s for $P$:
     $$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  MIVC(P, S)\} $$

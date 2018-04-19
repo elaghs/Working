@@ -1,0 +1,193 @@
+\chapter{Proposed Approach}
+\label{ch:prop}
+The idea of inductive validity cores was introduced in Chapter \ref{ch:intro}.
+This idea is applicable to the context of symbolic model checking using inductive proof methods. The idea is, after proving the correctness of a given property, to extract a minimal portion of the system (model) necessary for the proof of the property. In other words, we would like to determine why the property is satisfied by the system. Since this information is obtained from the inductive proofs, we call it \emph{inductive} validity core. With minimal IVCs, we are able to abstract away the part of the system irrelevant to the proof of the property.
+
+This chapter, first, mentions some required background, then provides a formal description of the IVC notion. Using this formalization, we explain how IVCs can be used in traceability and adequacy checking.
+
+\section{Background}
+
+\newcommand{\satisfies}{\vdash_{\!\!s}}
+\newcommand{\nsatisfies}{\nvdash_{\!\!s}}
+\newcommand{\bool}[0]{\mathit{bool}}
+\newcommand{\reach}[0]{\mathit{R}}
+\newcommand{\ite}[3]{\mathit{if}\ {#1}\ \mathit{then}\ {#2}\ \mathit{else}\ {#3}}
+\newcommand{\ivc}{\textit{IVC}}
+\newcommand{\mivc}{\textit{MIVC}}
+
+This section presents formalizations of transition systems, inductive validity cores, and background information on mutation-based coverage metrics.  Although we focus the formalism below on safety properties, the approach is able to handle liveness properties through reduction to safety properties, as is performed by, e.g., K-liveness.
+
+Given a state space $U$, a transition system $(I,T)$ consists of an
+initial state predicate $I : U \to \bool$ and a transition step
+predicate $T : U \times U \to \bool$. We define the notion of
+reachability for $(I, T)$ as the smallest predicate $\reach : U \to
+\bool$ which satisfies the following formulas:
+\begin{gather*}
+  \forall s.~ I(u) \Rightarrow \reach(u) \\
+  \forall u, u'.~ \reach(u) \land T(u, u') \Rightarrow \reach(u')
+\end{gather*}
+A safety property $P : U \to \bool$ is a state predicate that holds on a transition system $(I, T)$ if it holds on all
+reachable states, i.e., $\forall u.~ \reach(u) \Rightarrow P(u)$,
+written as $\reach \Rightarrow P$ for short. When this is the case, we
+write $(I, T)\vdash P$. We assume the transition relation has the structure of a top-level conjunction. This assumption gives us a structure that we can easily manipulate. Given $T(u, u') = T_1(u, u') \land \cdots \land T_n(u, u')$ we will write $T = T_1 \land \cdots \land T_n$ for short.
+By further abuse of notation,
+$T$ is identified with the set of its top-level conjuncts. Thus, $x \in
+T$ means that $x$ is a top-level conjunct of $T$, and $S
+\subseteq T$ means all top-level conjuncts of $S$ are top-level
+conjuncts of $T$. When a top-level conjunct $x$ is removed from $T$, it is written as $T \setminus \{x\}$.
+
+
+%\begin{definition}{\emph{Inductive Validity Core:}}
+%  \label{def:ivc}
+%  Given $(I, T)\vdash P$, $S \subseteq
+%  T$ is an {\em Inductive Validity Core} for $P$
+%  \emph{iff} $(I, S) \vdash P$.
+%\end{definition}
+%
+%In examining provability, we are interested in {\em minimal} sets that satisfy a property $P$; tracing a property to the entire model is not particularly enlightening.
+\section{Inductive Validity Cores}
+
+\begin{definition}{\emph {Inductive Validity Core (\ivc):}}
+  \label{def:ivc}
+  $S \subseteq T$ for $(I, T)\vdash P$ is an Inductive Validity Core,
+  denoted by $\ivc(P, S)$, iff $(I, S) \vdash P $.
+\end{definition}
+
+In examining provability, we are interested in minimal sets
+that satisfy a property P; tracing a property to the entire model
+is not particularly enlightening.  Fortunately, \ivc s have
+the following monotonicity property: given $(I, T)\vdash P$, $\forall S_1 \subseteq S_2 \subseteq T$. $IVC(P, S_1) \Rightarrow IVC(P, S_2)$.  We next introduce the notion of {\em minimal} inductive validity cores.
+
+\begin{definition}{\emph{Minimal Inductive Validity Core (\mivc):}}
+  \label{def:minimal-ivc}
+  $S \subseteq T$ is a minimal Inductive Validity Core,
+  denoted by $\mivc(P, S)$, iff ~$\ivc(P, S) \wedge \forall T_i \in S.~ (I, S\setminus\{ T_i \}) \nvdash P$.
+\end{definition}
+
+Note that given $(I, T) \vdash P$, $P$ always has at least one \mivc , which implies \mivc s are not necessarily unique.
+For example, take $I = a \land b$, $T = a' \land b'$, and $P = a \lor
+b$. Then both $\{a'\}$ and $\{b'\}$ are \mivc s for $(I, T)\vdash P$. To capture this fact, the \emph{all \mivc s ($AIVC$)} relation has been introduced \cite{Murugesan16:renext}.
+$$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  \mivc(P, S)\} $$
+%In the example in Figure \ref{fig:asw}, as visualized in part (b),
+%$AIVC ({\tt P}) = \{\{{\tt P}, {\tt c2}, {\tt c3}\}, \{{\tt P}, {\tt x}, {\tt c3}\}\}$.
+\noindent
+
+ %We adapt the recent work by Liffiton et al. \cite{marco2016fast} from the generation of MUSes from UNSAT-cores to all IVCs for inductive model checking.  This requires changing the underlying mechanisms that are used to construct candidate solutions and also changing the structure of the proof of correctness.  In addition, we demonstrate that the approach can terminate with all minimal IVCs even if the witness generator only generates approximately minimal IVCs (utilizing a ``fast''  algorithm for a single IVC computation).
+
+
+\section{Traceability}
+Given {\em all} proofs of a particular property, we are able to categorize the model elements based on \mivc ~and
+$AIVC$ relations for $P$:
+
+\begin{itemize}
+\item $MUST (P) = \bigcap AIVC(P)$
+\item $MAY(P) = (\bigcup AIVC (P)) \setminus MUST (P)$
+\item $IRR(P) = T \setminus (\bigcup AIVC (P))$
+\end{itemize}
+
+\noindent This categorization helps to identify the role and relevance of each design element in satisfying a property. Function $MUST$ specifies the parts of the model absolutely necessary for the property satisfaction.  Any change to these parts will affect provability of the property. On the other hand, any single element in $MAY (P)$, may be modified without affecting satisfaction of $P$(though modifying multiple elements may require re-proof). The $IRR$ denotes model elements that are irrelevant to the validity of $P$.
+
+The $AIVC$ set improves understanding of how a change in the requirement will affect the target artifacts and vice versa. While the $AIVC$ of a requirement gives a clear picture of various ways a requirement is satisfied by the system, the categorization of target artifacts helps precisely assess and plan when and where the changes have to be implemented. The $MUST$ elements are those target artifacts that are highly likely to change with any change in the requirement, whereas not all $MAY$ elements may need to be changed.
+
+If a requirement has elements only in its $MAY$ set, that is if $MUST$ set is empty
+($MUST(r) = \emptyset$), it indicates that the requirement has been (intentionally or unintentionally) implemented in independent ways, such as fault tolerant systems. For such requirements, one has to carefully analyze and decide if the target artifacts in all or one disjoint set needs to be changed. These analysis could be performed either from the perspective of one or all requirements of the system.
+
+From the target artifact side, this categorization helps analyze the impact of changes to the artifact. Suppose we decide to change a target artifact in the $MAY$ set for a requirement. While one might think that it is safe to change this artifact since it does not affect that requirement's satisfaction, an examination of the $AIVC$ sets of other requirements helps identify if it is indeed safe to change that artifact. If it is present in the $MUST$ set for another requirement, then a change to this artifact will definitely impact the other requirement. However, if it is in the $MAY$ sets for all the requirements, then it is clearly safe to change. Hence, this categorization helps us to assess critical dependencies between the target artifacts and the satisfaction of requirements and thus enables a precise bi-directional impact analysis of a change.
+
+Complete traceability can assist in tailoring verification and validation in systems. For instance, if several requirements have a certain target artifact in their $MUST$ set, say an particular assumption, it reveals the importance of focusing V\&V attention on that artifact. Along the same lines, for a system with a complex architecture (components that each have functionality) such as  system of systems, this categorization helps identify components that is critical to satisfy most requirements. This categorization helps plan verification strategies.
+
+\section{Coverage Metrics in Formal Verification}
+
+Mutations for hardware are discussed in~\cite{chockler2010coverage,Kupferman:2006:SCF,kupferman_theory_2008}.  In most of this work, the hardware model is formalized as an and-inverter-graph net-list, a graph representation of circuits in which vertices are \{\andnode, \invnode\} gates or memory elements (registers) and edges are connections between gates (signals).  Formally, A net-list $N$ is a directed graph $(V_N,E_N, \tau_N)$ where $V_N$ is a finite set of vertices, $E_N \subseteq V_N \times V_N$ is the set of directed edges and $\tau_N : V_N \rightarrow \{$\andnode, \invnode, \regnode, \inpnode$\}$ maps a node to its type, where \andnode\ is an ``and'' gate, \invnode\ is an inverter, \regnode\ is a register, and \inpnode\ is a primary input.  The in-degree of a vertex of type \andnode\ is at least two, of type \invnode\ and \regnode\ is exactly one and of type \inpnode\ is zero. Any cycle in $N$ must contain at least one \regnode\ node~\cite{chockler2010coverage}.
+
+Given this representation, it is possible to discuss mutations of a single vertex: either stuck-at-zero, stuck-at-one, or nondeterministic.  This mutation is performed by changing the vertex to \mutnode, where \mutnode\ can be a ``fresh'' input for \emph{non-deterministic mutations}, or fixed to 0 or 1 for stuck-at mutations. Formally the semantics of a mutant net-list is defined as a new labeling function:
+\[ \tau^{v}_{N}(u) = \begin{cases}
+    \tau(v) & \textrm{ if $v \neq u$} \\
+    \textrm{\mutnode}   & \textrm{ if $v = u$}
+\end{cases}  \]
+\noindent
+%To mutate a vertex $v_i$, a  multiplexer is added to $N$. Then, the  edges  of  the  net-list are modified such  that  the  tails  of  all  the edges directed from
+%$v_i$ are changed to the output of the multiplexer, which replaces
+%$E_N$ with a new set of edges $E^{v_i}_M$ in the mutated net-list.
+Let  $N = (V_N,E_N, \tau_N)$ be the original net-list; to mutate a vertex $v_i$ using $\tau^{v_i}_{N}$, the  edges that had tails pointing to $v_i$ are removed,
+ which replaces $E_N$ with a new set of edges $E^{v_i}_M$ in the mutated net-list.
+When property $P$ satisfied by $N$ fails on the mutant net-list $(V_N, E^{v_i}_N, \tau^{v_i}_{N})$, which is obtained from the \emph{non-deterministic} mutation of $v_i$, it is said that a mutant is discovered for $P$ (or $v_i$ is covered by $P$).
+We assume a function $TR : N \rightarrow T$ that returns the corresponding transition relation of a net-list.
+Given this representation, and the initial state $I$, we can define nondeterministic coverage as follows:
+
+\begin{definition} {\emph{Nondeterministic coverage (\nondetcov) ~\cite{chockler2010coverage}.} }
+\label{def:non-det}
+Given $N = (V_N,E_N, \tau_N)$,
+$v_i \in V_N$ is covered by property $P$ \emph{iff} $v_i \in \nondetcov (P)$, where
+$\nondetcov (P) = \{ v_i~|~ v_i \in V_N \wedge (I, TR(N)) \vdash P \wedge (I, TR((V_N, E^{v_i}_N, \tau^{v_i}_{N}))) \nvdash P \}$.
+\end{definition}
+Using  $\nondetcov$, the coverage score of specification $P$ is computed by
+\[
+   \frac{ | \nondetcov (P) |}{|V_N|}
+\]
+
+
+We propose a new approach for measuring property completeness based on proof rather than mutation.  We first define notation, then describe different possible metrics given a set of {\em minimal proofs}.%\footnote{Section~\ref{sec:impl} describes how these proofs are discovered in practice.}
+%\subsection{Coverage and Minimal Proofs}
+%Alternatively, we can consider using the proofs themselves as a mechanism for determining adequacy of requirements.
+
+\begin{definition} {\emph{IVC coverage (\ivccov):}} \\
+\label{def:coverage-justi}
+Given $S \in AIVC(P)$, $T_i$ is covered by $P$ via $S$ \emph{iff} $T_i \in S$.
+%Given $S \in AIVC(P)$, $T_i \in T$ is covered by $P$ \emph{iff} $T_i \in S$,
+%denoted by $T_i \in \ivccov (P, S)$
+\end{definition}
+
+%For the sake of simplicity, we refer to the coverage function
+%formalized in Definition \ref{def:coverage-justi} as \ivccov\.
+%
+We call Definition \ref{def:coverage-justi} a \emph{proof-preserving} metric because, with a set of the model elements marked as covered by \ivccov, $P$ is provable.
+%\footnote{\noindent ~Throughout the paper, when a coverage metric is justifiable, like \ivccov, we say that it preserves provability of the property.}
+%Thus, the coverage score for \ivccov\ is often higher than the score for \nondetcov.
+The coverage score for \ivccov\ can be calculated with: $$\frac{|S|}{|T|}$$
+%Note that because minimal proofs are not unique, there are several possible coverage scores.
+Because $P$ may have multiple \mivc s,  \ivccov\ metric can lead to various scores that belong to the following set:
+\[
+\{~\frac{ |S|}{|T|}~|~S \in AIVC(P)~\}
+\]
+
+\noindent Note that if an \mivc ~contains all model elements (i.e., the model is {\em completely covered}), then there is only one possible \mivc , so in this case there is no diversity of scores.
+Using the notions of $MAY$ and $MUST$, we can introduce additional coverage metrics, which will be part of our research.
+
+Now we focus on the relationship between non-deterministic mutation-based coverage and proof-based metrics. In Chockler et. al. \cite{chockler2010coverage}, each mutant design changes the type of a single node to \inputnode .
+Given a suitable encoding of the netlist, assigning a ``fresh'' input is an isomorphic operation to simply removing a $T_i$ from $T$. The mapping is as follows: the net-list becomes a conjunction
+of equations, where each vertex becomes a variable $v_i \in U$, and where each non-input vertex becomes an assignment equation $T_i \in T$.
+For example, given an AND-vertex $v_i$ with three input edges from other vertexes $\{v_a, v_b, v_c\}$, we would define an equation $T_i \in T$ of the form $(v_i = (v_a \wedge v_b \wedge v_c))$.
+%
+%As the variable is no longer constrained by a defining equation, it is effectively an %input.
+
+Given this encoding, we can reframe the non-deterministic coverage proposed in \cite{chockler2010coverage} as follows:
+
+\begin{definition} {\emph{Nondeterministic coverage (alternate specification) (\nondetcovalt) ~\cite{chockler2010coverage}.} }
+\label{def:non-det-2}
+$T_i \in T$ is covered by property $P$ \emph{iff} $T_i \in \nondetcovalt (P)$, where
+$\nondetcovalt (P) = \{T_i~|~ (I, T) \vdash P \wedge (I, T \setminus \{T_i\}) \nvdash P\}$.
+\end{definition}
+
+\ivccov\ and \nondetcovalt\ are equivalent when all elements within the model are covered: if all model elements are MUST elements, then there can only be one \mivc , and this \mivc ~uses all of the model elements.   In the implementation and experiments, we will focus on the \ivccov\ and \nondetcovalt\ metrics.  Both metrics are fairly rigorous and can be computed reasonably efficiently. We use the \nondetcovalt\  to benchmark our proof-based metrics against the state-of-the-art mutation based coverage.
+
+
+
+
+
+
+
+
+
+
+%
+% Mathematically, if we think of the argument as a proof in which the requirement is the claim, then the set of support is the set of axioms (or clauses) that were necessary to prove the claim, and the trace links are means to associate the claim to those clauses. Such proofs are not, in general, unique, and often there are multiple sets of clauses that could be used to construct a proof.  The existing traceability literature does not discuss multiple alternative satisfaction arguments or sets of trace links for one system design.
+%
+%In our opinion, in the context of satisfaction arguments and {\em satisfied by} trace links, it is beneficial to distinguish between trace links to \textit{``a''} set of support (containing the clauses needed to make a satisfaction argument) vs. \textit{``the''} sets of support (all clauses needed to make all possible satisfaction arguments).
+%
+%
+%Establishing trace links to all sets of support (all MIVCs), that we call \emph{complete} traceability, provides insight into the elements of the set of support---elements that are necessary for any satisfaction argument, elements that are needed for some satisfaction arguments, and elements that do not contribute to the satisfaction of the requirement of interest.  We categorize the elements as \emph{Must}, \emph{May} and \emph{Irrelevant} support elements for each requirement.
+%
+%
+%While precise and complete traceability is beneficial but has been considered impossible to establish in practice~\cite{stravsunskas2002traceability}, our hypothesis is that, in the realm of model based development (MBD), it can be achieved in an automated and efficient manner. We base our hypothesis on the fact that in MBD, the artifacts - both models and requirements - are captured using some form of formal notation and sophisticated tools automatically verify if the requirements are satisfied in the models. We believe that the mathematics underlying the verification tools can be leveraged to establish traceability. In this section, we briefly explain some of the prior work that lead us to pursue our hypothesis.
+

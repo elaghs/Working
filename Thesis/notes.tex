@@ -1,0 +1,43 @@
+\section{INDUCTIVE VALIDITY CORES}
+\label{sec:ivc}
+
+\newcommand{\ivc}{\textit{IVC}}
+\newcommand{\mivc}{\textit{MIVC}}
+
+
+
+The idea behind finding an IVC for a given property $P$ \cite{Ghass16} is based on inductive proof methods used in SMT-based model checking, such as $K$-induction and IC3/PDR \cite{NFM2012:KaGaTiWh, amla2005analysis, Een2011:PDR}. Generally, an IVC computation technique aims to determine, for any subset $S \subseteq T$, whether $P$ is provable by $S$. Then, a minimal subset that satisfies $P$ is seen as a minimal proof explanation called a minimal Inductive Validity Core.
+
+\begin{definition}{\emph{Inductive Validity Core (\ivc)\cite{Ghass16}:}}
+  \label{def:ivc}
+  $S \subseteq T$ for $(I, T)\vdash P$ is an Inductive Validity Core,
+  denoted by $\ivc(P, S)$, iff $(I, S) \vdash P $.
+\end{definition}
+
+\begin{definition}{\emph{Minimal Inductive Validity Core (\mivc) \cite{Ghass16}:}}
+  \label{def:minimal-ivc}
+  $S \subseteq T$ is a minimal Inductive Validity Core,
+  denoted by $\mivc(P, S)$, iff ~$\ivc(P, S) \wedge \forall T_i \in S.~ (I, S\setminus\{ T_i \}) \nvdash P$.
+\end{definition}
+
+
+Note that, given $(I, T) \vdash P$, $P$ always has at least one \mivc, and it may also have many distinct \mivc s corresponding to different proof paths. To capture the latter, the \emph{all \mivc s ($AIVC$)} relation has been introduced in \cite{Murugesan16:renext}.
+\begin{definition}{\emph{All \mivc s ($AIVC$):}}
+    \label{def:allivcs}
+    Given $(I, T) \vdash P$, $AIVC(P)$ is an association to all \mivc s for $P$:
+    $$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  MIVC(P, S)\} $$
+\end{definition}
+
+
+
+As you can see, distinct IVCs may have common elements.
+The intersection of all \mivc s is called the \emph{must} set for $P$.
+And, the other elements constitute a \emph{may} set for $P$ \cite{Murugesan16:renext}:
+\begin{itemize}
+  \item   $MUST (P) = \bigcap AIVC(P)$
+  \item  $MAY(P) = (\bigcup AIVC (P)) \setminus MUST(P)$
+  \item $IRR(P) = T \setminus (\bigcup AIVC(P))$
+\end{itemize}
+\noindent Given property $P$, functions $MUST$, $MAY$, and $IRR$ partition top-level conjuncts of $T$ (model elements) into three disjoint sets \emph{must}, \emph{may}, and \emph{irrelevant}, respectively. $IRR(P)$ returns portion of the model irrelevant to the satisfaction of $P$, which in our running example is $\varnothing$.
+We will make use of this intuition in Section~\ref{subsec:minimality}.
+

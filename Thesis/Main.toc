@@ -1,0 +1,40 @@
+\contentsline {chapter}{Acknowledgements}{i}{chapter*.1}
+\contentsline {chapter}{Abstract}{ii}{chapter*.1}
+\contentsline {chapter}{List of Tables}{v}{chapter*.3}
+\contentsline {chapter}{List of Figures}{vi}{chapter*.4}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Objectives and Significance}{2}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Use in Research \& Systems Development}{5}{subsection.1.1.1}
+\contentsline {section}{\numberline {1.2}Contributions}{6}{section.1.2}
+\contentsline {section}{\numberline {1.3}Chapters}{8}{section.1.3}
+\contentsline {chapter}{\numberline {2}Preliminaries}{9}{chapter.2}
+\contentsline {section}{\numberline {2.1}Safety Verification}{9}{section.2.1}
+\contentsline {chapter}{\numberline {3}Related Work}{12}{chapter.3}
+\contentsline {section}{\numberline {3.1}UNSAT cores and Minimal UNSAT Subformulae}{12}{section.3.1}
+\contentsline {section}{\numberline {3.2}Proof/Lemma Minimization}{13}{section.3.2}
+\contentsline {section}{\numberline {3.3}Conformance}{14}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Commercial Model Checkers}{16}{subsection.3.3.1}
+\contentsline {section}{\numberline {3.4}Slicing}{16}{section.3.4}
+\contentsline {section}{\numberline {3.5}Traceability}{17}{section.3.5}
+\contentsline {section}{\numberline {3.6}Requirements Adequacy}{18}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Coverage and Mutations}{19}{subsection.3.6.1}
+\contentsline {section}{\numberline {3.7}Vacuity Detection}{22}{section.3.7}
+\contentsline {section}{\numberline {3.8}Safety Standards}{22}{section.3.8}
+\contentsline {chapter}{\numberline {4}Inductive Validity Cores}{26}{chapter.4}
+\contentsline {section}{\numberline {4.1}Algorithms for computing an inductive validity core}{29}{section.4.1}
+\contentsline {section}{\numberline {4.2}Algorithm for computing all minimal inductive validity cores}{35}{section.4.2}
+\contentsline {section}{\numberline {4.3}Illustration}{40}{section.4.3}
+\contentsline {chapter}{\numberline {5}Implementation}{42}{chapter.5}
+\contentsline {chapter}{\numberline {6}Experiment}{44}{chapter.6}
+\contentsline {subsection}{\numberline {6.0.1}Experimental Setup}{45}{subsection.6.0.1}
+\contentsline {section}{\numberline {6.1}Experimental Results}{45}{section.6.1}
+\contentsline {subsubsection}{RQ1}{45}{section*.17}
+\contentsline {subsubsection}{RQ2}{47}{section*.19}
+\contentsline {subsubsection}{RQ3}{47}{section*.20}
+\contentsline {chapter}{\numberline {7}Applications}{50}{chapter.7}
+\contentsline {section}{\numberline {7.1}Automatic Proof-Based Traceability}{50}{section.7.1}
+\contentsline {section}{\numberline {7.2}Coverage Analysis and Requirements Completeness}{51}{section.7.2}
+\contentsline {section}{\numberline {7.3}Discussion}{60}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Granularity}{62}{subsection.7.3.1}
+\contentsline {chapter}{\numberline {8}Conclusions}{65}{chapter.8}
+\contentsline {chapter}{References}{67}{chapter*.29}

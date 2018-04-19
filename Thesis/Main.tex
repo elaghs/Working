@@ -1,0 +1,224 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DEFINE DOCUMENT TYPE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt, oneside]{mnthesis}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% IMPORT PACKAGES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{epic,eepic,units}
+\usepackage{hyperref}
+\usepackage{url}
+
+% From:
+% http://tex.stackexchange.com/questions/12703/how-to-create-fixed-width-table-columns-with-text-raggedright-centered-raggedlef
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+%\usepackage{longtable}
+%\usepackage{mathrsfs}
+%\usepackage{multirow}
+%\usepackage{bigstrut}
+%\usepackage{amssymb}
+%\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{paralist}
+\usepackage[stable]{footmisc}   %Lets us use footnotes in section headers.
+% \usepackage[style={square, numbers}]{natbib}
+% \usepackage{amsmath}
+% \usepackage{amssymb}
+% \usepackage{amsthm}
+% \usepackage{caption}
+% \usepackage[vertfit]{breakurl}
+\usepackage{listings, multicol}
+\usepackage{enumitem}
+\usepackage{subcaption}  % subfigures
+\usepackage{bibentry}
+% \usepackage[section, numberedsection=autolabel, nonumberlist]{glossaries}
+
+%Dealing with dutch names:
+% http://tex.stackexchange.com/questions/40747/bibtex-handling-of-the-dutch-van-name-prefix-with-natbib
+\DeclareRobustCommand{\VAN}[2]{#2}
+\usepackage {graphicx}
+\usepackage[cmex10]{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{amsthm}
+\usepackage{algorithmic}
+\usepackage{array}
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+\usepackage{eqparbox}
+%\usepackage[tight,normalsize]{subfigure}
+%\usepackage[font=normalsize]{caption}
+%\usepackage{tabularx,colortbl}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{flushend}
+\usepackage{cite}
+\usepackage{amsmath}
+%\usepackage[font=footnotesize]{subfig}
+%\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage{fixltx2e}
+\usepackage[ruled, vlined, linesnumbered]{algorithm2e}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{xspace}
+\theoremstyle{definition}
+\hyphenation{op-tical net-works semi-conduc-tor}
+\newcommand{\mkeyword}[1]{\mbox{\texttt{#1}}}
+\DeclareMathOperator{\kuop}{uop}
+\DeclareMathOperator{\kbop}{bop}
+\DeclareMathOperator{\kite}{ite}
+\DeclareMathOperator{\kpre}{pre}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\ktrue}{true}
+\DeclareMathOperator{\kfalse}{false}
+\DeclareMathOperator{\kselect}{select}
+\DeclareMathOperator{\ran}{range}
+\newcommand{\lbb}{[\![}
+\newcommand{\rbb}{]\!]}
+\newcommand{\expr}{\phi}
+\newcommand{\exprS}{\Phi}
+\newcommand{\bool}[0]{\mathit{bool}}
+\newcommand{\reach}[0]{\mathit{R}}
+\newcommand{\ite}[3]{\mathit{if}\ {#1}\ \mathit{then}\ {#2}\ \mathit{else}\ {#3}}
+
+\definecolor{gold}{rgb}{0.90,.66,0}
+\definecolor{dgreen}{rgb}{0,0.6,0}
+\newcommand{\mike}[1]{\textcolor{red}{#1}}
+\newcommand{\fixed}[1]{\textcolor{purple}{#1}}
+\newcommand{\andrew}[1]{\textcolor{green}{#1}}
+\newcommand{\ela}[1]{\textcolor{blue}{#1}}
+\newcommand{\stateequiv}{\equiv_{s}}
+\newcommand{\traceequiv}{\equiv_{\sigma}}
+
+\newcommand{\bfalg}{\texttt{\small{IVC\_BF}}}
+\newcommand{\ucalg}{\texttt{\small{IVC\_UC}}}
+\newcommand{\ucbfalg}{\texttt{\small{IVC\_UCBF}}}
+\newcommand{\mustalg}{\texttt{\small{IVC\_MUST}}}
+
+\newcommand{\nondetcov}{\text{\sc Nondet-Cov}}
+\newcommand{\nondetcovalt}{\text{\sc Nondet-Cov$^{*}$}}
+\newcommand{\ivccov}{\text{\sc IVC-Cov}}
+\newcommand{\maycov}{\text{\sc May-Cov}}
+\newcommand{\mustcov}{\text{\sc Must-Cov}}
+\newcommand{\allcov}{\text{\sc Model-Cov}}
+\newcommand{\mutcov}{\text{\sc Mutant-Cov}}
+
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{theorem}{Theorem}
+\newtheorem{note}{Note}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ADDITIONAL PREABLE MATERIAL
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{
+    colorlinks,
+%     %Set the link colors.
+%     citecolor=black,
+%     filecolor=blue,
+%     linkcolor=blue,
+%     urlcolor=blue
+    %To turn off color, comment out the block above and uncomment the block
+    % below.
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+% Suppresses inline citation page numbers if they are defined using \cite.
+    \let\oldcite\cite
+    \renewcommand\cite[2][]{\oldcite{#2}}
+
+% \setcounter{secnumdepth}{5}
+
+% \input{glossary}
+% \makeglossaries
+
+% \input{my_definitions}
+
+% FROM:
+% http://tex.stackexchange.com/questions/4297/how-to-place-a-full-citation-in-the-abstract-using-bibtex
+% \newcommand{\ignore}[1]{}
+% \newcommand{\nobibentry}[1]{{\let\nocite\ignore\bibentry{#1}}}
+% % apsrev entries in the text need definitions of these commands
+% \newcommand{\bibfnamefont}[1]{#1}
+% \newcommand{\bibnamefont}[1]{#1}
+\nobibliography*
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% STRUCTURE SET-UP
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\apriori}{\textit{a~priori} }
+\newcommand{\Apriori}{\textit{A~priori} }
+
+
+\linespread{1.3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\input{title}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CONTENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Input the sectons here using \input{fileName}
+%%%
+%\input{draft3}
+% \input{Abstract}
+\input{Introduction}
+\input{Background}
+%\input{Proposal}
+\input{related}
+\input{ivc}
+\input{illust}
+
+\input{impl}
+%
+\input{experiments}
+
+\input{applications}
+
+\input{disc}
+
+\input{conclusion}
+% % \input{RelatedWork}
+% % \input{ModelDevelopment}
+% % \input{Discussion}
+%\input{Conclusion}
+
+% \printglossary[title={LIST OF TERMS}, toctitle={List of Terms}]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WORKS CITED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% When you need a works cited section, uncomment this and update the name of the
+%   file.
+%%%
+    \bibliographystyle{abbrv}
+%     \bibliographystyle{abbrvnat}
+\bibliography{noAbbreviations,citations}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% APPENDICIES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% If you need an appendix, uncomment the following lines and add sections.
+%%%
+%\appendix
+%\input{sectionName}
+
+\end{document}

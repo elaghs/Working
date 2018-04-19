@@ -1,0 +1,62 @@
+\section{Illustration}
+\label{sec:illust}
+To illustrate the \aivcalg ~algorithm we use the example presented in Section \ref{sec:example} with $P = ({\small \texttt{on\_p}})$ .
+%As inspired by the MARCO algorithm in \cite{marco2016fast}, we visualize $\mathcal{P}(\mathcal{A})$ as a lattice in a Hasse diagram (Fig.~\ref{fig:lattice1}) to demonstrate the progress of the algorithm. As you can see, each level of the lattice contains sets with the same size linked to sets that are their immediate
+%supersets (upper level regions) and subsets (lower level regions). Note that the power set is viewed as a Boolean formula, so each member in the lattice shows
+% variable with $true$.
+For better description, we view $T$ as an ordered set of its top-level conjuncts; i.e. $T = \{$ {\small \texttt{a1\_below, a2\_below, a1\_above, a2\_above, below, above\_hyst, doi\_on, d1, d2}} $\}$.
+The algorithm starts with creating activation literals for each $T_i \in T$. Let the ordered set of Boolean variables $\{ a_1, \ldots , a_9 \}$ be the corresponding literals to the elements of $T$ (e.g. $\actlit ({ \small \texttt{a1\_below}}) = a_1$ and $\actlit ({\small \texttt{d2}}) = a_9$). Then, line 3 initializes $map$ with $\top$.
+
+In the first iteration of the \texttt{while} loop, since $map$ is
+empty, it is satisfiable, and a model for it can be any subset of
+literals. So obviously, the first maximal model of $map$ contains all
+the literals, which means, in line~\ref{alg:aivc:assignm}, $M = \{a_1,
+\ldots, a_9\}$, and in line~\ref{alg:aivc:assigns}, $S = T$. Since $S$
+is adequate for $P$, the \getivc ~module is called in
+line~\ref{alg:aivc:getivc}. Suppose the returned \mivc\ by this function
+is $S' = \{ { \small \texttt{a1\_below},~\texttt{below},
+  ~\texttt{doi\_on}}\}$; this set is added to $A$ in
+line~\ref{alg:aivc:addset}, and thus it comes to adding a new clause
+to $map$ (line~\ref{alg:aivc:aadd}), which makes $map = (\neg a_1 \vee
+\neg a_5 \vee \neg a_7)$. As discussed, this constraint
+marks all the supersets of $S'$ as blocked and prunes them off the
+search space.
+
+%For the second iteration, $map$ is still satisfiable,
+%so the algorithm gets to find a maximal model of it in line~\ref{alg:aivc:maxsat}. Suppose this time, the maximal model makes $M = \{a_1, \ldots, a_7\}$,
+%which leads to $S = T \setminus \{ {\small \texttt{on\_p}}\} $ in line~\ref{alg:aivc:assigns}.
+%Since $S$ is inadequate for $P$,
+%the algorithm jumps to line 12 updating
+%$map$ as $map \leftarrow map \wedge a_8$.
+%Adding this new clause removes all the subsets of
+%$T \setminus \{{\small \texttt{on\_p}}\}$
+%from the search space. Similarly, in the third iteration,
+%if the maximal model of $map$
+For the second iteration, $map$ is still satisfiable,
+so the algorithm gets to find a maximal model of it in line~\ref{alg:aivc:maxsat}. Suppose this time, the maximal model makes $M = \{a_1, \ldots, a_4, a_6, \ldots, a_9\}$, then $S = T \setminus \{ {\small \texttt{below}}\} $ will be another inadequate set that makes $map$ become
+$map \leftarrow map \wedge a_5$
+in line~\ref{alg:aivc:iadd}.
+
+Suppose, in the third iteration, the maximal model leads to $M = \{a_2, \ldots, a_9\}$ and
+$S = T \setminus \{ {\small \texttt{a1\_below}}\} $ in lines~\ref{alg:aivc:assignm} and~\ref{alg:aivc:assigns}.
+Since this $S$ is adequate for $P$, \getivc ~computes a new \mivc\ in line~\ref{alg:aivc:getivc}.
+Let the new \mivc\ be $S' = \{ {\small \texttt{a2\_below},~\texttt{below}, ~\texttt{doi\_on}}\}$; after adding this set to $A$,
+it is time to constrain $map$ by a new clause in line~\ref{alg:aivc:addset},
+which results in $map \leftarrow map \wedge (\neg a_2 \vee \neg a_5 \vee \neg a_7)$.
+
+After these iterations, $map$ is still satisfiable, and the maximal model is
+ $S = T \setminus \{ { \small \texttt{a1\_below}}, { \small \texttt{a2\_below}}\}$ in line~\ref{alg:aivc:assigns}.
+In this case, $S$ is inadequate, so we update $map$ as
+$map \leftarrow map \wedge (a_1 \vee a_2)$ (line~\ref{alg:aivc:iadd}). After adding this new clause to $map$,
+all the subsets of $T \setminus \{ { \small \texttt{a1\_below}}, {\small \texttt{a2\_below}}\}$
+will be blocked. The algorithm continues similar to the fourth iteration leading to $S$ (in line~\ref{alg:aivc:assigns}) and $map$ (in line~\ref{alg:aivc:iadd}) to be as
+ $S = T \setminus \{ {\small  \texttt{doi\_on}}\}$ and $map \leftarrow map \wedge a_7$.
+
+Finally, after the fifth iteration, $map$ becomes \unsat and the algorithm terminates.
+Note that $MIS$es and $IVC$s may be discovered in different orders from what explained here. The order by which sets are explored is
+quite dependent on the maximal model returned in line~\ref{alg:aivc:maxsat} as well as the \mivc returned in line~\ref{alg:aivc:getivc} because there could be several distinct maximal models (\mis es) and \mivc s. For this example with a $|T| = 9$ and $|\mathcal{P}(T)| = 2^9$, a brute force approach of power set exploration needs to look into 512  cases. However, the \aivcalg ~algorithm only explored 5 cases to cover the entire power set. %Depending on the order by which \mivc s and \mis es are discovered, the total cases to explore by the algorithm may change.
+% All in all, it is fair to say the \aivcalg ~algorithm is  linear in the size of $T$.
+%This issue could affect the performance of the algorithm as well.
+
+
+

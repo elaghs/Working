@@ -1,0 +1,278 @@
+
+
+\begin{algorithm}[t]
+  \SetKwInOut{Input}{input}
+  \SetKwInOut{Output}{output}
+  \Input{$(I, T)\vdash P$}
+  \Output{\mivc for $(I, T)\vdash P$}
+  \BlankLine
+  $S \leftarrow T$ \\
+  \For{$x \in S$} {
+    \If{$(I, S\setminus\{x\}) \vdash P$}{
+      $S \leftarrow S\setminus \{x\}$
+    }
+  }
+  \Return{S}
+\caption{\bfalg: Brute-force algorithm for computing a minimal IVC}
+\label{alg:naive}
+\end{algorithm}
+
+Lemma \ref{lem:ivc-monotonic} gives us a simple, brute-force algorithm for computing
+a minimal inductive validity core, Algorithm \ref{alg:naive} ~(\bfalg). The
+resulting set of this algorithm is obviously an inductive validity
+core for $(I, T)\vdash P$. The following lemma shows that it is also
+minimal.
+
+\begin{lemma}
+  The result of Algorithm~\ref{alg:naive} is a minimal inductive validity core
+  for $(I, T)\vdash P$.
+\end{lemma}
+\begin{proof}
+  Let the result be $S'$. Suppose towards contradiction that $S'$ is not
+  minimal. Then there is an inductive validity core $M$ with $M
+  \subset S'$. Take $x \in S'\setminus M$. Since $x \in S'$ it must be
+  that during the algorithm $(I, S\setminus\{x\})\vdash P$ is not true
+  for some set $S$ where $S' \subseteq S$. We have $M \subset S'
+  \subseteq S$ and $x\not\in M$, thus $M \subseteq S\setminus \{x\}$.
+  Since $M$ is an inductive validity core,
+  Lemma~\ref{lem:ivc-monotonic} says that $S\setminus \{x\}$ is an
+  inductive validity core, and so $(I, S\setminus\{x\})\vdash P$. This
+  is a contradiction, thus $S'$ must be minimal.
+\end{proof}
+
+This algorithm has two problems. First, checking if a safety property
+holds is undecidable in general, thus, the algorithm may never terminate
+even when the safety property is easily provable over the original
+transition system. Second, this algorithm is very inefficient since it
+attempts to re-prove the property multiple times.
+
+\begin{algorithm}[t]
+  \SetKwInOut{Input}{input}
+  \SetKwInOut{Output}{output}
+  \Input{$P$ with invariants $Q$ is $k$-inductive for $(I, T)$}
+  \Output{\ivc for $(I, T)\vdash P$}
+  \BlankLine
+  $k \leftarrow \mink(T, P \land Q)$ \\
+  $R \leftarrow \reduceinv_k(T, Q, P)$ \\
+  \Return{$\minivc_k(I, T, R)$}\\
+\caption{\ucalg: Efficient algorithm for computing a nearly minimal inductive validity core from UNSAT cores}
+\label{alg:ivc}
+\end{algorithm}
+
+The key to a more efficient algorithm is to make better use of the
+information that comes out of model checking. In addition to knowing
+that $P$ holds on a system $(I, T)$, suppose we also know something
+stronger: $P$ with the invariant set $Q$ is $k$-inductive for $(I,
+T)$. This gives us the broad structure of a proof for $P$ which allows
+us to reconstruct the proof over a modified transition system.
+However, we must be careful since this proof structure may be more
+than is actually needed to establish $P$. In particular, $Q$ may
+contain unneeded invariants which could cause the inductive validity
+core for $P \land Q$ to be larger than the inductive validity core for
+$P$. Thus before computing the inductive validity core we first try to
+reduce the set of invariants to be as small as possible. This
+operation is expensive when $k$ is large so as a first step we
+minimize $k$. This is the motivation behind
+Algorithm \ucalg~(\ref{alg:ivc}).
+
+\begin{figure}
+\begin{align*}
+  &\bq_1(I, T, P) \equiv \forall s_0.~ I(s_0) \Rightarrow P(s_0) \\
+%%%
+  &\bq_{k+1}(I, T, P) \equiv \bq_k(I, T, P) \land~ \\
+%
+  &\hspace{10pt}\left(\forall s_0, \ldots, s_k.~ I(s_0) \land T(s_0,
+  s_1) \land \cdots \land T(s_{k-1}, s_k) \Rightarrow P(s_k)\right)
+  \\[5pt]
+%%%
+  &\iq_k(T, Q, P) \equiv (\forall s_0, \ldots, s_k.~\\
+%
+  &\hspace{10pt} Q(s_0) \land T(s_0,
+  s_1) \land \cdots \land Q(s_{k-1}) \land T(s_{k-1}, s_k) \Rightarrow
+  P(s_k)) \\[5pt]
+%%%
+  &\fq_k(I, T, P) \equiv \\
+%
+  &\hspace{10pt}\bq_k(I, T, P) \land \iq_k(T, P, P)
+\end{align*}
+\caption{$k$-induction queries}
+\label{fig:queries}
+\end{figure}
+
+To describe the details of Algorithm~\ref{alg:ivc} we define queries
+for the base and inductive steps of $k$-induction
+(Fig.~\ref{fig:queries}). Note, in $\iq(T, Q, P)$ we separate the
+assumptions made on each step, $Q$, from the property we try to show
+on the last step, $P$. We use this separation when reducing the set of
+invariants.
+
+We assume that our queries are checked by an SMT solver. That is, we
+assume we have a function $\checksat(F)$ which determines if $F$, an
+existentially quantified formula, is satisfiable or not. In order to
+efficiently manipulate our queries, we assume the ability to create
+{\em activation literals} which are simply distinguished Boolean
+variables. The call $\checksat(A, F)$ holds the activation literals in
+$A$ true while checking $F$. When $F$ is unsatisfiable, we assume we
+have a function $\unsatcore()$ which returns a minimal subset of the
+activation literals such that the formula is unsatisfiable with those
+activation literals held true. In practice, SMT solvers often return a
+non-minimal set, but we can minimize the set via repeated calls to
+\checksat. We assume both \checksat\ and \unsatcore\ are always
+terminating.
+
+\begin{algorithm}[t]
+  $k' \leftarrow 1$ \\
+  \While{$\checksat(\neg\iq_{k'}(T, P, P)) = \sat$} {
+    $k' \leftarrow k' + 1$ \\
+    }
+  \Return{$k'$} \\
+\caption{$\mink(T, P)$}
+\label{alg:minimize-k}
+\end{algorithm}
+
+The function $\mink(T, P)$ is defined in
+Algorithm~\ref{alg:minimize-k}. This function assumes that $P$ is
+$k$-inductive for $(I, T)$. It returns the smallest $k'$ such that $P$
+is $k'$-inductive for $(I, T)$. We start checking at $k' = 1$ since
+smaller values of $k'$ are much quicker to check than larger ones. The
+checking must eventually terminate since $P$ is $k$-inductive. We also
+only check the inductive query since we know the base query will be
+true for all $k' \leq k$. Although we describe each query in
+Algorithm~\ref{alg:minimize-k} separately, in practice they can be
+done incrementally to improve efficiency.
+
+\begin{algorithm}[t]
+  $R \leftarrow \{P\}$ \\
+  Create activation literals $A = \{a_1, \ldots, a_n\}$ \\
+  $C \leftarrow (a_1 \Rightarrow Q_1) \land \cdots \land (a_n \Rightarrow Q_n)$ \\
+  \While{$true$} {
+    $\checksat(A, \neg\iq_k(T, C, R))$ \\
+    \If{$\unsatcore() = \emptyset$}{
+      \Return{R}
+    }
+    \For{$a_i \in \unsatcore()$}{
+      $R \leftarrow R \cup \{Q_i\}$ \\
+      $C \leftarrow C \setminus \{a_i \Rightarrow Q_i\}$ \\
+    }
+  }
+\caption{$\reduceinv_k(T, \{Q_1, \ldots, Q_n\}, P)$}
+\label{alg:reduce-invariants}
+\end{algorithm}
+
+The function $\reduceinv_k(T, \{Q_1, \ldots, Q_n\}, P)$ is defined in
+Algorithm~\ref{alg:reduce-invariants}. This function assumes that $P
+\land Q_1 \land \cdots \land Q_n$ is $k$-inductive for $(I, T)$. It
+returns a set $R \subseteq \{P, Q_1, \ldots, Q_n\}$ such that $R$ is
+$k$-inductive for $(I, T)$ and $P \in R$. Like \mink, this function
+only checks the inductive query since each element of $R$ is an
+invariant and therefore will always pass the base query. A significant
+complication for reducing invariants is that some invariants may
+mutually need each other, even though none of them are needed to prove
+$P$. Thus in Algorithm~\ref{alg:reduce-invariants} we find a minimal
+set of invariants needed to prove $P$, then we find a minimal set of
+invariants to prove those invariants, and so on. We terminate when no
+more invariants are needed to prove the properties in $R$.
+Algorithm~\ref{alg:reduce-invariants} is guaranteed to terminate since
+$R$ gets larger in every iteration of the outer loop and it is bounded
+above by $\{P, Q_1, \ldots, Q_n\}$. As with
+Algorithm~\ref{alg:minimize-k}, we describe each query in
+Algorithm~\ref{alg:reduce-invariants} separately, though in practice
+large parts of the queries can be re-used to improve efficiency.
+
+This iterative lemma determination does not guarantee a minimal
+result. For example, we may find $P$ requires just $Q_1$, that $Q_1$
+requires just $Q_2$, and that $Q_2$ does not require any other
+invariants. This gives the result $\{P, Q_1, Q_2\}$, but it may be
+that $Q_2$ alone is enough to prove $P$ thus the original result is
+not minimal. Also note, we do not care about the result of \checksat,
+only the \unsatcore that comes out of it. Since $P \land Q_1 \land
+\cdots \land Q_n$ is $k$-inductive, we know the \checksat call will
+always return \unsat.
+
+\begin{algorithm}[t]
+  Create activation literals $A = \{a_1, \ldots, a_n\}$ \\
+  $T \leftarrow (a_1 \Rightarrow T_1) \land \cdots \land (a_n \Rightarrow T_n)$ \\
+  $\checksat(A, \neg\fq_k(I, T, P))$ \\
+  $R \leftarrow \emptyset$ \\
+  \For{$a_i \in \unsatcore()$}{
+    $R \leftarrow R \cup \{T_i\}$
+  }
+  \Return{R}
+\caption{$\minivc_k(I, \{T_1, \ldots, T_n\}, P)$}
+\label{alg:minimize-ivc}
+\end{algorithm}
+
+The function $\minivc_k(I, \{T_1, \ldots, T_n\}, P)$ is defined in
+Algorithm~\ref{alg:minimize-ivc}. This function assumes that $P$ is
+$k$-inductive for $(I, T)$. It returns a minimal inductive validity
+core $R \subseteq \{T_1, \ldots, T_n\}$ such that $P$ is $k$-inductive
+for $(I, R)$. It is trivially terminating. Since
+Algorithms~\ref{alg:minimize-k}, \ref{alg:reduce-invariants}, and
+\ref{alg:minimize-ivc} are terminating, Algorithm~\ref{alg:ivc} is
+always terminating.
+
+Our full inductive validity core algorithm in Algorithm~\ref{alg:ivc}
+does not guarantee a minimal inductive validity core. One reason is
+that \reduceinv does not guarantee a minimal set of invariants. A
+larger reason is that we only consider the invariants that the
+algorithm is given at the outset. It is possible that there are other
+invariants which could lead to a smaller inductive validity core, but
+we do not search for them. The
+following theorem shows that minimality checking is at least as hard
+as model checking and therefore undecidable in many settings.
+
+\begin{theorem}
+\label{thm:minimal-hard}
+Determining if an IVC is minimal is as hard as model checking.
+\end{theorem}
+\begin{proof}
+Consider an arbitrary model checking problem $(I, T)\vdash^? P$ where
+$P$ is not a tautology. We will construct an IVC for a related model
+checking problem which will be minimal if and only if $(I, T)\nvdash
+P$. Let $x$ and $y$ be fresh variables. Construct a transition system
+with initial predicate $I\land \neg x$ and transition predicate $(x'
+\Rightarrow y') \land ((y' \Rightarrow P') \land T)$. The constructed
+system clearly satisfies the property $x \Rightarrow P$. Thus $S = \{x'
+\Rightarrow y', (y' \Rightarrow P') \land T\}$ is an IVC. $S$ is
+minimal if and only if neither $\{x' \Rightarrow y'\}$ nor $\{(y'
+\Rightarrow P') \land T\}$ is an IVC. Since $x$ and $y$ are fresh and
+$P$ is not a tautology, $\{x' \Rightarrow y'\}$ is not an IVC. Since
+$x$ and $y$ are fresh, $\{(y' \Rightarrow P') \land T\}$ is an IVC for
+the property $x \Rightarrow P$ if and only if $(I, T)\vdash P$.
+Therefore, $S$ is minimal if and only if $(I, T)\nvdash P$.
+\end{proof}
+
+When minimality is important, we can combine \bfalg\ and \ucalg\ into
+a single algorithm which aims to more efficiently determine minimality.  The
+hybrid algorithm, \ucbfalg\ (Algorithm \ref{alg:ucbf}), consists of running \ucalg\ to generate an
+initial nearly minimal IVC which is then run through \bfalg\ to
+attempt to achieve minimality.   For sequential model checking problems with infinite theories, neither \bfalg\ or \ucbfalg\ is guaranteed to terminate, so our implementations simply time out after a set threshold (discussed in more detail in the implementation Section~\ref{sec:impl}).  If no proof can be found within a certain time threshold after removing a model element, we declare that element necessary to the proof. In Section~\ref{sec:experiment} we show that in practice our algorithm is nearly
+minimal and much more efficient than the brute-force approach.
+
+\begin{algorithm}
+  \SetKwInOut{Input}{input}
+  \SetKwInOut{Output}{output}
+  \Input{$(I, T) \vdash P$}
+  \Output{Minimal IVC for $(I, T) \vdash P$}
+  \BlankLine
+  $S \leftarrow \ucalg((I, T) \vdash P)$ \\
+  \For{$x \in S$} {
+    \If{$(I, S\setminus\{x\}) \vdash P$}{
+      $S \leftarrow S\setminus \{x\}$
+    }
+  }
+  \Return{S}
+\caption{An abstract representation of \ucbfalg }
+\label{alg:ucbf}
+\end{algorithm}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main.tex"
+%%% End
+
+%%  LocalWords:  Lustre \emph{iff} TODO invariants Minimality BaseQuery IVC
+%%  LocalWords:  InductiveQuery FullQuery MinimizeK ReduceInvariants
+%%  LocalWords:  MinimizeIVC CheckSat UnsatCore UNSAT UC UCBF
+%%  LocalWords:  IndQuery MinimizeIvc minimality

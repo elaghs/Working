@@ -1,0 +1,177 @@
+
+
+\begin{definition}[Inadequacy] A set of conjuncts  $U \subseteq T$  is an \emph{inadequate} set for $(I, T) \vdash P$ iff $(I, U) \nvdash P$. Especially, $U \subseteq T$ is a \emph{Maximal Inadequate Set (MIS)} for $(I, T) \vdash P$ iff $U$ is inadequate and $\forall T_i \in (T \setminus U): \, (I, U \cup \{ T_i\}) \vdash P$.
+\end{definition}
+
+Inadequate sets are duals to inductive validity cores. Each $U \subseteq T$ is either inadequate set or an inductive validity core. In order to unify the notation, we   use notation \emph{inadequate} and \emph{adequate}. Note that especially minimal inductive validity cores can be thus called  minimal adequate sets.
+
+
+
+The first property used to improve the naive enumeration algorithm is the \emph{monotonicity} of  adequacy   with respect to the subset inclusion.
+
+
+The monotonicity allows  to determine status  of multiple subsets of $T$ while using only a single check for adequacy. For example, if a set $U \subseteq T$ is determined to be adequate, than all of its supersets are   adequate and do not need to be explicitly checked. Let     $\mathit{Sup}(U)$ and $\mathit{Sub}(U)$ denote the set of all supersets and subsets of $U$, respectively.
+
+Every algorithm for computing MIVCs has to determine status (i.e adequate or inadequate) of every subset of $T$.  In order to distinguish the subsets whose status is already known from those whose status is not known yet, we denote the former subsets as \emph{explored} subsets and the latter as \emph{unexplored} subsets. Moreover, we distinguish \emph{maximal} unexplored subsets:
+
+\vspace{-5pt}
+\begin{itemize}
+	\item $U_{max}$ is a \emph{maximal unexplored subset} of $T$ iff $U_{max} \subseteq T$, $U_{max}$ is unexplored, and each of its proper supersets is explored.
+\end{itemize}
+\vspace{-5pt}
+
+
+\begin{algorithm}[!t]
+\begin{small}
+\input{./algs/ivc_bf}
+\caption{A n\"aive shrinking algorithm }
+\label{shrink-procedure}
+\end{small}
+\end{algorithm}
+
+
+A straightforward way to find a (so far unexplored) MIVC of $T$ is to find an unexplored adequate subset $U \subseteq T$ and turn $U$  into an MIVC by a process called \emph{shrinking}.  A shrinking procedure iteratively attempts to remove elements from the set that is being shrunk, checking each new set for adequacy and keeping only changes that
+leave the set adequate. A n\"aive example is shown in Algorithm~\ref{shrink-procedure}.
+
+Ghassabani et al.~\cite{Ghass17AllIVCs} proposed an algorithm for MIVC enumeration which is based on the MUS enumeration algorithm MARCO~\cite{Liffiton2016}. The algorithm iteratively chooses maximal unexplored subsets and tests them for adequacy. Each maximal subset that is found to be adequate is then shrunk into a MIVC. This algorithm enumerates MIVCs in an online manner with a relatively steady rate of the enumeration. However, an evaluation of the algorithm shown that it is rather slow since the shrinking procedure can be extremely time consuming as each check for adequacy is in fact a model checking problem.
+
+Therefore, Ghassabani et al.~\cite{Ghass17AllIVCs} proposed another algorithm which, instead of computing MIVCs in on online manner,
+rather computes only \emph{approximately} minimal IVCs. In particular, it iteratively picks maximal unexplored subsets, checks them for adequacy, and turns the adequate subsets into approximately minimal IVCs using the approximation algorithm \texttt{IVC\_UC}~\cite{Ghass16}. \texttt{IVC\_UC} is able to identify IVCs which are often very close to actual MIVCs, yet cheap to compute. This enumeration algorithm computes approximately minimal IVCs, and identifies MIVCs at the very end of the computation.  An experimental evaluation shows that the latter algorithm computes all MIVCs much faster than the algorithm based on shrinking. However, it does not enumerate MIVCs online and thus on some benchmarks may produce no MIVCs within a given time limit.
+
+
+In this section, we propose a novel algorithm for online MIVC enumeration. The MIVCs are found using an improved shrinking procedure. Moreover, the algorithm uses a procedure \emph{grow}, which is a dual of the shrinking procedure. The algorithm also maintains the set \emph{Unexplored} of unexplored subsets.
+
+We can effectively use the set  \textit{Unexplored} for speeding up the shrinking procedure. When testing the set $U \setminus \{T_i\}$ (see line~2 in Algorithm~\ref{shrink-procedure}) we first check whether  $U \setminus \{T_i\}$ is still unexplored. If $U \setminus \{T_i\}$ is already explored, then its status is already known and no test for adequacy is needed.
+
+\subsection{Shrink Procedure}
+\label{sec:shrink}
+
+\iffalse
+We can effectively use the set  \textit{Explored} for speeding up the shrinking procedure. When testing the set $U \setminus \{T_i\}$ (see line 2 in Algorithm~\ref{shrink-procedure}) we first check whether  $U \setminus \{T_i\}$ is explored. If so, the status of  $U \setminus \{T_i\}$ is known and no test for adequacy is needed.
+\fi
+
+In the following observation, we specify which explored subsets can be used to speed up the shrinking procedure.
+
+
+\begin{observation}
+\label{observation:explored-property}
+Let $U_1, U_2$ be subsets of $T$ such that $U_1$ is explored, $U_2$ is unexplored, and $U_1 \subset U_2$. Then $U_1$ is inadequate  for $(I, T) \vdash P$ .\\
+Symetrically, if $U_1, U_2$ are subsets of $T$ such that $U_2$ is explored, $U_1$ is unexplored, and $U_1 \subset U_2$. Then $U_2$ is adequate  for $(I, T) \vdash P$ .
+\end{observation}
+
+\begin{proof}
+If $U_1$ is adequate, then all of its supersets are necessarily adequate. Thus, if $U_1$ is determined to be adequate, then not just $U_1$ but also all of its supersets becomes explored. Since $U_1$ is explored and $U_2$ is unexplored, then $U_1$ is necessarily an inadequate subset of $T$.
+\end{proof}
+
+In other words, during the shrinking procedure, we are guaranteed that whenever we find an explored set, this set is inadequate.
+Thus, as a further optimization in our algorithm we try to identify as many inadequate sets as possible before starting the shrinking procedure.
+The search for inadequate sets is done with the help  of the grow procedure.
+
+
+
+
+
+
+\subsection{Grow Procedure}\label{sec:grow}
+\begin{algorithm}[!t]
+\begin{small}
+\input{./algs/alg_grow_approximation}
+\caption{Approximate grow}
+\label{approx-grow}
+\end{small}
+\end{algorithm}
+
+Recall that if a set is determined to be inadequate then all of its subsets are necessarily also inadequate. Therefore, the larger is the set that is determined to be inadequate, the more inadequate sets are explored.  %(due to the monotonicity of adequacy).
+To identify inadequate sets as quickly as possible we search for maximal inadequate sets (MISes).
+
+In order to find a MIS, we can find an inadequate set $U \subset T$ and use a process called \emph{grow} which turns $U$ to a MIS for $(I,T) \vdash P$.
+The grow procedure iteratively attempts to add elements from $T \setminus U$ to $U$, checking each new set for adequacy and keeping only changes that leave the set inadequate. Same as in the case of shrink procedure, we can use the set $Explored$ to avoid checking sets whose status is already known.
+However, such grow procedure might still perform too many checks for adequacy and thus be very inefficient.
+
+
+Instead, we propose to use a different approach. Algorithm~\ref{approx-grow} shows a procedure that, given an inadequate set $U$ for $(I, T) \vdash P$, finds an \emph{approximately} maximal inadequate set.
+It first finds some maximal unexplored set $M$ such that $M \supseteq U$ and checks it for adequacy.
+If $M$ is inadequate, then it is necessarily a MIS
+(this is a straightforward consequence of Observation~\ref{observation:explored-property}) %\mike{Do you mean a maximal unexplored subset here (MUS, not MIS)?  Otherwise I don't see the consequence}.
+Otherwise, if $M$ is adequate then it is iteratively reduced until an inadequate set is found.
+
+In particular, whenever $M$ is found to be adequate, the approximative algorithm \texttt{IVC\_UC} by Ghassabani et al.~\cite{Ghass16} is used to find an approximately minimal IVC $M_{IVC}$ of $M$.  $M_{IVC}$ succinctly explains $M$'s adequacy. In order to turn $M$ into an inadequate set, it is reduced by one element from $M_{IVC} \setminus U$ and checked for adequacy. If $M$ is still adequate then the approximate growing procedure continues with a next iteration. Otherwise, if $M$ is inadequate, the procedure finishes.
+
+%\begin{proposition}
+Given an unexplored inadequate set $U$ for $(I,T) \vdash P$ and a set $\mathit{Unexplored}$ of unexplored subsets of $T$, Algorithm~\ref{approx-grow} returns an \emph{unexplored} inadequate subset $M$ of $T$.
+%\end{proposition}
+
+\begin{proof}
+Let us denote initial $M$ as $M_{init}$. Since $M_{init} \supseteq U$ and $M$ is recursively reduced only by elements that are not contained in $U$, then in every iteration holds that $U \subseteq M \subseteq M_{init}$. Since both $U, \, M_{init}$ are unexplored, then $M$ is necessarily also unexplored.
+\end{proof}
+
+\subsection{Solve Procedure}
+
+\begin{algorithm}[t]
+\begin{small}
+\input{./algs/solve}
+\caption{Solving algorithm}
+\label{alg:solve}
+\end{small}
+\end{algorithm}
+
+Determining whether a particular subset of elements $U \subset T$ can prove a property of interest $P$ is as hard as model checking~(\cite{Ghass16}, Theorem 1).  Thus, in the general case, determining whether a set of model elements is an MIVC may not be possible for model checking problems that are in general undecidable, such as those involving infinite theories.  We assume there is a function \CheckAdq that checks
+whether or not $P$ is provable for some $(I, U)$.  \CheckAdq can return {\sc Unknown}
+(after a user-defined timeout) as well as {\sc Adequate}
+or {\sc Inadequate}.  For a given set $U$, if our implementation is
+unable to prove the property, we conservatively assume that
+the property is falsifiable and set a global warning flag {\em approximateWarning} to the
+user that the results produced may be approximate.
+
+\begin{algorithm}[t!]
+\begin{small}
+\input{./algs/alg}
+\caption{The Grow-Shrink algorithm}
+\label{alg:allmivc}
+\end{small}
+\end{algorithm}
+
+
+\subsection{Complete Algorithm}
+In this section, we describe, how to combine the shrink and grow methods to form an efficient online MIVC enumeration algorithm. We call the algorithm Grow-Shrink algorithm.
+Since knowledge of (approximately) maximal inadequate subsets can be exploited to speed up the shrinking procedure, it might be tempting to first find all MISes.
+However, this is in general intractable since there can be up to exponentially many MISes (w.r.t. the size of $T$).
+Instead, we propose to alternate both the shrinking and growing procedures.
+Note that during shrinking, we might determine some subsets to be inadequate. Such subsets can be subsequently used as \emph{seeds} for growing.
+Dually, adequate subsets that are explored during growing can be later used as \emph{seeds} for the shrinking procedure.
+
+The pseudocode of our algorithm is shown in Algorithm~\ref{alg:allmivc}. The computation of the algorithm starts with an initialisation procedure \texttt{Init} which creates a global variable $\mathit{Unexplored}$ for maintaining the unexplored subsets and a global shrinking queue $\mathit{shrinkingQueue}$ for storing seeds for the shrinking procedure. Then the main procedure \texttt{FindMIVCs} of our algorithm is called.
+
+Procedure \texttt{FindMIVCs} works iteratively. In each iteration, the procedure picks a maximal unexplored subset $U_{max}$ and checks it for adequacy. If $U_{max}$ is inadequate, then $U_{max}$ and all of its subsets are marked as explored. Otherwise, if $U_{max}$ is adequate, then the algorithm \texttt{IVC\_UC}~\cite{Ghass16} is used to reduce $U_{max}$ into an approximately minimal IVC, and subsequently the procedure \texttt{Shrink} is used to shrink it into a MIVC.
+
+Procedure \texttt{Shrink} works as described in Section~\ref{sec:shrink}. However, besides shrinking the given set into a MIVC, the procedure has also another purpose. Every inadequate set that is found during the shrinking is stored in a queue $\mathit{growingQueue}$. At the end of the procedure, all of these inadequate sets are grown into approximately maximal inadequate sets using the procedure \texttt{Grow}.
+
+Procedure \texttt{Grow} turns a given inadequate set $V$ into an approximately maximal inadequate set $M$ as described in Section~\ref{sec:grow}. The resultant set and all of its subsets are marked as explored. Moreover, every adequate set found during the growing is marked as explored and enqueued into $\mathit{shrinkingQueue}$.
+The queue $\mathit{shrinkingQueue}$ is dequeued at the end of each iteration of the main procedure \texttt{FindMIVCs} and the sets that were stored in the queue are shrunk to MIVCs.
+
+
+We need to ensure that each result of the shrinking procedure is a \emph{fresh} MIVC, i.e. that each MIVC is produced only once.
+We shrink two kinds of inadequate sets in our algorithm: those that result from the inadequate maximal unexplored subsets, and those that are stored in $\mathit{shrinkingQueue}$. In the former case, we always shrunk an unexplored subset $U_{\mathit{IVC}}$ which guarantees that the resultant MIVC $U_{\mathit{MIVC}}$ is unexplored and thus fresh (if $U_{\mathit{MIVC}}$ is already explored, then $U_{\mathit{IVC}}$ would be necessarily also explored).
+However, in the latter case, all the sets stored in $\mathit{shrinkingQueue}$ are already explored. To guarantee that shrinking of the sets from $\mathit{shrinkingQueue}$ result only in fresh MIVCs, we maintain the following invariants of the queue:
+
+\begin{itemize}
+	\item[I1)] For each already produced MIVC $M$ holds that there is no $U$ in the queue such that $M \subseteq U$.
+	%\item[I2)] There are no duplicated sets in the queue (each set is presented only once).
+	\item[I2)] There are no two $U, V$ in the queue such that $U \subseteq V$.
+\end{itemize}
+
+To ensure that the invariants hold, we use the procedure \texttt{UpdateShrinking\-Queue} which given an adequate set $U$ removes from $\mathit{shrinkingQueue}$ all supersets of $U$. We call the procedure every time a MIVC is found and every time a set is added to the queue.
+
+\paragraph{Correctness:}
+The algorithm produces only the MIVCs found by the shrinking procedure and all of them are \emph{fresh}, i.e. produced only once. Only subsets whose status is known are removed from the set $\mathit{Unexplored}$, thus no MIVC is excluded from the computation. The algorithm terminates and all MIVCs are found since the size of $\mathit{Unexplored}$ is reduced after every iteration.
+		
+
+\subsection{Symbolic Representation of Unexplored Subsets}
+\label{sec:symbolic-representation}
+\input{symbolic_representation}
+
+
+
+
+
+ 

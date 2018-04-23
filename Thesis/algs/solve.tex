@@ -1,0 +1,12 @@
+\DontPrintSemicolon
+\SetKwFunction{Solve}{Solve}
+\SetKwFunction{CheckAdq}{CheckAdq}
+\SetKwProg{Fn}{Function}{:}{}
+
+\Fn{\Solve{$I$,$U$,$P$}}{
+$\mathit{res} \gets \CheckAdq(I, U, P)$\;
+\If{res = {\sc Unknown}}{
+    $\mathit{approximateWarning} \gets true$ \tcp*{a global variable}
+}
+\Return $(\mathit{res} = $ {\sc Adequate})\;
+}

@@ -9,8 +9,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{epic,eepic,units}
 \usepackage{hyperref}
-\usepackage{url}
-
+\usepackage{url}  
+%\usepackage{tikz}
+%\usetikzlibrary{arrows,shapes,positioning}
 % From:
 % http://tex.stackexchange.com/questions/12703/how-to-create-fixed-width-table-columns-with-text-raggedright-centered-raggedlef
 \usepackage{array}
@@ -108,6 +109,8 @@
 \newcommand{\allcov}{\text{\sc Model-Cov}}
 \newcommand{\mutcov}{\text{\sc Mutant-Cov}}
 
+\newtheorem{observation}{Observation}
+\renewcommand{\theobservation}{\arabic{observation}.}% #.
 
 \newtheorem{lemma}{Lemma}
 \newtheorem{definition}{Definition}

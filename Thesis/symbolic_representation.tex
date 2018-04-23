@@ -1,0 +1,24 @@
+Since there are exponentially many subsets of $T$, it is intractable to represent the set $\mathit{Unexplored}$ explicitly. Instead, we use a symbolic representation that is based on a well known isomorphism between finite power sets and Boolean algebras. We encode $T = \{T_1, T_2, \ldots , T_n \}$ by using a set of Boolean variables $X = \{x_1, x_2, \ldots , x_n \}$. Each valuation of $X$ then corresponds to a subset of $T$. This allows us to represent the set of unexplored subsets $\mathit{Unexplored}$ using a Boolean formula $f_{\mathit{Unexplored}}$ such that each model of $f_{\mathit{Unexplored}}$ corresponds to an element of $\mathit{Unexplored}$.
+The formula is maintained as follows:
+\begin{itemize}
+	\item[$\bullet$] Initially, $f_{\mathit{Unexplored}} = \mathit{True}$ since all of $\mathcal{P}(T)$ are unexplored.
+	
+	\smallskip
+	\item[$\bullet$] To remove an adequate set $U \subseteq T$ and all its supersets from the set \textit{Unexplored} we add to $f_{\mathit{Unexplored}}$ the clause  $\bigvee_{i: T_i \in U} \neg x_i$.
+
+	\smallskip
+	\item[$\bullet$] To remove an inadequate set $U \subseteq T$ and all its subsets from the set \textit{Unexplored} we add to $f_{\mathit{Unexplored}}$ the clause  $\bigvee_{i: T_i \not\in U} x_i$.
+\end{itemize}
+
+
+In order to get an element of $\mathit{Unexplored}$, we ask a SAT solver for a model of $f_{\mathit{Unexplored}}$. In particular, to get a maximal unexplored subset, we ask a SAT solver for a \emph{maximal model} of $f_{\mathit{Unexplored}}$. To get a maximal unexplored superset of $U \subseteq T$, we fix the truth assignment to the Boolean variables that correspond to elements in $U$ to $\mathit{True}$ and ask for a maximal model of $f_{\mathit{Unexplored}}$.
+
+%\begin{example}
+\label{ex:unex}
+Let us illustrate the symbolic representation on $T = \{ T_1, T_2, T_3 \}$. If  all subsets of $T$ are unexplored then $f_{\mathit{Unexplored}} = \mathit{True}$. If   $\{T_1, T_3 \}$ is classified as an MIVC and $\{T_1, T_2 \}$ as a inadequate set, then $f_{\mathit{Unexplored}}$ is updated to $\mathit{True} \wedge (\neg x_1 \vee \neg x_3) \wedge (x_3)$.
+%\end{example}
+
+
+%In order to get an element of $\mathit{Unexplored}$, we can ask a SAT solver for a model of $f_{\mathit{Unexplored}}$. However, our algorithm requires specific elements of $\mathit{Unexplored}$: maximal unexplored subsets (these correspond to maximal models), and elements that are supersets of some particular set.  One of the SAT solvers that can be used to obtain models corresponding to these specific elements is the solver miniSAT\cite{minisat}. In miniSAT,  the user can fix values of chosen variables and select a~default polarity of variables at decision points during solving.
+%For example, in order to find a maximal unexplored superset of $U \subseteq T$, we set the default polarity of variables during solving to $\mathit{True}$ and fix the truth assignment to the variables that correspond to elements in $U$ to $\mathit{True}$.
+

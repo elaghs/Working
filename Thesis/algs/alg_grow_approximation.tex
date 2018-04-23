@@ -1,0 +1,33 @@
+%\documentclass[]{article}
+%\usepackage[]{algorithm2e}
+%
+%\begin{document}
+%\begin{algorithm}
+
+\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+\SetKwFunction{getMIVCApproximation}{IVC\_UC}
+
+
+\DontPrintSemicolon
+
+\Input{$(I, T) \vdash P$}
+\Input{inadequate $U \subset T$ for $(I, T) \vdash P$}
+\Input{set $\mathit{Unexplored}$ of unexplored subsets of $T$}
+\Output{approximately maximal inadequate set for $(I, T) \vdash P$}
+
+	
+	$M \gets $ a maximal $M \in \mathit{Unexplored}$ such that $M \supseteq U$\;
+	\While{$(I, M) \vdash P$}{
+			$M_{\mathit{IVC}} \gets \getMIVCApproximation((I,M), P)$ \tcp*{gets approximately minimal IVC}
+			$T_i \gets$ choose $T_i \in (M_{\mathit{IVC}} \setminus U)$\;
+			$M \gets M \setminus \{ T_i \}$\;
+	}
+	
+	\Return $M$\;
+	
+%\end{algorithm}
+
+
+
+
+%\end{document}

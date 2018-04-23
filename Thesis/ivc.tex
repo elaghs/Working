@@ -135,5 +135,21 @@ Generally, an IVC computation technique aims to determine, for any subset $S \su
 
 
 \section{Algorithm for computing all minimal inductive validity cores}
+We propose two approaches for discovering all minimal inductive validity cores: online and offline.
+Fill more ...
+EDIT THIS:
+ In addition, the traceability information provided by MIVCs can be used to perform a variety of engineering analysis such as coverage analysis, robustness analysis, and vacuity detection.  The more MIVCs are identified, the more precisely such analyses can be performed.   Nevertheless, a full enumeration of all MIVCs is in general intractable due to the large number of possible model element sets.  The bottleneck of existing algorithms is that they are not guaranteed to emit minimal IVCs until the end of the computation, so returned results are not known to be minimal until all solutions are produced.
+
+In this paper, we propose an algorithm that identifies MIVCs in an \emph{online} manner (i.e., one by one) and can be terminated at any time.
+
+ In addition, the traceability information provided by MIVCs can be used to perform a variety of engineering analysis such as coverage analysis, robustness analysis, and vacuity detection.  The more MIVCs are identified, the more precisely such analyses can be performed.   Nevertheless, a full enumeration of all MIVCs is in general intractable due to the large number of possible model element sets.  The bottleneck of existing algorithms is that they are not guaranteed to emit minimal IVCs until the end of the computation, so returned results are not known to be minimal until all solutions are produced.
+
+In this paper, we propose an algorithm that identifies MIVCs in an \emph{online} manner (i.e., one by one) and can be terminated at any time.
+
 %\label{sec:allivcs}
+\subsection{Offline Algorithm for all MIVCs}
 \input{allivcs}
+
+\subsection{Online Algorithm for all MIVCs}
+mention this is a collaborative work with Jaroslav...
+\input{growshrink}

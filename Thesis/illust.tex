@@ -1,4 +1,5 @@
 \section{Illustration}
+\subsection{Offline AIVC}
 \label{sec:illust}
 To illustrate the \aivcalg ~algorithm we use the example presented in Section \ref{sec:example} with $P = ({\small \texttt{on\_p}})$ .
 %As inspired by the MARCO algorithm in \cite{marco2016fast}, we visualize $\mathcal{P}(\mathcal{A})$ as a lattice in a Hasse diagram (Fig.~\ref{fig:lattice1}) to demonstrate the progress of the algorithm. As you can see, each level of the lattice contains sets with the same size linked to sets that are their immediate
@@ -59,4 +60,27 @@ quite dependent on the maximal model returned in line~\ref{alg:aivc:maxsat} as w
 %This issue could affect the performance of the algorithm as well.
 
 
+\subsection{Online AIVC}
+\begin{figure}[t]
+\centering
+\scalebox{0.95}{
+\input{running_cube_unexplored}
+}
+\caption{The power set from the example execution of our algorithm.}
+\label{fig:running_cube}
+\end{figure}
+
+The following example explains the execution of our algorithm on a simple instance where the transition step predicate $T$ is given as a conjunction of five sub-predicates $\{T_1, T_2, T_3, T_4, T_5\}$. We do not exactly state what are the predicates and what is the safety property of interest. Instead, Figure~\ref{fig:running_cube} illustrates the power set of $\{T_1, T_2, T_3, T_4, T_5\}$ together with an information about adequacy of individual subsets. The subsets with solid green border are the adequate subsets, and the subsets with dashed red border are the inadequate ones. To save space, we encode subsets as bitvectors, for example the subset $\{T_1, T_2, T_4\}$ is written as 11010. There~are~three~MIVCs~in~this example: 00011, 01001, and 11010.
+
+We illustrate the first iteration of the main procedure \texttt{FindMIVCs} of our algorithm. Initially, all subsets are unexplored, i.e. $f_{\mathit{Unexplored}} = True$ and the queue $\mathit{shrinkingQueue}$ is empty. The procedure starts by finding a maximal unexplored subset and checking it for adequacy. In our case, $U_{\mathit{max}} = 11111$ is the only maximal unexplored subset and it is determined to be adequate. Thus, the algorithm \texttt{IVC\_UC} is used to compute an approximately minimal IVC $U_{\mathit{IVC}} = 01101$ which is then shrunk to a MIVC $01001$.
+
+During the shrinking, sets $00101$, $01001$, and $01000$ are subsequently checked for adequacy and determined to be inadequate, adequate, and inadequate, respectively. The set $01001$ is the resultant MIVC, thus the formula $f_{\mathit{Unexplored}}$ is updated to $f_{\mathit{Unexplored}} = \mathit{True} \wedge (\neg x_2 \vee \neg x_5)$. The other two sets, $00101$ and $01000$, are enqueued to the $\mathit{growingQueue}$ and
+grown at the end of the procedure.
+%at the end of the procedure \texttt{Shrink}, they are grown.
+
+We first grow the set $00101$. Initially, the procedure \texttt{Grow} picks $M = 10111$ as the maximal unexplored superset of $00101$, and checks it for adequacy. It is adequate and thus, an approximately minimal IVC $M_{\mathit{IVC}} = 00011$ is computed, enqueued to $\mathit{shrinkingQueue}$, and formula $f_{\mathit{Unexplored}}$ is updated to $f_{\mathit{Unexplored}} = \mathit{True} \wedge (\neg x_2 \vee \neg x_5) \wedge	(\neg x_4 \vee \neg x_5)$. Then, $M$ is (based on $M_{\mathit{IVC}}$) reduced to $M = 10101$ and checked for adequacy. It is found to be inadequate, thus formula $f_{\mathit{Unexplored}}$ is updated to $f_{\mathit{Unexplored}} = \mathit{True} \wedge (\neg x_2 \vee \neg x_5) \wedge	(\neg x_4 \vee \neg x_5) \wedge (x_2 \vee x_4)$, and the procedure terminates.
+
+The growing of the set $01000$ results into an approximately maximal inadequate subset $01110$. Moreover, an approximately minimal IVC $11110$ is found during the growing and enqueued into $\mathit{shrinkingQueue}$. The formula $f_{\mathit{Unexplored}}$ is updated to $f_{\mathit{Unexplored}} = \mathit{True} \wedge (\neg x_2 \vee \neg x_5) \wedge	(\neg x_4 \vee \neg x_5) \wedge (x_2 \vee x_4) \wedge (\neg x_1 \vee \neg x_2 \vee \neg x_3 \vee \neg x_4) \wedge (x_1 \vee x_5)$.
+
+After the second grow, the procedure \texttt{Shrink} terminates and the main procedure \texttt{FindMIVCs} continues. The queue $\mathit{shrinkingQueue}$ contains two sets: $00011$, $11110$, thus the procedure now shrinks them. During shrinking the set $00011$, the algorithm would attempt to check the sets $00001$ and $00010$ for adequacy, however since both these are already explored, the set $00011$ is identified to be a MIVC without performing any adequacy checks. The procedure \texttt{FindMIVCs} would now shrink also the set $11110$, thus empty the queue $\mathit{shrinkingQueue}$, and continue with a next iteration.
 

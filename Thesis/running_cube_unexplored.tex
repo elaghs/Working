@@ -1,0 +1,130 @@
+%\tikzstyle{op}=[opacity=.10]
+%
+%\definecolor{mus_color}{RGB}{255,95,95}
+%\definecolor{mus_color}{RGB}{255,95,95}
+%\definecolor{satexplored_color}{RGB}{95,255,95}
+%\definecolor{unsatexplored_color}{RGB}{255,95,95}
+%\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,scale=1,node distance=1cm,minimum size=0.4cm,
+%thick,every node/.style={draw, ellipse,inner sep=0, outer sep=0},
+%valid/.style={dashed,draw,draw=red},
+%invalid/.style={draw,draw=green},
+%mus/.style={draw,draw=green},
+%satexplored/.style={fill=satexplored_color},
+%unsatexplored/.style={fill=unsatexplored_color},
+%v/.style={fill=green},
+%i/.style={fill=red}]
+%\node[valid] (0) []{\scriptsize 00000};
+%\node[valid] (01) [above left = 0.4 and -3.0 of 0]{\scriptsize 10000};
+%\node[valid] (02) [above left = 0.4 and -1.7999999999999998 of 0]{\scriptsize 01000};
+%\node[valid] (03) [above left = 0.4 and -0.6 of 0]{\scriptsize 00100};
+%\node[valid] (04) [above left = 0.4 and 0.6 of 0]{\scriptsize 00010};
+%\node[valid] (05) [above left = 0.4 and 1.7999999999999998 of 0]{\scriptsize 00001};
+%\node[valid] (012) [above left = 1.2000000000000002 and -6.0 of 0]{\scriptsize 11000};
+%\node[valid] (013) [above left = 1.2000000000000002 and -4.8 of 0]{\scriptsize 10100};
+%\node[valid] (023) [above left = 1.2000000000000002 and -3.5999999999999996 of 0]{\scriptsize 01100};
+%\node[valid] (014) [above left = 1.2000000000000002 and -2.4 of 0]{\scriptsize 10010};
+%\node[valid] (024) [above left = 1.2000000000000002 and -1.2 of 0]{\scriptsize 01010};
+%\node[valid] (034) [above left = 1.2000000000000002 and 0.0 of 0]{\scriptsize 00110};
+%\node[valid] (015) [above left = 1.2000000000000002 and 1.2 of 0]{\scriptsize 10001};
+%\node[mus] (025) [above left = 1.2000000000000002 and 2.4 of 0]{\scriptsize 01001};
+%\node[valid] (035) [above left = 1.2000000000000002 and 3.5999999999999996 of 0]{\scriptsize 00101};
+%\node[mus] (045) [above left = 1.2000000000000002 and 4.8 of 0]{\scriptsize 00011};
+%\node[valid] (0123) [above left = 2.0000000000000004 and -6.0 of 0]{\scriptsize 11100};
+%\node[mus] (0124) [above left = 2.0000000000000004 and -4.8 of 0]{\scriptsize 11010};
+%\node[valid] (0134) [above left = 2.0000000000000004 and -3.5999999999999996 of 0]{\scriptsize 10110};
+%\node[valid] (0234) [above left = 2.0000000000000004 and -2.4 of 0]{\scriptsize 01110};
+%\node[invalid] (0125) [above left = 2.0000000000000004 and -1.2 of 0]{\scriptsize 11001};
+%\node[valid] (0135) [above left = 2.0000000000000004 and 0.0 of 0]{\scriptsize 10101};
+%\node[invalid] (0235) [above left = 2.0000000000000004 and 1.2 of 0]{\scriptsize 01101};
+%\node[invalid] (0145) [above left = 2.0000000000000004 and 2.4 of 0]{\scriptsize 10011};
+%\node[invalid] (0245) [above left = 2.0000000000000004 and 3.5999999999999996 of 0]{\scriptsize 01011};
+%\node[invalid] (0345) [above left = 2.0000000000000004 and 4.8 of 0]{\scriptsize 00111};
+%\node[invalid] (01234) [above left = 2.8000000000000003 and -3.0 of 0]{\scriptsize 11110};
+%\node[invalid] (01235) [above left = 2.8000000000000003 and -1.7999999999999998 of 0]{\scriptsize 11101};
+%\node[invalid] (01245) [above left = 2.8000000000000003 and -0.6 of 0]{\scriptsize 11011};
+%\node[invalid] (01345) [above left = 2.8000000000000003 and 0.6 of 0]{\scriptsize 10111};
+%\node[invalid] (02345) [above left = 2.8000000000000003 and 1.7999999999999998 of 0]{\scriptsize 01111};
+%\node[invalid] (012345) [above left = 3.4 and -0.6 of 0]{\scriptsize 11111};
+%\path[every node/.style={font=\sffamily\small}]
+%(0) edge[op] node [left] {} (01)
+%    edge[op] node [left] {} (02)
+%    edge[op] node [left] {} (03)
+%    edge[op] node [left] {} (04)
+%    edge[op] node [left] {} (05)
+%(01) edge[op] node [left] {} (012)
+%    edge[op] node [left] {} (013)
+%    edge[op] node [left] {} (014)
+%    edge[op] node [left] {} (015)
+%(02) edge[op] node [left] {} (012)
+%    edge[op] node [left] {} (023)
+%    edge[op] node [left] {} (024)
+%    edge[op] node [left] {} (025)
+%(03) edge[op] node [left] {} (013)
+%    edge[op] node [left] {} (023)
+%    edge[op] node [left] {} (034)
+%    edge[op] node [left] {} (035)
+%(04) edge[op] node [left] {} (014)
+%    edge[op] node [left] {} (024)
+%    edge[op] node [left] {} (034)
+%    edge[op] node [left] {} (045)
+%(05) edge[op] node [left] {} (015)
+%    edge[op] node [left] {} (025)
+%    edge[op] node [left] {} (035)
+%    edge[op] node [left] {} (045)
+%(012) edge[op] node [left] {} (0123)
+%    edge[op] node [left] {} (0124)
+%    edge[op] node [left] {} (0125)
+%(013) edge[op] node [left] {} (0123)
+%    edge[op] node [left] {} (0134)
+%    edge[op] node [left] {} (0135)
+%(023) edge[op] node [left] {} (0123)
+%    edge[op] node [left] {} (0234)
+%    edge[op] node [left] {} (0235)
+%(014) edge[op] node [left] {} (0124)
+%    edge[op] node [left] {} (0134)
+%    edge[op] node [left] {} (0145)
+%(024) edge[op] node [left] {} (0124)
+%    edge[op] node [left] {} (0234)
+%    edge[op] node [left] {} (0245)
+%(034) edge[op] node [left] {} (0134)
+%    edge[op] node [left] {} (0234)
+%    edge[op] node [left] {} (0345)
+%(015) edge[op] node [left] {} (0125)
+%    edge[op] node [left] {} (0135)
+%    edge[op] node [left] {} (0145)
+%(025) edge[op] node [left] {} (0125)
+%    edge[op] node [left] {} (0235)
+%    edge[op] node [left] {} (0245)
+%(035) edge[op] node [left] {} (0135)
+%    edge[op] node [left] {} (0235)
+%    edge[op] node [left] {} (0345)
+%(045) edge[op] node [left] {} (0145)
+%    edge[op] node [left] {} (0245)
+%    edge[op] node [left] {} (0345)
+%(0123) edge[op] node [left] {} (01234)
+%    edge[op] node [left] {} (01235)
+%(0124) edge[op] node [left] {} (01234)
+%    edge[op] node [left] {} (01245)
+%(0134) edge[op] node [left] {} (01234)
+%    edge[op] node [left] {} (01345)
+%(0234) edge[op] node [left] {} (01234)
+%    edge[op] node [left] {} (02345)
+%(0125) edge[op] node [left] {} (01235)
+%    edge[op] node [left] {} (01245)
+%(0135) edge[op] node [left] {} (01235)
+%    edge[op] node [left] {} (01345)
+%(0235) edge[op] node [left] {} (01235)
+%    edge[op] node [left] {} (02345)
+%(0145) edge[op] node [left] {} (01245)
+%    edge[op] node [left] {} (01345)
+%(0245) edge[op] node [left] {} (01245)
+%    edge[op] node [left] {} (02345)
+%(0345) edge[op] node [left] {} (01345)
+%    edge[op] node [left] {} (02345)
+%(01234) edge[op] node [left] {} (012345)
+%(01235) edge[op] node [left] {} (012345)
+%(01245) edge[op] node [left] {} (012345)
+%(01345) edge[op] node [left] {} (012345)
+%(02345) edge[op] node [left] {} (012345)
+%;
+%\end{tikzpicture} 

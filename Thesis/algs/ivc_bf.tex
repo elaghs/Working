@@ -1,0 +1,25 @@
+%\documentclass[]{article}
+%\usepackage[]{algorithm2e}
+%
+%\begin{document}
+%\begin{algorithm}
+
+\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+
+\DontPrintSemicolon
+
+\Input{$(I, U) \vdash P$}
+\Output{MIVC for $(I, U) \vdash P$}
+	\For{$T_i \in U$}{
+		\lIf{$(I, U \setminus \{ T_i \}) \vdash P$}{
+			$U \gets U \setminus \{T_i\}$
+		}
+	}
+	\Return $U$\;
+
+%\end{algorithm}
+
+
+
+
+%\end{document}

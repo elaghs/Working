@@ -1,0 +1,80 @@
+\DontPrintSemicolon
+\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+\SetKwFunction{Shrink}{Shrink}
+\SetKwFunction{Solve}{Solve}
+\SetKwFunction{FindMIVCs}{FindMIVCs}
+\SetKwFunction{Grow}{Grow}
+\SetKwFunction{Dequeue}{Dequeue}
+\SetKwFunction{Enqueue}{Enqueue}
+\SetKwFunction{approx}{IVC\_UC}
+\SetKwFunction{UpdateSQ}{UpdateShrinkingQueue}
+\SetKwProg{Fn}{Function}{:}{}
+\SetKwFunction{Init}{Init}
+
+
+\Fn{\Init{$(I, T) \vdash P$}}{
+	$\mathit{Unexplored} \gets \mathcal{P}(T)$ \tcp*{a global variable}
+	$\mathit{shrinkingQueue} \gets$ empty queue \tcp*{a global variable}
+    $\mathit{approximateWarning} \gets$ false \tcp*{a global variable}
+	$\FindMIVCs()$\;
+}
+
+\setcounter{AlgoLine}{0}
+\Fn{\FindMIVCs{}}{
+	\While{$\mathit{Unexplored} \neq \emptyset$}{
+		%$U_{max} \gets$ a maximal $U_{max} \in \mathit{Unexplored}$\;
+		$U_{\mathit{max}} \gets $ a maximal set $\in \mathit{Unexplored}$\;
+        \eIf{$\Solve(I,U_{\mathit{max}},P)$}{
+			$U_{\mathit{IVC}} \gets \approx((I,U_{\mathit{max}}), P)$\;
+			$\Shrink(U_{\mathit{IVC}})$\;
+		}{
+			$\mathit{Unexplored} \gets \mathit{Unexplored} \setminus \mathit{Sub}(U_{\mathit{max}})$\;			
+		}
+		\While{$\mathit{shrinkingQueue}$ is not empty}{
+			$\mathit{U} \gets \Dequeue(\mathit{shrinkingQueue})$\;
+			$\Shrink(\mathit{U})$\;
+		}
+	}
+}
+
+\setcounter{AlgoLine}{0}
+\Fn{\Shrink{$\mathit{U}$}}{
+	$\mathit{growingQueue} \gets$ empty queue\;
+	\For{$T_i \in \mathit{U}$}{
+		\If{$ \mathit{U} \setminus \{ T_i \} \in \mathit{Unexplored}$ }{		
+			\leIf{$\Solve(I, \mathit{U} \setminus \{ T_i \}, P)$}{
+				$\mathit{U} \gets \mathit{U} \setminus \{ T_i \}$\;
+			}{
+				$\Enqueue(\mathit{growingQueue}, \mathit{U} \setminus \{ T_i \})$			
+			}
+		}
+	}
+	\textbf{output} $\mathit{U}$ \tcp*{Output Minimal IVC}
+	$\UpdateSQ(\mathit{U})$\;
+	$\mathit{Unexplored} \gets \mathit{Unexplored} \setminus \mathit{Sup}(\mathit{U})$\;
+	\While{$\mathit{growingQueue}$ is not empty}{
+		$\mathit{V} \gets \Dequeue(\mathit{growingQueue})$\;
+		$\Grow(\mathit{V})$\;
+	}
+}
+
+\setcounter{AlgoLine}{0}
+\Fn{\Grow{$\mathit{V}$}}{
+	$\mathit{M} \gets $ a maximal set $ \in \mathit{Unexplored}$ such that $\mathit{M} \supseteq \mathit{V}$\;
+	\While{$\Solve(\mathit{I}, \mathit{M}, \mathit{P})$}{
+			$M_{\mathit{IVC}} \gets \approx((\mathit{I},\mathit{M}), \mathit{P})$\;			
+			$\UpdateSQ(M_{\mathit{IVC}})$\;
+			$\Enqueue(\mathit{shrinkingQueue}, M_{\mathit{IVC}})$\;
+			$\mathit{Unexplored} \gets \mathit{Unexplored} \setminus \mathit{Sup}(M_{\mathit{IVC}})$\;			
+			$T_i \gets$ choose $T_i \in (M_{\mathit{IVC}} \setminus \mathit{V})$\;
+			$\mathit{M} \gets \mathit{M} \setminus \{ T_i \}$\;
+	}	
+	$\mathit{Unexplored} \gets \mathit{Unexplored} \setminus \mathit{Sub}(\mathit{M})$\;
+}	
+
+\setcounter{AlgoLine}{0}
+\Fn{\UpdateSQ{$\mathit{U}$}}{
+	\For{$\mathit{V} \in \mathit{shrinkingQueue}$}{
+		\lIf{$\mathit{U} \subseteq \mathit{V}$}{remove $\mathit{V}$ from $\mathit{shrinkingQueue}$}	
+	}
+}	

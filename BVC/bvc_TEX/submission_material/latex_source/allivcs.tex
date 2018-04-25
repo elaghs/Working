@@ -1,0 +1,393 @@
+\section{Method}
+\label{sec:allivcs}
+
+\newcommand{\getivc}{\textsc{GetIVC}}
+\newcommand{\getmodel}{\textsc{GetLiteralsFromMaxModel}}
+\newcommand{\aivcalg}{\texttt{\small{All\_IVCs}}}
+\newcommand{\blockup}{\textsc{BlockUp}}
+\newcommand{\blockdown}{\textsc{BlockDown}}
+\newcommand{\mis}{\textit{MIS}}
+\newcommand{\mcs}{\textit{MCS}}
+
+
+\newcommand{\checksat}{\textsc{CheckSat}}
+\newcommand{\isadeq}{\textsc{CheckAdq}}
+\newcommand{\adequate}{\textsc{Adequate}}
+\newcommand{\inadequate}{\textsc{Inadequate}}
+\newcommand{\true}{\textsc{True}}
+\newcommand{\false}{\textsc{False}}
+\newcommand{\unknown}{\textsc{Unknown}}
+\newcommand{\actlit}{\textsc{ActLit}}
+\newcommand{\unsatcore}{\textsc{UnsatCore}\xspace}
+\newcommand{\unsat}{\texttt{UNSAT}\xspace}
+\newcommand{\sat}{\texttt{SAT}\xspace}
+
+Considering the definition of a \mivc, a brute-force technique for enumerating all \mivc s would be the same as exploring the power set of $T$ (denoted by $ \mathcal{P}(T) $).
+Basically, the algorithm needs to explore the provability of a
+given property by any subset of $T$, which would be computationally expensive.  Our approach is an adaptation of the the work of MARCO for generating all minimal unsatisfiable subsets (MUSes) in~\cite{marco2016fast}, and only needs to explore a (small) portion of $\mathcal{P}(T)$ in order to compute $AIVC$.  In fact, it can be viewed as an instantiation of the MARCO proof schema for the richer theory of sequential model checking.  We begin by introducing several additional notions and definitions, most of which are analogous or equivalent to those in~\cite{marco2016fast}.
+
+
+\begin{definition}{\emph{Maximal Inadequate Set (\mis):}}
+  \label{def:mis}
+  $S \subset T$ for $(I, T) \vdash P$ is a Maximal Inadequate Set (\mis) iff
+  $(I, S) \nvdash P$ and $\forall T_i \in T\setminus S.~ (I, S\cup\{T_i\}) \vdash P$.
+\end{definition}
+
+%\begin{definition} {\emph{Adequacy:}}
+%\label{def:adeq}
+Given $(I, T) \vdash P$, for every $S \in \mathcal{P}(T)$, we have either $(I, S) \vdash P$ or $(I, S) \nvdash P$. In the former case, we say $S$ is \textbf{adequate} for $P$; in the latter, we say that $S$ is \textbf{inadequate} for the proof of $P$.
+%\end{definition}
+Note that every \ivc ~is an adequate set for $P$, and every \mis ~is an inadequate set.
+
+%\begin{definition}{\emph{Minimal Correction Set (MCS):}}
+%  \label{def:mcs}
+%  $S \subset T$ for $(I, T) \vdash P$ is a Minimal Correction Set (MCS) iff
+%  $(I, T \setminus S) \nvdash P$ and $\forall T_i \in S.~ (I, (T \setminus S)\cup \{T_i\}) \vdash P$.
+%\end{definition}
+
+%It should be mentioned that minimality and maximality are about minimum or maximum cardinality subsets.
+%Note that $MCS$ is more of syntactic sugar that specifies sets that can also be specified by $MIS$; i.e. for any $MIS$ of $T$, there is a corresponding $MCS$ such that adding any element of that $MCS$ to the $MIS$, makes the property provable by the $MIS$.
+%And, that's why it is called the ``minimal correction'' set.
+
+\begin{lemma}
+\label{lem:adeq}
+For $(I, T) \vdash P$, if $S \subseteq T$ is adequate for property $P$, then all of its supersets are adequate for $P$ as well:
+\allowbreak $$\forall S_1 \subseteq S_2 \subseteq T.~ (I, S_1) \vdash P \Rightarrow (I, S_2) \vdash P$$
+\end{lemma}
+\begin{IEEEproof}
+From $S_1 \subseteq S_2$ we have $S_2 \Rightarrow S_1$. Thus the
+  reachable states of $(I, S_2)$ are a subset of the reachable states
+  of $(I, S_1)$.
+\end{IEEEproof}
+
+\begin{corollary}
+\label{lem:inadeq}
+For $(I, T) \vdash P$, if a given subset $S$ is inadequate, then all of its subsets are inadequate as well:
+\allowbreak $$\forall S_1 \subseteq S_2 \subseteq T.~ (I, S_2) \nvdash P \Rightarrow (I, S_1) \nvdash P$$
+\end{corollary}
+\begin{IEEEproof}
+  Immediate from Lemma \ref{lem:adeq}.
+\end{IEEEproof}
+%\begin{IEEEproof}
+%Given the fact that $(I, T) \vdash P$ and $S_2$ is inadequate,
+%there is a correction set $C \subseteq (T\setminus S_2)$ such that
+%$C \cup S_2$ is adequate, which implies every $S' \subseteq (T \setminus C)$ is inadequate.
+%So, since $S_1 \subset S_2 \subseteq (T \setminus C)$, set $S_1$ is also inadequate.
+%\end{IEEEproof}
+
+%\begin{corollary}
+%$\forall S \in AIVC(P)$, S is a minimal adequate set for $P$.
+%\end{corollary}
+%\begin{IEEEproof}
+%  Immediate from the definitions of $IVC$ and $AIVC$, and Lemma \ref{lem:adeq}.
+%\end{IEEEproof}
+
+The basic idea behind an algorithm for computing $AIVC(P)$ is the same
+as exploration of $\mathcal{P}(T)$, with two major performance
+improvements. First, Lemma~\ref{lem:adeq} and
+Corollary~\ref{lem:inadeq} are used to block large portions of
+$\mathcal{P}(T)$ from consideration. For example, if a set $S \in
+\mathcal{P}(T)$ is found to be inadequate, then all subsets of $S$ are
+also inadequate and do not need to be explicitly considered. Second,
+if a set $S \in \mathcal{P}(T)$ is found to be adequate, then a fast
+algorithm (such as \ucalg\ from \cite{Ghass16}) is used to find a
+smaller $S' \subseteq S$ which is still adequate. This feeds into the
+first optimization since now all supersets of $S'$ rather than $S$ are
+blocked from future consideration.
+
+To guide our algorithm, we now introduce a way of exploring
+$\mathcal{P}(T)$ which allows us to eliminate all subsets or supersets
+of any given set. We use a Boolean expression called $map$, which is
+in conjunctive normal form (CNF) and built gradually as the algorithm
+proceeds. Satisfying assignments for $map$ correspond to elements of
+$\mathcal{P}(T)$. For each $S \in \mathcal{P}(T)$ that the algorithm
+determines to be adequate or inadequate, a corresponding clause is
+added to $map$ which blocks $S$ and all supersets or subsets,
+respectively, from consideration. When a clause is added to $map$, the
+corresponding $S \in \mathcal{P}(T)$ is called \emph{explored}.
+The supersets or subsets of $S$ which are blocked from
+consideration are called \emph{excluded}. The remaining elements
+of $\mathcal{P}(T)$ are \emph{unexplored}.
+
+More precisely, given $T$ with $n$ top-level conjuncts, we define an
+ordered set of activation literals $\mathcal{A} = \{a_1, \ldots,
+a_n\}$, where each $a_i$ has type Boolean. We assume the function
+$\actlit : T \rightarrow \mathcal{A}$ is a bijection assigning every
+$T_i \in T$ to an $a_i \in \mathcal{A}$ and vice versa. Then, a $map$
+for $AIVC(P)$ is a CNF formula built over the elements of
+$\mathcal{A}$ such that:
+\begin{itemize}
+  \item Initially $map$ is $\top$ since all of $\mathcal{P}(T)$ is unexplored.
+
+  \item When $map$ is satisfiable, a model of it is a set
+  $M \in \mathcal{P}(\mathcal{A})$ consisting of those $a \in
+    \mathcal{A}$ which are assigned $true$.
+
+  \item Every model $M$ of $map$ corresponds to a set $S \in \mathcal{P}(T)$ such that
+$S = \bigcup_{a_i \in M} \actlit ^{-1} (a_i)$ and $M = \bigcup_{T_i \in S} \actlit(T_i)$.
+\vspace{0.05in}
+  \item For every explored set $S \in \mathcal{P}(T)$:
+  \begin{itemize}
+    \item if $S$ is adequate for $P$, then $map$ contains a clause
+      $\bigvee_{T_{i}\in S} \neg {\actlit (T_i)}$. This clause blocks
+      all supersets of $S$ from future consideration which is
+      consistent with Lemma~\ref{lem:adeq}.
+
+    \item if $S$ is inadequate for $P$, then $map$ contains a clause
+      $\bigvee_{T_{i}\in (T \setminus S)} \actlit (T_i)$. This clause
+      blocks all subsets of $S$ from future consideration which is
+      consistent with Corollary~\ref{lem:inadeq}.
+  \end{itemize}
+\end{itemize}
+
+
+\begin{lemma}
+\label{lem:map:sound}
+When $map$ is satisfiable with model $M$, set $S = \bigcup_{a_i \in M} \actlit ^{-1} (a_i)$ is not equal to any adequate or inadequate explored set, nor a subset (superset) of any
+inadequate (adequate) explored set in $\mathcal{P}(T)$.
+\end{lemma}
+\begin{IEEEproof}
+Proof by contradiction. Case 1: Suppose there is an adequate set $Ex \subseteq S$ that has been already explored. Therefore, according to the definition, $map$ contains a clause $C = \bigvee_{T_{i}\in Ex} \neg {\actlit (T_i)}$, and since $Ex \subseteq S$, it is impossible for the model $M = \bigcup_{T_i \in Ex} \actlit (T_i)$ to satisfy $C$; hence, the assumption is false.
+
+Case 2: Suppose there is an inadequate set $Ex$ such that $S \subseteq Ex$ and $Ex$ has been already explored. Therefore, according to the definition, $map$ contains a clause $C = \bigvee_{T_{i}\in (T \setminus S)} \actlit (T_i)$, and since $S \subseteq Ex$, it is impossible for the model $M = \bigcup_{T_i \in S} \actlit (T_i)$ to satisfy $C$; so, the assumption is false.
+
+From Case 1 and Case 2, there is no model of $map$ whose corresponding set in $\mathcal{P}(T)$ is a non-strict subset (superset) of any inadequate (adequate) explored set.
+\end{IEEEproof}
+
+%Next, we tie the {\em map} results back to the minimal IVCs problem. Note that from Theorem~\ref{thm:minimal-hard}, finding a minimal IVC may be undecidable if the original checking problem is undecidable.  In most cases, if we are able to prove a property against a full model, we are able to conclusively determine its MIVCs, but it is not guaranteed.  For a given set $S$, if our implementation is unable to prove the property, we conservatively assume that the property is falsifiable and note to the user that the results may be approximate.  We discuss how our implementation manages undecidability in more detail in Section~\ref{sec:impl}.
+
+\begin{lemma}
+\label{lem:map:comp}
+For $(I, T) \vdash P$, $map$ is satisfiable iff
+at least one $S \in AIVC(P)$ or one \mis\ of $T$ is unexplored.
+\end{lemma}
+\begin{IEEEproof}
+Let $map$ is satisfiable with a model $M$, and let $S = \bigcup_{a_i
+  \in M} \actlit ^{-1} (a_i)$ be the corresponding set of
+$\mathcal{P}(T)$. If $S$ is adequate, then it contains a \mivc. That
+\mivc\ must not be explored since otherwise $S$ would have been blocked
+from consideration. The \mivc\ must not be excluded since it is not a
+strict superset of any adequate set (by minimality) nor a subset of
+any inadequate set (by Corollary~\ref{lem:adeq}). Thus the \mivc\ must
+be unexplored. The case where $S$ is inadequate is symmetric.
+
+In the other direction, let $S \subseteq T$ be an unexplored \mivc.
+Then consider the model $M = \bigcup_{T_i\in S} \actlit(T_i)$. We will
+show that each clause of $map$ is satisfied by $M$. There are two
+types of clauses to consider. A clause $\bigvee_{T_{i}\in S'} \neg
+{\actlit (T_i)}$ is in $map$ only if $S'$ is adequate. $M$ would
+falsify this clause only if $S' \subseteq S$ which is impossible by
+minimality of $S$. A clause $\bigvee_{T_{i}\in (T \setminus S')}
+\actlit (T_i)$ is in $map$ only if $S'$ is inadequate. $M$ would
+falsify this clause only if $S \subseteq S'$ which is imposssible by
+Corollary~\ref{lem:inadeq}. Thus $M$ is a model for $map$. The case
+for an unexplored \mis\ is symmetric.
+\end{IEEEproof}
+
+
+%\begin{lemma}
+%\label{lem:map:comp}
+%For $(I, T) \vdash P$, $map$ is unsatisfiable \emph{iff} all $S \in AIVC(P)$ and all $MIS$es of $T$ (and thus every $S \in \mathcal{P}(T)$) have been explored.
+%\end{lemma}
+%\begin{IEEEproof}
+%As with any CNF formula, $map$ is unsatisfiable \emph{iff} every complete assignment falsifies at least one of its clauses. Clauses in $map$ have special structure;
+%according to definition, every clause contains a set of either entirely negative literals or entirely positive; when a set $S$ corresponding to a model $M$ of map is explored, if $S$ is adequate, it means that it contains necessary elements of $T$ to prove $P$, which
+%are added to $map$ as a new clause containing \emph{negative} activation literals of $S$. However, when
+%$S$ is inadequate, it means that $S$ lacks a correction set $C$ of $T$ so to prove $P$.
+%And, in this case, a new clause containing \emph{positive} activation literals of $C$ is added to $map$. Generally, similar to the elements of adequate sets, elements of correction sets are also essential part of some proof, which means eventually, negative literals added from adequate sets will have their own  positive form added from the correction sets (and vice versa).
+%Therefore, every complete assignment falsifies at least one clause in $map$ \emph{iff} every
+%member of $\mathcal{P}(T)$ is dominated by some adequate or inadequate set.
+%And, considering the definitions of $IVC$ and $MIS$,  every member of $\mathcal{P}(T)$ is dominated by some set \emph{iff} all \ivc s and \mis es have been explored. According to definition of $map$, when all $IVC$s and $MIS$es are covered, every $S \in \mathcal{P}(T)$ will be covered as well.
+%\end{IEEEproof}
+
+\begin{corollary}
+\label{cor:map:cc}
+For $(I, T) \vdash P$, $map$ is unsatisfiable iff every $S \in
+\mathcal{P}(T)$ has been explored or excluded.
+\end{corollary}
+\begin{IEEEproof}
+Immediate from the definition of $map$ and Lemma \ref{lem:map:comp}.
+\end{IEEEproof}
+
+
+Algorithm~\ref{alg:aivc} shows the process of capturing all \mivc s,
+which are kept in set $A$, along with a warning flag, explained below. 
+In line 2, we create the set of activation
+literals used by function \actlit . Line 3 initializes $map$ with
+$\top$ over the set of literals we have. The main loop of state
+exploration starts at line 4 and continues until $map$ becomes \unsat
+which means all the \mivc s have been found. We assume we have a
+function \checksat ~that determines if an existentially quantified
+formula is satisfiable or not.\footnote{We assume readers are familiar
+  with the Boolean satisfiability problem, which is the problem of
+  determining whether there exists an assignment that satisfies a
+  given propositional formula. For more information, refer to
+  \cite{cook1971complexity}.}
+%$$\checksat : Boolean \rightarrow \{ true~(\sat), false~(\unsat) \}$$
+As long as $map$ is satisfiable, the algorithm computes a
+\emph{maximal} \sat model for it (line 5). In this context,  a maximal SAT model is a
+model with as many $true$ assignment as possible without violating a
+clause; this problem, is equivalent
+to the MaxSAT problem, which has been well studied in the
+literature \cite{davies2011solving,
+  morgado2013iterative}.\footnote{MaxSAT is defined as the problem of satisfying as many
+(weighted) clauses as possible in a SAT instance. For $N$
+variables, similar to the MaxSAT problem, each clauses is weighted at $N+1$ and extra unit-weight clauses are added forcing each variable to $1$.} So, we assume there is a method by which we
+are able to have a maximal model of $map$. Line 6 extracts a set $M
+\in \mathcal{P} (\mathcal{A})$ of literals assigned to $true$ in the
+model. Then, we need to obtain the corresponding set of $S$ in
+$\mathcal{P}(T)$, which is done with function $\actlit ^{-1}$ in line
+7. 
+
+We also assume there is a function \isadeq ~that checks whether or
+not $P$ is provable by a given subset of $T$.  Note that from Theorem~\ref{thm:minimal-hard}, finding a minimal is undecidable if the original checking problem is undecidable.  Thus, for undecidable model checking problems, \isadeq\  can return \unknown~(after a user-defined timeout) as well as \adequate\ or \inadequate.
+For a given set $S$, if our implementation is unable to prove the property, we conservatively assume that the property is falsifiable and set a warning flag $w$ to the user that the results may be approximate.  %Using this function, the
+%adequacy of $S$ is determined in line 8. 
+if $S$ is adequate, a \mivc
+~is computed by \getivc ~and added to set $A$ (lines 10-11).\footnote{Note
+  that \isadeq ~can be any method that verifies a safety property,
+  such as K-induction, and the \getivc\ function can be any function
+  that returns an (approximately) minimal IVC, such as the \ucalg\ or
+  \ucbfalg\ algorithms from \cite{Ghass16}. The only requirement is
+  that it follows the definition of an inductive validity core, that
+  is: $S' \leftarrow \getivc (P, S)$ implies that $S' \subseteq S$ and
+  $(I, S') \vdash P$.} In this case $map$ is constrained by a new
+clause in a way described before and shown in line 12. However, in the
+case that $S$ is inadequate or unknown, $map$ is constrained by the corresponding
+literals from $T \setminus S$ in line 14.  Finally, if $S$ is unknown, the warning flag $w$ is set to true, as the results may be approximate (lines 15-16).
+
+\begin{algorithm}[t]
+  \SetKwInOut{Input}{input}
+  \SetKwInOut{Output}{output}
+  \Input{$(I, T) \vdash P$}
+  \Output{$AIVC (P)$, Approximation warning flag $w$}
+  \BlankLine
+  $A \leftarrow \varnothing$; $w \leftarrow \false$ \\
+  Create activation literals $\{a_1, \ldots, a_n\}$ \\
+ % $map \leftarrow true$ \\
+  $map \leftarrow \top$ \\
+ % $L \leftarrow \varnothing$ \\
+  \BlankLine
+
+  \While{$\checksat (map)$} { \label{alg:aivc:checksat}
+    $model \leftarrow $ build a maximal model of $map$  \label{alg:aivc:maxsat} \\
+    $M \leftarrow$ extract the set of variables assigned $true$ in $model$ \label{alg:aivc:assignm}\\
+    $S \leftarrow \bigcup_{a_i \in M} \actlit ^{-1}(a_i)$ \label{alg:aivc:assigns}\\
+    $res \leftarrow \isadeq (P, S)$ \\ 
+%\BlankLine
+    \If{$res = \adequate$}{ 
+    %\BlankLine
+      $S' \leftarrow \getivc (P, S)$ \label{alg:aivc:getivc} \\
+      $A \leftarrow A \cup \{S'\}$ \label{alg:aivc:addset}\\
+      $map \leftarrow map \wedge (\bigvee_{T_{i}\in S'} \neg {\actlit (T_i)})$ \label{alg:aivc:aadd}
+    }
+    \Else{
+      $map \leftarrow map \wedge (\bigvee_{T_{i}\in (T \setminus S)} \actlit (T_i))$ \label{alg:aivc:iadd} \\
+      \If{$res = \unknown$} {
+        $w \leftarrow \true$
+      }
+    %  $L \leftarrow L \cup (\bigcup_{T_i \in C} T_i)$
+    }
+  }
+  \Return{$A, w$}
+\caption{Algorithm \aivcalg ~for computing $AIVC$}
+\label{alg:aivc}
+\end{algorithm}
+
+
+\begin{theorem}
+\label{theorem:termination}
+  Algorithm~\ref{alg:aivc} will terminate.
+\end{theorem}
+\begin{IEEEproof}
+We assume that \isadeq\ has a finite timeout, so all operations within the 
+loop require finite time.  Each iteration of the while loop in Algorithm~\ref{alg:aivc} blocks at least one element of $\mathcal{P}(T)$ which was not previously
+blocked. Since $\mathcal{P}(T)$ is finite, the algorithm terminates.
+\end{IEEEproof}
+
+\begin{theorem}
+\label{theorem:aivc}
+  If no approximation warning is returned ($w$ is $\false$), Algorithm \ref{alg:aivc} enumerates all \mis es and \mivc s.
+\end{theorem}
+
+\begin{IEEEproof}
+By Theorem~\ref{theorem:termination} the algorithm terminates. This
+means $map$ is eventually unsatisfiable.  If $w = \false$ then all model checking problems are solved definitively (no \unknown\ results), so by Lemma~\ref{lem:map:comp},
+all \mis es and \mivc s are either explored or excluded.
+However, by maximality and Lemma~\ref{lem:adeq}, an \mis~ can never be
+excluded. Similarily, by minimality and Corollary~\ref{lem:inadeq}, a
+\mivc~ can never be excluded. Thus all \mis es and \mivc s are
+explored and are elements of $A$ by the end of the algorithm.
+
+
+
+%% We first note that for any model, the number of possible \mis es and adequate sets is finite, so we can do induction on the number of remaining sets to be added to $map$.
+%% Suppose that $x$ is an undiscovered \mivc\ in $map$ after some number of iterations (including 0) of the algorithm.
+
+%% Base case: Suppose that $\checksat$ is unsatisfiable.  By Lemma~\ref{lem:map:comp}, this contradicts our assumption that $x$ is an undiscovered \ivc\ in $map$.
+
+%% Inductive case: $map$ is satisfiable, so the loop proceeds.  In each iteration of the \texttt{while} loop, Algorithm \ref{alg:aivc} extracts a model $M$ from $map$ in line~\ref{alg:aivc:maxsat}, which has not been previously explored, by Lemma~\ref{lem:map:sound}.  If $M$ is inadequate, then it yields a \mis\ (by virtue of using MaxSAT).  This \mis\ is blocked in line~\ref{alg:aivc:iadd}.  By Lemma~\ref{lem:map:comp}, $map$ is still satisfiable, the loop proceeds with a smaller number of remaining sets to add to $map$, and by induction, $x$ is eventually discovered.  Suppose alternately that $M$ is adequate.  If $M = x$, we are finished.  Alternately, $M \neq x$, so $M$ is blocked in line~\ref{alg:aivc:aadd}, $map$ is still satisfiable, and by induction $x$ is eventually discovered.
+
+%% The case where $x$ is an undiscovered \mis\ in $map$ is essentially the same.
+
+
+
+%As there are a finite number of model constraints, there are a finite number of \mis es and \ivc s.
+%
+%If the model is inadequate, then it yields a \mis (by virtue of using MaxSAT).  If the model is adequate, then the model
+%yields either a minimal inductive validity core, or a superset of a minimal inductive validity core.  In either adequacy case, the clause is blocked for future exploration (lines~\ref{alg:aivc:aadd} and~\ref{alg:aivc:iadd}).  If any remaining minimal \ivc s or \mis es remain, then , $map$ is still satisfiable, and the loop continues iterating (line~\ref{alg:aivc:checksat}).
+
+
+%By Lemma~\ref{lem:map:comp},
+%
+%it yields an
+%inductive validity core, which may be a subset of an
+%
+%which is added back into the map in line~\ref{alg:aivc:iadd},
+%so subsequent iterations must
+%
+%explores a set which is either a \mis\ (by virtue of using MaxSAT) or is an adequate set.
+%These sets have not explored before according to Lemma \ref{lem:map:sound}.  If the set is inadequ
+%So, in each iteration a new adequate or maximal inadequate member of $\mathcal {P}(T)$ is explored.  Therefore, the loop continues as long as there is any \ivc\ or
+%\mis\ not yet found.
+\end{IEEEproof}
+
+Note that none of the proofs above require that \getivc\ returns a minimal IVC.
+From \cite{Ghass16}, it is computationally cheap to find an
+approximately minimal \ivc\ using the algorithm \ucalg; however, using the better,
+usually minimal \ivc\ using the \ucbfalg\ algorithm is computationally expensive.  For efficiency
+reasons, it is much better to use the approximate \ucalg\ algorithm to compute the set of
+all \mivc s.  The \ucbfalg\ algorithm attempts to repeatedly prove the property by brute-force removing elements (BF = ``brute force''), so does much of the work of Algorithm~\ref{alg:aivc} in a way that is not effective towards finding other IVCs.  The overhead of the \ucalg\ algorithm is on average 10\% over the baseline proof, as opposed to 882\% for the \ucbfalg\ algorithm.  In addition, the average increase in size of IVCs returned by \ucalg\ is approximately 10\% of the \ucbfalg\ algorithm.
+
+On the other hand, if \getivc ~does not return minimal adequate sets, at the end of the process,
+set $A$ may contain both \mivc s and some supersets of \mivc s. To make sure that the algorithm only returns
+the minimal adequate sets (\mivc s), all we need is to remove any supersets of other sets in $A$.  We can do this ``on the fly'' by changing
+line~\ref{alg:aivc:addset} to the following:
+$A \leftarrow A \cup \{S'\} \setminus \{ S~|~S \in A \wedge S' \subset S \}$.
+Obviously, the closer to minimal the results of \getivc ~are,
+the fewer iterations are required for Algorithm 1 to terminate.  Each non-minimal adequate set returned by \textsc{GetIVC} will induce an additional iteration for Algorithm 1.
+
+
+
+%\input{minimality}
+%\begin{algorithm}[t]
+%  $k' \leftarrow 1$ \\
+%  \While{$\checksat(\neg\iq_{k'}(T, P, P)) = \sat$} {
+%    $k' \leftarrow k' + 1$ \\
+%    }
+%  \Return{$k'$} \\
+%\caption{$\mink(T, P)$}
+%\label{alg:minimize-k}
+%\end{algorithm}
+
+
+%\begin{theorem}
+%\label{thm:minimal-hard}
+%\end{theorem}
+%\begin{IEEEproof}
+%\end{IEEEproof}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main.tex"
+%%% End:

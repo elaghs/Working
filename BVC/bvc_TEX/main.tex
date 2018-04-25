@@ -1,0 +1,197 @@
+
+\documentclass[10pt, conference, keeplastbox]{IEEEtran}
+\usepackage{cite}
+
+\ifCLASSINFOpdf
+\usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+\usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+\usepackage[cmex10]{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{amsthm}
+\usepackage{algorithmic}
+\usepackage{array}
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+\usepackage{eqparbox}
+%\usepackage[tight,normalsize]{subfigure}
+%\usepackage[font=normalsize]{caption}
+%\usepackage{tabularx,colortbl}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{flushend}
+\usepackage{cite}
+\usepackage{amsmath}
+%\usepackage[font=footnotesize]{subfig}
+%\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage{fixltx2e}
+\usepackage[ruled, vlined, linesnumbered]{algorithm2e}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{xspace}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\newcommand{\mkeyword}[1]{\mbox{\texttt{#1}}}
+\DeclareMathOperator{\kuop}{uop}
+\DeclareMathOperator{\kbop}{bop}
+\DeclareMathOperator{\kite}{ite}
+\DeclareMathOperator{\kpre}{pre}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\ktrue}{true}
+\DeclareMathOperator{\kfalse}{false}
+\DeclareMathOperator{\kselect}{select}
+\DeclareMathOperator{\ran}{range}
+\newcommand{\lbb}{[\![}
+\newcommand{\rbb}{]\!]}
+\newcommand{\expr}{\phi}
+\newcommand{\exprS}{\Phi}
+\begin{document}
+
+\definecolor{gold}{rgb}{0.90,.66,0}
+\definecolor{dgreen}{rgb}{0,0.6,0}
+\newcommand{\mike}[1]{\textcolor{red}{#1}}
+\newcommand{\fixed}[1]{\textcolor{purple}{#1}}
+\newcommand{\andrew}[1]{\textcolor{green}{#1}}
+\newcommand{\ela}[1]{\textcolor{blue}{#1}}
+\newcommand{\stateequiv}{\equiv_{s}}
+\newcommand{\traceequiv}{\equiv_{\sigma}}
+\newcommand{\ta}{\text{TA}}
+\newcommand{\cta}{\text{TA$_{C}$}}
+\newcommand{\tta}{\text{TA$_{T}$}}
+
+\newcommand{\bfalg}{\texttt{\small{IVC\_BF}}}
+\newcommand{\ucalg}{\texttt{\small{IVC\_UC}}}
+\newcommand{\ucbfalg}{\texttt{\small{IVC\_UCBF}}}
+\newcommand{\mustalg}{\texttt{\small{IVC\_MUST}}}
+
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+%\newdef{lemma}{Lemma}
+%\newdef{definition}{Definition}
+%\newdef{theorem}{Theorem}
+\newtheorem{note}{Note}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{Bounded Validity Cores}
+
+
+% author names and affiliations
+% use a multiple column layout for up to two different
+% affiliations
+
+\author{\IEEEauthorblockN{Elaheh Ghassabani, Michael Whalen}
+\IEEEauthorblockA{Department of Computer Science \& Engineering\\
+University of Minnesota\\
+MN, USA\\
+ghass013, mwwhalen@umn.edu}
+%\and
+%\IEEEauthorblockN{Andrew Gacek}
+%\IEEEauthorblockA{Rockwell Collins\\
+%Advanced Technology Center\\
+%IA, USA\\
+%andrew.gacek@rockwellcollins.com}
+}
+
+\maketitle
+
+
+\begin{abstract}
+ABSTRACT....
+\end{abstract}
+
+\begin{IEEEkeywords}
+Inductive Validity Cores; UNSAT-core generation; SMT-based model checking; Inductive proofs;
+\end{IEEEkeywords}
+
+\IEEEpeerreviewmaketitle
+\input{introduction}
+
+%\ifdefined\TECHREPORT
+%\input{description}
+%\fi
+%\section{Illustrative Example}
+
+\input{background}
+
+\input{bvc}
+%
+\input{experiments}
+
+%\input{qfc}
+%
+%\input{results}
+
+%\input{related}
+
+\input{conclusion}
+
+\vspace{0.08in}
+\textbf{ACKNOWLEDGMENTS} This work was carried out within the HACMS and SOSITE Phase II grants (DARPA FA8750-12-9-0179 and FA8650-16-C-7656).
+\vspace{0.08in}
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{biblio}
+
+%\ifdefined\TECHREPORT
+%\appendix
+%
+%\section{Appendix: Proof of Equivalence}
+%\input{appendix}
+%\fi
+
+%\section{Appendix: GPCA CENTA Model}
+%\label{appendix:gpcacenta}
+%\begin{figure}[!ht]
+%\begin{center}
+%\includegraphics[scale=0.6]{images/sampled_pca.PNG} %[trim = 0 2 0 0, clip=true]{Comp}
+%\caption{GPCA AGREE Properties modeled as a Timed Automata} \label{fig:samplepca}
+%\end{center}
+%\end{figure}
+
+%\balancecolumns
+
+\end{document}

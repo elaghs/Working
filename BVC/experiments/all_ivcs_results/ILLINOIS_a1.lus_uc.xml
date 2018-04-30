@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.034</UcRuntime>
+   <Timeout unit="sec">36.56</Timeout>
+   <ProofTime unit="sec">1.278</ProofTime>
+   <Runtime unit="sec">1.312</Runtime>
+   <IVC>OK</IVC>
+   <IVC>V52_dirty</IVC>
+   <IVC>V53_exclusive</IVC>
+   <IVC>V54_shared</IVC>
+   <IVC>V55_R3</IVC>
+   <IVC>V58_A3</IVC>
+   <IVC>V59_env</IVC>
+   <IVC>V112_g1</IVC>
+   <IVC>V113_g2</IVC>
+   <IVC>V114_g3</IVC>
+   <IVC>V115_g4</IVC>
+   <IVC>V116_g5</IVC>
+   <IVC>V119_g8</IVC>
+   <IVC>V120_g9</IVC>
+   <IVC>V138_X</IVC>
+   <TRIVC>V52_dirty</TRIVC>
+   <TRIVC>V54_shared</TRIVC>
+   <TRIVC>V116_g5</TRIVC>
+   <TRIVC>V115_g4</TRIVC>
+   <TRIVC>V114_g3</TRIVC>
+   <TRIVC>V113_g2</TRIVC>
+   <TRIVC>V112_g1</TRIVC>
+   <TRIVC>V119_g8</TRIVC>
+   <TRIVC>V55_R3</TRIVC>
+   <TRIVC>V59_env</TRIVC>
+   <TRIVC>V53_exclusive</TRIVC>
+   <TRIVC>V138_X</TRIVC>
+   <TRIVC>V120_g9</TRIVC>
+   <TRIVC>OK</TRIVC>
+   <TRIVC>V58_A3</TRIVC>
+</Results>

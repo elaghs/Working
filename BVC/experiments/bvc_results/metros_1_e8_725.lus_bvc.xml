@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<Runs>
+<Results>
+   <Depth>0</Depth>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>1</Depth>
+   <BVC>OK</BVC>
+   <BVC>pOK</BVC>
+</Results>
+<Results>
+   <Depth>2</Depth>
+   <BVC>main~0.controleur~0.retard</BVC>
+   <BVC>OK</BVC>
+   <BVC>main~0.retard0</BVC>
+   <BVC>pOK</BVC>
+   <BVC>retard0</BVC>
+</Results>
+<Results>
+   <Depth>3</Depth>
+   <BVC>main~0.avance0</BVC>
+   <BVC>main~0.controleur~0.retard</BVC>
+   <BVC>OK</BVC>
+   <BVC>main~0.retard0</BVC>
+   <BVC>pOK</BVC>
+   <BVC>retard0</BVC>
+   <BVC>avance0</BVC>
+   <BVC>main~0.controleur~0.avance</BVC>
+</Results>
+<Results>
+   <Depth>4</Depth>
+   <BVC>main~0.avance0</BVC>
+   <BVC>main~0.controleur~0.retard</BVC>
+   <BVC>OK</BVC>
+   <BVC>main~0.retard0</BVC>
+   <BVC>pOK</BVC>
+   <BVC>retard0</BVC>
+   <BVC>avance0</BVC>
+   <BVC>main~0.controleur~0.avance</BVC>
+</Results>
+<Results>
+   <Depth>5</Depth>
+   <BVC>main~0.avance0</BVC>
+   <BVC>main~0.controleur~0.retard</BVC>
+   <BVC>OK</BVC>
+   <BVC>main~0.retard0</BVC>
+   <BVC>pOK</BVC>
+   <BVC>retard0</BVC>
+   <BVC>avance0</BVC>
+   <BVC>main~0.controleur~0.avance</BVC>
+</Results>
+<Results>
+   <Depth>6</Depth>
+   <BVC>main~0.avance0</BVC>
+   <BVC>main~0.controleur~0.retard</BVC>
+   <BVC>OK</BVC>
+   <BVC>main~0.retard0</BVC>
+   <BVC>pOK</BVC>
+   <BVC>retard0</BVC>
+   <BVC>avance0</BVC>
+   <BVC>main~0.controleur~0.avance</BVC>
+</Results>
+<Results>
+   <Depth>7</Depth>
+   <BVC>main~0.avance0</BVC>
+   <BVC>main~0.controleur~0.retard</BVC>
+   <BVC>OK</BVC>
+   <BVC>main~0.retard0</BVC>
+   <BVC>pOK</BVC>
+   <BVC>retard0</BVC>
+   <BVC>avance0</BVC>
+   <BVC>main~0.controleur~0.avance</BVC>
+</Results>
+<Results>
+   <Depth>8</Depth>
+   <BVC>main~0.avance0</BVC>
+   <BVC>main~0.controleur~0.retard</BVC>
+   <BVC>OK</BVC>
+   <BVC>main~0.retard0</BVC>
+   <BVC>pOK</BVC>
+   <BVC>retard0</BVC>
+   <BVC>avance0</BVC>
+   <BVC>main~0.controleur~0.avance</BVC>
+</Results>
+<Results>
+   <Depth>9</Depth>
+   <BVC>main~0.avance0</BVC>
+   <BVC>main~0.controleur~0.retard</BVC>
+   <BVC>OK</BVC>
+   <BVC>main~0.retard0</BVC>
+   <BVC>pOK</BVC>
+   <BVC>retard0</BVC>
+   <BVC>avance0</BVC>
+   <BVC>main~0.controleur~0.avance</BVC>
+</Results>
+</Runs>

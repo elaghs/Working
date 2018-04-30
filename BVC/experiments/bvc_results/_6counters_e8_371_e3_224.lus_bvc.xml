@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<Runs>
+<Results>
+   <Depth>0</Depth>
+   <BVC>int6I~0.time</BVC>
+   <BVC>a</BVC>
+   <BVC>b</BVC>
+   <BVC>bool6~0.out</BVC>
+   <BVC>int6I~0.out</BVC>
+   <BVC>bool6~0.a</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>1</Depth>
+   <BVC>int6I~0.time</BVC>
+   <BVC>a</BVC>
+   <BVC>b</BVC>
+   <BVC>bool6~0.out</BVC>
+   <BVC>bool6~0.c</BVC>
+   <BVC>int6I~0.out</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>2</Depth>
+   <BVC>int6I~0.time</BVC>
+   <BVC>a</BVC>
+   <BVC>b</BVC>
+   <BVC>bool6~0.out</BVC>
+   <BVC>int6I~0.out</BVC>
+   <BVC>bool6~0.a</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>3</Depth>
+   <BVC>int6I~0.time</BVC>
+   <BVC>a</BVC>
+   <BVC>b</BVC>
+   <BVC>bool6~0.out</BVC>
+   <BVC>bool6~0.c</BVC>
+   <BVC>int6I~0.out</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>4</Depth>
+   <BVC>int6I~0.time</BVC>
+   <BVC>a</BVC>
+   <BVC>b</BVC>
+   <BVC>bool6~0.out</BVC>
+   <BVC>int6I~0.out</BVC>
+   <BVC>bool6~0.a</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>5</Depth>
+   <BVC>int6I~0.time</BVC>
+   <BVC>a</BVC>
+   <BVC>b</BVC>
+   <BVC>bool6~0.out</BVC>
+   <BVC>bool6~0.c</BVC>
+   <BVC>int6I~0.out</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>6</Depth>
+   <BVC>int6I~0.time</BVC>
+   <BVC>a</BVC>
+   <BVC>b</BVC>
+   <BVC>bool6~0.out</BVC>
+   <BVC>int6I~0.out</BVC>
+   <BVC>bool6~0.a</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>7</Depth>
+   <BVC>int6I~0.time</BVC>
+   <BVC>a</BVC>
+   <BVC>b</BVC>
+   <BVC>bool6~0.out</BVC>
+   <BVC>bool6~0.c</BVC>
+   <BVC>int6I~0.out</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>8</Depth>
+   <BVC>int6I~0.time</BVC>
+   <BVC>a</BVC>
+   <BVC>b</BVC>
+   <BVC>bool6~0.out</BVC>
+   <BVC>int6I~0.out</BVC>
+   <BVC>bool6~0.a</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>9</Depth>
+   <BVC>int6I~0.time</BVC>
+   <BVC>a</BVC>
+   <BVC>b</BVC>
+   <BVC>bool6~0.out</BVC>
+   <BVC>bool6~0.c</BVC>
+   <BVC>int6I~0.out</BVC>
+   <BVC>OK</BVC>
+</Results>
+</Runs>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.006</UcRuntime>
+   <Timeout unit="sec">30.43</Timeout>
+   <ProofTime unit="sec">0.08</ProofTime>
+   <Runtime unit="sec">0.08600000000000001</Runtime>
+   <IVC>OK</IVC>
+   <IVC>V26_bump</IVC>
+   <IVC>V27_dist</IVC>
+   <IVC>V30_move</IVC>
+   <IVC>V32_meter</IVC>
+   <IVC>V33_env</IVC>
+   <IVC>V91_X</IVC>
+   <TRIVC>V26_bump</TRIVC>
+   <TRIVC>V91_X</TRIVC>
+   <TRIVC>V32_meter</TRIVC>
+   <TRIVC>V30_move</TRIVC>
+   <TRIVC>V27_dist</TRIVC>
+   <TRIVC>OK</TRIVC>
+   <TRIVC>V33_env</TRIVC>
+</Results>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.351</UcRuntime>
+   <Timeout unit="sec">42.105</Timeout>
+   <ProofTime unit="sec">2.07</ProofTime>
+   <Runtime unit="sec">2.421</Runtime>
+   <IVC>_TOP__ALARM~0.ALARM_OUT.Notification_Message</IVC>
+   <IVC>_TOP__ALARM~0.SENSOR_IN.Air_Pressure</IVC>
+   <IVC>_TOP__ALARM~0.SENSOR_IN.Humidity</IVC>
+   <IVC>_TOP__ALARM~0.SENSOR_IN.Temp</IVC>
+   <IVC>_TOP__ALARM~0.__ALARM__ASSERT__27</IVC>
+   <IVC>_TOP__ALARM~0.__ALARM__PROP__13</IVC>
+   <IVC>_TOP__ALARM~0.__ASSERT</IVC>
+   <IVC>_TOP__ALARM~0.__ASSUME__CONJ</IVC>
+   <IVC>_TOP__ALARM~0.__ASSUME__HIST</IVC>
+   <IVC>_TOP__ASSERT__48</IVC>
+   <IVC>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</IVC>
+   <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSERT</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSUME__CONJ</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSUME__HIST</IVC>
+   <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__4</IVC>
+   <IVC>__GUARANTEE38</IVC>
+   <TRIVC>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</TRIVC>
+   <TRIVC>_TOP__ALARM~0.__ASSUME__CONJ</TRIVC>
+   <TRIVC>_TOP__ALARM~0.SENSOR_IN.Humidity</TRIVC>
+   <TRIVC>__GUARANTEE38</TRIVC>
+   <TRIVC>_TOP__ALARM~0.SENSOR_IN.Temp</TRIVC>
+   <TRIVC>_TOP__ALARM~0.SENSOR_IN.Air_Pressure</TRIVC>
+   <TRIVC>_TOP__ALARM~0.ALARM_OUT.Notification_Message</TRIVC>
+   <TRIVC>_TOP__ASSERT__48</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSERT</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__OUTPUT__PROP__4</TRIVC>
+   <TRIVC>_TOP__ALARM~0.__ASSERT</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSUME__CONJ</TRIVC>
+   <TRIVC>_TOP__ALARM~0.__ALARM__ASSERT__27</TRIVC>
+   <TRIVC>_TOP__ALARM~0.__ALARM__PROP__13</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSUME__HIST</TRIVC>
+   <TRIVC>_TOP__ALARM~0.__ASSUME__HIST</TRIVC>
+</Results>

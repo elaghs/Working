@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<Runs>
+<Results>
+   <Depth>0</Depth>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>1</Depth>
+   <BVC>STEPS_TO_COOK</BVC>
+   <BVC>microwave_microwave_TIME_ON_DISPLAY_SECONDS_TO_TENS__QUOTIENT</BVC>
+   <BVC>rlt_enter_microwave_mode_logic_rlt_state_2_states___root</BVC>
+   <BVC>rlt_eval_microwave_mode_logic_rlt_state_3_states___root</BVC>
+   <BVC>chart_microwave_mode_logic_begin_state_outports_steps_remaining</BVC>
+   <BVC>KP_41</BVC>
+   <BVC>KP_61</BVC>
+   <BVC>KP_81</BVC>
+   <BVC>MIDDLE_DIGIT</BVC>
+   <BVC>OK</BVC>
+   <BVC>KP_01</BVC>
+   <BVC>KP_21</BVC>
+   <BVC>rlt_eval_microwave_mode_logic_rlt_state_1_outports_steps_remaining</BVC>
+   <BVC>chart_microwave_mode_logic_begin_state_states___root</BVC>
+   <BVC>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_RIGHT_DIGIT_DIGIT_TO_DISPLAY</BVC>
+   <BVC>chart_microwave_mode_logic_steps_remaining</BVC>
+   <BVC>chart_microwave_mode_logic_final_state_states___root</BVC>
+   <BVC>rlt_eval_microwave_mode_logic_rlt_state_2_states___root</BVC>
+   <BVC>KP_51</BVC>
+   <BVC>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_MIDDLE_DIGIT_DIGIT_TO_DISPLAY</BVC>
+   <BVC>KP_71</BVC>
+   <BVC>KP_91</BVC>
+   <BVC>KP_11</BVC>
+   <BVC>KP_31</BVC>
+   <BVC>chart_microwave_mode_logic_rlt_evtInitStep</BVC>
+</Results>
+<Results>
+   <Depth>2</Depth>
+   <BVC>rlt_condact_resetmicrowave_microwave_KEYPAD_PROCESSING_rlt_init_step</BVC>
+   <BVC>chart_microwave_mode_logic_mode</BVC>
+   <BVC>STEPS_TO_COOK</BVC>
+   <BVC>rlt_enter_microwave_mode_logic_ON_rlt_state_2_outports_mode</BVC>
+   <BVC>microwave_microwave_TIME_ON_DISPLAY_SECONDS_TO_TENS__QUOTIENT</BVC>
+   <BVC>rlt_enter_microwave_mode_logic_rlt_state_2_states___root</BVC>
+   <BVC>rlt_enter_microwave_mode_logic_ON_rlt_state_4_states___root</BVC>
+   <BVC>rlt_enter_microwave_mode_logic_ON_rlt_state_1_states___root</BVC>
+   <BVC>rlt_eval_microwave_mode_logic_rlt_state_3_states___root</BVC>
+   <BVC>chart_microwave_mode_logic_begin_state_outports_steps_remaining</BVC>
+   <BVC>KP_41</BVC>
+   <BVC>KP_61</BVC>
+   <BVC>rlt_eval_microwave_mode_logic_ON_rlt_state_2_states___root</BVC>
+   <BVC>KP_81</BVC>
+   <BVC>rlt_condact_resetmicrowave_microwave_KEYPAD_PROCESSING_rlt_clock</BVC>
+   <BVC>enable</BVC>
+   <BVC>chart_microwave_mode_logic____wakeup___</BVC>
+   <BVC>rlt_eval_microwave_mode_logic_ON_rlt_state_4_states___root</BVC>
+   <BVC>microwave_microwave_mode_logic_mode</BVC>
+   <BVC>MIDDLE_DIGIT</BVC>
+   <BVC>OK</BVC>
+   <BVC>KP_01</BVC>
+   <BVC>rlt_eval_microwave_mode_logic_ON_rlt_state_6_states___root</BVC>
+   <BVC>KP_21</BVC>
+   <BVC>rlt_eval_microwave_mode_logic_rlt_state_1_outports_steps_remaining</BVC>
+   <BVC>rlt_eval_microwave_mode_logic_ON_rlt_fired_2</BVC>
+   <BVC>chart_microwave_mode_logic_begin_state_states___root</BVC>
+   <BVC>rlt_eval_microwave_mode_logic_ON_rlt_fired_4</BVC>
+   <BVC>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_RIGHT_DIGIT_DIGIT_TO_DISPLAY</BVC>
+   <BVC>rlt_eval_microwave_mode_logic_ON_rlt_fired_5</BVC>
+   <BVC>chart_microwave_mode_logic_steps_remaining</BVC>
+   <BVC>rlt_enter_microwave_mode_logic_ON_rlt_state_2_states___root</BVC>
+   <BVC>chart_microwave_mode_logic_final_state_states___root</BVC>
+   <BVC>rlt_eval_microwave_mode_logic_rlt_state_2_states___root</BVC>
+   <BVC>rlt_eval_microwave_mode_logic_ON_rlt_state_1_states___root</BVC>
+   <BVC>rlt_eval_microwave_mode_logic_rlt_state_3_outports_mode</BVC>
+   <BVC>KP_51</BVC>
+   <BVC>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_MIDDLE_DIGIT_DIGIT_TO_DISPLAY</BVC>
+   <BVC>KP_71</BVC>
+   <BVC>KP_91</BVC>
+   <BVC>rlt_eval_microwave_mode_logic_rlt_fired_0</BVC>
+   <BVC>rlt_eval_microwave_mode_logic_ON_rlt_state_3_states___root</BVC>
+   <BVC>rlt_eval_microwave_mode_logic_ON_rlt_state_7_states___root</BVC>
+   <BVC>rlt_eval_microwave_mode_logic_ON_rlt_state_6_outports_steps_remaining</BVC>
+   <BVC>KP_11</BVC>
+   <BVC>KP_31</BVC>
+   <BVC>chart_microwave_mode_logic_rlt_evtInitStep</BVC>
+</Results>
+</Runs>

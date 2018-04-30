@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.023</UcRuntime>
+   <Timeout unit="sec">30.52</Timeout>
+   <ProofTime unit="sec">0.081</ProofTime>
+   <Runtime unit="sec">0.10400000000000001</Runtime>
+   <IVC>ControlMode~0.critical_failure~0.critical_failure</IVC>
+   <IVC>ControlMode~0.critical_failure~0.dangerous_level~0.dangerous_level</IVC>
+   <IVC>ControlMode~0.critical_failure~0.dangerous_level~0.q</IVC>
+   <IVC>ControlMode~0.critical_failure~0.op_mode</IVC>
+   <IVC>ControlMode~0.critical_failure~0.q</IVC>
+   <IVC>ControlMode~0.op_mode</IVC>
+   <IVC>ControlMode~0.q</IVC>
+   <IVC>ControlMode~0.stop_request</IVC>
+   <IVC>OK</IVC>
+   <IVC>dangerous_level~0.dangerous_level</IVC>
+   <IVC>dangerous_level~0.q</IVC>
+   <IVC>mode_normal_then_no_stop_request</IVC>
+   <IVC>mode_normal_then_water_level_ok</IVC>
+   <IVC>op_mode</IVC>
+   <TRIVC>dangerous_level~0.dangerous_level</TRIVC>
+   <TRIVC>op_mode</TRIVC>
+   <TRIVC>ControlMode~0.critical_failure~0.dangerous_level~0.dangerous_level</TRIVC>
+   <TRIVC>ControlMode~0.critical_failure~0.dangerous_level~0.q</TRIVC>
+   <TRIVC>ControlMode~0.op_mode</TRIVC>
+   <TRIVC>dangerous_level~0.q</TRIVC>
+   <TRIVC>ControlMode~0.critical_failure~0.q</TRIVC>
+   <TRIVC>ControlMode~0.critical_failure~0.critical_failure</TRIVC>
+   <TRIVC>mode_normal_then_no_stop_request</TRIVC>
+   <TRIVC>ControlMode~0.stop_request</TRIVC>
+   <TRIVC>ControlMode~0.q</TRIVC>
+   <TRIVC>mode_normal_then_water_level_ok</TRIVC>
+   <TRIVC>OK</TRIVC>
+   <TRIVC>ControlMode~0.critical_failure~0.op_mode</TRIVC>
+</Results>

@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+<Runs>
+<Results>
+   <Depth>0</Depth>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>1</Depth>
+   <BVC>moesi~0.invalid_mo</BVC>
+   <BVC>moesi~0.etat_mo4</BVC>
+   <BVC>excludes4~0.excludes</BVC>
+   <BVC>Sofar~0.X</BVC>
+   <BVC>exclusive_mo</BVC>
+   <BVC>moesi~0.modified_mo</BVC>
+   <BVC>owned_mo</BVC>
+   <BVC>shared_mo</BVC>
+   <BVC>Sofar~0.Sofar</BVC>
+   <BVC>moesi~0.owned_mo</BVC>
+   <BVC>env</BVC>
+   <BVC>modified_mo</BVC>
+   <BVC>moesi~0.etat_mo2</BVC>
+   <BVC>moesi~0.garde_mo3</BVC>
+   <BVC>excludes4~0.X2</BVC>
+   <BVC>excludes4~0.X4</BVC>
+   <BVC>moesi~0.shared_mo</BVC>
+   <BVC>invalid_mo</BVC>
+   <BVC>OK</BVC>
+   <BVC>moesi~0.exclusive_mo</BVC>
+</Results>
+<Results>
+   <Depth>2</Depth>
+   <BVC>moesi~0.invalid_mo</BVC>
+   <BVC>moesi~0.etat_mo4</BVC>
+   <BVC>excludes4~0.excludes</BVC>
+   <BVC>Sofar~0.X</BVC>
+   <BVC>exclusive_mo</BVC>
+   <BVC>moesi~0.modified_mo</BVC>
+   <BVC>owned_mo</BVC>
+   <BVC>shared_mo</BVC>
+   <BVC>Sofar~0.Sofar</BVC>
+   <BVC>moesi~0.owned_mo</BVC>
+   <BVC>env</BVC>
+   <BVC>modified_mo</BVC>
+   <BVC>moesi~0.etat_mo2</BVC>
+   <BVC>moesi~0.garde_mo3</BVC>
+   <BVC>excludes4~0.X2</BVC>
+   <BVC>excludes4~0.X4</BVC>
+   <BVC>moesi~0.shared_mo</BVC>
+   <BVC>invalid_mo</BVC>
+   <BVC>OK</BVC>
+   <BVC>moesi~0.exclusive_mo</BVC>
+</Results>
+<Results>
+   <Depth>3</Depth>
+   <BVC>moesi~0.invalid_mo</BVC>
+   <BVC>moesi~0.etat_mo4</BVC>
+   <BVC>excludes4~0.excludes</BVC>
+   <BVC>Sofar~0.X</BVC>
+   <BVC>exclusive_mo</BVC>
+   <BVC>moesi~0.modified_mo</BVC>
+   <BVC>owned_mo</BVC>
+   <BVC>shared_mo</BVC>
+   <BVC>Sofar~0.Sofar</BVC>
+   <BVC>moesi~0.owned_mo</BVC>
+   <BVC>env</BVC>
+   <BVC>modified_mo</BVC>
+   <BVC>moesi~0.etat_mo2</BVC>
+   <BVC>moesi~0.etat_mo3</BVC>
+   <BVC>excludes4~0.X2</BVC>
+   <BVC>excludes4~0.X4</BVC>
+   <BVC>excludes4~0.X3</BVC>
+   <BVC>moesi~0.shared_mo</BVC>
+   <BVC>invalid_mo</BVC>
+   <BVC>OK</BVC>
+   <BVC>moesi~0.exclusive_mo</BVC>
+</Results>
+<Results>
+   <Depth>4</Depth>
+   <BVC>moesi~0.invalid_mo</BVC>
+   <BVC>moesi~0.etat_mo4</BVC>
+   <BVC>excludes4~0.excludes</BVC>
+   <BVC>Sofar~0.X</BVC>
+   <BVC>exclusive_mo</BVC>
+   <BVC>moesi~0.modified_mo</BVC>
+   <BVC>owned_mo</BVC>
+   <BVC>shared_mo</BVC>
+   <BVC>Sofar~0.Sofar</BVC>
+   <BVC>moesi~0.owned_mo</BVC>
+   <BVC>env</BVC>
+   <BVC>modified_mo</BVC>
+   <BVC>moesi~0.etat_mo2</BVC>
+   <BVC>moesi~0.etat_mo3</BVC>
+   <BVC>excludes4~0.X2</BVC>
+   <BVC>excludes4~0.X4</BVC>
+   <BVC>excludes4~0.X3</BVC>
+   <BVC>moesi~0.shared_mo</BVC>
+   <BVC>invalid_mo</BVC>
+   <BVC>OK</BVC>
+   <BVC>moesi~0.exclusive_mo</BVC>
+</Results>
+<Results>
+   <Depth>5</Depth>
+   <BVC>moesi~0.invalid_mo</BVC>
+   <BVC>moesi~0.etat_mo4</BVC>
+   <BVC>excludes4~0.excludes</BVC>
+   <BVC>Sofar~0.X</BVC>
+   <BVC>exclusive_mo</BVC>
+   <BVC>moesi~0.modified_mo</BVC>
+   <BVC>owned_mo</BVC>
+   <BVC>shared_mo</BVC>
+   <BVC>Sofar~0.Sofar</BVC>
+   <BVC>moesi~0.owned_mo</BVC>
+   <BVC>env</BVC>
+   <BVC>modified_mo</BVC>
+   <BVC>moesi~0.etat_mo2</BVC>
+   <BVC>moesi~0.etat_mo3</BVC>
+   <BVC>excludes4~0.X2</BVC>
+   <BVC>excludes4~0.X4</BVC>
+   <BVC>excludes4~0.X3</BVC>
+   <BVC>moesi~0.shared_mo</BVC>
+   <BVC>invalid_mo</BVC>
+   <BVC>OK</BVC>
+   <BVC>moesi~0.exclusive_mo</BVC>
+</Results>
+<Results>
+   <Depth>6</Depth>
+   <BVC>moesi~0.invalid_mo</BVC>
+   <BVC>moesi~0.etat_mo4</BVC>
+   <BVC>excludes4~0.excludes</BVC>
+   <BVC>Sofar~0.X</BVC>
+   <BVC>exclusive_mo</BVC>
+   <BVC>moesi~0.modified_mo</BVC>
+   <BVC>owned_mo</BVC>
+   <BVC>shared_mo</BVC>
+   <BVC>Sofar~0.Sofar</BVC>
+   <BVC>moesi~0.owned_mo</BVC>
+   <BVC>env</BVC>
+   <BVC>modified_mo</BVC>
+   <BVC>moesi~0.etat_mo2</BVC>
+   <BVC>moesi~0.etat_mo3</BVC>
+   <BVC>excludes4~0.X2</BVC>
+   <BVC>excludes4~0.X4</BVC>
+   <BVC>excludes4~0.X3</BVC>
+   <BVC>moesi~0.shared_mo</BVC>
+   <BVC>invalid_mo</BVC>
+   <BVC>OK</BVC>
+   <BVC>moesi~0.exclusive_mo</BVC>
+</Results>
+<Results>
+   <Depth>7</Depth>
+   <BVC>moesi~0.invalid_mo</BVC>
+   <BVC>moesi~0.etat_mo4</BVC>
+   <BVC>excludes4~0.excludes</BVC>
+   <BVC>Sofar~0.X</BVC>
+   <BVC>exclusive_mo</BVC>
+   <BVC>moesi~0.modified_mo</BVC>
+   <BVC>owned_mo</BVC>
+   <BVC>shared_mo</BVC>
+   <BVC>Sofar~0.Sofar</BVC>
+   <BVC>moesi~0.owned_mo</BVC>
+   <BVC>env</BVC>
+   <BVC>modified_mo</BVC>
+   <BVC>moesi~0.etat_mo2</BVC>
+   <BVC>moesi~0.etat_mo3</BVC>
+   <BVC>excludes4~0.X2</BVC>
+   <BVC>excludes4~0.X4</BVC>
+   <BVC>excludes4~0.X3</BVC>
+   <BVC>moesi~0.shared_mo</BVC>
+   <BVC>invalid_mo</BVC>
+   <BVC>OK</BVC>
+   <BVC>moesi~0.exclusive_mo</BVC>
+</Results>
+<Results>
+   <Depth>8</Depth>
+   <BVC>moesi~0.invalid_mo</BVC>
+   <BVC>moesi~0.etat_mo4</BVC>
+   <BVC>excludes4~0.excludes</BVC>
+   <BVC>Sofar~0.X</BVC>
+   <BVC>exclusive_mo</BVC>
+   <BVC>moesi~0.modified_mo</BVC>
+   <BVC>owned_mo</BVC>
+   <BVC>shared_mo</BVC>
+   <BVC>Sofar~0.Sofar</BVC>
+   <BVC>moesi~0.owned_mo</BVC>
+   <BVC>env</BVC>
+   <BVC>modified_mo</BVC>
+   <BVC>moesi~0.etat_mo2</BVC>
+   <BVC>moesi~0.etat_mo3</BVC>
+   <BVC>excludes4~0.X2</BVC>
+   <BVC>excludes4~0.X4</BVC>
+   <BVC>excludes4~0.X3</BVC>
+   <BVC>moesi~0.shared_mo</BVC>
+   <BVC>invalid_mo</BVC>
+   <BVC>OK</BVC>
+   <BVC>moesi~0.exclusive_mo</BVC>
+</Results>
+<Results>
+   <Depth>9</Depth>
+   <BVC>moesi~0.invalid_mo</BVC>
+   <BVC>moesi~0.etat_mo4</BVC>
+   <BVC>excludes4~0.excludes</BVC>
+   <BVC>Sofar~0.X</BVC>
+   <BVC>exclusive_mo</BVC>
+   <BVC>moesi~0.modified_mo</BVC>
+   <BVC>owned_mo</BVC>
+   <BVC>shared_mo</BVC>
+   <BVC>Sofar~0.Sofar</BVC>
+   <BVC>moesi~0.owned_mo</BVC>
+   <BVC>env</BVC>
+   <BVC>modified_mo</BVC>
+   <BVC>moesi~0.etat_mo2</BVC>
+   <BVC>moesi~0.etat_mo3</BVC>
+   <BVC>excludes4~0.X2</BVC>
+   <BVC>excludes4~0.X4</BVC>
+   <BVC>excludes4~0.X3</BVC>
+   <BVC>moesi~0.shared_mo</BVC>
+   <BVC>invalid_mo</BVC>
+   <BVC>OK</BVC>
+   <BVC>moesi~0.exclusive_mo</BVC>
+</Results>
+</Runs>

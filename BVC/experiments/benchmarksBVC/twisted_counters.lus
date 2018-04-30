@@ -1,0 +1,30 @@
+node top(
+  x : bool
+) returns (
+  OK : bool
+);
+var
+  V14_b : bool;
+  V15_d : bool;
+  V43_a : bool;
+  V44_b : bool;
+  V45_c : bool;
+  V57_time : int;
+let
+  OK = ((not x) or (V14_b = V15_d));
+
+  V14_b = (V43_a and V45_c);
+
+  V15_d = (V57_time = 5);
+
+  V43_a = (false -> (((pre V44_b) and (pre V45_c)) or (((pre x) and (pre V43_a)) and (not (pre V45_c)))));
+
+  V44_b = (false -> ((((not (pre V44_b)) and (pre V45_c)) or ((pre V44_b) and (not (pre V45_c)))) or ((not (pre x)) and (pre V43_a))));
+
+  V45_c = (false -> (not (pre V45_c)));
+
+  V57_time = (0 -> (if ((pre V57_time) = 5) then 2 else (if ((pre V57_time) = 4) then (if (not (pre x)) then 3 else 5) else ((pre V57_time) + 1))));
+
+  --%PROPERTY OK;
+
+tel;

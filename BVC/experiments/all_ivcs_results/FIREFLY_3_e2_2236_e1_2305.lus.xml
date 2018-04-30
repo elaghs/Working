@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">1.614</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>2</NumberOfIVCs>
+    <MustElem>V54_shared</MustElem>
+    <MustElem>OK</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Invariant>(V54_shared &gt;= 0)</Invariant>
+    <Ivc>V114_garde3</Ivc>
+    <Ivc>V119_garde8</Ivc>
+    <Ivc>V54_shared</Ivc>
+    <Ivc>OK</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>OK</Invariant>
+    <Invariant>(V54_shared &gt;= 0)</Invariant>
+    <Invariant>(V53_exclusive &gt;= 0)</Invariant>
+    <Ivc>V53_exclusive</Ivc>
+    <Ivc>V115_garde4</Ivc>
+    <Ivc>V54_shared</Ivc>
+    <Ivc>OK</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+<Runs>
+<Results>
+   <Depth>0</Depth>
+   <BVC>dirty</BVC>
+   <BVC>firefly~0.dirty</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>1</Depth>
+   <BVC>dirty</BVC>
+   <BVC>firefly~0.dirty</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>2</Depth>
+   <BVC>dirty</BVC>
+   <BVC>Sofar~0.X</BVC>
+   <BVC>excludes8~0.X5</BVC>
+   <BVC>firefly~0.dirty</BVC>
+   <BVC>excludes8~0.X6</BVC>
+   <BVC>excludes8~0.X1</BVC>
+   <BVC>Sofar~0.Sofar</BVC>
+   <BVC>firefly~0.e1</BVC>
+   <BVC>env</BVC>
+   <BVC>firefly~0.e5</BVC>
+   <BVC>firefly~0.e6</BVC>
+   <BVC>excludes8~0.excludes</BVC>
+   <BVC>firefly~0.garde4</BVC>
+   <BVC>OK</BVC>
+   <BVC>firefly~0.exclusive</BVC>
+</Results>
+<Results>
+   <Depth>3</Depth>
+   <BVC>dirty</BVC>
+   <BVC>Sofar~0.X</BVC>
+   <BVC>firefly~0.dirty</BVC>
+   <BVC>excludes8~0.X6</BVC>
+   <BVC>excludes8~0.X3</BVC>
+   <BVC>excludes8~0.X4</BVC>
+   <BVC>excludes8~0.X1</BVC>
+   <BVC>Sofar~0.Sofar</BVC>
+   <BVC>firefly~0.e1</BVC>
+   <BVC>firefly~0.e4</BVC>
+   <BVC>env</BVC>
+   <BVC>firefly~0.e3</BVC>
+   <BVC>firefly~0.shared</BVC>
+   <BVC>firefly~0.e6</BVC>
+   <BVC>excludes8~0.excludes</BVC>
+   <BVC>firefly~0.garde1</BVC>
+   <BVC>firefly~0.garde5</BVC>
+   <BVC>firefly~0.garde4</BVC>
+   <BVC>OK</BVC>
+   <BVC>firefly~0.garde6</BVC>
+   <BVC>firefly~0.exclusive</BVC>
+   <BVC>firefly~0.garde8</BVC>
+</Results>
+<Results>
+   <Depth>4</Depth>
+   <BVC>dirty</BVC>
+   <BVC>Sofar~0.X</BVC>
+   <BVC>firefly~0.dirty</BVC>
+   <BVC>excludes8~0.X6</BVC>
+   <BVC>excludes8~0.X3</BVC>
+   <BVC>excludes8~0.X4</BVC>
+   <BVC>excludes8~0.X1</BVC>
+   <BVC>Sofar~0.Sofar</BVC>
+   <BVC>firefly~0.e1</BVC>
+   <BVC>firefly~0.e4</BVC>
+   <BVC>env</BVC>
+   <BVC>firefly~0.e3</BVC>
+   <BVC>firefly~0.shared</BVC>
+   <BVC>firefly~0.e6</BVC>
+   <BVC>excludes8~0.excludes</BVC>
+   <BVC>firefly~0.garde1</BVC>
+   <BVC>firefly~0.garde3</BVC>
+   <BVC>firefly~0.garde5</BVC>
+   <BVC>firefly~0.garde4</BVC>
+   <BVC>OK</BVC>
+   <BVC>firefly~0.garde6</BVC>
+   <BVC>firefly~0.exclusive</BVC>
+   <BVC>firefly~0.garde8</BVC>
+</Results>
+<Results>
+   <Depth>5</Depth>
+   <BVC>dirty</BVC>
+   <BVC>Sofar~0.X</BVC>
+   <BVC>firefly~0.dirty</BVC>
+   <BVC>excludes8~0.X6</BVC>
+   <BVC>excludes8~0.X3</BVC>
+   <BVC>excludes8~0.X4</BVC>
+   <BVC>excludes8~0.X1</BVC>
+   <BVC>Sofar~0.Sofar</BVC>
+   <BVC>firefly~0.e1</BVC>
+   <BVC>firefly~0.e4</BVC>
+   <BVC>env</BVC>
+   <BVC>firefly~0.e3</BVC>
+   <BVC>firefly~0.shared</BVC>
+   <BVC>firefly~0.e6</BVC>
+   <BVC>excludes8~0.excludes</BVC>
+   <BVC>firefly~0.garde1</BVC>
+   <BVC>firefly~0.garde3</BVC>
+   <BVC>firefly~0.garde5</BVC>
+   <BVC>firefly~0.garde4</BVC>
+   <BVC>OK</BVC>
+   <BVC>firefly~0.garde6</BVC>
+   <BVC>firefly~0.exclusive</BVC>
+   <BVC>firefly~0.garde8</BVC>
+</Results>
+<Results>
+   <Depth>6</Depth>
+   <BVC>dirty</BVC>
+   <BVC>Sofar~0.X</BVC>
+   <BVC>firefly~0.dirty</BVC>
+   <BVC>excludes8~0.X6</BVC>
+   <BVC>excludes8~0.X3</BVC>
+   <BVC>excludes8~0.X4</BVC>
+   <BVC>excludes8~0.X1</BVC>
+   <BVC>Sofar~0.Sofar</BVC>
+   <BVC>firefly~0.e1</BVC>
+   <BVC>firefly~0.e4</BVC>
+   <BVC>env</BVC>
+   <BVC>firefly~0.e3</BVC>
+   <BVC>firefly~0.shared</BVC>
+   <BVC>firefly~0.e6</BVC>
+   <BVC>excludes8~0.excludes</BVC>
+   <BVC>firefly~0.garde1</BVC>
+   <BVC>firefly~0.garde3</BVC>
+   <BVC>firefly~0.garde5</BVC>
+   <BVC>firefly~0.garde4</BVC>
+   <BVC>OK</BVC>
+   <BVC>firefly~0.garde6</BVC>
+   <BVC>firefly~0.exclusive</BVC>
+   <BVC>firefly~0.garde8</BVC>
+</Results>
+<Results>
+   <Depth>7</Depth>
+   <BVC>dirty</BVC>
+   <BVC>Sofar~0.X</BVC>
+   <BVC>firefly~0.dirty</BVC>
+   <BVC>excludes8~0.X6</BVC>
+   <BVC>excludes8~0.X3</BVC>
+   <BVC>excludes8~0.X4</BVC>
+   <BVC>excludes8~0.X1</BVC>
+   <BVC>Sofar~0.Sofar</BVC>
+   <BVC>firefly~0.e1</BVC>
+   <BVC>firefly~0.e4</BVC>
+   <BVC>env</BVC>
+   <BVC>firefly~0.e3</BVC>
+   <BVC>firefly~0.shared</BVC>
+   <BVC>firefly~0.e6</BVC>
+   <BVC>excludes8~0.excludes</BVC>
+   <BVC>firefly~0.garde1</BVC>
+   <BVC>firefly~0.garde3</BVC>
+   <BVC>firefly~0.garde5</BVC>
+   <BVC>firefly~0.garde4</BVC>
+   <BVC>OK</BVC>
+   <BVC>firefly~0.garde6</BVC>
+   <BVC>firefly~0.exclusive</BVC>
+   <BVC>firefly~0.garde8</BVC>
+</Results>
+<Results>
+   <Depth>8</Depth>
+   <BVC>dirty</BVC>
+   <BVC>Sofar~0.X</BVC>
+   <BVC>firefly~0.dirty</BVC>
+   <BVC>excludes8~0.X6</BVC>
+   <BVC>excludes8~0.X3</BVC>
+   <BVC>excludes8~0.X4</BVC>
+   <BVC>excludes8~0.X1</BVC>
+   <BVC>Sofar~0.Sofar</BVC>
+   <BVC>firefly~0.e1</BVC>
+   <BVC>firefly~0.e4</BVC>
+   <BVC>env</BVC>
+   <BVC>firefly~0.e3</BVC>
+   <BVC>firefly~0.shared</BVC>
+   <BVC>firefly~0.e6</BVC>
+   <BVC>excludes8~0.excludes</BVC>
+   <BVC>firefly~0.garde1</BVC>
+   <BVC>firefly~0.garde3</BVC>
+   <BVC>firefly~0.garde5</BVC>
+   <BVC>firefly~0.garde4</BVC>
+   <BVC>OK</BVC>
+   <BVC>firefly~0.garde6</BVC>
+   <BVC>firefly~0.exclusive</BVC>
+   <BVC>firefly~0.garde8</BVC>
+</Results>
+<Results>
+   <Depth>9</Depth>
+   <BVC>dirty</BVC>
+   <BVC>Sofar~0.X</BVC>
+   <BVC>firefly~0.dirty</BVC>
+   <BVC>excludes8~0.X6</BVC>
+   <BVC>excludes8~0.X3</BVC>
+   <BVC>excludes8~0.X4</BVC>
+   <BVC>excludes8~0.X1</BVC>
+   <BVC>Sofar~0.Sofar</BVC>
+   <BVC>firefly~0.e1</BVC>
+   <BVC>firefly~0.e4</BVC>
+   <BVC>env</BVC>
+   <BVC>firefly~0.e3</BVC>
+   <BVC>firefly~0.shared</BVC>
+   <BVC>firefly~0.e6</BVC>
+   <BVC>excludes8~0.excludes</BVC>
+   <BVC>firefly~0.garde1</BVC>
+   <BVC>firefly~0.garde3</BVC>
+   <BVC>firefly~0.garde5</BVC>
+   <BVC>firefly~0.garde4</BVC>
+   <BVC>OK</BVC>
+   <BVC>firefly~0.garde6</BVC>
+   <BVC>firefly~0.exclusive</BVC>
+   <BVC>firefly~0.garde8</BVC>
+</Results>
+</Runs>

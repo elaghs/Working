@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">3.821</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>2</NumberOfIVCs>
+    <MustElem>V134_g03</MustElem>
+    <MustElem>V66_exclusive</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>V137_g06</MustElem>
+    <MustElem>V67_shared</MustElem>
+    <MustElem>V143_g12</MustElem>
+    <MustElem>V141_g10</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Invariant>(V68_shared_dirty &gt;= 0)</Invariant>
+    <Invariant>(V66_exclusive &gt;= 0)</Invariant>
+    <Invariant>(V69_dirty &gt;= 0)</Invariant>
+    <Invariant>(V67_shared &gt;= 0)</Invariant>
+    <Ivc>V134_g03</Ivc>
+    <Ivc>V69_dirty</Ivc>
+    <Ivc>V66_exclusive</Ivc>
+    <Ivc>V140_g09</Ivc>
+    <Ivc>V68_shared_dirty</Ivc>
+    <Ivc>V137_g06</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V67_shared</Ivc>
+    <Ivc>V143_g12</Ivc>
+    <Ivc>V142_g11</Ivc>
+    <Ivc>V141_g10</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>OK</Invariant>
+    <Invariant>(not ((V66_exclusive + 1) &lt;= 0))</Invariant>
+    <Invariant>(not (V67_shared &lt;= (-1)))</Invariant>
+    <Ivc>V134_g03</Ivc>
+    <Ivc>V66_exclusive</Ivc>
+    <Ivc>V139_g08</Ivc>
+    <Ivc>V137_g06</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V67_shared</Ivc>
+    <Ivc>V143_g12</Ivc>
+    <Ivc>V141_g10</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

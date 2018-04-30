@@ -1,0 +1,380 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="19">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="20">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="21">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="22">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="23">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="24">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="25">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="26">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="27">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="28">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="29">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="30">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="31">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="32">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="33">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="34">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="35">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="36">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="37">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="38">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="39">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="40">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="41">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="42">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="43">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="44">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="45">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="46">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="47">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="48">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="49">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="50">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="51">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="52">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="53">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="54">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="55">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="56">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="57">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="58">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="59">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="60">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="61">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="62">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="63">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="64">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="65">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="66">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Progress source="bmc" trueFor="67">
+    <PropertyProgress name="ok"/>
+  </Progress>
+  <Property name="ok">
+    <Runtime unit="sec">84.662</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>28</K>
+    <NumberOfIVCs>2</NumberOfIVCs>
+    <MustElem>priority~2.command_failure</MustElem>
+    <MustElem>priority~1.in_command</MustElem>
+    <MustElem>priority~1.other_in_command</MustElem>
+    <MustElem>priority~0.conf1~0.pre_cpt</MustElem>
+    <MustElem>priority~0.conf1~0.signal</MustElem>
+    <MustElem>priority~0.conf1~0.cpt</MustElem>
+    <MustElem>conf1~0.cpt</MustElem>
+    <MustElem>priority~1.conf1~0.cpt</MustElem>
+    <MustElem>priority~0.command_failure</MustElem>
+    <MustElem>conf1~0.pre_cpt</MustElem>
+    <MustElem>priority~2.other_in_command</MustElem>
+    <MustElem>priority~2.conf1~0.cpt</MustElem>
+    <MustElem>priority~2.in_command</MustElem>
+    <MustElem>ok</MustElem>
+    <MustElem>priority~1.conf1~0.n</MustElem>
+    <MustElem>m2</MustElem>
+    <MustElem>conf1~0.signal</MustElem>
+    <MustElem>priority~2.conf1~0.pre_cpt</MustElem>
+    <MustElem>priority~1.command_failure</MustElem>
+    <MustElem>conf1~0.out</MustElem>
+    <MustElem>priority~0.conf1~0.out</MustElem>
+    <MustElem>priority~2.conf1~0.signal</MustElem>
+    <MustElem>priority~2.conf1~0.n</MustElem>
+    <MustElem>priority~1.conf1~0.pre_cpt</MustElem>
+    <MustElem>priority~1.n</MustElem>
+    <MustElem>priority~0.n</MustElem>
+    <MustElem>priority~0.in_command</MustElem>
+    <MustElem>in_command3</MustElem>
+    <MustElem>in_command2</MustElem>
+    <MustElem>priority~0.conf1~0.n</MustElem>
+    <MustElem>in_command1</MustElem>
+    <MustElem>priority~1.conf1~0.out</MustElem>
+    <MustElem>priority~1.conf1~0.signal</MustElem>
+    <MustElem>priority~0.other_in_command</MustElem>
+    <MustElem>priority~2.conf1~0.out</MustElem>
+    <MustElem>priority~2.n</MustElem>
+    <MustElem>no_command</MustElem>
+    <MustElem>conf1~0.n</MustElem>
+    <IvcSet number="1">
+    <Invariant>((conf1~0.cpt &lt;= 15) or (0 &lt;= (priority~1.conf1~0.cpt + (-16))))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-6))) or (conf1~0.cpt &lt;= 7)) or range_monitor~0.latch~0.out)</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-9))) or (conf1~0.cpt &lt;= 8))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 19) or (not (priority~1.conf1~0.cpt &lt;= 19)))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 5) or (0 &lt;= (priority~1.conf1~0.cpt + (-6))))</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 6) or range_monitor~0.latch~0.out) or (0 &lt;= (priority~0.conf1~0.cpt + (-5))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 11) or (0 &lt;= (priority~1.conf1~0.cpt + (-12))))</Invariant>
+    <Invariant>(0 &lt;= priority~0.conf1~0.cpt)</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 2) or (0 &lt;= (priority~1.conf1~0.cpt + (-3))))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-9))) or (conf1~0.cpt &lt;= 10)) or range_monitor~0.latch~0.out)</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 6) or (0 &lt;= (priority~1.conf1~0.cpt + (-7))))</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 17) or (0 &lt;= (priority~0.conf1~0.cpt + (-16)))) or range_monitor~0.latch~0.out)</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-14))) or (conf1~0.cpt &lt;= 13))</Invariant>
+    <Invariant>(0 &lt;= priority~1.conf1~0.cpt)</Invariant>
+    <Invariant>(conf1~0.cpt &lt;= priority~2.conf1~0.cpt)</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 19) or (0 &lt;= (priority~0.conf1~0.cpt + (-18)))) or range_monitor~0.latch~0.out)</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 16) or (0 &lt;= (priority~1.conf1~0.cpt + (-17))))</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 4) or (0 &lt;= (priority~0.conf1~0.cpt + (-3)))) or range_monitor~0.latch~0.out)</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 0) or (0 &lt;= (priority~1.conf1~0.cpt + (-1))))</Invariant>
+    <Invariant>ok</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 14) or (0 &lt;= (priority~0.conf1~0.cpt + (-13)))) or range_monitor~0.latch~0.out)</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-11))) or (conf1~0.cpt &lt;= 10))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 1) or (0 &lt;= (priority~1.conf1~0.cpt + (-2))))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-10))) or (conf1~0.cpt &lt;= 11)) or range_monitor~0.latch~0.out)</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 12) or (0 &lt;= (priority~1.conf1~0.cpt + (-13))))</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 12) or (0 &lt;= (priority~0.conf1~0.cpt + (-11)))) or range_monitor~0.latch~0.out)</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 4) or (0 &lt;= (priority~1.conf1~0.cpt + (-5))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 17) or (0 &lt;= (priority~1.conf1~0.cpt + (-18))))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 9) or (0 &lt;= (priority~1.conf1~0.cpt + (-10))))</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-8))) or (conf1~0.cpt &lt;= 7))</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 15) or (0 &lt;= (priority~0.conf1~0.cpt + (-14)))) or range_monitor~0.latch~0.out)</Invariant>
+    <Invariant>((0 &lt;= (priority~1.conf1~0.cpt + (-19))) or (conf1~0.cpt &lt;= 18))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-15))) or (conf1~0.cpt &lt;= 16)) or range_monitor~0.latch~0.out)</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 3) or (0 &lt;= (priority~1.conf1~0.cpt + (-4))))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-1))) or range_monitor~0.latch~0.out) or (conf1~0.cpt &lt;= 0))</Invariant>
+    <Invariant>((conf1~0.cpt &lt;= 14) or (0 &lt;= (priority~1.conf1~0.cpt + (-15))))</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-7))) or (conf1~0.cpt &lt;= 8)) or range_monitor~0.latch~0.out)</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-4))) or (conf1~0.cpt &lt;= 5)) or range_monitor~0.latch~0.out)</Invariant>
+    <Invariant>(((0 &lt;= (priority~0.conf1~0.cpt + (-12))) or (conf1~0.cpt &lt;= 13)) or range_monitor~0.latch~0.out)</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 9) or (0 &lt;= (priority~0.conf1~0.cpt + (-8)))) or range_monitor~0.latch~0.out)</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 18) or (0 &lt;= (priority~0.conf1~0.cpt + (-17)))) or range_monitor~0.latch~0.out)</Invariant>
+    <Invariant>(((conf1~0.cpt &lt;= 3) or (0 &lt;= (priority~0.conf1~0.cpt + (-2)))) or range_monitor~0.latch~0.out)</Invariant>
+    <Ivc>priority~2.command_failure</Ivc>
+    <Ivc>priority~1.in_command</Ivc>
+    <Ivc>priority~1.other_in_command</Ivc>
+    <Ivc>priority~0.conf1~0.pre_cpt</Ivc>
+    <Ivc>range_monitor~0.corrupt</Ivc>
+    <Ivc>priority~0.conf1~0.signal</Ivc>
+    <Ivc>priority~0.conf1~0.cpt</Ivc>
+    <Ivc>conf1~0.cpt</Ivc>
+    <Ivc>priority~1.conf1~0.cpt</Ivc>
+    <Ivc>priority~0.command_failure</Ivc>
+    <Ivc>conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~2.other_in_command</Ivc>
+    <Ivc>priority~2.conf1~0.cpt</Ivc>
+    <Ivc>priority~2.in_command</Ivc>
+    <Ivc>priority~1.conf1~0.n</Ivc>
+    <Ivc>ok</Ivc>
+    <Ivc>range_monitor~0.latch~0.pre_out</Ivc>
+    <Ivc>conf1~0.signal</Ivc>
+    <Ivc>m2</Ivc>
+    <Ivc>priority~2.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~1.command_failure</Ivc>
+    <Ivc>conf1~0.out</Ivc>
+    <Ivc>priority~0.conf1~0.out</Ivc>
+    <Ivc>corrupt1</Ivc>
+    <Ivc>priority~2.conf1~0.signal</Ivc>
+    <Ivc>range_monitor~0.latch~0.out</Ivc>
+    <Ivc>priority~2.conf1~0.n</Ivc>
+    <Ivc>priority~1.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~1.n</Ivc>
+    <Ivc>priority~0.in_command</Ivc>
+    <Ivc>priority~0.n</Ivc>
+    <Ivc>in_command3</Ivc>
+    <Ivc>in_command2</Ivc>
+    <Ivc>priority~0.conf1~0.n</Ivc>
+    <Ivc>in_command1</Ivc>
+    <Ivc>priority~1.conf1~0.out</Ivc>
+    <Ivc>priority~1.conf1~0.signal</Ivc>
+    <Ivc>priority~0.other_in_command</Ivc>
+    <Ivc>priority~2.conf1~0.out</Ivc>
+    <Ivc>priority~2.n</Ivc>
+    <Ivc>no_command</Ivc>
+    <Ivc>conf1~0.n</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>((priority~1.conf1~0.pre_cpt &lt;= 0) =&gt; (priority~2.conf1~0.pre_cpt &lt;= 0))</Invariant>
+    <Invariant>ok</Invariant>
+    <Invariant>(conf1~0.cpt &lt;= priority~2.conf1~0.cpt)</Invariant>
+    <Invariant>(conf1~0.pre_cpt &gt;= 0)</Invariant>
+    <Invariant>((priority~0.conf1~0.pre_cpt &lt;= 0) =&gt; (priority~1.conf1~0.pre_cpt &lt;= 0))</Invariant>
+    <Ivc>priority~2.command_failure</Ivc>
+    <Ivc>priority~1.in_command</Ivc>
+    <Ivc>priority~1.other_in_command</Ivc>
+    <Ivc>priority~0.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~0.conf1~0.signal</Ivc>
+    <Ivc>priority~0.conf1~0.cpt</Ivc>
+    <Ivc>conf1~0.cpt</Ivc>
+    <Ivc>priority~1.conf1~0.cpt</Ivc>
+    <Ivc>priority~0.command_failure</Ivc>
+    <Ivc>conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~2.other_in_command</Ivc>
+    <Ivc>priority~2.conf1~0.cpt</Ivc>
+    <Ivc>priority~2.in_command</Ivc>
+    <Ivc>priority~1.conf1~0.n</Ivc>
+    <Ivc>ok</Ivc>
+    <Ivc>m1</Ivc>
+    <Ivc>conf1~0.signal</Ivc>
+    <Ivc>m2</Ivc>
+    <Ivc>priority~2.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~1.command_failure</Ivc>
+    <Ivc>conf1~0.out</Ivc>
+    <Ivc>priority~0.conf1~0.out</Ivc>
+    <Ivc>priority~2.conf1~0.signal</Ivc>
+    <Ivc>priority~2.conf1~0.n</Ivc>
+    <Ivc>priority~1.conf1~0.pre_cpt</Ivc>
+    <Ivc>priority~1.n</Ivc>
+    <Ivc>priority~0.in_command</Ivc>
+    <Ivc>priority~0.n</Ivc>
+    <Ivc>in_command3</Ivc>
+    <Ivc>in_command2</Ivc>
+    <Ivc>priority~0.conf1~0.n</Ivc>
+    <Ivc>in_command1</Ivc>
+    <Ivc>priority~1.conf1~0.out</Ivc>
+    <Ivc>priority~1.conf1~0.signal</Ivc>
+    <Ivc>priority~0.other_in_command</Ivc>
+    <Ivc>priority~2.conf1~0.out</Ivc>
+    <Ivc>priority~2.n</Ivc>
+    <Ivc>no_command</Ivc>
+    <Ivc>conf1~0.n</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

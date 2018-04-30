@@ -1,0 +1,401 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="19">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="20">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="21">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="22">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="23">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="24">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="25">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="26">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="27">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="28">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="29">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="30">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="31">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="32">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="33">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="34">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="35">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="36">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="37">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="38">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="39">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="40">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="41">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="42">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="43">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="44">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="45">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="46">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="47">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="48">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="49">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="50">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="51">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="52">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="53">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="54">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="55">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="56">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="57">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="58">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="59">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="60">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="61">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="62">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">7.43</Runtime>
+    <Answer source="invariant-generation">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>11</NumberOfIVCs>
+    <MustElem>OK</MustElem>
+    <MustElem>V54_empty_section</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Invariant>(not V56_env)</Invariant>
+    <Ivc>V284_X</Ivc>
+    <Ivc>V56_env</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V246_X</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>(not V322_afterA)</Invariant>
+    <Invariant>(not V310_afterA)</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>V180_empty_section</Ivc>
+    <Ivc>V311_alwaysBsinceA</Ivc>
+    <Ivc>V50_no_collision</Ivc>
+    <Ivc>V46_grant_access</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V52_no_derail_AB</Ivc>
+    <Ivc>V53_no_derail_BC</Ivc>
+    <Ivc>V47_grant_exit</Ivc>
+    <Ivc>V322_afterA</Ivc>
+    <Ivc>V323_alwaysBsinceA</Ivc>
+    <Ivc>V310_afterA</Ivc>
+    <Ivc>V51_exclusive_req</Ivc>
+    <Ivc>V48_do_AB</Ivc>
+    <Ivc>V181_only_on_B</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V49_do_BC</Ivc>
+    </IvcSet>
+    <IvcSet number="3">
+    <Invariant>OK</Invariant>
+    <Invariant>(not V321_afterA)</Invariant>
+    <Invariant>(not V310_afterA)</Invariant>
+    <Ivc>V180_empty_section</Ivc>
+    <Ivc>V311_alwaysBsinceA</Ivc>
+    <Ivc>V50_no_collision</Ivc>
+    <Ivc>V46_grant_access</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V52_no_derail_AB</Ivc>
+    <Ivc>V53_no_derail_BC</Ivc>
+    <Ivc>V310_afterA</Ivc>
+    <Ivc>V51_exclusive_req</Ivc>
+    <Ivc>V48_do_AB</Ivc>
+    <Ivc>V181_only_on_B</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V321_afterA</Ivc>
+    <Ivc>V49_do_BC</Ivc>
+    </IvcSet>
+    <IvcSet number="4">
+    <Invariant>(not V321_afterA)</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(not V312_afterA)</Invariant>
+    <Ivc>V180_empty_section</Ivc>
+    <Ivc>V311_alwaysBsinceA</Ivc>
+    <Ivc>V50_no_collision</Ivc>
+    <Ivc>V46_grant_access</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V52_no_derail_AB</Ivc>
+    <Ivc>V53_no_derail_BC</Ivc>
+    <Ivc>V312_afterA</Ivc>
+    <Ivc>V51_exclusive_req</Ivc>
+    <Ivc>V48_do_AB</Ivc>
+    <Ivc>V313_onceCsinceA</Ivc>
+    <Ivc>V181_only_on_B</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V321_afterA</Ivc>
+    <Ivc>V49_do_BC</Ivc>
+    </IvcSet>
+    <IvcSet number="5">
+    <Invariant>OK</Invariant>
+    <Invariant>(not V56_env)</Invariant>
+    <Ivc>V284_X</Ivc>
+    <Ivc>V56_env</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V265_X</Ivc>
+    </IvcSet>
+    <IvcSet number="6">
+    <Invariant>(not V324_afterA)</Invariant>
+    <Invariant>(not V312_afterA)</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>V180_empty_section</Ivc>
+    <Ivc>V311_alwaysBsinceA</Ivc>
+    <Ivc>V50_no_collision</Ivc>
+    <Ivc>V46_grant_access</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V52_no_derail_AB</Ivc>
+    <Ivc>V53_no_derail_BC</Ivc>
+    <Ivc>V47_grant_exit</Ivc>
+    <Ivc>V323_alwaysBsinceA</Ivc>
+    <Ivc>V312_afterA</Ivc>
+    <Ivc>V51_exclusive_req</Ivc>
+    <Ivc>V48_do_AB</Ivc>
+    <Ivc>V313_onceCsinceA</Ivc>
+    <Ivc>V181_only_on_B</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V325_onceCsinceA</Ivc>
+    <Ivc>V49_do_BC</Ivc>
+    <Ivc>V324_afterA</Ivc>
+    </IvcSet>
+    <IvcSet number="7">
+    <Invariant>(not V324_afterA)</Invariant>
+    <Invariant>(not V310_afterA)</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>V180_empty_section</Ivc>
+    <Ivc>V311_alwaysBsinceA</Ivc>
+    <Ivc>V50_no_collision</Ivc>
+    <Ivc>V46_grant_access</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V52_no_derail_AB</Ivc>
+    <Ivc>V53_no_derail_BC</Ivc>
+    <Ivc>V47_grant_exit</Ivc>
+    <Ivc>V323_alwaysBsinceA</Ivc>
+    <Ivc>V310_afterA</Ivc>
+    <Ivc>V51_exclusive_req</Ivc>
+    <Ivc>V48_do_AB</Ivc>
+    <Ivc>V181_only_on_B</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V325_onceCsinceA</Ivc>
+    <Ivc>V49_do_BC</Ivc>
+    <Ivc>V324_afterA</Ivc>
+    </IvcSet>
+    <IvcSet number="8">
+    <Invariant>OK</Invariant>
+    <Invariant>(not V309_afterA)</Invariant>
+    <Invariant>(not V321_afterA)</Invariant>
+    <Ivc>V180_empty_section</Ivc>
+    <Ivc>V50_no_collision</Ivc>
+    <Ivc>V46_grant_access</Ivc>
+    <Ivc>V309_afterA</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V52_no_derail_AB</Ivc>
+    <Ivc>V53_no_derail_BC</Ivc>
+    <Ivc>V51_exclusive_req</Ivc>
+    <Ivc>V48_do_AB</Ivc>
+    <Ivc>V181_only_on_B</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V321_afterA</Ivc>
+    <Ivc>V49_do_BC</Ivc>
+    </IvcSet>
+    <IvcSet number="9">
+    <Invariant>OK</Invariant>
+    <Invariant>(not V309_afterA)</Invariant>
+    <Invariant>(not V322_afterA)</Invariant>
+    <Ivc>V180_empty_section</Ivc>
+    <Ivc>V50_no_collision</Ivc>
+    <Ivc>V46_grant_access</Ivc>
+    <Ivc>V309_afterA</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V52_no_derail_AB</Ivc>
+    <Ivc>V53_no_derail_BC</Ivc>
+    <Ivc>V47_grant_exit</Ivc>
+    <Ivc>V322_afterA</Ivc>
+    <Ivc>V323_alwaysBsinceA</Ivc>
+    <Ivc>V51_exclusive_req</Ivc>
+    <Ivc>V48_do_AB</Ivc>
+    <Ivc>V181_only_on_B</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V49_do_BC</Ivc>
+    </IvcSet>
+    <IvcSet number="10">
+    <Invariant>(not V322_afterA)</Invariant>
+    <Invariant>(not V312_afterA)</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>V180_empty_section</Ivc>
+    <Ivc>V311_alwaysBsinceA</Ivc>
+    <Ivc>V50_no_collision</Ivc>
+    <Ivc>V46_grant_access</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V52_no_derail_AB</Ivc>
+    <Ivc>V53_no_derail_BC</Ivc>
+    <Ivc>V47_grant_exit</Ivc>
+    <Ivc>V322_afterA</Ivc>
+    <Ivc>V323_alwaysBsinceA</Ivc>
+    <Ivc>V312_afterA</Ivc>
+    <Ivc>V51_exclusive_req</Ivc>
+    <Ivc>V48_do_AB</Ivc>
+    <Ivc>V313_onceCsinceA</Ivc>
+    <Ivc>V181_only_on_B</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V49_do_BC</Ivc>
+    </IvcSet>
+    <IvcSet number="11">
+    <Invariant>(not V324_afterA)</Invariant>
+    <Invariant>(not V309_afterA)</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>V180_empty_section</Ivc>
+    <Ivc>V50_no_collision</Ivc>
+    <Ivc>V46_grant_access</Ivc>
+    <Ivc>V309_afterA</Ivc>
+    <Ivc>V54_empty_section</Ivc>
+    <Ivc>V52_no_derail_AB</Ivc>
+    <Ivc>V53_no_derail_BC</Ivc>
+    <Ivc>V47_grant_exit</Ivc>
+    <Ivc>V323_alwaysBsinceA</Ivc>
+    <Ivc>V51_exclusive_req</Ivc>
+    <Ivc>V48_do_AB</Ivc>
+    <Ivc>V181_only_on_B</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V325_onceCsinceA</Ivc>
+    <Ivc>V49_do_BC</Ivc>
+    <Ivc>V324_afterA</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

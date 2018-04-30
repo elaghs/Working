@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<Runs>
+<Results>
+   <Depth>0</Depth>
+   <BVC>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Battery_Low</BVC>
+   <BVC>_TOP__ALARM~0.__ASSUME__CONJ</BVC>
+   <BVC>_TOP__ALARM~0.ALARM_OUT.Notification_Message</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Supply_Voltage</BVC>
+   <BVC>__GUARANTEE54</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSERT</BVC>
+   <BVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</BVC>
+   <BVC>_TOP__OUTPUT~0.__OUTPUT__PROP__4</BVC>
+   <BVC>_TOP__ALARM~0.__ASSERT</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Battery_Unable_To_Charge</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSUME__CONJ</BVC>
+   <BVC>_TOP__ALARM~0.__ALARM__ASSERT__43</BVC>
+   <BVC>_TOP__ASSERT__64</BVC>
+   <BVC>_TOP__ALARM~0.__ALARM__PROP__29</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSUME__HIST</BVC>
+   <BVC>_TOP__ALARM~0.__ASSUME__HIST</BVC>
+</Results>
+<Results>
+   <Depth>1</Depth>
+   <BVC>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Battery_Low</BVC>
+   <BVC>_TOP__ALARM~0.__ASSUME__CONJ</BVC>
+   <BVC>_TOP__ALARM~0.ALARM_OUT.Notification_Message</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Supply_Voltage</BVC>
+   <BVC>__GUARANTEE54</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSERT</BVC>
+   <BVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</BVC>
+   <BVC>_TOP__OUTPUT~0.__OUTPUT__PROP__4</BVC>
+   <BVC>_TOP__ALARM~0.__ASSERT</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Battery_Unable_To_Charge</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSUME__CONJ</BVC>
+   <BVC>_TOP__ALARM~0.__ALARM__ASSERT__43</BVC>
+   <BVC>_TOP__ASSERT__64</BVC>
+   <BVC>_TOP__ALARM~0.__ALARM__PROP__29</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSUME__HIST</BVC>
+   <BVC>_TOP__ALARM~0.__ASSUME__HIST</BVC>
+</Results>
+<Results>
+   <Depth>2</Depth>
+   <BVC>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Battery_Low</BVC>
+   <BVC>_TOP__ALARM~0.__ASSUME__CONJ</BVC>
+   <BVC>_TOP__ALARM~0.ALARM_OUT.Notification_Message</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Supply_Voltage</BVC>
+   <BVC>__GUARANTEE54</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSERT</BVC>
+   <BVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</BVC>
+   <BVC>_TOP__OUTPUT~0.__OUTPUT__PROP__4</BVC>
+   <BVC>_TOP__ALARM~0.__ASSERT</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Battery_Unable_To_Charge</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSUME__CONJ</BVC>
+   <BVC>_TOP__ALARM~0.__ALARM__ASSERT__43</BVC>
+   <BVC>_TOP__ASSERT__64</BVC>
+   <BVC>_TOP__ALARM~0.__ALARM__PROP__29</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSUME__HIST</BVC>
+   <BVC>_TOP__ALARM~0.__ASSUME__HIST</BVC>
+</Results>
+<Results>
+   <Depth>3</Depth>
+   <BVC>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Battery_Low</BVC>
+   <BVC>_TOP__ALARM~0.__ASSUME__CONJ</BVC>
+   <BVC>_TOP__ALARM~0.ALARM_OUT.Notification_Message</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Supply_Voltage</BVC>
+   <BVC>__GUARANTEE54</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSERT</BVC>
+   <BVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</BVC>
+   <BVC>_TOP__OUTPUT~0.__OUTPUT__PROP__4</BVC>
+   <BVC>_TOP__ALARM~0.__ASSERT</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Battery_Unable_To_Charge</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSUME__CONJ</BVC>
+   <BVC>_TOP__ALARM~0.__ALARM__ASSERT__43</BVC>
+   <BVC>_TOP__ASSERT__64</BVC>
+   <BVC>_TOP__ALARM~0.__ALARM__PROP__29</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSUME__HIST</BVC>
+   <BVC>_TOP__ALARM~0.__ASSUME__HIST</BVC>
+</Results>
+<Results>
+   <Depth>4</Depth>
+   <BVC>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Battery_Low</BVC>
+   <BVC>_TOP__ALARM~0.__ASSUME__CONJ</BVC>
+   <BVC>_TOP__ALARM~0.ALARM_OUT.Notification_Message</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Supply_Voltage</BVC>
+   <BVC>__GUARANTEE54</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSERT</BVC>
+   <BVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</BVC>
+   <BVC>_TOP__OUTPUT~0.__OUTPUT__PROP__4</BVC>
+   <BVC>_TOP__ALARM~0.__ASSERT</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Battery_Unable_To_Charge</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSUME__CONJ</BVC>
+   <BVC>_TOP__ALARM~0.__ALARM__ASSERT__43</BVC>
+   <BVC>_TOP__ASSERT__64</BVC>
+   <BVC>_TOP__ALARM~0.__ALARM__PROP__29</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSUME__HIST</BVC>
+   <BVC>_TOP__ALARM~0.__ASSUME__HIST</BVC>
+</Results>
+<Results>
+   <Depth>5</Depth>
+   <BVC>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Battery_Low</BVC>
+   <BVC>_TOP__ALARM~0.__ASSUME__CONJ</BVC>
+   <BVC>_TOP__ALARM~0.ALARM_OUT.Notification_Message</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Supply_Voltage</BVC>
+   <BVC>__GUARANTEE54</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSERT</BVC>
+   <BVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</BVC>
+   <BVC>_TOP__OUTPUT~0.__OUTPUT__PROP__4</BVC>
+   <BVC>_TOP__ALARM~0.__ASSERT</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Battery_Unable_To_Charge</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSUME__CONJ</BVC>
+   <BVC>_TOP__ALARM~0.__ALARM__ASSERT__43</BVC>
+   <BVC>_TOP__ASSERT__64</BVC>
+   <BVC>_TOP__ALARM~0.__ALARM__PROP__29</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSUME__HIST</BVC>
+   <BVC>_TOP__ALARM~0.__ASSUME__HIST</BVC>
+</Results>
+<Results>
+   <Depth>6</Depth>
+   <BVC>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Battery_Low</BVC>
+   <BVC>_TOP__ALARM~0.__ASSUME__CONJ</BVC>
+   <BVC>_TOP__ALARM~0.ALARM_OUT.Notification_Message</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Supply_Voltage</BVC>
+   <BVC>__GUARANTEE54</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSERT</BVC>
+   <BVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</BVC>
+   <BVC>_TOP__OUTPUT~0.__OUTPUT__PROP__4</BVC>
+   <BVC>_TOP__ALARM~0.__ASSERT</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Battery_Unable_To_Charge</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSUME__CONJ</BVC>
+   <BVC>_TOP__ALARM~0.__ALARM__ASSERT__43</BVC>
+   <BVC>_TOP__ASSERT__64</BVC>
+   <BVC>_TOP__ALARM~0.__ALARM__PROP__29</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSUME__HIST</BVC>
+   <BVC>_TOP__ALARM~0.__ASSUME__HIST</BVC>
+</Results>
+<Results>
+   <Depth>7</Depth>
+   <BVC>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Battery_Low</BVC>
+   <BVC>_TOP__ALARM~0.__ASSUME__CONJ</BVC>
+   <BVC>_TOP__ALARM~0.ALARM_OUT.Notification_Message</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Supply_Voltage</BVC>
+   <BVC>__GUARANTEE54</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSERT</BVC>
+   <BVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</BVC>
+   <BVC>_TOP__OUTPUT~0.__OUTPUT__PROP__4</BVC>
+   <BVC>_TOP__ALARM~0.__ASSERT</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Battery_Unable_To_Charge</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSUME__CONJ</BVC>
+   <BVC>_TOP__ALARM~0.__ALARM__ASSERT__43</BVC>
+   <BVC>_TOP__ASSERT__64</BVC>
+   <BVC>_TOP__ALARM~0.__ALARM__PROP__29</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSUME__HIST</BVC>
+   <BVC>_TOP__ALARM~0.__ASSUME__HIST</BVC>
+</Results>
+<Results>
+   <Depth>8</Depth>
+   <BVC>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Battery_Low</BVC>
+   <BVC>_TOP__ALARM~0.__ASSUME__CONJ</BVC>
+   <BVC>_TOP__ALARM~0.ALARM_OUT.Notification_Message</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Supply_Voltage</BVC>
+   <BVC>__GUARANTEE54</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSERT</BVC>
+   <BVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</BVC>
+   <BVC>_TOP__OUTPUT~0.__OUTPUT__PROP__4</BVC>
+   <BVC>_TOP__ALARM~0.__ASSERT</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Battery_Unable_To_Charge</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSUME__CONJ</BVC>
+   <BVC>_TOP__ALARM~0.__ALARM__ASSERT__43</BVC>
+   <BVC>_TOP__ASSERT__64</BVC>
+   <BVC>_TOP__ALARM~0.__ALARM__PROP__29</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSUME__HIST</BVC>
+   <BVC>_TOP__ALARM~0.__ASSUME__HIST</BVC>
+</Results>
+<Results>
+   <Depth>9</Depth>
+   <BVC>_TOP__OUTPUT~0.ALARM_IN.Notification_Message</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Battery_Low</BVC>
+   <BVC>_TOP__ALARM~0.__ASSUME__CONJ</BVC>
+   <BVC>_TOP__ALARM~0.ALARM_OUT.Notification_Message</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Supply_Voltage</BVC>
+   <BVC>__GUARANTEE54</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSERT</BVC>
+   <BVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Notification_Message</BVC>
+   <BVC>_TOP__OUTPUT~0.__OUTPUT__PROP__4</BVC>
+   <BVC>_TOP__ALARM~0.__ASSERT</BVC>
+   <BVC>_TOP__ALARM~0.SENSOR_IN.Battery_Unable_To_Charge</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSUME__CONJ</BVC>
+   <BVC>_TOP__ALARM~0.__ALARM__ASSERT__43</BVC>
+   <BVC>_TOP__ASSERT__64</BVC>
+   <BVC>_TOP__ALARM~0.__ALARM__PROP__29</BVC>
+   <BVC>_TOP__OUTPUT~0.__ASSUME__HIST</BVC>
+   <BVC>_TOP__ALARM~0.__ASSUME__HIST</BVC>
+</Results>
+</Runs>

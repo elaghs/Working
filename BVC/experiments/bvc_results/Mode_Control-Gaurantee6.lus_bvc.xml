@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<Runs>
+<Results>
+   <Depth>0</Depth>
+   <BVC>__GUARANTEE6</BVC>
+</Results>
+<Results>
+   <Depth>1</Depth>
+   <BVC>__GUARANTEE6</BVC>
+   <BVC>defs__is_suspended~1._outvar</BVC>
+   <BVC>defs__is_suspended~1.m</BVC>
+</Results>
+<Results>
+   <Depth>2</Depth>
+   <BVC>defs__is_setup~1.m</BVC>
+   <BVC>__GUARANTEE6</BVC>
+   <BVC>defs__is_suspended~0._outvar</BVC>
+   <BVC>defs__is_cooking~0._outvar</BVC>
+   <BVC>defs__is_setup~0._outvar</BVC>
+   <BVC>defs__is_suspended~1._outvar</BVC>
+   <BVC>defs__is_setup~1._outvar</BVC>
+   <BVC>defs__is_suspended~0.m</BVC>
+   <BVC>defs__is_cooking~0.m</BVC>
+   <BVC>defs__is_setup~0.m</BVC>
+   <BVC>defs__is_suspended~1.m</BVC>
+</Results>
+<Results>
+   <Depth>3</Depth>
+   <BVC>defs__is_setup~1.m</BVC>
+   <BVC>__GUARANTEE6</BVC>
+   <BVC>defs__is_suspended~0._outvar</BVC>
+   <BVC>defs__is_cooking~0._outvar</BVC>
+   <BVC>defs__is_setup~0._outvar</BVC>
+   <BVC>defs__is_suspended~1._outvar</BVC>
+   <BVC>defs__is_setup~1._outvar</BVC>
+   <BVC>defs__is_suspended~0.m</BVC>
+   <BVC>defs__is_cooking~0.m</BVC>
+   <BVC>defs__is_setup~0.m</BVC>
+   <BVC>defs__is_suspended~1.m</BVC>
+</Results>
+<Results>
+   <Depth>4</Depth>
+   <BVC>defs__is_setup~1.m</BVC>
+   <BVC>__GUARANTEE6</BVC>
+   <BVC>defs__is_suspended~0._outvar</BVC>
+   <BVC>defs__is_cooking~0._outvar</BVC>
+   <BVC>defs__is_setup~0._outvar</BVC>
+   <BVC>defs__is_suspended~1._outvar</BVC>
+   <BVC>defs__is_setup~1._outvar</BVC>
+   <BVC>defs__is_suspended~0.m</BVC>
+   <BVC>defs__is_cooking~0.m</BVC>
+   <BVC>defs__is_setup~0.m</BVC>
+   <BVC>defs__is_suspended~1.m</BVC>
+</Results>
+<Results>
+   <Depth>5</Depth>
+   <BVC>defs__is_setup~1.m</BVC>
+   <BVC>__GUARANTEE6</BVC>
+   <BVC>defs__is_suspended~0._outvar</BVC>
+   <BVC>defs__is_cooking~0._outvar</BVC>
+   <BVC>defs__is_setup~0._outvar</BVC>
+   <BVC>defs__is_suspended~1._outvar</BVC>
+   <BVC>defs__is_setup~1._outvar</BVC>
+   <BVC>defs__is_suspended~0.m</BVC>
+   <BVC>defs__is_cooking~0.m</BVC>
+   <BVC>defs__is_setup~0.m</BVC>
+   <BVC>defs__is_suspended~1.m</BVC>
+</Results>
+<Results>
+   <Depth>6</Depth>
+   <BVC>defs__is_setup~1.m</BVC>
+   <BVC>__GUARANTEE6</BVC>
+   <BVC>defs__is_suspended~0._outvar</BVC>
+   <BVC>defs__is_cooking~0._outvar</BVC>
+   <BVC>defs__is_setup~0._outvar</BVC>
+   <BVC>defs__is_suspended~1._outvar</BVC>
+   <BVC>defs__is_setup~1._outvar</BVC>
+   <BVC>defs__is_suspended~0.m</BVC>
+   <BVC>defs__is_cooking~0.m</BVC>
+   <BVC>defs__is_setup~0.m</BVC>
+   <BVC>defs__is_suspended~1.m</BVC>
+</Results>
+<Results>
+   <Depth>7</Depth>
+   <BVC>defs__is_setup~1.m</BVC>
+   <BVC>__GUARANTEE6</BVC>
+   <BVC>defs__is_suspended~0._outvar</BVC>
+   <BVC>defs__is_cooking~0._outvar</BVC>
+   <BVC>defs__is_setup~0._outvar</BVC>
+   <BVC>defs__is_suspended~1._outvar</BVC>
+   <BVC>defs__is_setup~1._outvar</BVC>
+   <BVC>defs__is_suspended~0.m</BVC>
+   <BVC>defs__is_cooking~0.m</BVC>
+   <BVC>defs__is_setup~0.m</BVC>
+   <BVC>defs__is_suspended~1.m</BVC>
+</Results>
+<Results>
+   <Depth>8</Depth>
+   <BVC>defs__is_setup~1.m</BVC>
+   <BVC>__GUARANTEE6</BVC>
+   <BVC>defs__is_suspended~0._outvar</BVC>
+   <BVC>defs__is_cooking~0._outvar</BVC>
+   <BVC>defs__is_setup~0._outvar</BVC>
+   <BVC>defs__is_suspended~1._outvar</BVC>
+   <BVC>defs__is_setup~1._outvar</BVC>
+   <BVC>defs__is_suspended~0.m</BVC>
+   <BVC>defs__is_cooking~0.m</BVC>
+   <BVC>defs__is_setup~0.m</BVC>
+   <BVC>defs__is_suspended~1.m</BVC>
+</Results>
+<Results>
+   <Depth>9</Depth>
+   <BVC>defs__is_setup~1.m</BVC>
+   <BVC>__GUARANTEE6</BVC>
+   <BVC>defs__is_suspended~0._outvar</BVC>
+   <BVC>defs__is_cooking~0._outvar</BVC>
+   <BVC>defs__is_setup~0._outvar</BVC>
+   <BVC>defs__is_suspended~1._outvar</BVC>
+   <BVC>defs__is_setup~1._outvar</BVC>
+   <BVC>defs__is_suspended~0.m</BVC>
+   <BVC>defs__is_cooking~0.m</BVC>
+   <BVC>defs__is_setup~0.m</BVC>
+   <BVC>defs__is_suspended~1.m</BVC>
+</Results>
+</Runs>

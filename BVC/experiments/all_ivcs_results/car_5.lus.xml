@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="19">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">3.924</Runtime>
+    <Answer source="pdr">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>V24_toofast</MustElem>
+    <MustElem>V32_meter</MustElem>
+    <MustElem>V30_move</MustElem>
+    <MustElem>V25_stop</MustElem>
+    <MustElem>V27_dist</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>V31_second</MustElem>
+    <MustElem>V29_time</MustElem>
+    <MustElem>V28_speed</MustElem>
+    <IvcSet number="1">
+    <Invariant>((((0 &lt;= (V29_time + (-3))) or (not (0 &lt;= (V27_dist + (-6))))) or (0 &lt;= (V28_speed + (-2)))) or (not V30_move))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>((((V27_dist &lt;= 6) or V25_stop) or (not (V28_speed = 0))) or (not V30_move))</Invariant>
+    <Invariant>((((0 &lt;= (V28_speed + (-2))) or (not (V29_time = 0))) or (V28_speed = 0)) or (V27_dist &lt;= 1))</Invariant>
+    <Invariant>(0 &lt;= V28_speed)</Invariant>
+    <Invariant>(((0 &lt;= (V29_time + (-3))) or (V27_dist &lt;= 7)) or (not V30_move))</Invariant>
+    <Invariant>((((0 &lt;= (V29_time + (-2))) or (0 &lt;= (V28_speed + (-2)))) or (V27_dist &lt;= 3)) or (not V30_move))</Invariant>
+    <Invariant>((((0 &lt;= (V29_time + (-3))) or (not (V28_speed = 0))) or (V27_dist &lt;= 4)) or (not V30_move))</Invariant>
+    <Invariant>((V29_time = 0) or (0 &lt;= (V29_time + (-1))))</Invariant>
+    <Invariant>(((V24_toofast or (V27_dist &lt;= 6)) or (0 &lt;= (V29_time + (-3)))) or (not V30_move))</Invariant>
+    <Invariant>(((V24_toofast or (0 &lt;= (V29_time + (-2)))) or (not V30_move)) or (V27_dist &lt;= 4))</Invariant>
+    <Invariant>((((0 &lt;= (V29_time + (-2))) or (not (V28_speed = 0))) or (V27_dist &lt;= 2)) or (not V30_move))</Invariant>
+    <Invariant>((((not (V29_time = 0)) or V24_toofast) or (V27_dist &lt;= 2)) or (not V30_move))</Invariant>
+    <Invariant>((V24_toofast or (V27_dist &lt;= 8)) or (not V30_move))</Invariant>
+    <Invariant>((((not (V29_time = 0)) or (not (0 &lt;= (V27_dist + (-1))))) or (not (V28_speed = 0))) or (not V30_move))</Invariant>
+    <Invariant>(((V25_stop or (not (V28_speed = 0))) or (V27_dist &lt;= 7)) or (not V30_move))</Invariant>
+    <Invariant>(((V28_speed = 0) or (V27_dist &lt;= 7)) or (0 &lt;= (V28_speed + (-2))))</Invariant>
+    <Ivc>V24_toofast</Ivc>
+    <Ivc>V32_meter</Ivc>
+    <Ivc>V30_move</Ivc>
+    <Ivc>V25_stop</Ivc>
+    <Ivc>V27_dist</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V31_second</Ivc>
+    <Ivc>V29_time</Ivc>
+    <Ivc>V28_speed</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

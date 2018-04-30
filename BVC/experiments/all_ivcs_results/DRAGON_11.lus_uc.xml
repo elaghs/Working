@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.137</UcRuntime>
+   <Timeout unit="sec">64.215</Timeout>
+   <ProofTime unit="sec">6.706</ProofTime>
+   <Runtime unit="sec">6.843</Runtime>
+   <IVC>OK</IVC>
+   <IVC>V69_exclusive</IVC>
+   <IVC>V70_shared</IVC>
+   <IVC>V71_shared_dirty</IVC>
+   <IVC>V72_dirty</IVC>
+   <IVC>V73_invalid</IVC>
+   <IVC>V75_env</IVC>
+   <IVC>V140_g01</IVC>
+   <IVC>V141_g02</IVC>
+   <IVC>V142_g03</IVC>
+   <IVC>V143_g04</IVC>
+   <IVC>V144_g05</IVC>
+   <IVC>V145_g06</IVC>
+   <IVC>V146_g07</IVC>
+   <IVC>V147_g08</IVC>
+   <IVC>V148_g09</IVC>
+   <IVC>V149_g10</IVC>
+   <IVC>V150_g11</IVC>
+   <IVC>V151_g12</IVC>
+   <IVC>V152_mem_init</IVC>
+   <IVC>V173_X</IVC>
+   <IVC>V185_First</IVC>
+   <TRIVC>V145_g06</TRIVC>
+   <TRIVC>V72_dirty</TRIVC>
+   <TRIVC>V140_g01</TRIVC>
+   <TRIVC>V148_g09</TRIVC>
+   <TRIVC>V149_g10</TRIVC>
+   <TRIVC>V151_g12</TRIVC>
+   <TRIVC>V150_g11</TRIVC>
+   <TRIVC>V147_g08</TRIVC>
+   <TRIVC>V75_env</TRIVC>
+   <TRIVC>V71_shared_dirty</TRIVC>
+   <TRIVC>V69_exclusive</TRIVC>
+   <TRIVC>V143_g04</TRIVC>
+   <TRIVC>V185_First</TRIVC>
+   <TRIVC>V144_g05</TRIVC>
+   <TRIVC>V141_g02</TRIVC>
+   <TRIVC>V146_g07</TRIVC>
+   <TRIVC>V73_invalid</TRIVC>
+   <TRIVC>V70_shared</TRIVC>
+   <TRIVC>V142_g03</TRIVC>
+   <TRIVC>OK</TRIVC>
+   <TRIVC>V173_X</TRIVC>
+   <TRIVC>V152_mem_init</TRIVC>
+</Results>

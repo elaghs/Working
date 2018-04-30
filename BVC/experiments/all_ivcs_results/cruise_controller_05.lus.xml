@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Property name="OK">
+    <Runtime unit="sec">0.311</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>0</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>rlt_enter_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>rlt_enter_CruiseController_ModeLogic_mode_logic_rltCheckEntryStateConsistency_0</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>rlt_enter_CruiseController_ModeLogic_mode_logic_rltCheckEntryStateConsistency_0</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.006</UcRuntime>
+   <Timeout unit="sec">30.385</Timeout>
+   <ProofTime unit="sec">0.071</ProofTime>
+   <Runtime unit="sec">0.077</Runtime>
+   <IVC>OK</IVC>
+   <IVC>V16_MayMove1</IVC>
+   <IVC>V17_MayMove2</IVC>
+   <IVC>V18_start1</IVC>
+   <IVC>V19_start2</IVC>
+   <IVC>V20_stop</IVC>
+   <IVC>V21_moving</IVC>
+   <IVC>V58_on</IVC>
+   <IVC>V66_signal</IVC>
+   <IVC>V75_signal</IVC>
+   <IVC>V86_signal</IVC>
+   <IVC>V90_signal</IVC>
+   <TRIVC>V75_signal</TRIVC>
+   <TRIVC>V66_signal</TRIVC>
+   <TRIVC>V58_on</TRIVC>
+   <TRIVC>V18_start1</TRIVC>
+   <TRIVC>V16_MayMove1</TRIVC>
+   <TRIVC>V19_start2</TRIVC>
+   <TRIVC>V86_signal</TRIVC>
+   <TRIVC>V20_stop</TRIVC>
+   <TRIVC>V90_signal</TRIVC>
+   <TRIVC>OK</TRIVC>
+   <TRIVC>V17_MayMove2</TRIVC>
+   <TRIVC>V21_moving</TRIVC>
+</Results>

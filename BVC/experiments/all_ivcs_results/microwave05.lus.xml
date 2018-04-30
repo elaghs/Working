@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">148.405</Runtime>
+    <Answer source="pdr">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_MIDDLE_DIGIT_DIGIT_TO_DISPLAY</MustElem>
+    <MustElem>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_RIGHT_DIGIT_DIGIT_TO_DISPLAY</MustElem>
+    <MustElem>rlt_eval_microwave_mode_logic_rlt_fired_0</MustElem>
+    <MustElem>rlt_eval_microwave_mode_logic_ON_rlt_fired_5</MustElem>
+    <MustElem>STEPS_TO_COOK</MustElem>
+    <MustElem>chart_microwave_mode_logic_steps_remaining</MustElem>
+    <MustElem>rlt_eval_microwave_mode_logic_ON_rlt_state_6_outports_steps_remaining</MustElem>
+    <MustElem>chart_microwave_mode_logic_begin_state_outports_steps_remaining</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_LEFT_DIGIT_DIGIT_TO_DISPLAY</MustElem>
+    <MustElem>microwave_microwave_TIME_ON_DISPLAY_SECONDS_TO_MINUTES__QUOTIENT</MustElem>
+    <MustElem>rlt_eval_microwave_mode_logic_rlt_state_1_outports_steps_remaining</MustElem>
+    <IvcSet number="1">
+    <Invariant>(0 &lt;= microwave_microwave_KEYPAD_PROCESSING_DISPLAY_MIDDLE_DIGIT_DIGIT_TO_DISPLAY)</Invariant>
+    <Invariant>(0 &lt;= microwave_microwave_KEYPAD_PROCESSING_DISPLAY_LEFT_DIGIT_DIGIT_TO_DISPLAY)</Invariant>
+    <Invariant>(microwave_microwave_KEYPAD_PROCESSING_DISPLAY_MIDDLE_DIGIT_DIGIT_TO_DISPLAY &lt;= 9)</Invariant>
+    <Invariant>(((60 * microwave_microwave_KEYPAD_PROCESSING_DISPLAY_LEFT_DIGIT_DIGIT_TO_DISPLAY) + microwave_microwave_KEYPAD_PROCESSING_DISPLAY_RIGHT_DIGIT_DIGIT_TO_DISPLAY) &lt;= 549)</Invariant>
+    <Invariant>((STEPS_TO_COOK = 0) or (((((60 * microwave_microwave_KEYPAD_PROCESSING_DISPLAY_LEFT_DIGIT_DIGIT_TO_DISPLAY) + microwave_microwave_KEYPAD_PROCESSING_DISPLAY_RIGHT_DIGIT_DIGIT_TO_DISPLAY) + (10 * microwave_microwave_KEYPAD_PROCESSING_DISPLAY_MIDDLE_DIGIT_DIGIT_TO_DISPLAY)) + (-STEPS_TO_COOK)) = 0))</Invariant>
+    <Invariant>(0 &lt;= microwave_microwave_KEYPAD_PROCESSING_DISPLAY_RIGHT_DIGIT_DIGIT_TO_DISPLAY)</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(microwave_microwave_KEYPAD_PROCESSING_DISPLAY_RIGHT_DIGIT_DIGIT_TO_DISPLAY &lt;= 9)</Invariant>
+    <Ivc>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_MIDDLE_DIGIT_DIGIT_TO_DISPLAY</Ivc>
+    <Ivc>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_RIGHT_DIGIT_DIGIT_TO_DISPLAY</Ivc>
+    <Ivc>STEPS_TO_COOK</Ivc>
+    <Ivc>rlt_eval_microwave_mode_logic_ON_rlt_fired_5</Ivc>
+    <Ivc>chart_microwave_mode_logic_steps_remaining</Ivc>
+    <Ivc>rlt_eval_microwave_mode_logic_ON_rlt_state_6_outports_steps_remaining</Ivc>
+    <Ivc>chart_microwave_mode_logic_begin_state_outports_steps_remaining</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>microwave_microwave_KEYPAD_PROCESSING_DISPLAY_LEFT_DIGIT_DIGIT_TO_DISPLAY</Ivc>
+    <Ivc>microwave_microwave_TIME_ON_DISPLAY_SECONDS_TO_MINUTES__QUOTIENT</Ivc>
+    <Ivc>rlt_eval_microwave_mode_logic_rlt_state_1_outports_steps_remaining</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

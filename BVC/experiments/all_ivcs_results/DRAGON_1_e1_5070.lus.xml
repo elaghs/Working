@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">1.625</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>DRAGON~0.exclusive</MustElem>
+    <MustElem>erreur</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>DRAGON~0.erreur</MustElem>
+    <MustElem>DRAGON~0.g01</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Invariant>(DRAGON~0.exclusive &lt;= 1)</Invariant>
+    <Ivc>DRAGON~0.exclusive</Ivc>
+    <Ivc>erreur</Ivc>
+    <Ivc>DRAGON~0.erreur</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>DRAGON~0.g01</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

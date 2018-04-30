@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.033</UcRuntime>
+   <Timeout unit="sec">34.675</Timeout>
+   <ProofTime unit="sec">0.902</ProofTime>
+   <Runtime unit="sec">0.935</Runtime>
+   <IVC>_TOP__DC~0.__ASSERT</IVC>
+   <IVC>_TOP__DC~0.__ASSUME__CONJ</IVC>
+   <IVC>_TOP__DC~0.__ASSUME__HIST</IVC>
+   <IVC>_TOP__DC~0.cooking_mode</IVC>
+   <IVC>_TOP__DC~0.defs__is_cooking~0._outvar</IVC>
+   <IVC>_TOP__DC~0.defs__is_cooking~0.m</IVC>
+   <IVC>_TOP__DC~0.left_digit</IVC>
+   <IVC>_TOP__DC~0.middle_digit</IVC>
+   <IVC>_TOP__DC~0.right_digit</IVC>
+   <IVC>_TOP__OP~0.__ASSERT</IVC>
+   <IVC>_TOP__OP~0.__ASSUME__CONJ</IVC>
+   <IVC>_TOP__OP~0.__ASSUME__HIST</IVC>
+   <IVC>_TOP__OP~0.cooking_mode</IVC>
+   <IVC>_TOP__OP~0.defs__is_cooking~0._outvar</IVC>
+   <IVC>_TOP__OP~0.defs__is_cooking~0.m</IVC>
+   <IVC>_TOP__OP~0.heating_element_on</IVC>
+   <IVC>__GUARANTEE1</IVC>
+   <TRIVC>_TOP__OP~0.__ASSERT</TRIVC>
+   <TRIVC>__GUARANTEE1</TRIVC>
+   <TRIVC>_TOP__OP~0.__ASSUME__CONJ</TRIVC>
+   <TRIVC>_TOP__OP~0.defs__is_cooking~0.m</TRIVC>
+   <TRIVC>_TOP__OP~0.__ASSUME__HIST</TRIVC>
+   <TRIVC>_TOP__DC~0.__ASSERT</TRIVC>
+   <TRIVC>_TOP__DC~0.cooking_mode</TRIVC>
+   <TRIVC>_TOP__OP~0.defs__is_cooking~0._outvar</TRIVC>
+   <TRIVC>_TOP__DC~0.defs__is_cooking~0.m</TRIVC>
+   <TRIVC>_TOP__DC~0.__ASSUME__HIST</TRIVC>
+   <TRIVC>_TOP__DC~0.defs__is_cooking~0._outvar</TRIVC>
+   <TRIVC>_TOP__OP~0.heating_element_on</TRIVC>
+   <TRIVC>_TOP__DC~0.right_digit</TRIVC>
+   <TRIVC>_TOP__DC~0.__ASSUME__CONJ</TRIVC>
+   <TRIVC>_TOP__OP~0.cooking_mode</TRIVC>
+   <TRIVC>_TOP__DC~0.left_digit</TRIVC>
+   <TRIVC>_TOP__DC~0.middle_digit</TRIVC>
+</Results>

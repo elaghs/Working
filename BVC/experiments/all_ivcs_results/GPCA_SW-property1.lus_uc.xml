@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.228</UcRuntime>
+   <Timeout unit="sec">58.765</Timeout>
+   <ProofTime unit="sec">5.525</ProofTime>
+   <Runtime unit="sec">5.753</Runtime>
+   <IVC>_TOP__ALARM~0.CONFIG_IN.Configured</IVC>
+   <IVC>_TOP__ALARM~0.Config_Timer</IVC>
+   <IVC>_TOP__ALARM~0.__ALARM__ASSERT__12</IVC>
+   <IVC>_TOP__ALARM~0.__ASSERT</IVC>
+   <IVC>_TOP__ASSERT__7</IVC>
+   <IVC>_TOP__OUTPUT~0.CONFIG_IN.Configured</IVC>
+   <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Configured</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSERT</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSUME__CONJ</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSUME__HIST</IVC>
+   <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__21</IVC>
+   <IVC>__GUARANTEE1</IVC>
+   <TRIVC>__GUARANTEE1</TRIVC>
+   <TRIVC>_TOP__ALARM~0.__ASSERT</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.CONFIG_IN.Configured</TRIVC>
+   <TRIVC>_TOP__ALARM~0.__ALARM__ASSERT__12</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSUME__CONJ</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Configured</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__OUTPUT__PROP__21</TRIVC>
+   <TRIVC>_TOP__ALARM~0.Config_Timer</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSUME__HIST</TRIVC>
+   <TRIVC>_TOP__ASSERT__7</TRIVC>
+   <TRIVC>_TOP__ALARM~0.CONFIG_IN.Configured</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSERT</TRIVC>
+</Results>

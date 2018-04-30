@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<Runs>
+<Results>
+   <Depth>0</Depth>
+   <BVC>Property~0.ok</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>1</Depth>
+   <BVC>Property~0.ok</BVC>
+   <BVC>Property~0.cpt</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>2</Depth>
+   <BVC>Property~0.ok</BVC>
+   <BVC>Property~0.cpt</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>3</Depth>
+   <BVC>Property~0.ok</BVC>
+   <BVC>Property~0.cpt</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>4</Depth>
+   <BVC>Property~0.ok</BVC>
+   <BVC>Property~0.cpt</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>5</Depth>
+   <BVC>Property~0.ok</BVC>
+   <BVC>Property~0.cpt</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>6</Depth>
+   <BVC>Property~0.ok</BVC>
+   <BVC>Property~0.cpt</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>7</Depth>
+   <BVC>Property~0.ok</BVC>
+   <BVC>Property~0.cpt</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>8</Depth>
+   <BVC>Property~0.ok</BVC>
+   <BVC>Property~0.cpt</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>9</Depth>
+   <BVC>Environment~0.ok</BVC>
+   <BVC>Sofar~0.X</BVC>
+   <BVC>Environment~0.diff</BVC>
+   <BVC>Property~0.cpt</BVC>
+   <BVC>Sofar~0.Sofar</BVC>
+   <BVC>Controller~0.diff</BVC>
+   <BVC>Controller~0.speed</BVC>
+   <BVC>plus</BVC>
+   <BVC>speed</BVC>
+   <BVC>Environment~0.plus</BVC>
+   <BVC>Property~0.ok</BVC>
+   <BVC>realistic</BVC>
+   <BVC>Controller~0.plus</BVC>
+   <BVC>Property~0.acceptable</BVC>
+   <BVC>Property~0.speed</BVC>
+   <BVC>OK</BVC>
+</Results>
+</Runs>

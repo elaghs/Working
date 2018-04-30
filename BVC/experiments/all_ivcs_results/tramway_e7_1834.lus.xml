@@ -1,0 +1,383 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="19">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="20">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">10.433</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>16</NumberOfIVCs>
+    <MustElem>V264_env_ok</MustElem>
+    <MustElem>V59_prop_ok</MustElem>
+    <MustElem>V250_door_doesnt_open_out_of_station</MustElem>
+    <MustElem>V251_door_opens_before_leaving_station</MustElem>
+    <MustElem>V268_door_initially_closed</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>V58_env_always_ok</MustElem>
+    <IvcSet number="1">
+    <Invariant>((not door_is_open) or (not V62_door_ok))</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>V250_door_doesnt_open_out_of_station</Ivc>
+    <Ivc>V274_X</Ivc>
+    <Ivc>V267_tramway_doesnt_start_if_not_door_ok</Ivc>
+    <Ivc>V62_door_ok</Ivc>
+    <Ivc>V58_env_always_ok</Ivc>
+    <Ivc>V264_env_ok</Ivc>
+    <Ivc>V59_prop_ok</Ivc>
+    <Ivc>V251_door_opens_before_leaving_station</Ivc>
+    <Ivc>V60_open_door</Ivc>
+    <Ivc>V265_door_doesnt_close_if_not_asked</Ivc>
+    <Ivc>V272_warning_start_cant_become_true_when_door_is_opening</Ivc>
+    <Ivc>V268_door_initially_closed</Ivc>
+    <Ivc>V253_between_A_and_X</Ivc>
+    <Ivc>OK</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>OK</Invariant>
+    <Ivc>V250_door_doesnt_open_out_of_station</Ivc>
+    <Ivc>V266_door_doesnt_open_if_not_asked</Ivc>
+    <Ivc>V252_X</Ivc>
+    <Ivc>V287_req_pending</Ivc>
+    <Ivc>V58_env_always_ok</Ivc>
+    <Ivc>V264_env_ok</Ivc>
+    <Ivc>V59_prop_ok</Ivc>
+    <Ivc>V251_door_opens_before_leaving_station</Ivc>
+    <Ivc>V60_open_door</Ivc>
+    <Ivc>V265_door_doesnt_close_if_not_asked</Ivc>
+    <Ivc>V268_door_initially_closed</Ivc>
+    <Ivc>V269_initially_not_in_station</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V61_close_door</Ivc>
+    </IvcSet>
+    <IvcSet number="3">
+    <Invariant>OK</Invariant>
+    <Ivc>V250_door_doesnt_open_out_of_station</Ivc>
+    <Ivc>V266_door_doesnt_open_if_not_asked</Ivc>
+    <Ivc>V58_env_always_ok</Ivc>
+    <Ivc>V264_env_ok</Ivc>
+    <Ivc>V59_prop_ok</Ivc>
+    <Ivc>V251_door_opens_before_leaving_station</Ivc>
+    <Ivc>V60_open_door</Ivc>
+    <Ivc>V265_door_doesnt_close_if_not_asked</Ivc>
+    <Ivc>V272_warning_start_cant_become_true_when_door_is_opening</Ivc>
+    <Ivc>V268_door_initially_closed</Ivc>
+    <Ivc>V253_between_A_and_X</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V61_close_door</Ivc>
+    </IvcSet>
+    <IvcSet number="4">
+    <Invariant>OK</Invariant>
+    <Ivc>V250_door_doesnt_open_out_of_station</Ivc>
+    <Ivc>V266_door_doesnt_open_if_not_asked</Ivc>
+    <Ivc>V275_X</Ivc>
+    <Ivc>V274_X</Ivc>
+    <Ivc>V267_tramway_doesnt_start_if_not_door_ok</Ivc>
+    <Ivc>V62_door_ok</Ivc>
+    <Ivc>V287_req_pending</Ivc>
+    <Ivc>V273_X</Ivc>
+    <Ivc>V58_env_always_ok</Ivc>
+    <Ivc>V276_X</Ivc>
+    <Ivc>V264_env_ok</Ivc>
+    <Ivc>V59_prop_ok</Ivc>
+    <Ivc>V251_door_opens_before_leaving_station</Ivc>
+    <Ivc>V60_open_door</Ivc>
+    <Ivc>V265_door_doesnt_close_if_not_asked</Ivc>
+    <Ivc>V268_door_initially_closed</Ivc>
+    <Ivc>V270_warning_start_and_in_station_go_down_simultaneously</Ivc>
+    <Ivc>V253_between_A_and_X</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V61_close_door</Ivc>
+    </IvcSet>
+    <IvcSet number="5">
+    <Invariant>OK</Invariant>
+    <Ivc>V250_door_doesnt_open_out_of_station</Ivc>
+    <Ivc>V266_door_doesnt_open_if_not_asked</Ivc>
+    <Ivc>V252_X</Ivc>
+    <Ivc>V58_env_always_ok</Ivc>
+    <Ivc>V264_env_ok</Ivc>
+    <Ivc>V59_prop_ok</Ivc>
+    <Ivc>V251_door_opens_before_leaving_station</Ivc>
+    <Ivc>V60_open_door</Ivc>
+    <Ivc>V265_door_doesnt_close_if_not_asked</Ivc>
+    <Ivc>V272_warning_start_cant_become_true_when_door_is_opening</Ivc>
+    <Ivc>V268_door_initially_closed</Ivc>
+    <Ivc>V269_initially_not_in_station</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V61_close_door</Ivc>
+    </IvcSet>
+    <IvcSet number="6">
+    <Invariant>(V275_X or (not V58_env_always_ok))</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>V250_door_doesnt_open_out_of_station</Ivc>
+    <Ivc>V266_door_doesnt_open_if_not_asked</Ivc>
+    <Ivc>V275_X</Ivc>
+    <Ivc>V287_req_pending</Ivc>
+    <Ivc>V273_X</Ivc>
+    <Ivc>V58_env_always_ok</Ivc>
+    <Ivc>V276_X</Ivc>
+    <Ivc>V264_env_ok</Ivc>
+    <Ivc>V59_prop_ok</Ivc>
+    <Ivc>V251_door_opens_before_leaving_station</Ivc>
+    <Ivc>V60_open_door</Ivc>
+    <Ivc>V265_door_doesnt_close_if_not_asked</Ivc>
+    <Ivc>V268_door_initially_closed</Ivc>
+    <Ivc>V270_warning_start_and_in_station_go_down_simultaneously</Ivc>
+    <Ivc>V269_initially_not_in_station</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V61_close_door</Ivc>
+    </IvcSet>
+    <IvcSet number="7">
+    <Invariant>OK</Invariant>
+    <Ivc>V250_door_doesnt_open_out_of_station</Ivc>
+    <Ivc>V266_door_doesnt_open_if_not_asked</Ivc>
+    <Ivc>V252_X</Ivc>
+    <Ivc>V274_X</Ivc>
+    <Ivc>V267_tramway_doesnt_start_if_not_door_ok</Ivc>
+    <Ivc>V62_door_ok</Ivc>
+    <Ivc>V273_X</Ivc>
+    <Ivc>V271_warning_start_only_in_station</Ivc>
+    <Ivc>V58_env_always_ok</Ivc>
+    <Ivc>V264_env_ok</Ivc>
+    <Ivc>V59_prop_ok</Ivc>
+    <Ivc>V251_door_opens_before_leaving_station</Ivc>
+    <Ivc>V268_door_initially_closed</Ivc>
+    <Ivc>V269_initially_not_in_station</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V61_close_door</Ivc>
+    </IvcSet>
+    <IvcSet number="8">
+    <Invariant>((not warning_start) or (not V58_env_always_ok))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>((not door_is_open) or (not V58_env_always_ok))</Invariant>
+    <Ivc>V264_env_ok</Ivc>
+    <Ivc>V59_prop_ok</Ivc>
+    <Ivc>V250_door_doesnt_open_out_of_station</Ivc>
+    <Ivc>V251_door_opens_before_leaving_station</Ivc>
+    <Ivc>V265_door_doesnt_close_if_not_asked</Ivc>
+    <Ivc>V272_warning_start_cant_become_true_when_door_is_opening</Ivc>
+    <Ivc>V268_door_initially_closed</Ivc>
+    <Ivc>V269_initially_not_in_station</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V271_warning_start_only_in_station</Ivc>
+    <Ivc>V58_env_always_ok</Ivc>
+    </IvcSet>
+    <IvcSet number="9">
+    <Invariant>OK</Invariant>
+    <Ivc>V250_door_doesnt_open_out_of_station</Ivc>
+    <Ivc>V275_X</Ivc>
+    <Ivc>V58_env_always_ok</Ivc>
+    <Ivc>V276_X</Ivc>
+    <Ivc>V264_env_ok</Ivc>
+    <Ivc>V59_prop_ok</Ivc>
+    <Ivc>V251_door_opens_before_leaving_station</Ivc>
+    <Ivc>V60_open_door</Ivc>
+    <Ivc>V265_door_doesnt_close_if_not_asked</Ivc>
+    <Ivc>V272_warning_start_cant_become_true_when_door_is_opening</Ivc>
+    <Ivc>V268_door_initially_closed</Ivc>
+    <Ivc>V270_warning_start_and_in_station_go_down_simultaneously</Ivc>
+    <Ivc>V269_initially_not_in_station</Ivc>
+    <Ivc>OK</Ivc>
+    </IvcSet>
+    <IvcSet number="10">
+    <Invariant>OK</Invariant>
+    <Invariant>((V252_X or (not V58_env_always_ok)) or (not V274_X))</Invariant>
+    <Ivc>V250_door_doesnt_open_out_of_station</Ivc>
+    <Ivc>V266_door_doesnt_open_if_not_asked</Ivc>
+    <Ivc>V275_X</Ivc>
+    <Ivc>V252_X</Ivc>
+    <Ivc>V267_tramway_doesnt_start_if_not_door_ok</Ivc>
+    <Ivc>V62_door_ok</Ivc>
+    <Ivc>V273_X</Ivc>
+    <Ivc>V58_env_always_ok</Ivc>
+    <Ivc>V276_X</Ivc>
+    <Ivc>V264_env_ok</Ivc>
+    <Ivc>V59_prop_ok</Ivc>
+    <Ivc>V251_door_opens_before_leaving_station</Ivc>
+    <Ivc>V60_open_door</Ivc>
+    <Ivc>V265_door_doesnt_close_if_not_asked</Ivc>
+    <Ivc>V268_door_initially_closed</Ivc>
+    <Ivc>V270_warning_start_and_in_station_go_down_simultaneously</Ivc>
+    <Ivc>V269_initially_not_in_station</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V61_close_door</Ivc>
+    </IvcSet>
+    <IvcSet number="11">
+    <Invariant>OK</Invariant>
+    <Ivc>V250_door_doesnt_open_out_of_station</Ivc>
+    <Ivc>V252_X</Ivc>
+    <Ivc>V274_X</Ivc>
+    <Ivc>V267_tramway_doesnt_start_if_not_door_ok</Ivc>
+    <Ivc>V62_door_ok</Ivc>
+    <Ivc>V58_env_always_ok</Ivc>
+    <Ivc>V264_env_ok</Ivc>
+    <Ivc>V59_prop_ok</Ivc>
+    <Ivc>V251_door_opens_before_leaving_station</Ivc>
+    <Ivc>V60_open_door</Ivc>
+    <Ivc>V265_door_doesnt_close_if_not_asked</Ivc>
+    <Ivc>V272_warning_start_cant_become_true_when_door_is_opening</Ivc>
+    <Ivc>V268_door_initially_closed</Ivc>
+    <Ivc>V269_initially_not_in_station</Ivc>
+    <Ivc>OK</Ivc>
+    </IvcSet>
+    <IvcSet number="12">
+    <Invariant>OK</Invariant>
+    <Ivc>V250_door_doesnt_open_out_of_station</Ivc>
+    <Ivc>V266_door_doesnt_open_if_not_asked</Ivc>
+    <Ivc>V252_X</Ivc>
+    <Ivc>V267_tramway_doesnt_start_if_not_door_ok</Ivc>
+    <Ivc>V62_door_ok</Ivc>
+    <Ivc>V273_X</Ivc>
+    <Ivc>V271_warning_start_only_in_station</Ivc>
+    <Ivc>V58_env_always_ok</Ivc>
+    <Ivc>V264_env_ok</Ivc>
+    <Ivc>V59_prop_ok</Ivc>
+    <Ivc>V251_door_opens_before_leaving_station</Ivc>
+    <Ivc>V60_open_door</Ivc>
+    <Ivc>V265_door_doesnt_close_if_not_asked</Ivc>
+    <Ivc>V268_door_initially_closed</Ivc>
+    <Ivc>V269_initially_not_in_station</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V61_close_door</Ivc>
+    </IvcSet>
+    <IvcSet number="13">
+    <Invariant>OK</Invariant>
+    <Ivc>V250_door_doesnt_open_out_of_station</Ivc>
+    <Ivc>V266_door_doesnt_open_if_not_asked</Ivc>
+    <Ivc>V252_X</Ivc>
+    <Ivc>V274_X</Ivc>
+    <Ivc>V267_tramway_doesnt_start_if_not_door_ok</Ivc>
+    <Ivc>V62_door_ok</Ivc>
+    <Ivc>V273_X</Ivc>
+    <Ivc>V58_env_always_ok</Ivc>
+    <Ivc>V264_env_ok</Ivc>
+    <Ivc>V59_prop_ok</Ivc>
+    <Ivc>V251_door_opens_before_leaving_station</Ivc>
+    <Ivc>V60_open_door</Ivc>
+    <Ivc>V265_door_doesnt_close_if_not_asked</Ivc>
+    <Ivc>V268_door_initially_closed</Ivc>
+    <Ivc>V253_between_A_and_X</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V61_close_door</Ivc>
+    </IvcSet>
+    <IvcSet number="14">
+    <Invariant>OK</Invariant>
+    <Ivc>V250_door_doesnt_open_out_of_station</Ivc>
+    <Ivc>V266_door_doesnt_open_if_not_asked</Ivc>
+    <Ivc>V252_X</Ivc>
+    <Ivc>V274_X</Ivc>
+    <Ivc>V267_tramway_doesnt_start_if_not_door_ok</Ivc>
+    <Ivc>V62_door_ok</Ivc>
+    <Ivc>V273_X</Ivc>
+    <Ivc>V58_env_always_ok</Ivc>
+    <Ivc>V264_env_ok</Ivc>
+    <Ivc>V59_prop_ok</Ivc>
+    <Ivc>V251_door_opens_before_leaving_station</Ivc>
+    <Ivc>V60_open_door</Ivc>
+    <Ivc>V265_door_doesnt_close_if_not_asked</Ivc>
+    <Ivc>V268_door_initially_closed</Ivc>
+    <Ivc>V269_initially_not_in_station</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V61_close_door</Ivc>
+    </IvcSet>
+    <IvcSet number="15">
+    <Invariant>OK</Invariant>
+    <Ivc>V250_door_doesnt_open_out_of_station</Ivc>
+    <Ivc>V266_door_doesnt_open_if_not_asked</Ivc>
+    <Ivc>V252_X</Ivc>
+    <Ivc>V274_X</Ivc>
+    <Ivc>V267_tramway_doesnt_start_if_not_door_ok</Ivc>
+    <Ivc>V62_door_ok</Ivc>
+    <Ivc>V287_req_pending</Ivc>
+    <Ivc>V271_warning_start_only_in_station</Ivc>
+    <Ivc>V58_env_always_ok</Ivc>
+    <Ivc>V264_env_ok</Ivc>
+    <Ivc>V59_prop_ok</Ivc>
+    <Ivc>V251_door_opens_before_leaving_station</Ivc>
+    <Ivc>V60_open_door</Ivc>
+    <Ivc>V272_warning_start_cant_become_true_when_door_is_opening</Ivc>
+    <Ivc>V268_door_initially_closed</Ivc>
+    <Ivc>V269_initially_not_in_station</Ivc>
+    <Ivc>V253_between_A_and_X</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V61_close_door</Ivc>
+    </IvcSet>
+    <IvcSet number="16">
+    <Invariant>OK</Invariant>
+    <Ivc>V250_door_doesnt_open_out_of_station</Ivc>
+    <Ivc>V266_door_doesnt_open_if_not_asked</Ivc>
+    <Ivc>V252_X</Ivc>
+    <Ivc>V274_X</Ivc>
+    <Ivc>V267_tramway_doesnt_start_if_not_door_ok</Ivc>
+    <Ivc>V62_door_ok</Ivc>
+    <Ivc>V287_req_pending</Ivc>
+    <Ivc>V58_env_always_ok</Ivc>
+    <Ivc>V264_env_ok</Ivc>
+    <Ivc>V59_prop_ok</Ivc>
+    <Ivc>V251_door_opens_before_leaving_station</Ivc>
+    <Ivc>V60_open_door</Ivc>
+    <Ivc>V265_door_doesnt_close_if_not_asked</Ivc>
+    <Ivc>V268_door_initially_closed</Ivc>
+    <Ivc>V253_between_A_and_X</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V61_close_door</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

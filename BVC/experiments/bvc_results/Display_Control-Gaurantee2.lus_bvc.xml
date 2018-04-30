@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<Runs>
+<Results>
+   <Depth>0</Depth>
+   <BVC>__GUARANTEE2</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</BVC>
+</Results>
+<Results>
+   <Depth>1</Depth>
+   <BVC>__GUARANTEE2</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</BVC>
+</Results>
+<Results>
+   <Depth>2</Depth>
+   <BVC>__GUARANTEE2</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</BVC>
+</Results>
+<Results>
+   <Depth>3</Depth>
+   <BVC>__GUARANTEE2</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</BVC>
+</Results>
+<Results>
+   <Depth>4</Depth>
+   <BVC>__GUARANTEE2</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</BVC>
+</Results>
+<Results>
+   <Depth>5</Depth>
+   <BVC>__GUARANTEE2</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</BVC>
+</Results>
+<Results>
+   <Depth>6</Depth>
+   <BVC>__GUARANTEE2</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</BVC>
+</Results>
+<Results>
+   <Depth>7</Depth>
+   <BVC>__GUARANTEE2</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</BVC>
+</Results>
+<Results>
+   <Depth>8</Depth>
+   <BVC>__GUARANTEE2</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</BVC>
+</Results>
+<Results>
+   <Depth>9</Depth>
+   <BVC>__GUARANTEE2</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</BVC>
+   <BVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</BVC>
+</Results>
+</Runs>

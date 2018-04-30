@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<Runs>
+<Results>
+   <Depth>0</Depth>
+   <BVC>defs__rising_edge~2.signal</BVC>
+   <BVC>__GUARANTEE4</BVC>
+   <BVC>defs__is_running~1.m</BVC>
+   <BVC>defs__rising_edge~2.re</BVC>
+   <BVC>defs__is_running~1._outvar</BVC>
+</Results>
+<Results>
+   <Depth>1</Depth>
+   <BVC>defs__rising_edge~2.signal</BVC>
+   <BVC>__GUARANTEE4</BVC>
+   <BVC>defs__is_suspended~1._outvar</BVC>
+   <BVC>defs__is_running~1.m</BVC>
+   <BVC>defs__rising_edge~2.re</BVC>
+   <BVC>defs__is_running~1._outvar</BVC>
+   <BVC>defs__is_suspended~1.m</BVC>
+</Results>
+<Results>
+   <Depth>2</Depth>
+   <BVC>defs__rising_edge~2.signal</BVC>
+   <BVC>__GUARANTEE4</BVC>
+   <BVC>defs__is_suspended~1._outvar</BVC>
+   <BVC>defs__is_running~1.m</BVC>
+   <BVC>defs__rising_edge~2.re</BVC>
+   <BVC>defs__is_running~1._outvar</BVC>
+   <BVC>defs__is_suspended~1.m</BVC>
+</Results>
+<Results>
+   <Depth>3</Depth>
+   <BVC>defs__rising_edge~2.signal</BVC>
+   <BVC>__GUARANTEE4</BVC>
+   <BVC>defs__is_suspended~1._outvar</BVC>
+   <BVC>defs__is_running~1.m</BVC>
+   <BVC>defs__rising_edge~2.re</BVC>
+   <BVC>defs__is_running~1._outvar</BVC>
+   <BVC>defs__is_suspended~1.m</BVC>
+</Results>
+<Results>
+   <Depth>4</Depth>
+   <BVC>defs__rising_edge~2.signal</BVC>
+   <BVC>__GUARANTEE4</BVC>
+   <BVC>defs__is_suspended~1._outvar</BVC>
+   <BVC>defs__is_running~1.m</BVC>
+   <BVC>defs__rising_edge~2.re</BVC>
+   <BVC>defs__is_running~1._outvar</BVC>
+   <BVC>defs__is_suspended~1.m</BVC>
+</Results>
+<Results>
+   <Depth>5</Depth>
+   <BVC>defs__rising_edge~2.signal</BVC>
+   <BVC>__GUARANTEE4</BVC>
+   <BVC>defs__is_suspended~1._outvar</BVC>
+   <BVC>defs__is_running~1.m</BVC>
+   <BVC>defs__rising_edge~2.re</BVC>
+   <BVC>defs__is_running~1._outvar</BVC>
+   <BVC>defs__is_suspended~1.m</BVC>
+</Results>
+<Results>
+   <Depth>6</Depth>
+   <BVC>defs__rising_edge~2.signal</BVC>
+   <BVC>__GUARANTEE4</BVC>
+   <BVC>defs__is_suspended~1._outvar</BVC>
+   <BVC>defs__is_running~1.m</BVC>
+   <BVC>defs__rising_edge~2.re</BVC>
+   <BVC>defs__is_running~1._outvar</BVC>
+   <BVC>defs__is_suspended~1.m</BVC>
+</Results>
+<Results>
+   <Depth>7</Depth>
+   <BVC>defs__rising_edge~2.signal</BVC>
+   <BVC>__GUARANTEE4</BVC>
+   <BVC>defs__is_suspended~1._outvar</BVC>
+   <BVC>defs__is_running~1.m</BVC>
+   <BVC>defs__rising_edge~2.re</BVC>
+   <BVC>defs__is_running~1._outvar</BVC>
+   <BVC>defs__is_suspended~1.m</BVC>
+</Results>
+<Results>
+   <Depth>8</Depth>
+   <BVC>defs__rising_edge~2.signal</BVC>
+   <BVC>__GUARANTEE4</BVC>
+   <BVC>defs__is_suspended~1._outvar</BVC>
+   <BVC>defs__is_running~1.m</BVC>
+   <BVC>defs__rising_edge~2.re</BVC>
+   <BVC>defs__is_running~1._outvar</BVC>
+   <BVC>defs__is_suspended~1.m</BVC>
+</Results>
+<Results>
+   <Depth>9</Depth>
+   <BVC>defs__rising_edge~2.signal</BVC>
+   <BVC>__GUARANTEE4</BVC>
+   <BVC>defs__is_suspended~1._outvar</BVC>
+   <BVC>defs__is_running~1.m</BVC>
+   <BVC>defs__rising_edge~2.re</BVC>
+   <BVC>defs__is_running~1._outvar</BVC>
+   <BVC>defs__is_suspended~1.m</BVC>
+</Results>
+</Runs>

@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">18.662</Runtime>
+    <Answer source="invariant-generation">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>3</NumberOfIVCs>
+    <MustElem>V68_shared_dirty</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>V142_g11</MustElem>
+    <IvcSet number="1">
+    <Invariant>((((V69_dirty &lt;= (-1)) or (0 = V69_dirty)) or (not V72_env)) or (0 = V67_shared))</Invariant>
+    <Invariant>(V66_exclusive &lt;= 1)</Invariant>
+    <Invariant>(((not (V69_dirty &lt;= (-1))) or (not V72_env)) or ((((V68_shared_dirty + (-V67_shared)) + V66_exclusive) + V69_dirty) &lt;= 0))</Invariant>
+    <Invariant>((0 &lt;= V67_shared) or (not V72_env))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>((((V68_shared_dirty &lt;= 0) or (V69_dirty &lt;= (-1))) or (0 = V69_dirty)) or (not V72_env))</Invariant>
+    <Invariant>(((((0 = V69_dirty) or (not (0 &lt;= V66_exclusive))) or (not (V66_exclusive &lt;&gt; 0))) or (not V72_env)) or (not (0 &lt;= V69_dirty)))</Invariant>
+    <Invariant>((not V72_env) or (V69_dirty &lt;= 1))</Invariant>
+    <Invariant>((((not (0 &lt;= V66_exclusive)) or (not (V66_exclusive &lt;&gt; 0))) or (not V72_env)) or (0 = V67_shared))</Invariant>
+    <Invariant>((not V72_env) or (V68_shared_dirty &lt;= 1))</Invariant>
+    <Invariant>((((V68_shared_dirty &lt;= 0) or (not (0 &lt;= V66_exclusive))) or (not (V66_exclusive &lt;&gt; 0))) or (not V72_env))</Invariant>
+    <Ivc>V134_g03</Ivc>
+    <Ivc>V72_env</Ivc>
+    <Ivc>V69_dirty</Ivc>
+    <Ivc>V136_g05</Ivc>
+    <Ivc>V132_g01</Ivc>
+    <Ivc>V141_g10</Ivc>
+    <Ivc>V138_g07</Ivc>
+    <Ivc>V66_exclusive</Ivc>
+    <Ivc>V68_shared_dirty</Ivc>
+    <Ivc>V139_g08</Ivc>
+    <Ivc>V137_g06</Ivc>
+    <Ivc>V135_g04</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V133_g02</Ivc>
+    <Ivc>V67_shared</Ivc>
+    <Ivc>V142_g11</Ivc>
+    <Ivc>V165_X</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>(V68_shared_dirty &gt;= 0)</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(V69_dirty &gt;= 0)</Invariant>
+    <Ivc>V69_dirty</Ivc>
+    <Ivc>V140_g09</Ivc>
+    <Ivc>V68_shared_dirty</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V142_g11</Ivc>
+    </IvcSet>
+    <IvcSet number="3">
+    <Invariant>(0 &lt;= V68_shared_dirty)</Invariant>
+    <Invariant>(V66_exclusive &lt;= 1)</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(0 &lt;= V67_shared)</Invariant>
+    <Invariant>((not (V66_exclusive &lt;= 0)) or (V66_exclusive = 0))</Invariant>
+    <Ivc>V134_g03</Ivc>
+    <Ivc>V66_exclusive</Ivc>
+    <Ivc>V132_g01</Ivc>
+    <Ivc>V68_shared_dirty</Ivc>
+    <Ivc>V139_g08</Ivc>
+    <Ivc>V137_g06</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V133_g02</Ivc>
+    <Ivc>V67_shared</Ivc>
+    <Ivc>V143_g12</Ivc>
+    <Ivc>V141_g10</Ivc>
+    <Ivc>V142_g11</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

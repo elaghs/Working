@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.009</UcRuntime>
+   <Timeout unit="sec">30.185</Timeout>
+   <ProofTime unit="sec">0.028</ProofTime>
+   <Runtime unit="sec">0.037</Runtime>
+   <IVC>OK</IVC>
+   <IVC>V33_modified_mo</IVC>
+   <IVC>V34_exclusive_mo</IVC>
+   <IVC>V35_shared_mo</IVC>
+   <IVC>V36_invalid_mo</IVC>
+   <IVC>V37_owned_mo</IVC>
+   <IVC>V39_env</IVC>
+   <IVC>V99_X</IVC>
+   <TRIVC>V36_invalid_mo</TRIVC>
+   <TRIVC>V39_env</TRIVC>
+   <TRIVC>V37_owned_mo</TRIVC>
+   <TRIVC>V35_shared_mo</TRIVC>
+   <TRIVC>V34_exclusive_mo</TRIVC>
+   <TRIVC>V99_X</TRIVC>
+   <TRIVC>OK</TRIVC>
+   <TRIVC>V33_modified_mo</TRIVC>
+</Results>

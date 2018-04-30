@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<Runs>
+<Results>
+   <Depth>0</Depth>
+   <BVC>op_mode</BVC>
+   <BVC>mode_normal_then_no_stop_request</BVC>
+   <BVC>mode_normal_then_water_level_ok</BVC>
+   <BVC>ControlMode~0.op_mode</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>1</Depth>
+   <BVC>op_mode</BVC>
+   <BVC>mode_normal_then_no_stop_request</BVC>
+   <BVC>mode_normal_then_water_level_ok</BVC>
+   <BVC>ControlMode~0.op_mode</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>2</Depth>
+   <BVC>op_mode</BVC>
+   <BVC>mode_normal_then_no_stop_request</BVC>
+   <BVC>ControlMode~0.stop_request</BVC>
+   <BVC>mode_normal_then_water_level_ok</BVC>
+   <BVC>ControlMode~0.op_mode</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>3</Depth>
+   <BVC>dangerous_level~0.dangerous_level</BVC>
+   <BVC>op_mode</BVC>
+   <BVC>ControlMode~0.critical_failure~0.dangerous_level~0.dangerous_level</BVC>
+   <BVC>ControlMode~0.critical_failure~0.dangerous_level~0.q</BVC>
+   <BVC>ControlMode~0.op_mode</BVC>
+   <BVC>dangerous_level~0.q</BVC>
+   <BVC>ControlMode~0.critical_failure~0.q</BVC>
+   <BVC>ControlMode~0.critical_failure~0.critical_failure</BVC>
+   <BVC>mode_normal_then_no_stop_request</BVC>
+   <BVC>ControlMode~0.stop_request</BVC>
+   <BVC>ControlMode~0.q</BVC>
+   <BVC>mode_normal_then_water_level_ok</BVC>
+   <BVC>OK</BVC>
+   <BVC>ControlMode~0.critical_failure~0.op_mode</BVC>
+</Results>
+<Results>
+   <Depth>4</Depth>
+   <BVC>dangerous_level~0.dangerous_level</BVC>
+   <BVC>op_mode</BVC>
+   <BVC>ControlMode~0.critical_failure~0.dangerous_level~0.dangerous_level</BVC>
+   <BVC>ControlMode~0.critical_failure~0.dangerous_level~0.q</BVC>
+   <BVC>ControlMode~0.op_mode</BVC>
+   <BVC>dangerous_level~0.q</BVC>
+   <BVC>ControlMode~0.critical_failure~0.q</BVC>
+   <BVC>ControlMode~0.critical_failure~0.critical_failure</BVC>
+   <BVC>mode_normal_then_no_stop_request</BVC>
+   <BVC>ControlMode~0.stop_request</BVC>
+   <BVC>ControlMode~0.q</BVC>
+   <BVC>mode_normal_then_water_level_ok</BVC>
+   <BVC>OK</BVC>
+   <BVC>ControlMode~0.critical_failure~0.op_mode</BVC>
+</Results>
+<Results>
+   <Depth>5</Depth>
+   <BVC>dangerous_level~0.dangerous_level</BVC>
+   <BVC>op_mode</BVC>
+   <BVC>ControlMode~0.critical_failure~0.dangerous_level~0.dangerous_level</BVC>
+   <BVC>ControlMode~0.critical_failure~0.dangerous_level~0.q</BVC>
+   <BVC>ControlMode~0.op_mode</BVC>
+   <BVC>dangerous_level~0.q</BVC>
+   <BVC>ControlMode~0.critical_failure~0.q</BVC>
+   <BVC>ControlMode~0.critical_failure~0.critical_failure</BVC>
+   <BVC>mode_normal_then_no_stop_request</BVC>
+   <BVC>ControlMode~0.stop_request</BVC>
+   <BVC>ControlMode~0.q</BVC>
+   <BVC>mode_normal_then_water_level_ok</BVC>
+   <BVC>OK</BVC>
+   <BVC>ControlMode~0.critical_failure~0.op_mode</BVC>
+</Results>
+<Results>
+   <Depth>6</Depth>
+   <BVC>dangerous_level~0.dangerous_level</BVC>
+   <BVC>op_mode</BVC>
+   <BVC>ControlMode~0.critical_failure~0.dangerous_level~0.dangerous_level</BVC>
+   <BVC>ControlMode~0.critical_failure~0.dangerous_level~0.q</BVC>
+   <BVC>ControlMode~0.op_mode</BVC>
+   <BVC>dangerous_level~0.q</BVC>
+   <BVC>ControlMode~0.critical_failure~0.q</BVC>
+   <BVC>ControlMode~0.critical_failure~0.critical_failure</BVC>
+   <BVC>mode_normal_then_no_stop_request</BVC>
+   <BVC>ControlMode~0.stop_request</BVC>
+   <BVC>ControlMode~0.q</BVC>
+   <BVC>mode_normal_then_water_level_ok</BVC>
+   <BVC>OK</BVC>
+   <BVC>ControlMode~0.critical_failure~0.op_mode</BVC>
+</Results>
+<Results>
+   <Depth>7</Depth>
+   <BVC>dangerous_level~0.dangerous_level</BVC>
+   <BVC>op_mode</BVC>
+   <BVC>ControlMode~0.critical_failure~0.dangerous_level~0.dangerous_level</BVC>
+   <BVC>ControlMode~0.critical_failure~0.dangerous_level~0.q</BVC>
+   <BVC>ControlMode~0.op_mode</BVC>
+   <BVC>dangerous_level~0.q</BVC>
+   <BVC>ControlMode~0.critical_failure~0.q</BVC>
+   <BVC>ControlMode~0.critical_failure~0.critical_failure</BVC>
+   <BVC>mode_normal_then_no_stop_request</BVC>
+   <BVC>ControlMode~0.stop_request</BVC>
+   <BVC>ControlMode~0.q</BVC>
+   <BVC>mode_normal_then_water_level_ok</BVC>
+   <BVC>OK</BVC>
+   <BVC>ControlMode~0.critical_failure~0.op_mode</BVC>
+</Results>
+<Results>
+   <Depth>8</Depth>
+   <BVC>dangerous_level~0.dangerous_level</BVC>
+   <BVC>op_mode</BVC>
+   <BVC>ControlMode~0.critical_failure~0.dangerous_level~0.dangerous_level</BVC>
+   <BVC>ControlMode~0.critical_failure~0.dangerous_level~0.q</BVC>
+   <BVC>ControlMode~0.op_mode</BVC>
+   <BVC>dangerous_level~0.q</BVC>
+   <BVC>ControlMode~0.critical_failure~0.q</BVC>
+   <BVC>ControlMode~0.critical_failure~0.critical_failure</BVC>
+   <BVC>mode_normal_then_no_stop_request</BVC>
+   <BVC>ControlMode~0.stop_request</BVC>
+   <BVC>ControlMode~0.q</BVC>
+   <BVC>mode_normal_then_water_level_ok</BVC>
+   <BVC>OK</BVC>
+   <BVC>ControlMode~0.critical_failure~0.op_mode</BVC>
+</Results>
+<Results>
+   <Depth>9</Depth>
+   <BVC>dangerous_level~0.dangerous_level</BVC>
+   <BVC>op_mode</BVC>
+   <BVC>ControlMode~0.critical_failure~0.dangerous_level~0.dangerous_level</BVC>
+   <BVC>ControlMode~0.critical_failure~0.dangerous_level~0.q</BVC>
+   <BVC>ControlMode~0.op_mode</BVC>
+   <BVC>dangerous_level~0.q</BVC>
+   <BVC>ControlMode~0.critical_failure~0.q</BVC>
+   <BVC>ControlMode~0.critical_failure~0.critical_failure</BVC>
+   <BVC>mode_normal_then_no_stop_request</BVC>
+   <BVC>ControlMode~0.stop_request</BVC>
+   <BVC>ControlMode~0.q</BVC>
+   <BVC>mode_normal_then_water_level_ok</BVC>
+   <BVC>OK</BVC>
+   <BVC>ControlMode~0.critical_failure~0.op_mode</BVC>
+</Results>
+</Runs>

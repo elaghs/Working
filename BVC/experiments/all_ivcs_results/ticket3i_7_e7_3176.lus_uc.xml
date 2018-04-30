@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.031</UcRuntime>
+   <Timeout unit="sec">41.81</Timeout>
+   <ProofTime unit="sec">2.331</ProofTime>
+   <Runtime unit="sec">2.362</Runtime>
+   <IVC>OK</IVC>
+   <IVC>V62_p1</IVC>
+   <IVC>V63_p2</IVC>
+   <IVC>V64_p3</IVC>
+   <TRIVC>V64_p3</TRIVC>
+   <TRIVC>V63_p2</TRIVC>
+   <TRIVC>OK</TRIVC>
+   <TRIVC>V62_p1</TRIVC>
+</Results>

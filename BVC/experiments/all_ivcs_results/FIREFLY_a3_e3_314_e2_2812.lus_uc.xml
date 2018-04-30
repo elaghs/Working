@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.032</UcRuntime>
+   <Timeout unit="sec">30.42</Timeout>
+   <ProofTime unit="sec">0.052</ProofTime>
+   <Runtime unit="sec">0.08399999999999999</Runtime>
+   <IVC>OK</IVC>
+   <IVC>V51_invalid</IVC>
+   <IVC>V52_dirty</IVC>
+   <IVC>V53_exclusive</IVC>
+   <IVC>V54_shared</IVC>
+   <IVC>V55_R4</IVC>
+   <IVC>V56_A1</IVC>
+   <IVC>V57_A2</IVC>
+   <IVC>V58_A3</IVC>
+   <IVC>V59_procs</IVC>
+   <IVC>V60_env</IVC>
+   <IVC>V116_garde2</IVC>
+   <IVC>V118_garde4</IVC>
+   <IVC>V119_garde5</IVC>
+   <IVC>V121_garde7</IVC>
+   <IVC>V122_garde8</IVC>
+   <IVC>V123_mem_invalid</IVC>
+   <IVC>V142_X</IVC>
+   <TRIVC>V116_garde2</TRIVC>
+   <TRIVC>V59_procs</TRIVC>
+   <TRIVC>V52_dirty</TRIVC>
+   <TRIVC>V118_garde4</TRIVC>
+   <TRIVC>V119_garde5</TRIVC>
+   <TRIVC>V54_shared</TRIVC>
+   <TRIVC>V51_invalid</TRIVC>
+   <TRIVC>V55_R4</TRIVC>
+   <TRIVC>V60_env</TRIVC>
+   <TRIVC>V53_exclusive</TRIVC>
+   <TRIVC>V142_X</TRIVC>
+   <TRIVC>V122_garde8</TRIVC>
+   <TRIVC>V121_garde7</TRIVC>
+   <TRIVC>OK</TRIVC>
+   <TRIVC>V56_A1</TRIVC>
+   <TRIVC>V123_mem_invalid</TRIVC>
+   <TRIVC>V58_A3</TRIVC>
+   <TRIVC>V57_A2</TRIVC>
+</Results>

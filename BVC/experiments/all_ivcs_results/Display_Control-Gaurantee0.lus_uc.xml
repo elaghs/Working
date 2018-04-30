@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.05</UcRuntime>
+   <Timeout unit="sec">45.28</Timeout>
+   <ProofTime unit="sec">3.006</ProofTime>
+   <Runtime unit="sec">3.0559999999999996</Runtime>
+   <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</IVC>
+   <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</IVC>
+   <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</IVC>
+   <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_value</IVC>
+   <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~1.digit</IVC>
+   <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~1.prev_right</IVC>
+   <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~2.carry_value</IVC>
+   <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~2.digit</IVC>
+   <IVC>Microwave_SEng5861__Display_Control__Impl__update_digit~2.prev_right</IVC>
+   <IVC>__GUARANTEE0</IVC>
+   <TRIVC>Microwave_SEng5861__Display_Control__Impl__update_digit~2.digit</TRIVC>
+   <TRIVC>Microwave_SEng5861__Display_Control__Impl__update_digit~2.carry_value</TRIVC>
+   <TRIVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</TRIVC>
+   <TRIVC>__GUARANTEE0</TRIVC>
+   <TRIVC>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_value</TRIVC>
+   <TRIVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</TRIVC>
+   <TRIVC>Microwave_SEng5861__Display_Control__Impl__update_digit~1.digit</TRIVC>
+   <TRIVC>Microwave_SEng5861__Display_Control__Impl__update_digit~2.prev_right</TRIVC>
+   <TRIVC>Microwave_SEng5861__Display_Control__Impl__update_digit~1.prev_right</TRIVC>
+   <TRIVC>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</TRIVC>
+</Results>

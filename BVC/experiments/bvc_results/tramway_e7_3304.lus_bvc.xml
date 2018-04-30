@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<Runs>
+<Results>
+   <Depth>0</Depth>
+   <BVC>properties~0.once_from_to~0.B</BVC>
+   <BVC>environment~0.door_is_open</BVC>
+   <BVC>properties~0.door_is_open</BVC>
+   <BVC>environment~0.door_initially_closed</BVC>
+   <BVC>properties~0.OK</BVC>
+   <BVC>prop_ok</BVC>
+   <BVC>properties~0.door_opens_before_leaving_station</BVC>
+   <BVC>properties~0.door_doesnt_open_out_of_station</BVC>
+   <BVC>env_always_ok</BVC>
+   <BVC>properties~0.once_from_to~0.OK</BVC>
+   <BVC>properties~0.edge~0.edge</BVC>
+   <BVC>environment~0.env_ok</BVC>
+   <BVC>environment~0.env_always_ok</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>1</Depth>
+   <BVC>environment~0.door_doesnt_close_if_not_asked</BVC>
+   <BVC>environment~0.warning_start_only_in_station</BVC>
+   <BVC>environment~0.edge~4.X</BVC>
+   <BVC>environment~0.door_initially_closed</BVC>
+   <BVC>environment~0.edge~0.X</BVC>
+   <BVC>environment~0.edge~4.edge</BVC>
+   <BVC>env_always_ok</BVC>
+   <BVC>environment~0.env_ok</BVC>
+   <BVC>environment~0.env_always_ok</BVC>
+   <BVC>OK</BVC>
+   <BVC>environment~0.warning_start_cant_become_true_when_door_is_opening</BVC>
+   <BVC>environment~0.edge~0.edge</BVC>
+   <BVC>environment~0.initially_not_in_station</BVC>
+</Results>
+<Results>
+   <Depth>2</Depth>
+   <BVC>environment~0.door_doesnt_close_if_not_asked</BVC>
+   <BVC>environment~0.warning_start_only_in_station</BVC>
+   <BVC>environment~0.edge~4.X</BVC>
+   <BVC>environment~0.door_initially_closed</BVC>
+   <BVC>environment~0.edge~0.X</BVC>
+   <BVC>environment~0.edge~4.edge</BVC>
+   <BVC>env_always_ok</BVC>
+   <BVC>environment~0.env_ok</BVC>
+   <BVC>environment~0.env_always_ok</BVC>
+   <BVC>OK</BVC>
+   <BVC>environment~0.warning_start_cant_become_true_when_door_is_opening</BVC>
+   <BVC>environment~0.edge~0.edge</BVC>
+   <BVC>environment~0.initially_not_in_station</BVC>
+</Results>
+<Results>
+   <Depth>3</Depth>
+   <BVC>environment~0.door_doesnt_close_if_not_asked</BVC>
+   <BVC>environment~0.warning_start_only_in_station</BVC>
+   <BVC>environment~0.edge~4.X</BVC>
+   <BVC>environment~0.door_initially_closed</BVC>
+   <BVC>environment~0.edge~0.X</BVC>
+   <BVC>environment~0.edge~4.edge</BVC>
+   <BVC>env_always_ok</BVC>
+   <BVC>environment~0.env_ok</BVC>
+   <BVC>environment~0.env_always_ok</BVC>
+   <BVC>OK</BVC>
+   <BVC>environment~0.warning_start_cant_become_true_when_door_is_opening</BVC>
+   <BVC>environment~0.edge~0.edge</BVC>
+   <BVC>environment~0.initially_not_in_station</BVC>
+</Results>
+<Results>
+   <Depth>4</Depth>
+   <BVC>environment~0.door_doesnt_close_if_not_asked</BVC>
+   <BVC>environment~0.warning_start_only_in_station</BVC>
+   <BVC>environment~0.edge~4.X</BVC>
+   <BVC>environment~0.door_initially_closed</BVC>
+   <BVC>environment~0.edge~0.X</BVC>
+   <BVC>environment~0.edge~4.edge</BVC>
+   <BVC>env_always_ok</BVC>
+   <BVC>environment~0.env_ok</BVC>
+   <BVC>environment~0.env_always_ok</BVC>
+   <BVC>OK</BVC>
+   <BVC>environment~0.warning_start_cant_become_true_when_door_is_opening</BVC>
+   <BVC>environment~0.edge~0.edge</BVC>
+   <BVC>environment~0.initially_not_in_station</BVC>
+</Results>
+<Results>
+   <Depth>5</Depth>
+   <BVC>environment~0.door_doesnt_close_if_not_asked</BVC>
+   <BVC>environment~0.warning_start_only_in_station</BVC>
+   <BVC>environment~0.edge~4.X</BVC>
+   <BVC>environment~0.door_initially_closed</BVC>
+   <BVC>environment~0.edge~0.X</BVC>
+   <BVC>environment~0.edge~4.edge</BVC>
+   <BVC>env_always_ok</BVC>
+   <BVC>environment~0.env_ok</BVC>
+   <BVC>environment~0.env_always_ok</BVC>
+   <BVC>OK</BVC>
+   <BVC>environment~0.warning_start_cant_become_true_when_door_is_opening</BVC>
+   <BVC>environment~0.edge~0.edge</BVC>
+   <BVC>environment~0.initially_not_in_station</BVC>
+</Results>
+<Results>
+   <Depth>6</Depth>
+   <BVC>environment~0.door_doesnt_close_if_not_asked</BVC>
+   <BVC>environment~0.warning_start_only_in_station</BVC>
+   <BVC>environment~0.edge~4.X</BVC>
+   <BVC>environment~0.door_initially_closed</BVC>
+   <BVC>environment~0.edge~0.X</BVC>
+   <BVC>environment~0.edge~4.edge</BVC>
+   <BVC>env_always_ok</BVC>
+   <BVC>environment~0.env_ok</BVC>
+   <BVC>environment~0.env_always_ok</BVC>
+   <BVC>OK</BVC>
+   <BVC>environment~0.warning_start_cant_become_true_when_door_is_opening</BVC>
+   <BVC>environment~0.edge~0.edge</BVC>
+   <BVC>environment~0.initially_not_in_station</BVC>
+</Results>
+<Results>
+   <Depth>7</Depth>
+   <BVC>environment~0.door_doesnt_close_if_not_asked</BVC>
+   <BVC>environment~0.warning_start_only_in_station</BVC>
+   <BVC>environment~0.edge~4.X</BVC>
+   <BVC>environment~0.door_initially_closed</BVC>
+   <BVC>environment~0.edge~0.X</BVC>
+   <BVC>environment~0.edge~4.edge</BVC>
+   <BVC>env_always_ok</BVC>
+   <BVC>environment~0.env_ok</BVC>
+   <BVC>environment~0.env_always_ok</BVC>
+   <BVC>OK</BVC>
+   <BVC>environment~0.warning_start_cant_become_true_when_door_is_opening</BVC>
+   <BVC>environment~0.edge~0.edge</BVC>
+   <BVC>environment~0.initially_not_in_station</BVC>
+</Results>
+<Results>
+   <Depth>8</Depth>
+   <BVC>environment~0.door_doesnt_close_if_not_asked</BVC>
+   <BVC>environment~0.warning_start_only_in_station</BVC>
+   <BVC>environment~0.edge~4.X</BVC>
+   <BVC>environment~0.door_initially_closed</BVC>
+   <BVC>environment~0.edge~0.X</BVC>
+   <BVC>environment~0.edge~4.edge</BVC>
+   <BVC>env_always_ok</BVC>
+   <BVC>environment~0.env_ok</BVC>
+   <BVC>environment~0.env_always_ok</BVC>
+   <BVC>OK</BVC>
+   <BVC>environment~0.warning_start_cant_become_true_when_door_is_opening</BVC>
+   <BVC>environment~0.edge~0.edge</BVC>
+   <BVC>environment~0.initially_not_in_station</BVC>
+</Results>
+<Results>
+   <Depth>9</Depth>
+   <BVC>environment~0.door_doesnt_close_if_not_asked</BVC>
+   <BVC>environment~0.warning_start_only_in_station</BVC>
+   <BVC>environment~0.edge~4.X</BVC>
+   <BVC>environment~0.door_initially_closed</BVC>
+   <BVC>environment~0.edge~0.X</BVC>
+   <BVC>environment~0.edge~4.edge</BVC>
+   <BVC>env_always_ok</BVC>
+   <BVC>environment~0.env_ok</BVC>
+   <BVC>environment~0.env_always_ok</BVC>
+   <BVC>OK</BVC>
+   <BVC>environment~0.warning_start_cant_become_true_when_door_is_opening</BVC>
+   <BVC>environment~0.edge~0.edge</BVC>
+   <BVC>environment~0.initially_not_in_station</BVC>
+</Results>
+</Runs>

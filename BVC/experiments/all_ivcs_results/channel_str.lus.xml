@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="controlLaw~0.out_stable"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="controlLaw~0.out_stable"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="controlLaw~0.out_stable"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="controlLaw~0.out_stable"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="controlLaw~0.out_stable"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="controlLaw~0.out_stable"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="controlLaw~0.out_stable"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="controlLaw~0.out_stable"/>
+  </Progress>
+  <Property name="controlLaw~0.out_stable">
+    <Runtime unit="sec">120.69</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>controlLaw~0.out_stable</MustElem>
+    <MustElem>controlLaw~0.integ</MustElem>
+    <MustElem>controlLaw~0.sum1</MustElem>
+    <MustElem>controlLaw~0.c3</MustElem>
+    <MustElem>controlLaw~0.c2</MustElem>
+    <MustElem>controlLaw~0.c1</MustElem>
+    <IvcSet number="1">
+    <Invariant>controlLaw~0.out_stable</Invariant>
+    <Ivc>controlLaw~0.out_stable</Ivc>
+    <Ivc>controlLaw~0.integ</Ivc>
+    <Ivc>controlLaw~0.c3</Ivc>
+    <Ivc>controlLaw~0.sum1</Ivc>
+    <Ivc>controlLaw~0.c2</Ivc>
+    <Ivc>controlLaw~0.c1</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

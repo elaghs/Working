@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Property name="OK">
+    <Runtime unit="sec">0.511</Runtime>
+    <Answer source="invariant-generation">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>V19_late</MustElem>
+    <MustElem>V64_incr</MustElem>
+    <MustElem>V63_diff</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>V65_PC</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Invariant>(not V19_late)</Invariant>
+    <Invariant>(V65_PC &gt;= 0)</Invariant>
+    <Ivc>V19_late</Ivc>
+    <Ivc>V64_incr</Ivc>
+    <Ivc>V63_diff</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>V65_PC</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

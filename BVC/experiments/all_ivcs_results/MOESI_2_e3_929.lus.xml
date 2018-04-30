@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">2.314</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>moesi~0.etat_mo4</MustElem>
+    <MustElem>moesi~0.invalid_mo</MustElem>
+    <MustElem>Sofar~0.X</MustElem>
+    <MustElem>exclusive_mo</MustElem>
+    <MustElem>excludes4~0.excludes</MustElem>
+    <MustElem>moesi~0.modified_mo</MustElem>
+    <MustElem>owned_mo</MustElem>
+    <MustElem>shared_mo</MustElem>
+    <MustElem>Sofar~0.Sofar</MustElem>
+    <MustElem>moesi~0.owned_mo</MustElem>
+    <MustElem>env</MustElem>
+    <MustElem>modified_mo</MustElem>
+    <MustElem>moesi~0.etat_mo2</MustElem>
+    <MustElem>moesi~0.etat_mo3</MustElem>
+    <MustElem>excludes4~0.X2</MustElem>
+    <MustElem>excludes4~0.X4</MustElem>
+    <MustElem>excludes4~0.X3</MustElem>
+    <MustElem>moesi~0.shared_mo</MustElem>
+    <MustElem>invalid_mo</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>moesi~0.exclusive_mo</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Ivc>moesi~0.invalid_mo</Ivc>
+    <Ivc>moesi~0.etat_mo4</Ivc>
+    <Ivc>excludes4~0.excludes</Ivc>
+    <Ivc>Sofar~0.X</Ivc>
+    <Ivc>exclusive_mo</Ivc>
+    <Ivc>moesi~0.modified_mo</Ivc>
+    <Ivc>owned_mo</Ivc>
+    <Ivc>shared_mo</Ivc>
+    <Ivc>Sofar~0.Sofar</Ivc>
+    <Ivc>moesi~0.owned_mo</Ivc>
+    <Ivc>env</Ivc>
+    <Ivc>modified_mo</Ivc>
+    <Ivc>moesi~0.etat_mo2</Ivc>
+    <Ivc>moesi~0.etat_mo3</Ivc>
+    <Ivc>excludes4~0.X2</Ivc>
+    <Ivc>excludes4~0.X4</Ivc>
+    <Ivc>excludes4~0.X3</Ivc>
+    <Ivc>moesi~0.shared_mo</Ivc>
+    <Ivc>invalid_mo</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>moesi~0.exclusive_mo</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

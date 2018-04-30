@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="19">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="20">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="21">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="22">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="23">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="24">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="25">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="26">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="27">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="28">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="29">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="30">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="31">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="32">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Progress source="bmc" trueFor="33">
+    <PropertyProgress name="__GUARANTEE8"/>
+  </Progress>
+  <Property name="__GUARANTEE8">
+    <Runtime unit="sec">2.043</Runtime>
+    <Answer source="invariant-generation">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>defs__is_running~0._outvar</MustElem>
+    <MustElem>defs__is_setup~1.m</MustElem>
+    <MustElem>defs__is_cooking~0._outvar</MustElem>
+    <MustElem>defs__is_suspended~0._outvar</MustElem>
+    <MustElem>__GUARANTEE8</MustElem>
+    <MustElem>defs__is_cooking~0.m</MustElem>
+    <MustElem>defs__is_suspended~0.m</MustElem>
+    <MustElem>defs__is_setup~1._outvar</MustElem>
+    <MustElem>defs__is_running~0.m</MustElem>
+    <IvcSet number="1">
+    <Invariant>__GUARANTEE8</Invariant>
+    <Invariant>(defs__is_running~0._outvar or (1 = sm))</Invariant>
+    <Ivc>defs__is_setup~1.m</Ivc>
+    <Ivc>defs__is_running~0._outvar</Ivc>
+    <Ivc>defs__is_suspended~0._outvar</Ivc>
+    <Ivc>defs__is_cooking~0._outvar</Ivc>
+    <Ivc>__GUARANTEE8</Ivc>
+    <Ivc>defs__is_setup~1._outvar</Ivc>
+    <Ivc>defs__is_suspended~0.m</Ivc>
+    <Ivc>defs__is_cooking~0.m</Ivc>
+    <Ivc>defs__is_running~0.m</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

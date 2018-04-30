@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.04</UcRuntime>
+   <Timeout unit="sec">30.515</Timeout>
+   <ProofTime unit="sec">0.063</ProofTime>
+   <Runtime unit="sec">0.10300000000000001</Runtime>
+   <IVC>controlLaw~0.c1</IVC>
+   <IVC>controlLaw~0.c2</IVC>
+   <IVC>controlLaw~0.c3</IVC>
+   <IVC>controlLaw~0.integ</IVC>
+   <IVC>controlLaw~0.out_stable</IVC>
+   <IVC>controlLaw~0.sum1</IVC>
+   <TRIVC>controlLaw~0.out_stable</TRIVC>
+   <TRIVC>controlLaw~0.integ</TRIVC>
+   <TRIVC>controlLaw~0.c3</TRIVC>
+   <TRIVC>controlLaw~0.sum1</TRIVC>
+   <TRIVC>controlLaw~0.c2</TRIVC>
+   <TRIVC>controlLaw~0.c1</TRIVC>
+</Results>

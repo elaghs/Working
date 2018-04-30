@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <UcRuntime unit="sec">0.329</UcRuntime>
+   <Timeout unit="sec">53.614999999999995</Timeout>
+   <ProofTime unit="sec">4.394</ProofTime>
+   <Runtime unit="sec">4.723</Runtime>
+   <IVC>DEFS__Is_Infusion_above_tolerance~0.actual_flow_rate</IVC>
+   <IVC>DEFS__Is_Infusion_above_tolerance~0.desired_flow_rate</IVC>
+   <IVC>DEFS__Is_Infusion_above_tolerance~0.over</IVC>
+   <IVC>DEFS__Is_Infusion_above_tolerance~0.tol</IVC>
+   <IVC>_TOP__ALARM~0.CONST_IN.Tolerance_Min</IVC>
+   <IVC>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~0.actual_flow_rate</IVC>
+   <IVC>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~0.desired_flow_rate</IVC>
+   <IVC>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~0.over</IVC>
+   <IVC>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~0.tol</IVC>
+   <IVC>_TOP__ALARM~0.IM_IN.Commanded_Flow_Rate</IVC>
+   <IVC>_TOP__ALARM~0.SENSOR_IN.Flow_Rate</IVC>
+   <IVC>_TOP__ALARM~0.Time_FR_Over_Min_Tol</IVC>
+   <IVC>_TOP__ALARM~0.__ALARM__ASSERT__2</IVC>
+   <IVC>_TOP__ALARM~0.__ASSERT</IVC>
+   <IVC>_TOP__ASSERT__3</IVC>
+   <IVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Commanded_Flow_Rate</IVC>
+   <IVC>_TOP__OUTPUT~0.IM_IN.Commanded_Flow_Rate</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSERT</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSUME__CONJ</IVC>
+   <IVC>_TOP__OUTPUT~0.__ASSUME__HIST</IVC>
+   <IVC>_TOP__OUTPUT~0.__OUTPUT__PROP__29</IVC>
+   <IVC>__GUARANTEE3</IVC>
+   <TRIVC>__GUARANTEE3</TRIVC>
+   <TRIVC>_TOP__ASSERT__3</TRIVC>
+   <TRIVC>_TOP__ALARM~0.Time_FR_Over_Min_Tol</TRIVC>
+   <TRIVC>_TOP__ALARM~0.IM_IN.Commanded_Flow_Rate</TRIVC>
+   <TRIVC>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~0.actual_flow_rate</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.GPCA_SW_OUT.Commanded_Flow_Rate</TRIVC>
+   <TRIVC>_TOP__ALARM~0.CONST_IN.Tolerance_Min</TRIVC>
+   <TRIVC>_TOP__ALARM~0.__ALARM__ASSERT__2</TRIVC>
+   <TRIVC>DEFS__Is_Infusion_above_tolerance~0.over</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSERT</TRIVC>
+   <TRIVC>_TOP__ALARM~0.SENSOR_IN.Flow_Rate</TRIVC>
+   <TRIVC>DEFS__Is_Infusion_above_tolerance~0.desired_flow_rate</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.IM_IN.Commanded_Flow_Rate</TRIVC>
+   <TRIVC>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~0.over</TRIVC>
+   <TRIVC>_TOP__ALARM~0.__ASSERT</TRIVC>
+   <TRIVC>DEFS__Is_Infusion_above_tolerance~0.tol</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSUME__CONJ</TRIVC>
+   <TRIVC>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~0.tol</TRIVC>
+   <TRIVC>DEFS__Is_Infusion_above_tolerance~0.actual_flow_rate</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__ASSUME__HIST</TRIVC>
+   <TRIVC>_TOP__ALARM~0.DEFS__Is_Infusion_above_tolerance~0.desired_flow_rate</TRIVC>
+   <TRIVC>_TOP__OUTPUT~0.__OUTPUT__PROP__29</TRIVC>
+</Results>

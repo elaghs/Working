@@ -1,0 +1,1499 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="19">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="20">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="21">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="22">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="23">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="24">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="25">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="26">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="27">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">156.535</Runtime>
+    <Answer source="pdr">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>16</NumberOfIVCs>
+    <MustElem>zz164</MustElem>
+    <MustElem>zz163</MustElem>
+    <MustElem>zz161</MustElem>
+    <MustElem>zz160</MustElem>
+    <MustElem>zz40</MustElem>
+    <MustElem>zz86</MustElem>
+    <MustElem>SP3c</MustElem>
+    <MustElem>mode</MustElem>
+    <MustElem>zz78</MustElem>
+    <MustElem>zz34</MustElem>
+    <MustElem>zz201</MustElem>
+    <MustElem>zz38</MustElem>
+    <MustElem>zz122</MustElem>
+    <MustElem>zz165</MustElem>
+    <MustElem>zz150</MustElem>
+    <MustElem>zz74</MustElem>
+    <MustElem>zz32</MustElem>
+    <MustElem>zz119</MustElem>
+    <MustElem>zz66</MustElem>
+    <MustElem>zz69</MustElem>
+    <MustElem>zz25</MustElem>
+    <MustElem>zz114</MustElem>
+    <MustElem>zz157</MustElem>
+    <MustElem>zz156</MustElem>
+    <MustElem>zz111</MustElem>
+    <MustElem>zz154</MustElem>
+    <MustElem>zz110</MustElem>
+    <MustElem>zz28</MustElem>
+    <MustElem>zz142</MustElem>
+    <MustElem>cruiseThrottle</MustElem>
+    <MustElem>zz61</MustElem>
+    <MustElem>zz140</MustElem>
+    <MustElem>zz20</MustElem>
+    <MustElem>zz109</MustElem>
+    <MustElem>zz108</MustElem>
+    <MustElem>zz12</MustElem>
+    <MustElem>zz106</MustElem>
+    <MustElem>zz99</MustElem>
+    <MustElem>zz149</MustElem>
+    <MustElem>zz58</MustElem>
+    <MustElem>zz104</MustElem>
+    <MustElem>zz148</MustElem>
+    <MustElem>zz103</MustElem>
+    <MustElem>zz147</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>zz102</MustElem>
+    <MustElem>zz16</MustElem>
+    <MustElem>zz146</MustElem>
+    <MustElem>zz101</MustElem>
+    <MustElem>zz145</MustElem>
+    <MustElem>zz144</MustElem>
+    <MustElem>zz187</MustElem>
+    <MustElem>zz143</MustElem>
+    <MustElem>zz92</MustElem>
+    <MustElem>zz91</MustElem>
+    <MustElem>zz50</MustElem>
+    <MustElem>zz93</MustElem>
+    <MustElem>zz95</MustElem>
+    <MustElem>zz98</MustElem>
+    <MustElem>zz53</MustElem>
+    <MustElem>zz97</MustElem>
+    <MustElem>zz6</MustElem>
+    <MustElem>zz89</MustElem>
+    <MustElem>zz9</MustElem>
+    <MustElem>zz45</MustElem>
+    <MustElem>zz88</MustElem>
+    <MustElem>zz44</MustElem>
+    <MustElem>zz137</MustElem>
+    <MustElem>zz49</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Invariant>((mode &lt;&gt; 4) or (not (zz161 &lt;= 2)))</Invariant>
+    <Invariant>((not (0 &lt;= (zz161 + (-7)))) or ((mode + (-5)) &lt;&gt; 0))</Invariant>
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>(((mode + (-5)) &lt;&gt; 0) or (not (zz161 &lt;= 2)))</Invariant>
+    <Invariant>((mode &lt;&gt; 4) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (not (zz161 &lt;= 2)))</Invariant>
+    <Ivc>zz164</Ivc>
+    <Ivc>zz163</Ivc>
+    <Ivc>zz161</Ivc>
+    <Ivc>zz160</Ivc>
+    <Ivc>zz40</Ivc>
+    <Ivc>zz86</Ivc>
+    <Ivc>SP3c</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>zz34</Ivc>
+    <Ivc>zz78</Ivc>
+    <Ivc>zz77</Ivc>
+    <Ivc>zz201</Ivc>
+    <Ivc>zz38</Ivc>
+    <Ivc>zz122</Ivc>
+    <Ivc>zz165</Ivc>
+    <Ivc>zz150</Ivc>
+    <Ivc>zz74</Ivc>
+    <Ivc>zz32</Ivc>
+    <Ivc>zz75</Ivc>
+    <Ivc>zz119</Ivc>
+    <Ivc>zz66</Ivc>
+    <Ivc>zz69</Ivc>
+    <Ivc>zz25</Ivc>
+    <Ivc>zz114</Ivc>
+    <Ivc>zz157</Ivc>
+    <Ivc>zz156</Ivc>
+    <Ivc>zz111</Ivc>
+    <Ivc>zz28</Ivc>
+    <Ivc>zz110</Ivc>
+    <Ivc>zz154</Ivc>
+    <Ivc>zz142</Ivc>
+    <Ivc>cruiseThrottle</Ivc>
+    <Ivc>zz140</Ivc>
+    <Ivc>zz61</Ivc>
+    <Ivc>zz63</Ivc>
+    <Ivc>zz20</Ivc>
+    <Ivc>zz109</Ivc>
+    <Ivc>zz108</Ivc>
+    <Ivc>zz12</Ivc>
+    <Ivc>zz106</Ivc>
+    <Ivc>zz149</Ivc>
+    <Ivc>zz99</Ivc>
+    <Ivc>zz58</Ivc>
+    <Ivc>zz148</Ivc>
+    <Ivc>zz104</Ivc>
+    <Ivc>zz147</Ivc>
+    <Ivc>zz103</Ivc>
+    <Ivc>zz102</Ivc>
+    <Ivc>zz146</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>zz16</Ivc>
+    <Ivc>zz59</Ivc>
+    <Ivc>zz101</Ivc>
+    <Ivc>zz145</Ivc>
+    <Ivc>zz144</Ivc>
+    <Ivc>zz143</Ivc>
+    <Ivc>zz187</Ivc>
+    <Ivc>zz92</Ivc>
+    <Ivc>zz91</Ivc>
+    <Ivc>zz50</Ivc>
+    <Ivc>zz93</Ivc>
+    <Ivc>zz95</Ivc>
+    <Ivc>zz98</Ivc>
+    <Ivc>zz97</Ivc>
+    <Ivc>zz53</Ivc>
+    <Ivc>zz6</Ivc>
+    <Ivc>zz89</Ivc>
+    <Ivc>zz9</Ivc>
+    <Ivc>zz45</Ivc>
+    <Ivc>zz44</Ivc>
+    <Ivc>zz88</Ivc>
+    <Ivc>zz137</Ivc>
+    <Ivc>zz49</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>((not (0 &lt;= (zz161 + (-7)))) or ((mode + (-5)) &lt;&gt; 0))</Invariant>
+    <Invariant>(((mode + (-4)) &lt;&gt; 0) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>((not (0 &lt;= (zz161 + (-7)))) or ((mode + (-4)) &lt;&gt; 0))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>((5 &lt;&gt; mode) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Ivc>zz164</Ivc>
+    <Ivc>zz163</Ivc>
+    <Ivc>zz161</Ivc>
+    <Ivc>zz160</Ivc>
+    <Ivc>zz40</Ivc>
+    <Ivc>zz86</Ivc>
+    <Ivc>SP3c</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>zz34</Ivc>
+    <Ivc>zz78</Ivc>
+    <Ivc>zz201</Ivc>
+    <Ivc>zz38</Ivc>
+    <Ivc>zz122</Ivc>
+    <Ivc>zz165</Ivc>
+    <Ivc>zz71</Ivc>
+    <Ivc>zz150</Ivc>
+    <Ivc>zz74</Ivc>
+    <Ivc>zz32</Ivc>
+    <Ivc>zz119</Ivc>
+    <Ivc>zz66</Ivc>
+    <Ivc>zz69</Ivc>
+    <Ivc>zz25</Ivc>
+    <Ivc>zz114</Ivc>
+    <Ivc>zz157</Ivc>
+    <Ivc>zz156</Ivc>
+    <Ivc>zz111</Ivc>
+    <Ivc>zz28</Ivc>
+    <Ivc>zz110</Ivc>
+    <Ivc>zz154</Ivc>
+    <Ivc>zz142</Ivc>
+    <Ivc>cruiseThrottle</Ivc>
+    <Ivc>zz140</Ivc>
+    <Ivc>zz61</Ivc>
+    <Ivc>zz63</Ivc>
+    <Ivc>zz20</Ivc>
+    <Ivc>zz109</Ivc>
+    <Ivc>zz108</Ivc>
+    <Ivc>zz12</Ivc>
+    <Ivc>zz106</Ivc>
+    <Ivc>zz149</Ivc>
+    <Ivc>zz105</Ivc>
+    <Ivc>zz99</Ivc>
+    <Ivc>zz58</Ivc>
+    <Ivc>zz148</Ivc>
+    <Ivc>zz104</Ivc>
+    <Ivc>zz147</Ivc>
+    <Ivc>zz103</Ivc>
+    <Ivc>zz102</Ivc>
+    <Ivc>zz146</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>zz16</Ivc>
+    <Ivc>zz59</Ivc>
+    <Ivc>zz101</Ivc>
+    <Ivc>zz145</Ivc>
+    <Ivc>zz144</Ivc>
+    <Ivc>zz100</Ivc>
+    <Ivc>zz143</Ivc>
+    <Ivc>zz187</Ivc>
+    <Ivc>zz92</Ivc>
+    <Ivc>zz91</Ivc>
+    <Ivc>zz50</Ivc>
+    <Ivc>zz94</Ivc>
+    <Ivc>zz93</Ivc>
+    <Ivc>zz95</Ivc>
+    <Ivc>zz98</Ivc>
+    <Ivc>zz97</Ivc>
+    <Ivc>zz53</Ivc>
+    <Ivc>zz6</Ivc>
+    <Ivc>zz89</Ivc>
+    <Ivc>zz9</Ivc>
+    <Ivc>zz45</Ivc>
+    <Ivc>zz44</Ivc>
+    <Ivc>zz88</Ivc>
+    <Ivc>zz137</Ivc>
+    <Ivc>zz49</Ivc>
+    </IvcSet>
+    <IvcSet number="3">
+    <Invariant>((zz161 &lt;= 6) or ((mode + (-5)) &lt;&gt; 0))</Invariant>
+    <Invariant>((mode &lt;&gt; 4) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>(((mode + (-5)) &lt;&gt; 0) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>((mode &lt;&gt; 4) or (zz161 &lt;= 6))</Invariant>
+    <Invariant>((zz161 &lt;= 6) or ((mode + (-6)) &lt;&gt; 0))</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>zz164</Ivc>
+    <Ivc>zz163</Ivc>
+    <Ivc>zz161</Ivc>
+    <Ivc>zz160</Ivc>
+    <Ivc>zz40</Ivc>
+    <Ivc>zz86</Ivc>
+    <Ivc>SP3c</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>zz34</Ivc>
+    <Ivc>zz78</Ivc>
+    <Ivc>zz201</Ivc>
+    <Ivc>zz38</Ivc>
+    <Ivc>zz122</Ivc>
+    <Ivc>zz165</Ivc>
+    <Ivc>zz71</Ivc>
+    <Ivc>zz150</Ivc>
+    <Ivc>zz74</Ivc>
+    <Ivc>zz32</Ivc>
+    <Ivc>zz119</Ivc>
+    <Ivc>zz66</Ivc>
+    <Ivc>zz69</Ivc>
+    <Ivc>zz25</Ivc>
+    <Ivc>zz114</Ivc>
+    <Ivc>zz157</Ivc>
+    <Ivc>zz156</Ivc>
+    <Ivc>zz111</Ivc>
+    <Ivc>zz28</Ivc>
+    <Ivc>zz110</Ivc>
+    <Ivc>zz154</Ivc>
+    <Ivc>zz142</Ivc>
+    <Ivc>cruiseThrottle</Ivc>
+    <Ivc>zz140</Ivc>
+    <Ivc>zz61</Ivc>
+    <Ivc>zz63</Ivc>
+    <Ivc>zz20</Ivc>
+    <Ivc>zz109</Ivc>
+    <Ivc>zz108</Ivc>
+    <Ivc>zz12</Ivc>
+    <Ivc>zz106</Ivc>
+    <Ivc>zz149</Ivc>
+    <Ivc>zz55</Ivc>
+    <Ivc>zz105</Ivc>
+    <Ivc>zz99</Ivc>
+    <Ivc>zz58</Ivc>
+    <Ivc>zz148</Ivc>
+    <Ivc>zz104</Ivc>
+    <Ivc>zz147</Ivc>
+    <Ivc>zz103</Ivc>
+    <Ivc>zz102</Ivc>
+    <Ivc>zz146</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>zz16</Ivc>
+    <Ivc>zz101</Ivc>
+    <Ivc>zz145</Ivc>
+    <Ivc>zz144</Ivc>
+    <Ivc>zz100</Ivc>
+    <Ivc>zz143</Ivc>
+    <Ivc>zz187</Ivc>
+    <Ivc>zz92</Ivc>
+    <Ivc>zz91</Ivc>
+    <Ivc>zz50</Ivc>
+    <Ivc>zz94</Ivc>
+    <Ivc>zz93</Ivc>
+    <Ivc>zz95</Ivc>
+    <Ivc>zz98</Ivc>
+    <Ivc>zz97</Ivc>
+    <Ivc>zz53</Ivc>
+    <Ivc>zz6</Ivc>
+    <Ivc>zz89</Ivc>
+    <Ivc>zz9</Ivc>
+    <Ivc>zz45</Ivc>
+    <Ivc>zz44</Ivc>
+    <Ivc>zz88</Ivc>
+    <Ivc>zz137</Ivc>
+    <Ivc>zz49</Ivc>
+    </IvcSet>
+    <IvcSet number="4">
+    <Invariant>((mode &lt;&gt; 4) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>((not (8 = zz161)) or (mode &lt;&gt; 4))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(((mode + (-5)) &lt;&gt; 0) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>((mode &lt;&gt; 6) or (zz161 &lt;= 6))</Invariant>
+    <Invariant>((mode &lt;&gt; 6) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>(((mode + (-5)) &lt;&gt; 0) or (zz161 &lt;= 7))</Invariant>
+    <Invariant>((mode &lt;&gt; 4) or (zz161 &lt;= 6))</Invariant>
+    <Invariant>(((mode + (-5)) &lt;&gt; 0) or (zz161 &lt;= 6))</Invariant>
+    <Ivc>zz164</Ivc>
+    <Ivc>zz163</Ivc>
+    <Ivc>zz161</Ivc>
+    <Ivc>zz160</Ivc>
+    <Ivc>zz40</Ivc>
+    <Ivc>zz86</Ivc>
+    <Ivc>SP3c</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>zz34</Ivc>
+    <Ivc>zz78</Ivc>
+    <Ivc>zz77</Ivc>
+    <Ivc>zz201</Ivc>
+    <Ivc>zz38</Ivc>
+    <Ivc>zz122</Ivc>
+    <Ivc>zz165</Ivc>
+    <Ivc>zz150</Ivc>
+    <Ivc>zz74</Ivc>
+    <Ivc>zz32</Ivc>
+    <Ivc>zz75</Ivc>
+    <Ivc>zz119</Ivc>
+    <Ivc>zz67</Ivc>
+    <Ivc>zz66</Ivc>
+    <Ivc>zz69</Ivc>
+    <Ivc>zz25</Ivc>
+    <Ivc>zz114</Ivc>
+    <Ivc>zz157</Ivc>
+    <Ivc>zz156</Ivc>
+    <Ivc>zz111</Ivc>
+    <Ivc>zz28</Ivc>
+    <Ivc>zz110</Ivc>
+    <Ivc>zz154</Ivc>
+    <Ivc>zz142</Ivc>
+    <Ivc>cruiseThrottle</Ivc>
+    <Ivc>zz140</Ivc>
+    <Ivc>zz61</Ivc>
+    <Ivc>zz20</Ivc>
+    <Ivc>zz109</Ivc>
+    <Ivc>zz108</Ivc>
+    <Ivc>zz12</Ivc>
+    <Ivc>zz106</Ivc>
+    <Ivc>zz149</Ivc>
+    <Ivc>zz55</Ivc>
+    <Ivc>zz99</Ivc>
+    <Ivc>zz58</Ivc>
+    <Ivc>zz148</Ivc>
+    <Ivc>zz104</Ivc>
+    <Ivc>zz147</Ivc>
+    <Ivc>zz103</Ivc>
+    <Ivc>zz102</Ivc>
+    <Ivc>zz146</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>zz16</Ivc>
+    <Ivc>zz101</Ivc>
+    <Ivc>zz145</Ivc>
+    <Ivc>zz144</Ivc>
+    <Ivc>zz143</Ivc>
+    <Ivc>zz187</Ivc>
+    <Ivc>zz92</Ivc>
+    <Ivc>zz91</Ivc>
+    <Ivc>zz50</Ivc>
+    <Ivc>zz93</Ivc>
+    <Ivc>zz95</Ivc>
+    <Ivc>zz98</Ivc>
+    <Ivc>zz97</Ivc>
+    <Ivc>zz53</Ivc>
+    <Ivc>zz6</Ivc>
+    <Ivc>zz89</Ivc>
+    <Ivc>zz9</Ivc>
+    <Ivc>zz45</Ivc>
+    <Ivc>zz44</Ivc>
+    <Ivc>zz88</Ivc>
+    <Ivc>zz137</Ivc>
+    <Ivc>zz49</Ivc>
+    </IvcSet>
+    <IvcSet number="5">
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>(((mode + (-5)) &lt;&gt; 0) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>(((mode + (-4)) &lt;&gt; 0) or (not (zz161 &lt;= 2)))</Invariant>
+    <Invariant>(((mode + (-5)) &lt;&gt; 0) or (not (zz161 &lt;= 2)))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (not (zz161 &lt;= 2)))</Invariant>
+    <Invariant>(((mode + (-4)) &lt;&gt; 0) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Ivc>zz164</Ivc>
+    <Ivc>zz163</Ivc>
+    <Ivc>zz161</Ivc>
+    <Ivc>zz160</Ivc>
+    <Ivc>zz40</Ivc>
+    <Ivc>zz86</Ivc>
+    <Ivc>SP3c</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>zz34</Ivc>
+    <Ivc>zz78</Ivc>
+    <Ivc>zz77</Ivc>
+    <Ivc>zz201</Ivc>
+    <Ivc>zz38</Ivc>
+    <Ivc>zz122</Ivc>
+    <Ivc>zz165</Ivc>
+    <Ivc>zz71</Ivc>
+    <Ivc>zz150</Ivc>
+    <Ivc>zz74</Ivc>
+    <Ivc>zz32</Ivc>
+    <Ivc>zz119</Ivc>
+    <Ivc>zz67</Ivc>
+    <Ivc>zz66</Ivc>
+    <Ivc>zz69</Ivc>
+    <Ivc>zz25</Ivc>
+    <Ivc>zz114</Ivc>
+    <Ivc>zz157</Ivc>
+    <Ivc>zz156</Ivc>
+    <Ivc>zz111</Ivc>
+    <Ivc>zz28</Ivc>
+    <Ivc>zz110</Ivc>
+    <Ivc>zz154</Ivc>
+    <Ivc>zz142</Ivc>
+    <Ivc>cruiseThrottle</Ivc>
+    <Ivc>zz140</Ivc>
+    <Ivc>zz61</Ivc>
+    <Ivc>zz20</Ivc>
+    <Ivc>zz109</Ivc>
+    <Ivc>zz108</Ivc>
+    <Ivc>zz12</Ivc>
+    <Ivc>zz106</Ivc>
+    <Ivc>zz149</Ivc>
+    <Ivc>zz55</Ivc>
+    <Ivc>zz99</Ivc>
+    <Ivc>zz58</Ivc>
+    <Ivc>zz148</Ivc>
+    <Ivc>zz104</Ivc>
+    <Ivc>zz147</Ivc>
+    <Ivc>zz103</Ivc>
+    <Ivc>zz102</Ivc>
+    <Ivc>zz146</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>zz16</Ivc>
+    <Ivc>zz101</Ivc>
+    <Ivc>zz145</Ivc>
+    <Ivc>zz144</Ivc>
+    <Ivc>zz143</Ivc>
+    <Ivc>zz187</Ivc>
+    <Ivc>zz92</Ivc>
+    <Ivc>zz91</Ivc>
+    <Ivc>zz50</Ivc>
+    <Ivc>zz93</Ivc>
+    <Ivc>zz95</Ivc>
+    <Ivc>zz98</Ivc>
+    <Ivc>zz97</Ivc>
+    <Ivc>zz53</Ivc>
+    <Ivc>zz6</Ivc>
+    <Ivc>zz89</Ivc>
+    <Ivc>zz9</Ivc>
+    <Ivc>zz45</Ivc>
+    <Ivc>zz44</Ivc>
+    <Ivc>zz88</Ivc>
+    <Ivc>zz137</Ivc>
+    <Ivc>zz49</Ivc>
+    </IvcSet>
+    <IvcSet number="6">
+    <Invariant>((6 &lt;&gt; mode) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>((6 &lt;&gt; mode) or (zz161 &lt;= 6))</Invariant>
+    <Invariant>((zz161 &lt;&gt; 8) or (5 &lt;&gt; mode))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>((5 &lt;&gt; mode) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>((5 &lt;&gt; mode) or (zz161 &lt;= 6))</Invariant>
+    <Invariant>((not (4 = mode)) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>((not (4 = mode)) or (zz161 &lt;= 6))</Invariant>
+    <Ivc>zz164</Ivc>
+    <Ivc>zz163</Ivc>
+    <Ivc>zz161</Ivc>
+    <Ivc>zz160</Ivc>
+    <Ivc>zz40</Ivc>
+    <Ivc>zz86</Ivc>
+    <Ivc>SP3c</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>zz34</Ivc>
+    <Ivc>zz78</Ivc>
+    <Ivc>zz201</Ivc>
+    <Ivc>zz38</Ivc>
+    <Ivc>zz122</Ivc>
+    <Ivc>zz165</Ivc>
+    <Ivc>zz150</Ivc>
+    <Ivc>zz74</Ivc>
+    <Ivc>zz32</Ivc>
+    <Ivc>zz75</Ivc>
+    <Ivc>zz119</Ivc>
+    <Ivc>zz66</Ivc>
+    <Ivc>zz69</Ivc>
+    <Ivc>zz25</Ivc>
+    <Ivc>zz114</Ivc>
+    <Ivc>zz157</Ivc>
+    <Ivc>zz156</Ivc>
+    <Ivc>zz111</Ivc>
+    <Ivc>zz28</Ivc>
+    <Ivc>zz110</Ivc>
+    <Ivc>zz154</Ivc>
+    <Ivc>zz142</Ivc>
+    <Ivc>cruiseThrottle</Ivc>
+    <Ivc>zz140</Ivc>
+    <Ivc>zz61</Ivc>
+    <Ivc>zz63</Ivc>
+    <Ivc>zz20</Ivc>
+    <Ivc>zz109</Ivc>
+    <Ivc>zz108</Ivc>
+    <Ivc>zz12</Ivc>
+    <Ivc>zz106</Ivc>
+    <Ivc>zz149</Ivc>
+    <Ivc>zz55</Ivc>
+    <Ivc>zz105</Ivc>
+    <Ivc>zz99</Ivc>
+    <Ivc>zz58</Ivc>
+    <Ivc>zz148</Ivc>
+    <Ivc>zz104</Ivc>
+    <Ivc>zz147</Ivc>
+    <Ivc>zz103</Ivc>
+    <Ivc>zz102</Ivc>
+    <Ivc>zz146</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>zz16</Ivc>
+    <Ivc>zz101</Ivc>
+    <Ivc>zz145</Ivc>
+    <Ivc>zz144</Ivc>
+    <Ivc>zz100</Ivc>
+    <Ivc>zz143</Ivc>
+    <Ivc>zz187</Ivc>
+    <Ivc>zz92</Ivc>
+    <Ivc>zz91</Ivc>
+    <Ivc>zz50</Ivc>
+    <Ivc>zz94</Ivc>
+    <Ivc>zz93</Ivc>
+    <Ivc>zz95</Ivc>
+    <Ivc>zz98</Ivc>
+    <Ivc>zz97</Ivc>
+    <Ivc>zz53</Ivc>
+    <Ivc>zz6</Ivc>
+    <Ivc>zz89</Ivc>
+    <Ivc>zz9</Ivc>
+    <Ivc>zz45</Ivc>
+    <Ivc>zz44</Ivc>
+    <Ivc>zz88</Ivc>
+    <Ivc>zz137</Ivc>
+    <Ivc>zz49</Ivc>
+    </IvcSet>
+    <IvcSet number="7">
+    <Invariant>((not (7 = zz161)) or (not (mode = 4)))</Invariant>
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (zz161 &lt;= 7))</Invariant>
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (not ((zz161 + zz161) &lt;= (zz161 + 2))))</Invariant>
+    <Invariant>((not (mode = 4)) or (not ((zz161 + zz161) &lt;= (zz161 + 2))))</Invariant>
+    <Invariant>((not (7 = zz161)) or (5 &lt;&gt; mode))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>((5 &lt;&gt; mode) or (zz161 &lt;= 7))</Invariant>
+    <Invariant>((not (mode = 4)) or (zz161 &lt;= 7))</Invariant>
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (not (7 = zz161)))</Invariant>
+    <Invariant>((5 &lt;&gt; mode) or (not ((zz161 + zz161) &lt;= (zz161 + 2))))</Invariant>
+    <Ivc>zz164</Ivc>
+    <Ivc>zz163</Ivc>
+    <Ivc>zz161</Ivc>
+    <Ivc>zz160</Ivc>
+    <Ivc>zz40</Ivc>
+    <Ivc>zz86</Ivc>
+    <Ivc>SP3c</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>zz34</Ivc>
+    <Ivc>zz78</Ivc>
+    <Ivc>zz201</Ivc>
+    <Ivc>zz38</Ivc>
+    <Ivc>zz122</Ivc>
+    <Ivc>zz165</Ivc>
+    <Ivc>zz150</Ivc>
+    <Ivc>zz74</Ivc>
+    <Ivc>zz32</Ivc>
+    <Ivc>zz75</Ivc>
+    <Ivc>zz119</Ivc>
+    <Ivc>zz67</Ivc>
+    <Ivc>zz66</Ivc>
+    <Ivc>zz69</Ivc>
+    <Ivc>zz25</Ivc>
+    <Ivc>zz114</Ivc>
+    <Ivc>zz157</Ivc>
+    <Ivc>zz156</Ivc>
+    <Ivc>zz111</Ivc>
+    <Ivc>zz28</Ivc>
+    <Ivc>zz110</Ivc>
+    <Ivc>zz154</Ivc>
+    <Ivc>zz142</Ivc>
+    <Ivc>cruiseThrottle</Ivc>
+    <Ivc>zz140</Ivc>
+    <Ivc>zz61</Ivc>
+    <Ivc>zz20</Ivc>
+    <Ivc>zz109</Ivc>
+    <Ivc>zz108</Ivc>
+    <Ivc>zz12</Ivc>
+    <Ivc>zz106</Ivc>
+    <Ivc>zz149</Ivc>
+    <Ivc>zz55</Ivc>
+    <Ivc>zz105</Ivc>
+    <Ivc>zz99</Ivc>
+    <Ivc>zz58</Ivc>
+    <Ivc>zz148</Ivc>
+    <Ivc>zz104</Ivc>
+    <Ivc>zz147</Ivc>
+    <Ivc>zz103</Ivc>
+    <Ivc>zz102</Ivc>
+    <Ivc>zz146</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>zz16</Ivc>
+    <Ivc>zz101</Ivc>
+    <Ivc>zz145</Ivc>
+    <Ivc>zz144</Ivc>
+    <Ivc>zz100</Ivc>
+    <Ivc>zz143</Ivc>
+    <Ivc>zz187</Ivc>
+    <Ivc>zz92</Ivc>
+    <Ivc>zz91</Ivc>
+    <Ivc>zz50</Ivc>
+    <Ivc>zz94</Ivc>
+    <Ivc>zz93</Ivc>
+    <Ivc>zz95</Ivc>
+    <Ivc>zz98</Ivc>
+    <Ivc>zz97</Ivc>
+    <Ivc>zz53</Ivc>
+    <Ivc>zz6</Ivc>
+    <Ivc>zz89</Ivc>
+    <Ivc>zz9</Ivc>
+    <Ivc>zz45</Ivc>
+    <Ivc>zz44</Ivc>
+    <Ivc>zz88</Ivc>
+    <Ivc>zz137</Ivc>
+    <Ivc>zz49</Ivc>
+    </IvcSet>
+    <IvcSet number="8">
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>(((mode + (-4)) &lt;&gt; 0) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>(((mode + (-4)) &lt;&gt; 0) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(((mode + (-5)) &lt;&gt; 0) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>(((mode + (-5)) &lt;&gt; 0) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Ivc>zz164</Ivc>
+    <Ivc>zz163</Ivc>
+    <Ivc>zz161</Ivc>
+    <Ivc>zz160</Ivc>
+    <Ivc>zz40</Ivc>
+    <Ivc>zz86</Ivc>
+    <Ivc>SP3c</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>zz34</Ivc>
+    <Ivc>zz78</Ivc>
+    <Ivc>zz77</Ivc>
+    <Ivc>zz201</Ivc>
+    <Ivc>zz38</Ivc>
+    <Ivc>zz122</Ivc>
+    <Ivc>zz165</Ivc>
+    <Ivc>zz71</Ivc>
+    <Ivc>zz150</Ivc>
+    <Ivc>zz74</Ivc>
+    <Ivc>zz32</Ivc>
+    <Ivc>zz119</Ivc>
+    <Ivc>zz66</Ivc>
+    <Ivc>zz69</Ivc>
+    <Ivc>zz25</Ivc>
+    <Ivc>zz114</Ivc>
+    <Ivc>zz157</Ivc>
+    <Ivc>zz156</Ivc>
+    <Ivc>zz111</Ivc>
+    <Ivc>zz28</Ivc>
+    <Ivc>zz110</Ivc>
+    <Ivc>zz154</Ivc>
+    <Ivc>zz142</Ivc>
+    <Ivc>cruiseThrottle</Ivc>
+    <Ivc>zz140</Ivc>
+    <Ivc>zz61</Ivc>
+    <Ivc>zz63</Ivc>
+    <Ivc>zz20</Ivc>
+    <Ivc>zz109</Ivc>
+    <Ivc>zz108</Ivc>
+    <Ivc>zz12</Ivc>
+    <Ivc>zz106</Ivc>
+    <Ivc>zz149</Ivc>
+    <Ivc>zz99</Ivc>
+    <Ivc>zz58</Ivc>
+    <Ivc>zz148</Ivc>
+    <Ivc>zz104</Ivc>
+    <Ivc>zz147</Ivc>
+    <Ivc>zz103</Ivc>
+    <Ivc>zz102</Ivc>
+    <Ivc>zz146</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>zz16</Ivc>
+    <Ivc>zz59</Ivc>
+    <Ivc>zz101</Ivc>
+    <Ivc>zz145</Ivc>
+    <Ivc>zz144</Ivc>
+    <Ivc>zz143</Ivc>
+    <Ivc>zz187</Ivc>
+    <Ivc>zz92</Ivc>
+    <Ivc>zz91</Ivc>
+    <Ivc>zz50</Ivc>
+    <Ivc>zz93</Ivc>
+    <Ivc>zz95</Ivc>
+    <Ivc>zz98</Ivc>
+    <Ivc>zz97</Ivc>
+    <Ivc>zz53</Ivc>
+    <Ivc>zz6</Ivc>
+    <Ivc>zz89</Ivc>
+    <Ivc>zz9</Ivc>
+    <Ivc>zz45</Ivc>
+    <Ivc>zz44</Ivc>
+    <Ivc>zz88</Ivc>
+    <Ivc>zz137</Ivc>
+    <Ivc>zz49</Ivc>
+    </IvcSet>
+    <IvcSet number="9">
+    <Invariant>((zz161 &lt;= 6) or (not ((mode + (-4)) = 0)))</Invariant>
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>(((mode + (-5)) &lt;&gt; 0) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>((not ((mode + (-4)) = 0)) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(((mode + (-5)) &lt;&gt; 0) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Ivc>zz164</Ivc>
+    <Ivc>zz163</Ivc>
+    <Ivc>zz161</Ivc>
+    <Ivc>zz160</Ivc>
+    <Ivc>zz40</Ivc>
+    <Ivc>zz86</Ivc>
+    <Ivc>SP3c</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>zz34</Ivc>
+    <Ivc>zz78</Ivc>
+    <Ivc>zz77</Ivc>
+    <Ivc>zz201</Ivc>
+    <Ivc>zz38</Ivc>
+    <Ivc>zz122</Ivc>
+    <Ivc>zz165</Ivc>
+    <Ivc>zz71</Ivc>
+    <Ivc>zz150</Ivc>
+    <Ivc>zz74</Ivc>
+    <Ivc>zz32</Ivc>
+    <Ivc>zz119</Ivc>
+    <Ivc>zz67</Ivc>
+    <Ivc>zz66</Ivc>
+    <Ivc>zz69</Ivc>
+    <Ivc>zz25</Ivc>
+    <Ivc>zz114</Ivc>
+    <Ivc>zz157</Ivc>
+    <Ivc>zz156</Ivc>
+    <Ivc>zz111</Ivc>
+    <Ivc>zz28</Ivc>
+    <Ivc>zz110</Ivc>
+    <Ivc>zz154</Ivc>
+    <Ivc>zz142</Ivc>
+    <Ivc>cruiseThrottle</Ivc>
+    <Ivc>zz140</Ivc>
+    <Ivc>zz61</Ivc>
+    <Ivc>zz20</Ivc>
+    <Ivc>zz109</Ivc>
+    <Ivc>zz108</Ivc>
+    <Ivc>zz12</Ivc>
+    <Ivc>zz106</Ivc>
+    <Ivc>zz149</Ivc>
+    <Ivc>zz99</Ivc>
+    <Ivc>zz58</Ivc>
+    <Ivc>zz148</Ivc>
+    <Ivc>zz104</Ivc>
+    <Ivc>zz147</Ivc>
+    <Ivc>zz103</Ivc>
+    <Ivc>zz102</Ivc>
+    <Ivc>zz146</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>zz16</Ivc>
+    <Ivc>zz59</Ivc>
+    <Ivc>zz101</Ivc>
+    <Ivc>zz145</Ivc>
+    <Ivc>zz144</Ivc>
+    <Ivc>zz143</Ivc>
+    <Ivc>zz187</Ivc>
+    <Ivc>zz92</Ivc>
+    <Ivc>zz91</Ivc>
+    <Ivc>zz50</Ivc>
+    <Ivc>zz93</Ivc>
+    <Ivc>zz95</Ivc>
+    <Ivc>zz98</Ivc>
+    <Ivc>zz97</Ivc>
+    <Ivc>zz53</Ivc>
+    <Ivc>zz6</Ivc>
+    <Ivc>zz89</Ivc>
+    <Ivc>zz9</Ivc>
+    <Ivc>zz45</Ivc>
+    <Ivc>zz44</Ivc>
+    <Ivc>zz88</Ivc>
+    <Ivc>zz137</Ivc>
+    <Ivc>zz49</Ivc>
+    </IvcSet>
+    <IvcSet number="10">
+    <Invariant>(((mode + (-5)) &lt;&gt; 0) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>(((mode + (-5)) &lt;&gt; 0) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>((6 &lt;&gt; mode) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>(((mode + (-4)) &lt;&gt; 0) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>((6 &lt;&gt; mode) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>((0 &lt;= (zz161 + (-3))) or ((mode + (-4)) &lt;&gt; 0))</Invariant>
+    <Ivc>zz164</Ivc>
+    <Ivc>zz163</Ivc>
+    <Ivc>zz161</Ivc>
+    <Ivc>zz160</Ivc>
+    <Ivc>zz40</Ivc>
+    <Ivc>zz86</Ivc>
+    <Ivc>SP3c</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>zz34</Ivc>
+    <Ivc>zz78</Ivc>
+    <Ivc>zz201</Ivc>
+    <Ivc>zz38</Ivc>
+    <Ivc>zz122</Ivc>
+    <Ivc>zz165</Ivc>
+    <Ivc>zz150</Ivc>
+    <Ivc>zz74</Ivc>
+    <Ivc>zz32</Ivc>
+    <Ivc>zz75</Ivc>
+    <Ivc>zz119</Ivc>
+    <Ivc>zz66</Ivc>
+    <Ivc>zz69</Ivc>
+    <Ivc>zz25</Ivc>
+    <Ivc>zz114</Ivc>
+    <Ivc>zz157</Ivc>
+    <Ivc>zz156</Ivc>
+    <Ivc>zz111</Ivc>
+    <Ivc>zz28</Ivc>
+    <Ivc>zz110</Ivc>
+    <Ivc>zz154</Ivc>
+    <Ivc>zz142</Ivc>
+    <Ivc>cruiseThrottle</Ivc>
+    <Ivc>zz140</Ivc>
+    <Ivc>zz61</Ivc>
+    <Ivc>zz63</Ivc>
+    <Ivc>zz20</Ivc>
+    <Ivc>zz109</Ivc>
+    <Ivc>zz108</Ivc>
+    <Ivc>zz12</Ivc>
+    <Ivc>zz106</Ivc>
+    <Ivc>zz149</Ivc>
+    <Ivc>zz105</Ivc>
+    <Ivc>zz99</Ivc>
+    <Ivc>zz58</Ivc>
+    <Ivc>zz148</Ivc>
+    <Ivc>zz104</Ivc>
+    <Ivc>zz147</Ivc>
+    <Ivc>zz103</Ivc>
+    <Ivc>zz102</Ivc>
+    <Ivc>zz146</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>zz16</Ivc>
+    <Ivc>zz59</Ivc>
+    <Ivc>zz101</Ivc>
+    <Ivc>zz145</Ivc>
+    <Ivc>zz144</Ivc>
+    <Ivc>zz100</Ivc>
+    <Ivc>zz143</Ivc>
+    <Ivc>zz187</Ivc>
+    <Ivc>zz92</Ivc>
+    <Ivc>zz91</Ivc>
+    <Ivc>zz50</Ivc>
+    <Ivc>zz94</Ivc>
+    <Ivc>zz93</Ivc>
+    <Ivc>zz95</Ivc>
+    <Ivc>zz98</Ivc>
+    <Ivc>zz97</Ivc>
+    <Ivc>zz53</Ivc>
+    <Ivc>zz6</Ivc>
+    <Ivc>zz89</Ivc>
+    <Ivc>zz9</Ivc>
+    <Ivc>zz45</Ivc>
+    <Ivc>zz44</Ivc>
+    <Ivc>zz88</Ivc>
+    <Ivc>zz137</Ivc>
+    <Ivc>zz49</Ivc>
+    </IvcSet>
+    <IvcSet number="11">
+    <Invariant>((not (0 &lt;= (zz161 + (-7)))) or ((mode + (-5)) &lt;&gt; 0))</Invariant>
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>((not (mode = 4)) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>(((mode + (-5)) &lt;&gt; 0) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>((not (mode = 4)) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>OK</Invariant>
+    <Ivc>zz164</Ivc>
+    <Ivc>zz163</Ivc>
+    <Ivc>zz161</Ivc>
+    <Ivc>zz160</Ivc>
+    <Ivc>zz40</Ivc>
+    <Ivc>zz86</Ivc>
+    <Ivc>SP3c</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>zz34</Ivc>
+    <Ivc>zz78</Ivc>
+    <Ivc>zz201</Ivc>
+    <Ivc>zz38</Ivc>
+    <Ivc>zz122</Ivc>
+    <Ivc>zz165</Ivc>
+    <Ivc>zz150</Ivc>
+    <Ivc>zz74</Ivc>
+    <Ivc>zz32</Ivc>
+    <Ivc>zz75</Ivc>
+    <Ivc>zz119</Ivc>
+    <Ivc>zz67</Ivc>
+    <Ivc>zz66</Ivc>
+    <Ivc>zz69</Ivc>
+    <Ivc>zz25</Ivc>
+    <Ivc>zz114</Ivc>
+    <Ivc>zz157</Ivc>
+    <Ivc>zz156</Ivc>
+    <Ivc>zz111</Ivc>
+    <Ivc>zz28</Ivc>
+    <Ivc>zz110</Ivc>
+    <Ivc>zz154</Ivc>
+    <Ivc>zz142</Ivc>
+    <Ivc>cruiseThrottle</Ivc>
+    <Ivc>zz140</Ivc>
+    <Ivc>zz61</Ivc>
+    <Ivc>zz20</Ivc>
+    <Ivc>zz109</Ivc>
+    <Ivc>zz108</Ivc>
+    <Ivc>zz12</Ivc>
+    <Ivc>zz106</Ivc>
+    <Ivc>zz149</Ivc>
+    <Ivc>zz105</Ivc>
+    <Ivc>zz99</Ivc>
+    <Ivc>zz58</Ivc>
+    <Ivc>zz148</Ivc>
+    <Ivc>zz104</Ivc>
+    <Ivc>zz147</Ivc>
+    <Ivc>zz103</Ivc>
+    <Ivc>zz102</Ivc>
+    <Ivc>zz146</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>zz16</Ivc>
+    <Ivc>zz59</Ivc>
+    <Ivc>zz101</Ivc>
+    <Ivc>zz145</Ivc>
+    <Ivc>zz144</Ivc>
+    <Ivc>zz100</Ivc>
+    <Ivc>zz143</Ivc>
+    <Ivc>zz187</Ivc>
+    <Ivc>zz92</Ivc>
+    <Ivc>zz91</Ivc>
+    <Ivc>zz50</Ivc>
+    <Ivc>zz94</Ivc>
+    <Ivc>zz93</Ivc>
+    <Ivc>zz95</Ivc>
+    <Ivc>zz98</Ivc>
+    <Ivc>zz97</Ivc>
+    <Ivc>zz53</Ivc>
+    <Ivc>zz6</Ivc>
+    <Ivc>zz89</Ivc>
+    <Ivc>zz9</Ivc>
+    <Ivc>zz45</Ivc>
+    <Ivc>zz44</Ivc>
+    <Ivc>zz88</Ivc>
+    <Ivc>zz137</Ivc>
+    <Ivc>zz49</Ivc>
+    </IvcSet>
+    <IvcSet number="12">
+    <Invariant>((5 &lt;&gt; mode) or (not (1 = zz161)))</Invariant>
+    <Invariant>((5 &lt;&gt; mode) or (not (zz161 &lt;= 0)))</Invariant>
+    <Invariant>((6 &lt;&gt; mode) or (zz161 &lt;= 6))</Invariant>
+    <Invariant>((5 &lt;&gt; mode) or (zz161 &lt;= 6))</Invariant>
+    <Invariant>((6 &lt;&gt; mode) or (not (zz161 &lt;= 0)))</Invariant>
+    <Invariant>((6 &lt;&gt; mode) or (not (1 = zz161)))</Invariant>
+    <Invariant>((mode &lt;&gt; 4) or (zz161 &lt;= 6))</Invariant>
+    <Invariant>((mode &lt;&gt; 4) or (not (1 = zz161)))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>((5 &lt;&gt; mode) or (zz161 &lt;&gt; 2))</Invariant>
+    <Invariant>((mode &lt;&gt; 4) or (not (zz161 &lt;= 0)))</Invariant>
+    <Invariant>((6 &lt;&gt; mode) or (zz161 &lt;&gt; 2))</Invariant>
+    <Invariant>((mode &lt;&gt; 4) or (zz161 &lt;&gt; 2))</Invariant>
+    <Ivc>zz164</Ivc>
+    <Ivc>zz163</Ivc>
+    <Ivc>zz161</Ivc>
+    <Ivc>zz160</Ivc>
+    <Ivc>zz40</Ivc>
+    <Ivc>zz86</Ivc>
+    <Ivc>SP3c</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>zz34</Ivc>
+    <Ivc>zz78</Ivc>
+    <Ivc>zz77</Ivc>
+    <Ivc>zz201</Ivc>
+    <Ivc>zz38</Ivc>
+    <Ivc>zz122</Ivc>
+    <Ivc>zz165</Ivc>
+    <Ivc>zz71</Ivc>
+    <Ivc>zz150</Ivc>
+    <Ivc>zz74</Ivc>
+    <Ivc>zz32</Ivc>
+    <Ivc>zz119</Ivc>
+    <Ivc>zz66</Ivc>
+    <Ivc>zz69</Ivc>
+    <Ivc>zz25</Ivc>
+    <Ivc>zz114</Ivc>
+    <Ivc>zz157</Ivc>
+    <Ivc>zz156</Ivc>
+    <Ivc>zz111</Ivc>
+    <Ivc>zz28</Ivc>
+    <Ivc>zz110</Ivc>
+    <Ivc>zz154</Ivc>
+    <Ivc>zz142</Ivc>
+    <Ivc>cruiseThrottle</Ivc>
+    <Ivc>zz140</Ivc>
+    <Ivc>zz61</Ivc>
+    <Ivc>zz63</Ivc>
+    <Ivc>zz20</Ivc>
+    <Ivc>zz109</Ivc>
+    <Ivc>zz108</Ivc>
+    <Ivc>zz12</Ivc>
+    <Ivc>zz106</Ivc>
+    <Ivc>zz149</Ivc>
+    <Ivc>zz55</Ivc>
+    <Ivc>zz99</Ivc>
+    <Ivc>zz58</Ivc>
+    <Ivc>zz148</Ivc>
+    <Ivc>zz104</Ivc>
+    <Ivc>zz147</Ivc>
+    <Ivc>zz103</Ivc>
+    <Ivc>zz102</Ivc>
+    <Ivc>zz146</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>zz16</Ivc>
+    <Ivc>zz101</Ivc>
+    <Ivc>zz145</Ivc>
+    <Ivc>zz144</Ivc>
+    <Ivc>zz143</Ivc>
+    <Ivc>zz187</Ivc>
+    <Ivc>zz92</Ivc>
+    <Ivc>zz91</Ivc>
+    <Ivc>zz50</Ivc>
+    <Ivc>zz93</Ivc>
+    <Ivc>zz95</Ivc>
+    <Ivc>zz98</Ivc>
+    <Ivc>zz97</Ivc>
+    <Ivc>zz53</Ivc>
+    <Ivc>zz6</Ivc>
+    <Ivc>zz89</Ivc>
+    <Ivc>zz9</Ivc>
+    <Ivc>zz45</Ivc>
+    <Ivc>zz44</Ivc>
+    <Ivc>zz88</Ivc>
+    <Ivc>zz137</Ivc>
+    <Ivc>zz49</Ivc>
+    </IvcSet>
+    <IvcSet number="13">
+    <Invariant>(((mode + (-4)) &lt;&gt; 0) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>(((mode + (-4)) &lt;&gt; 0) or (not (zz161 &lt;= (8 + (-6)))))</Invariant>
+    <Invariant>(((mode + (-5)) &lt;&gt; 0) or (not (zz161 &lt;= (8 + (-6)))))</Invariant>
+    <Invariant>(((((mode + (-6)) &lt;&gt; 0) or ((zz161 + (-6)) = 0)) or ((zz161 + (-5)) = 0)) or (zz161 &lt;= 4))</Invariant>
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (not (zz161 &lt;= (8 + (-6)))))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(((((zz161 + (-6)) = 0) or ((mode + (-5)) &lt;&gt; 0)) or ((zz161 + (-5)) = 0)) or (zz161 &lt;= 4))</Invariant>
+    <Ivc>zz164</Ivc>
+    <Ivc>zz163</Ivc>
+    <Ivc>zz161</Ivc>
+    <Ivc>zz160</Ivc>
+    <Ivc>zz40</Ivc>
+    <Ivc>zz86</Ivc>
+    <Ivc>SP3c</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>zz34</Ivc>
+    <Ivc>zz78</Ivc>
+    <Ivc>zz201</Ivc>
+    <Ivc>zz38</Ivc>
+    <Ivc>zz122</Ivc>
+    <Ivc>zz165</Ivc>
+    <Ivc>zz71</Ivc>
+    <Ivc>zz150</Ivc>
+    <Ivc>zz74</Ivc>
+    <Ivc>zz32</Ivc>
+    <Ivc>zz119</Ivc>
+    <Ivc>zz67</Ivc>
+    <Ivc>zz66</Ivc>
+    <Ivc>zz69</Ivc>
+    <Ivc>zz25</Ivc>
+    <Ivc>zz114</Ivc>
+    <Ivc>zz157</Ivc>
+    <Ivc>zz156</Ivc>
+    <Ivc>zz111</Ivc>
+    <Ivc>zz28</Ivc>
+    <Ivc>zz110</Ivc>
+    <Ivc>zz154</Ivc>
+    <Ivc>zz142</Ivc>
+    <Ivc>cruiseThrottle</Ivc>
+    <Ivc>zz140</Ivc>
+    <Ivc>zz61</Ivc>
+    <Ivc>zz20</Ivc>
+    <Ivc>zz109</Ivc>
+    <Ivc>zz108</Ivc>
+    <Ivc>zz12</Ivc>
+    <Ivc>zz106</Ivc>
+    <Ivc>zz149</Ivc>
+    <Ivc>zz55</Ivc>
+    <Ivc>zz105</Ivc>
+    <Ivc>zz99</Ivc>
+    <Ivc>zz58</Ivc>
+    <Ivc>zz148</Ivc>
+    <Ivc>zz104</Ivc>
+    <Ivc>zz147</Ivc>
+    <Ivc>zz103</Ivc>
+    <Ivc>zz102</Ivc>
+    <Ivc>zz146</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>zz16</Ivc>
+    <Ivc>zz101</Ivc>
+    <Ivc>zz145</Ivc>
+    <Ivc>zz144</Ivc>
+    <Ivc>zz100</Ivc>
+    <Ivc>zz143</Ivc>
+    <Ivc>zz187</Ivc>
+    <Ivc>zz92</Ivc>
+    <Ivc>zz91</Ivc>
+    <Ivc>zz50</Ivc>
+    <Ivc>zz94</Ivc>
+    <Ivc>zz93</Ivc>
+    <Ivc>zz95</Ivc>
+    <Ivc>zz98</Ivc>
+    <Ivc>zz97</Ivc>
+    <Ivc>zz53</Ivc>
+    <Ivc>zz6</Ivc>
+    <Ivc>zz89</Ivc>
+    <Ivc>zz9</Ivc>
+    <Ivc>zz45</Ivc>
+    <Ivc>zz44</Ivc>
+    <Ivc>zz88</Ivc>
+    <Ivc>zz137</Ivc>
+    <Ivc>zz49</Ivc>
+    </IvcSet>
+    <IvcSet number="14">
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>(((mode + (-4)) &lt;&gt; 0) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>(((mode + (-5)) &lt;&gt; 0) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>(((mode + (-5)) &lt;&gt; 0) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>((mode &lt;&gt; 4) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Ivc>zz164</Ivc>
+    <Ivc>zz163</Ivc>
+    <Ivc>zz161</Ivc>
+    <Ivc>zz160</Ivc>
+    <Ivc>zz40</Ivc>
+    <Ivc>zz86</Ivc>
+    <Ivc>SP3c</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>zz34</Ivc>
+    <Ivc>zz78</Ivc>
+    <Ivc>zz201</Ivc>
+    <Ivc>zz38</Ivc>
+    <Ivc>zz122</Ivc>
+    <Ivc>zz165</Ivc>
+    <Ivc>zz71</Ivc>
+    <Ivc>zz150</Ivc>
+    <Ivc>zz74</Ivc>
+    <Ivc>zz32</Ivc>
+    <Ivc>zz119</Ivc>
+    <Ivc>zz67</Ivc>
+    <Ivc>zz66</Ivc>
+    <Ivc>zz69</Ivc>
+    <Ivc>zz25</Ivc>
+    <Ivc>zz114</Ivc>
+    <Ivc>zz157</Ivc>
+    <Ivc>zz156</Ivc>
+    <Ivc>zz111</Ivc>
+    <Ivc>zz28</Ivc>
+    <Ivc>zz110</Ivc>
+    <Ivc>zz154</Ivc>
+    <Ivc>zz142</Ivc>
+    <Ivc>cruiseThrottle</Ivc>
+    <Ivc>zz140</Ivc>
+    <Ivc>zz61</Ivc>
+    <Ivc>zz20</Ivc>
+    <Ivc>zz109</Ivc>
+    <Ivc>zz108</Ivc>
+    <Ivc>zz12</Ivc>
+    <Ivc>zz106</Ivc>
+    <Ivc>zz149</Ivc>
+    <Ivc>zz105</Ivc>
+    <Ivc>zz99</Ivc>
+    <Ivc>zz58</Ivc>
+    <Ivc>zz148</Ivc>
+    <Ivc>zz104</Ivc>
+    <Ivc>zz147</Ivc>
+    <Ivc>zz103</Ivc>
+    <Ivc>zz102</Ivc>
+    <Ivc>zz146</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>zz16</Ivc>
+    <Ivc>zz59</Ivc>
+    <Ivc>zz101</Ivc>
+    <Ivc>zz145</Ivc>
+    <Ivc>zz144</Ivc>
+    <Ivc>zz100</Ivc>
+    <Ivc>zz143</Ivc>
+    <Ivc>zz187</Ivc>
+    <Ivc>zz92</Ivc>
+    <Ivc>zz91</Ivc>
+    <Ivc>zz50</Ivc>
+    <Ivc>zz94</Ivc>
+    <Ivc>zz93</Ivc>
+    <Ivc>zz95</Ivc>
+    <Ivc>zz98</Ivc>
+    <Ivc>zz97</Ivc>
+    <Ivc>zz53</Ivc>
+    <Ivc>zz6</Ivc>
+    <Ivc>zz89</Ivc>
+    <Ivc>zz9</Ivc>
+    <Ivc>zz45</Ivc>
+    <Ivc>zz44</Ivc>
+    <Ivc>zz88</Ivc>
+    <Ivc>zz137</Ivc>
+    <Ivc>zz49</Ivc>
+    </IvcSet>
+    <IvcSet number="15">
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>(((mode + (-5)) &lt;&gt; 0) or (0 &lt;= (zz161 + (-3))))</Invariant>
+    <Invariant>(((mode + (-5)) &lt;&gt; 0) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>((0 &lt;= (zz161 + (-3))) or ((mode + (-4)) &lt;&gt; 0))</Invariant>
+    <Invariant>((mode &lt;&gt; 4) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Ivc>zz164</Ivc>
+    <Ivc>zz163</Ivc>
+    <Ivc>zz161</Ivc>
+    <Ivc>zz160</Ivc>
+    <Ivc>zz40</Ivc>
+    <Ivc>zz86</Ivc>
+    <Ivc>SP3c</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>zz34</Ivc>
+    <Ivc>zz78</Ivc>
+    <Ivc>zz77</Ivc>
+    <Ivc>zz201</Ivc>
+    <Ivc>zz38</Ivc>
+    <Ivc>zz122</Ivc>
+    <Ivc>zz165</Ivc>
+    <Ivc>zz150</Ivc>
+    <Ivc>zz74</Ivc>
+    <Ivc>zz32</Ivc>
+    <Ivc>zz75</Ivc>
+    <Ivc>zz119</Ivc>
+    <Ivc>zz66</Ivc>
+    <Ivc>zz69</Ivc>
+    <Ivc>zz25</Ivc>
+    <Ivc>zz114</Ivc>
+    <Ivc>zz157</Ivc>
+    <Ivc>zz156</Ivc>
+    <Ivc>zz111</Ivc>
+    <Ivc>zz28</Ivc>
+    <Ivc>zz110</Ivc>
+    <Ivc>zz154</Ivc>
+    <Ivc>zz142</Ivc>
+    <Ivc>cruiseThrottle</Ivc>
+    <Ivc>zz140</Ivc>
+    <Ivc>zz61</Ivc>
+    <Ivc>zz63</Ivc>
+    <Ivc>zz20</Ivc>
+    <Ivc>zz109</Ivc>
+    <Ivc>zz108</Ivc>
+    <Ivc>zz12</Ivc>
+    <Ivc>zz106</Ivc>
+    <Ivc>zz149</Ivc>
+    <Ivc>zz55</Ivc>
+    <Ivc>zz99</Ivc>
+    <Ivc>zz58</Ivc>
+    <Ivc>zz148</Ivc>
+    <Ivc>zz104</Ivc>
+    <Ivc>zz147</Ivc>
+    <Ivc>zz103</Ivc>
+    <Ivc>zz102</Ivc>
+    <Ivc>zz146</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>zz16</Ivc>
+    <Ivc>zz101</Ivc>
+    <Ivc>zz145</Ivc>
+    <Ivc>zz144</Ivc>
+    <Ivc>zz143</Ivc>
+    <Ivc>zz187</Ivc>
+    <Ivc>zz92</Ivc>
+    <Ivc>zz91</Ivc>
+    <Ivc>zz50</Ivc>
+    <Ivc>zz93</Ivc>
+    <Ivc>zz95</Ivc>
+    <Ivc>zz98</Ivc>
+    <Ivc>zz97</Ivc>
+    <Ivc>zz53</Ivc>
+    <Ivc>zz6</Ivc>
+    <Ivc>zz89</Ivc>
+    <Ivc>zz9</Ivc>
+    <Ivc>zz45</Ivc>
+    <Ivc>zz44</Ivc>
+    <Ivc>zz88</Ivc>
+    <Ivc>zz137</Ivc>
+    <Ivc>zz49</Ivc>
+    </IvcSet>
+    <IvcSet number="16">
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>OK</Invariant>
+    <Invariant>((mode &lt;&gt; 4) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>(((mode + (-5)) &lt;&gt; 0) or (not ((zz161 + (-2)) &lt;= 0)))</Invariant>
+    <Invariant>(((mode + (-6)) &lt;&gt; 0) or (not ((zz161 + (-2)) &lt;= 0)))</Invariant>
+    <Invariant>(((mode + (-5)) &lt;&gt; 0) or (not (0 &lt;= (zz161 + (-7)))))</Invariant>
+    <Invariant>((mode &lt;&gt; 4) or (not ((zz161 + (-2)) &lt;= 0)))</Invariant>
+    <Ivc>zz164</Ivc>
+    <Ivc>zz163</Ivc>
+    <Ivc>zz161</Ivc>
+    <Ivc>zz160</Ivc>
+    <Ivc>zz40</Ivc>
+    <Ivc>zz86</Ivc>
+    <Ivc>SP3c</Ivc>
+    <Ivc>mode</Ivc>
+    <Ivc>zz34</Ivc>
+    <Ivc>zz78</Ivc>
+    <Ivc>zz77</Ivc>
+    <Ivc>zz201</Ivc>
+    <Ivc>zz38</Ivc>
+    <Ivc>zz122</Ivc>
+    <Ivc>zz165</Ivc>
+    <Ivc>zz150</Ivc>
+    <Ivc>zz74</Ivc>
+    <Ivc>zz32</Ivc>
+    <Ivc>zz75</Ivc>
+    <Ivc>zz119</Ivc>
+    <Ivc>zz67</Ivc>
+    <Ivc>zz66</Ivc>
+    <Ivc>zz69</Ivc>
+    <Ivc>zz25</Ivc>
+    <Ivc>zz114</Ivc>
+    <Ivc>zz157</Ivc>
+    <Ivc>zz156</Ivc>
+    <Ivc>zz111</Ivc>
+    <Ivc>zz28</Ivc>
+    <Ivc>zz110</Ivc>
+    <Ivc>zz154</Ivc>
+    <Ivc>zz142</Ivc>
+    <Ivc>cruiseThrottle</Ivc>
+    <Ivc>zz140</Ivc>
+    <Ivc>zz61</Ivc>
+    <Ivc>zz20</Ivc>
+    <Ivc>zz109</Ivc>
+    <Ivc>zz108</Ivc>
+    <Ivc>zz12</Ivc>
+    <Ivc>zz106</Ivc>
+    <Ivc>zz149</Ivc>
+    <Ivc>zz99</Ivc>
+    <Ivc>zz58</Ivc>
+    <Ivc>zz148</Ivc>
+    <Ivc>zz104</Ivc>
+    <Ivc>zz147</Ivc>
+    <Ivc>zz103</Ivc>
+    <Ivc>zz102</Ivc>
+    <Ivc>zz146</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>zz16</Ivc>
+    <Ivc>zz59</Ivc>
+    <Ivc>zz101</Ivc>
+    <Ivc>zz145</Ivc>
+    <Ivc>zz144</Ivc>
+    <Ivc>zz143</Ivc>
+    <Ivc>zz187</Ivc>
+    <Ivc>zz92</Ivc>
+    <Ivc>zz91</Ivc>
+    <Ivc>zz50</Ivc>
+    <Ivc>zz93</Ivc>
+    <Ivc>zz95</Ivc>
+    <Ivc>zz98</Ivc>
+    <Ivc>zz97</Ivc>
+    <Ivc>zz53</Ivc>
+    <Ivc>zz6</Ivc>
+    <Ivc>zz89</Ivc>
+    <Ivc>zz9</Ivc>
+    <Ivc>zz45</Ivc>
+    <Ivc>zz44</Ivc>
+    <Ivc>zz88</Ivc>
+    <Ivc>zz137</Ivc>
+    <Ivc>zz49</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

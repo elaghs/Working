@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">5.624</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>Sofar~0.Sofar</MustElem>
+    <MustElem>excludes12~0.X9</MustElem>
+    <MustElem>excludes12~0.X8</MustElem>
+    <MustElem>excludes12~0.X7</MustElem>
+    <MustElem>excludes12~0.X6</MustElem>
+    <MustElem>DRAGON~0.e02</MustElem>
+    <MustElem>DRAGON~0.e03</MustElem>
+    <MustElem>DRAGON~0.g01</MustElem>
+    <MustElem>DRAGON~0.e01</MustElem>
+    <MustElem>DRAGON~0.shared</MustElem>
+    <MustElem>exclusive</MustElem>
+    <MustElem>DRAGON~0.init_invalid</MustElem>
+    <MustElem>First~0.X</MustElem>
+    <MustElem>DRAGON~0.invalid</MustElem>
+    <MustElem>DRAGON~0.mem_init</MustElem>
+    <MustElem>excludes12~0.X1</MustElem>
+    <MustElem>excludes12~0.X5</MustElem>
+    <MustElem>excludes12~0.X4</MustElem>
+    <MustElem>First~0.First</MustElem>
+    <MustElem>excludes12~0.X3</MustElem>
+    <MustElem>excludes12~0.X2</MustElem>
+    <MustElem>invalid</MustElem>
+    <MustElem>DRAGON~0.exclusive</MustElem>
+    <MustElem>shared</MustElem>
+    <MustElem>DRAGON~0.shared_dirty</MustElem>
+    <MustElem>excludes12~0.X11</MustElem>
+    <MustElem>excludes12~0.X12</MustElem>
+    <MustElem>excludes12~0.X10</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>dirty</MustElem>
+    <MustElem>shared_dirty</MustElem>
+    <MustElem>Sofar~0.X</MustElem>
+    <MustElem>erreur</MustElem>
+    <MustElem>DRAGON~0.e10</MustElem>
+    <MustElem>DRAGON~0.erreur</MustElem>
+    <MustElem>env</MustElem>
+    <MustElem>excludes12~0.excludes</MustElem>
+    <MustElem>DRAGON~0.g12</MustElem>
+    <MustElem>DRAGON~0.e11</MustElem>
+    <MustElem>DRAGON~0.e12</MustElem>
+    <MustElem>DRAGON~0.e06</MustElem>
+    <MustElem>DRAGON~0.g04</MustElem>
+    <MustElem>DRAGON~0.e07</MustElem>
+    <MustElem>DRAGON~0.g05</MustElem>
+    <MustElem>DRAGON~0.e04</MustElem>
+    <MustElem>DRAGON~0.e05</MustElem>
+    <MustElem>DRAGON~0.g03</MustElem>
+    <MustElem>DRAGON~0.e08</MustElem>
+    <MustElem>DRAGON~0.e09</MustElem>
+    <MustElem>DRAGON~0.dirty</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Ivc>excludes12~0.X9</Ivc>
+    <Ivc>Sofar~0.Sofar</Ivc>
+    <Ivc>excludes12~0.X8</Ivc>
+    <Ivc>excludes12~0.X7</Ivc>
+    <Ivc>excludes12~0.X6</Ivc>
+    <Ivc>DRAGON~0.e02</Ivc>
+    <Ivc>DRAGON~0.g01</Ivc>
+    <Ivc>DRAGON~0.e03</Ivc>
+    <Ivc>DRAGON~0.e01</Ivc>
+    <Ivc>DRAGON~0.shared</Ivc>
+    <Ivc>exclusive</Ivc>
+    <Ivc>First~0.X</Ivc>
+    <Ivc>DRAGON~0.init_invalid</Ivc>
+    <Ivc>DRAGON~0.invalid</Ivc>
+    <Ivc>DRAGON~0.mem_init</Ivc>
+    <Ivc>excludes12~0.X1</Ivc>
+    <Ivc>excludes12~0.X5</Ivc>
+    <Ivc>excludes12~0.X4</Ivc>
+    <Ivc>excludes12~0.X3</Ivc>
+    <Ivc>First~0.First</Ivc>
+    <Ivc>excludes12~0.X2</Ivc>
+    <Ivc>invalid</Ivc>
+    <Ivc>DRAGON~0.exclusive</Ivc>
+    <Ivc>shared</Ivc>
+    <Ivc>DRAGON~0.shared_dirty</Ivc>
+    <Ivc>excludes12~0.X11</Ivc>
+    <Ivc>excludes12~0.X12</Ivc>
+    <Ivc>excludes12~0.X10</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>dirty</Ivc>
+    <Ivc>shared_dirty</Ivc>
+    <Ivc>Sofar~0.X</Ivc>
+    <Ivc>erreur</Ivc>
+    <Ivc>DRAGON~0.e10</Ivc>
+    <Ivc>DRAGON~0.erreur</Ivc>
+    <Ivc>env</Ivc>
+    <Ivc>excludes12~0.excludes</Ivc>
+    <Ivc>DRAGON~0.g12</Ivc>
+    <Ivc>DRAGON~0.e11</Ivc>
+    <Ivc>DRAGON~0.e12</Ivc>
+    <Ivc>DRAGON~0.g04</Ivc>
+    <Ivc>DRAGON~0.e06</Ivc>
+    <Ivc>DRAGON~0.g05</Ivc>
+    <Ivc>DRAGON~0.e07</Ivc>
+    <Ivc>DRAGON~0.e04</Ivc>
+    <Ivc>DRAGON~0.g03</Ivc>
+    <Ivc>DRAGON~0.e05</Ivc>
+    <Ivc>DRAGON~0.e08</Ivc>
+    <Ivc>DRAGON~0.dirty</Ivc>
+    <Ivc>DRAGON~0.e09</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

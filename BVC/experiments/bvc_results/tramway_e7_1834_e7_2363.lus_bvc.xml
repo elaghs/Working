@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<Runs>
+<Results>
+   <Depth>0</Depth>
+   <BVC>V264_env_ok</BVC>
+   <BVC>V59_prop_ok</BVC>
+   <BVC>V250_door_doesnt_open_out_of_station</BVC>
+   <BVC>V251_door_opens_before_leaving_station</BVC>
+   <BVC>V268_door_initially_closed</BVC>
+   <BVC>V253_between_A_and_X</BVC>
+   <BVC>OK</BVC>
+   <BVC>V58_env_always_ok</BVC>
+</Results>
+<Results>
+   <Depth>1</Depth>
+   <BVC>V264_env_ok</BVC>
+   <BVC>V265_door_doesnt_close_if_not_asked</BVC>
+   <BVC>V272_warning_start_cant_become_true_when_door_is_opening</BVC>
+   <BVC>V268_door_initially_closed</BVC>
+   <BVC>V269_initially_not_in_station</BVC>
+   <BVC>OK</BVC>
+   <BVC>V271_warning_start_only_in_station</BVC>
+   <BVC>V58_env_always_ok</BVC>
+</Results>
+<Results>
+   <Depth>2</Depth>
+   <BVC>V264_env_ok</BVC>
+   <BVC>V59_prop_ok</BVC>
+   <BVC>V251_door_opens_before_leaving_station</BVC>
+   <BVC>V252_X</BVC>
+   <BVC>V265_door_doesnt_close_if_not_asked</BVC>
+   <BVC>V272_warning_start_cant_become_true_when_door_is_opening</BVC>
+   <BVC>V268_door_initially_closed</BVC>
+   <BVC>OK</BVC>
+   <BVC>V271_warning_start_only_in_station</BVC>
+   <BVC>V58_env_always_ok</BVC>
+</Results>
+<Results>
+   <Depth>3</Depth>
+   <BVC>V59_prop_ok</BVC>
+   <BVC>V251_door_opens_before_leaving_station</BVC>
+   <BVC>OK</BVC>
+   <BVC>V58_env_always_ok</BVC>
+</Results>
+<Results>
+   <Depth>4</Depth>
+   <BVC>V59_prop_ok</BVC>
+   <BVC>V251_door_opens_before_leaving_station</BVC>
+   <BVC>OK</BVC>
+   <BVC>V58_env_always_ok</BVC>
+</Results>
+<Results>
+   <Depth>5</Depth>
+   <BVC>V59_prop_ok</BVC>
+   <BVC>V251_door_opens_before_leaving_station</BVC>
+   <BVC>OK</BVC>
+   <BVC>V58_env_always_ok</BVC>
+</Results>
+<Results>
+   <Depth>6</Depth>
+   <BVC>V59_prop_ok</BVC>
+   <BVC>V251_door_opens_before_leaving_station</BVC>
+   <BVC>OK</BVC>
+   <BVC>V58_env_always_ok</BVC>
+</Results>
+<Results>
+   <Depth>7</Depth>
+   <BVC>V59_prop_ok</BVC>
+   <BVC>V251_door_opens_before_leaving_station</BVC>
+   <BVC>OK</BVC>
+   <BVC>V58_env_always_ok</BVC>
+</Results>
+<Results>
+   <Depth>8</Depth>
+   <BVC>V59_prop_ok</BVC>
+   <BVC>V251_door_opens_before_leaving_station</BVC>
+   <BVC>OK</BVC>
+   <BVC>V58_env_always_ok</BVC>
+</Results>
+<Results>
+   <Depth>9</Depth>
+   <BVC>V59_prop_ok</BVC>
+   <BVC>V251_door_opens_before_leaving_station</BVC>
+   <BVC>OK</BVC>
+   <BVC>V58_env_always_ok</BVC>
+</Results>
+</Runs>

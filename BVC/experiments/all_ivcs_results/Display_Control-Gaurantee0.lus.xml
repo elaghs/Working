@@ -1,0 +1,328 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="__GUARANTEE0"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="__GUARANTEE0"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="__GUARANTEE0"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="__GUARANTEE0"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="__GUARANTEE0"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="__GUARANTEE0"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="__GUARANTEE0"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="__GUARANTEE0"/>
+  </Progress>
+  <Progress source="bmc" trueFor="9">
+    <PropertyProgress name="__GUARANTEE0"/>
+  </Progress>
+  <Progress source="bmc" trueFor="10">
+    <PropertyProgress name="__GUARANTEE0"/>
+  </Progress>
+  <Progress source="bmc" trueFor="11">
+    <PropertyProgress name="__GUARANTEE0"/>
+  </Progress>
+  <Progress source="bmc" trueFor="12">
+    <PropertyProgress name="__GUARANTEE0"/>
+  </Progress>
+  <Progress source="bmc" trueFor="13">
+    <PropertyProgress name="__GUARANTEE0"/>
+  </Progress>
+  <Progress source="bmc" trueFor="14">
+    <PropertyProgress name="__GUARANTEE0"/>
+  </Progress>
+  <Progress source="bmc" trueFor="15">
+    <PropertyProgress name="__GUARANTEE0"/>
+  </Progress>
+  <Progress source="bmc" trueFor="16">
+    <PropertyProgress name="__GUARANTEE0"/>
+  </Progress>
+  <Progress source="bmc" trueFor="17">
+    <PropertyProgress name="__GUARANTEE0"/>
+  </Progress>
+  <Progress source="bmc" trueFor="18">
+    <PropertyProgress name="__GUARANTEE0"/>
+  </Progress>
+  <Progress source="bmc" trueFor="19">
+    <PropertyProgress name="__GUARANTEE0"/>
+  </Progress>
+  <Progress source="bmc" trueFor="20">
+    <PropertyProgress name="__GUARANTEE0"/>
+  </Progress>
+  <Progress source="bmc" trueFor="21">
+    <PropertyProgress name="__GUARANTEE0"/>
+  </Progress>
+  <Property name="__GUARANTEE0">
+    <Runtime unit="sec">15.84</Runtime>
+    <Answer source="pdr">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>9</NumberOfIVCs>
+    <MustElem>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</MustElem>
+    <MustElem>Microwave_SEng5861__Display_Control__Impl__update_digit~2.digit</MustElem>
+    <MustElem>__GUARANTEE0</MustElem>
+    <MustElem>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_value</MustElem>
+    <MustElem>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</MustElem>
+    <MustElem>Microwave_SEng5861__Display_Control__Impl__update_digit~1.digit</MustElem>
+    <MustElem>Microwave_SEng5861__Display_Control__Impl__update_digit~2.prev_right</MustElem>
+    <MustElem>Microwave_SEng5861__Display_Control__Impl__update_digit~1.prev_right</MustElem>
+    <MustElem>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</MustElem>
+    <IvcSet number="1">
+    <Invariant>__GUARANTEE0</Invariant>
+    <Invariant>(0 &lt;= right_eq)</Invariant>
+    <Invariant>(not (((-Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit) + 10) &lt;= 0))</Invariant>
+    <Invariant>(middle_eq &lt;= 9)</Invariant>
+    <Invariant>(0 &lt;= middle_eq)</Invariant>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_out</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</Ivc>
+    <Ivc>__GUARANTEE0</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_value</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.mode</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.defs__is_cooking~0._outvar</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_out</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.carry_in</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.defs__is_cooking~0.m</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.mode</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.defs__is_cooking~0.m</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.prev_right</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.digit</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_in</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.defs__is_cooking~0._outvar</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.digit</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.mode</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.prev_right</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_at_zero</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.defs__is_setup~0._outvar</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.defs__is_setup~0.m</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</Ivc>
+    </IvcSet>
+    <IvcSet number="2">
+    <Invariant>((((((((((6 = right_eq) or (7 = right_eq)) or (Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit &lt;= 0)) or (4 = right_eq)) or (5 = right_eq)) or ((right_eq + (-9)) = 0)) or (8 = right_eq)) or (1 = right_eq)) or (2 = right_eq)) or (3 = right_eq))</Invariant>
+    <Invariant>((0 = Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit) or (not (Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit &lt;= 0)))</Invariant>
+    <Invariant>__GUARANTEE0</Invariant>
+    <Invariant>(middle_eq &lt;= 9)</Invariant>
+    <Invariant>(0 &lt;= middle_eq)</Invariant>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_out</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</Ivc>
+    <Ivc>__GUARANTEE0</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_value</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.mode</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_out</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.defs__is_cooking~0.m</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.carry_in</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.mode</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.defs__is_cooking~0.m</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.prev_right</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.digit</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_in</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.defs__is_cooking~0._outvar</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.defs__is_setup~0._outvar</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.defs__is_cooking~0._outvar</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.digit</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.mode</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.prev_right</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_at_zero</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.defs__is_setup~0.m</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</Ivc>
+    </IvcSet>
+    <IvcSet number="3">
+    <Invariant>(not (middle_eq &lt;= (-1)))</Invariant>
+    <Invariant>(middle_eq &lt;= 9)</Invariant>
+    <Invariant>(not ((right_eq + 1) &lt;= 0))</Invariant>
+    <Invariant>(right_eq &lt;= 9)</Invariant>
+    <Invariant>__GUARANTEE0</Invariant>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_out</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</Ivc>
+    <Ivc>__GUARANTEE0</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_value</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_out</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.carry_in</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.prev_at_zero</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.mode</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.defs__is_cooking~0.m</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.prev_right</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.digit</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_in</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.defs__is_cooking~0._outvar</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.defs__is_setup~0._outvar</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.digit</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.mode</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.prev_right</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.defs__is_setup~0.m</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</Ivc>
+    </IvcSet>
+    <IvcSet number="4">
+    <Invariant>((not (middle_eq &lt;= 0)) or (Microwave_SEng5861__Display_Control__Impl__update_digit~1.digit = 0))</Invariant>
+    <Invariant>(0 &lt;= middle_eq)</Invariant>
+    <Invariant>((middle_eq &lt;= 0) or (not (Microwave_SEng5861__Display_Control__Impl__update_digit~1.digit = 0)))</Invariant>
+    <Invariant>((middle_eq + (-9)) &lt;= 0)</Invariant>
+    <Invariant>(not ((Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit + 1) &lt;= 0))</Invariant>
+    <Invariant>__GUARANTEE0</Invariant>
+    <Invariant>(((((((((3 = right_eq) or (6 = right_eq)) or (7 = right_eq)) or (8 = right_eq)) or (5 = right_eq)) or (9 = right_eq)) or (2 = right_eq)) or (4 = right_eq)) or (Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit &lt;= 1))</Invariant>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.digit</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.carry_value</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</Ivc>
+    <Ivc>__GUARANTEE0</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_value</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.digit</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.prev_right</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.prev_right</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</Ivc>
+    </IvcSet>
+    <IvcSet number="5">
+    <Invariant>__GUARANTEE0</Invariant>
+    <Invariant>(0 &lt;= middle_eq)</Invariant>
+    <Invariant>((((8 = right_eq) or (7 = right_eq)) or (9 = right_eq)) or (right_eq &lt;= 6))</Invariant>
+    <Invariant>((middle_eq + (-9)) &lt;= 0)</Invariant>
+    <Invariant>((not (Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit &lt;&gt; 0)) or (not (Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit &lt;= 0)))</Invariant>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_out</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</Ivc>
+    <Ivc>__GUARANTEE0</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_value</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.defs__is_cooking~0._outvar</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_out</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.carry_in</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.prev_at_zero</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.defs__is_cooking~0.m</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.mode</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.defs__is_cooking~0.m</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.prev_right</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.digit</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_in</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.defs__is_cooking~0._outvar</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.digit</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.mode</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.prev_right</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</Ivc>
+    </IvcSet>
+    <IvcSet number="6">
+    <Invariant>(right_eq &lt;= 9)</Invariant>
+    <Invariant>__GUARANTEE0</Invariant>
+    <Invariant>((not (Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit &lt;= 0)) or (0 = right_eq))</Invariant>
+    <Invariant>(0 &lt;= middle_eq)</Invariant>
+    <Invariant>(middle_eq &lt;= 9)</Invariant>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_out</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</Ivc>
+    <Ivc>__GUARANTEE0</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_value</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_out</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.carry_in</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.mode</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.defs__is_cooking~0.m</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.prev_right</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.digit</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_in</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.defs__is_cooking~0._outvar</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.defs__is_setup~0._outvar</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.digit</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.prev_at_zero</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.mode</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.prev_right</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.defs__is_setup~0.m</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</Ivc>
+    </IvcSet>
+    <IvcSet number="7">
+    <Invariant>((0 = Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit) or (not (right_eq &lt;= 0)))</Invariant>
+    <Invariant>((right_eq + (-9)) &lt;= 0)</Invariant>
+    <Invariant>((Microwave_SEng5861__Display_Control__Impl__update_digit~1.digit = 0) or (not (Microwave_SEng5861__Display_Control__Impl__update_digit~1.digit &lt;= 0)))</Invariant>
+    <Invariant>(middle_eq &lt;= 9)</Invariant>
+    <Invariant>__GUARANTEE0</Invariant>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_out</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</Ivc>
+    <Ivc>__GUARANTEE0</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_value</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.mode</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.defs__is_cooking~0._outvar</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_out</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.defs__is_cooking~0.m</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.carry_in</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.defs__is_cooking~0.m</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.mode</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.defs__is_cooking~0.m</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.prev_right</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.digit</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_in</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.defs__is_cooking~0._outvar</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.defs__is_cooking~0._outvar</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.digit</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.mode</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.prev_right</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_at_zero</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</Ivc>
+    </IvcSet>
+    <IvcSet number="8">
+    <Invariant>(middle_eq &lt;= 9)</Invariant>
+    <Invariant>(not (right_eq &lt;= (-1)))</Invariant>
+    <Invariant>((right_eq + (-9)) &lt;= 0)</Invariant>
+    <Invariant>__GUARANTEE0</Invariant>
+    <Invariant>(0 &lt;= Microwave_SEng5861__Display_Control__Impl__update_digit~1.digit)</Invariant>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_out</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</Ivc>
+    <Ivc>__GUARANTEE0</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_value</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.defs__is_cooking~0._outvar</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_out</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.carry_in</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.defs__is_cooking~0.m</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.mode</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.defs__is_cooking~0.m</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.prev_right</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.digit</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_in</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.defs__is_cooking~0._outvar</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.digit</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.prev_at_zero</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.mode</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.prev_right</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</Ivc>
+    </IvcSet>
+    <IvcSet number="9">
+    <Invariant>(((right_eq + (-9)) = 0) or (not (0 &lt;= (Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit + (-9)))))</Invariant>
+    <Invariant>((not (Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit &lt;= 0)) or (0 = Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit))</Invariant>
+    <Invariant>(middle_eq &lt;= 9)</Invariant>
+    <Invariant>(0 &lt;= middle_eq)</Invariant>
+    <Invariant>__GUARANTEE0</Invariant>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_out</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_right</Ivc>
+    <Ivc>__GUARANTEE0</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_value</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.mode</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.carry_value</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_out</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.carry_in</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.mode</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.defs__is_cooking~0.m</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.prev_right</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.digit</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.carry_in</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.defs__is_cooking~0._outvar</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.defs__is_setup~0._outvar</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.digit</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.mode</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~2.prev_right</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.prev_at_zero</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.defs__is_setup~0._outvar</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~1.defs__is_setup~0.m</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.defs__is_setup~0.m</Ivc>
+    <Ivc>Microwave_SEng5861__Display_Control__Impl__update_digit~0.digit</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

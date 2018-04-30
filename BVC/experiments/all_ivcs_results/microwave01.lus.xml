@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Progress source="bmc" trueFor="1">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="2">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="3">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="4">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="5">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="6">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="7">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Progress source="bmc" trueFor="8">
+    <PropertyProgress name="OK"/>
+  </Progress>
+  <Property name="OK">
+    <Runtime unit="sec">3.621</Runtime>
+    <Answer source="k-induction">valid</Answer>
+    <K>1</K>
+    <NumberOfIVCs>1</NumberOfIVCs>
+    <MustElem>rlt_enter_microwave_mode_logic_ON_rlt_fired_0</MustElem>
+    <MustElem>chart_microwave_mode_logic_begin_state_states___root</MustElem>
+    <MustElem>rlt_enter_microwave_mode_logic_ON_rlt_fired_2</MustElem>
+    <MustElem>rlt_enter_microwave_mode_logic_ON_rlt_state_4_states___root</MustElem>
+    <MustElem>rlt_enter_microwave_mode_logic_rlt_state_2_states___root</MustElem>
+    <MustElem>rlt_enter_microwave_mode_logic_ON_rlt_state_1_states___root</MustElem>
+    <MustElem>rlt_eval_microwave_mode_logic_rlt_state_3_states___root</MustElem>
+    <MustElem>rlt_eval_microwave_mode_logic_ON_rlt_state_9_states___root</MustElem>
+    <MustElem>rlt_enter_microwave_mode_logic_ON_rlt_state_2_states___root</MustElem>
+    <MustElem>chart_microwave_mode_logic_final_state_states___root</MustElem>
+    <MustElem>rlt_eval_microwave_mode_logic_ON_rlt_state_11_states___root</MustElem>
+    <MustElem>rlt_eval_microwave_mode_logic_rlt_state_2_states___root</MustElem>
+    <MustElem>rlt_eval_microwave_mode_logic_ON_rlt_state_1_states___root</MustElem>
+    <MustElem>rlt_eval_microwave_mode_logic_ON_rlt_state_2_states___root</MustElem>
+    <MustElem>rlt_eval_microwave_mode_logic_ON_rlt_state_10_states___root</MustElem>
+    <MustElem>rlt_eval_microwave_mode_logic_ON_rlt_state_3_states___root</MustElem>
+    <MustElem>rlt_eval_microwave_mode_logic_ON_rlt_state_4_states___root</MustElem>
+    <MustElem>rlt_eval_microwave_mode_logic_ON_rlt_state_7_states___root</MustElem>
+    <MustElem>OK</MustElem>
+    <MustElem>rlt_eval_microwave_mode_logic_ON_rlt_state_6_states___root</MustElem>
+    <IvcSet number="1">
+    <Invariant>OK</Invariant>
+    <Invariant>((((chart_microwave_mode_logic_final_state_states___root &lt;= 0) or (3 = chart_microwave_mode_logic_final_state_states___root)) or (2 = chart_microwave_mode_logic_final_state_states___root)) or (0 &lt;= (chart_microwave_mode_logic_final_state_states___root + (-4))))</Invariant>
+    <Ivc>rlt_enter_microwave_mode_logic_ON_rlt_fired_0</Ivc>
+    <Ivc>chart_microwave_mode_logic_begin_state_states___root</Ivc>
+    <Ivc>rlt_enter_microwave_mode_logic_ON_rlt_fired_2</Ivc>
+    <Ivc>rlt_enter_microwave_mode_logic_rlt_state_2_states___root</Ivc>
+    <Ivc>rlt_enter_microwave_mode_logic_ON_rlt_state_4_states___root</Ivc>
+    <Ivc>rlt_enter_microwave_mode_logic_ON_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_microwave_mode_logic_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_enter_microwave_mode_logic_ON_rlt_state_2_states___root</Ivc>
+    <Ivc>rlt_eval_microwave_mode_logic_ON_rlt_state_9_states___root</Ivc>
+    <Ivc>rlt_eval_microwave_mode_logic_ON_rlt_state_11_states___root</Ivc>
+    <Ivc>chart_microwave_mode_logic_final_state_states___root</Ivc>
+    <Ivc>rlt_eval_microwave_mode_logic_rlt_state_2_states___root</Ivc>
+    <Ivc>rlt_eval_microwave_mode_logic_ON_rlt_state_1_states___root</Ivc>
+    <Ivc>rlt_eval_microwave_mode_logic_ON_rlt_state_2_states___root</Ivc>
+    <Ivc>rlt_eval_microwave_mode_logic_ON_rlt_state_10_states___root</Ivc>
+    <Ivc>rlt_eval_microwave_mode_logic_ON_rlt_state_3_states___root</Ivc>
+    <Ivc>rlt_eval_microwave_mode_logic_ON_rlt_state_4_states___root</Ivc>
+    <Ivc>rlt_eval_microwave_mode_logic_ON_rlt_state_7_states___root</Ivc>
+    <Ivc>OK</Ivc>
+    <Ivc>rlt_eval_microwave_mode_logic_ON_rlt_state_6_states___root</Ivc>
+    </IvcSet>
+  </Property>
+</Results>

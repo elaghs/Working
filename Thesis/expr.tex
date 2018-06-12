@@ -1,11 +1,11 @@
 We are interested in examining the performance of algorithms to compute minimal IVCs.
-We examine \textbf{Grow-Shrink}, the algorithm presented in this paper, and the two state-of-the-art algorithms (briefly described in Section~\ref{sec:existing-techniques}): \textbf{Offline MARCO}, the algorithm from~\cite{Ghass17AllIVCs}, and \textbf{Online MARCO}, a variant of the algorithm from~\cite{Ghass17AllIVCs} that performs a shrink step prior to returning a solution to ensure minimality.
+We examine \textbf{Grow-Shrink}, the algorithm presented in Section \ref{sec:onaivc}, and the two state-of-the-art algorithms: \textbf{Offline MARCO} \ref{sec:offaivc}, and \textbf{Online MARCO} \ref{sec:onaivc} that performs a shrink step prior to returning a solution to ensure minimality.
 %\old{We examine three algorithms:
 %\textbf{Offline MARCO}, the algorithm from~\cite{Ghass17AllIVCs}, \textbf{Online MARCO}, a variant of the algorithm from~\cite{Ghass17AllIVCs} that performs a shrink step prior to returning a solution to ensure minimality, and \textbf{Grow-Shrink}, the algorithm described in this paper.}
 We investigate the following research questions: (RQ1:) For the large models where the complete MIVC enumeration is intractable,
 how many MIVCs are found within the given time limit?  (RQ2:) For the tractable models, i.e. models in which all MIVCs are found, how much time is required to complete the enumeration of MIVCs?  Finally, we are interested in how many solver calls are necessary for the enumeration.  Thus, we add (RQ3:) What is the (average) number of solver calls with result adequate/inadequate required by evaluated online algorithms to produce individual MIVCs?
 
-\paragraph{Experimental Setup}:  We start from a benchmark suite that is a superset of the benchmarks used in \cite{Ghass17AllIVCs}. This suite contains 660 models, and includes all models that yield a valid result (530 in total) from previous Lustre model checking papers~\cite{Hagen08:FMCAD,piskac2016} and 130 industrial models yielding valid results derived from an infusion pump system \cite{hilt2013} and other sources \cite{piskac2016,NFM2015:backes}.
+\paragraph{Experimental Setup}:  We start from a benchmark suite that is a superset of the benchmarks used in the previous experiments. This suite contains 660 models, and includes all models that yield a valid result (530 in total) from previous Lustre model checking papers~\cite{Hagen08:FMCAD,piskac2016} and 130 industrial models yielding valid results derived from an infusion pump system \cite{hilt2013} and other sources \cite{piskac2016,NFM2015:backes}.
 As this paper is concerned with analysis problems involving multiple MIVCs, we include only models that had more than 4 MIVCs (46 models in total).  To consider problems with many IVCs, we took those models and mutated them, constructing 20 mutants for each model. The mutants varied both in the number and in the size of individual MIVCs.
 We added the mutants that still yielded valid results and have more than 5 MIVCs (384 in total) back to the benchmark suite.
 Thus, the final suite contains 430 Lustre models. The original benchmarks and our augmented benchmark are available online\footnote{\url{https://github.com/elaghs/benchmarks}}.
@@ -46,7 +46,7 @@ Figure~\ref{res:found_mivcs} describes the number of MIVCs found be the two onli
 Figure~\ref{res:time_to_complete} describes the time for each algorithm needed to complete the computation in the case of 397 tractable benchmarks.
 Grow-Shrink is on average only 1.08 times slower than Offline MARCO,
 yet as previously discussed, has the advantage of returning guaranteed MIVCs, rather than approximate MIVCs. It is on average 1.50 times faster than Online MARCO.
- 
+
 
 %It is much faster than the Online MARCO algorithm.
 

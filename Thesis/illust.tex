@@ -1,7 +1,7 @@
 \section{Illustration}
 \subsection{Offline AIVC}
 \label{sec:illust}
-To illustrate the \aivcalg ~algorithm we use the example presented in Section \ref{sec:example} with $P = ({\small \texttt{on\_p}})$ .
+To illustrate the \aivcalg ~algorithm we use the example presented in Chapter \ref{ch:ivc} with $P = ({\small \texttt{on\_p}})$ .
 %As inspired by the MARCO algorithm in \cite{marco2016fast}, we visualize $\mathcal{P}(\mathcal{A})$ as a lattice in a Hasse diagram (Fig.~\ref{fig:lattice1}) to demonstrate the progress of the algorithm. As you can see, each level of the lattice contains sets with the same size linked to sets that are their immediate
 %supersets (upper level regions) and subsets (lower level regions). Note that the power set is viewed as a Boolean formula, so each member in the lattice shows
 % variable with $true$.
@@ -63,9 +63,8 @@ quite dependent on the maximal model returned in line~\ref{alg:aivc:maxsat} as w
 \subsection{Online AIVC}
 \begin{figure}[t]
 \centering
-\scalebox{0.95}{
-\input{running_cube_unexplored}
-}
+  \includegraphics[width=\columnwidth]{figs/growshrink.jpg}
+  \vspace{-0.1in}
 \caption{The power set from the example execution of our algorithm.}
 \label{fig:running_cube}
 \end{figure}
@@ -83,4 +82,3 @@ We first grow the set $00101$. Initially, the procedure \texttt{Grow} picks $M =
 The growing of the set $01000$ results into an approximately maximal inadequate subset $01110$. Moreover, an approximately minimal IVC $11110$ is found during the growing and enqueued into $\mathit{shrinkingQueue}$. The formula $f_{\mathit{Unexplored}}$ is updated to $f_{\mathit{Unexplored}} = \mathit{True} \wedge (\neg x_2 \vee \neg x_5) \wedge	(\neg x_4 \vee \neg x_5) \wedge (x_2 \vee x_4) \wedge (\neg x_1 \vee \neg x_2 \vee \neg x_3 \vee \neg x_4) \wedge (x_1 \vee x_5)$.
 
 After the second grow, the procedure \texttt{Shrink} terminates and the main procedure \texttt{FindMIVCs} continues. The queue $\mathit{shrinkingQueue}$ contains two sets: $00011$, $11110$, thus the procedure now shrinks them. During shrinking the set $00011$, the algorithm would attempt to check the sets $00001$ and $00010$ for adequacy, however since both these are already explored, the set $00011$ is identified to be a MIVC without performing any adequacy checks. The procedure \texttt{FindMIVCs} would now shrink also the set $11110$, thus empty the queue $\mathit{shrinkingQueue}$, and continue with a next iteration.
-

@@ -1,18 +1,15 @@
 
 
-\begin{definition}[Inadequacy] A set of conjuncts  $U \subseteq T$  is an \emph{inadequate} set for $(I, T) \vdash P$ iff $(I, U) \nvdash P$. Especially, $U \subseteq T$ is a \emph{Maximal Inadequate Set (MIS)} for $(I, T) \vdash P$ iff $U$ is inadequate and $\forall T_i \in (T \setminus U): \, (I, U \cup \{ T_i\}) \vdash P$.
-\end{definition}
+%\begin{definition}[Inadequacy] A set of conjuncts  $U \subseteq T$  is an \emph{inadequate} set for $(I, T) \vdash P$ iff $(I, U) \nvdash P$. Especially, $U \subseteq T$ is a \emph{Maximal Inadequate Set (MIS)} for $(I, T) \vdash P$ iff $U$ is inadequate and $\forall T_i \in (T \setminus U): \, (I, U \cup \{ T_i\}) \vdash P$.
+%\end{definition}
 
 Inadequate sets are duals to inductive validity cores. Each $U \subseteq T$ is either inadequate set or an inductive validity core. In order to unify the notation, we   use notation \emph{inadequate} and \emph{adequate}. Note that especially minimal inductive validity cores can be thus called  minimal adequate sets.
 
+The monotonicity allows to determine status of multiple subsets of $T$ while using only a single check for adequacy. For example, if a set $U \subseteq T$ is determined to be adequate, than all of its supersets are   adequate and do not need to be explicitly checked. Let     $\mathit{Sup}(U)$ and $\mathit{Sub}(U)$ denote the set of all supersets and subsets of $U$, respectively.
 
-
-The first property used to improve the naive enumeration algorithm is the \emph{monotonicity} of  adequacy   with respect to the subset inclusion.
-
-
-The monotonicity allows  to determine status  of multiple subsets of $T$ while using only a single check for adequacy. For example, if a set $U \subseteq T$ is determined to be adequate, than all of its supersets are   adequate and do not need to be explicitly checked. Let     $\mathit{Sup}(U)$ and $\mathit{Sub}(U)$ denote the set of all supersets and subsets of $U$, respectively.
-
-Every algorithm for computing MIVCs has to determine status (i.e adequate or inadequate) of every subset of $T$.  In order to distinguish the subsets whose status is already known from those whose status is not known yet, we denote the former subsets as \emph{explored} subsets and the latter as \emph{unexplored} subsets. Moreover, we distinguish \emph{maximal} unexplored subsets:
+Every algorithm for computing MIVCs has to determine status (i.e adequate or inadequate) of every subset of $T$. We introduce the notion of \emph{explored} vs \emph{unexplored} subsets in Section \ref{sec:onaivc}.
+%In order to distinguish the subsets whose status is already known from those whose status is not known yet, we denote the former subsets as \emph{explored} subsets and the latter as \emph{unexplored} subsets.
+Moreover, we distinguish \emph{maximal} unexplored subsets:
 
 \vspace{-5pt}
 \begin{itemize}
@@ -33,13 +30,13 @@ Every algorithm for computing MIVCs has to determine status (i.e adequate or ina
 A straightforward way to find a (so far unexplored) MIVC of $T$ is to find an unexplored adequate subset $U \subseteq T$ and turn $U$  into an MIVC by a process called \emph{shrinking}.  A shrinking procedure iteratively attempts to remove elements from the set that is being shrunk, checking each new set for adequacy and keeping only changes that
 leave the set adequate. A n\"aive example is shown in Algorithm~\ref{shrink-procedure}.
 
-Ghassabani et al.~\cite{Ghass17AllIVCs} proposed an algorithm for MIVC enumeration which is based on the MUS enumeration algorithm MARCO~\cite{Liffiton2016}. The algorithm iteratively chooses maximal unexplored subsets and tests them for adequacy. Each maximal subset that is found to be adequate is then shrunk into a MIVC. This algorithm enumerates MIVCs in an online manner with a relatively steady rate of the enumeration. However, an evaluation of the algorithm shown that it is rather slow since the shrinking procedure can be extremely time consuming as each check for adequacy is in fact a model checking problem.
+Section \ref{sec:onaivc} proposed an algorithm for MIVC enumeration which is based on the MUS enumeration algorithm MARCO~\cite{Liffiton2016}. The algorithm iteratively chooses maximal unexplored subsets and tests them for adequacy. Each maximal subset that is found to be adequate is then shrunk into a MIVC. This algorithm enumerates MIVCs in an online manner with a relatively steady rate of the enumeration. However, an evaluation of the algorithm shown that it is rather slow since the shrinking procedure can be extremely time consuming as each check for adequacy is in fact a model checking problem.
 
-Therefore, Ghassabani et al.~\cite{Ghass17AllIVCs} proposed another algorithm which, instead of computing MIVCs in on online manner,
-rather computes only \emph{approximately} minimal IVCs. In particular, it iteratively picks maximal unexplored subsets, checks them for adequacy, and turns the adequate subsets into approximately minimal IVCs using the approximation algorithm \texttt{IVC\_UC}~\cite{Ghass16}. \texttt{IVC\_UC} is able to identify IVCs which are often very close to actual MIVCs, yet cheap to compute. This enumeration algorithm computes approximately minimal IVCs, and identifies MIVCs at the very end of the computation.  An experimental evaluation shows that the latter algorithm computes all MIVCs much faster than the algorithm based on shrinking. However, it does not enumerate MIVCs online and thus on some benchmarks may produce no MIVCs within a given time limit.
+% use this in some conclusion:
+%What we proposed in Section \ref{sec:onaivc} is an algorithm that computes only \emph{approximately} minimal IVCs. In particular, it iteratively picks maximal unexplored subsets, checks them for adequacy, and turns the adequate subsets into approximately minimal IVCs using the approximation algorithm \texttt{IVC\_UC}~\cite{Ghass16}. \texttt{IVC\_UC} is able to identify IVCs which are often very close to actual MIVCs, yet cheap to compute. This enumeration algorithm computes approximately minimal IVCs, and identifies MIVCs at the very end of the computation.  An experimental evaluation shows that the latter algorithm computes all MIVCs much faster than the algorithm based on shrinking. However, it does not enumerate MIVCs online and thus on some benchmarks may produce no MIVCs within a given time limit.
 
 
-In this section, we propose a novel algorithm for online MIVC enumeration. The MIVCs are found using an improved shrinking procedure. Moreover, the algorithm uses a procedure \emph{grow}, which is a dual of the shrinking procedure. The algorithm also maintains the set \emph{Unexplored} of unexplored subsets.
+In this section, we propose a novel algorithm for online MIVC enumeration using an improved shrinking procedure. Moreover, the algorithm uses a procedure \emph{grow}, which is a dual of the shrinking procedure. The algorithm also maintains the set \emph{Unexplored} of unexplored subsets.
 
 We can effectively use the set  \textit{Unexplored} for speeding up the shrinking procedure. When testing the set $U \setminus \{T_i\}$ (see line~2 in Algorithm~\ref{shrink-procedure}) we first check whether  $U \setminus \{T_i\}$ is still unexplored. If $U \setminus \{T_i\}$ is already explored, then its status is already known and no test for adequacy is needed.
 
@@ -174,4 +171,3 @@ The algorithm produces only the MIVCs found by the shrinking procedure and all o
 
 
 
- 

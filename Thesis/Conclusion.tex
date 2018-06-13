@@ -35,13 +35,13 @@ It is worthwhile to investigate additional applications of the idea.  When perfo
 
 An study of the relationship between IVCs of the component-level and system-level properties itself is very interesting and can be useful; for example, in cases that the system property has only bounded proof, we can estimate/obtain its MIVCs without a proof. To do so, we need to map out an algorithm for extracting MIVCs of a system level property from the MIVCs of the component properties.
 
-The granularity issue discussed in \ref{sec:disc} brings an important research question on how we can 
+The granularity issue discussed in \ref{sec:disc} opens up a new research direction. At this time, we rely on the model structure (granularity level) provided by the designer. There is a notion of ``sufficient granularity'' that guarantees that if the properties reference all model elements, then no other decomposition will say that it is incomplete.
 
-bvc other approaches
+There is more to be studied over the bounded validity cores. The way we tackled this problem in this thesis was through the conventional bounded model checking technique. With BMC, the state space exploration starts with a set of initial states, and expands over unrolling the transition relation. However, in some other model checking techniques, such as PDR, state space exploration starts with the whole state ($true$), and shrinks over each blocking step. It would be interesting to look at the relationship between bounded cores derived from a bounded-PDR vs BMC. This may help to estimate more accurate BVCs when it comes to unprovable properties. When we have limited resources (time and computing power) to prove a certain property, estimating BVCs may help us to build an abstract model, from which we can prove our property of interest.
 
-ivcs, first lemmas
+Our method for extracting approximate MIVCs (\ucalg) is fast and efficient. However there is room for improvement. In the current approach, after obtaining the proof, in order to extract a minimal set of lemmas, we re-prove the property with the $k$-induction technique, then a minimum $k$ is calculated to build IVC queries (in a $k$-induction manner). A different approach could be to employ other proof methods such as interpolation or PDR.
 
-proof
+
 
 fault detection
 

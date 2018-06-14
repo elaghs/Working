@@ -4,15 +4,15 @@ In this thesis, we have introduced the idea of extracting a minimal IVC for a gi
 We have shown
 the correctness and completeness of our methods and algorithms.
 
-We have implemented all of the inductive validity core algorithms in the JKind ~\cite{jkind} industrial model checker,
+We have implemented all of the inductive validity core algorithms in the \texttt{JKind} ~\cite{jkind} industrial model checker,
 which verifies safety properties of infinite-state synchronous systems.
 It accepts Lustre programs \cite{Halbwachs91:lustre} as input.  The translation of Lustre
-into a symbolic transition system in JKind is straightforward and is similar to what is described
+into a symbolic transition system in \texttt{JKind} is straightforward and is similar to what is described
 in~\cite{Hagen08:FMCAD}.
 Verification is supported by multiple ``proof engines'' that execute in parallel, including $k$-induction,
 property directed reachability (PDR), and lemma generation engines that attempt to prove
 multiple properties in parallel.  To implement the engines,
-JKind emits SMT problems using the theories of linear integer and real arithmetic. JKind supports the \texttt{Z3}, \texttt{Yices}, \texttt{MathSAT}, \texttt{SMTInterpol}, and \texttt{CVC4} SMT solvers as back-ends.  We extend JKind with new engines that implement our IVC generation algorithms. When a property is
+JKind emits SMT problems using the theories of linear integer and real arithmetic. \texttt{JKind} supports the \texttt{Z3}, \texttt{Yices}, \texttt{MathSAT}, \texttt{SMTInterpol}, and \texttt{CVC4} SMT solvers as back-ends.  We extend \texttt{JKind} with new engines that implement our IVC generation algorithms. When a property is
 proved and IVC generation is enabled, an additional parallel engine
 executes one of the IVC algorithms.
 
@@ -22,15 +22,15 @@ In addition, we have performed a substantial evaluation that shows that the prac
 %The industrial models are much larger; for example, each 80 models from \cite{hilt2013} contain over 600 equations and are each $\geq$80kB in size. The benchmark includes 2 models from NASA Quad-redundant Flight Control System (QFCS)~\cite{NFM2015:backes}: the Flight Control System (FCS) with 5259 Lustre equations and the Flight Control Computer (FCC) with 10969 equations.
 
 %We selected only benchmark problems consisting of a Lustre model with
-%properties that JKind could prove with a 3-hour timeout.
-%Experiments are run in a configuration with the \texttt{Z3} solver and the ``fastest'' mode of JKind (which involves running the $k$-induction and PDR engines in parallel and terminating when a solution is found). The experiments are expected to be run on an  Intel(R) i5-4690, 3.50GHz, 16 GB memory machine running Linux, and available online.
+%properties that \texttt{JKind} could prove with a 3-hour timeout.
+%Experiments are run in a configuration with the \texttt{Z3} solver and the ``fastest'' mode of \texttt{JKind} (which involves running the $k$-induction and PDR engines in parallel and terminating when a solution is found). The experiments are expected to be run on an  Intel(R) i5-4690, 3.50GHz, 16 GB memory machine running Linux, and available online.
 
 Our method for computing all MIVCs is inspired by a recent work in the domain of satisfiability analysis \cite{marco2016fast}. One interesting future direction is to devise similar MIVC enumeration algorithms based on other studies on MUSes extraction such as \cite{nadel2014accelerated}.
-Another interesting direction for this project is to parallelize the enumeration process: it is certainly possible to ask for multiple distinct maximal models to be solved in parallel. 
+Another interesting direction for this project is to parallelize the enumeration process: it is certainly possible to ask for multiple distinct maximal models to be solved in parallel.
 A straight forward parallelization starts with computing one approximate IVC. Then \mustalg can be executed on one machine while several other engines are running the \aivcalg in parallel. The results of \mustalg shall be dispatched among the engines to expedite the process of exploring the map \footnote{see \ref{sec:offaivc}}.
 %, though this may result in unnecessary work performed by some of the parallel solvers.
 
-It is worthwhile to investigate additional applications of the idea.  When performing {\em compositional verification}, the All-IVCs technique may be able to determine {\em minimal component sets} within an architecture that can satisfy a given set of requirements, which may be helpful for design-space exploration and synthesis. In addition the approach can be used for robustness analysis; will system satisfy requirement $R$ even if a certain component fails? To answer this question, the All-IVCs analysis can tell us if the requirement is satisfied by different components independently. 
+It is worthwhile to investigate additional applications of the idea.  When performing {\em compositional verification}, the All-IVCs technique may be able to determine {\em minimal component sets} within an architecture that can satisfy a given set of requirements, which may be helpful for design-space exploration and synthesis. In addition the approach can be used for robustness analysis; will system satisfy requirement $R$ even if a certain component fails? To answer this question, the All-IVCs analysis can tell us if the requirement is satisfied by different components independently.
 
 
 An study of the relationship between IVCs of the component-level and system-level properties itself is very interesting and can be useful; for example, in cases that the system property has only bounded proof, we can estimate/obtain its MIVCs without a proof. To do so, we need to map out an algorithm for extracting MIVCs of a system level property from the MIVCs of the component properties.
@@ -39,12 +39,13 @@ The granularity issue discussed in \ref{sec:disc} opens up a new research direct
 
 There is more to be studied over the bounded validity cores. The way we tackled this problem in this thesis was through the conventional bounded model checking technique. With BMC, the state space exploration starts with a set of initial states, and expands over unrolling the transition relation. However, in some other model checking techniques, such as PDR, state space exploration starts with the whole state ($true$), and shrinks over each blocking step. It would be interesting to look at the relationship between bounded cores derived from a bounded-PDR vs BMC. This may help to estimate more accurate BVCs when it comes to unprovable properties. When we have limited resources (time and computing power) to prove a certain property, estimating BVCs may help us to build an abstract model, from which we can prove our property of interest.
 
+The notion of bounded validity core can be applied into testing, where we deal with too many execution paths due to program complexities including loops. It would be interesting to perform coverage analysis with BVCs at the program level, and then compare the results with other existing mutation-based techniques for testing. For example, this can be done for $C$ programs, for which there are powerful code model checkers such as \texttt{CBMC}. 
+
+Investigating the IVC notions in model based development would be another research direction. Model-based development starts with a formal model as an executable specification refined and verified throughout development. In the late stage of the development when it comes to implementation, usually the model is automatically translated into code. For example,  \texttt{AADL AGREE} tool suite is a powerful tool for this purpose. It starts with AADL modeling language, converted to LUSTRE for verification by \texttt{JKind}. Then $C$ code is automatically generated from LUSTRE. We already implemented the IVC techniques for LUSTRE and \texttt{JKind}. One could we implement these techniques in some $C$ model checker, and then comparing IVCs at the code and model level could reveal valuable information that might be useful in safety analysis and future research.
+
+Having all MIVCs can be useful in optimizing logic synthesis by discovering a minimum set of design elements (optimal implementation) for a certain behavior. This shall lead to an optimal design implementation after transforming an abstract behavior. Putting this idea into practice would be worthwhile future work.
+
 Our method for extracting approximate MIVCs (\ucalg) is fast and efficient. However there is room for improvement. In the current approach, after obtaining the proof, in order to extract a minimal set of lemmas, we re-prove the property with the $k$-induction technique, then a minimum $k$ is calculated to build IVC queries (in a $k$-induction manner). A different approach could be to employ other proof methods such as interpolation or PDR.
 
+Another future study would be to use the IVC approches for fault injection. Fault injection allows to analyze the system behavior in the presence of faults through the use of verification tools. We can investigate the use of IVC's in fault models in order to find the maximum set of faults for which a system is resilient.
 
-
-fault detection
-
-optimization
-
-testing code coverage

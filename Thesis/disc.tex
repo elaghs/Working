@@ -131,7 +131,7 @@ As shown in Figure~\ref{fig:propertyset4}, the measures again coincide and inclu
 
 \subsection{Granularity}
 
-As we have described in Section \ref{sec:background}, a transition relation is considered
+As we have described in Section \ref{ch:background}, a transition relation is considered
 to be a conjunction of Boolean formulas. The granularity of these formulas substantially affects the analysis results.  In the presented example, it was possible to have a ``complete'' specification of the model involving only the hysteresis property \hystp.  The way that the model was structured, in order to determine the validity of the property, all of the equations in the model were required.  However, for this property certain subexpressions of the equations were irrelevant, notably the value assigned to the \texttt{doi\_on} variable in the \texttt{then} branches of equations (7) and (8).  If we decompose the equations into smaller pieces, e.g., creating separate equations for the \texttt{then} and \texttt{else} branches, this incompleteness becomes visible and the model is no longer completely covered.  It is often the case that splitting a model into more conjuncts, that is, making the model more {\em granular}, leads to lower coverage of the model.
 
 

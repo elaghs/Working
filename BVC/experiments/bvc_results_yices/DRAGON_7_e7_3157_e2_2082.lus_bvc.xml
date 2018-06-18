@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<Runs>
+<Results>
+   <Depth>0</Depth>
+   <BVC>DRAGON~0.exclusive</BVC>
+   <BVC>shared</BVC>
+   <BVC>DRAGON~0.shared</BVC>
+   <BVC>exclusive</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>1</Depth>
+   <BVC>DRAGON~0.exclusive</BVC>
+   <BVC>shared</BVC>
+   <BVC>DRAGON~0.g03</BVC>
+   <BVC>DRAGON~0.shared</BVC>
+   <BVC>DRAGON~0.g08</BVC>
+   <BVC>DRAGON~0.g06</BVC>
+   <BVC>exclusive</BVC>
+   <BVC>OK</BVC>
+   <BVC>DRAGON~0.g12</BVC>
+   <BVC>DRAGON~0.g10</BVC>
+</Results>
+<Results>
+   <Depth>2</Depth>
+   <BVC>DRAGON~0.exclusive</BVC>
+   <BVC>shared</BVC>
+   <BVC>DRAGON~0.g03</BVC>
+   <BVC>DRAGON~0.shared</BVC>
+   <BVC>DRAGON~0.g08</BVC>
+   <BVC>DRAGON~0.g06</BVC>
+   <BVC>exclusive</BVC>
+   <BVC>OK</BVC>
+   <BVC>DRAGON~0.g12</BVC>
+   <BVC>DRAGON~0.g10</BVC>
+</Results>
+<Results>
+   <Depth>3</Depth>
+   <BVC>DRAGON~0.exclusive</BVC>
+   <BVC>shared</BVC>
+   <BVC>DRAGON~0.g03</BVC>
+   <BVC>DRAGON~0.shared</BVC>
+   <BVC>DRAGON~0.g08</BVC>
+   <BVC>DRAGON~0.g06</BVC>
+   <BVC>exclusive</BVC>
+   <BVC>OK</BVC>
+   <BVC>DRAGON~0.g12</BVC>
+   <BVC>DRAGON~0.g10</BVC>
+</Results>
+<Results>
+   <Depth>4</Depth>
+   <BVC>DRAGON~0.exclusive</BVC>
+   <BVC>shared</BVC>
+   <BVC>DRAGON~0.g03</BVC>
+   <BVC>DRAGON~0.shared</BVC>
+   <BVC>DRAGON~0.g08</BVC>
+   <BVC>DRAGON~0.g06</BVC>
+   <BVC>exclusive</BVC>
+   <BVC>OK</BVC>
+   <BVC>DRAGON~0.g12</BVC>
+   <BVC>DRAGON~0.g10</BVC>
+</Results>
+<Results>
+   <Depth>5</Depth>
+   <BVC>DRAGON~0.exclusive</BVC>
+   <BVC>shared</BVC>
+   <BVC>DRAGON~0.g03</BVC>
+   <BVC>DRAGON~0.shared</BVC>
+   <BVC>DRAGON~0.g08</BVC>
+   <BVC>DRAGON~0.g06</BVC>
+   <BVC>exclusive</BVC>
+   <BVC>OK</BVC>
+   <BVC>DRAGON~0.g12</BVC>
+   <BVC>DRAGON~0.g10</BVC>
+</Results>
+<Results>
+   <Depth>6</Depth>
+   <BVC>DRAGON~0.exclusive</BVC>
+   <BVC>shared</BVC>
+   <BVC>DRAGON~0.g03</BVC>
+   <BVC>DRAGON~0.shared</BVC>
+   <BVC>DRAGON~0.g08</BVC>
+   <BVC>DRAGON~0.g06</BVC>
+   <BVC>exclusive</BVC>
+   <BVC>OK</BVC>
+   <BVC>DRAGON~0.g12</BVC>
+   <BVC>DRAGON~0.g10</BVC>
+</Results>
+<Results>
+   <Depth>7</Depth>
+   <BVC>DRAGON~0.exclusive</BVC>
+   <BVC>shared</BVC>
+   <BVC>DRAGON~0.g03</BVC>
+   <BVC>DRAGON~0.shared</BVC>
+   <BVC>DRAGON~0.g08</BVC>
+   <BVC>DRAGON~0.g06</BVC>
+   <BVC>exclusive</BVC>
+   <BVC>OK</BVC>
+   <BVC>DRAGON~0.g12</BVC>
+   <BVC>DRAGON~0.g10</BVC>
+</Results>
+<Results>
+   <Depth>8</Depth>
+   <BVC>DRAGON~0.exclusive</BVC>
+   <BVC>shared</BVC>
+   <BVC>DRAGON~0.g03</BVC>
+   <BVC>DRAGON~0.shared</BVC>
+   <BVC>DRAGON~0.g08</BVC>
+   <BVC>DRAGON~0.g06</BVC>
+   <BVC>exclusive</BVC>
+   <BVC>OK</BVC>
+   <BVC>DRAGON~0.g12</BVC>
+   <BVC>DRAGON~0.g10</BVC>
+</Results>
+<Results>
+   <Depth>9</Depth>
+   <BVC>DRAGON~0.exclusive</BVC>
+   <BVC>shared</BVC>
+   <BVC>DRAGON~0.g03</BVC>
+   <BVC>DRAGON~0.shared</BVC>
+   <BVC>DRAGON~0.g08</BVC>
+   <BVC>DRAGON~0.g06</BVC>
+   <BVC>exclusive</BVC>
+   <BVC>OK</BVC>
+   <BVC>DRAGON~0.g12</BVC>
+   <BVC>DRAGON~0.g10</BVC>
+</Results>
+</Runs>

@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<Runs>
+<Results>
+   <Depth>0</Depth>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>1</Depth>
+   <BVC>main~0.nB0</BVC>
+   <BVC>main~0.nS</BVC>
+   <BVC>main~0.controleur~0.diff</BVC>
+   <BVC>diff0</BVC>
+   <BVC>main~0.diff0</BVC>
+   <BVC>OK</BVC>
+   <BVC>main~0.controleur~0.nB</BVC>
+   <BVC>main~0.controleur~0.nS</BVC>
+</Results>
+<Results>
+   <Depth>2</Depth>
+   <BVC>main~0.nB0</BVC>
+   <BVC>main~0.nS</BVC>
+   <BVC>main~0.controleur~0.diff</BVC>
+   <BVC>diff0</BVC>
+   <BVC>main~0.diff0</BVC>
+   <BVC>OK</BVC>
+   <BVC>main~0.controleur~0.nB</BVC>
+   <BVC>main~0.controleur~0.nS</BVC>
+</Results>
+<Results>
+   <Depth>3</Depth>
+   <BVC>main~0.nB0</BVC>
+   <BVC>main~0.nS</BVC>
+   <BVC>main~0.controleur~0.diff</BVC>
+   <BVC>diff0</BVC>
+   <BVC>main~0.diff0</BVC>
+   <BVC>OK</BVC>
+   <BVC>main~0.controleur~0.nB</BVC>
+   <BVC>main~0.controleur~0.nS</BVC>
+</Results>
+<Results>
+   <Depth>4</Depth>
+   <BVC>main~0.nB0</BVC>
+   <BVC>main~0.nS</BVC>
+   <BVC>main~0.controleur~0.diff</BVC>
+   <BVC>diff0</BVC>
+   <BVC>main~0.diff0</BVC>
+   <BVC>OK</BVC>
+   <BVC>main~0.controleur~0.nB</BVC>
+   <BVC>main~0.controleur~0.nS</BVC>
+</Results>
+<Results>
+   <Depth>5</Depth>
+   <BVC>main~0.nB0</BVC>
+   <BVC>main~0.nS</BVC>
+   <BVC>main~0.controleur~0.diff</BVC>
+   <BVC>diff0</BVC>
+   <BVC>main~0.diff0</BVC>
+   <BVC>OK</BVC>
+   <BVC>main~0.controleur~0.nB</BVC>
+   <BVC>main~0.controleur~0.nS</BVC>
+</Results>
+<Results>
+   <Depth>6</Depth>
+   <BVC>main~0.nB0</BVC>
+   <BVC>main~0.nS</BVC>
+   <BVC>main~0.controleur~0.diff</BVC>
+   <BVC>diff0</BVC>
+   <BVC>main~0.diff0</BVC>
+   <BVC>OK</BVC>
+   <BVC>main~0.controleur~0.nB</BVC>
+   <BVC>main~0.controleur~0.nS</BVC>
+</Results>
+<Results>
+   <Depth>7</Depth>
+   <BVC>main~0.nB0</BVC>
+   <BVC>main~0.nS</BVC>
+   <BVC>main~0.controleur~0.diff</BVC>
+   <BVC>diff0</BVC>
+   <BVC>main~0.diff0</BVC>
+   <BVC>OK</BVC>
+   <BVC>main~0.controleur~0.nB</BVC>
+   <BVC>main~0.controleur~0.nS</BVC>
+</Results>
+<Results>
+   <Depth>8</Depth>
+   <BVC>main~0.nB0</BVC>
+   <BVC>main~0.nS</BVC>
+   <BVC>main~0.controleur~0.diff</BVC>
+   <BVC>diff0</BVC>
+   <BVC>main~0.diff0</BVC>
+   <BVC>OK</BVC>
+   <BVC>main~0.controleur~0.nB</BVC>
+   <BVC>main~0.controleur~0.nS</BVC>
+</Results>
+<Results>
+   <Depth>9</Depth>
+   <BVC>main~0.nB0</BVC>
+   <BVC>main~0.nS</BVC>
+   <BVC>main~0.controleur~0.diff</BVC>
+   <BVC>diff0</BVC>
+   <BVC>main~0.diff0</BVC>
+   <BVC>OK</BVC>
+   <BVC>main~0.controleur~0.nB</BVC>
+   <BVC>main~0.controleur~0.nS</BVC>
+</Results>
+</Runs>

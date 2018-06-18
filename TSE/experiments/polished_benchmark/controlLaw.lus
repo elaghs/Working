@@ -1,0 +1,27 @@
+-- Control law as described in
+-- biblio/caseStudies/2013-ChampionDelmas-FunctionalChain.pdf
+
+node controlLaw(in1,in2 : real) returns (integ : real);
+var
+  inp,sum1,dtf : real;
+  c1,c2,c3 : bool;
+  check: bool;
+let
+
+  inp = in1 - 0.0392 * dtf;
+  sum1 = 0.0 -> 0.04 * (pre integ) + 0.15 * inp;
+
+  c1 = (sum1 <=  1.0 and sum1 >= -1.0);
+  c2 = (sum1 >=  1.0 and inp < 0.0);
+  c3 = (sum1 <= -1.0 and inp > 0.0);
+
+  integ = 0.0 -> pre integ + if (c1 or c2 or c3) then inp else 0.0;
+  dtf = 0.0 -> in2 + 0.9608 * pre dtf;
+
+  check = ((-25.0 <= integ) and (integ <= 25.0));
+
+  --%PROPERTY check;
+  
+  --%MAIN;
+
+tel

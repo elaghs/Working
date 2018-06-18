@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+<Runs>
+<Results>
+   <Depth>0</Depth>
+   <BVC>mesi~0.modified_me</BVC>
+   <BVC>Abs~1.Abs</BVC>
+   <BVC>shared_me</BVC>
+   <BVC>Abs~3.Abs</BVC>
+   <BVC>mesi~0.shared_me</BVC>
+   <BVC>Abs~2.X</BVC>
+   <BVC>Abs~3.X</BVC>
+   <BVC>invalid_me</BVC>
+   <BVC>Abs~0.X</BVC>
+   <BVC>Abs~1.X</BVC>
+   <BVC>mesi~0.invalid_me</BVC>
+   <BVC>Abs~2.Abs</BVC>
+   <BVC>Abs~0.Abs</BVC>
+   <BVC>exclusive_me</BVC>
+   <BVC>modified_me</BVC>
+   <BVC>mesi~0.exclusive_me</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>1</Depth>
+   <BVC>mesi~0.modified_me</BVC>
+   <BVC>Abs~1.Abs</BVC>
+   <BVC>shared_me</BVC>
+   <BVC>Abs~3.Abs</BVC>
+   <BVC>mesi~0.shared_me</BVC>
+   <BVC>Abs~2.X</BVC>
+   <BVC>Abs~3.X</BVC>
+   <BVC>invalid_me</BVC>
+   <BVC>Abs~0.X</BVC>
+   <BVC>Abs~1.X</BVC>
+   <BVC>mesi~0.invalid_me</BVC>
+   <BVC>Abs~2.Abs</BVC>
+   <BVC>Abs~0.Abs</BVC>
+   <BVC>mesi~0.garde_me2</BVC>
+   <BVC>exclusive_me</BVC>
+   <BVC>modified_me</BVC>
+   <BVC>mesi~0.exclusive_me</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>2</Depth>
+   <BVC>mesi~0.modified_me</BVC>
+   <BVC>Abs~1.Abs</BVC>
+   <BVC>shared_me</BVC>
+   <BVC>Abs~3.Abs</BVC>
+   <BVC>mesi~0.shared_me</BVC>
+   <BVC>Abs~2.X</BVC>
+   <BVC>Abs~3.X</BVC>
+   <BVC>invalid_me</BVC>
+   <BVC>Abs~0.X</BVC>
+   <BVC>Abs~1.X</BVC>
+   <BVC>mesi~0.invalid_me</BVC>
+   <BVC>Abs~2.Abs</BVC>
+   <BVC>Abs~0.Abs</BVC>
+   <BVC>mesi~0.garde_me2</BVC>
+   <BVC>exclusive_me</BVC>
+   <BVC>modified_me</BVC>
+   <BVC>mesi~0.exclusive_me</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>3</Depth>
+   <BVC>mesi~0.modified_me</BVC>
+   <BVC>Abs~1.Abs</BVC>
+   <BVC>shared_me</BVC>
+   <BVC>Abs~3.Abs</BVC>
+   <BVC>mesi~0.shared_me</BVC>
+   <BVC>Abs~2.X</BVC>
+   <BVC>Abs~3.X</BVC>
+   <BVC>invalid_me</BVC>
+   <BVC>Abs~0.X</BVC>
+   <BVC>Abs~1.X</BVC>
+   <BVC>mesi~0.invalid_me</BVC>
+   <BVC>Abs~2.Abs</BVC>
+   <BVC>Abs~0.Abs</BVC>
+   <BVC>mesi~0.garde_me2</BVC>
+   <BVC>exclusive_me</BVC>
+   <BVC>modified_me</BVC>
+   <BVC>mesi~0.exclusive_me</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>4</Depth>
+   <BVC>mesi~0.modified_me</BVC>
+   <BVC>Abs~1.Abs</BVC>
+   <BVC>shared_me</BVC>
+   <BVC>Abs~3.Abs</BVC>
+   <BVC>mesi~0.shared_me</BVC>
+   <BVC>Abs~2.X</BVC>
+   <BVC>Abs~3.X</BVC>
+   <BVC>invalid_me</BVC>
+   <BVC>Abs~0.X</BVC>
+   <BVC>Abs~1.X</BVC>
+   <BVC>mesi~0.invalid_me</BVC>
+   <BVC>Abs~2.Abs</BVC>
+   <BVC>Abs~0.Abs</BVC>
+   <BVC>mesi~0.garde_me1</BVC>
+   <BVC>mesi~0.garde_me2</BVC>
+   <BVC>mesi~0.garde_me3</BVC>
+   <BVC>mesi~0.garde_me4</BVC>
+   <BVC>exclusive_me</BVC>
+   <BVC>modified_me</BVC>
+   <BVC>mesi~0.exclusive_me</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>5</Depth>
+   <BVC>mesi~0.modified_me</BVC>
+   <BVC>Abs~1.Abs</BVC>
+   <BVC>shared_me</BVC>
+   <BVC>Abs~3.Abs</BVC>
+   <BVC>mesi~0.shared_me</BVC>
+   <BVC>Abs~2.X</BVC>
+   <BVC>Abs~3.X</BVC>
+   <BVC>invalid_me</BVC>
+   <BVC>Abs~0.X</BVC>
+   <BVC>Abs~1.X</BVC>
+   <BVC>mesi~0.invalid_me</BVC>
+   <BVC>Abs~2.Abs</BVC>
+   <BVC>Abs~0.Abs</BVC>
+   <BVC>mesi~0.garde_me1</BVC>
+   <BVC>mesi~0.garde_me2</BVC>
+   <BVC>mesi~0.garde_me3</BVC>
+   <BVC>mesi~0.garde_me4</BVC>
+   <BVC>exclusive_me</BVC>
+   <BVC>modified_me</BVC>
+   <BVC>mesi~0.exclusive_me</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>6</Depth>
+   <BVC>mesi~0.modified_me</BVC>
+   <BVC>Abs~1.Abs</BVC>
+   <BVC>shared_me</BVC>
+   <BVC>Abs~3.Abs</BVC>
+   <BVC>mesi~0.shared_me</BVC>
+   <BVC>Abs~2.X</BVC>
+   <BVC>Abs~3.X</BVC>
+   <BVC>invalid_me</BVC>
+   <BVC>Abs~0.X</BVC>
+   <BVC>Abs~1.X</BVC>
+   <BVC>mesi~0.invalid_me</BVC>
+   <BVC>Abs~2.Abs</BVC>
+   <BVC>Abs~0.Abs</BVC>
+   <BVC>mesi~0.garde_me1</BVC>
+   <BVC>mesi~0.garde_me2</BVC>
+   <BVC>mesi~0.garde_me3</BVC>
+   <BVC>mesi~0.garde_me4</BVC>
+   <BVC>exclusive_me</BVC>
+   <BVC>modified_me</BVC>
+   <BVC>mesi~0.exclusive_me</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>7</Depth>
+   <BVC>mesi~0.modified_me</BVC>
+   <BVC>Abs~1.Abs</BVC>
+   <BVC>shared_me</BVC>
+   <BVC>Abs~3.Abs</BVC>
+   <BVC>mesi~0.shared_me</BVC>
+   <BVC>Abs~2.X</BVC>
+   <BVC>Abs~3.X</BVC>
+   <BVC>invalid_me</BVC>
+   <BVC>Abs~0.X</BVC>
+   <BVC>Abs~1.X</BVC>
+   <BVC>mesi~0.invalid_me</BVC>
+   <BVC>Abs~2.Abs</BVC>
+   <BVC>Abs~0.Abs</BVC>
+   <BVC>mesi~0.garde_me1</BVC>
+   <BVC>mesi~0.garde_me2</BVC>
+   <BVC>mesi~0.garde_me3</BVC>
+   <BVC>mesi~0.garde_me4</BVC>
+   <BVC>exclusive_me</BVC>
+   <BVC>modified_me</BVC>
+   <BVC>mesi~0.exclusive_me</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>8</Depth>
+   <BVC>mesi~0.modified_me</BVC>
+   <BVC>Abs~1.Abs</BVC>
+   <BVC>shared_me</BVC>
+   <BVC>Abs~3.Abs</BVC>
+   <BVC>mesi~0.shared_me</BVC>
+   <BVC>Abs~2.X</BVC>
+   <BVC>Abs~3.X</BVC>
+   <BVC>invalid_me</BVC>
+   <BVC>Abs~0.X</BVC>
+   <BVC>Abs~1.X</BVC>
+   <BVC>mesi~0.invalid_me</BVC>
+   <BVC>Abs~2.Abs</BVC>
+   <BVC>Abs~0.Abs</BVC>
+   <BVC>mesi~0.garde_me1</BVC>
+   <BVC>mesi~0.garde_me2</BVC>
+   <BVC>mesi~0.garde_me3</BVC>
+   <BVC>mesi~0.garde_me4</BVC>
+   <BVC>exclusive_me</BVC>
+   <BVC>modified_me</BVC>
+   <BVC>mesi~0.exclusive_me</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>9</Depth>
+   <BVC>mesi~0.modified_me</BVC>
+   <BVC>Abs~1.Abs</BVC>
+   <BVC>shared_me</BVC>
+   <BVC>Abs~3.Abs</BVC>
+   <BVC>mesi~0.shared_me</BVC>
+   <BVC>Abs~2.X</BVC>
+   <BVC>Abs~3.X</BVC>
+   <BVC>invalid_me</BVC>
+   <BVC>Abs~0.X</BVC>
+   <BVC>Abs~1.X</BVC>
+   <BVC>mesi~0.invalid_me</BVC>
+   <BVC>Abs~2.Abs</BVC>
+   <BVC>Abs~0.Abs</BVC>
+   <BVC>mesi~0.garde_me1</BVC>
+   <BVC>mesi~0.garde_me2</BVC>
+   <BVC>mesi~0.garde_me3</BVC>
+   <BVC>mesi~0.garde_me4</BVC>
+   <BVC>exclusive_me</BVC>
+   <BVC>modified_me</BVC>
+   <BVC>mesi~0.exclusive_me</BVC>
+   <BVC>OK</BVC>
+</Results>
+</Runs>

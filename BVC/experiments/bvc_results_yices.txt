@@ -1,0 +1,4640 @@
+
+
+0) hysteresis_1.lus:  
+[2, 5, 5, 5, 5, 5, 5, 5, 5, 3]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 1]
+#of model elements (model size):  6
+same as one of the MIVCs
+
+
+1) SYNAPSE_2_e8_1118.lus:  
+[1, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  10
+same as one of the MIVCs
+
+
+2) MOESI_2_e3_1523.lus:  
+[1, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [7, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+3) speed_e7_207.lus:  
+[2, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [3, 0, 0, 1, 0, 0, 0, 0, 0]
+#of model elements (model size):  6
+same as one of the MIVCs
+
+
+4) speed_e8_649.lus:  
+[3, 9, 9, 9, 10, 10, 10, 10, 10, 10]
+set diff:  [6, 0, 0, 1, 0, 0, 0, 0, 0]
+#of model elements (model size):  15
+same as one of the MIVCs
+
+
+5) MOESI_2_e8_101.lus:  
+[1, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [7, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+6) speed_e8_136.lus:  
+[2, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  6
+same as one of the MIVCs
+
+
+7) MOESI_2_e1_1753_e8_1769.lus:  
+[1, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [7, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+8) MOESI_2_e3_929_e5_1826.lus:  
+[1, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [7, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+9) speed_e7_207_e7_538.lus:  
+[2, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [3, 0, 0, 1, 0, 0, 0, 0, 0]
+#of model elements (model size):  6
+same as one of the MIVCs
+
+
+10) speed_e8_649_e7_709.lus:  
+[2, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 1]
+#of model elements (model size):  6
+same as one of the MIVCs
+
+
+11) fast_1_e8_747_e8_1041.lus:  
+[1, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  9
+same as one of the MIVCs
+
+
+12) FIREFLY_luke_1b_e1_1139_e2_2893.lus:  
+[1, 8, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [7, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+13) ILLINOIS_2_e2_2367_e1_3182.lus:  
+[1, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [6, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+14) MOESI_2_e2_1599_e8_1334.lus:  
+[1, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [7, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+15) ccp16.lus:  
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  262
+same as one of the MIVCs
+
+
+16) DRAGON_2_e1_2316.lus:  
+[1, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+set diff:  [9, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+17) fast_1_e7_2044_e8_1396.lus:  
+[1, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  9
+same as one of the MIVCs
+
+
+18) FIREFLY_luke_1b_e2_3049_e1_946.lus:  
+[1, 8, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [7, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+19) MOESI_2_e2_155.lus:  
+[1, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [7, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+20) PRODUCER_CONSUMER_2.lus:  
+[5, 5, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [0, 2, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  8
+final bvc is the subset of one of MIVCs
+
+
+21) stalmark_e7_76.lus:  
+[2, 3, 3, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  4
+same as one of the MIVCs
+
+
+22) DRAGON_2_e7_25_e8_3171.lus:  
+[1, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+set diff:  [9, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+23) FIREFLY_1_e1_1092_e2_1853.lus:  
+[1, 8, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [7, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+24) PRODUCER_CONSUMER_3.lus:  
+[1, 3, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [2, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  13
+same as one of the MIVCs
+
+
+25) DRAGON_2_e2_3183_e2_3580.lus:  
+[1, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+set diff:  [9, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+26) durationThm_3_e2_148.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  8
+same as one of the MIVCs
+
+
+27) ex3_e7_590_e8_550.lus:  
+[1, 2, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [1, 3, 0, 0, 1, 0, 0, 0, 0]
+#of model elements (model size):  6
+same as one of the MIVCs
+
+
+28) fast_1_e8_747.lus:  
+[1, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  9
+same as one of the MIVCs
+
+
+29) speed2.lus:  
+[1, 3, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [2, 6, 0, 0, 2, 0, 0, 0, 0]
+#of model elements (model size):  15
+same as one of the MIVCs
+
+
+30) SYNAPSE_2_e8_1118_e8_1177.lus:  
+[1, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  10
+same as one of the MIVCs
+
+
+31) traffic.lus:  
+[7, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  7
+same as one of the MIVCs
+
+
+32) ex3_e8_120.lus:  
+[1, 2, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [1, 3, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  6
+same as one of the MIVCs
+
+
+33) MESI_1.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+34) SYNAPSE_2_e8_1118_e7_1043.lus:  
+[1, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  10
+same as one of the MIVCs
+
+
+35) DRAGON_2_e2_3183.lus:  
+[1, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+set diff:  [9, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+36) ex3_e8_381_e7_224.lus:  
+[1, 2, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [1, 3, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  6
+final bvc is NOT the subset of any MIVCs
+
+
+37) fast_2_e7_2526_e8_1145.lus:  
+[6, 9, 12, 12, 12, 12, 12, 12, 12, 12]
+set diff:  [3, 3, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  14
+same as one of the MIVCs
+
+
+38) _6counters_e8_371_e2_80.lus:  
+[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  7
+same as one of the MIVCs
+
+
+39) car_2.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+final bvc is the subset of one of MIVCs
+
+
+40) car_all_e2_142_e8_194.lus:  
+[3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+final bvc is the subset of one of MIVCs
+
+
+41) FIREFLY_3_e2_2236_e1_2305.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+42) hysteresis_all.lus:  
+[2, 5, 5, 5, 5, 5, 5, 5, 5, 6]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 1]
+#of model elements (model size):  6
+same as one of the MIVCs
+
+
+43) metros_4_e2_968_e3_931.lus:  
+[1, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+44) MOESI_2_e1_1121.lus:  
+[1, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [7, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+45) MOESI_2_e3_929_e8_1167.lus:  
+[1, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [7, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+46) speed2_e8_449.lus:  
+[1, 3, 9, 9, 9, 10, 10, 10, 10, 10]
+set diff:  [2, 6, 0, 0, 1, 0, 0, 0, 0]
+#of model elements (model size):  15
+same as one of the MIVCs
+
+
+47) car_3_e8_33_e2_1010.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+48) DRAGON_2_e2_3183_e3_5972.lus:  
+[1, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+set diff:  [9, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+49) durationThm_3_e3_442_e4_165.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  8
+same as one of the MIVCs
+
+
+50) Mode_Control-Gaurantee2.lus:  
+[5, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  23
+final bvc is the subset of one of MIVCs
+
+
+51) speed2_e8_750.lus:  
+[1, 3, 9, 9, 9, 10, 10, 10, 10, 10]
+set diff:  [2, 6, 0, 0, 1, 0, 0, 0, 0]
+#of model elements (model size):  15
+same as one of the MIVCs
+
+
+52) stalmark_e7_27_e7_31.lus:  
+[2, 3, 3, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  4
+same as one of the MIVCs
+
+
+53) SYNAPSE_2.lus:  
+[1, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [6, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  23
+same as one of the MIVCs
+
+
+54) Display_Control-Gaurantee4.lus:  
+[4, 10, 24, 24, 24, 24, 24, 24, 24, 24]
+set diff:  [6, 17, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  64
+same as one of the MIVCs
+
+
+55) ex3_e7_590_e7_590.lus:  
+[1, 2, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [1, 3, 0, 0, 1, 0, 0, 0, 0]
+#of model elements (model size):  6
+same as one of the MIVCs
+
+
+56) metros_1_e2_1102_e8_311.lus:  
+[1, 2, 3, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [1, 1, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  18
+same as one of the MIVCs
+
+
+57) speed_e7_492.lus:  
+[3, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [6, 0, 0, 2, 0, 0, 0, 0, 0]
+#of model elements (model size):  15
+same as one of the MIVCs
+
+
+58) stalmark_e7_27_e8_261.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  4
+same as one of the MIVCs
+
+
+59) SYNAPSE_all.lus:  
+[11, 11, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  25
+same as one of the MIVCs
+
+
+60) car_4_e3_57_e4_1047.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+61) ILLINOIS_2_e3_1554_e6_2223.lus:  
+[1, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [6, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+62) microwave02.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  126
+same as one of the MIVCs
+
+
+63) rtp_9.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  24
+same as one of the MIVCs
+
+
+64) speed2_e7_223_e8_329.lus:  
+[1, 3, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [2, 6, 0, 0, 2, 0, 0, 0, 0]
+#of model elements (model size):  15
+same as one of the MIVCs
+
+
+65) car_4_e3_57_e6_784.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+66) car_4_e7_592.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+67) car_all_e3_1068_e4_275.lus:  
+[3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+final bvc is the subset of one of MIVCs
+
+
+68) ILLINOIS_4.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+69) MOESI_2_e3_929_e4_578.lus:  
+[1, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [7, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+70) MOESI_2_e8_926_e8_2138.lus:  
+[1, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [7, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+71) rtp_2.lus:  
+[2, 2, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [0, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  5
+same as one of the MIVCs
+
+
+72) speed2_e7_496.lus:  
+[1, 3, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [2, 6, 0, 0, 2, 0, 0, 0, 0]
+#of model elements (model size):  15
+same as one of the MIVCs
+
+
+73) SYNAPSE_3_e8_1329_e8_320.lus:  
+[6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+final bvc is NOT the subset of any MIVCs
+
+
+74) SYNAPSE_4_e8_974.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  10
+same as one of the MIVCs
+
+
+75) controlLaw.lus:  
+[2, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  8
+same as one of the MIVCs
+
+
+76) Display_Control-Gaurantee3.lus:  
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  64
+same as one of the MIVCs
+
+
+77) DRAGON_2_e2_3183_e1_2644.lus:  
+[1, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+set diff:  [9, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+78) durationThm_3_e3_207.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  8
+same as one of the MIVCs
+
+
+79) metros_3_e3_1275_e2_454.lus:  
+[1, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+80) microwave16.lus:  
+[5, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  112
+same as one of the MIVCs
+
+
+81) Mode_Control-Gaurantee3.lus:  
+[5, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  23
+same as one of the MIVCs
+
+
+82) MOESI_2_e3_929_e6_2707.lus:  
+[1, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [7, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+83) SYNAPSE_1.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  10
+same as one of the MIVCs
+
+
+84) SYNAPSE_123_e7_837_e8_12.lus:  
+[9, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  14
+final bvc is NOT the subset of any MIVCs
+
+
+85) traffic_e7_46_e8_16.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  4
+same as one of the MIVCs
+
+
+86) car_1.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+87) car_4_e8_118.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+88) cruise_controller_11.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  103
+same as one of the MIVCs
+
+
+89) Display_Control-Gaurantee6.lus:  
+[6, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  66
+final bvc is the subset of one of MIVCs
+
+
+90) DRAGON_7_e2_2872_e3_2640.lus:  
+[3, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [5, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+91) DRAGON_9_e7_1843_e8_3031.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+92) ex3_e8_381_e8_477.lus:  
+[1, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [5, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  6
+same as one of the MIVCs
+
+
+93) fast_2_e8_460.lus:  
+[6, 9, 12, 12, 12, 12, 12, 12, 12, 12]
+set diff:  [3, 3, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  14
+same as one of the MIVCs
+
+
+94) FIREFLY_luke_rt_e2_3460_e1_1455.lus:  
+[7, 9, 10, 10, 10, 10, 10, 10, 10, 10]
+set diff:  [3, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  17
+final bvc is the subset of one of MIVCs
+
+
+95) hysteresis_2.lus:  
+[1, 2, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [1, 3, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  6
+final bvc is the subset of one of MIVCs
+
+
+96) metros_1_e1_846_e2_1394.lus:  
+[1, 2, 4, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [1, 2, 4, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  18
+same as one of the MIVCs
+
+
+97) metros_1_e7_1255_e8_598.lus:  
+[1, 2, 4, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [1, 2, 4, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  18
+same as one of the MIVCs
+
+
+98) metros_4_e2_968_e2_1166.lus:  
+[1, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+99) microwave03.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  125
+same as one of the MIVCs
+
+
+100) car_4.lus:  
+[3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  27
+same as one of the MIVCs
+
+
+101) car_all_e2_108.lus:  
+[3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+final bvc is the subset of one of MIVCs
+
+
+102) cruise_controller_07.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  103
+same as one of the MIVCs
+
+
+103) DRAGON_3_e3_5422_e1_2288.lus:  
+[8, 11, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+final bvc is the subset of one of MIVCs
+
+
+104) FIREFLY_5_e2_2884.lus:  
+[3, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  39
+same as one of the MIVCs
+
+
+105) FIREFLY_luke_1b_e3_671_e6_1974.lus:  
+[1, 8, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [7, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+106) metros_1_e7_606.lus:  
+[1, 2, 4, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [1, 2, 3, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  18
+final bvc is the subset of one of MIVCs
+
+
+107) metros_1_e8_725_e2_1144.lus:  
+[1, 2, 5, 10, 10, 10, 10, 10, 10, 10]
+set diff:  [1, 3, 5, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  51
+final bvc is NOT the subset of any MIVCs
+
+
+108) MOESI_2_e2_1599.lus:  
+[1, 20, 20, 21, 21, 21, 21, 21, 21, 21]
+set diff:  [19, 0, 2, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  30
+same as one of the MIVCs
+
+
+109) rtp_1.lus:  
+[3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  6
+same as one of the MIVCs
+
+
+110) SYNAPSE_2_e7_790_e8_1344.lus:  
+[1, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  10
+same as one of the MIVCs
+
+
+111) SYNAPSE_3_e8_1708.lus:  
+[11, 11, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  25
+same as one of the MIVCs
+
+
+112) car_all_e3_1068_e6_790.lus:  
+[3, 3, 3, 3, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 2, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+final bvc is the subset of one of MIVCs
+
+
+113) FIREFLY_10.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+114) FIREFLY_8_e2_1711_e2_2673.lus:  
+[5, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [6, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+final bvc is the subset of one of MIVCs
+
+
+115) FIREFLY_8_e2_1711_e3_1753.lus:  
+[5, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [6, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+final bvc is the subset of one of MIVCs
+
+
+116) MESI_all.lus:  
+[3, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+117) metros_1_e1_846_e8_1253.lus:  
+[1, 2, 3, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [1, 1, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  18
+same as one of the MIVCs
+
+
+118) metros_4_e3_1091_e3_522.lus:  
+[1, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+119) Mode_Control-Gaurantee0.lus:  
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+120) MOESI_2_e8_926_e1_1065.lus:  
+[1, 21, 21, 21, 21, 21, 21, 21, 21, 21]
+set diff:  [20, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  30
+same as one of the MIVCs
+
+
+121) rtp_10.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  24
+same as one of the MIVCs
+
+
+122) stalmark.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  4
+same as one of the MIVCs
+
+
+123) SYNAPSE_123.lus:  
+[14, 14, 14, 14, 14, 14, 14, 14, 14, 14]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  28
+same as one of the MIVCs
+
+
+124) SYNAPSE_123_e8_953.lus:  
+[14, 14, 14, 14, 14, 14, 14, 14, 14, 14]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  28
+same as one of the MIVCs
+
+
+125) ticket3i_3_e7_1312_e8_1916.lus:  
+[4, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  20
+final bvc is the subset of one of MIVCs
+
+
+126) DRAGON_6.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+127) ex3_e7_655.lus:  
+[1, 3, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [2, 6, 0, 0, 2, 0, 0, 0, 0]
+#of model elements (model size):  15
+same as one of the MIVCs
+
+
+128) FIREFLY_2_e1_3099_e2_846.lus:  
+[7, 9, 10, 10, 10, 10, 10, 10, 10, 10]
+set diff:  [3, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  17
+final bvc is the subset of one of MIVCs
+
+
+129) FIREFLY_3.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+130) FIREFLY_3_e2_2236_e2_1058.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+131) FIREFLY_9.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  17
+same as one of the MIVCs
+
+
+132) FIREFLY_luke_1b.lus:  
+[1, 26, 31, 31, 31, 31, 31, 31, 31, 31]
+set diff:  [25, 9, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  39
+same as one of the MIVCs
+
+
+133) metros_1_e2_1102_e3_961.lus:  
+[1, 2, 4, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [1, 2, 4, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  18
+same as one of the MIVCs
+
+
+134) metros_1_e7_1255_e7_12.lus:  
+[1, 2, 4, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [1, 2, 3, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  18
+final bvc is the subset of one of MIVCs
+
+
+135) speed2_e8_449_e7_353.lus:  
+[1, 3, 9, 9, 9, 10, 10, 10, 10, 10]
+set diff:  [2, 6, 0, 0, 1, 0, 0, 0, 0]
+#of model elements (model size):  15
+final bvc is NOT the subset of any MIVCs
+
+
+136) car_all.lus:  
+[5, 5, 5, 5, 7, 7, 7, 7, 7, 7]
+set diff:  [0, 0, 0, 2, 0, 0, 0, 0, 0]
+#of model elements (model size):  27
+final bvc is the subset of one of MIVCs
+
+
+137) DRAGON_10_e3_144_e5_2046.lus:  
+[5, 5, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [0, 4, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+final bvc is the subset of one of MIVCs
+
+
+138) durationThm_3_e3_442.lus:  
+[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  10
+same as one of the MIVCs
+
+
+139) ex3.lus:  
+[1, 3, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [2, 6, 0, 0, 2, 0, 0, 0, 0]
+#of model elements (model size):  15
+same as one of the MIVCs
+
+
+140) fast_2_e8_460_e8_1920.lus:  
+[6, 9, 12, 12, 12, 12, 12, 12, 12, 12]
+set diff:  [3, 3, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  14
+same as one of the MIVCs
+
+
+141) FIREFLY_3_e2_2236.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+142) microwave15.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  113
+same as one of the MIVCs
+
+
+143) MOESI_2_e8_926_e2_349.lus:  
+[1, 20, 20, 21, 21, 21, 21, 21, 21, 21]
+set diff:  [19, 0, 2, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  30
+same as one of the MIVCs
+
+
+144) ticket3i_1.lus:  
+[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+145) ticket3i_3_e8_1703_e8_2560.lus:  
+[7, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  54
+final bvc is the subset of one of MIVCs
+
+
+146) ticket3i_3_e8_1788.lus:  
+[7, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  54
+final bvc is the subset of one of MIVCs
+
+
+147) _6counters_e3_140_e8_149.lus:  
+[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  7
+same as one of the MIVCs
+
+
+148) car_3_e7_626.lus:  
+[2, 2, 2, 2, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 2, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+149) durationThm_3_e3_442_e5_260.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  8
+same as one of the MIVCs
+
+
+150) FIREFLY_8_e2_1692.lus:  
+[5, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [6, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+final bvc is the subset of one of MIVCs
+
+
+151) microwave04.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  124
+same as one of the MIVCs
+
+
+152) rtp_4.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  24
+same as one of the MIVCs
+
+
+153) stalmark_e7_27.lus:  
+[2, 3, 3, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  4
+same as one of the MIVCs
+
+
+154) SYNAPSE_all_e3_1864_e6_1336.lus:  
+[6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+final bvc is NOT the subset of any MIVCs
+
+
+155) car_all_e8_856.lus:  
+[3, 3, 3, 3, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 2, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+156) DRAGON_1_e1_5070.lus:  
+[4, 4, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  54
+same as one of the MIVCs
+
+
+157) metros_3_e3_1275_e3_640.lus:  
+[1, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+158) Mode_Control-Gaurantee1.lus:  
+[3, 3, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 2, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+159) MOESI_2_e8_926_e3_1758.lus:  
+[1, 20, 21, 21, 21, 21, 21, 21, 21, 21]
+set diff:  [19, 2, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  30
+same as one of the MIVCs
+
+
+160) peterson_3.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  29
+same as one of the MIVCs
+
+
+161) peterson_all.lus:  
+[5, 10, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [5, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  29
+same as one of the MIVCs
+
+
+162) PRODUCER_CONSUMER_1.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  14
+final bvc is the subset of one of MIVCs
+
+
+163) SYNAPSE_2_e8_656.lus:  
+[1, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [6, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  23
+same as one of the MIVCs
+
+
+164) ticket3i_4.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  20
+same as one of the MIVCs
+
+
+165) tramway_e7_3304.lus:  
+[14, 13, 13, 13, 13, 13, 13, 13, 13, 13]
+set diff:  [8, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  70
+final bvc is the subset of one of MIVCs
+
+
+166) ums.lus:  
+[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  38
+same as one of the MIVCs
+
+
+167) DRAGON_3_e3_5422_e2_3135.lus:  
+[8, 11, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+final bvc is the subset of one of MIVCs
+
+
+168) FIREFLY_4.lus:  
+[14, 26, 33, 33, 33, 33, 33, 33, 33, 33]
+set diff:  [15, 10, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  42
+final bvc is the subset of one of MIVCs
+
+
+169) ILLINOIS_1.lus:  
+[2, 2, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [0, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+170) ILLINOIS_5.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+171) MESI_3_e1_2517_e8_2163.lus:  
+[5, 6, 6, 6, 6, 6, 9, 9, 9, 9]
+set diff:  [1, 0, 0, 0, 0, 3, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+172) metros_1_e8_725_e3_556.lus:  
+[1, 2, 3, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [1, 1, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  18
+same as one of the MIVCs
+
+
+173) SYNAPSE_123_e8_953_e8_941.lus:  
+[9, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  14
+final bvc is NOT the subset of any MIVCs
+
+
+174) ticket3i_2.lus:  
+[5, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  20
+final bvc is the subset of one of MIVCs
+
+
+175) ticket3i_5.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  20
+same as one of the MIVCs
+
+
+176) ccp06.lus:  
+[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  262
+same as one of the MIVCs
+
+
+177) cruise_controller_05.lus:  
+[3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  103
+same as one of the MIVCs
+
+
+178) FIREFLY_5_e2_2884_e2_1492.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+179) FIREFLY_a3.lus:  
+[13, 18, 18, 18, 18, 18, 18, 18, 18, 18]
+set diff:  [6, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+final bvc is the subset of one of MIVCs
+
+
+180) metros_1_e8_725.lus:  
+[1, 2, 5, 10, 10, 10, 10, 10, 10, 10]
+set diff:  [1, 3, 5, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  51
+final bvc is NOT the subset of any MIVCs
+
+
+181) MOESI_1.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  13
+same as one of the MIVCs
+
+
+182) rtp_6.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  24
+same as one of the MIVCs
+
+
+183) speed2_e8_449_e8_517.lus:  
+[1, 11, 11, 12, 12, 12, 12, 12, 12, 12]
+set diff:  [10, 0, 2, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  15
+final bvc is NOT the subset of any MIVCs
+
+
+184) SYNAPSE_3.lus:  
+[11, 11, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  25
+same as one of the MIVCs
+
+
+185) ticket3i_3.lus:  
+[7, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  54
+final bvc is the subset of one of MIVCs
+
+
+186) car_all_e8_856_e2_585.lus:  
+[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  27
+final bvc is the subset of one of MIVCs
+
+
+187) DRAGON_3_e1_4783_e2_158.lus:  
+[8, 11, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+final bvc is the subset of one of MIVCs
+
+
+188) ex3_e7_590.lus:  
+[1, 2, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [1, 3, 0, 0, 1, 0, 0, 0, 0]
+#of model elements (model size):  6
+same as one of the MIVCs
+
+
+189) FIREFLY_4_e3_3511_e6_1826.lus:  
+[7, 9, 10, 10, 10, 10, 10, 10, 10, 10]
+set diff:  [3, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  17
+final bvc is the subset of one of MIVCs
+
+
+190) ILLINOIS_2_e1_834_e2_3395.lus:  
+[1, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [6, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+191) car_3_e2_695.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+192) car_3_e2_777.lus:  
+[3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  27
+same as one of the MIVCs
+
+
+193) durationThm_3_e2_63.lus:  
+[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  10
+same as one of the MIVCs
+
+
+194) FIREFLY_a3_e1_3233_e3_2970.lus:  
+[13, 17, 18, 18, 18, 18, 18, 18, 18, 18]
+set diff:  [5, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+final bvc is the subset of one of MIVCs
+
+
+195) FIREFLY_a3_e2_2952.lus:  
+[21, 30, 39, 39, 41, 41, 41, 41, 41, 41]
+set diff:  [12, 9, 0, 2, 0, 0, 0, 0, 0]
+#of model elements (model size):  46
+final bvc is the subset of one of MIVCs
+
+
+196) FIREFLY_luke_rt_e1_913_e2_3353.lus:  
+[13, 27, 32, 32, 32, 32, 32, 32, 32, 32]
+set diff:  [17, 9, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  41
+final bvc is the subset of one of MIVCs
+
+
+197) ILLINOIS_3_e3_2581_e6_2476.lus:  
+[8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  17
+same as one of the MIVCs
+
+
+198) metros_1_e2_1102.lus:  
+[1, 2, 4, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [1, 2, 4, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  18
+same as one of the MIVCs
+
+
+199) Mode_Control-Gaurantee4.lus:  
+[5, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  23
+same as one of the MIVCs
+
+
+200) MOESI_2_e8_926.lus:  
+[1, 20, 21, 21, 21, 21, 21, 21, 21, 21]
+set diff:  [19, 2, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  30
+same as one of the MIVCs
+
+
+201) rtp_8.lus:  
+[2, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  24
+same as one of the MIVCs
+
+
+202) cruise_controller_13.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  103
+same as one of the MIVCs
+
+
+203) Display_Control-Gaurantee7.lus:  
+[1, 4, 22, 25, 25, 25, 25, 25, 25, 25]
+set diff:  [3, 18, 7, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  66
+same as one of the MIVCs
+
+
+204) DRAGON_10_e3_144_e6_4484.lus:  
+[5, 5, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [0, 4, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+final bvc is the subset of one of MIVCs
+
+
+205) DRAGON_2_e2_4481.lus:  
+[1, 34, 40, 41, 41, 41, 41, 41, 41, 41]
+set diff:  [33, 12, 2, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  55
+same as one of the MIVCs
+
+
+206) FIREFLY_8.lus:  
+[5, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [6, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+final bvc is the subset of one of MIVCs
+
+
+207) FIREFLY_a3_e1_3233_e2_2392.lus:  
+[13, 18, 18, 18, 18, 18, 18, 18, 18, 18]
+set diff:  [6, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+final bvc is the subset of one of MIVCs
+
+
+208) FIREFLY_all_e2_2924_e1_768.lus:  
+[10, 16, 16, 16, 16, 16, 16, 16, 16, 16]
+set diff:  [7, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  18
+final bvc is the subset of one of MIVCs
+
+
+209) FIREFLY_luke_rt.lus:  
+[13, 27, 32, 32, 32, 32, 32, 32, 32, 32]
+set diff:  [17, 9, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  41
+final bvc is the subset of one of MIVCs
+
+
+210) ILLINOIS_all_e3_2354_e6_993.lus:  
+[8, 10, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [2, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  17
+same as one of the MIVCs
+
+
+211) MESI_3.lus:  
+[5, 6, 6, 6, 9, 9, 9, 9, 9, 9]
+set diff:  [1, 0, 0, 3, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+212) Mode_Control-Gaurantee5.lus:  
+[1, 3, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [2, 4, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+213) MOESI_2_e3_929.lus:  
+[1, 20, 21, 21, 21, 21, 21, 21, 21, 21]
+set diff:  [19, 2, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  30
+same as one of the MIVCs
+
+
+214) MOESI_2_e7_2910_e8_2590.lus:  
+[1, 20, 21, 21, 21, 21, 21, 21, 21, 21]
+set diff:  [19, 2, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  30
+same as one of the MIVCs
+
+
+215) PRODUCER_CONSUMER_all.lus:  
+[5, 7, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [3, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  13
+final bvc is the subset of one of MIVCs
+
+
+216) ticket3i_all.lus:  
+[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+217) tramway_e7_1834_e7_2363.lus:  
+[8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  25
+final bvc is the subset of one of MIVCs
+
+
+218) DRAGON_1.lus:  
+[3, 3, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+same as one of the MIVCs
+
+
+219) DRAGON_1_e1_3184.lus:  
+[3, 3, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+same as one of the MIVCs
+
+
+220) DRAGON_3_e1_4783.lus:  
+[8, 11, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+final bvc is the subset of one of MIVCs
+
+
+221) FIREFLY_1.lus:  
+[1, 8, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [7, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+222) FIREFLY_5_e2_2229.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+223) hysteresis_3.lus:  
+[1, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 1]
+#of model elements (model size):  6
+final bvc is the subset of one of MIVCs
+
+
+224) MESI_2.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+225) MESI_3_e2_819_e1_1145.lus:  
+[5, 6, 6, 6, 9, 9, 9, 9, 9, 9]
+set diff:  [1, 0, 0, 3, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+226) MESI_3_e3_2669.lus:  
+[17, 18, 18, 18, 21, 21, 21, 21, 21, 21]
+set diff:  [1, 0, 0, 3, 0, 0, 0, 0, 0]
+#of model elements (model size):  33
+same as one of the MIVCs
+
+
+227) MOESI_2_e1_1753.lus:  
+[1, 21, 21, 21, 21, 21, 21, 21, 21, 21]
+set diff:  [20, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  30
+same as one of the MIVCs
+
+
+228) peterson_2.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  29
+same as one of the MIVCs
+
+
+229) speed_e7_207_e8_507.lus:  
+[2, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [3, 0, 0, 1, 0, 0, 0, 0, 0]
+#of model elements (model size):  6
+same as one of the MIVCs
+
+
+230) FIREFLY_8_e2_1711_e1_1489.lus:  
+[5, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [6, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+final bvc is the subset of one of MIVCs
+
+
+231) FIREFLY_a3_e2_2086_e3_2542.lus:  
+[13, 17, 17, 17, 18, 18, 18, 18, 18, 18]
+set diff:  [5, 0, 0, 1, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+final bvc is the subset of one of MIVCs
+
+
+232) MESI_3_e3_2584.lus:  
+[5, 6, 6, 6, 9, 9, 9, 9, 9, 9]
+set diff:  [1, 0, 0, 3, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+233) metros_1_e2_627.lus:  
+[1, 2, 10, 10, 10, 10, 10, 10, 10, 10]
+set diff:  [1, 8, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  51
+final bvc is the subset of one of MIVCs
+
+
+234) Mode_Control-Gaurantee6.lus:  
+[1, 3, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [2, 8, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+235) SYNAPSE_4.lus:  
+[3, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  23
+same as one of the MIVCs
+
+
+236) DRAGON_10_e2_2785_e3_1744.lus:  
+[5, 5, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [0, 4, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+final bvc is the subset of one of MIVCs
+
+
+237) DRAGON_10_e2_402.lus:  
+[5, 5, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [0, 4, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+final bvc is the subset of one of MIVCs
+
+
+238) DRAGON_1_e2_1997.lus:  
+[3, 3, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+same as one of the MIVCs
+
+
+239) FIREFLY_a3_e2_2086.lus:  
+[13, 17, 18, 18, 18, 18, 18, 18, 18, 18]
+set diff:  [5, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+final bvc is the subset of one of MIVCs
+
+
+240) FIREFLY_all_e3_1600_e6_1569.lus:  
+[10, 16, 16, 16, 16, 16, 16, 16, 16, 16]
+set diff:  [7, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  18
+final bvc is the subset of one of MIVCs
+
+
+241) metros_4_e3_1091_e2_1317.lus:  
+[1, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+242) readwrit.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  23
+same as one of the MIVCs
+
+
+243) SYNAPSE_all_e8_251.lus:  
+[6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+final bvc is NOT the subset of any MIVCs
+
+
+244) DRAGON_10_e1_998.lus:  
+[5, 5, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [0, 4, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+final bvc is the subset of one of MIVCs
+
+
+245) ex3_e8_381.lus:  
+[1, 3, 9, 9, 9, 10, 10, 10, 10, 10]
+set diff:  [2, 6, 0, 0, 1, 0, 0, 0, 0]
+#of model elements (model size):  15
+same as one of the MIVCs
+
+
+246) fast_1.lus:  
+[2, 9, 34, 36, 28, 28, 28, 28, 28, 28]
+set diff:  [7, 27, 2, 5, 0, 0, 0, 0, 0]
+#of model elements (model size):  70
+same as one of the MIVCs
+
+
+247) FIREFLY_5_e2_2884_e3_1882.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+248) _6counters_e8_371_e3_224.lus:  
+[7, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+249) ccp09.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  262
+same as one of the MIVCs
+
+
+250) FIREFLY_2.lus:  
+[7, 9, 10, 10, 10, 10, 10, 10, 10, 10]
+set diff:  [3, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  17
+final bvc is the subset of one of MIVCs
+
+
+251) FIREFLY_8_e2_1711.lus:  
+[8, 11, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [6, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  39
+final bvc is the subset of one of MIVCs
+
+
+252) MOESI_all.lus:  
+[2, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [7, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  13
+same as one of the MIVCs
+
+
+253) speed2_e7_223_e7_213.lus:  
+[1, 3, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [2, 6, 0, 0, 2, 0, 0, 0, 0]
+#of model elements (model size):  15
+same as one of the MIVCs
+
+
+254) car_3.lus:  
+[2, 2, 2, 2, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 2, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+255) car_all_e2_142.lus:  
+[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  27
+final bvc is the subset of one of MIVCs
+
+
+256) DRAGON_3_e1_4783_e1_3755.lus:  
+[8, 11, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+final bvc is the subset of one of MIVCs
+
+
+257) fast_1_e8_751.lus:  
+[2, 9, 34, 36, 28, 28, 28, 28, 28, 28]
+set diff:  [7, 27, 2, 5, 0, 0, 0, 0, 0]
+#of model elements (model size):  70
+same as one of the MIVCs
+
+
+258) FIREFLY_a3_e3_314_e2_2812.lus:  
+[13, 17, 17, 17, 17, 17, 17, 17, 17, 17]
+set diff:  [5, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+final bvc is the subset of one of MIVCs
+
+
+259) MESI_3_e2_819_e4_1595.lus:  
+[5, 6, 6, 6, 9, 9, 9, 9, 9, 9]
+set diff:  [1, 0, 0, 3, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+260) metros_2_e1_1116_e2_617.lus:  
+[1, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+final bvc is the subset of one of MIVCs
+
+
+261) metros_2_e2_704_e2_13.lus:  
+[1, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+final bvc is the subset of one of MIVCs
+
+
+262) Mode_Control-Gaurantee7.lus:  
+[1, 3, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [2, 6, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+263) car_3_e8_33.lus:  
+[2, 2, 2, 2, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 2, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+264) DRAGON_all_e2_6104_e3_2607.lus:  
+[9, 14, 15, 15, 15, 15, 15, 15, 15, 15]
+set diff:  [6, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  23
+final bvc is the subset of one of MIVCs
+
+
+265) DRAGON_all_e3_4821_e1_1318.lus:  
+[9, 14, 15, 15, 15, 15, 15, 15, 15, 15]
+set diff:  [6, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  23
+final bvc is the subset of one of MIVCs
+
+
+266) fast_2_e8_976.lus:  
+[9, 24, 84, 84, 82, 82, 82, 82, 82, 82]
+set diff:  [15, 60, 0, 5, 0, 0, 0, 0, 0]
+#of model elements (model size):  96
+same as one of the MIVCs
+
+
+267) FIREFLY_all.lus:  
+[17, 31, 38, 38, 38, 38, 38, 38, 38, 38]
+set diff:  [17, 8, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  42
+final bvc is the subset of one of MIVCs
+
+
+268) metros_1_e2_1102_e1_317.lus:  
+[1, 2, 4, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [1, 2, 4, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  18
+same as one of the MIVCs
+
+
+269) metros_1_e8_1567.lus:  
+[1, 2, 3, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [1, 1, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  18
+same as one of the MIVCs
+
+
+270) tramway_e7_1834.lus:  
+[7, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  25
+final bvc is the subset of one of MIVCs
+
+
+271) car_3_e8_33_e7_220.lus:  
+[2, 2, 2, 2, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 2, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+272) DRAGON_10_e1_3587_e3_2749.lus:  
+[5, 5, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [0, 4, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+final bvc is the subset of one of MIVCs
+
+
+273) DRAGON_all_e2_1514.lus:  
+[9, 14, 15, 15, 15, 15, 15, 15, 15, 15]
+set diff:  [6, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  23
+final bvc is the subset of one of MIVCs
+
+
+274) FIREFLY_5.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+275) metros_1_e1_846_e1_1317.lus:  
+[1, 2, 4, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [1, 2, 4, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  18
+same as one of the MIVCs
+
+
+276) peterson_1.lus:  
+[2, 2, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [0, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  29
+same as one of the MIVCs
+
+
+277) _6counters_e8_371_e1_448.lus:  
+[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  7
+same as one of the MIVCs
+
+
+278) FIREFLY_all_e1_1207_e2_3220.lus:  
+[10, 16, 16, 16, 16, 16, 16, 16, 16, 16]
+set diff:  [7, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  18
+final bvc is the subset of one of MIVCs
+
+
+279) MESI_3_e2_819_e6_1459.lus:  
+[5, 6, 6, 6, 6, 6, 9, 9, 9, 9]
+set diff:  [1, 0, 0, 0, 0, 3, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+280) metros_1_e2_1102_e2_943.lus:  
+[1, 2, 4, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [1, 2, 4, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  18
+same as one of the MIVCs
+
+
+281) rtp_3.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  24
+same as one of the MIVCs
+
+
+282) ticket3i_7.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  20
+same as one of the MIVCs
+
+
+283) ccp19.lus:  
+[3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  262
+same as one of the MIVCs
+
+
+284) DRAGON_10_e3_3429.lus:  
+[5, 5, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [0, 4, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+final bvc is the subset of one of MIVCs
+
+
+285) DRAGON_3_e1_4783_e3_511.lus:  
+[8, 11, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+final bvc is the subset of one of MIVCs
+
+
+286) durationThm_3_e2_63_e7_21.lus:  
+[4, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  8
+same as one of the MIVCs
+
+
+287) FIREFLY_5_e2_2884_e1_2678.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+288) FIREFLY_a3_e2_2086_e1_3235.lus:  
+[13, 18, 18, 18, 18, 18, 18, 18, 18, 18]
+set diff:  [6, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+final bvc is the subset of one of MIVCs
+
+
+289) FIREFLY_a3_e2_2086_e2_2689.lus:  
+[13, 17, 17, 18, 18, 18, 18, 18, 18, 18]
+set diff:  [5, 0, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+final bvc is the subset of one of MIVCs
+
+
+290) ILLINOIS_3.lus:  
+[15, 28, 32, 32, 32, 32, 32, 32, 32, 32]
+set diff:  [15, 10, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  43
+final bvc is the subset of one of MIVCs
+
+
+291) rtp_7.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  24
+same as one of the MIVCs
+
+
+292) steam_boiler_no_arr2_e1_17214_e5_18600.lus:  
+[5, 5, 6, 14, 14, 14, 14, 14, 14, 14]
+set diff:  [0, 1, 8, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  109
+same as one of the MIVCs
+
+
+293) DRAGON_7.lus:  
+[3, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [5, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+294) metros_1_e8_725_e1_919.lus:  
+[1, 2, 5, 10, 10, 10, 10, 10, 10, 10]
+set diff:  [1, 3, 5, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  51
+final bvc is NOT the subset of any MIVCs
+
+
+295) rtp_5.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  24
+same as one of the MIVCs
+
+
+296) durationThm_3_e7_334_e2_62.lus:  
+[5, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  10
+same as one of the MIVCs
+
+
+297) DRAGON_all_e1_4037.lus:  
+[17, 39, 47, 47, 47, 47, 47, 47, 47, 47]
+set diff:  [25, 13, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  57
+final bvc is the subset of one of MIVCs
+
+
+298) DRAGON_all_e3_4821_e2_1089.lus:  
+[9, 14, 15, 15, 15, 15, 15, 15, 15, 15]
+set diff:  [6, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  23
+final bvc is the subset of one of MIVCs
+
+
+299) ILLINOIS_all.lus:  
+[15, 28, 35, 35, 35, 35, 35, 35, 35, 35]
+set diff:  [15, 11, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  43
+final bvc is the subset of one of MIVCs
+
+
+300) cruise_controller_06.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  103
+same as one of the MIVCs
+
+
+301) DRAGON_all_e1_4022_e3_3628.lus:  
+[9, 14, 15, 15, 15, 15, 15, 15, 15, 15]
+set diff:  [6, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  23
+final bvc is the subset of one of MIVCs
+
+
+302) microwave01.lus:  
+[8, 11, 12, 20, 20, 20, 20, 20, 20, 20]
+set diff:  [3, 1, 9, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  127
+same as one of the MIVCs
+
+
+303) channel_str.lus:  
+[2, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  118
+same as one of the MIVCs
+
+
+304) ILLINOIS_2.lus:  
+[1, 27, 31, 31, 31, 31, 31, 31, 31, 31]
+set diff:  [26, 10, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  41
+same as one of the MIVCs
+
+
+305) peterson_4.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  29
+same as one of the MIVCs
+
+
+306) channel_bounds.lus:  
+[2, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  116
+same as one of the MIVCs
+
+
+307) DRAGON_3_e2_5343_e1_988.lus:  
+[8, 11, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+final bvc is the subset of one of MIVCs
+
+
+308) MESI_4.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+309) metros_1.lus:  
+[1, 2, 10, 10, 10, 10, 10, 10, 10, 10]
+set diff:  [1, 8, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  51
+final bvc is the subset of one of MIVCs
+
+
+310) metros_1_e1_846_e7_397.lus:  
+[1, 2, 4, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [1, 2, 3, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  18
+final bvc is the subset of one of MIVCs
+
+
+311) MOESI_2.lus:  
+[1, 20, 21, 21, 21, 21, 21, 21, 21, 21]
+set diff:  [19, 2, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  30
+same as one of the MIVCs
+
+
+312) two_counters.lus:  
+[5, 6, 6, 5, 5, 6, 6, 5, 5, 6]
+set diff:  [1, 0, 0, 1, 1, 0, 0, 1, 1]
+#of model elements (model size):  6
+same as one of the MIVCs
+
+
+313) Display_Control-Gaurantee5.lus:  
+[1, 10, 10, 21, 21, 21, 21, 21, 21, 21]
+set diff:  [9, 0, 14, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  64
+same as one of the MIVCs
+
+
+314) steam_boiler_no_arr1.lus:  
+[6, 11, 128]
+set diff:  [5, 117]
+#of model elements (model size):  571
+same as one of the MIVCs
+
+
+315) SYNAPSE_4_e8_420_e8_1525.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  10
+same as one of the MIVCs
+
+
+316) DRAGON_all_e1_4022_e1_1759.lus:  
+[9, 14, 15, 15, 15, 15, 15, 15, 15, 15]
+set diff:  [6, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  23
+final bvc is the subset of one of MIVCs
+
+
+317) DRAGON_all_e2_6104_e2_3308.lus:  
+[9, 14, 15, 15, 15, 15, 15, 15, 15, 15]
+set diff:  [6, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  23
+final bvc is the subset of one of MIVCs
+
+
+318) DRAGON_all_e3_4821.lus:  
+[9, 14, 15, 15, 15, 15, 15, 15, 15, 15]
+set diff:  [6, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  23
+final bvc is the subset of one of MIVCs
+
+
+319) Display_Control-Gaurantee2.lus:  
+[2, 6, 10, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [4, 4, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  64
+same as one of the MIVCs
+
+
+320) DRAGON_2.lus:  
+[1, 34, 41, 41, 41, 41, 41, 41, 41, 41]
+set diff:  [33, 14, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  55
+same as one of the MIVCs
+
+
+321) DRAGON_all_e2_6104.lus:  
+[17, 38, 46, 47, 47, 47, 47, 47, 47, 47]
+set diff:  [24, 13, 2, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  57
+final bvc is the subset of one of MIVCs
+
+
+322) DRAGON_9.lus:  
+[3, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  55
+same as one of the MIVCs
+
+
+323) FIREFLY_luke_1b_e7_3191_e8_2830.lus:  
+[1, 26, 31, 31, 31, 31, 31, 31, 31, 31]
+set diff:  [25, 9, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  39
+same as one of the MIVCs
+
+
+324) ticket3i_6.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  20
+same as one of the MIVCs
+
+
+325) rtp_all.lus:  
+[11, 22, 23, 23, 23, 23, 23, 23, 23, 23]
+set diff:  [11, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  25
+same as one of the MIVCs
+
+
+326) cruise_controller_04.lus:  
+[9, 12, 14, 28, 37, 36, 36, 36, 36, 36]
+set diff:  [3, 2, 14, 11, 4, 0, 0, 0, 0]
+#of model elements (model size):  103
+same as one of the MIVCs
+
+
+327) DRAGON_all_e3_4821_e4_1791.lus:  
+[9, 14, 15, 15, 15, 15, 15, 15, 15, 15]
+set diff:  [6, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  23
+final bvc is the subset of one of MIVCs
+
+
+328) production_cell_e8_6.lus:  
+[1, 12, 12, 12, 12, 12, 12, 12, 12, 12]
+set diff:  [11, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+329) ticket3i_3_e8_1703.lus:  
+[7, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  54
+final bvc is the subset of one of MIVCs
+
+
+330) ccp15.lus:  
+[14, 15, 15, 15, 15, 15, 15, 15, 15, 15]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  262
+same as one of the MIVCs
+
+
+331) durationThm_2_e2_206.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  7
+same as one of the MIVCs
+
+
+332) car_4_e8_118_e7_178.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+333) DRAGON_all_e1_4022_e2_267.lus:  
+[9, 14, 15, 15, 15, 15, 15, 15, 15, 15]
+set diff:  [6, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  23
+final bvc is the subset of one of MIVCs
+
+
+334) cruise_controller_02.lus:  
+[17, 21, 22, 32, 39, 39, 39, 39, 39, 39]
+set diff:  [5, 2, 10, 10, 0, 0, 0, 0, 0]
+#of model elements (model size):  103
+same as one of the MIVCs
+
+
+335) DRAGON_3.lus:  
+[8, 11, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+final bvc is the subset of one of MIVCs
+
+
+336) DRAGON_all_e3_4821_e5_1536.lus:  
+[9, 14, 15, 15, 15, 15, 15, 15, 15, 15]
+set diff:  [6, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  23
+final bvc is the subset of one of MIVCs
+
+
+337) DRAGON_7_e2_2872_e2_5844.lus:  
+[3, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [5, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+338) steam_boiler_no_arr2_e8_21449_e5_18210.lus:  
+[5, 5, 6, 14, 14, 14, 14, 14, 14, 14]
+set diff:  [0, 1, 8, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  109
+same as one of the MIVCs
+
+
+339) cd_e7_621_e8_714.lus:  
+[1, 2, 2, 2, 2, 2, 2, 2, 2, 8]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 6]
+#of model elements (model size):  9
+final bvc is the subset of one of MIVCs
+
+
+340) DRAGON_all_e2_6104_e1_6205.lus:  
+[9, 14, 15, 15, 15, 15, 15, 15, 15, 15]
+set diff:  [6, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  23
+final bvc is the subset of one of MIVCs
+
+
+341) metros_1_e2_1102_e7_1163.lus:  
+[1, 2, 4, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [1, 2, 3, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  18
+final bvc is the subset of one of MIVCs
+
+
+342) SYNAPSE_3_e7_1444_e8_1581.lus:  
+[6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+final bvc is NOT the subset of any MIVCs
+
+
+343) car_all_e2_142_e7_209.lus:  
+[3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+final bvc is the subset of one of MIVCs
+
+
+344) durationThm_3_e3_442_e7_394.lus:  
+[4, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  8
+same as one of the MIVCs
+
+
+345) metros_1_e1_846_e3_1060.lus:  
+[1, 2, 4, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [1, 2, 4, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  18
+same as one of the MIVCs
+
+
+346) car_2_e7_1027_e1_1047.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+final bvc is the subset of one of MIVCs
+
+
+347) ccp04.lus:  
+[11, 15, 18, 34, 66, 71, 65, 65, 65, 65]
+set diff:  [5, 4, 16, 32, 9, 2, 0, 0, 0]
+#of model elements (model size):  262
+final bvc is NOT the subset of any MIVCs
+
+
+348) ccp05.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  262
+same as one of the MIVCs
+
+
+349) steam_boiler_no_arr2_e3_514_e4_11150.lus:  
+[5, 5, 6, 14, 14, 14, 14, 14, 14, 14]
+set diff:  [0, 1, 8, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  109
+same as one of the MIVCs
+
+
+350) steam_boiler_no_arr2_e7_12307.lus:  
+[5, 5, 6, 14, 14, 14, 14, 14, 14, 14]
+set diff:  [0, 1, 8, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  109
+same as one of the MIVCs
+
+
+351) ccp07.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  262
+same as one of the MIVCs
+
+
+352) DRAGON_3_e3_3846.lus:  
+[8, 11, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+final bvc is the subset of one of MIVCs
+
+
+353) durationThm_1_e3_389_e4_294.lus:  
+[1, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  8
+same as one of the MIVCs
+
+
+354) steam_boiler_no_arr2.lus:  
+[5, 5, 6, 14, 14, 14, 14, 14, 14, 14]
+set diff:  [0, 1, 8, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  109
+same as one of the MIVCs
+
+
+355) car_4_e7_592_e7_265.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+356) car_all_e8_856_e7_578.lus:  
+[3, 3, 3, 3, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 2, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+357) DRAGON_all_e3_4821_e6_2061.lus:  
+[9, 14, 15, 15, 15, 15, 15, 15, 15, 15]
+set diff:  [6, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  23
+final bvc is the subset of one of MIVCs
+
+
+358) durationThm_1_e3_389_e5_5.lus:  
+[1, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  8
+same as one of the MIVCs
+
+
+359) ccp02.lus:  
+[20, 27, 29, 43, 75, 68, 68, 68, 68, 68]
+set diff:  [8, 4, 15, 33, 1, 0, 0, 0, 0]
+#of model elements (model size):  262
+final bvc is NOT the subset of any MIVCs
+
+
+360) durationThm_2_e3_329_e4_1.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  7
+same as one of the MIVCs
+
+
+361) cruise_controller_01.lus:  
+[21, 25, 26, 28, 39, 39, 39, 39, 39, 39]
+set diff:  [6, 2, 3, 14, 0, 0, 0, 0, 0]
+#of model elements (model size):  103
+same as one of the MIVCs
+
+
+362) durationThm_1_e2_305.lus:  
+[1, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  8
+same as one of the MIVCs
+
+
+363) steam_boiler_no_arr1_e4_23904_e4_2384.lus:  
+[6, 11, 128, 128, 128, 128, 128, 128]
+set diff:  [5, 117, 0, 0, 0, 0, 0]
+#of model elements (model size):  571
+same as one of the MIVCs
+
+
+364) car_1_e7_184_e3_299.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+365) DRAGON_all_e3_5957.lus:  
+[17, 38, 47, 47, 47, 47, 47, 47, 47, 47]
+set diff:  [24, 15, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  57
+final bvc is the subset of one of MIVCs
+
+
+366) durationThm_1_e2_3.lus:  
+[1, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  10
+same as one of the MIVCs
+
+
+367) production_cell_e8_792.lus:  
+[1, 26, 26, 26, 26, 26, 26, 26, 26, 26]
+set diff:  [25, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  26
+same as one of the MIVCs
+
+
+368) ccp01.lus:  
+[23, 30, 32, 36, 75, 68, 68, 68, 68, 68]
+set diff:  [9, 4, 4, 40, 1, 0, 0, 0, 0]
+#of model elements (model size):  262
+final bvc is NOT the subset of any MIVCs
+
+
+369) steam_boiler_no_arr2_e6_3003_e4_15091.lus:  
+[5, 5, 6, 14, 14, 14, 14, 14, 14, 14]
+set diff:  [0, 1, 8, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  109
+same as one of the MIVCs
+
+
+370) car_2_e8_491_e7_826.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+final bvc is the subset of one of MIVCs
+
+
+371) cd.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 16]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 13]
+#of model elements (model size):  19
+final bvc is the subset of one of MIVCs
+
+
+372) fast_2.lus:  
+[9, 28, 88, 88, 86, 86, 86, 86, 86, 86]
+set diff:  [19, 60, 0, 5, 0, 0, 0, 0, 0]
+#of model elements (model size):  96
+same as one of the MIVCs
+
+
+373) durationThm_2_e2_63.lus:  
+[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+374) GPCA_SW-property8.lus:  
+[23, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+final bvc is the subset of one of MIVCs
+
+
+375) ccp03.lus:  
+[17, 24, 26, 42, 75, 68, 68, 68, 68, 68]
+set diff:  [8, 4, 16, 34, 1, 0, 0, 0, 0]
+#of model elements (model size):  262
+final bvc is NOT the subset of any MIVCs
+
+
+376) ums_e8_1032.lus:  
+[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  38
+same as one of the MIVCs
+
+
+377) cruise_controller_03.lus:  
+[14, 18, 19, 31, 39, 39, 39, 39, 39, 39]
+set diff:  [5, 2, 12, 12, 0, 0, 0, 0, 0]
+#of model elements (model size):  103
+same as one of the MIVCs
+
+
+378) durationThm_3_e7_334_e3_42.lus:  
+[5, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  10
+same as one of the MIVCs
+
+
+379) DRAGON_all_e1_4022.lus:  
+[9, 14, 15, 15, 15, 15, 15, 15, 15, 15]
+set diff:  [6, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  23
+final bvc is the subset of one of MIVCs
+
+
+380) durationThm_1_e3_389.lus:  
+[1, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  10
+same as one of the MIVCs
+
+
+381) DRAGON_all.lus:  
+[17, 38, 47, 47, 47, 47, 47, 47, 47, 47]
+set diff:  [24, 15, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  57
+final bvc is the subset of one of MIVCs
+
+
+382) Mode_Control-Gaurantee8.lus:  
+[3, 7, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [4, 2, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+383) durationThm_2_e3_99.lus:  
+[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+384) GPCA_SW-property18.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+385) durationThm_1_e3_173.lus:  
+[1, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  8
+same as one of the MIVCs
+
+
+386) durationThm_2_e3_329_e5_124.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  7
+same as one of the MIVCs
+
+
+387) durationThm_2_e3_329.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  7
+same as one of the MIVCs
+
+
+388) MESI_4_e7_1140_e7_433.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+389) MESI_1_e2_162_e7_1545.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+390) MESI_all_e4_1147_e7_497.lus:  
+[3, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+391) MESI_i3_e1_447_e3_1180.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+392) DRAGON_10.lus:  
+[8, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  55
+final bvc is the subset of one of MIVCs
+
+
+393) production_cell_e7_207_e8_241.lus:  
+[1, 12, 12, 12, 12, 12, 12, 12, 12, 12]
+set diff:  [11, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+same as one of the MIVCs
+
+
+394) durationThm_2_e7_145_e3_222.lus:  
+[5, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+395) durationThm_1_e7_217_e3_132.lus:  
+[1, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [6, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  10
+same as one of the MIVCs
+
+
+396) FIREFLY_3_e2_2236_e7_3681.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+397) durationThm_2_e2_206_e7_33.lus:  
+[4, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  7
+same as one of the MIVCs
+
+
+398) FIREFLY_5_e1_2552_e7_1169.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+399) rtp_5_e7_3972.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  24
+same as one of the MIVCs
+
+
+400) FIREFLY_5_e2_2884_e7_3594.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+401) production_cell.lus:  
+[1, 26, 26, 26, 26, 26, 26, 26, 26, 26]
+set diff:  [25, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  26
+same as one of the MIVCs
+
+
+402) durationThm_1_e2_3_e7_336.lus:  
+[1, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [5, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  8
+same as one of the MIVCs
+
+
+403) FIREFLY_4_e3_3511_e5_3248.lus:  
+[7, 9, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [3, 2, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  17
+final bvc is the subset of one of MIVCs
+
+
+404) FIREFLY_10_e7_919_e2_3192.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+405) SYNAPSE_4_e8_420_e7_572.lus:  
+[3, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  23
+same as one of the MIVCs
+
+
+406) reconfiguration_small_bounds.lus:  
+[6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  117
+final bvc is the subset of one of MIVCs
+
+
+407) durationThm_2_e7_145_e2_169.lus:  
+[5, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+408) durationThm_2_e3_329_e7_410.lus:  
+[4, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  7
+same as one of the MIVCs
+
+
+409) FIREFLY_11_e1_3457.lus:  
+[2, 2, 6, 6, 7, 7, 7, 7, 7, 7]
+set diff:  [0, 4, 0, 1, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+410) FIREFLY_11.lus:  
+[2, 2, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [0, 5, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+411) FIREFLY_4_e3_3511_e2_1923.lus:  
+[7, 9, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [3, 2, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  17
+final bvc is the subset of one of MIVCs
+
+
+412) reconfiguration_small.lus:  
+[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  117
+final bvc is the subset of one of MIVCs
+
+
+413) FIREFLY_4_e3_1713.lus:  
+[7, 9, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [3, 2, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  17
+final bvc is the subset of one of MIVCs
+
+
+414) ILLINOIS_5_e7_692_e7_2865.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+415) FIREFLY_4_e3_3511_e3_422.lus:  
+[7, 9, 10, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [3, 1, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  17
+final bvc is the subset of one of MIVCs
+
+
+416) durationThm_2_e1_118.lus:  
+[4, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  7
+same as one of the MIVCs
+
+
+417) FIREFLY_luke_1a.lus:  
+[2, 2, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [0, 5, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+418) FIREFLY_9_e7_170_e3_3647.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  17
+same as one of the MIVCs
+
+
+419) durationThm_1_e7_217_e2_352.lus:  
+[1, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [6, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  10
+same as one of the MIVCs
+
+
+420) tramway_e7_1834_e8_3192.lus:  
+[7, 10, 16, 17, 17, 17, 17, 17, 17, 17]
+set diff:  [4, 6, 5, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  25
+final bvc is the subset of one of MIVCs
+
+
+421) ILLINOIS_4_e7_2651_e7_2847.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+422) FIREFLY_luke_1a_e2_284_e1_2924.lus:  
+[2, 2, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [0, 5, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+423) MOESI_1_e3_1884_e7_1875.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  13
+same as one of the MIVCs
+
+
+424) FIREFLY_4_e3_3511.lus:  
+[14, 26, 33, 34, 34, 34, 34, 34, 34, 35]
+set diff:  [15, 10, 1, 0, 0, 0, 0, 0, 2]
+#of model elements (model size):  42
+final bvc is the subset of one of MIVCs
+
+
+425) rtp_10_e7_106_e7_2564.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  24
+same as one of the MIVCs
+
+
+426) ticket3i_4_e7_1775_e7_3320.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  20
+same as one of the MIVCs
+
+
+427) DRAGON_9_e7_1843_e3_5316.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+428) Microwave_Control-Gaurantee0.lus:  
+[21, 20, 20, 20, 20, 20, 20, 20, 20, 20]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  97
+same as one of the MIVCs
+
+
+429) DRAGON_1_e1_14612_e2_2653_e7_4370.lus:  
+[3, 3, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+same as one of the MIVCs
+
+
+430) MOESI_1_e2_982_e7_492.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  13
+same as one of the MIVCs
+
+
+431) tramway.lus:  
+[14, 24, 49, 55, 58, 58, 58, 58, 58, 58]
+set diff:  [11, 25, 6, 7, 0, 0, 0, 0, 0]
+#of model elements (model size):  70
+final bvc is the subset of one of MIVCs
+
+
+432) FIREFLY_luke_4.lus:  
+[3, 3, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [0, 5, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  39
+same as one of the MIVCs
+
+
+433) durationThm_1_e3_389_e7_358.lus:  
+[1, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [5, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  8
+same as one of the MIVCs
+
+
+434) peterson_1_e7_4234.lus:  
+[2, 2, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [0, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  29
+same as one of the MIVCs
+
+
+435) Microwave_Control-Gaurantee2.lus:  
+[21, 22, 22, 22, 22, 22, 22, 22, 22, 22]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  97
+same as one of the MIVCs
+
+
+436) durationThm_1_e3_389_e6_167.lus:  
+[1, 4, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [3, 3, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  8
+same as one of the MIVCs
+
+
+437) DRAGON_1_e1_14612_e7_1026.lus:  
+[3, 3, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+same as one of the MIVCs
+
+
+438) durationThm_2_e3_329_e6_128.lus:  
+[4, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  7
+same as one of the MIVCs
+
+
+439) SYNAPSE_123_e7_856.lus:  
+[9, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  14
+same as one of the MIVCs
+
+
+440) DRAGON_1_e1_14612_e1_268_e7_501.lus:  
+[3, 3, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+same as one of the MIVCs
+
+
+441) durationThm_3.lus:  
+[5, 5, 5, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [0, 0, 3, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  10
+same as one of the MIVCs
+
+
+442) Microwave_Control-Gaurantee1.lus:  
+[1, 9, 17, 17, 17, 17, 17, 17, 17, 17]
+set diff:  [8, 10, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  97
+same as one of the MIVCs
+
+
+443) SYNAPSE_123_e8_953_e7_1465.lus:  
+[9, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  14
+same as one of the MIVCs
+
+
+444) DRAGON_7_e2_2872_e7_1264.lus:  
+[3, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [5, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+445) DRAGON_1_e3_11891_e7_4569_e4_4881.lus:  
+[3, 3, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+same as one of the MIVCs
+
+
+446) DRAGON_9_e7_1843_e7_2225.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+447) DRAGON_8.lus:  
+[2, 4, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [2, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+448) ticket3i_6_e7_1096_e7_2688.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  20
+same as one of the MIVCs
+
+
+449) DRAGON_9_e7_1843.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+450) SYNAPSE_6_e7_938_e2_1012.lus:  
+[7, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  25
+same as one of the MIVCs
+
+
+451) ticket3i_1_e7_1669.lus:  
+[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+452) DRAGON_6_e7_5046_e7_3623.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+453) ticket3i_5_e7_3307.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  20
+same as one of the MIVCs
+
+
+454) DRAGON_1_e2_1997_e7_3613_e2_3409.lus:  
+[3, 3, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+same as one of the MIVCs
+
+
+455) SYNAPSE_6_e3_1666_e5_1558.lus:  
+[4, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+final bvc is NOT the subset of any MIVCs
+
+
+456) DRAGON_7_e7_3157_e2_2082.lus:  
+[5, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+set diff:  [5, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  55
+same as one of the MIVCs
+
+
+457) car_all_e7_188_e7_743.lus:  
+[3, 3, 3, 3, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 2, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+final bvc is the subset of one of MIVCs
+
+
+458) DRAGON_1_e1_3184_e7_1888.lus:  
+[4, 4, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  54
+same as one of the MIVCs
+
+
+459) ticket3i_all_e2_1117_e7_553.lus:  
+[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+460) ticket3i_all_e7_1837.lus:  
+[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+461) DRAGON_8_e3_786_e7_4541.lus:  
+[2, 4, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [2, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+462) durationThm_3_e3_442_e6_113.lus:  
+[4, 4, 4, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [0, 0, 3, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  8
+same as one of the MIVCs
+
+
+463) durationThm_2.lus:  
+[5, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+set diff:  [5, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+464) durationThm_2_e7_145_e8_73.lus:  
+[5, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+set diff:  [5, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+465) DRAGON_9_e7_1843_e1_5434.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+466) DRAGON_8_e2_3896_e3_3125.lus:  
+[2, 4, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [2, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+467) FIREFLY_rt_e3_1770_e2_637.lus:  
+[6, 9, 11, 15, 16, 16, 16, 16, 16, 16]
+set diff:  [3, 2, 4, 1, 0, 0, 0, 0, 0]
+#of model elements (model size):  19
+same as one of the MIVCs
+
+
+468) FIREFLY_6.lus:  
+[3, 3, 15, 22, 23, 23, 23, 23, 23, 23]
+set diff:  [0, 12, 7, 1, 0, 0, 0, 0, 0]
+#of model elements (model size):  39
+same as one of the MIVCs
+
+
+469) SYNAPSE_6_e2_1439_e1_954.lus:  
+[4, 6, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [3, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+final bvc is NOT the subset of any MIVCs
+
+
+470) durationThm_2_e1_301.lus:  
+[5, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+set diff:  [5, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+471) ticket3i_all_e1_2706_e7_1776.lus:  
+[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+472) FIREFLY_11_e3_2076_e1_1270.lus:  
+[2, 2, 6, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [0, 4, 2, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+473) SYNAPSE_123_e7_837_e7_1262.lus:  
+[14, 14, 14, 14, 14, 14, 14, 14, 14, 14]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  28
+same as one of the MIVCs
+
+
+474) DRAGON_8_e3_786.lus:  
+[2, 4, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [2, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+475) FIREFLY_luke_5.lus:  
+[11, 15, 16, 16, 16, 16, 16, 16, 16, 16]
+set diff:  [5, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  19
+final bvc is the subset of one of MIVCs
+
+
+476) DRAGON_8_e7_3752.lus:  
+[2, 4, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [2, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+477) FIREFLY_luke_1a_e7_3042_e3_1213.lus:  
+[2, 2, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [0, 5, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+478) FIREFLY_luke_1a_e2_284_e3_3091.lus:  
+[2, 2, 6, 8, 7, 7, 7, 7, 7, 7]
+set diff:  [0, 4, 2, 2, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+479) FIREFLY_luke_2_e2_1375_e1_418.lus:  
+[2, 2, 6, 10, 12, 12, 12, 12, 12, 12]
+set diff:  [0, 4, 4, 2, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+480) ILLINOIS_a1.lus:  
+[5, 7, 11, 13, 13, 13, 13, 13, 13, 13]
+set diff:  [2, 4, 2, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  18
+same as one of the MIVCs
+
+
+481) FIREFLY_rt_e7_346_e8_2183.lus:  
+[6, 9, 11, 15, 17, 17, 17, 17, 17, 17]
+set diff:  [3, 2, 4, 2, 0, 0, 0, 0, 0]
+#of model elements (model size):  19
+same as one of the MIVCs
+
+
+482) SYNAPSE_3_e7_1444_e7_638.lus:  
+[6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+483) DRAGON_9_e7_1843_e2_1145.lus:  
+[2, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+484) FIREFLY_luke_2_e7_1826_e8_126.lus:  
+[2, 2, 6, 10, 12, 12, 12, 12, 12, 12]
+set diff:  [0, 4, 4, 2, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+485) FIREFLY_luke_1a_e2_284.lus:  
+[2, 2, 6, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [0, 4, 2, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+486) SYNAPSE_5.lus:  
+[8, 11, 12, 12, 12, 12, 12, 12, 12, 12]
+set diff:  [4, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  25
+final bvc is the subset of one of MIVCs
+
+
+487) FIREFLY_luke_3.lus:  
+[2, 2, 5, 7, 8, 10, 12, 12, 12, 12]
+set diff:  [1, 3, 2, 1, 2, 2, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+488) relatedCounters_small_bounds.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  7
+final bvc is the subset of one of MIVCs
+
+
+489) ticket3i_all_e8_505_e7_2450.lus:  
+[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+490) FIREFLY_luke_3_e1_2217_e3_1200.lus:  
+[2, 2, 5, 7, 8, 10, 11, 11, 11, 11]
+set diff:  [1, 3, 2, 1, 2, 1, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+491) ticket3i_all_e3_557_e7_3464.lus:  
+[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+492) MESI_i3_e1_447_e1_1292.lus:  
+[2, 4, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [2, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+493) SYNAPSE_6_e8_1147_e2_1326.lus:  
+[4, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+final bvc is NOT the subset of any MIVCs
+
+
+494) cruise_controller_14.lus:  
+[5, 14, 28, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [9, 14, 2, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  103
+same as one of the MIVCs
+
+
+495) SYNAPSE_6.lus:  
+[4, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+final bvc is NOT the subset of any MIVCs
+
+
+496) FIREFLY_luke_2.lus:  
+[3, 3, 15, 22, 23, 23, 23, 23, 23, 23]
+set diff:  [0, 12, 7, 1, 0, 0, 0, 0, 0]
+#of model elements (model size):  39
+same as one of the MIVCs
+
+
+497) SYNAPSE_5_e7_1138_e8_809.lus:  
+[5, 7, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [3, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+final bvc is the subset of one of MIVCs
+
+
+498) SYNAPSE_3_e8_1329_e7_1062.lus:  
+[11, 11, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  25
+same as one of the MIVCs
+
+
+499) FIREFLY_6_e2_3302.lus:  
+[2, 2, 6, 10, 11, 11, 11, 11, 11, 11]
+set diff:  [0, 4, 4, 1, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+500) DRAGON_5_e2_3018_e2_936.lus:  
+[2, 5, 10, 11, 11, 12, 12, 12, 12, 12]
+set diff:  [3, 5, 1, 1, 1, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+501) SYNAPSE_5_e2_1525.lus:  
+[5, 7, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [3, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+final bvc is the subset of one of MIVCs
+
+
+502) FIREFLY_u1_e2_3403_e2_957.lus:  
+[2, 2, 5, 10, 10, 10, 11, 11, 11, 11]
+set diff:  [0, 3, 5, 0, 0, 1, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+503) FIREFLY_6_e3_686_e6_2964.lus:  
+[2, 2, 6, 10, 12, 12, 12, 12, 12, 12]
+set diff:  [0, 4, 4, 2, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+504) DRAGON_4_e2_2799_e1_1303.lus:  
+[2, 2, 11, 12, 12, 12, 12, 12, 12, 12]
+set diff:  [0, 9, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+505) FIREFLY_luke_4_e2_325.lus:  
+[3, 3, 7, 15, 19, 19, 19, 19, 19, 19]
+set diff:  [0, 4, 8, 4, 0, 0, 0, 0, 0]
+#of model elements (model size):  39
+same as one of the MIVCs
+
+
+506) microwave22.lus:  
+[1, 26, 38, 47, 47, 52, 55, 55, 55, 55]
+set diff:  [25, 13, 9, 0, 5, 4, 0, 0, 0]
+#of model elements (model size):  106
+final bvc is the subset of one of MIVCs
+
+
+507) SYNAPSE_all_e7_907_e7_1363.lus:  
+[6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+508) ILLINOIS_r4a.lus:  
+[2, 2, 5, 6, 8, 10, 10, 10, 10, 10]
+set diff:  [1, 3, 1, 2, 2, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+509) FIREFLY_u1.lus:  
+[2, 2, 5, 10, 11, 11, 12, 12, 12, 12]
+set diff:  [0, 3, 5, 2, 0, 1, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+510) DRAGON_4_e7_2329_e8_3915.lus:  
+[2, 2, 11, 12, 12, 12, 12, 12, 12, 12]
+set diff:  [0, 9, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+511) rtp_all_e7_2500.lus:  
+[11, 22, 23, 23, 23, 23, 23, 23, 23, 23]
+set diff:  [11, 1, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  25
+same as one of the MIVCs
+
+
+512) twisted_counters.lus:  
+[5, 6, 5, 7, 5, 7, 5, 7, 5, 7]
+set diff:  [1, 0, 2, 0, 2, 0, 2, 0, 2]
+#of model elements (model size):  7
+same as one of the MIVCs
+
+
+513) microwave17.lus:  
+[1, 17, 26]
+set diff:  [16, 9]
+#of model elements (model size):  111
+final bvc is the subset of one of MIVCs
+
+
+514) microwave19.lus:  
+[6, 16, 27, 40, 40, 40, 40, 40, 40, 40]
+set diff:  [10, 12, 13, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  109
+final bvc is the subset of one of MIVCs
+
+
+515) car_6_e1_152_e1_391.lus:  
+[1, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+final bvc is the subset of one of MIVCs
+
+
+516) ticket3i_7_e1_2192_e7_3516.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  20
+same as one of the MIVCs
+
+
+517) FIREFLY_rt.lus:  
+[8, 11, 21, 28, 29, 29, 29, 29, 29, 29]
+set diff:  [3, 10, 7, 1, 0, 0, 0, 0, 0]
+#of model elements (model size):  42
+same as one of the MIVCs
+
+
+518) GPCA_SW-property29.lus:  
+[25, 25, 25, 25, 25, 25, 25, 25, 25, 25]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+519) FIREFLY_luke_1a_e2_284_e2_2755.lus:  
+[2, 2, 6, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [0, 4, 1, 2, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+same as one of the MIVCs
+
+
+520) cruise_controller_12.lus:  
+[4, 13, 32, 47, 61, 54, 54, 54, 54, 54]
+set diff:  [9, 19, 17, 16, 1, 0, 0, 0, 0]
+#of model elements (model size):  103
+same as one of the MIVCs
+
+
+521) ccp18.lus:  
+[5, 17, 51, 95, 110, 106, 106, 106, 106, 106]
+set diff:  [12, 34, 45, 17, 10, 0, 0, 0, 0]
+#of model elements (model size):  262
+final bvc is NOT the subset of any MIVCs
+
+
+522) DRAGON_5_e1_1835.lus:  
+[2, 5, 10, 11, 11, 12, 12, 12, 12, 12]
+set diff:  [3, 5, 1, 0, 1, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+523) Display_Control-Gaurantee1.lus:  
+[2, 6, 8, 11, 7, 7, 7, 7, 7, 7]
+set diff:  [4, 3, 3, 1, 0, 0, 0, 0, 0]
+#of model elements (model size):  64
+same as one of the MIVCs
+
+
+524) GPCA_SW-property57.lus:  
+[15, 15, 15, 15, 15, 15, 15, 15, 15, 15]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+525) ticket3i_7_e2_2724_e7_524.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  20
+same as one of the MIVCs
+
+
+526) microwave24.lus:  
+[6]
+set diff:  []
+#of model elements (model size):  104
+final bvc is the subset of one of MIVCs
+
+
+527) DRAGON_5.lus:  
+[3, 7, 20, 27, 29, 28, 28, 28, 28, 28]
+set diff:  [5, 13, 7, 3, 1, 0, 0, 0, 0]
+#of model elements (model size):  55
+same as one of the MIVCs
+
+
+528) GPCA_SW-property54.lus:  
+[17, 17, 17, 17, 17, 17, 17, 17, 17, 17]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+529) DRAGON_4_e3_1540_e1_5048.lus:  
+[2, 2, 11, 12, 12, 12, 12, 12, 12, 12]
+set diff:  [0, 9, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+530) GPCA_SW-property43.lus:  
+[15, 15, 15, 15, 15, 15, 15, 15, 15, 15]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+531) cruise_controller_24.lus:  
+[4, 13, 32, 47, 61, 54, 54, 54, 54, 54]
+set diff:  [9, 19, 17, 16, 1, 0, 0, 0, 0]
+#of model elements (model size):  103
+same as one of the MIVCs
+
+
+532) car_6_e1_152.lus:  
+[1, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+final bvc is the subset of one of MIVCs
+
+
+533) GPCA_SW-property44.lus:  
+[15, 15, 15, 15, 15, 15, 15, 15, 15, 15]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+534) DRAGON_13_e7_2336_e8_1940.lus:  
+[5, 5, 12, 13, 13, 13, 13, 13, 13, 13]
+set diff:  [0, 7, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+same as one of the MIVCs
+
+
+535) car_5.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+final bvc is the subset of one of MIVCs
+
+
+536) GPCA_SW-property38.lus:  
+[17, 17, 17, 17, 17, 17, 17, 17, 17, 17]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+537) ticket3i_all_e7_591.lus:  
+[9, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  54
+same as one of the MIVCs
+
+
+538) ticket3i_7_e3_59_e7_2122.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  20
+same as one of the MIVCs
+
+
+539) car_5_e7_244.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+final bvc is the subset of one of MIVCs
+
+
+540) ticket3i_7_e1_2192_e1_1852.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  20
+same as one of the MIVCs
+
+
+541) MESI_i3_e1_447_e6_2281.lus:  
+[2, 4, 4, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [2, 0, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+542) GPCA_SW-property9.lus:  
+[23, 23, 23, 23, 23, 23, 23, 23, 23, 23]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+final bvc is the subset of one of MIVCs
+
+
+543) SYNAPSE_all_e7_907.lus:  
+[6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+544) DRAGON_4_e1_4312.lus:  
+[2, 2, 11, 12, 12, 12, 12, 12, 12, 12]
+set diff:  [0, 9, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+545) ticket3i_7_e7_3176_e1_2924.lus:  
+[7, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  54
+same as one of the MIVCs
+
+
+546) GPCA_SW-property30.lus:  
+[17, 22, 22, 22, 22, 22, 22, 22, 22, 22]
+set diff:  [10, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+547) GPCA_SW-property50.lus:  
+[15, 15, 15, 15, 15, 15, 15, 15, 15, 15]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+548) GPCA_SW-property28.lus:  
+[2, 22, 22, 22, 22, 22, 22, 22, 22, 22]
+set diff:  [20, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+549) GPCA_SW-property39.lus:  
+[20, 20, 20, 20, 20, 20, 20, 20, 20, 20]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+550) microwave29.lus:  
+[6, 15, 25]
+set diff:  [9, 11]
+#of model elements (model size):  99
+final bvc is the subset of one of MIVCs
+
+
+551) DRAGON_4_e2_2799_e2_2251.lus:  
+[2, 2, 11, 12, 12, 12, 12, 12, 12, 12]
+set diff:  [0, 9, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+552) GPCA_SW-property58.lus:  
+[28, 28, 28, 28, 28, 28, 28, 28, 28, 28]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+553) DRAGON_13.lus:  
+[8, 8, 21, 29, 39, 38, 38, 40, 41, 41]
+set diff:  [0, 13, 8, 10, 4, 0, 2, 5, 0]
+#of model elements (model size):  57
+same as one of the MIVCs
+
+
+554) ticket3i_7_e7_3176.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  20
+same as one of the MIVCs
+
+
+555) DRAGON_12_e2_1618.lus:  
+[5, 6, 6, 13, 14, 14, 14, 14, 14, 14]
+set diff:  [1, 0, 7, 1, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+same as one of the MIVCs
+
+
+556) DRAGON_4_e2_2799_e3_1915.lus:  
+[2, 2, 11, 12, 12, 12, 12, 12, 12, 12]
+set diff:  [0, 9, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+557) DRAGON_4_e2_2799.lus:  
+[2, 2, 11, 12, 12, 12, 12, 12, 12, 12]
+set diff:  [0, 9, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+558) GPCA_SW-property21.lus:  
+[27, 27, 27, 27, 27, 27, 27, 27, 27, 27]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+559) GPCA_SW-property45.lus:  
+[15, 15, 15, 15, 15, 15, 15, 15, 15, 15]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+560) DRAGON_5_e7_2017_e8_4841.lus:  
+[2, 5, 10, 11, 11, 12, 12, 12, 12, 12]
+set diff:  [3, 5, 1, 1, 1, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+561) GPCA_SW-property19.lus:  
+[2, 23, 23, 23, 23, 23, 23, 23, 23, 23]
+set diff:  [21, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+562) ccp08.lus:  
+[4, 16, 51, 95, 110, 106, 106, 106, 106, 106]
+set diff:  [12, 35, 45, 17, 10, 0, 0, 0, 0]
+#of model elements (model size):  262
+final bvc is NOT the subset of any MIVCs
+
+
+563) DRAGON_12_e2_1618_e3_2012.lus:  
+[5, 6, 6, 13, 14, 14, 14, 14, 14, 14]
+set diff:  [1, 0, 7, 1, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+same as one of the MIVCs
+
+
+564) microwave30.lus:  
+[6, 16, 26, 39, 39, 39, 39, 39, 39, 39]
+set diff:  [10, 11, 13, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  98
+final bvc is the subset of one of MIVCs
+
+
+565) GPCA_SW-property59.lus:  
+[30, 30, 30, 30, 30, 30, 30, 30, 30, 30]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+566) GPCA_SW-property37.lus:  
+[2, 35, 45, 45, 45, 45, 45, 45, 45, 45]
+set diff:  [33, 19, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+567) DRAGON_4_e3_4133.lus:  
+[2, 2, 11, 12, 12, 12, 12, 12, 12, 12]
+set diff:  [0, 9, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  21
+same as one of the MIVCs
+
+
+568) GPCA_SW-property33.lus:  
+[2, 20, 32, 32, 32, 32, 32, 32, 32, 32]
+set diff:  [18, 12, 16, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+569) GPCA_SW-property53.lus:  
+[17, 21, 21, 21, 21, 21, 21, 21, 21, 21]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+570) ticket3i_7_e8_2126_e7_78.lus:  
+[7, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  54
+same as one of the MIVCs
+
+
+571) GPCA_SW-property25.lus:  
+[17, 15, 15, 15, 15, 15, 15, 15, 15, 15]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+final bvc is the subset of one of MIVCs
+
+
+572) FIREFLY_7.lus:  
+[5, 10, 15, 15, 15, 15, 15, 15, 15, 15]
+set diff:  [6, 5, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  17
+same as one of the MIVCs
+
+
+573) car_5_e7_244_e1_823.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+final bvc is the subset of one of MIVCs
+
+
+574) DRAGON_13_e3_1418_e3_2761.lus:  
+[5, 5, 12, 13, 13, 13, 13, 13, 13, 13]
+set diff:  [0, 7, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+same as one of the MIVCs
+
+
+575) GPCA_SW-property47.lus:  
+[15, 34, 43, 43, 43, 43, 43, 43, 43, 43]
+set diff:  [19, 18, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+576) DRAGON_4.lus:  
+[3, 3, 19, 29, 31, 30, 30, 30, 30, 30]
+set diff:  [0, 16, 11, 2, 2, 0, 0, 0, 0]
+#of model elements (model size):  55
+same as one of the MIVCs
+
+
+577) GPCA_SW-property51.lus:  
+[2, 23, 23, 23, 23, 23, 23, 23, 23, 23]
+set diff:  [21, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+578) GPCA_SW-property27.lus:  
+[19, 18, 18, 18, 18, 18, 18, 18, 18, 18]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+579) GPCA_SW-property12.lus:  
+[2, 34, 34, 34, 34, 34, 34, 34, 34, 34]
+set diff:  [32, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+580) SYNAPSE_3_e7_425.lus:  
+[11, 11, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  25
+same as one of the MIVCs
+
+
+581) GPCA_SW-property6.lus:  
+[17, 14, 14, 14, 14, 14, 14, 14, 14, 14]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+582) GPCA_SW-property22.lus:  
+[23, 26, 26, 26, 26, 26, 26, 26, 26, 26]
+set diff:  [6, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+583) DRAGON_12_e2_1618_e2_138.lus:  
+[5, 6, 6, 13, 12, 14, 14, 14, 14, 14]
+set diff:  [1, 0, 7, 1, 3, 0, 0, 0, 0]
+#of model elements (model size):  22
+same as one of the MIVCs
+
+
+584) GPCA_SW-property49.lus:  
+[2, 43, 43, 43, 43, 43, 43, 43, 43, 43]
+set diff:  [41, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+585) DRAGON_12.lus:  
+[8, 9, 13, 33, 28, 40, 38, 41, 41, 41]
+set diff:  [1, 4, 20, 4, 12, 2, 5, 0, 0]
+#of model elements (model size):  57
+same as one of the MIVCs
+
+
+586) metros_2_e1_1116.lus:  
+[1, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+final bvc is the subset of one of MIVCs
+
+
+587) GPCA_SW-property41.lus:  
+[15, 43, 43, 43, 43, 43, 43, 43, 43, 43]
+set diff:  [28, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+588) GPCA_SW-property7.lus:  
+[22, 22, 22, 22, 22, 22, 22, 22, 22, 22]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+589) GPCA_SW-property36.lus:  
+[2, 48, 57, 57, 57, 57, 57, 57, 57, 57]
+set diff:  [46, 18, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+590) Display_Control-Gaurantee0.lus:  
+[2, 5, 8, 10, 12, 10, 10, 10, 10, 10]
+set diff:  [3, 3, 3, 2, 1, 0, 0, 0, 0]
+#of model elements (model size):  64
+same as one of the MIVCs
+
+
+591) GPCA_SW-property24.lus:  
+[2, 20, 46, 46, 46, 46, 46, 46, 46, 46]
+set diff:  [18, 35, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+592) GPCA_SW-property20.lus:  
+[2, 41, 41, 41, 41, 41, 41, 41, 41, 41]
+set diff:  [39, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+593) reconfiguration_medium_bounds.lus:  
+[6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  117
+final bvc is NOT the subset of any MIVCs
+
+
+594) car_2_e7_1027_e7_359.lus:  
+[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+final bvc is the subset of one of MIVCs
+
+
+595) GPCA_SW-property14.lus:  
+[2, 54, 54, 54, 54, 54, 54, 54, 54, 54]
+set diff:  [52, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+596) GPCA_SW-property11.lus:  
+[2, 32, 32, 32, 32, 32, 32, 32, 32, 32]
+set diff:  [30, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+597) GPCA_SW-property26.lus:  
+[19, 18, 18, 18, 18, 18, 18, 18, 18, 18]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+598) GPCA_SW-property42.lus:  
+[24, 33, 42, 42, 42, 42, 42, 42, 42, 42]
+set diff:  [9, 18, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+599) relatedCounters_small.lus:  
+[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  7
+final bvc is the subset of one of MIVCs
+
+
+600) GPCA_SW-property23.lus:  
+[2, 20, 55, 55, 55, 55, 55, 55, 55, 55]
+set diff:  [18, 44, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+601) ccp17.lus:  
+[19, 32, 65, 109, 122, 122, 122, 122, 122, 122]
+set diff:  [14, 33, 45, 15, 12, 0, 0, 0, 0]
+#of model elements (model size):  262
+final bvc is NOT the subset of any MIVCs
+
+
+602) car_6.lus:  
+[1, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  12
+final bvc is the subset of one of MIVCs
+
+
+603) GPCA_SW-property55.lus:  
+[2, 88, 102, 102, 102, 102, 102, 102, 102, 102]
+set diff:  [86, 23, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+604) metros_2.lus:  
+[1, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  16
+final bvc is the subset of one of MIVCs
+
+
+605) DRAGON_12_e2_1618_e1_6030.lus:  
+[5, 6, 6, 13, 14, 14, 14, 14, 14, 14]
+set diff:  [1, 0, 7, 1, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+same as one of the MIVCs
+
+
+606) DRAGON_11_e1_2450.lus:  
+[5, 8, 11, 16, 16, 16, 16, 16, 16]
+set diff:  [3, 3, 5, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+final bvc is the subset of one of MIVCs
+
+
+607) GPCA_SW-property16.lus:  
+[36, 52, 52, 52, 52, 52, 52, 52, 52, 52]
+set diff:  [19, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+final bvc is the subset of one of MIVCs
+
+
+608) GPCA_SW-property10.lus:  
+[2, 20, 52, 52, 52, 52, 52, 52, 52, 52]
+set diff:  [18, 36, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+609) GPCA_SW-property56.lus:  
+[2, 88, 102, 102, 102, 102, 102, 102, 102, 102]
+set diff:  [86, 23, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+610) GPCA_SW-property15.lus:  
+[36, 52, 52, 52, 52, 52, 52, 52, 52, 52]
+set diff:  [19, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+final bvc is the subset of one of MIVCs
+
+
+611) GPCA_SW-property40.lus:  
+[2, 96, 100, 100, 100, 100, 100, 100, 100, 100]
+set diff:  [94, 15, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+612) GPCA_SW-property52.lus:  
+[17, 21, 21, 21, 21, 21, 21, 21, 21, 21]
+set diff:  [4, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+613) reconfiguration_medium.lus:  
+[6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  117
+final bvc is the subset of one of MIVCs
+
+
+614) GPCA_SW-property13.lus:  
+[2, 20, 71, 71, 71, 71, 71, 71, 71, 71]
+set diff:  [18, 55, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+615) GPCA_SW-property17.lus:  
+[2, 52, 52, 52, 52, 52, 52, 52, 52, 52]
+set diff:  [50, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+616) GPCA_SW-property4.lus:  
+[5, 22, 22, 22, 22, 22, 22, 22, 22, 22]
+set diff:  [17, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+617) DRAGON_12_e7_4611_e8_5145.lus:  
+[5, 6, 6, 13, 14, 14, 14, 14, 14, 14]
+set diff:  [1, 0, 7, 1, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+same as one of the MIVCs
+
+
+618) metros_2_e1_190.lus:  
+[1, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+set diff:  [7, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  50
+final bvc is the subset of one of MIVCs
+
+
+619) GPCA_SW-property46.lus:  
+[2, 21, 103, 103, 103, 103, 103, 103, 103, 103]
+set diff:  [19, 91, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+620) GPCA_SW-property3.lus:  
+[5, 22, 22, 22, 22, 22, 22, 22, 22, 22]
+set diff:  [17, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+621) GPCA_SW-property32.lus:  
+[2, 20, 32, 44, 44, 44, 44, 44, 44, 44]
+set diff:  [18, 12, 28, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+622) DRAGON_11_e1_2450_e2_1483.lus:  
+[5, 8, 11, 14, 16, 16, 16, 16, 16]
+set diff:  [3, 3, 3, 2, 0, 0, 0, 0]
+#of model elements (model size):  22
+final bvc is the subset of one of MIVCs
+
+
+623) MESI_i4_e6_2175.lus:  
+[2, 5, 5, 6, 7, 9, 9, 9, 9, 9]
+set diff:  [3, 0, 1, 1, 2, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+624) DRAGON_11_e1_2450_e1_5887.lus:  
+[5, 8, 11, 16, 16, 16, 16, 16, 16]
+set diff:  [3, 3, 5, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+final bvc is the subset of one of MIVCs
+
+
+625) MESI_i4_e7_1017_e6_1132.lus:  
+[2, 5, 5, 6, 7, 9, 9, 9, 9, 9]
+set diff:  [3, 0, 1, 1, 2, 0, 0, 0, 0]
+#of model elements (model size):  11
+same as one of the MIVCs
+
+
+626) DRAGON_all2_e3_4612_e5_3642.lus:  
+[29, 36, 40, 40, 40, 40, 40, 40, 40, 40]
+set diff:  [8, 4, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  41
+final bvc is the subset of one of MIVCs
+
+
+627) DRAGON_all2_e3_4612_e3_1543.lus:  
+[29, 36, 40, 40, 40, 40, 40, 40, 40, 40]
+set diff:  [8, 4, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  41
+final bvc is the subset of one of MIVCs
+
+
+628) DRAGON_11_e2_1678_e1_3565.lus:  
+[5, 8, 11, 14, 16, 16, 16, 16, 16]
+set diff:  [3, 3, 3, 2, 0, 0, 0, 0]
+#of model elements (model size):  22
+final bvc is the subset of one of MIVCs
+
+
+629) GPCA_SW-property2.lus:  
+[5, 12, 12, 12, 12, 12, 12, 12, 12, 12]
+set diff:  [7, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+630) GPCA_SW-property1.lus:  
+[5, 12, 12, 12, 12, 12, 12, 12, 12, 12]
+set diff:  [7, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+631) microwave27.lus:  
+[1]
+set diff:  []
+#of model elements (model size):  101
+final bvc is the subset of one of MIVCs
+
+
+632) DRAGON_all2_e3_4612_e1_6463.lus:  
+[29, 36, 40, 40, 40, 40, 40, 40, 40, 40]
+set diff:  [8, 4, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  41
+final bvc is the subset of one of MIVCs
+
+
+633) DRAGON_11_e2_5396_e3_282.lus:  
+[5, 8, 9, 14, 14, 14, 14, 16, 16]
+set diff:  [3, 1, 5, 0, 0, 0, 2, 0]
+#of model elements (model size):  22
+final bvc is the subset of one of MIVCs
+
+
+634) GPCA_SW-property31.lus:  
+[2, 29, 113, 113, 113, 113, 113, 113, 113, 113]
+set diff:  [27, 91, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+635) DRAGON_11_e1_2450_e3_2330.lus:  
+[5, 8, 11, 16, 16, 16, 16, 16, 16]
+set diff:  [3, 3, 5, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+final bvc is the subset of one of MIVCs
+
+
+636) cruise_controller_10.lus:  
+[5, 15, 33, 37, 45, 45, 45, 45, 45, 45]
+set diff:  [10, 18, 5, 12, 0, 0, 0, 0, 0]
+#of model elements (model size):  103
+same as one of the MIVCs
+
+
+637) GPCA_SW-property48.lus:  
+[2, 139, 150, 150, 150, 150, 150, 150, 150, 150]
+set diff:  [137, 20, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+638) DRAGON_all2_e3_4612_e6_274.lus:  
+[29, 36, 40, 40, 40, 40, 40, 40, 40, 40]
+set diff:  [8, 4, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  41
+final bvc is the subset of one of MIVCs
+
+
+639) DRAGON_11.lus:  
+[5, 8, 11, 14, 16, 16, 16, 16, 16]
+set diff:  [3, 3, 3, 2, 0, 0, 0, 0]
+#of model elements (model size):  22
+final bvc is the subset of one of MIVCs
+
+
+640) GPCA_SW-property5.lus:  
+[5, 12, 12, 12, 12, 12, 12, 12, 12, 12]
+set diff:  [7, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+641) DRAGON_all2_e3_4612_e4_3719.lus:  
+[29, 36, 40, 40, 40, 40, 40, 40, 40, 40]
+set diff:  [8, 4, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  41
+final bvc is the subset of one of MIVCs
+
+
+642) DRAGON_11_e3_382_e1_505.lus:  
+[5, 8, 11, 16, 16, 16, 16, 16, 16]
+set diff:  [3, 3, 5, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+final bvc is the subset of one of MIVCs
+
+
+643) ccp20.lus:  
+[11, 26, 49, 60, 94, 100, 97, 97, 97, 97]
+set diff:  [15, 23, 12, 35, 7, 2, 0, 0, 0]
+#of model elements (model size):  262
+final bvc is NOT the subset of any MIVCs
+
+
+644) DRAGON_all2_e3_4612_e2_5774.lus:  
+[29, 36, 40, 40, 40, 40, 40, 40, 40, 40]
+set diff:  [8, 4, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  41
+final bvc is the subset of one of MIVCs
+
+
+645) GPCA_SW-property34.lus:  
+[2, 17, 29, 112, 112, 112, 112, 112, 112, 112]
+set diff:  [15, 12, 97, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+646) GPCA_SW-property35.lus:  
+[2, 17, 29, 112, 112, 112, 112, 112, 112, 112]
+set diff:  [15, 12, 97, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+647) GPCA_SW-property0.lus:  
+[5, 14, 14, 14, 14, 14, 14, 14, 14, 14]
+set diff:  [9, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  914
+same as one of the MIVCs
+
+
+648) DRAGON_11_e3_382_e4_4421.lus:  
+[5, 8, 11, 16, 16, 16, 16, 16, 16]
+set diff:  [3, 3, 5, 0, 0, 0, 0, 0]
+#of model elements (model size):  22
+final bvc is the subset of one of MIVCs
+
+
+649) microwave26.lus:  
+[1]
+set diff:  []
+#of model elements (model size):  102
+final bvc is the subset of one of MIVCs
+
+
+650) rtp_vt.lus:  
+[6, 7, 13, 21, 26, 28, 28, 28, 28, 28]
+set diff:  [1, 6, 8, 7, 2, 0, 0, 0, 0]
+#of model elements (model size):  28
+same as one of the MIVCs
+
+
+651) DRAGON_all2.lus:  
+[34, 53, 68, 68, 68, 68, 68, 68, 68, 68]
+set diff:  [21, 16, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  71
+final bvc is the subset of one of MIVCs
+
+
+652) cruise_controller_19.lus:  
+[2, 19, 37, 63, 16, 16, 16, 16, 16, 16]
+set diff:  [17, 19, 27, 15, 0, 0, 0, 0, 0]
+#of model elements (model size):  103
+final bvc is NOT the subset of any MIVCs
+
+
+653) cruise_controller_18.lus:  
+[9, 18, 31, 16, 16, 16, 16, 16, 16, 16]
+set diff:  [9, 21, 7, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  103
+final bvc is NOT the subset of any MIVCs
+
+
+654) microwave05.lus:  
+[5, 15, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [10, 2, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  123
+same as one of the MIVCs
+
+
+655) FCC_2ps.lus:  
+[941, 941, 941, 941, 962, 962, 962, 962, 962, 962]
+set diff:  [0, 0, 0, 148, 0, 0, 0, 0, 0]
+#of model elements (model size):  9954
+same as one of the MIVCs
+
+
+656) microwave21.lus:  
+[10, 13, 22, 35, 35, 35]
+set diff:  [8, 9, 13, 0, 0]
+#of model elements (model size):  107
+final bvc is the subset of one of MIVCs
+
+
+657) reconfiguration_large_bound.lus:  
+[6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  117
+final bvc is the subset of one of MIVCs
+
+
+658) reconfiguration_large.lus:  
+[6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  117
+final bvc is the subset of one of MIVCs
+
+
+659) qfcs_fcs.G0.lus:  
+[1, 314, 314, 314, 314, 314, 314, 314, 314, 314]
+set diff:  [313, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  3423
+same as one of the MIVCs
+27
+474
+no available iteration microwave24.lus
+no available iteration microwave27.lus
+no available iteration microwave26.lus
+no available iteration steam_boiler_no_arr1.lus
+no available iteration microwave17.lus 
+no available iteration microwave29.lus   
+no available iteration microwave17.lus
+no available iteration microwave21.lus
+no available iteration steam_boiler_no_arr1_e4_23904_e4_2384.lus
+no available iteration DRAGON_11_e1_2450.lus
+no available iteration DRAGON_11_e1_2450_e2_1483.lus
+no available iteration DRAGON_11_e1_2450_e1_5887.lus
+no available iteration DRAGON_11_e2_1678_e1_3565.lus 
+no available iteration DRAGON_11_e2_5396_e3_282.lus
+no available iteration DRAGON_11_e1_2450_e3_2330.lus
+no available iteration DRAGON_11.lus
+no available iteration DRAGON_11_e3_382_e1_505.lus
+no available iteration DRAGON_11_e3_382_e4_4421.lus 

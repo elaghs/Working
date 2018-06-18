@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<Runs>
+<Results>
+   <Depth>0</Depth>
+   <BVC>__GUARANTEE3</BVC>
+   <BVC>defs__rising_edge~2.signal</BVC>
+   <BVC>defs__is_running~1.m</BVC>
+   <BVC>defs__is_running~1._outvar</BVC>
+   <BVC>defs__rising_edge~2.re</BVC>
+</Results>
+<Results>
+   <Depth>1</Depth>
+   <BVC>__GUARANTEE3</BVC>
+   <BVC>defs__rising_edge~2.signal</BVC>
+   <BVC>defs__is_cooking~0._outvar</BVC>
+   <BVC>defs__is_cooking~0.m</BVC>
+   <BVC>defs__is_cooking~1.m</BVC>
+   <BVC>defs__is_cooking~1._outvar</BVC>
+   <BVC>defs__is_running~1.m</BVC>
+   <BVC>defs__is_running~1._outvar</BVC>
+   <BVC>defs__rising_edge~2.re</BVC>
+</Results>
+<Results>
+   <Depth>2</Depth>
+   <BVC>__GUARANTEE3</BVC>
+   <BVC>defs__rising_edge~2.signal</BVC>
+   <BVC>defs__is_cooking~0._outvar</BVC>
+   <BVC>defs__is_cooking~0.m</BVC>
+   <BVC>defs__is_cooking~1.m</BVC>
+   <BVC>defs__is_cooking~1._outvar</BVC>
+   <BVC>defs__is_running~1.m</BVC>
+   <BVC>defs__is_running~1._outvar</BVC>
+   <BVC>defs__rising_edge~2.re</BVC>
+</Results>
+<Results>
+   <Depth>3</Depth>
+   <BVC>__GUARANTEE3</BVC>
+   <BVC>defs__rising_edge~2.signal</BVC>
+   <BVC>defs__is_cooking~0._outvar</BVC>
+   <BVC>defs__is_cooking~0.m</BVC>
+   <BVC>defs__is_cooking~1.m</BVC>
+   <BVC>defs__is_cooking~1._outvar</BVC>
+   <BVC>defs__is_running~1.m</BVC>
+   <BVC>defs__is_running~1._outvar</BVC>
+   <BVC>defs__rising_edge~2.re</BVC>
+</Results>
+<Results>
+   <Depth>4</Depth>
+   <BVC>__GUARANTEE3</BVC>
+   <BVC>defs__rising_edge~2.signal</BVC>
+   <BVC>defs__is_cooking~0._outvar</BVC>
+   <BVC>defs__is_cooking~0.m</BVC>
+   <BVC>defs__is_cooking~1.m</BVC>
+   <BVC>defs__is_cooking~1._outvar</BVC>
+   <BVC>defs__is_running~1.m</BVC>
+   <BVC>defs__is_running~1._outvar</BVC>
+   <BVC>defs__rising_edge~2.re</BVC>
+</Results>
+<Results>
+   <Depth>5</Depth>
+   <BVC>__GUARANTEE3</BVC>
+   <BVC>defs__rising_edge~2.signal</BVC>
+   <BVC>defs__is_cooking~0._outvar</BVC>
+   <BVC>defs__is_cooking~0.m</BVC>
+   <BVC>defs__is_cooking~1.m</BVC>
+   <BVC>defs__is_cooking~1._outvar</BVC>
+   <BVC>defs__is_running~1.m</BVC>
+   <BVC>defs__is_running~1._outvar</BVC>
+   <BVC>defs__rising_edge~2.re</BVC>
+</Results>
+<Results>
+   <Depth>6</Depth>
+   <BVC>__GUARANTEE3</BVC>
+   <BVC>defs__rising_edge~2.signal</BVC>
+   <BVC>defs__is_cooking~0._outvar</BVC>
+   <BVC>defs__is_cooking~0.m</BVC>
+   <BVC>defs__is_cooking~1.m</BVC>
+   <BVC>defs__is_cooking~1._outvar</BVC>
+   <BVC>defs__is_running~1.m</BVC>
+   <BVC>defs__is_running~1._outvar</BVC>
+   <BVC>defs__rising_edge~2.re</BVC>
+</Results>
+<Results>
+   <Depth>7</Depth>
+   <BVC>__GUARANTEE3</BVC>
+   <BVC>defs__rising_edge~2.signal</BVC>
+   <BVC>defs__is_cooking~0._outvar</BVC>
+   <BVC>defs__is_cooking~0.m</BVC>
+   <BVC>defs__is_cooking~1.m</BVC>
+   <BVC>defs__is_cooking~1._outvar</BVC>
+   <BVC>defs__is_running~1.m</BVC>
+   <BVC>defs__is_running~1._outvar</BVC>
+   <BVC>defs__rising_edge~2.re</BVC>
+</Results>
+<Results>
+   <Depth>8</Depth>
+   <BVC>__GUARANTEE3</BVC>
+   <BVC>defs__rising_edge~2.signal</BVC>
+   <BVC>defs__is_cooking~0._outvar</BVC>
+   <BVC>defs__is_cooking~0.m</BVC>
+   <BVC>defs__is_cooking~1.m</BVC>
+   <BVC>defs__is_cooking~1._outvar</BVC>
+   <BVC>defs__is_running~1.m</BVC>
+   <BVC>defs__is_running~1._outvar</BVC>
+   <BVC>defs__rising_edge~2.re</BVC>
+</Results>
+<Results>
+   <Depth>9</Depth>
+   <BVC>__GUARANTEE3</BVC>
+   <BVC>defs__rising_edge~2.signal</BVC>
+   <BVC>defs__is_cooking~0._outvar</BVC>
+   <BVC>defs__is_cooking~0.m</BVC>
+   <BVC>defs__is_cooking~1.m</BVC>
+   <BVC>defs__is_cooking~1._outvar</BVC>
+   <BVC>defs__is_running~1.m</BVC>
+   <BVC>defs__is_running~1._outvar</BVC>
+   <BVC>defs__rising_edge~2.re</BVC>
+</Results>
+</Runs>

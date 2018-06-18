@@ -1,0 +1,254 @@
+174) ticket3i_2.lus:  subset
+185) ticket3i_3.lus:   subset
+329) ticket3i_3_e8_1703.lus:  subset 
+
+
+
+339) cd_e7_621_e8_714.lus:  
+[1, 2, 2, 2, 2, 2, 2, 2, 2, 8]
+set diff:  [1, 0, 0, 0, 0, 0, 0, 0, 6]
+#of model elements (model size):  9
+final bvc is the subset of one of MIVCs
+
+
+
+347) ccp04.lus:  
+[11, 15, 18, 34, 66, 71, 65, 65, 65, 65]
+set diff:  [5, 4, 16, 32, 9, 2, 0, 0, 0]
+#of model elements (model size):  262
+final bvc is NOT the subset of any MIVCs
+
+521) ccp18.lus:  
+[5, 17, 51, 95, 110, 106, 106, 106, 106, 106]
+set diff:  [12, 34, 45, 17, 10, 0, 0, 0, 0]
+#of model elements (model size):  262
+final bvc is NOT the subset of any MIVCs
+
+359) ccp02.lus:  
+[20, 27, 29, 43, 75, 68, 68, 68, 68, 68]
+set diff:  [8, 4, 15, 33, 1, 0, 0, 0, 0]
+#of model elements (model size):  262
+final bvc is NOT the subset of any MIVCs
+
+368) ccp01.lus:  
+[23, 30, 32, 36, 75, 68, 68, 68, 68, 68]
+set diff:  [9, 4, 4, 40, 1, 0, 0, 0, 0]
+#of model elements (model size):  262
+final bvc is NOT the subset of any MIVCs
+
+375) ccp03.lus:  
+[17, 24, 26, 42, 75, 68, 68, 68, 68, 68]
+set diff:  [8, 4, 16, 34, 1, 0, 0, 0, 0]
+#of model elements (model size):  262
+final bvc is NOT the subset of any MIVCs
+
+562) ccp08.lus:  
+[4, 16, 51, 95, 110, 106, 106, 106, 106, 106]
+set diff:  [12, 35, 45, 17, 10, 0, 0, 0, 0]
+#of model elements (model size):  262
+final bvc is NOT the subset of any MIVCs
+
+643) ccp20.lus:  
+[11, 26, 49, 60, 94, 100, 97, 97, 97, 97]
+set diff:  [15, 23, 12, 35, 7, 2, 0, 0, 0]
+#of model elements (model size):  262
+final bvc is NOT the subset of any MIVCs
+
+652) cruise_controller_19.lus:  
+[2, 19, 37, 63, 16, 16, 16, 16, 16, 16]
+set diff:  [17, 19, 27, 15, 0, 0, 0, 0, 0]
+#of model elements (model size):  103
+final bvc is NOT the subset of any MIVCs
+
+
+653) cruise_controller_18.lus:  
+[9, 18, 31, 16, 16, 16, 16, 16, 16, 16]
+set diff:  [9, 21, 7, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  103
+final bvc is NOT the subset of any MIVCs
+
+z3:
+653) cruise_controller_18.lus:  
+[9, 14, 32, 45, 16, 16, 16, 16, 16, 16]
+set diff:  [12, 18, 13, 2, 0, 0, 0, 0, 0]
+#of model elements (model size):  103
+final bvc is NOT the subset of any MIVCs
+
+
+
+
+
+257) fast_1_e8_751.lus:  
+[2, 9, 34, 36, 28, 28, 28, 28, 28, 28]
+set diff:  [7, 27, 2, 5, 0, 0, 0, 0, 0]
+#of model elements (model size):  70
+same as one of the MIVCs
+
+z3:
+257) fast_1_e8_751.lus:  
+[2, 9, 28, 28, 28, 28, 28, 28, 28, 28]
+set diff:  [7, 23, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  70
+same as one of the MIVCs
+
+
+
+654) microwave05.lus:  
+[5, 15, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [10, 2, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  123
+same as one of the MIVCs
+
+z3:
+654) microwave05.lus:  
+[5, 16, 11, 11, 11, 11, 11, 11, 11, 11]
+set diff:  [12, 3, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  123
+same as one of the MIVCs
+
+
+
+585) DRAGON_12.lus:  
+[8, 9, 13, 33, 28, 40, 38, 41, 41, 41]
+set diff:  [1, 4, 20, 4, 12, 2, 5, 0, 0]
+#of model elements (model size):  57
+same as one of the MIVCs
+
+z3:
+585) DRAGON_12.lus:  
+[8, 11, 18, 25, 28, 38, 38, 32, 32, 32]
+set diff:  [5, 7, 7, 4, 10, 0, 2, 0, 0]
+#of model elements (model size):  57
+same as one of the MIVCs
+
+
+
+590) Display_Control-Gaurantee0.lus:  
+[2, 5, 8, 10, 12, 10, 10, 10, 10, 10]
+set diff:  [3, 3, 3, 2, 1, 0, 0, 0, 0]
+#of model elements (model size):  64
+same as one of the MIVCs
+
+z3:
+590) Display_Control-Gaurantee0.lus:  
+[2, 5, 8, 10, 10, 10, 10, 10, 10, 10]
+set diff:  [3, 3, 3, 1, 0, 0, 0, 0, 0]
+#of model elements (model size):  64
+same as one of the MIVCs
+
+
+
+
+
+
+266) fast_2_e8_976.lus:  
+[9, 24, 84, 84, 82, 82, 82, 82, 82, 82]
+set diff:  [15, 60, 0, 5, 0, 0, 0, 0, 0]
+#of model elements (model size):  96
+same as one of the MIVCs
+
+z3:
+266) fast_2_e8_976.lus:  
+[9, 24, 82, 82, 82, 82, 82, 82, 82, 82]
+set diff:  [15, 58, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  96
+same as one of the MIVCs
+
+
+
+
+
+
+512) twisted_counters.lus:  
+[5, 6, 5, 7, 5, 7, 5, 7, 5, 7]
+set diff:  [1, 0, 2, 0, 2, 0, 2, 0, 2]
+#of model elements (model size):  7
+same as one of the MIVCs
+
+z3:
+512) twisted_counters.lus:  
+[5, 6, 5, 7, 5, 7, 5, 7, 5, 7]
+set diff:  [1, 1, 2, 0, 2, 0, 2, 0, 2]
+#of model elements (model size):  7
+same as one of the MIVCs
+
+
+
+
+
+312) two_counters.lus:  
+[5, 6, 6, 5, 5, 6, 6, 5, 5, 6]
+set diff:  [1, 0, 0, 1, 1, 0, 0, 1, 1]
+#of model elements (model size):  6
+same as one of the MIVCs
+
+z3:
+312) two_counters.lus:  
+[5, 6, 6, 5, 5, 6, 6, 5, 5, 6]
+set diff:  [1, 0, 0, 1, 1, 0, 0, 1, 1]
+#of model elements (model size):  6
+same as one of the MIVCs
+
+
+
+
+
+326) cruise_controller_04.lus:  
+[9, 12, 14, 28, 37, 36, 36, 36, 36, 36]
+set diff:  [3, 2, 14, 11, 4, 0, 0, 0, 0]
+#of model elements (model size):  103
+same as one of the MIVCs
+
+z3:
+326) cruise_controller_04.lus:  
+[9, 12, 14, 28, 37, 37, 37, 37, 37, 37]
+set diff:  [3, 2, 14, 15, 0, 0, 0, 0, 0]
+#of model elements (model size):  103
+final bvc is NOT the subset of any MIVCs
+
+
+
+
+
+319) Display_Control-Gaurantee2.lus:  
+[2, 6, 10, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [4, 4, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  64
+same as one of the MIVCs
+
+523) Display_Control-Gaurantee1.lus:  
+[2, 6, 8, 11, 7, 7, 7, 7, 7, 7]
+set diff:  [4, 3, 3, 1, 0, 0, 0, 0, 0]
+#of model elements (model size):  64
+same as one of the MIVCs
+
+531) cruise_controller_24.lus:  
+[4, 13, 32, 47, 61, 54, 54, 54, 54, 54]
+set diff:  [9, 19, 17, 16, 1, 0, 0, 0, 0]
+#of model elements (model size):  103
+same as one of the MIVCs
+
+553) DRAGON_13.lus:  
+[8, 8, 21, 29, 39, 38, 38, 40, 41, 41]
+set diff:  [0, 13, 8, 10, 4, 0, 2, 5, 0]
+#of model elements (model size):  57
+same as one of the MIVCs
+
+
+
+
+
+314) steam_boiler_no_arr1.lus:  
+[6, 11, 128]
+set diff:  [5, 117]
+#of model elements (model size):  571
+same as one of the MIVCs
+
+
+
+
+186) car_all_e8_856_e2_585.lus:  
+[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+set diff:  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  27
+final bvc is the subset of one of MIVCs

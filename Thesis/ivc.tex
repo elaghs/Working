@@ -102,6 +102,18 @@ do not affect the satisfaction of $P$.  For comparison, note that a backwards st
 
 Generally, an IVC computation technique aims to determine, for any subset $S \subseteq T$, whether $P$ is provable by $S$. Then, a minimal subset that satisfies $P$ is seen as a minimal proof explanation called a minimal Inductive Validity Core.
 
+The notion of validity cores can be adapted for \emph{bounded} model checking to quantify how much of models have been explored by bounded analysis. We coin the term \emph{Bounded Validity Core (\bvc)} for this idea. 
+
+\begin{definition}{\emph{Bounded Validity Core (\bvc):}}
+  \label{def:ivc}
+  Let $(I, T)$ be a transition system and let $P$ be a
+  safety property that is valid\emph{ up to }a given bound $k$, denoted by $(I, T)\vdash _{k} P$.
+  We say $S \subseteq T$ for $(I, T)\vdash P$ is a Bounded Validity Core at depth $k$,
+  denoted by $\bvc _{k}(P, S)$, iff $(I, S) \vdash _{k} P $.
+  When $I$, $T$, and $P$ can be inferred from
+  context we will simply say $S$ is a bounded validity core at depth $k$.
+\end{definition}
+
 
 \section{Algorithms for computing an inductive validity core}
 %\label{subsec:ivcalg}

@@ -37,13 +37,14 @@
 \BOOKMARK [0][-]{chapter.5}{Implementation}{}% 37
 \BOOKMARK [0][-]{chapter.6}{Experiment}{}% 38
 \BOOKMARK [1][-]{subsection.6.0.1}{Experimental Setup}{chapter.6}% 39
-\BOOKMARK [1][-]{section.6.1}{Experimental Results}{chapter.6}% 40
-\BOOKMARK [1][-]{section.6.2}{Experiments on the Online method of computing AIVCs}{chapter.6}% 41
-\BOOKMARK [2][-]{subsection.6.2.1}{Experimental Results}{section.6.2}% 42
-\BOOKMARK [0][-]{chapter.7}{Applications}{}% 43
-\BOOKMARK [1][-]{section.7.1}{Automatic Proof-Based Traceability}{chapter.7}% 44
-\BOOKMARK [1][-]{section.7.2}{Coverage Analysis and Requirements Completeness}{chapter.7}% 45
-\BOOKMARK [1][-]{section.7.3}{Discussion}{chapter.7}% 46
-\BOOKMARK [2][-]{subsection.7.3.1}{Granularity}{section.7.3}% 47
-\BOOKMARK [0][-]{chapter.8}{Conclusions and Future Work}{}% 48
-\BOOKMARK [0][-]{chapter*.40}{References}{}% 49
+\BOOKMARK [2][-]{subsection.6.0.2}{Experimental Results}{subsection.6.0.1}% 40
+\BOOKMARK [1][-]{section.6.1}{Experiments on the Online method of computing AIVCs}{chapter.6}% 41
+\BOOKMARK [2][-]{subsection.6.1.1}{Experimental Results}{section.6.1}% 42
+\BOOKMARK [1][-]{section.6.2}{Experiments on BVCs}{chapter.6}% 43
+\BOOKMARK [0][-]{chapter.7}{Applications}{}% 44
+\BOOKMARK [1][-]{section.7.1}{Automatic Proof-Based Traceability}{chapter.7}% 45
+\BOOKMARK [1][-]{section.7.2}{Coverage Analysis and Requirements Completeness}{chapter.7}% 46
+\BOOKMARK [1][-]{section.7.3}{Discussion}{chapter.7}% 47
+\BOOKMARK [2][-]{subsection.7.3.1}{Granularity}{section.7.3}% 48
+\BOOKMARK [0][-]{chapter.8}{Conclusions and Future Work}{}% 49
+\BOOKMARK [0][-]{chapter*.41}{References}{}% 50

@@ -1,0 +1,6 @@
+'all_ivcs_no_proof', (0, 5930)
+'proof_time', (6144, 5930)
+'uc_time_no_proof', (12288, 5930)
+'uc_time_w_proof', (18432, 5930)
+'all_ivcs_w_proof', (24576, 5930)
+'number_of_ivc_sets', (30720, 1478)

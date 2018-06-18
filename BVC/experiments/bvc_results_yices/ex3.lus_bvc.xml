@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<Runs>
+<Results>
+   <Depth>0</Depth>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>1</Depth>
+   <BVC>speed~0.early</BVC>
+   <BVC>OK</BVC>
+   <BVC>early</BVC>
+</Results>
+<Results>
+   <Depth>2</Depth>
+   <BVC>speed~0.early</BVC>
+   <BVC>speed~0.diff</BVC>
+   <BVC>speed~0.incr</BVC>
+   <BVC>speed~0.COUNTER~0.C</BVC>
+   <BVC>speed~0.COUNTER~0.PC</BVC>
+   <BVC>speed~0.COUNTER~0.init</BVC>
+   <BVC>speed~0.COUNTER~0.incr</BVC>
+   <BVC>OK</BVC>
+   <BVC>early</BVC>
+</Results>
+<Results>
+   <Depth>3</Depth>
+   <BVC>speed~0.early</BVC>
+   <BVC>speed~0.diff</BVC>
+   <BVC>speed~0.incr</BVC>
+   <BVC>speed~0.COUNTER~0.C</BVC>
+   <BVC>speed~0.COUNTER~0.PC</BVC>
+   <BVC>speed~0.COUNTER~0.init</BVC>
+   <BVC>speed~0.COUNTER~0.incr</BVC>
+   <BVC>OK</BVC>
+   <BVC>early</BVC>
+</Results>
+<Results>
+   <Depth>4</Depth>
+   <BVC>speed~0.early</BVC>
+   <BVC>speed~0.diff</BVC>
+   <BVC>speed~0.incr</BVC>
+   <BVC>speed~0.COUNTER~0.C</BVC>
+   <BVC>speed~0.COUNTER~0.PC</BVC>
+   <BVC>speed~0.COUNTER~0.init</BVC>
+   <BVC>speed~0.COUNTER~0.incr</BVC>
+   <BVC>OK</BVC>
+   <BVC>early</BVC>
+</Results>
+<Results>
+   <Depth>5</Depth>
+   <BVC>speed~0.diff</BVC>
+   <BVC>late</BVC>
+   <BVC>speed~0.late</BVC>
+   <BVC>speed~0.incr</BVC>
+   <BVC>speed~0.COUNTER~0.C</BVC>
+   <BVC>speed~0.COUNTER~0.PC</BVC>
+   <BVC>speed~0.COUNTER~0.init</BVC>
+   <BVC>speed~0.COUNTER~0.incr</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>6</Depth>
+   <BVC>speed~0.diff</BVC>
+   <BVC>late</BVC>
+   <BVC>speed~0.late</BVC>
+   <BVC>speed~0.incr</BVC>
+   <BVC>speed~0.COUNTER~0.C</BVC>
+   <BVC>speed~0.COUNTER~0.PC</BVC>
+   <BVC>speed~0.COUNTER~0.init</BVC>
+   <BVC>speed~0.COUNTER~0.incr</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>7</Depth>
+   <BVC>speed~0.diff</BVC>
+   <BVC>late</BVC>
+   <BVC>speed~0.late</BVC>
+   <BVC>speed~0.incr</BVC>
+   <BVC>speed~0.COUNTER~0.C</BVC>
+   <BVC>speed~0.COUNTER~0.PC</BVC>
+   <BVC>speed~0.COUNTER~0.init</BVC>
+   <BVC>speed~0.COUNTER~0.incr</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>8</Depth>
+   <BVC>speed~0.diff</BVC>
+   <BVC>late</BVC>
+   <BVC>speed~0.late</BVC>
+   <BVC>speed~0.incr</BVC>
+   <BVC>speed~0.COUNTER~0.C</BVC>
+   <BVC>speed~0.COUNTER~0.PC</BVC>
+   <BVC>speed~0.COUNTER~0.init</BVC>
+   <BVC>speed~0.COUNTER~0.incr</BVC>
+   <BVC>OK</BVC>
+</Results>
+<Results>
+   <Depth>9</Depth>
+   <BVC>speed~0.diff</BVC>
+   <BVC>late</BVC>
+   <BVC>speed~0.late</BVC>
+   <BVC>speed~0.incr</BVC>
+   <BVC>speed~0.COUNTER~0.C</BVC>
+   <BVC>speed~0.COUNTER~0.PC</BVC>
+   <BVC>speed~0.COUNTER~0.init</BVC>
+   <BVC>speed~0.COUNTER~0.incr</BVC>
+   <BVC>OK</BVC>
+</Results>
+</Runs>

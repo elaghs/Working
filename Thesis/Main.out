@@ -36,15 +36,20 @@
 \BOOKMARK [2][-]{subsection.4.4.2}{Online AIVC}{section.4.4}% 36
 \BOOKMARK [0][-]{chapter.5}{Implementation}{}% 37
 \BOOKMARK [0][-]{chapter.6}{Experiment}{}% 38
-\BOOKMARK [1][-]{subsection.6.0.1}{Experimental Setup}{chapter.6}% 39
-\BOOKMARK [2][-]{subsection.6.0.2}{Experimental Results}{subsection.6.0.1}% 40
-\BOOKMARK [1][-]{section.6.1}{Experiments on the Online method of computing AIVCs}{chapter.6}% 41
-\BOOKMARK [2][-]{subsection.6.1.1}{Experimental Results}{section.6.1}% 42
-\BOOKMARK [1][-]{section.6.2}{Experiments on BVCs}{chapter.6}% 43
-\BOOKMARK [0][-]{chapter.7}{Applications}{}% 44
-\BOOKMARK [1][-]{section.7.1}{Automatic Proof-Based Traceability}{chapter.7}% 45
-\BOOKMARK [1][-]{section.7.2}{Coverage Analysis and Requirements Completeness}{chapter.7}% 46
-\BOOKMARK [1][-]{section.7.3}{Discussion}{chapter.7}% 47
-\BOOKMARK [2][-]{subsection.7.3.1}{Granularity}{section.7.3}% 48
-\BOOKMARK [0][-]{chapter.8}{Conclusions and Future Work}{}% 49
-\BOOKMARK [0][-]{chapter*.41}{References}{}% 50
+\BOOKMARK [1][-]{section.6.1}{Initial Experiments}{chapter.6}% 39
+\BOOKMARK [1][-]{section.6.2}{Experiments on the IVC\137UC and ALL\137IVCs Algorithms}{chapter.6}% 40
+\BOOKMARK [2][-]{subsection.6.2.1}{Experimental Setup}{section.6.2}% 41
+\BOOKMARK [2][-]{subsection.6.2.2}{Experimental Results}{section.6.2}% 42
+\BOOKMARK [1][-]{section.6.3}{Experiments on the Online method of computing AIVCs}{chapter.6}% 43
+\BOOKMARK [2][-]{subsection.6.3.1}{Experimental Setup}{section.6.3}% 44
+\BOOKMARK [2][-]{subsection.6.3.2}{Experimental Results}{section.6.3}% 45
+\BOOKMARK [1][-]{section.6.4}{Experiments on BVCs}{chapter.6}% 46
+\BOOKMARK [2][-]{subsection.6.4.1}{Experimental Setup}{section.6.4}% 47
+\BOOKMARK [0][-]{chapter.7}{Applications}{}% 48
+\BOOKMARK [1][-]{section.7.1}{Automatic Proof-Based Traceability}{chapter.7}% 49
+\BOOKMARK [1][-]{section.7.2}{Coverage Analysis and Requirements Completeness}{chapter.7}% 50
+\BOOKMARK [1][-]{section.7.3}{Discussion}{chapter.7}% 51
+\BOOKMARK [2][-]{subsection.7.3.1}{Granularity}{section.7.3}% 52
+\BOOKMARK [0][-]{chapter.8}{Conclusions and Future Work}{}% 53
+\BOOKMARK [1][-]{section.8.1}{Future Research Directions}{chapter.8}% 54
+\BOOKMARK [0][-]{chapter*.53}{References}{}% 55

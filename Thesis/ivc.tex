@@ -1,7 +1,7 @@
 \chapter{Inductive Validity Cores}
 \label{ch:ivc}
 
-Let us start with a very simple system from the avionics domain to illustrate our approach. An Altitude Switch (ASW) is a hypothetical device that turns power on to another subsystem, the Device of Interest (DOI), when the aircraft descends below a threshold altitude, and turns the power off again after the aircraft ascends over the threshold plus some hysteresis factor.  An implementation of an ASW containing two altimeters written in the Lustre language (simplified and adapted from Heimdahl \textit{et al.}~\cite{HCW02:ase-deviation}) is shown in Fig.~\ref{fig:asw}.  If the system is not inhibited, and either altimeter is below the constant {\small \texttt{THRESHOLD}}, then it turns on the DOI; else, if the system is inhibited or both altimeters are above the threshold plus the hysteresis factor {\small \texttt{T\_HYST}}, then the DOI is turned off, and if neither condition holds, then in the initial computation it is false and thereafter retains its previous value.  The notation {\small \texttt{(false -> pre(doi\_on))}} in equation (7) describes an initialized register in Lustre: in the first step, the expression is {\small \texttt{false}}, and thereafter it is the previous value of {\small \texttt{doi\_on}}. The input variable {\small\texttt{inhibit}} determines whether or not the system is inhibited.
+Let us start with a very simple system from the avionics domain to illustrate our approach. An Altitude Switch (ASW) is a hypothetical device that turns power on to another subsystem, the Device of Interest (DOI), when the aircraft descends below a threshold altitude, and turns the power off again after the aircraft ascends over the threshold plus some hysteresis factor.  An implementation of an ASW containing two altimeters written in the Lustre language (simplified and adapted from Heimdahl \textit{et al.}~\cite{HCW02:ase-deviation}) is shown in Figure~\ref{fig:asw}.  If the system is not inhibited, and either altimeter is below the constant {\small \texttt{THRESHOLD}}, then it turns on the DOI; else, if the system is inhibited or both altimeters are above the threshold plus the hysteresis factor {\small \texttt{T\_HYST}}, then the DOI is turned off, and if neither condition holds, then in the initial computation it is false and thereafter retains its previous value.  The notation {\small \texttt{(false -> pre(doi\_on))}} in equation (7) describes an initialized register in Lustre: in the first step, the expression is {\small \texttt{false}}, and thereafter it is the previous value of {\small \texttt{doi\_on}}. The input variable {\small\texttt{inhibit}} determines whether or not the system is inhibited.
 
 A simple property {\small \texttt{on\_p}} states that if both altimeters are under the threshold, then the DOI is turned on:
 {\smaller
@@ -83,7 +83,7 @@ Inductive validity cores have the following monotonicity property.
   of $(I, S_1)$.
 \end{proof}
 
-Fig.~\ref{fig:ivcs} illustrates these notions by a graphical representation of minimal IVCs for property $P = ({\small{\texttt{on\_p}}})$ in the ASW example. As shown in the picture, this property has two distinct \mivc s, which means the model satisfies $P$ in two different ways:  {\small \texttt{\{\{a1\_below, below, doi\_on\}, \{a2\_below, below, doi\_on\}\}}}, This is because in the implementation, the DOI is turned on when either of the altimeters is below the threshold, while our property states that they both must be below.
+Figure~\ref{fig:ivcs} illustrates these notions by a graphical representation of minimal IVCs for property $P = ({\small{\texttt{on\_p}}})$ in the ASW example. As shown in the picture, this property has two distinct \mivc s, which means the model satisfies $P$ in two different ways:  {\small \texttt{\{\{a1\_below, below, doi\_on\}, \{a2\_below, below, doi\_on\}\}}}, This is because in the implementation, the DOI is turned on when either of the altimeters is below the threshold, while our property states that they both must be below.
 Note that there is a subset of model elements, $\{{\small \texttt{a1\_above, a2\_above, above\_hyst, d1, d2}}\}$, that does not show up in $AIVC(P)$. Elements in such a subset
 do not affect the satisfaction of $P$.  For comparison, note that a backwards static slice starting from {\small{\texttt{on\_p}}} will include the entire model.
 %In the complete ASW model in~\cite{HCW02:ase-deviation} there are additional properties that use these elements, but they are not necessary for the discussion in this paper.
@@ -92,7 +92,7 @@ do not affect the satisfaction of $P$.  For comparison, note that a backwards st
  \centering
   \includegraphics[width=0.70\columnwidth]{figs/ivcs.jpg}
   \vspace{-0.1in}
-  \caption{Graphical representation of \mivc s for the model in Fig.~\ref{fig:asw}
+  \caption{Graphical representation of \mivc s for the model in Figure~\ref{fig:asw}
   with  $P = ({\small \texttt{on\_p}})$}
   \label{fig:ivcs}
   %\vspace{-0.2in}

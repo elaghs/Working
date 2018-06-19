@@ -24,7 +24,7 @@ In addition, we have performed a substantial evaluation that shows that the prac
 %We selected only benchmark problems consisting of a Lustre model with
 %properties that \texttt{JKind} could prove with a 3-hour timeout.
 %Experiments are run in a configuration with the \texttt{Z3} solver and the ``fastest'' mode of \texttt{JKind} (which involves running the $k$-induction and PDR engines in parallel and terminating when a solution is found). The experiments are expected to be run on an  Intel(R) i5-4690, 3.50GHz, 16 GB memory machine running Linux, and available online.
-
+\section{Future Research Directions}
 Our method for computing all MIVCs is inspired by a recent work in the domain of satisfiability analysis \cite{marco2016fast}. One interesting future direction is to devise similar MIVC enumeration algorithms based on other studies on MUSes extraction such as \cite{nadel2014accelerated}.
 Another interesting direction for this project is to parallelize the enumeration process: it is certainly possible to ask for multiple distinct maximal models to be solved in parallel.
 A straight forward parallelization starts with computing one approximate IVC. Then \mustalg can be executed on one machine while several other engines are running the \aivcalg in parallel. The results of \mustalg shall be dispatched among the engines to expedite the process of exploring the map \footnote{see \ref{sec:offaivc}}.

@@ -83,7 +83,7 @@ final bvc is NOT the subset of any MIVCs
 set diff:  [7, 27, 2, 5, 0, 0, 0, 0, 0]
 #of model elements (model size):  70
 same as one of the MIVCs
-
+1
 z3:
 257) fast_1_e8_751.lus:  
 [2, 9, 28, 28, 28, 28, 28, 28, 28, 28]
@@ -98,7 +98,7 @@ same as one of the MIVCs
 set diff:  [10, 2, 0, 0, 0, 0, 0, 0, 0]
 #of model elements (model size):  123
 same as one of the MIVCs
-
+1
 z3:
 654) microwave05.lus:  
 [5, 16, 11, 11, 11, 11, 11, 11, 11, 11]
@@ -113,7 +113,7 @@ same as one of the MIVCs
 set diff:  [1, 4, 20, 4, 12, 2, 5, 0, 0]
 #of model elements (model size):  57
 same as one of the MIVCs
-
+7
 z3:
 585) DRAGON_12.lus:  
 [8, 11, 18, 25, 28, 38, 38, 32, 32, 32]
@@ -128,7 +128,7 @@ same as one of the MIVCs
 set diff:  [3, 3, 3, 2, 1, 0, 0, 0, 0]
 #of model elements (model size):  64
 same as one of the MIVCs
-
+9
 z3:
 590) Display_Control-Gaurantee0.lus:  
 [2, 5, 8, 10, 10, 10, 10, 10, 10, 10]
@@ -146,7 +146,7 @@ same as one of the MIVCs
 set diff:  [15, 60, 0, 5, 0, 0, 0, 0, 0]
 #of model elements (model size):  96
 same as one of the MIVCs
-
+1
 z3:
 266) fast_2_e8_976.lus:  
 [9, 24, 82, 82, 82, 82, 82, 82, 82, 82]
@@ -164,7 +164,7 @@ same as one of the MIVCs
 set diff:  [1, 0, 2, 0, 2, 0, 2, 0, 2]
 #of model elements (model size):  7
 same as one of the MIVCs
-
+1
 z3:
 512) twisted_counters.lus:  
 [5, 6, 5, 7, 5, 7, 5, 7, 5, 7]
@@ -181,7 +181,7 @@ same as one of the MIVCs
 set diff:  [1, 0, 0, 1, 1, 0, 0, 1, 1]
 #of model elements (model size):  6
 same as one of the MIVCs
-
+#mivc:1
 z3:
 312) two_counters.lus:  
 [5, 6, 6, 5, 5, 6, 6, 5, 5, 6]
@@ -205,7 +205,7 @@ z3:
 set diff:  [3, 2, 14, 15, 0, 0, 0, 0, 0]
 #of model elements (model size):  103
 final bvc is NOT the subset of any MIVCs
-
+mivcs:1
 
 
 
@@ -215,26 +215,54 @@ final bvc is NOT the subset of any MIVCs
 set diff:  [4, 4, 1, 0, 0, 0, 0, 0, 0]
 #of model elements (model size):  64
 same as one of the MIVCs
+#1
+319) Display_Control-Gaurantee2.lus:  
+[2, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+set diff:  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  64
+same as one of the MIVCs
+
+
 
 523) Display_Control-Gaurantee1.lus:  
 [2, 6, 8, 11, 7, 7, 7, 7, 7, 7]
 set diff:  [4, 3, 3, 1, 0, 0, 0, 0, 0]
 #of model elements (model size):  64
 same as one of the MIVCs
+#1
+523) Display_Control-Gaurantee1.lus:  
+[2, 5, 8, 7, 7, 7, 7, 7, 7, 7]
+set diff:  [3, 3, 1, 0, 0, 0, 0, 0, 0]
+#of model elements (model size):  64
+same as one of the MIVCs
+
+
 
 531) cruise_controller_24.lus:  
 [4, 13, 32, 47, 61, 54, 54, 54, 54, 54]
 set diff:  [9, 19, 17, 16, 1, 0, 0, 0, 0]
 #of model elements (model size):  103
 same as one of the MIVCs
+#mivcs:8
+531) cruise_controller_24.lus:  
+[4, 13, 39, 49, 61, 54, 54, 54, 54, 54]
+set diff:  [9, 26, 16, 12, 1, 0, 0, 0, 0]
+#of model elements (model size):  103
+same as one of the MIVCs
+
+
 
 553) DRAGON_13.lus:  
 [8, 8, 21, 29, 39, 38, 38, 40, 41, 41]
 set diff:  [0, 13, 8, 10, 4, 0, 2, 5, 0]
 #of model elements (model size):  57
 same as one of the MIVCs
-
-
+#mivcs: 6
+553) DRAGON_13.lus:  
+[8, 17, 21, 29, 32, 38, 38, 32, 32, 32]
+set diff:  [10, 7, 8, 8, 8, 0, 2, 0, 0]
+#of model elements (model size):  57
+same as one of the MIVCs
 
 
 

@@ -4,7 +4,12 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Runtime of different computations\relax }}{57}{table.caption.25}
+\contentsline {table}{\numberline {6.1}{\ignorespaces \texttt {\relax \fontsize {10}{12}\selectfont \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {IVC\_UC}}runtime with different solvers\relax }}{57}{table.caption.25}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Overhead of \texttt {\relax \fontsize {10}{12}\selectfont \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {IVC\_UC}}computations using different solvers\relax }}{58}{table.caption.26}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Pairwise Jaccard distances among all models\relax }}{60}{table.caption.29}
+\contentsline {table}{\numberline {6.4}{\ignorespaces Aggregate IVC sizes produced by \texttt {\relax \fontsize {10}{12}\selectfont \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {IVC\_UC}}\ using different inductive algorithms and solvers\relax }}{61}{table.caption.31}
+\contentsline {table}{\numberline {6.5}{\ignorespaces Runtime of different computations\relax }}{64}{table.caption.34}
+\contentsline {table}{\numberline {6.6}{\ignorespaces BVC runs for the models with non-increasing behavior where $\textit {BVC}_{max}$ is the same as one of the MIVCs\relax }}{72}{table.caption.45}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {7.1}{\ignorespaces Coverage score of different algorithms\relax }}{73}{table.caption.38}
+\contentsline {table}{\numberline {7.1}{\ignorespaces Coverage score of different algorithms\relax }}{83}{table.caption.50}
 \addvspace {10\p@ }

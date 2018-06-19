@@ -1,0 +1,63 @@
+The purpose of this experiment is to observe and study how validity cores evolves over unrolling the transition relation. It is interesting to see how quickly validity cores from a bounded proof converges to an actual minimal IVC.
+
+\subsection{Experimental Setup}
+  We perform our experiments on the same benchmark suite with 660 models introduced in Section \ref{sec:expsetup}. The experiment is conducted with a maximum depth of 10 and one hour timeout; i.e. for each model, if unrolling to depth 10 takes more than one hour, the \bvcalg algorithm will terminate. We capture $\bvc _{k}$ for $ 0 \leq k \le 10$. Then compare each $\bvc _{k}$ with each other to see how they alter during unrolling. Then, the final bounded validity cores obtained from at the maximum
+  \footnote{Maximum in this experiment is 10. For most of the models, it is possible to reach this depth in less than an hour.}
+  reachable depth in one hour, denoted by $\bvc _{max}$ , are considered as our final cores. These cores are compared with all the MIVCs gathered in Section \ref{subsec:res} to see if they match up with any of the actual minimal IVCs.
+
+Research questions we would like to answer in this study are as follows:
+\begin{itemize}
+  \item \textbf{RQ1:} How many of the final BVCs do match up with one of the MIVCs? For how many of the models does the algorithm time out?
+  \item \textbf{RQ2:} At what rate does size of the BVCs change? Does the size of the cores increase with the depth? How fast do BVCs converge to MIVCs?
+  \item \textbf{RQ3:} Is there any relationship with the size of the models and convergence of the BVCs?
+\end{itemize}
+
+\vspace{0.1in}
+\subsubsection{RQ1}
+The result of the experiments show that $\bvc _{max}$ is the same as one of the MIVCs for 474 models out of 660. For 27 of the models, $\bvc _{max}$ was not subset of any MIVCs (had additional elements, also none of the MIVCs was a subset of the $\bvc _{max}$). However, $\bvc _{max}$ was a subset of one of the MIVCs in 159 of the models.
+
+\vspace{0.1in}
+\subsubsection{RQ2}
+Our experimental results show that among 474 models for which $\bvc _{max}$ is the same as one of the MIVCs, the size of the BVCs were (nonstrictly) increasing 99.9\% of the time:
+      $$ 0 \leq i \le max, |\bvc _{i}| \leq |\bvc _{i+1}|$$
+      In other words, for only 12 of these models, the above relation did not hold.
+      It is expected that bounded cores in each unrolling step (nonstrictly) increases as in each step more states are being reached and the cores required for the proof of the property is more likely to expand.
+      We run the experiments over those 12 models with different solvers (once with \texttt{Z3} and once with \texttt{Yices}). In both runs, these models, mostly, behave the same (except 3 of them; see Table \ref{tab:bvc-abnormal}).
+
+      It takes further study to see why those 12 models show different behavior, which is beyond the scope of this thesis. An initial explanation would be that when a model has several distinct MIVCs, the bounded core could change during unrolling. However, we examined these models and there are ones with a single MIVC that behaved abnormally. Another possibility could be that MIVCs obtained from \aivcalg ~contained timeout loops; i.e. we do not have the exact minimal IVCs for those cases (for example model\#6 in Table \ref{tab:bvc-abnormal}).
+
+       The result of BVC runs for these models (on \texttt{Yices}) is shown in Table \ref{tab:bvc-abnormal}.
+
+\begin{table}
+  \caption{BVC runs for the models with non-increasing behavior where $\bvc _{max}$ is the same as one of the MIVCs}
+  \centering
+  \begin{tabularx}{\linewidth}{ |c||c|c|c|c|c|c|c|c|c|c||L|L|}
+    \hline
+    $|\bvc _{i}| / i=$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & \small{model size} & \small{\#of MIVCs} \\[0.5ex]
+    \hline\hline
+    
+    model\#1& 2 & 9 & 34 & 36& 28 & 28 & 28 & 28 & 28 & 28 & 70&1 \\[0.5ex]
+    model\#2& 5 & 15 & 11& 11& 11 & 11 & 11 & 11 & 11 & 11 & 123 &1\\[0.5ex]
+    model\#3& 8 & 9& 13& 33& 28& 40& 38& 41& 41& 41&57 &7 \\[0.5ex]
+    model\#4& 2& 5& 8& 10& 12& 10& 10& 10& 10& 10 &64 &9\\[0.5ex]
+    \small{model\#5 (\texttt{Yices})}&9& 24 & 84& 84& 82& 82& 82& 82& 82& 82&96 &1\\[0.5ex]
+    \small{model\#5 (\texttt{Z3})}& 9& 24& 82& 82& 82& 82& 82& 82& 82& 82&96 &1\\[0.5ex]
+    model\#6& 5& 6& 5& 7& 5& 7& 5& 7& 5& 7& 7 &1\\[0.5ex]
+    model\#7& 5& 6& 6& 5& 5& 6& 6& 5& 5& 6&6 &1\\[0.5ex]
+    \small{model\#8 (\texttt{Yices})}& 9& 12& 14& 28& 37& 36& 36& 36& 36& 36&103&1 \\[0.5ex]
+    \small{model\#8 (\texttt{Z3})}&9& 12& 14& 28& 37& 37& 37& 37& 37& 37& 103&1\\[0.5ex]
+    \small{model\#9 (\texttt{Yices})}& 2& 6& 10& 4& 4& 4& 4& 4& 4& 4 &64&1 \\[0.5ex]
+    \small{model\#9 (\texttt{Z3})}& 2& 4& 4& 4& 4& 4& 4& 4& 4& 4 &64&1\\[0.5ex]
+    model\#10& 2& 6& 8& 11& 7& 7& 7& 7& 7& 7 &64&1\\[0.5ex]
+    model\#11& 4& 13& 32& 47& 61& 54& 54& 54& 54& 54 &103&8 \\[0.5ex]
+ \small{model\#12 (\texttt{Yices})}& 8& 8& 21& 29& 39& 38& 38& 40& 41& 41&57&6\\[0.5ex]
+  \small{model\#12 (\texttt{Z3})}& 8& 17& 21& 29& 32& 38& 38& 32& 32& 32&57&6 \\[0.5ex]
+    \hline
+  \end{tabularx} \\
+  \label{tab:bvc-abnormal}
+\end{table}
+      
+
+\vspace{0.1in}
+\subsubsection{RQ3}
+To show 

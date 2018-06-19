@@ -22,14 +22,14 @@
 \contentsline {section}{\numberline {3.8}Safety Standards}{22}{section.3.8}
 \contentsline {chapter}{\numberline {4}Inductive Validity Cores}{26}{chapter.4}
 \contentsline {section}{\numberline {4.1}Algorithms for computing an inductive validity core}{30}{section.4.1}
-\contentsline {section}{\numberline {4.2}Algorithms for computing bounded validity cores}{35}{section.4.2}
+\contentsline {section}{\numberline {4.2}Algorithms for computing bounded validity cores}{34}{section.4.2}
 \contentsline {section}{\numberline {4.3}Algorithm for computing all minimal inductive validity cores}{35}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Offline Algorithm for all MIVCs}{36}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}Online Algorithm for all MIVCs}{42}{subsection.4.3.2}
 \contentsline {subsection}{\numberline {4.3.3}Shrink Procedure}{43}{subsection.4.3.3}
 \contentsline {subsection}{\numberline {4.3.4}Grow Procedure}{44}{subsection.4.3.4}
 \contentsline {subsection}{\numberline {4.3.5}Solve Procedure}{45}{subsection.4.3.5}
-\contentsline {subsection}{\numberline {4.3.6}Complete Algorithm}{45}{subsection.4.3.6}
+\contentsline {subsection}{\numberline {4.3.6}Complete Algorithm}{46}{subsection.4.3.6}
 \contentsline {paragraph}{Correctness:}{47}{section*.21}
 \contentsline {subsection}{\numberline {4.3.7}Symbolic Representation of Unexplored Subsets}{47}{subsection.4.3.7}
 \contentsline {section}{\numberline {4.4}Illustration}{48}{section.4.4}
@@ -37,21 +37,31 @@
 \contentsline {subsection}{\numberline {4.4.2}Online AIVC}{49}{subsection.4.4.2}
 \contentsline {chapter}{\numberline {5}Implementation}{53}{chapter.5}
 \contentsline {chapter}{\numberline {6}Experiment}{55}{chapter.6}
-\contentsline {subsection}{\numberline {6.0.1}Experimental Setup}{56}{subsection.6.0.1}
-\contentsline {subsection}{\numberline {6.0.2}Experimental Results}{56}{subsection.6.0.2}
-\contentsline {subsubsection}{RQ1}{56}{section*.24}
-\contentsline {subsubsection}{RQ2}{58}{section*.26}
-\contentsline {subsubsection}{RQ3}{58}{section*.27}
-\contentsline {section}{\numberline {6.1}Experiments on the Online method of computing AIVCs}{59}{section.6.1}
-\contentsline {paragraph}{Experimental Setup}{60}{section*.30}
-\contentsline {subsection}{\numberline {6.1.1}Experimental Results}{61}{subsection.6.1.1}
-\contentsline {paragraph}{RQ1 and RQ2:}{61}{section*.32}
-\contentsline {paragraph}{RQ3:}{62}{section*.33}
-\contentsline {section}{\numberline {6.2}Experiments on BVCs}{63}{section.6.2}
-\contentsline {chapter}{\numberline {7}Applications}{64}{chapter.7}
-\contentsline {section}{\numberline {7.1}Automatic Proof-Based Traceability}{64}{section.7.1}
-\contentsline {section}{\numberline {7.2}Coverage Analysis and Requirements Completeness}{65}{section.7.2}
-\contentsline {section}{\numberline {7.3}Discussion}{74}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}Granularity}{76}{subsection.7.3.1}
-\contentsline {chapter}{\numberline {8}Conclusions and Future Work}{79}{chapter.8}
-\contentsline {chapter}{References}{83}{chapter*.41}
+\contentsline {section}{\numberline {6.1}Initial Experiments}{56}{section.6.1}
+\contentsline {subsubsection}{RQ1}{57}{section*.23}
+\contentsline {subsubsection}{RQ2}{59}{section*.27}
+\contentsline {subsubsection}{RQ3}{59}{section*.28}
+\contentsline {section}{\numberline {6.2}Experiments on the IVC\_UC and ALL\_IVCs Algorithms}{61}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Experimental Setup}{62}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Experimental Results}{62}{subsection.6.2.2}
+\contentsline {subsubsection}{RQ1}{62}{section*.33}
+\contentsline {subsubsection}{RQ2}{63}{section*.35}
+\contentsline {subsubsection}{RQ3}{64}{section*.36}
+\contentsline {section}{\numberline {6.3}Experiments on the Online method of computing AIVCs}{65}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Experimental Setup}{66}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Experimental Results}{67}{subsection.6.3.2}
+\contentsline {subsubsection}{RQ1 and RQ2}{67}{section*.40}
+\contentsline {subsubsection}{RQ3}{67}{section*.41}
+\contentsline {section}{\numberline {6.4}Experiments on BVCs}{69}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Experimental Setup}{69}{subsection.6.4.1}
+\contentsline {subsubsection}{RQ1}{71}{section*.43}
+\contentsline {subsubsection}{RQ2}{71}{section*.44}
+\contentsline {subsubsection}{RQ3}{73}{section*.46}
+\contentsline {chapter}{\numberline {7}Applications}{74}{chapter.7}
+\contentsline {section}{\numberline {7.1}Automatic Proof-Based Traceability}{74}{section.7.1}
+\contentsline {section}{\numberline {7.2}Coverage Analysis and Requirements Completeness}{75}{section.7.2}
+\contentsline {section}{\numberline {7.3}Discussion}{84}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Granularity}{86}{subsection.7.3.1}
+\contentsline {chapter}{\numberline {8}Conclusions and Future Work}{89}{chapter.8}
+\contentsline {section}{\numberline {8.1}Future Research Directions}{90}{section.8.1}
+\contentsline {chapter}{References}{93}{chapter*.53}

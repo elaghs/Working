@@ -46,6 +46,8 @@ It is important to note that by increasing the timeout, it is possible that
 in some cases smaller IVCs can be generated, but the general problem will remain due
 to the undecidability of the model checking problem.
 
+To implement \bvcalg\ algorithm, we have added a new tool to \texttt{JKind}. In the implementation, basically, the \texttt{JKind} BMC engine has been hacked to emit the bounded cores after each step of transition relation unrolling. The user needs to provide a desired bound and timeout for this calculation.
+
 
 
 

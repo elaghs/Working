@@ -55,13 +55,13 @@
 \contentsline {section}{\numberline {6.4}Experiments on BVCs}{69}{section.6.4}
 \contentsline {subsection}{\numberline {6.4.1}Experimental Setup}{69}{subsection.6.4.1}
 \contentsline {subsubsection}{RQ1}{71}{section*.43}
-\contentsline {subsubsection}{RQ2}{71}{section*.44}
-\contentsline {subsubsection}{RQ3}{73}{section*.46}
-\contentsline {chapter}{\numberline {7}Applications}{74}{chapter.7}
-\contentsline {section}{\numberline {7.1}Automatic Proof-Based Traceability}{74}{section.7.1}
-\contentsline {section}{\numberline {7.2}Coverage Analysis and Requirements Completeness}{75}{section.7.2}
-\contentsline {section}{\numberline {7.3}Discussion}{84}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}Granularity}{86}{subsection.7.3.1}
-\contentsline {chapter}{\numberline {8}Conclusions and Future Work}{89}{chapter.8}
-\contentsline {section}{\numberline {8.1}Future Research Directions}{90}{section.8.1}
-\contentsline {chapter}{References}{93}{chapter*.53}
+\contentsline {subsubsection}{RQ2}{72}{section*.44}
+\contentsline {subsubsection}{RQ3}{75}{section*.47}
+\contentsline {chapter}{\numberline {7}Applications}{77}{chapter.7}
+\contentsline {section}{\numberline {7.1}Automatic Proof-Based Traceability}{77}{section.7.1}
+\contentsline {section}{\numberline {7.2}Coverage Analysis and Requirements Completeness}{78}{section.7.2}
+\contentsline {section}{\numberline {7.3}Discussion}{87}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Granularity}{89}{subsection.7.3.1}
+\contentsline {chapter}{\numberline {8}Conclusions and Future Work}{92}{chapter.8}
+\contentsline {section}{\numberline {8.1}Future Research Directions}{93}{section.8.1}
+\contentsline {chapter}{References}{96}{chapter*.56}

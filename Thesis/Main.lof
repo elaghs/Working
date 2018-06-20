@@ -17,9 +17,12 @@
 \contentsline {figure}{\numberline {6.6}{\ignorespaces Number of MIVCs produced by online algorithms.\relax }}{68}{figure.caption.39}
 \contentsline {figure}{\numberline {6.7}{\ignorespaces Runtime for tractable benchmarks for all algorithms in a log scale.\relax }}{68}{figure.caption.39}
 \contentsline {figure}{\numberline {6.8}{\ignorespaces Average number of performed adequacy checks required to produce individual MIVCs. Note that Figure (b) is in a log scale.\relax }}{70}{figure.caption.42}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Size of BVCs at depth 0, 3, max\relax }}{74}{figure.caption.45}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Difference between $\textit {BVC}_{max}$ and MIVCs\relax }}{75}{figure.caption.48}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Difference between $\textit {BVC}_{max}$ and MIVCs vs the model size\relax }}{76}{figure.caption.49}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Runtime of different analyses\relax }}{81}{figure.caption.48}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Size of the set of covered elements by different algorithms\relax }}{82}{figure.caption.49}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Elements covered by the initial property set\relax }}{84}{figure.caption.51}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Elements covered by the final property set\relax }}{86}{figure.caption.52}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Runtime of different analyses\relax }}{84}{figure.caption.51}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Size of the set of covered elements by different algorithms\relax }}{85}{figure.caption.52}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Elements covered by the initial property set\relax }}{87}{figure.caption.54}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Elements covered by the final property set\relax }}{89}{figure.caption.55}
 \addvspace {10\p@ }

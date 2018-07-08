@@ -1,4 +1,4 @@
-\chapter{Experiment}
+\chapter{Experiments}
 \label{ch:experiment}
 
 \newcommand{\takeaway}[1]{
@@ -6,16 +6,16 @@
 \noindent\fbox{\parbox{\textwidth}{#1}}
 \vspace{6pt}
 }
-We would like to evaluate different algorithms presented in Chapter \ref{ch:ivc}. 
+We would like to evaluate different algorithms presented in Chapter \ref{ch:ivc}.
  The use of \texttt{JKind} allows additional dimensions to our investigation: as mentioned before, it supports two different inductive algorithms: $k$-induction and PDR, and a ``fastest'' mode, that runs both algorithms in parallel.  Also, \texttt{JKind} supports multiple back-end SMT solvers including \texttt{Z3}~\cite{DeMoura08:z3}, \texttt{Yices}~\cite{Dutertre06:yices}, \texttt{MathSAT}~\cite{Cimatti2013:MathSAT}, and \texttt{SMTInterpol}~\cite{Christ2012:SMTInterpol}.
- 
+
  This chapter is organized in two separate parts; first we present an initial evaluation to address a basic question for IVC computation: we would like to determine whether the choice of inductive algorithm affects the size of the IVCs calculated by \ucalg , whether different solvers are more or less efficient at producing approximate minimal IVCs (\ucalg), and whether running different solvers/algorithms leads to {\em diversity} of IVC solutions obtained by \ucalg\ (Section \ref{sec:exprinit}).
 
 The initial experiments allow us to choose an optimal configuration for \texttt{JKind} based on which we can run our major experiments. The major experiments are conducted to evaluate the efficiency and efficacy the IVC algorithms. Section \ref{sec:exp1} is about the evaluation of our two key proposed algorithms: \ucalg\ and \aivcalg . Then in Section \ref{sec:exp2}, we examine our approach for calculating all minimal IVCs in the online manner as described in \ref{sec:onaivc}. Finally in Section \ref{sec:exp3}, we investigate a couple of interesting research questions related to the bounded validity cores.
 
-\section{Initial Experiments}
+\section{Experiments involving single IVCs}
 \label{sec:exprinit}
-For the purpose of initial experiments, we started from a suite of 700 Lustre models developed
+We started from a suite of 700 Lustre models developed
 as a benchmark suite for~\cite{Hagen08:FMCAD}. We augmented this suite
 with 81 additional models from recent verification projects including
 avionics and medical devices~\cite{QFCS15:backes,hilt2013}. Most of
@@ -74,7 +74,7 @@ solvers both in terms of computation time and overhead.
   \centering
   \includegraphics[width=\textwidth]{figs/performance_solvers.png}
     \vspace{-0.1in}
-  \caption{\ucalg\ performance on different solvers} 
+  \caption{\ucalg\ performance on different solvers}
   \label{fig:perf-solvers}
 \end{figure*}
 
@@ -193,7 +193,7 @@ max, and mean pairwise Jaccard distance of the solutions produced by algorithm
   \caption{Pairwise Jaccard distance between IVCs}\label{fig:jacdis}
 \end{figure*}
 
-\iffalse 
+\iffalse
 
 To measure the overall similarity among all sets, instead of a pairwise comparison, we used \emph{frequent pattern mining} \cite{han2007frequent}. To define an overall similarity among all sets of support of a given model\footnote{Note that all models in the benchmarks are single property; hence, instead of saying a set of support of a given \emph{property}, we just refer it as the support set of the \emph{model} while explaining the experimental results.}, we calculated a \emph{core} support set for each model in the benchmark, which can be considered as a closed frequent pattern; a core set of model $M$, denoted by $C_M$, is defined as:
 \begin{definition}

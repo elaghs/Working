@@ -143,8 +143,9 @@ $k$-step unrolling of a transition relation. Symbolic model checkers usually emp
 Another form of symbolic evaluation is performed through bounded model checking.
 The goal of bounded model checking is to decide if a given program reaches an error within at
 most $k$ unfolding of the transition relation. Although bounded model checkers do not provide a full proof of correctness, they are useful to discover bugs. For example, \texttt{CBMC} \cite{cbmc} checks array bounds (buffer overflows), absence of
-null de-references, and assertions. The \texttt{Alloy analyzer} \cite{alloy} is another bounded model checker that checks temporal formulas specified using LTL. This tool also has a core extraction capability based on UNSAT cores.
+null de-references, and assertions. The \texttt{Alloy analyzer} \cite{alloy} is another bounded model checker that checks temporal formulas specified using LTL. This tool also has a core extraction capability based on UNSAT cores. \texttt{JBMC} \cite{jbmc} is a Bounded Model Checker for Java programs that checks runtime exceptions and user-definded assertions. \texttt{LLBMC} is another bounded model checker for finding bugs in C/C++ programs, mainly intended for checking low-level system code. By exploiting the UNSAT core generation mechanism, we will be able to determine bounded validity cores using these tools\footnote{See \ref{sec:muses} and \ref{sec:bvc}.}.
 
+\subsection{Compositional Reasoning}
 Complex systems are usually composed from libraries of components. The specification of such systems are decomposed into properties of each individual component. Then, compositional verification is employed to ensure the correctness of the top level properties, while integrating components \cite{NFM2012:CoGaMiWhLaLu}. Previously Murugesan et al. demonstrated ~\cite{hilt2013} a model-based approach to system construction in which compositional proofs are used to to establish satisfaction arguments. To cope with the complexity of modeling and scalability of verification of large systems,
 they proposed an approach in which systems can be decomposed into subsystems, modeled individually and verified compositionally. The decomposition of system into subsystems induces the need to decompose the requirements of the system `flowed down'' to each subsystem that is then modeled and verified.
 
@@ -154,16 +155,9 @@ Given an architectural model of the system (decomposition of system into compone
 
 To verify the requirements, AGREE uses the JKind~\cite{jkind} model checker. The underlying SMT solver in JKind automatically constructs proofs to establish satisfaction of requirements in the model. A proof can be visualized as a derivation tree where the leaves of the tree are axioms -- elements of the model such as components requirements, interface connections, system assumptions -- and each interior node represents the application of an inference rule that leads to proving the system requirement. If the solver encounters a violation of a requirement while constructing the proof, it reports it along with a counterexample - a concrete path of execution that explains the violation. On the other hand, when the proof is successfully constructed, the tool reports that the requirement is satisfied.
 
-While the above approach is very useful in proving system level requirements, in the event
-that requirement is proved, it is not always clear what level of assurance should be invested in the
-result.  Given that these kinds of analyses are typically performed for safety critical system, this
-can lead to overconfidence in the behavior of the fielded system.
-Hence, to gain confidence over the verification we pursed an approach that would provide
-us with an evidence of the successful verification. An evidence in this context is nothing but an
+An evidence in this context is nothing but an
 explanation about which parts of the model (the component requirements and system assumptions) the
-model checker used to prove the system level requirement.
-
-Since the solvers typically abstract away the proof it creates, with IVCs, we develop a technique to query the solver to excavate the axioms that were used as part of the proof. The IVC helps explain how the solver reported the satisfaction of the requirement, that is comparable to the counterexample explains the negative result.
+model checker used to prove the system level requirement. Since the solvers typically abstract away the proof it creates, with IVCs, we develop a technique to query the solver to excavate the axioms that were used as part of the proof. The IVC helps explain how the solver reported the satisfaction of the requirement, that is comparable to the counterexample explains the negative result.
 
 
 
@@ -197,17 +191,108 @@ In fact, to start the verification process and IVC computation, we fisrt perform
 
 
 \section{UNSAT cores and Minimal UNSAT Subformulae}
+\label{sec:muses}
 Satisfiability Modulo (the) Theory (SMT) solvers are powerful tools to decide the
 satisfiability of boolean combinations
-of propositional atoms in the language of a specific theory. For a given unsatisfiable problem instance, solvers try to generate a proof of unsatisfiability. It is usually more useful to have a minimum proof of unsatisfiability. Such a proof is dependent on identifying a sub-set of clauses that make the problem unsatisfiable. Solvers are usually capable of reporting such sub-sets in the proof, which is known as \emph{UNSAT core}. However, the generated unsat core is not guaranteed to be minimal.
-Our work builds on top of a substantial foundation building Minimally Unsatisfiable Subformulas
-(MUSes) from UNSAT cores~\cite{Cimatti2007:UNSAT}, including \cite{marques2010minimal, belov2012towards, ryvchin2011faster, belov2012computing, nadel2010boosting}.  Recent algorithms can handle very large problems, but computing MUSes is still a resource-intensive task.  While some work is aimed at providing a set of minimal unsatisfiable formulae, minimality is usually defined such that given a set of clauses $\mathbb{M}$, removing any member of $\mathbb{M}$ makes it satisfiable \cite{belov2012computing}.  The step of producing minimal invariants for proofs has been investigated in depth by Ivrii et al. in~\cite{Ivrii14:invariants}.
+of propositional atoms in the language of a specific theory. 
+A Boolean formula is satisfiable if there is a consistent assignment of values $true$ or $false$ to its variables in such a way that the formula evaluates to $true$. If the formula evaluates to $false$ for all possible variable assignments, then it is unsatisfiable. For example, the formula
+ $a \wedge \neg a$ is unsatisfiable because there is no possible 
+ assignment for $a$ to make the formula 
+ evaluate to $true$. 
+ On the other hand the formula
+  $a \vee b$ is satisfiable when at least 
+  either $a$ or $b$ 
+  is assigned to $true$. An assignment that makes the formula $true$ is called a model. Solvers return a satisfiable model in case the formula is satisfiable: $a = true$ is one possible model for our example.
+
+For a given unsatisfiable problem instance, solvers try to generate a proof of unsatisfiability. It is usually more useful to have a minimum proof of unsatisfiability. Such a proof is dependent on identifying a sub-set of clauses that make the problem unsatisfiable. Solvers are usually capable of reporting such sub-sets in the proof, which is known as \emph{UNSAT core}. However, the generated unsat core is not guaranteed to be minimal.
+
+Every propositional logic formula can be transformed into an equivalent conjunctive normal form (CNF) using the laws of Boolean algebra. So, a satisfiability problem can be given to a solver as a set of queries. A formula is in CNF, if it is a conjunction of clauses (or a single clause). Each clause is disjunction of positive or negative literals (i.e. a variable or the negation of a variable). So each CNF formula can be formulated as a finite set of clauses (or constraints). Then we assume there is a function $\checksat(F)$ which determines if $F$ is satisfiable or not. 
+When $F$ is unsatisfiable, we assume we
+have a function $\unsatcore()$ which returns a minimal subset of the
+constraints such that the formula is satisfiable without them. 
+
+\begin{definition}{\emph{Minimal Unsatisfiable Subformulas(MUSes):}}
+  \label{def:mus}
+  Let $C$ be a finite set of constraints.
+  $U \subseteq C$ be its unsatisfiable subset. 
+  A constraint $c \in U$ is an 
+  unsatisfiable core for $U$ if $U \setminus \{c\}$ is satisfiable.
+  A set of all unsatisfiable cores of $U$ constitute 
+  an MUS for $C$. 
+  Note that such a set is not necessarily unique, and $C$ can have several distinct MUSes.
+\end{definition}
+
+Our work builds on top of a substantial foundation building
+MUSes from UNSAT cores~\cite{Cimatti2007:UNSAT}, including \cite{marques2010minimal, belov2012towards, ryvchin2011faster, belov2012computing, nadel2010boosting}.  Recent algorithms can handle very large problems, but computing MUSes is still a resource-intensive task.  While some work is aimed at providing a set of minimal unsatisfiable formulae, minimality is usually defined such that given a set of clauses $M$, removing any member of $M$ makes it satisfiable \cite{belov2012computing}.  The step of producing minimal invariants for proofs has been investigated in depth by Ivrii et al. in~\cite{Ivrii14:invariants}.
 
 In  recent  years,  a  number  of  efficient algorithms  for  extracting minimal UNSAT subformulae (MUSes)  have  been proposed \cite{liffiton2005max},
-most of which are focused on computing a single MUS  \cite{bacchus2015using, belov2012muser2, belov2013core, belov2012towards, nadel2014accelerated}.
-However, an unsatisfiable problem can have several distinct MUSes. Although the problem of finding all MUSes is even harder than finding one MUS, there is some strong research in the literature focusing on this problem. For example, Recent work by Liffiton et al. \cite{marco2016fast} proposed an efficient algorithm to generate MUSes.
+most of which are focused on computing a single MUS  \cite{bacchus2015using, belov2012muser2, belov2013core, belov2012towards, nadel2014accelerated}. A general algorithm for extracting a single MUS is shown in \ref{alg:mus}.
+
+\begin{algorithm}[t]
+  \SetKwInOut{Input}{input}
+  \SetKwInOut{Output}{output}
+  \Input{an unsatisfiable set of constraints $C$}
+  \Output{MUS $M$}
+  \BlankLine
+  $M \leftarrow C$\\
+  \For{$c \in M$} {
+    \If{$\checksat(M \setminus c) = \unsat$}{
+      $M \leftarrow M \setminus \{c\}$
+    }
+  }
+  \Return{M}
+\caption{SAT domain single MUS extraction algorithm}
+\label{alg:mus}
+\end{algorithm}
+
+As mentioned, an unsatisfiable problem can have several distinct MUSes. Although the problem of finding all MUSes is even harder than finding one MUS, there is some strong research in the literature focusing on this problem. For example, Recent work by Liffiton et al. \cite{marco2016fast} proposed an efficient algorithm to generate MUSes, called MARCO.
 Another work by Bendik et al. \cite{bendk16} tries to address this problem in the domains where minimization process is rather expensive.
-These algorithms can be used in our work in order to develop a new algorithm for computing all minimal IVCs. This will require changing the underlying mechanisms that are used to construct candidate solutions and also changing the structure of the proof of correctness.
+These algorithms can be used in our work in order to develop a new algorithm for computing all minimal IVCs. This will require changing the underlying mechanisms that are used to construct candidate solutions and also changing the structure of the proof of correctness. The technique used in MARCO can be adapted to our work for computing all minimal IVCs. Algorithm \ref{alg:marco} is an abstract version of MARCO. This algorithm uses a symbolic representation of the
+power set of $C$, $\mathcal{P} (C)$,  cleverly exploiting isomorphism between finite power sets
+and Boolean algebras. 
+A brute-force approach to calculate all MUSes is basically explore all subsets of $C$ and determine if they are MUS or not. In the power set exploration process, subsets whose satisfiability is not known
+yet are called \emph{unexplored}; i.e. initially, all subsets in $\mathcal{P} (C)$ are unexplored, and at the end, satisfiability of every subset is known; i.e. all are \emph{explored}.
+In MARCO, subsets of
+ $C = \{c_1 ,c_2 , \dots ,c_n \}$ are encoded using a set of Boolean variables (literals)
+$A = \{a_1 ,a_2 , \dots, a_n \}$ such that every constraint $c_i \in C$ is assigned to a Boolean variable $a_i \in A$. Let assume we have a function $Lit: C \rightarrow A$ that returns a corresponding literal of $c_i \in C$.
+
+Then the algorithm maintains a Boolean formula from literals of $A$, called $map$, to represent the set
+of unexplored subsets of $C$.  $map$ is initially $true$.
+MARCO iteratively explores $\mathcal{P} (C)$ to find each MUS. In each iteration, an unexplored subset $C' \subseteq C$ is non-deterministically selected by finding
+a model of $map$. If $C'$ is satisfiable, it is grown
+to a maximal satisfiable subset (MSS); Set $S \in C$ is MSS if $\forall c \in C \setminus \{S\}, (S \cup \{c\})$ is unsatisfiable. All subsets of a maximal satisfiable subset are also satisfiable. So, in this case, $map$ is updated in a way to block those subsets from future computation by marking them as \emph{explored} (line \ref{line:marco:sat}).
+On the other hand, if $C'$ is $\unsat$, it is shrunk to a MUS. 
+When an MUS is found then all of its supersets are guaranteed to be unsatisfiable. So, $map$ is updated in a way 
+to mark all those supersets as \emph{explored} in order to block them from future exploration (line \ref{line:marco:unat}).
+The grow/shrink procedure can be carried out by any algorithm for
+a single MSS/MUS extraction which makes MARCO applicable to arbitrary
+constraint satisfaction domain.\footnote{In Algorithm \ref{alg:marco} we abstracted these procedures. The shrink is basically the loop in Algorithm \ref{alg:mus}. A similar approach can be taken to perform the grow procedure: constraints are added one by one in a loop to check for unsatisfiability. We will explain these procedures further in Chapter \ref{ch:ivc}.}
+
+\begin{algorithm}[t]
+  \SetKwInOut{Input}{input}
+  \SetKwInOut{Output}{output}
+  \Input{an unsatisfiable set of constraints $C$}
+  \Output{set of all MUSes $AM$}
+  \BlankLine
+  $AM \leftarrow \empty$
+  $map \leftarrow \top$ \\
+   \While{$\checksat (map) = \sat$}  {
+   $C' \leftarrow$ find an unexplored subset of $C$ using a model of $map$
+    \If{$\checksat(C') = \sat$}{
+      $M \leftarrow$ grow $(C')$\\
+      $map \leftarrow map \wedge (\bigvee_{c_i \notin M} Lit (c_i))$  \label{line:marco:sat}
+    }
+    \Else{
+    $M \leftarrow$ shrink $(C') $\\
+    $AM \leftarrow AM \cup M$ \\
+    $map \leftarrow map \wedge (\bigvee_{c_i \in M} \neg Lit (c_i))$ \label{line:marco:unat}
+    }
+  }
+  \Return{$AM$}
+\caption{MARCO algorithm for computing all MUSes}
+\label{alg:marco}
+\end{algorithm}
+
 
 UNSAT cores and MUSes are used for many different activities within
 formal verification. Gupta et al. \cite{gupta2003iterative} and
@@ -221,8 +306,45 @@ However this work is for finite systems in the domain of SAT solving,
  infinite systems with the support of the state of the art of the SMT solvers. In addition, for IVC computation, the goal is to provide meaningful results to the user.
 
 \section{Proof/Lemma Minimization}
-The IVC idea shares many similarities with approaches for computing minimal invariant sets for inductive proofs (such as is performed for inductive proof certificates~\cite{piskac2016, Ivrii14:invariants}), and in fact our IVC algorithm also needs to find a minimal lemma set.  However, there is a substantive difference: to find a minimal set of constraints, it is usually necessary to find new proofs involving {\em new lemmas} not used in the original proof, which accounts for the expense of finding an accurate minimal IVC.
+The IVC idea shares many similarities with approaches for computing minimal invariant sets for inductive proofs (such as is performed for inductive proof certificates~\cite{piskac2016, Ivrii14:invariants}).
+A proof certificate is an artifact embodying a proof of the
+claim that can then be validated by a trusted checker.
+Given a safety property $P$, an formula $Q$ is a $k$ inductive strengthening of $P$ if
+$P \rightarrow Q$, and $Q$ is $k$ inductive. 
+%For $i = 1,2$, if $Q_i$ is $k_i$
+%inductive strengthening of $P_i$, then $(Q_1 \wedge Q_2)$
+%is $k$ inductive strengthening of $(P_1 \wedge P_2)$, where $k = max(k_1, k_2)$.
+Formula $Q$ is a certificate for property $P$ if $Q$ is
+a $k$ inductive strengthening of $P$.
+Certificates need to be concise and efficient to check
+by an independent tool or method. In particular, 
+checking a certificate should not take more
+time than proving the original property. Mebsout and Tinelli presented a method for extracting and verifying proof certificates \cite{piskac2016} implemented in \texttt{Kind 2} model checker. 
+\texttt{Kind 2} performs verification by running different engines concurrently. Specifically, it employs number of auxiliary invariant generation engines to
+discover and pass along auxiliary invariants that might be
+helpful in proving a property of interest. Then these invariants are considered as
+safety certificates for the property. 
+To simplify the certificates, they either reduce $k$ or the size/complexity of the certificate formula.
+After obtaining a $k$ inductive invariant $Q$, \texttt{Kind 2} starts with reducing $k$ before simplifying the formula. It will replay the inductive
+step for $Q$ for values $i < k$ , following one
+of three different strategies:
+\begin{itemize}
+  \item forward enumeration: all values of $1 \le i \leq k' < k$  are checked, and $k'$ is the first where $k'$ inductiveness holds.
+  \item binary search: the interval $[1 , k ]$ is divided into 
+  subintervals $[1 , k' ]$ and
+$[ k' + 1 , k ]$ of similar size. Then, the first or
+the second interval is recursively considered depending on whether $Q$ is $k'$ inductive
+or not.
+  \item backward enumeration: all values of $i$ from $k$ down to 1 are checked, and it stops
+when $k'$ inductiveness does not hold anymore.
+\end{itemize}
 
+To simplify the certificate, $Q$ is converted into a set of subformulae.  
+Iteratively, each subformula is removed from a set and it is checked if $Q$ is still $k$ inductive or not. In this case subformulae not needed to prove
+$Q$ are pruned away. Finally, to verify a certificate, it needs to be proved that $Q$ is
+a $k$ inductive strengthening of the original property.
+
+Our IVC algorithm also needs to find a minimal lemma set.  However, there is a substantive difference: to find a minimal set of constraints, it is usually necessary to find new proofs involving {\em new lemmas} not used in the original proof, which accounts for the expense of finding an accurate minimal IVC. This process will be explained in Chapter \ref{ch:ivc}. Note that our lemma minimization technique used in IVC generation is actually more efficient than the above technique.
 
 \section{Traceability}
 \emph{Requirements traceability} can be defined as
@@ -278,7 +400,14 @@ Each mutant design changes the type of a single node to \inputnode . When proper
 Then, the coverage metric for $\phi$ is defined as the fraction of the discovered mutants, based on which the coverage of a set of properties is measured as the fraction of mutants discovered by at least one property.
 To decrease the cost of computation, coverage analysis is performed at several stages; first, all the nodes that do not appear in the resolution proof of a given property are marked as \emph{not-covered}, and the rest of the nodes are marked as \emph{unknown}. Then, for the unknown nodes, the basic mutation check is performed: if a corresponding mutant design violates the property, it will be considered as \emph{covered}. Otherwise, the algorithm tries to drive an inductive invariant to prove that the node is not covered. Finally, an interpolant-based model checking is applied to the nodes that are still unknown.
 
-It is important to note that some mutations {\em reduce} the state space of the system to be explored; in this case, any universal property that was true of the original system must, by definition, be true of the mutated system.  For such mutations, an alternate notion of {\em vacuity coverage}
+Most of the mutation-based coverage techniques can be put into the category of falsity coverage, where we mutate the design and see if the property is still valid or not.
+In this way, we understand if that mutant was necessary (covered) for (by) that property. 
+It is important to note that some mutations reduce the state space of the system to
+be explored; in this case, any universal property that was true of the original system
+must, by definition, be true of the mutated system. This is where falsity coverage is not effective, and the notion of \emph{vacuity coverage} comes into play. Falsity coverage asks weather the mutant FSM still satisfies the property, while vacuity coverage checks if the mutant FSM satisfies the property vacuously. In vacuity coverage, first, we makes sure the property is non-vacuous. Then, we mutate the design. If the property is
+vacuous afterwards, it means that the mutant was necessary for that property.
+
+
 %\mike{end placement}
 
 A similar notion to IVCs outlined in a patent~\cite{hanna2015formal}, which sketches a family of {\em proof core}-based metrics for use in hardware verification.  While the approach described by the patent is general, it is quite underspecified and it is not possible to compare their approach and ours. In addition, in commercial hardware verification frameworks do different forms of coverage analysis: Cadence JasperGold~\cite{jasper_gold} does some form of proof core coverage and Synopsys VC Formal~\cite{Synopsys_VC_formal} does a mutation-based coverage approach.  These coverage measurement approaches may be similar to the metrics we introduce but are not described in sufficient depth to be compared.

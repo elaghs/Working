@@ -1,23 +1,82 @@
-\chapter{Implementation}
+\chapter{Implementation in \texttt{JKind}}
 \label{ch:impl}
 
-All of the inductive validity core algorithms presented in Chapter \ref{ch:ivc} have been implemented in an industrial model checker called \texttt{JKind} ~\cite{jkind},
-which verifies safety properties of infinite-state synchronous systems.
-It accepts Lustre programs \cite{Halbwachs91:lustre} as input.  The translation of Lustre
-into a symbolic transition system in \texttt{JKind} is straightforward and is similar to what is described
-in~\cite{Hagen08:FMCAD}.
-Verification is supported by multiple proof engines that execute in parallel, including $k$-induction,
-property directed reachability (PDR), and lemma generation engines that attempt to prove
-multiple properties in parallel.  To implement the engines,
-\texttt{JKind} emits SMT problems using the theories of linear integer and real arithmetic.  \texttt{JKind} supports the
-%I remove citations to save some space in the end
-%------------------
-%\texttt{Z3}~\cite{DeMoura08:z3},
-%\texttt{Yices}~\cite{Dutertre06:yices}, \texttt{MathSAT}~\cite{Cimatti2013:MathSAT},
-%\texttt{SMTInterpol}~\cite{Christ2012:SMTInterpol}, and \texttt{CVC4} \cite{barrett2011cvc4}
-%----------------------------------------------------------------
-\texttt{Z3}, \texttt{Yices1}, \texttt{Yices2}, \texttt{MathSAT}, \texttt{SMTInterpol}, and \texttt{CVC4} SMT solvers as back-ends.  When a property is
-proved and IVC generation is enabled, an additional parallel engine
+\newcommand{\jkind}{\texttt{JKind}\xspace}
+\newcommand{\kind}{\texttt{Kind}\xspace}
+\newcommand{\jkindapi}{\texttt{JKindApi}\xspace}
+\newcommand{\lustre}{\texttt{Lustre}\xspace}
+\newcommand{\spear}{\texttt{SpeAR}\xspace}
+\newcommand{\simpal}{\texttt{SIMPAL}\xspace}
+\newcommand{\limp}{\texttt{Limp}\xspace}
+\newcommand{\agree}{\texttt{AGREE}\xspace}
+\newcommand{\gryphon}{\texttt{Gryphon}\xspace}
+
+\renewcommand{\paragraph}[1]{\vspace{5pt}\noindent {\bf #1}}
+\newcommand{\application}[2]{
+  \paragraph{#1} \hfill {\it #2}
+  \vspace{1pt}
+}
+
+All of the inductive validity core algorithms presented in Chapter \ref{ch:ivc} have been implemented in \texttt{JKind} model checker ~\cite{jkind}\footnote{This chapter is from a collaborative paper with Gacek et al. \cite{jkindpaper}}. \jkind is an
+open-source industrial
+infinite-state inductive model checker for safety properties. Models
+and properties in \jkind are specified in
+\lustre~\cite{halbwachs1991ieee}, a synchronous data-flow language,
+using the theories of linear real and integer arithmetic. \jkind uses
+SMT-solvers to prove and falsify multiple properties in parallel.
+
+A distinguishing characteristic of \jkind is its focus on the usability  of results. For a proven property, \jkind provides traceability between the property and individual model elements. For a falsified property, \jkind provides options for simplifying the
+counterexample in order to highlight the root cause of the failure. In industrial applications, we have found these additional usability aspects to be at least as important as the primary results.
+
+Another important characteristic of \jkind is that is it designed to be integrated directly into user-facing applications. Written in Java, \jkind runs on all major platforms and is easily compiled into other Java applications. \jkind bundles the Java-based \texttt{SMTInterpol} solver~\cite{Christ2012:SMTInterpol} and has no external dependencies. However, it can optionally call 
+\texttt{Z3}~\cite{DeMoura08:z3},
+\texttt{Yices}~\cite{Dutertre06:yices}, \texttt{MathSAT}~\cite{Cimatti2013:MathSAT},and \texttt{CVC4} \cite{barrett2011cvc4} if they are available.
+
+jkind is one of a number of similar infinite-state inductive model
+checkers including {\sc Kind 2}, \kind, {\sc NuXmv}, and {\sc
+  Zustre}. These tools each offer multi-engine solvers that utilize
+both k-induction and some variant of IC3/PDR. In a recent
+comparison~\cite{champion2016cav}, \jkind was the second most capable
+solver in terms of the number of problems solved (behind {\sc Kind 2})
+and had competitive performance across a large benchmark suite. The
+most noticeable bottleneck in \jkind is the start-up time for the Java
+Virtual Machine (JVM). This cost is insignificant for larger models
+but causes decreased performance for benchmarks consisting of many
+very small models.
+There are also other tools such as {\sc ESBMC-DepthK} \cite{rocha2017model},  {\sc VVT} \cite{beyer2016smt} {\sc CPAchecker}, \cite{beyer2015boosting}, {\sc CPROVER} \cite{brain2015safety} attempting to prove C programs using similar techniques ($k$-induction, invariant generation, and PDR).
+
+\section{Functionality and Main Features}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[clip,trim=140 220 100 140,scale=0.6]{engines.png}
+  \end{center}
+  \vspace{-2em}
+  \caption{\jkind engine architecture}
+  \vspace{-1em}
+ % \mike{Shrink figure vertically}
+  \label{fig:engines}
+\end{figure}
+
+\jkind is structured as several parallel engines that coordinate to
+prove properties, mimicking the design of \kind\ and \kind\ 2~\cite{champion2016cav, kahsai2011pdmc}.
+Some engines are directly responsible for proving properties, others aid that effort by generating invariants, and still others are reserved for post-processing of proof or counterexample results. Each engine can be enabled or disabled separately based on the user's needs. The architecture of \jkind allows any engine to broadcast information to the other engines (for example, lemmas, frames, proofs/counterexamples) allowing straightforward integration of new functionality.
+
+The solving engines in \jkind are:  (1) \textbf{Bounded Model Checking (BMC).} The BMC engine performs a standard iterative unrolling of the transition relation to find counterexamples and to serve as the base case of $k$-induction. The BMC engine guarantees that any counterexample it finds is minimal in length. (2) \textbf{$k$-induction.} The $k$-induction engine performs the inductive step of $k$-induction, possibly using invariants generated by other engines. \textbf{Invariant Generation.} The invariant generation engine uses a template-based invariant generation technique~\cite{kahsai2012nfm} using its own $k$-induction loop. (3) \textbf{Property Directed Reachability (PDR).} The PDR engine performs property directed reachability~\cite{een2011fmcad} using the implicit abstraction technique~\cite{cimatti2014tacas}. Unlike BMC and $k$-induction, each property is handled separately by a different PDR sub-engine. Invariants generated as a side-product of PDR are shared with the $k$-induction process.
+
+Invariant sharing between the solvers (shown in Figure~\ref{fig:engines}) is an important part of the architecture.  In our internal benchmarking, we have found that implicit abstraction PDR performs best when operating over a single property at a time and without use of lemmas generated by other approaches.  On the other hand, the invariants generated by PDR and template lemma generation often allow k-induction, which operates on all properties in parallel, to substantially reduce the verification time required for models with large numbers of properties.  %As described in Section~\ref{sec:benchmarks}, \jkind\ is competitive with other tools
+
+\subsection{Post Processing and Re-verification}
+
+A significant part of the research and development effort for \jkind\ has focused on
+post-processing results for presentation and repeated verification of models under development.
+
+%and supporting re-verification of slightly-modified models.  Simplifying counterexamples to support root-cause analysis and providing traceability information to automatically create traceability matrices and determine adequacy of requirements has been important in the industrial use of the tools.  Additionally, this type of coverage and traceability information is often required for certification of safety critical systems~\cite{DO178C}.  To support these uses,
+
+\paragraph{Inductive Validity Cores (IVC).}   
+%This facility can be used to automatically generate traceability and adequacy information (such as traceability matrices~\cite{fifarek2017nfm} important to the certification of safety-critical avionics systems~\cite{DO178C}.
+We have extended \jkind with a set of IVC generation engines. When a property is
+proved and IVC generation is enabled, our IVC engine
 executes one of the {\ucalg, \bfalg, \ucbfalg}~algorithms \cite{Ghass16} to generate an (approximately) minimal IVC.
 %
 To implement the \aivcalg\ procedure, we have extended \texttt{JKind} with a new engine that implements Algorithm \ref{alg:aivc}.
@@ -50,6 +109,175 @@ To implement \bvcalg\ algorithm, we have added a new tool to \texttt{JKind}. In 
 
 
 
+\paragraph{Smoothing.}  To aid in counterexample understanding and in creating structural coverage tests that can be more easily explained, \jkind\ provides an optional post-processing step to minimize the number of changes to input variables, {\em smoothing} the counterexample. 
+The smoothing engine uses a \texttt{MaxSat} query over
+the original BMC-style unrolling of the transition relation combined
+with weighted assertions that each input variable does not change on
+each step. The \texttt{MaxSat} query therefore tries (as best as
+possible) to hold all inputs constant while still falsifying the
+original property. This engine is only available with SMT-solvers that
+support \texttt{MaxSat} such as \texttt{Yices} and \texttt{Z3}.
+
+\paragraph{Advice.} The advice engine saves and re-uses the invariants that were used by \jkind to prove the properties of a model.  Prior to analysis, \jkind\ performs model slicing and flattening to generate a flat transition-relation model.  Internally, invariants are stored as a set of proven formulas (in the \lustre syntax) over the variables in the flattened model.  An {\em advice} file is simply the emitted set of these invariant formulas.  When a model is loaded, the formulas are loaded into memory; formulas that are no longer syntactically or type correct are discarded, and the remaining set of formulas are submitted as an initial set of possible invariants to be proved via $k$-induction: if they are proved, they are passed along to other engines; if falsified, they are discarded.
+%
+Names constructed between multiple runs of \jkind\ are stable, so if a model is unchanged, it can be trivially re-proved using the invariants and k-induction with $k=1$.  In the case that a model is a small delta of a previously-proved model, it is often the case that most of the invariants can be re-proved, leading to reduced verification times.
+
+
+\section{Integration \& Applications}
+
+%\mike{Should we talk less (and less repetitively) about each table and use a chart that describes the jkind features used for each tool?}
+
+\jkind is the back-end for a variety of user-facing applications. In this section, we briefly highlight a few and how they employ the features discussed previously.
+%
+\jkind  is developed in Java which makes it multi-platform and very easy to
+integrate into other Java applications. Moreover, it comes with
+\jkindapi package which contains utilities for creating \lustre
+specifications, calling \jkind, processing \jkind results, graphically
+displaying real-time results, and nicely formatting counterexamples.
+Many of the applications in this section make heavy use of \jkindapi.
+%
+
+(1) The {\em Specification and Analysis of Requirements} (\spear) tool is an open source tool for prototyping and analysis of requirements~\cite{fifarek2017nfm}.  Starting from a set of formalized requirements, \spear uses \jkind to determine whether or not the requirements meet certain {\em properties}.  It uses IVCs to create a traceability matrix between requirements and properties, highlighting unused requirements, over-constrained properties, and other common problems. \spear also uses \jkind with smoothing for test case generation using the Unique First Cause criteria~\cite{whalen2006issta}.
+%
+\spear captures
+requirements in a way that is backed by the formal semantics of
+\lustre, which enables them to be analyzed using model checking to
+ensure they are correct and consistent.
+
+\spear uses \jkind to prove properties over requirements, and uses IVC
+to create a traceability matrix between requirements and properties.
+This quickly highlights unused requirements, over-constrained
+properties, and other common problems. \spear also uses \jkind for
+test case generation using the Unique First Cause
+criteria~\cite{whalen2006issta} by creating {\em trap properties}.
+Each trap property is expected to be falsifiable, but in such a way
+that the counterexample has exactly the desired properties for a given
+test case. \spear uses smoothing in \jkind to ensure the resulting
+test cases are simple and understandable.
+
+(2) The {\em Assume Guarantee Reasoning Environment} (\agree)~\cite{cofer2012nfm,QFCS15:backes,hilt2013} is an open-source compositional verification tool that proves properties of hierarchically-composed models in the Architectural Analysis and Design Language (AADL) language.  %\jkind as the default model checker for AGREE.
+%
+%\application{Assume Guarantee Reasoning Environment}{Open Source}
+
+\noindent \jkind is used as the default model checker for the Assume
+Guarantee Reasoning Environment (\agree)~\cite{cofer2012nfm}. \agree
+refers to both an embedded language annex in the Architectural
+Analysis and Design Language (AADL) and to a plugin for the OSATE AADL
+Integrated Development Environment. The \agree annex annotates the
+AADL model with formal requirements, and the plugin reasons about
+these requirements. The purpose of \agree is to model behavioral
+requirements of an embedded system using formal assume guarantee
+contracts. The plugin generates Lustre specifications that are checked
+by \jkind.
+%
+\agree makes use of multiple \jkind features including smoothing and
+interval generalization to present clear counterexamples, IVC to show
+requirements traceability, and counterexample generation to check the
+consistency of an AADL component's contract. \agree also uses \jkind
+for test-case generation from component contracts.
+
+%\application{Static IMPerative AnaLyzer}{Open Source}
+(3) The {\em Static IMPerative AnaLyzer} (\simpal) is a tool for
+performing compositional reasoning over
+software~\cite{wagner2017spin}. \simpal is based on \limp, a \lustre-like imperative language with extensions for control flow elements, global variables, and a syntax for specifying preconditions, postconditions, and global variable interactions of
+preexisting components. \simpal translates \limp programs to an
+equivalent \lustre representation which is passed to the \jkind to
+perform assume-guarantee reasoning, reachability, and viability
+analyses. The feedback from these analyses is used to refine the
+program to ensure that the software functions as intended.
+
+\jkind is also used by two proprietary tools used by product areas within Rockwell Collins.  The first is a {\em Mode Transition Table} verification tool used for the complex state machines which manage flight modes of an aircraft.
+\jkind is used to check properties and generate tests for mode and transition coverage from \lustre models generated from the state machines.
+IVCs are used to establish traceability, i.e. which transitions are covered by which properties.  The second is a {\em Crew Alerting System} MC/DC test-case generation tool for a proprietary DSL used for messages and alerts to airplane pilots.  Smoothing is very important in this context as test cases need to be run on the actual hardware where
+timing is not precisely controllable. Thus, test cases with a minimum
+of changes to the inputs are ideal.
+%
+%These state
+%machines often have few states, but hundreds of possible transitions between
+%states. There is a priority ordering to resolve conflicts between
+%transitions, but this can make it hard to fully exercise the behavior
+%of a state machine. The flight controls group has developed a
+%particular graphical representation to manage this complexity.
+%
+%We have developed a tool which formalizes these state machine models.
+%Trap properties are used to generate test cases exercising all transitions. Here IVCs are used when a trap property is {\em valid}, which means it failed to generate a test case. The IVC indicates which
+%transitions are blocking the transition we wish to exercise in the
+%test case. The tool presents all this information graphically to its
+%users.
+
+
+\application{MC/DC Test Case Generation}{Proprietary}
+
+\noindent An engineering group at Rockwell Collins develops equations
+which determine which messages and alerts should be delivered to
+pilots. Certification for this system requires extensive test cases
+which must satisfy criteria such as the Modified Condition/Decision
+Coverage (MC/DC) metric. We have developed a tool which generates
+these tests by translating the equations into \lustre and generating
+MC/DC trap properties in \jkind. Smoothing is very important in this
+context as test cases need to be run on the actual hardware where
+timing is not precisely controllable. Thus, test cases with a minimum
+of changes to the inputs are ideal.
+
+\application{Model-based Fuzzing}{Open Source}
+
+\noindent As part of an ongoing DARPA program, Rockwell Collins is
+developing a tool for generating fuzz tests from system models. This
+tool takes a \lustre description of a system and uses \jkind to
+generate test cases which exercise different portions of the model.
+Effective fuzz testing requires a huge number of test cases which is
+not feasible to generate solely with a model checker. Instead, this
+fuzzing tool uses interval generalization in \jkind to generate
+generalized counterexamples which it then randomly samples at high
+speed. In fact, research in this area has recently expanded interval
+generalization to trapezoidal generalization which is strictly more
+general, but still allows very fast random sampling.
+
+
+ \paragraph{The \gryphon Framework.} The Rockwell Collins \gryphon
+ framework~\cite{miller2010cacm} translates Simulink models to various
+ analysis tools for verification and testing. \gryphon uses the \lustre
+ language internally which was the originally motivation for \kind
+ (and eventually \jkind) to accept \lustre. As \gryphon is the only
+ application in our list which does not directly integrate \jkind, it
+ does not specifically use any features of \jkind. Still, features like
+ smoothing and IVC have been successfully used in combination with
+ \gryphon to great effect.
+
+
+% \paragraph{Simulation.} To help users and developers to understand
+% \lustre specifications, \jkind can compile a \lustre specification
+% into an Excel-based simulation. The simulation uses the formula and
+% reference language of Excel to compute, in real-time, the output of the
+% specification as inputs are entered and manipulated. This spreadsheet
+% interface to the specification is satisfyingly capable and versatile.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 %The source code is publicly available on \cite{mygit}.
 %This section points out some technical issues in the implementation.
@@ -63,4 +291,5 @@ To implement \bvcalg\ algorithm, we have added a new tool to \texttt{JKind}. In 
 % which prunes off set $S$ and all its supersets from $\mathcal{P}(T)$ at the beginning of the algorithm. If $S$ is minimal, then chances are a large
 % subset of  $\mathcal{P}(T)$ is marked as explored even before
 % the algorithm starts the search.
+ 
 

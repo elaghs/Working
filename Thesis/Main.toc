@@ -9,57 +9,61 @@
 \contentsline {section}{\numberline {1.3}Chapters}{8}{section.1.3}
 \contentsline {chapter}{\numberline {2}Preliminaries and Related Work}{9}{chapter.2}
 \contentsline {section}{\numberline {2.1}Symbolic Model Checking}{9}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Commercial Model Checkers}{14}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.1}Compositional Reasoning}{13}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Commercial Model Checkers}{14}{subsection.2.1.2}
 \contentsline {section}{\numberline {2.2}Slicing}{15}{section.2.2}
 \contentsline {section}{\numberline {2.3}UNSAT cores and Minimal UNSAT Subformulae}{16}{section.2.3}
-\contentsline {section}{\numberline {2.4}Proof/Lemma Minimization}{17}{section.2.4}
-\contentsline {section}{\numberline {2.5}Traceability}{17}{section.2.5}
-\contentsline {section}{\numberline {2.6}Requirements Adequacy}{18}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}Coverage and Mutations}{18}{subsection.2.6.1}
-\contentsline {section}{\numberline {2.7}Vacuity Detection}{21}{section.2.7}
-\contentsline {section}{\numberline {2.8}Safety Standards}{22}{section.2.8}
-\contentsline {chapter}{\numberline {3}Inductive Validity Cores}{25}{chapter.3}
-\contentsline {section}{\numberline {3.1}Algorithms for computing an inductive validity core}{29}{section.3.1}
-\contentsline {section}{\numberline {3.2}Algorithms for computing bounded validity cores}{33}{section.3.2}
-\contentsline {section}{\numberline {3.3}Algorithm for computing all minimal inductive validity cores}{34}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Offline Algorithm for all MIVCs}{35}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Online Algorithm for all MIVCs}{41}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Shrink Procedure}{42}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Grow Procedure}{43}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}Solve Procedure}{44}{subsection.3.3.5}
-\contentsline {subsection}{\numberline {3.3.6}Complete Algorithm}{45}{subsection.3.3.6}
-\contentsline {paragraph}{Correctness:}{46}{section*.21}
-\contentsline {subsection}{\numberline {3.3.7}Symbolic Representation of Unexplored Subsets}{46}{subsection.3.3.7}
-\contentsline {section}{\numberline {3.4}Illustration}{47}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Offline AIVC}{47}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Online AIVC}{48}{subsection.3.4.2}
-\contentsline {chapter}{\numberline {4}Implementation}{52}{chapter.4}
-\contentsline {chapter}{\numberline {5}Experiment}{54}{chapter.5}
-\contentsline {section}{\numberline {5.1}Initial Experiments}{55}{section.5.1}
-\contentsline {subsubsection}{RQ1}{56}{section*.23}
-\contentsline {subsubsection}{RQ2}{58}{section*.27}
-\contentsline {subsubsection}{RQ3}{58}{section*.28}
-\contentsline {section}{\numberline {5.2}Experiments on the IVC\_UC and ALL\_IVCs Algorithms}{60}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Experimental Setup}{61}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Experimental Results}{61}{subsection.5.2.2}
-\contentsline {subsubsection}{RQ1}{61}{section*.33}
-\contentsline {subsubsection}{RQ2}{62}{section*.35}
-\contentsline {subsubsection}{RQ3}{63}{section*.36}
-\contentsline {section}{\numberline {5.3}Experiments on the Online method of computing AIVCs}{64}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Experimental Setup}{65}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Experimental Results}{66}{subsection.5.3.2}
-\contentsline {subsubsection}{RQ1 and RQ2}{66}{section*.40}
-\contentsline {subsubsection}{RQ3}{66}{section*.41}
-\contentsline {section}{\numberline {5.4}Experiments on BVCs}{68}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Experimental Setup}{68}{subsection.5.4.1}
-\contentsline {subsubsection}{RQ1}{70}{section*.43}
-\contentsline {subsubsection}{RQ2}{71}{section*.44}
-\contentsline {subsubsection}{RQ3}{74}{section*.47}
-\contentsline {chapter}{\numberline {6}Applications}{76}{chapter.6}
-\contentsline {section}{\numberline {6.1}Automatic Proof-Based Traceability}{76}{section.6.1}
-\contentsline {section}{\numberline {6.2}Coverage Analysis and Requirements Completeness}{77}{section.6.2}
-\contentsline {section}{\numberline {6.3}Discussion}{86}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Granularity}{88}{subsection.6.3.1}
-\contentsline {chapter}{\numberline {7}Conclusions and Future Work}{91}{chapter.7}
-\contentsline {section}{\numberline {7.1}Future Research Directions}{92}{section.7.1}
-\contentsline {chapter}{References}{95}{chapter*.56}
+\contentsline {section}{\numberline {2.4}Proof/Lemma Minimization}{19}{section.2.4}
+\contentsline {section}{\numberline {2.5}Traceability}{20}{section.2.5}
+\contentsline {section}{\numberline {2.6}Requirements Adequacy}{21}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Coverage and Mutations}{22}{subsection.2.6.1}
+\contentsline {section}{\numberline {2.7}Vacuity Detection}{25}{section.2.7}
+\contentsline {section}{\numberline {2.8}Safety Standards}{26}{section.2.8}
+\contentsline {chapter}{\numberline {3}Inductive Validity Cores}{29}{chapter.3}
+\contentsline {section}{\numberline {3.1}Algorithms for computing an inductive validity core}{33}{section.3.1}
+\contentsline {section}{\numberline {3.2}Algorithms for computing bounded validity cores}{38}{section.3.2}
+\contentsline {section}{\numberline {3.3}Algorithm for computing all minimal inductive validity cores}{39}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Offline Algorithm for all MIVCs}{39}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Online Algorithm for all MIVCs}{45}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Shrink Procedure}{46}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Grow Procedure}{47}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Solve Procedure}{48}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.6}Complete Algorithm}{49}{subsection.3.3.6}
+\contentsline {paragraph}{Correctness:}{50}{section*.23}
+\contentsline {subsection}{\numberline {3.3.7}Symbolic Representation of Unexplored Subsets}{50}{subsection.3.3.7}
+\contentsline {section}{\numberline {3.4}Illustration}{51}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Offline AIVC}{51}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Online AIVC}{53}{subsection.3.4.2}
+\contentsline {chapter}{\numberline {4}Implementation in \texttt {JKind}}{56}{chapter.4}
+\contentsline {section}{\numberline {4.1}Functionality and Main Features}{57}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Post Processing and Re-verification}{58}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}Integration \& Applications}{60}{section.4.2}
+\contentsline {chapter}{\numberline {5}Experiment}{63}{chapter.5}
+\contentsline {section}{\numberline {5.1}Initial Experiments}{64}{section.5.1}
+\contentsline {subsubsection}{RQ1}{65}{section*.26}
+\contentsline {subsubsection}{RQ2}{67}{section*.30}
+\contentsline {subsubsection}{RQ3}{67}{section*.31}
+\contentsline {section}{\numberline {5.2}Experiments on the IVC\_UC and ALL\_IVCs Algorithms}{69}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Experimental Setup}{70}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Experimental Results}{70}{subsection.5.2.2}
+\contentsline {subsubsection}{RQ1}{70}{section*.36}
+\contentsline {subsubsection}{RQ2}{71}{section*.38}
+\contentsline {subsubsection}{RQ3}{72}{section*.39}
+\contentsline {section}{\numberline {5.3}Experiments on the Online method of computing AIVCs}{73}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Experimental Setup}{74}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Experimental Results}{75}{subsection.5.3.2}
+\contentsline {subsubsection}{RQ1 and RQ2}{75}{section*.43}
+\contentsline {subsubsection}{RQ3}{75}{section*.44}
+\contentsline {section}{\numberline {5.4}Experiments on BVCs}{77}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Experimental Setup}{77}{subsection.5.4.1}
+\contentsline {subsubsection}{RQ1}{79}{section*.46}
+\contentsline {subsubsection}{RQ2}{80}{section*.47}
+\contentsline {subsubsection}{RQ3}{83}{section*.50}
+\contentsline {chapter}{\numberline {6}Applications}{85}{chapter.6}
+\contentsline {section}{\numberline {6.1}Automatic Proof-Based Traceability}{85}{section.6.1}
+\contentsline {section}{\numberline {6.2}Coverage Analysis and Requirements Completeness}{86}{section.6.2}
+\contentsline {section}{\numberline {6.3}Discussion}{95}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Granularity}{97}{subsection.6.3.1}
+\contentsline {chapter}{\numberline {7}Conclusions and Future Work}{100}{chapter.7}
+\contentsline {section}{\numberline {7.1}Future Research Directions}{101}{section.7.1}
+\contentsline {chapter}{References}{104}{chapter*.59}

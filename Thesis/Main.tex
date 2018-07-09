@@ -10,8 +10,14 @@
 \usepackage{epic,eepic,units}
 \usepackage{hyperref}
 \usepackage{url}
+\usepackage{bibunits}
 %\usepackage{tikz}
 %\usetikzlibrary{arrows,shapes,positioning}
+\usepackage{vhistory}
+\usepackage{ifthen}
+\newbox\vhbox
+\newboolean{IncludeVersionHistory}
+\setboolean{IncludeVersionHistory}{true}
 % From:
 % http://tex.stackexchange.com/questions/12703/how-to-create-fixed-width-table-columns-with-text-raggedright-centered-raggedlef
 \usepackage{array}
@@ -199,7 +205,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % BEGIN DOCUMENT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\defaultbibliography{citations}
+\defaultbibliographystyle{abbrv}
 \begin{document}
+\begin{bibunit}
 
 \input{title}
 
@@ -242,17 +251,34 @@
 % When you need a works cited section, uncomment this and update the name of the
 %   file.
 %%%
-    \bibliographystyle{abbrv}
-%     \bibliographystyle{abbrvnat}
-\bibliography{noAbbreviations,citations}
+ %   \bibliographystyle{abbrv}
 
+%\bibliography{noAbbreviations,citations}
 
+\putbib
+\end{bibunit}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % APPENDICIES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % If you need an appendix, uncomment the following lines and add sections.
 %%%
-\appendix
-\input{publications}
+\def\noprint#1{\relax}
+\renewcommand\bibname{List of Publications}
+\begin{bibunit}
+\defaultbibliographystyle{unsrt}
+%\bibliography{mypapers}
+\noprint{\cite{journal,jk,c0,c1,c2,c3,Mur16}}
+%\cite{journal,jk,c0,c1,c2,c3,Mur16, memocode15, multiformalism2014}
+%\ifthenelse{\boolean{IncludeVersionHistory}}{
+%\unvbox\vhbox
+%}{
+%\cite{journal}
+% \cite{jk}
+% \cite{c0,c1,c2,c3}
+% \cite{Mur16, memocode15, multiformalism2014}
+%\bibname
+%}
 
+\putbib
+\end{bibunit}
 \end{document}

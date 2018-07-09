@@ -1,18 +1,22 @@
-const THRESHOLD = 10000;  
-node asw(alt1, alt2: int; stat1, stat2 : bool) returns (doi_on: bool; alarm: bool);
-var
-   a1_below, a2_below, below , p1, p2, p: bool; 
-let
-   a1_below = if stat1 then (alt1 < THRESHOLD) else false;
-   a2_below = if stat2 then (alt2 < THRESHOLD) else false; 
-   
-   below = if a1_below or a2_below then true else false;  
-  
+  node asw (alt1, alt2: int; inhibit: bool)
+  returns (doi_on: bool);
+     var
+	 a1_below, a2_below, a1_above, a2_above,
+	 below, above_hyst, d1, d2, p: bool;
+     let
+	 a1_below = (alt1 < THRESHOLD);        
+	 a2_below = (alt2 < THRESHOLD);   
+	 a1_above = (alt1 >= T_HYST);     
+	 a2_above = (alt2 >= T_HYST);
+	 below = a1_below or a2_below;         
+	above_hyst = a1_above and a2_above;    
+	doi_on = if (below and notinhibit)
+	 then true else d1;
+ d1 = if (inhibit or above_hyst)         
+	then false else d2;
+d2 = (false -> pre(doi_on));    
 
-   doi_on = false -> if alarm then pre(doi_on) else below;   
-    alarm = not stat1 and not stat2; 
-   p1 = a1_below => doi_on;
-   p2 =  a2_below => doi_on ;
-   p = true -> p1 or p2;
+   p = ((alt1 < THRESHOLD) and (alt2 < THRESHOLD))
+   and not inhibit => (doi_on = true);
    --%PROPERTY p;   
 tel;

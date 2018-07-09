@@ -6,7 +6,7 @@ We described $k$-induction in Chapter \ref{ch:background}. Bounded model checkin
   \SetKwInOut{Output}{output}
   \Input{$P \vdash _{k'}(I, T)$ and bound $k \leq k'$}
   \Output{\bvc ~for $(I, T)\vdash P$ at depth $k$}
-  \BlankLine 
+  \BlankLine
    Create activation literals $A = \{a_1, \ldots, a_n\}$ \\
   $T \leftarrow (a_1 \Rightarrow T_1) \land \cdots \land (a_n \Rightarrow T_n)$ \\
   $\checksat(A, \neg\bq_k(I, T, P))$ \\
@@ -18,3 +18,4 @@ We described $k$-induction in Chapter \ref{ch:background}. Bounded model checkin
 \caption{\bvcalg: Algorithm for computing a bounded validity core}
 \label{alg:bvc}
 \end{algorithm} 
+

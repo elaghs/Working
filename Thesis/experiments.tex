@@ -11,7 +11,16 @@ We would like to evaluate different algorithms presented in Chapter \ref{ch:ivc}
 
  This chapter is organized in two separate parts; first we present an initial evaluation to address a basic question for IVC computation: we would like to determine whether the choice of inductive algorithm affects the size of the IVCs calculated by \ucalg , whether different solvers are more or less efficient at producing approximate minimal IVCs (\ucalg), and whether running different solvers/algorithms leads to {\em diversity} of IVC solutions obtained by \ucalg\ (Section \ref{sec:exprinit}).
 
-The initial experiments allow us to choose an optimal configuration for \texttt{JKind} based on which we can run our major experiments. The major experiments are conducted to evaluate the efficiency and efficacy the IVC algorithms. Section \ref{sec:exp1} is about the evaluation of our two key proposed algorithms: \ucalg\ and \aivcalg . Then in Section \ref{sec:exp2}, we examine our approach for calculating all minimal IVCs in the online manner as described in \ref{sec:onaivc}. Finally in Section \ref{sec:exp3}, we investigate a couple of interesting research questions related to the bounded validity cores.
+The initial experiments allow us to choose an optimal configuration for \texttt{JKind} based on which we can run our major experiments. The major experiments are conducted to evaluate the efficiency and efficacy the IVC algorithms presented in Chapter \ref{ch:ivc}. 
+Broadly speaking, we are interested in the following aspects:
+\begin{itemize}
+  \item Evaluating the performance of \ucalg\ algorithm and \aivcalg , 
+  \item Evaluating the efficacy (minimality) of the \ucalg\ algorithm outcome,
+  \item Effective factors on the performance of finding all minimal IVCs,
+  \item Evaluating the online approach for generating all minimal IVCs,
+  \item Studying validity cores in bounded model checking.
+\end{itemize}
+\noindent For this purpose, we organize the major experiments in different categories; Section \ref{sec:exp1} is about the evaluation of our two key proposed algorithms: \ucalg\ and \aivcalg . Then in Section \ref{sec:exp2}, we examine our approach for calculating all minimal IVCs in the online manner as described in \ref{sec:onaivc}. Finally in Section \ref{sec:exp3}, we investigate a couple of interesting research questions related to the bounded validity cores.
 
 \section{Experiments involving single IVCs}
 \label{sec:exprinit}

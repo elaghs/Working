@@ -40,7 +40,7 @@ In this section, we propose a novel algorithm for online MIVC enumeration using 
 
 We can effectively use the set  \textit{Unexplored} for speeding up the shrinking procedure. When testing the set $U \setminus \{T_i\}$ (see line~2 in Algorithm~\ref{shrink-procedure}) we first check whether  $U \setminus \{T_i\}$ is still unexplored. If $U \setminus \{T_i\}$ is already explored, then its status is already known and no test for adequacy is needed.
 
-\subsection{Shrink Procedure}
+\subsubsection{Shrink Procedure}
 \label{sec:shrink}
 
 \iffalse
@@ -69,7 +69,7 @@ The search for inadequate sets is done with the help  of the grow procedure.
 
 
 
-\subsection{Grow Procedure}\label{sec:grow}
+\subsubsection{Grow Procedure}\label{sec:grow}
 \begin{algorithm}[!t]
 \begin{small}
 \input{./algs/alg_grow_approximation}
@@ -102,7 +102,7 @@ Given an unexplored inadequate set $U$ for $(I,T) \vdash P$ and a set $\mathit{U
 Let us denote initial $M$ as $M_{init}$. Since $M_{init} \supseteq U$ and $M$ is recursively reduced only by elements that are not contained in $U$, then in every iteration holds that $U \subseteq M \subseteq M_{init}$. Since both $U, \, M_{init}$ are unexplored, then $M$ is necessarily also unexplored.
 \end{proof}
 
-\subsection{Solve Procedure}
+\subsubsection{Solve Procedure}
 
 \begin{algorithm}[t]
 \begin{small}
@@ -129,7 +129,7 @@ user that the results produced may be approximate.
 \end{algorithm}
 
 
-\subsection{Complete Algorithm}
+\subsubsection{Complete Algorithm}
 In this section, we describe, how to combine the shrink and grow methods to form an efficient online MIVC enumeration algorithm. We call the algorithm Grow-Shrink algorithm.
 Since knowledge of (approximately) maximal inadequate subsets can be exploited to speed up the shrinking procedure, it might be tempting to first find all MISes.
 However, this is in general intractable since there can be up to exponentially many MISes (w.r.t. the size of $T$).
@@ -163,7 +163,7 @@ To ensure that the invariants hold, we use the procedure \texttt{UpdateShrinking
 The algorithm produces only the MIVCs found by the shrinking procedure and all of them are \emph{fresh}, i.e. produced only once. Only subsets whose status is known are removed from the set $\mathit{Unexplored}$, thus no MIVC is excluded from the computation. The algorithm terminates and all MIVCs are found since the size of $\mathit{Unexplored}$ is reduced after every iteration.
 		
 
-\subsection{Symbolic Representation of Unexplored Subsets}
+\subsubsection{Symbolic Representation of Unexplored Subsets}
 \label{sec:symbolic-representation}
 \input{symbolic_representation}
 

@@ -19,39 +19,39 @@
 \BOOKMARK [2][-]{subsection.2.6.1}{Coverage and Mutations}{section.2.6}% 19
 \BOOKMARK [1][-]{section.2.7}{Vacuity Detection}{chapter.2}% 20
 \BOOKMARK [1][-]{section.2.8}{Safety Standards}{chapter.2}% 21
-\BOOKMARK [0][-]{chapter.3}{Inductive Validity Cores}{}% 22
+\BOOKMARK [0][-]{chapter.3}{Validity Cores}{}% 22
 \BOOKMARK [1][-]{section.3.1}{Algorithms for computing an inductive validity core}{chapter.3}% 23
 \BOOKMARK [1][-]{section.3.2}{Algorithms for computing bounded validity cores}{chapter.3}% 24
 \BOOKMARK [1][-]{section.3.3}{Algorithm for computing all minimal inductive validity cores}{chapter.3}% 25
 \BOOKMARK [2][-]{subsection.3.3.1}{Offline Algorithm for all MIVCs}{section.3.3}% 26
 \BOOKMARK [2][-]{subsection.3.3.2}{Online Algorithm for all MIVCs}{section.3.3}% 27
-\BOOKMARK [2][-]{subsection.3.3.3}{Shrink Procedure}{section.3.3}% 28
-\BOOKMARK [2][-]{subsection.3.3.4}{Grow Procedure}{section.3.3}% 29
-\BOOKMARK [2][-]{subsection.3.3.5}{Solve Procedure}{section.3.3}% 30
-\BOOKMARK [2][-]{subsection.3.3.6}{Complete Algorithm}{section.3.3}% 31
-\BOOKMARK [2][-]{subsection.3.3.7}{Symbolic Representation of Unexplored Subsets}{section.3.3}% 32
-\BOOKMARK [1][-]{section.3.4}{Illustration}{chapter.3}% 33
-\BOOKMARK [2][-]{subsection.3.4.1}{Offline AIVC}{section.3.4}% 34
-\BOOKMARK [2][-]{subsection.3.4.2}{Online AIVC}{section.3.4}% 35
-\BOOKMARK [0][-]{chapter.4}{Implementation in JKind}{}% 36
-\BOOKMARK [1][-]{section.4.1}{Functionality and Main Features}{chapter.4}% 37
-\BOOKMARK [2][-]{subsection.4.1.1}{Post Processing and Re-verification}{section.4.1}% 38
-\BOOKMARK [1][-]{section.4.2}{Integration \046 Applications}{chapter.4}% 39
-\BOOKMARK [0][-]{chapter.5}{Experiment}{}% 40
-\BOOKMARK [1][-]{section.5.1}{Initial Experiments}{chapter.5}% 41
-\BOOKMARK [1][-]{section.5.2}{Experiments on the IVC\137UC and ALL\137IVCs Algorithms}{chapter.5}% 42
-\BOOKMARK [2][-]{subsection.5.2.1}{Experimental Setup}{section.5.2}% 43
-\BOOKMARK [2][-]{subsection.5.2.2}{Experimental Results}{section.5.2}% 44
-\BOOKMARK [1][-]{section.5.3}{Experiments on the Online method of computing AIVCs}{chapter.5}% 45
-\BOOKMARK [2][-]{subsection.5.3.1}{Experimental Setup}{section.5.3}% 46
-\BOOKMARK [2][-]{subsection.5.3.2}{Experimental Results}{section.5.3}% 47
-\BOOKMARK [1][-]{section.5.4}{Experiments on BVCs}{chapter.5}% 48
-\BOOKMARK [2][-]{subsection.5.4.1}{Experimental Setup}{section.5.4}% 49
-\BOOKMARK [0][-]{chapter.6}{Applications}{}% 50
-\BOOKMARK [1][-]{section.6.1}{Automatic Proof-Based Traceability}{chapter.6}% 51
-\BOOKMARK [1][-]{section.6.2}{Coverage Analysis and Requirements Completeness}{chapter.6}% 52
-\BOOKMARK [1][-]{section.6.3}{Discussion}{chapter.6}% 53
-\BOOKMARK [2][-]{subsection.6.3.1}{Granularity}{section.6.3}% 54
-\BOOKMARK [0][-]{chapter.7}{Conclusions and Future Work}{}% 55
-\BOOKMARK [1][-]{section.7.1}{Future Research Directions}{chapter.7}% 56
-\BOOKMARK [0][-]{chapter*.59}{References}{}% 57
+\BOOKMARK [2][-]{subsection.3.3.3}{Illustration}{section.3.3}% 28
+\BOOKMARK [0][-]{chapter.4}{Implementation in JKind}{}% 29
+\BOOKMARK [1][-]{section.4.1}{JKind Functionality and Main Features}{chapter.4}% 30
+\BOOKMARK [2][-]{subsection.4.1.1}{Post Processing and Re-verification}{section.4.1}% 31
+\BOOKMARK [2][-]{subsection.4.1.2}{Command Line}{section.4.1}% 32
+\BOOKMARK [1][-]{section.4.2}{ JKind Integration \046 Applications}{chapter.4}% 33
+\BOOKMARK [2][-]{subsection.4.2.1}{Specification and Analysis of Requirements}{section.4.2}% 34
+\BOOKMARK [2][-]{subsection.4.2.2}{Assume Guarantee Reasoning Environment}{section.4.2}% 35
+\BOOKMARK [2][-]{subsection.4.2.3}{Static IMPerative AnaLyzer}{section.4.2}% 36
+\BOOKMARK [2][-]{subsection.4.2.4}{Applications}{section.4.2}% 37
+\BOOKMARK [1][-]{section.4.3}{IVC Integration}{chapter.4}% 38
+\BOOKMARK [0][-]{chapter.5}{Experiments}{}% 39
+\BOOKMARK [1][-]{section.5.1}{Experiments involving single IVCs}{chapter.5}% 40
+\BOOKMARK [1][-]{section.5.2}{Experiments on the IVC\137UC and ALL\137IVCs Algorithms}{chapter.5}% 41
+\BOOKMARK [2][-]{subsection.5.2.1}{Experimental Setup}{section.5.2}% 42
+\BOOKMARK [2][-]{subsection.5.2.2}{Experimental Results}{section.5.2}% 43
+\BOOKMARK [1][-]{section.5.3}{Experiments on the Online method of computing AIVCs}{chapter.5}% 44
+\BOOKMARK [2][-]{subsection.5.3.1}{Experimental Setup}{section.5.3}% 45
+\BOOKMARK [2][-]{subsection.5.3.2}{Experimental Results}{section.5.3}% 46
+\BOOKMARK [1][-]{section.5.4}{Experiments on BVCs}{chapter.5}% 47
+\BOOKMARK [2][-]{subsection.5.4.1}{Experimental Setup}{section.5.4}% 48
+\BOOKMARK [0][-]{chapter.6}{Applications}{}% 49
+\BOOKMARK [1][-]{section.6.1}{Automatic Proof-Based Traceability}{chapter.6}% 50
+\BOOKMARK [1][-]{section.6.2}{Coverage Analysis and Requirements Completeness}{chapter.6}% 51
+\BOOKMARK [1][-]{section.6.3}{Discussion}{chapter.6}% 52
+\BOOKMARK [2][-]{subsection.6.3.1}{Granularity}{section.6.3}% 53
+\BOOKMARK [0][-]{chapter.7}{Conclusions and Future Work}{}% 54
+\BOOKMARK [1][-]{section.7.1}{Future Research Directions}{chapter.7}% 55
+\BOOKMARK [0][-]{chapter*.79}{References}{}% 56
+\BOOKMARK [0][-]{chapter*.80}{List of Publications}{}% 57

@@ -3,7 +3,7 @@
 %\begin{definition}[Inadequacy] A set of conjuncts  $U \subseteq T$  is an \emph{inadequate} set for $(I, T) \vdash P$ iff $(I, U) \nvdash P$. Especially, $U \subseteq T$ is a \emph{Maximal Inadequate Set (MIS)} for $(I, T) \vdash P$ iff $U$ is inadequate and $\forall T_i \in (T \setminus U): \, (I, U \cup \{ T_i\}) \vdash P$.
 %\end{definition}
 
-Inadequate sets are duals to inductive validity cores. Each $U \subseteq T$ is either inadequate set or an inductive validity core. In order to unify the notation, we   use notation \emph{inadequate} and \emph{adequate}. Note that especially minimal inductive validity cores can be thus called  minimal adequate sets.
+As explained, inadequate sets are duals to inductive validity cores. Each $U \subseteq T$ is either inadequate set or an inductive validity core. In order to unify the notation, we   use notation \emph{inadequate} and \emph{adequate}. Note that especially minimal inductive validity cores can be thus called  minimal adequate sets.
 
 The monotonicity allows to determine status of multiple subsets of $T$ while using only a single check for adequacy. For example, if a set $U \subseteq T$ is determined to be adequate, than all of its supersets are   adequate and do not need to be explicitly checked. Let     $\mathit{Sup}(U)$ and $\mathit{Sub}(U)$ denote the set of all supersets and subsets of $U$, respectively.
 
@@ -92,7 +92,7 @@ If $M$ is inadequate, then it is necessarily a MIS
 (this is a straightforward consequence of Observation~\ref{observation:explored-property}) %\mike{Do you mean a maximal unexplored subset here (MUS, not MIS)?  Otherwise I don't see the consequence}.
 Otherwise, if $M$ is adequate then it is iteratively reduced until an inadequate set is found.
 
-In particular, whenever $M$ is found to be adequate, the approximative algorithm \texttt{IVC\_UC} by Ghassabani et al.~\cite{Ghass16} is used to find an approximately minimal IVC $M_{IVC}$ of $M$.  $M_{IVC}$ succinctly explains $M$'s adequacy. In order to turn $M$ into an inadequate set, it is reduced by one element from $M_{IVC} \setminus U$ and checked for adequacy. If $M$ is still adequate then the approximate growing procedure continues with a next iteration. Otherwise, if $M$ is inadequate, the procedure finishes.
+In particular, whenever $M$ is found to be adequate, the approximative algorithm \texttt{IVC\_UC} is used to find an approximately minimal IVC $M_{IVC}$ of $M$.  $M_{IVC}$ succinctly explains $M$'s adequacy. In order to turn $M$ into an inadequate set, it is reduced by one element from $M_{IVC} \setminus U$ and checked for adequacy. If $M$ is still adequate then the approximate growing procedure continues with a next iteration. Otherwise, if $M$ is inadequate, the procedure finishes.
 
 %\begin{proposition}
 Given an unexplored inadequate set $U$ for $(I,T) \vdash P$ and a set $\mathit{Unexplored}$ of unexplored subsets of $T$, Algorithm~\ref{approx-grow} returns an \emph{unexplored} inadequate subset $M$ of $T$.
@@ -112,7 +112,7 @@ Let us denote initial $M$ as $M_{init}$. Since $M_{init} \supseteq U$ and $M$ is
 \end{small}
 \end{algorithm}
 
-Determining whether a particular subset of elements $U \subset T$ can prove a property of interest $P$ is as hard as model checking~(\cite{Ghass16}, Theorem 1).  Thus, in the general case, determining whether a set of model elements is an MIVC may not be possible for model checking problems that are in general undecidable, such as those involving infinite theories.  We assume there is a function \CheckAdq that checks
+Determining whether a particular subset of elements $U \subset T$ can prove a property of interest $P$ is as hard as model checking~(\ref{thm:minimal-hard}).  Thus, in the general case, determining whether a set of model elements is an MIVC may not be possible for model checking problems that are in general undecidable, such as those involving infinite theories.  We assume there is a function \CheckAdq that checks
 whether or not $P$ is provable for some $(I, U)$.  \CheckAdq can return {\sc Unknown}
 (after a user-defined timeout) as well as {\sc Adequate}
 or {\sc Inadequate}.  For a given set $U$, if our implementation is

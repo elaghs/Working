@@ -1,5 +1,5 @@
 \chapter{Preliminaries and Related Work}
-
+\label{ch:background}
 \label{sec:related}
 Inductive validity cores aim to bridge the gap between verification techniques and the user insight into the results provided by the tools. The goal behind this idea is to have expressive verification results that help the engineers to evaluate the quality of a system or specification.
 
@@ -8,9 +8,9 @@ This chapter, first, provides some formal background on symbolic model checking,
 
 
 \section{Symbolic Model Checking}
-\label{ch:background}
+
 The idea of inductive validity cores is applicable to the context of symbolic model checking using inductive proof methods. After proving the correctness of a given property, we extract a minimal portion of the system (model) necessary for the proof of the property, which is what we call IVCs.
-Correctness can be expressed in terms of \emph{safety} and \emph{liveness} properties. Safety properties state that nothing bad ever happens, while liveness properties specifying that something good eventually happens. 
+Correctness can be expressed in terms of \emph{safety} and \emph{liveness} properties. Safety properties state that nothing bad ever happens, while liveness properties specifying that something good eventually happens.
 
 IVCs determine why a \emph{safety} property is satisfied by the system. Since this information is obtained from the inductive proofs, we call it \emph{inductive} validity core. With minimal IVCs, we are able to abstract away the part of the system irrelevant to the proof of the property. This section mentions some background on symbolic model checking.
 
@@ -83,7 +83,7 @@ Figure~\ref{fig:k-induction} (the universal quantifiers on $u_i$ have
 been elided for space). We say that a property is $k$-inductive if it
 satisfies the $k$-induction constraints for the given value of $k$.
 The hope is that the additional formulas in the antecedent of the
-inductive step make it provable. 
+inductive step make it provable.
 In practice, inductive model checkers often use a combination of the
 above techniques. Thus, a typical conclusion is of the form ``$P$ with
 lemmas $L_1, \ldots, L_n$ is $k$-inductive''.
@@ -106,22 +106,6 @@ T(u_{k-1}, u_k) \Rightarrow P(u_k)
 \end{figure}
 
 
-
-
-Liveness properties involve temporal operators of \emph{always eventually}, denoted by $GF$, and intuitively have infinite-length counterexamples. In order to verify such properties with symbolic model checking, there are a couple of well-known techniques. One approach is to reduce a liveness problem to a safety problem \cite{Schuppan:2006}, where a suitable counterexample-detection logic is used by duplicating state elements,
- $U_{copy} = \{ u_c | u \in U \}$. It non-deterministically
-samples the design state and tries to find a valid counterexample
-scenario with finding a state repetition
-loop during which the behavior of the liveness and fairness
-conditions are observed. 
-Although converting liveness to safety makes it possible to use existing safety
-verification algorithms, such translation is usually impractical due to substantially increasing problem size. Another technique is bounded liveness checking, $k$-liveness, \cite{Schuppan:2006}, which proves the absence of a liveness failure up to a certain bound;
-i.e. for a property $GF P$, instead of proving $\neg P$ cannot happen infinitely often, it tries to prove $\neg P$ does not occur after $k$ steps. $k$-liveness checks liveness as a sequence of safety checks increasing $k$ incrementally.
-An improved version of $k$-liveness is to perform a sequence of
-safety queries as necessary to find a large-enough bound to
-avoid spurious failures by counting the maximum number of times that $\neg P$ can occur \cite{claessen2012liveness}. Adapting any of these methods for liveness checking makes it possible to tackle the problem with existing inductive algorithms for safety verification.
-
-
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "main.tex"
@@ -142,15 +126,47 @@ The goal of bounded model checking is to decide if a given program reaches an er
 most $k$ unfolding of the transition relation. Although bounded model checkers do not provide a full proof of correctness, they are useful to discover bugs. For example, \texttt{CBMC} \cite{cbmc} checks array bounds (buffer overflows), absence of
 null de-references, and assertions. The \texttt{Alloy analyzer} \cite{alloy} is another bounded model checker that checks temporal formulas specified using LTL. This tool also has a core extraction capability based on UNSAT cores. \texttt{JBMC} \cite{jbmc} is a Bounded Model Checker for Java programs that checks runtime exceptions and user-definded assertions. \texttt{LLBMC} is another bounded model checker for finding bugs in C/C++ programs, mainly intended for checking low-level system code. By exploiting the UNSAT core generation mechanism, we will be able to determine bounded validity cores using these tools\footnote{See \ref{sec:muses} and \ref{sec:bvc}.}.
 
+As you can see, there are many efficient
+algorithms and tools for checking safety properties due to their prevalence in
+practical applications. However, system specifications still contains liveness requirements.
+Generally speaking, liveness properties are harder to verify than safety
+properties.
+A simple liveness property involves temporal operators of \emph{always eventually}, denoted by $GF$, and intuitively have infinite-length counterexample: an infinite sequence of system states,
+where the system starts in its initial state, but fails to produce the required
+event.
+
+Essentially, a liveness property specifies a set of live executions, where an execution is an infinite sequence of states. Let $U^\omega$ be the set of infinite sequences of
+program states.  $\sigma_{u_0} = u_0, u_1, u_2, u_3, \cdots u_{k-1}, u_{k} \dots$ is an execution for $(I, T)$ if $$I(u_0) \land T(u_0, u_1) \land T(u_1, u_2) \land \cdots \land T(u_{k-1}, u_{k}) \land \dots$$
+Proving the correctness of a liveness property $P_{live} : U^\omega \rightarrow \bool$ requires to prove that
+a \emph{bad cycle} cannot be reached from the initial state. Such a cycle is a sequence
+of states that the system can repeat indefinitely without producing the required
+event:
+$$\exists \sigma_{u_0} \in U^\omega for (I, T).~~ P_{live} (\sigma_{u_0}) = false$$.
+
+When it comes to checking such requirements, there are techniques that exploit existing safety verification tools to check liveness. One approach is to reduce a liveness problem to a safety problem \cite{Schuppan:2006}, where a suitable counterexample-detection logic is used by duplicating state elements,
+ $U_{copy} = \{ u_c | u \in U \}$. It non-deterministically
+samples the design state and tries to find a valid counterexample
+scenario with finding a state repetition
+loop during which the behavior of the liveness and fairness
+conditions are observed.
+
+Although converting liveness to safety makes it possible to use existing safety
+verification algorithms, such translation is usually impractical due to substantially increasing the problem size. Another technique is bounded liveness checking, $k$-liveness, \cite{Schuppan:2006}, which proves the absence of a liveness failure up to a certain bound;
+i.e. for a property $GF$ $P$, instead of proving $\neg P$ cannot happen infinitely often, it tries to prove $\neg P$ does not occur consecutively for $k$ steps. $k$-liveness checks liveness as a sequence of safety checks increasing $k$ incrementally.
+An improved version of $k$-liveness is to perform a sequence of
+safety queries as necessary to find a large-enough bound to
+avoid spurious failures by counting the maximum number of times that $\neg P$ can occur \cite{claessen2012liveness}. Adapting any of these methods for liveness checking makes it possible to tackle the problem with existing inductive algorithms for safety verification.
+
 \subsection{Compositional Reasoning}
-Complex systems are usually composed from libraries of components. The specification of such systems are decomposed into properties of each individual component. Then, compositional verification is employed to ensure the correctness of the top level properties, while integrating components \cite{NFM2012:CoGaMiWhLaLu}. Previously Murugesan et al. demonstrated ~\cite{hilt2013} a model-based approach to system construction in which compositional proofs are used to to establish satisfaction arguments. To cope with the complexity of modeling and scalability of verification of large systems,
+Complex systems are usually composed from libraries of components. The specification of such systems are decomposed into properties of each individual component. Then, compositional verification is employed to ensure the correctness of the top level properties while integrating components \cite{NFM2012:CoGaMiWhLaLu}. Previously Murugesan et al. demonstrated ~\cite{hilt2013} a model-based approach to system construction in which compositional proofs are used to to establish satisfaction arguments. To cope with the complexity of modeling and scalability of verification of large systems,
 they proposed an approach in which systems can be decomposed into subsystems, modeled individually and verified compositionally. The decomposition of system into subsystems induces the need to decompose the requirements of the system `flowed down'' to each subsystem that is then modeled and verified.
 
 Given an architectural model of the system (decomposition of system into components) in which each component (including the system) is endowed with its own set of requirements,
  they used a tool suite called AGREE~\cite{NFM2012:CoGaMiWhLaLu} -- a reasoning framework based on assume-guarantee reasoning -- to compositionally verify whether system level requirements are established as a logical consequence of the component level requirements and the system level assumptions.
  Using AGREE they were able to verify large and complex systems efficiently. AGREE partitions the task of verification along the architectural lines of the system. Stating from the leaf level, it systematically verifies if the parent level requirements hold as a logical consequence of its immediately child component requirements in the given architecture.
 
-To verify the requirements, AGREE uses the JKind~\cite{jkind} model checker. The underlying SMT solver in JKind automatically constructs proofs to establish satisfaction of requirements in the model. A proof can be visualized as a derivation tree where the leaves of the tree are axioms -- elements of the model such as components requirements, interface connections, system assumptions -- and each interior node represents the application of an inference rule that leads to proving the system requirement. If the solver encounters a violation of a requirement while constructing the proof, it reports it along with a counterexample - a concrete path of execution that explains the violation. On the other hand, when the proof is successfully constructed, the tool reports that the requirement is satisfied.
+To verify the requirements, \texttt{AGREE} uses the \texttt{JKind} \cite{jkind} model checker. The underlying SMT solver in  \texttt{JKind} automatically constructs proofs to establish satisfaction of requirements in the model. A proof can be visualized as a derivation tree where the leaves of the tree are axioms -- elements of the model such as components requirements, interface connections, system assumptions -- and each interior node represents the application of an inference rule that leads to proving the system requirement. If the solver encounters a violation of a requirement while constructing the proof, it reports it along with a counterexample - a concrete path of execution that explains the violation. On the other hand, when the proof is successfully constructed, the tool reports that the requirement is satisfied.
+There are other tools that perform similar verifications; for example \texttt{Kind 2} \cite{champion2016cav} also supports (assume-guarantee) contracts and \texttt{NuXmv} has a tool called \texttt{OCRA} \cite{ocra} that supports the specification and analysis of component-based architectures.
 
 An evidence in this context is nothing but an
 explanation about which parts of the model (the component requirements and system assumptions) the
@@ -180,7 +196,28 @@ correctly for all possible executions. Alternatively,
 \emph{dynamic slicing} executes a path through the program, computing the statements which have an impact on the criterion for that
 specific execution \cite{Androutsopoulos}. Dynamic slicing is very useful in debugging, while static slicing is more attractive as an aid to verification.
 
-For a given slicing criterion, static slices can be constructed from a backward or forward analysis. In the backward approach, the statements of the program that does not have any effect on the criterion are sliced away. However, the forward approach slices away those statements not affected by the criterion.
+For a given slicing criterion, static slices can be constructed from a backward or forward analysis.
+A backward slice of a program with respect to a
+program point $p$ and  set of program variables $V$ include all the program statements that may affect the value of variables in
+$V$ at $p$. Consider the program in Figure \ref{fig:exslic} (a).
+A backward slice for this code snippet over $V = \{b\}$ at the end of the program is shown in  Figure \ref{fig:exslic} (b).
+
+A forward slice of a program with respect to a
+program point $p$ and set of program variables $V$
+consists of all program statements that may be affected by the value of
+variables in $V$ at p (e.g.  Figure \ref{fig:exslic} (c)).
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{figs/exslic.png}
+  %\vspace{-0.1in}
+  \caption{Example of backward and forward static slicing}
+  %\vspace{-0.2in}
+ \label{fig:exslic}
+\end{figure}
+
+In summary, in the backward approach, the statements of the program that does not have any effect on the criterion are sliced away. However, the forward approach slices away those statements not affected by the criterion.
 Our work can be viewed as a more accurate form of backwards static slicing starting from a requirement ~\cite{Tip95asurvey}. Slicing can determine the cone of influence (COI) for a given property, while IVCs are a subset of COI.
 
 In fact, to start the verification process and IVC computation, we fisrt perform {\em backwards slicing} from the formula that defines the property of interest of the model. This step is to speed up the verification process.
@@ -189,33 +226,34 @@ In fact, to start the verification process and IVC computation, we fisrt perform
 
 \section{UNSAT cores and Minimal UNSAT Subformulae}
 \label{sec:muses}
-Satisfiability Modulo (the) Theory (SMT) solvers are powerful tools to decide the
-satisfiability of boolean combinations
-of propositional atoms in the language of a specific theory. 
+Satisfiability (SAT) Modulo Theories (SMT) solvers are powerful tools to decide the
+satisfiability of formulas with respect to background theories expressed in classical first order logic with equality. When using SAT solvers, instead of SMT solvers,  the language of the solver is Boolean logic and the problem must be encoded into
+propositional logic.
+
 A Boolean formula is satisfiable if there is a consistent assignment of values $true$ or $false$ to its variables in such a way that the formula evaluates to $true$. If the formula evaluates to $false$ for all possible variable assignments, then it is unsatisfiable. For example, the formula
- $a \wedge \neg a$ is unsatisfiable because there is no possible 
- assignment for $a$ to make the formula 
- evaluate to $true$. 
+ $a \wedge \neg a$ is unsatisfiable because there is no possible
+ assignment for $a$ to make the formula
+ evaluate to $true$.
  On the other hand the formula
-  $a \vee b$ is satisfiable when at least 
-  either $a$ or $b$ 
+  $a \vee b$ is satisfiable when at least
+  either $a$ or $b$
   is assigned to $true$. An assignment that makes the formula $true$ is called a model. Solvers return a satisfiable model in case the formula is satisfiable: $a = true$ is one possible model for our example.
 
 For a given unsatisfiable problem instance, solvers try to generate a proof of unsatisfiability. It is usually more useful to have a minimum proof of unsatisfiability. Such a proof is dependent on identifying a sub-set of clauses that make the problem unsatisfiable. Solvers are usually capable of reporting such sub-sets in the proof, which is known as \emph{UNSAT core}. However, the generated unsat core is not guaranteed to be minimal.
 
-Every propositional logic formula can be transformed into an equivalent conjunctive normal form (CNF) using the laws of Boolean algebra. So, a satisfiability problem can be given to a solver as a set of queries. A formula is in CNF, if it is a conjunction of clauses (or a single clause). Each clause is disjunction of positive or negative literals (i.e. a variable or the negation of a variable). So each CNF formula can be formulated as a finite set of clauses (or constraints). Then we assume there is a function $\checksat(F)$ which determines if $F$ is satisfiable or not. 
+Every propositional logic formula can be transformed into an equivalent conjunctive normal form (CNF) using the laws of Boolean algebra. A formula is in CNF if it is a conjunction of clauses (or a single clause). Each clause is disjunction of positive or negative literals (i.e. a variable or the negation of a variable). So each CNF formula can be formulated as a finite set of clauses (or constraints). Then we assume there is a function $\checksat(F)$ which determines if $F$ is satisfiable or not.
 When $F$ is unsatisfiable, we assume we
 have a function $\unsatcore()$ which returns a minimal subset of the
-constraints such that the formula is satisfiable without them. 
+constraints such that the formula is satisfiable without them.
 
 \begin{definition}{\emph{Minimal Unsatisfiable Subformulas(MUSes):}}
   \label{def:mus}
   Let $C$ be a finite set of constraints.
-  $U \subseteq C$ be its unsatisfiable subset. 
-  A constraint $c \in U$ is an 
+  $U \subseteq C$ be its unsatisfiable subset.
+  A constraint $c \in U$ is an
   unsatisfiable core for $U$ if $U \setminus \{c\}$ is satisfiable.
-  A set of all unsatisfiable cores of $U$ constitute 
-  an MUS for $C$. 
+  A set of all unsatisfiable cores of $U$ constitute
+  an MUS for $C$.
   Note that such a set is not necessarily unique, and $C$ can have several distinct MUSes.
 \end{definition}
 
@@ -246,7 +284,7 @@ As mentioned, an unsatisfiable problem can have several distinct MUSes. Although
 Another work by Bendik et al. \cite{bendk16} tries to address this problem in the domains where minimization process is rather expensive.
 These algorithms can be used in our work in order to develop a new algorithm for computing all minimal IVCs. This will require changing the underlying mechanisms that are used to construct candidate solutions and also changing the structure of the proof of correctness. The technique used in MARCO can be adapted to our work for computing all minimal IVCs. Algorithm \ref{alg:marco} is an abstract version of MARCO. This algorithm uses a symbolic representation of the
 power set of $C$, $\mathcal{P} (C)$,  cleverly exploiting isomorphism between finite power sets
-and Boolean algebras. 
+and Boolean algebras.
 A brute-force approach to calculate all MUSes is basically explore all subsets of $C$ and determine if they are MUS or not. In the power set exploration process, subsets whose satisfiability is not known
 yet are called \emph{unexplored}; i.e. initially, all subsets in $\mathcal{P} (C)$ are unexplored, and at the end, satisfiability of every subset is known; i.e. all are \emph{explored}.
 In MARCO, subsets of
@@ -258,8 +296,8 @@ of unexplored subsets of $C$.  $map$ is initially $true$.
 MARCO iteratively explores $\mathcal{P} (C)$ to find each MUS. In each iteration, an unexplored subset $C' \subseteq C$ is non-deterministically selected by finding
 a model of $map$. If $C'$ is satisfiable, it is grown
 to a maximal satisfiable subset (MSS); Set $S \in C$ is MSS if $\forall c \in C \setminus \{S\}, (S \cup \{c\})$ is unsatisfiable. All subsets of a maximal satisfiable subset are also satisfiable. So, in this case, $map$ is updated in a way to block those subsets from future computation by marking them as \emph{explored} (line \ref{line:marco:sat}).
-On the other hand, if $C'$ is $\unsat$, it is shrunk to a MUS. 
-When an MUS is found then all of its supersets are guaranteed to be unsatisfiable. So, $map$ is updated in a way 
+On the other hand, if $C'$ is $\unsat$, it is shrunk to a MUS.
+When an MUS is found then all of its supersets are guaranteed to be unsatisfiable. So, $map$ is updated in a way
 to mark all those supersets as \emph{explored} in order to block them from future exploration (line \ref{line:marco:unat}).
 The grow/shrink procedure can be carried out by any algorithm for
 a single MSS/MUS extraction which makes MARCO applicable to arbitrary
@@ -303,31 +341,32 @@ However this work is for finite systems in the domain of SAT solving,
  infinite systems with the support of the state of the art of the SMT solvers. In addition, for IVC computation, the goal is to provide meaningful results to the user.
 
 \section{Proof/Lemma Minimization}
+\label{sec:proofcert}
 The IVC idea shares many similarities with approaches for computing minimal invariant sets for inductive proofs (such as is performed for inductive proof certificates~\cite{piskac2016, Ivrii14:invariants}).
 A proof certificate is an artifact embodying a proof of the
 claim that can then be validated by a trusted checker.
 Given a safety property $P$, an formula $Q$ is a $k$ inductive strengthening of $P$ if
-$P \rightarrow Q$, and $Q$ is $k$ inductive. 
+$P \rightarrow Q$, and $Q$ is $k$ inductive.
 %For $i = 1,2$, if $Q_i$ is $k_i$
 %inductive strengthening of $P_i$, then $(Q_1 \wedge Q_2)$
 %is $k$ inductive strengthening of $(P_1 \wedge P_2)$, where $k = max(k_1, k_2)$.
 Formula $Q$ is a certificate for property $P$ if $Q$ is
 a $k$ inductive strengthening of $P$.
 Certificates need to be concise and efficient to check
-by an independent tool or method. In particular, 
+by an independent tool or method. In particular,
 checking a certificate should not take more
-time than proving the original property. Mebsout and Tinelli presented a method for extracting and verifying proof certificates \cite{piskac2016} implemented in \texttt{Kind 2} model checker. 
+time than proving the original property. Mebsout and Tinelli presented a method for extracting and verifying proof certificates \cite{piskac2016} implemented in \texttt{Kind 2} model checker.
 \texttt{Kind 2} performs verification by running different engines concurrently. Specifically, it employs number of auxiliary invariant generation engines to
 discover and pass along auxiliary invariants that might be
 helpful in proving a property of interest. Then these invariants are considered as
-safety certificates for the property. 
+safety certificates for the property.
 To simplify the certificates, they either reduce $k$ or the size/complexity of the certificate formula.
 After obtaining a $k$ inductive invariant $Q$, \texttt{Kind 2} starts with reducing $k$ before simplifying the formula. It will replay the inductive
 step for $Q$ for values $i < k$ , following one
 of three different strategies:
 \begin{itemize}
   \item forward enumeration: all values of $1 \le i \leq k' < k$  are checked, and $k'$ is the first where $k'$ inductiveness holds.
-  \item binary search: the interval $[1 , k ]$ is divided into 
+  \item binary search: the interval $[1 , k ]$ is divided into
   subintervals $[1 , k' ]$ and
 $[ k' + 1 , k ]$ of similar size. Then, the first or
 the second interval is recursively considered depending on whether $Q$ is $k'$ inductive
@@ -336,12 +375,14 @@ or not.
 when $k'$ inductiveness does not hold anymore.
 \end{itemize}
 
-To simplify the certificate, $Q$ is converted into a set of subformulae.  
+To simplify the certificate, $Q$ is converted into a set of subformulae.
 Iteratively, each subformula is removed from a set and it is checked if $Q$ is still $k$ inductive or not. In this case subformulae not needed to prove
 $Q$ are pruned away. Finally, to verify a certificate, it needs to be proved that $Q$ is
 a $k$ inductive strengthening of the original property.
 
-Our IVC algorithm also needs to find a minimal lemma set.  However, there is a substantive difference: to find a minimal set of constraints, it is usually necessary to find new proofs involving {\em new lemmas} not used in the original proof, which accounts for the expense of finding an accurate minimal IVC. This process will be explained in Chapter \ref{ch:ivc}. Note that our lemma minimization technique used in IVC generation is actually more efficient than the above technique.
+Our IVC algorithm also needs to find a minimal lemma set.  However, there is a substantive difference: to find a minimal set of constraints, it is usually necessary to find new proofs involving {\em new lemmas} not used in the original proof, which accounts for the expense of finding an accurate minimal IVC. This process will be explained in Chapter \ref{ch:ivc}.
+%Note that our lemma minimization technique used in IVC generation is actually more efficient than the above technique.
+
 
 \section{Traceability}
 \emph{Requirements traceability} can be defined as
@@ -350,32 +391,32 @@ Our IVC algorithm also needs to find a minimal lemma set.  However, there is a s
 \textit{``the ability to describe and follow the life of a requirement, in both forwards and backwards direction (i.e., from its origins, through its development and specification, to its subsequent deployment and use, and through all periods of on-going refinement and iteration in any of these phases).''}~\cite{gotel}.
 \end{quotation}
 
-This topic has been of great interest in research and practice for several decades. Intuitively, it concerns establishing relationships, called \emph{trace links}, between the requirements and one or more artifacts of the system.
+Traceability has been of great interest in research and practice for several decades. Intuitively, it concerns establishing relationships, called \emph{trace links}, between the requirements and one or more artifacts of the system.
 Among the several different development artifacts and the relationships that can be established from/to the requirements, being able to establish trace links from requirements to artifacts that realize or \emph{satisfy} those requirements---particularly
-to entities within those artifacts called \emph{target artifacts}~\cite{gotel2012traceability}---has been enormously useful in practice. For instance, it helps analyze the impact of changes in one artifact on the other, assess the quality of the system, aid in creating assurance arguments for the system, etc. In this work, we focus our attention to this subset of requirement traceability, that we call \emph{Requirements Satisfaction Traceability.}
+to entities within those artifacts called \emph{target artifacts}~\cite{gotel2012traceability}---has been enormously useful in practice. For instance, it helps analyze the impact of changes in one artifact on the other, assess the quality of the system, aids in creating assurance arguments for the system, etc. In this work, we focus our attention on a subset of requirements traceability that we call \emph{Requirements Satisfaction Traceability.}
 
 Instead of just recording the trace links from each requirement to the target artifacts, \emph{Satisfaction Arguments}~\cite{zave1997four} offer a semantically rich way to establish them. Originally proposed by Zave and Jackson~\cite{zave1997four}, a satisfaction argument demonstrates how the behaviors of the system and its environment together satisfy the requirements. From a traceability perspective, these arguments help establish
  trace links (the \emph{satisfied by} relationship) between the requirements and those parts of the system and environment (the target artifacts) that were necessary to satisfy the requirements; We call those target artifacts a \emph{set of support} for that requirement. This set of support is the same as a minimal inductive validity core obtained from the correctness proof of the requirement.
 
 \section{Requirements Adequacy}
-Determining completeness of properties has also been extensively studied. Certification standards such as DO-178C~\cite{DO178C} require that requirements-derived tests achieve some level of structural coverage (MC/DC, decision, statement) depending on the criticality level of the software, in order to approximate completeness.  If coverage is not achieved, then additional requirements and tests are added until coverage is achieved. Recent work by Murugesan~\cite{murugesan2015we} and Schuller~\cite{schuler_assessing_2011} attempted to combine test coverage metrics with requirements to determine completeness.  Chockler~\cite{chockler_coverage_2003} defined the first completeness metrics directly on formal properties based on mutation coverage.  Later work by Kupferman et al.~\cite{Kupferman:2006:SCF} defines completeness as an extension of vacuity to elements in the model.  We present an alternative approach that uses the proof directly, which we expect to be considerably less expensive to compute.
+Determining adequacy of properties has also been extensively studied. Certification standards such as DO-178C~\cite{DO178C} require that requirements-derived tests achieve some level of structural coverage (MC/DC, decision, statement) depending on the criticality level of the software, in order to approximate adequacy.  If coverage is not achieved, then additional requirements and tests are added until coverage is achieved. Recent work by Murugesan~\cite{murugesan2015we} and Schuller~\cite{schuler_assessing_2011} attempted to combine test coverage metrics with requirements to determine completeness.  Chockler~\cite{chockler_coverage_2003} defined the first adequacy (completeness) metrics directly on formal properties based on mutation coverage.  Later work by Kupferman et al.~\cite{Kupferman:2006:SCF} defines completeness as an extension of vacuity to elements in the model.  We present an alternative approach that uses the proof directly, which we expect to be considerably less expensive to compute.
 
 
 \subsection{Coverage and Mutations}
 
-Different notions of coverage have been well defined in software testing. However, in formal verification, it is very complex to define and compute this notion.
-Usually, coverage techniques in the property-based verification try to measure the quality of the specification in regard to the completeness of a set of properties.
+Different notions of coverage have been defined in software testing. However, in formal verification, it is not immediately obvious how to define and compute coverage.
+%Usually, coverage techniques in the property-based verification try to measure the quality of the specification in regard to the completeness of a set of properties.
 
 Coverage in verification was introduced in \cite{hoskote1999coverage, katz1999have}. Hoskote et al. \cite{hoskote1999coverage} suggested a state-based metric in model checking based on FSM mutations, which are small atomic changes to the design. Then, the method for measuring coverage is to model check a given property for each mutant design.
 Later in \cite{chockler_coverage_2003}, Chockler et al. provided corresponding notions of metrics used in simulation-based verification for formal verification. In fact, they improved the same idea of mutation-based coverage where each mutation is generated to check if a specific
 design element is necessary for the proof of the property.
- However, the proposed algorithm is both computationally expensive and approximately linear
- in the number of mutations. Note that most of the mutation-based metrics, including \cite{kupferman_theory_2008, chockler2001practical}, are focused on finite state systems and hardware systems.
-
+ However, the proposed algorithm is both computationally expensive: each mutant model must be separately analyzed, which can easily lead to tens of thousands of verification problems on models of moderate size. Note that most of the mutation-based metrics, including \cite{kupferman_theory_2008, chockler2001practical}, are focused on finite state systems and hardware systems.
 In general, specification completeness can be defined with
 regard to the notion of coverage. In fact, the way that coverage
-is formalized plays a key part in the strength/effectiveness of
-a method for the assessment of completeness. The goal of a coverage metric is usually to assign a numeric score that describes how well properties cover the design. The majority of the work on coverage metrics has focused on {\em mutations}, which are ``atomic'' changes to the design, where the set of possible mutations depends on the notation that is used.  A mutant is ``killed'' if one of the properties that is satisfied by the original design is violated by the mutated design~\cite{chockler_coverage_2003,chockler2001practical,chockler2010coverage,Kupferman:2006:SCF,kupferman_theory_2008}.  There are many different kinds of mutations that have been proposed, primarily focused on checking sequential bit-level hardware designs.  For these designs, {\em state-based} mutations flip the value of one of the bits in the state.  There are several variations depending on whether the flip is performed on a single state within a Kripke structure~\cite{hoskote1999coverage}, or in the description of the signal in the transition relation of the circuit~\cite{chockler2001practical}.  {\em Logic-based} mutations fix the value of a bit to constant zero or one, and can be used to determine whether properties can find stuck-at faults.  {\em Syntactic} mutations~\cite{chockler_coverage_2003} remove states in a control flow graph representation of hardware.  Similarly, for software, it is possible to apply any of the ``standard'' source code mutation operators used for software testing~\cite{Andrews06:mutation} towards requirements coverage analysis.  Some examples of software mutations are \cite{Budd:1980}:
+is formalized plays a key part in the strength/ effectiveness of
+a method for the assessment of completeness. 
+
+The goal of a coverage metric is usually to assign a numeric score that describes how well properties cover the design. The majority of the work on coverage metrics has focused on {\em mutations}, which are ``atomic'' changes to the design, where the set of possible mutations depends on the notation that is used.  A mutant is ``killed'' if one of the properties that is satisfied by the original design is violated by the mutated design~\cite{chockler_coverage_2003,chockler2001practical,chockler2010coverage,Kupferman:2006:SCF,kupferman_theory_2008}.  There are many different kinds of mutations that have been proposed, primarily focused on checking sequential bit-level hardware designs.  For these designs, {\em state-based} mutations flip the value of one of the bits in the state.  There are several variations depending on whether the flip is performed on a single state within a Kripke structure~\cite{hoskote1999coverage}, or in the description of the signal in the transition relation of the circuit~\cite{chockler2001practical}.  {\em Logic-based} mutations fix the value of a bit to constant zero or one, and can be used to determine whether properties can find stuck-at faults.  {\em Syntactic} mutations~\cite{chockler_coverage_2003} remove states in a control flow graph representation of hardware.  Similarly, for software, it is possible to apply any of the ``standard'' source code mutation operators used for software testing~\cite{Andrews06:mutation} towards requirements coverage analysis.  Some examples of software mutations are \cite{Budd:1980}:
 \begin{enumerate}
     \item Replace an integer constant $C$ by one of $\{0, 1, -1, C + 1, C - 1\}$,
     \item Replace an arithmetic, relational, logical, bitwise logical, increment/decrement, or arithmetic-assignment operator by another operator from the same class,
@@ -393,13 +434,14 @@ Mutation-based approaches are often impractically expensive to compute; even for
 \newcommand{\inputnode}{{\sc input}}
 
 Mutations for hardware are discussed in~\cite{chockler2010coverage,Kupferman:2006:SCF,kupferman_theory_2008}. A more recent work in \cite{chockler2010coverage} performs coverage analysis through interpolation \cite{mcmillan2003interpolation}. This work is also based on design-dependent mutations \cite{chockler_coverage_2003}, where a design is considered as a net-list with nodes of types \{ \andnode, \invnode, \regnode, \inputnode \}.
-Each mutant design changes the type of a single node to \inputnode . When property $\phi$ satisfied by the original net-list fails on the mutant design, it is said that a mutant is discovered for $\phi$.
-Then, the coverage metric for $\phi$ is defined as the fraction of the discovered mutants, based on which the coverage of a set of properties is measured as the fraction of mutants discovered by at least one property.
+Each mutant design changes the type of a single node to \inputnode . 
+%When property $\phi$ satisfied by the original net-list fails on the mutant design, it is said that a mutant is discovered for $\phi$.
+%Then, the coverage metric for $\phi$ is defined as the fraction of the discovered mutants, based on which the coverage of a set of properties is measured as the fraction of mutants discovered by at least one property.
 To decrease the cost of computation, coverage analysis is performed at several stages; first, all the nodes that do not appear in the resolution proof of a given property are marked as \emph{not-covered}, and the rest of the nodes are marked as \emph{unknown}. Then, for the unknown nodes, the basic mutation check is performed: if a corresponding mutant design violates the property, it will be considered as \emph{covered}. Otherwise, the algorithm tries to drive an inductive invariant to prove that the node is not covered. Finally, an interpolant-based model checking is applied to the nodes that are still unknown.
 
 Most of the mutation-based coverage techniques can be put into the category of falsity coverage, where we mutate the design and see if the property is still valid or not.
-In this way, we understand if that mutant was necessary (covered) for (by) that property. 
-It is important to note that some mutations reduce the state space of the system to
+In this way, we understand if that mutant was necessary (covered) for (by) that property.
+It is important to note that some mutations yield a subset of the state space of the system to
 be explored; in this case, any universal property that was true of the original system
 must, by definition, be true of the mutated system. This is where falsity coverage is not effective, and the notion of \emph{vacuity coverage} comes into play. Falsity coverage asks weather the mutant FSM still satisfies the property, while vacuity coverage checks if the mutant FSM satisfies the property vacuously. In vacuity coverage, first, we makes sure the property is non-vacuous. Then, we mutate the design. If the property is
 vacuous afterwards, it means that the mutant was necessary for that property.
@@ -432,26 +474,26 @@ proofs, it is possible to use IVCs for additional purposes (proof
 explanation and completeness checking).
 
 \section{Safety Standards}
-Due to the complexity of computer systems and our reliance on them, it is of the utmost importance that the development of these systems proceeds in a way that minimizes development errors. There are a couple of safety standards that focus on safety critical components, including DO-178C \cite{DO178C}, MOD-0053 \cite{standard2007standard}, and ISO 26262 \cite{iso201126262}. Production of a functional safety case is usually a requirement for compliance with a specific standard, which brings opportunities and challenges to safety practitioners and researchers. In this section we briefly describes the objectives of these standards and how IVCs can be related to this area.
+Due to the complexity of computer systems and our reliance on them, it is of the utmost importance that the development of these systems proceeds in a way that minimizes development errors. There are a several safety standards that focus on safety critical components, including DO-178C \cite{DO178C}, MOD-0053 \cite{standard2007standard}, and ISO 26262 \cite{iso201126262}. Production of a functional safety case is usually a requirement for compliance with a specific standard, which brings opportunities and challenges to safety practitioners and researchers. In this section we briefly describes the objectives of these standards and how IVCs can be related to this area.
 
-Software Considerations in airborne systems and equipment are usually regulated by another certification: DO-178C \cite{DO178C}, which demands a rigorous software development process.   There are a couple of key components in DO-178C that are related to our purpose; first is to ensure the low-level requirements are in compliance with the high-level safety requirements. That is, each refinement must be shown not to introduce functionality not present in the artifact from which it was derived (adequacy).
+Software Considerations in airborne systems and equipment are usually regulated by certification: the DO-178C standard \cite{DO178C}.   There are a couple of key components in DO-178C that are related to our purpose; first is to ensure the low-level requirements are in compliance with the high-level safety requirements. That is, each refinement must be shown not to introduce functionality not present in the artifact from which it was derived (adequacy).
 Another component of DO-178C is coverage analysis at the two levels: requirements-based analysis and structural analysis.
 After requirements-based testing, which ensures the software in the target computer will satisfy the high-level requirements, the purpose of coverage analysis in DO-178C is to determine how well this type of testing verified the implementation of the software requirements. Then, the structural coverage analysis is to determine which code structure was not exercised by the requirements-based test procedure.
-DO178C currently uses a variety of metrics to determine adequacy of requirements, but much of the effort involves code-level testing.  Test suites are derived from requirements and used to test the software, and measured using different structural coverage test metrics.
+DO178C  uses a variety of metrics to determine adequacy of requirements, but much of the effort involves code-level testing.  Test suites are derived from requirements and used to test the software, then measured using different structural coverage test metrics.
 If code-level test suites do not achieve full coverage, then an analysis is performed to determine whether there are missing requirements and test cases.  The kind of structural coverage required (e.g., statement, branch, MCDC) for adequate testing is driven by the criticality of the software in question.
-Traceability is another explicitly defined component of DO-178C; that is, low-level requirements must be traceable to the high-level requirements if was derived from. Further, two other traceability objectives in DO-178C are (1) traceability of high-level requirements to system requirements and (2) traceability of software design to high-level requirements, which specifically require applicants to demonstrate bi-directional traceability.
+Traceability is another explicitly defined component of DO-178C; that is, low-level requirements must be traceable to the high-level requirements that they refine. Further, two other traceability objectives in DO-178C are (1) traceability of high-level requirements to system requirements and (2) traceability of software design to high-level requirements, which specifically require applicants to demonstrate bi-directional traceability.
 
 MOD-0053 \cite{standard2007standard} is a defense standard that provides safety management requirements for defense systems, which are designed to be applied in different phases of the development process of MOD\footnote{Ministry of Defence} projects. A key component of this standard is a
-\emph{Safety Case}, which demonstrates how safety will be, is being and has been, achieved and maintained. Then, to summarize a Safety Case and document safety management activities, Safety Case Reports should be provided. These reports are treated as safety assurance that shows safety is managed effectively. Hazard analysis is another important component of MOD-0053, for which enough evidence must be provided to show adequate hazards are identified and managed properly. Therefore, traceability in this standard is a key component defined at two levels: (1) traceability  between each safety
+\emph{Safety Case}, which demonstrates how safety will be achieved and maintained. To summarize a Safety Case and document safety management activities, Safety Case Reports should be provided. These reports describe a structured argument that the system is acceptably safe. Hazard analysis is another important component of MOD-0053, for which enough evidence must be provided to show all hazards are identified and properly managed. Therefore, traceability in this standard is a key component defined at two levels: (1) traceability  between each safety
 requirement and the source of that requirement, and (2) traceability of the safety
 risk/hazards management to hazards and accidents. Requirements traceability in MOD-0053 should be established in both ways: (1) to trace each requirement to the
 part of the code which implements it, and (2) to trace from any part of the
 code, back through the software design/specification, to the requirement. Currently, traceability checks are performed via traceability matrices built manually, however, MOD-0053 recommends that traceability be provided between the formal arguments and the software
 requirement, which will help to check if all the requirements have
-been verified, and to ensure that the implications of changes to requirements can be assessed. In addition to traceability, this standard requires an assessment of the veracity and completeness of the software Safety Case, which we believe all these objectives can be achieved/facilitated by IVCs.
+been verified, and to ensure that the implications of changes to requirements can be assessed. In addition to traceability, this standard requires an assessment of the veracity and completeness of the software Safety Case.  We believe that many of these traceability and adequacy checks can be automated using IVCs.
 
-ISO 26262 \cite{iso201126262} is a common standard used in the automotive industry that allows to measure how safe a system will be in service. This standard provides guidance in different steps of the product development process to manage functional safety of a system at the hardware and software levels.
+ISO 26262 \cite{iso201126262} is a common standard used in the automotive industry whether an automotive system is acceptably safe. This standard provides guidance in different steps of the product development process to manage functional safety of a system at the hardware and software levels.
 One important component of ISO 26262 is Automotive Safety Integrity Levels (ASILs), by which each component is assigned to an acceptable risk level determined at the beginning of the development process. The goal is to analyze the system functionalities with respect to possible hazards. Each requirement is assigned a class of criticality from A to D, where D has the most safety critical processes and strictest testing regulations. In ISO 26262, qualification of software components demand testing not only under normal operating conditions, but also in the presence of faults so to determine how system reacts to abnormal inputs.  ISO 26262 has other important components like \emph{test tool qualification}, which are not closely related to the context of verification.
 
-In order to meet the objectives of the safety standards, developers have to put a lot of manual effort into providing acceptable evidence such as assurance cases, traceability matrices, and requirements adequacy. We claim that such safety analyses can be automated with the IVC notion, and we would like to study how we can achieve that. Since IVCs are derived from the formal proofs, they will make much more accurate safety evidence than those created manually.
+In order to meet the objectives of the safety standards, developers have to put a lot of manual effort into providing acceptable evidence such as assurance cases, traceability matrices, and requirements adequacy. We claim that some of these safety analyses can be automated with the IVC notion, and we would like to study how we can achieve that. Since IVCs are derived from the formal proofs, they will make much more accurate safety evidence than those created manually.
 

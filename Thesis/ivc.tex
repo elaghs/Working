@@ -1,7 +1,7 @@
 \chapter{Validity Cores}
 \label{ch:ivc}
 
-So far we have explained the idea behind inductive validity cores and what they intuitively mean. This chapter formalizes techniques for generating IVCs discussing the correctness of the techniques formally. We will provide detailed algorithms and illustrative examples for computing the proposed validity cores notions.
+So far we have explained the idea of inductive validity cores and provided an informal explanation of their definition. This chapter provides a formal definition of IVCs and provides algorithms for computing them efficiently. techniques for generating IVCs discussing the correctness of the techniques formally. We will provide detailed algorithms and illustrative examples for computing the proposed validity cores notions.
 
 Let us start with a very simple system from the avionics domain to illustrate our approach. An Altitude Switch (ASW) is a hypothetical device that turns power on to another subsystem, the Device of Interest (DOI), when the aircraft descends below a threshold altitude, and turns the power off again after the aircraft ascends over the threshold plus some hysteresis factor.  An implementation of an ASW containing two altimeters written in the Lustre language (simplified and adapted from Heimdahl \textit{et al.}~\cite{HCW02:ase-deviation}) is shown in Figure~\ref{fig:asw}.  If the system is not inhibited, and either altimeter is below the constant {\small \texttt{THRESHOLD}}, then it turns on the DOI; else, if the system is inhibited or both altimeters are above the threshold plus the hysteresis factor {\small \texttt{T\_HYST}}, then the DOI is turned off, and if neither condition holds, then in the initial computation it is false and thereafter retains its previous value.  The notation {\small \texttt{(false -> pre(doi\_on))}} in equation (7) describes an initialized register in Lustre: in the first step, the expression is {\small \texttt{false}}, and thereafter it is the previous value of {\small \texttt{doi\_on}}. The input variable {\small\texttt{inhibit}} determines whether or not the system is inhibited.
 
@@ -35,7 +35,7 @@ $I(u) = P(u)$ and $T(u, u') = P(u')$, i.e., you start in any state
 satisfying the property and can transition to any state that still
 satisfies the property. This answer gives no insight into the original
 system because it has no connection to the original system. In this
-section we introduce the notion of {\em inductive validity core} (IVC)
+section we formalize the notion of {\em inductive validity core} (IVC)
 which looks at generalizing the original transition system while
 preserving a safety property.
 
@@ -104,7 +104,7 @@ do not affect the satisfaction of $P$.  For comparison, note that a backwards st
 
 Generally, an IVC computation technique aims to determine, for any subset $S \subseteq T$, whether $P$ is provable by $S$. Then, a minimal subset that satisfies $P$ is seen as a minimal proof explanation called a minimal Inductive Validity Core.
 
-The notion of validity cores can be adapted for \emph{bounded} model checking to quantify how much of models have been explored by bounded analysis. We coin the term \emph{Bounded Validity Core (\bvc)} for this idea.
+The notion of validity cores can also be adapted for \emph{bounded} model checking to quantify how much of models have been explored by bounded analysis. We coin the term \emph{Bounded Validity Core (\bvc)} for this idea.
 
 \begin{definition}{\emph{Bounded Validity Core (\bvc):}}
   \label{def:ivc}
@@ -140,5 +140,5 @@ The traceability information provided by MIVCs can be used to perform a variety 
 
 \subsection{Online Algorithm for all MIVCs}
 \label{sec:onaivc}
-This section describes collaborative work with Masaryk University (Bendik et al. \cite{Jar2017}). We present an online approach for enumerating all MIVCs.
+This section describes collaborative work with Masaryk University (Bendik et al. \cite{Jar2017}). We present an online approach for enumerating all MIVCs. With an offline technique, described in Section \ref{sec:offaivc}, minimality of the IVCs is guaranteed when the algorithm terminates. However, if the termination requires a lot of resources, we may prefer to calculate as many minimal IVCs as possible in a given time. An online enumeration technique can be useful for such cases. The online approach finds minimal IVCs iteratively where minimality is guaranteed at the end of each iteration.
 \input{growshrink}

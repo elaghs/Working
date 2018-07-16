@@ -17,7 +17,11 @@
   \vspace{1pt}
 }
 
-All of the inductive validity core algorithms presented in Chapter \ref{ch:ivc} have been implemented in \texttt{JKind} model checker ~\cite{jkind}\footnote{Part of this chapter is from a collaborative paper with Gacek et al. \cite{jkindpaper}}. \jkind is an
+
+
+This chapter explains the implementation of IVC techniques. Part of this chapter is from a collaborative paper with Gacek et al. \cite{jkindpaper} and ~\cite{jkind}.
+
+All of the inductive validity core algorithms presented in Chapter \ref{ch:ivc} have been implemented in \texttt{JKind} model checker ~\cite{jkind}. \jkind is an
 open-source industrial
 infinite-state inductive model checker for safety properties. Models
 and properties in \jkind are specified in
@@ -81,11 +85,6 @@ post-processing results for presentation and repeated verification of models und
 
 %and supporting re-verification of slightly-modified models.  Simplifying counterexamples to support root-cause analysis and providing traceability information to automatically create traceability matrices and determine adequacy of requirements has been important in the industrial use of the tools.  Additionally, this type of coverage and traceability information is often required for certification of safety critical systems~\cite{DO178C}.  To support these uses,
 
-\subsubsection{Inductive Validity Cores (IVC)}
-
-For a proven property, an inductive validity core is a subset of \lustre equations from the input model for which the property still
-holds~\cite{ghassabani2016fse}.  Inductive validity cores can be used for traceability from property to model elements and determining coverage of the model by a set of properties~\cite{Ghass17Cov}.  This facility can be used to automatically generate traceability and adequacy information (such as traceability matrices~\cite{fifarek2017nfm} important to the certification of safety-critical avionics systems~\cite{DO178C}.
-The IVC engine uses a our \ucalg algorithm to efficiently produce minimal or nearly minimal cores. As a side-effect, the IVC algorithm also minimizes the set of invariants used to prove a property and emits this reduced set to other engines.
 
 \subsubsection{Smoothing}
 
@@ -103,6 +102,47 @@ support \texttt{MaxSat} such as \texttt{Yices} and \texttt{Z3}.
 The advice engine saves and re-uses the invariants that were used by \jkind to prove the properties of a model.  Prior to analysis, \jkind\ performs model slicing and flattening to generate a flat transition-relation model.  Internally, invariants are stored as a set of proven formulas (in the \lustre syntax) over the variables in the flattened model.  An {\em advice} file is simply the emitted set of these invariant formulas.  When a model is loaded, the formulas are loaded into memory; formulas that are no longer syntactically or type correct are discarded, and the remaining set of formulas are submitted as an initial set of possible invariants to be proved via $k$-induction: if they are proved, they are passed along to other engines; if falsified, they are discarded.
 %
 Names constructed between multiple runs of \jkind\ are stable, so if a model is unchanged, it can be trivially re-proved using the invariants and k-induction with $k=1$.  In the case that a model is a small delta of a previously-proved model, it is often the case that most of the invariants can be re-proved, leading to reduced verification times.
+
+\section{Tool Installation}
+The prerequisite for installing and using JKind is to have Java installed and on the PATH variable for the OS.
+Installing JKind is accomplished by the following steps:
+\begin{enumerate}
+  \item Download the zip containing the latest release from https://github.com/agacek/jkind/releases. As of the writing of this document, that is version 4.0.\footnote{All IVCs techniques are not yet part of the official release, but they can be obtained from \cite{mygit}}
+  \item Unzip the contents of that zip to the directory of your choice.
+  \item Add the folder from step 2 to the PATH variable for your OS.
+The installation can be tested by executing jkind –help from the command line. 
+\end{enumerate}
+Successful installation will provide the following result in Figure \ref{fig:jkins}.
+
+ \begin{figure}
+ \centering
+  \includegraphics[width=\columnwidth]{figs/jkindcon.png}
+  %\vspace{-0.1in}
+  \caption{Successful installation of \texttt{JKind}}
+  \vspace{0.1in}
+  \label{fig:jkins}
+\end{figure}
+
+To add a solver, users must perform these steps:
+\begin{enumerate}
+  \item Download the solver of choice.
+  \item Unzip the contents of the solver into a directory.
+  \item Create an environment variable called $<$SOLVER$>$\_HOME that points to the directory used the previous step. This is:
+      \begin{itemize}
+        \item CVC4\_HOME for \texttt{CVC4}
+        \item Z3\_HOME for \texttt{Z3}
+        \item MATHSAT\_HOME for \texttt{MathSAT}
+        \item YICES\_HOME for \texttt{Yices 1}
+        \item YICES2\_HOME for \texttt{Yices 2}
+      \end{itemize}
+  \item \jkind will automatically look for the ``bin'' directory under $<$SOLVER$>$\_HOME when the solver is activated.
+\end{enumerate}
+
+
+\section{{\sc JKind} Lustre Grammar and Command Line Arguments}
+\jkind accepts input from the synchronous dataflow language Lustre used for programming real-time systems. A dataflow language consists of a set of equations that assign variables where a variable can be computed as soon as its data dependencies have been computed. Such a language is a completely functional model without side effects, suitable for formal verification and program transformation. Like all functional language, a data flow language is naturally parallel where the only constraints on parallelism are due to the data-dependencies between variables. 
+
+Note that additions for IVCs and mention that these will be discussed in the next section.
 
 \subsection{Command Line}
 Different \jkind functionalities explained so far are accessible from the tool command line. Table \ref{tab:jkindcm} summarizes major options in \jkind.
@@ -143,10 +183,19 @@ Different \jkind functionalities explained so far are accessible from the tool c
 \label{tab:jkindcm}
 \end{table}
 
+\section{Integration of IVCs into {\sc JKind}}
+Show running example model again, this time with --%PROPERTY and --%IVC annotations.
+
+Describe how --%IVC annotation can be used to scope analysis to subset of variables.  Illustrate with the running example for different combinations of variables
+
+\subsubsection{Inductive Validity Cores (IVC)}
+
+For a proven property, an inductive validity core is a subset of \lustre equations from the input model for which the property still
+holds~\cite{ghassabani2016fse}.  Inductive validity cores can be used for traceability from property to model elements and determining coverage of the model by a set of properties~\cite{Ghass17Cov}.  This facility can be used to automatically generate traceability and adequacy information (such as traceability matrices~\cite{fifarek2017nfm} important to the certification of safety-critical avionics systems~\cite{DO178C}.
+The IVC engine uses a our \ucalg algorithm to efficiently produce minimal or nearly minimal cores. As a side-effect, the IVC algorithm also minimizes the set of invariants used to prove a property and emits this reduced set to other engines.
 
 
-
-\section{ {\sc JKind} Integration \& Applications}
+\section{ Integration of {\sc JKind} and IVCs into Other Tools}
 
 %\mike{Should we talk less (and less repetitively) about each table and use a chart that describes the jkind features used for each tool?}
 
@@ -159,27 +208,6 @@ specifications, calling \jkind, processing \jkind results, graphically
 displaying real-time results, and nicely formatting counterexamples.
 Many of the applications in this section make heavy use of \jkindapi.
 %
-
-\subsection{Specification and Analysis of Requirements}
-
-The {\em Specification and Analysis of Requirements} (\spear) tool is an open source tool for prototyping and analysis of requirements~\cite{fifarek2017nfm}.  Starting from a set of formalized requirements, \spear uses \jkind to determine whether or not the requirements meet certain {\em properties}.  It uses IVCs to create a traceability matrix between requirements and properties, highlighting unused requirements, over-constrained properties, and other common problems. \spear also uses \jkind with smoothing for test case generation using the Unique First Cause criteria~\cite{whalen2006issta}.
-%
-\spear captures
-requirements in a way that is backed by the formal semantics of
-\lustre, which enables them to be analyzed using model checking to
-ensure they are correct and consistent.
-
-\spear uses \jkind to prove properties over requirements, and uses IVC
-to create a traceability matrix between requirements and properties.
-This quickly highlights unused requirements, over-constrained
-properties, and other common problems. \spear also uses \jkind for
-test case generation using the Unique First Cause
-criteria~\cite{whalen2006issta} by creating {\em trap properties}.
-Each trap property is expected to be falsifiable, but in such a way
-that the counterexample has exactly the desired properties for a given
-test case. \spear uses smoothing in \jkind to ensure the resulting
-test cases are simple and understandable.
-
 \subsection{Assume Guarantee Reasoning Environment}
 
  The {\em Assume Guarantee Reasoning Environment} (\agree)~\cite{cofer2012nfm,QFCS15:backes,hilt2013} is an open-source compositional verification tool that proves properties of hierarchically-composed models in the Architectural Analysis and Design Language (AADL) language.  %\jkind as the default model checker for AGREE.
@@ -202,6 +230,27 @@ interval generalization to present clear counterexamples, IVC to show
 requirements traceability, and counterexample generation to check the
 consistency of an AADL component's contract. \agree also uses \jkind
 for test-case generation from component contracts.
+
+\subsection{Specification and Analysis of Requirements}
+
+The {\em Specification and Analysis of Requirements} (\spear) tool is an open source tool for prototyping and analysis of requirements~\cite{fifarek2017nfm}.  Starting from a set of formalized requirements, \spear uses \jkind to determine whether or not the requirements meet certain {\em properties}.  It uses IVCs to create a traceability matrix between requirements and properties, highlighting unused requirements, over-constrained properties, and other common problems. \spear also uses \jkind with smoothing for test case generation using the Unique First Cause criteria~\cite{whalen2006issta}.
+%
+\spear captures
+requirements in a way that is backed by the formal semantics of
+\lustre, which enables them to be analyzed using model checking to
+ensure they are correct and consistent.
+
+\spear uses \jkind to prove properties over requirements, and uses IVC
+to create a traceability matrix between requirements and properties.
+This quickly highlights unused requirements, over-constrained
+properties, and other common problems. \spear also uses \jkind for
+test case generation using the Unique First Cause
+criteria~\cite{whalen2006issta} by creating {\em trap properties}.
+Each trap property is expected to be falsifiable, but in such a way
+that the counterexample has exactly the desired properties for a given
+test case. \spear uses smoothing in \jkind to ensure the resulting
+test cases are simple and understandable.
+
 
 %\application{Static IMPerative AnaLyzer}{Open Source}
 \subsection{Static IMPerative AnaLyzer}
@@ -307,7 +356,7 @@ to the undecidability of the model checking problem.
 
 To implement \bvcalg\ algorithm, a new tool is buit on top of \texttt{JKind}. In the implementation, basically, the \texttt{JKind} BMC engine has been hacked to emit the bounded cores after each step of transition relation unrolling. The user needs to provide a desired bound and timeout for this calculation.
 
-The additional IVC engines integrated in \jkind are shown in Figure \ref{fig:ivcengines}. 
+The additional IVC engines integrated in \jkind are shown in Figure \ref{fig:ivcengines}.
 Once IVC generation is activated, through $-ivc$ options, an approximately minimal IVC is generated. If \jkind has been called with $-all\_ivcs$, the IVC\_UC engine passes the first approximate MIVC to the All\_IVCs engine, where one of the all IVC generation algorithms will run depending on the provided configuration.
 
 \begin{figure}

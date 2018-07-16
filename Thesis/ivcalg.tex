@@ -42,7 +42,7 @@ minimal.
 
 This algorithm has two problems. First, checking if a safety property
 holds is undecidable in general, thus, the algorithm may never terminate
-even when the safety property is easily provable over the original
+even when the safety property is provable over the original
 transition system. Second, this algorithm is very inefficient since it
 attempts to re-prove the property multiple times.
 
@@ -167,7 +167,7 @@ $k$-inductive for $(I, T)$ and $P \in R$. Like \mink, this function
 only checks the inductive query since each element of $R$ is an
 invariant and therefore will always pass the base query. A significant
 complication for reducing invariants is that some invariants may
-mutually need each other, even though none of them are needed to prove
+mutually require each other, even though none of them are needed to prove
 $P$. Thus in Algorithm~\ref{alg:reduce-invariants} we find a minimal
 set of invariants needed to prove $P$, then we find a minimal set of
 invariants to prove those invariants, and so on. We terminate when no
@@ -186,7 +186,7 @@ invariants. This gives the result $\{P, Q_1, Q_2\}$, but it may be
 that $Q_2$ alone is enough to prove $P$ thus the original result is
 not minimal. Also note, we do not care about the result of \checksat,
 only the \unsatcore that comes out of it. Since $P \land Q_1 \land
-\cdots \land Q_n$ is $k$-inductive, we know the \checksat call will
+\cdots \land Q_n$ is $k$-inductive, we know the \checksat\ call will
 always return \unsat.
 
 \begin{algorithm}[t]
@@ -266,7 +266,7 @@ minimal and much more efficient than the brute-force approach.
 \label{alg:ucbf}
 \end{algorithm}
 
-
+Note that as part of our IVC generation process we generate a $k$-inductive strengthening that is usually smaller and more efficiently computed than the work of Mebsout and Tinelli, as discussed in Section \ref{sec:proofcert}.
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "main.tex"

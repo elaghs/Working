@@ -1,5 +1,5 @@
 One straightforward technique for extracting BVCs is based on the conventional bounded model checking.
-We described $k$-induction in Chapter \ref{ch:background}. Bounded model checking is the base-case in \label{fig:k-induction} for a given $k$. To obtain validity cores from the base-case query, we need to unroll transition relation step by step (for $i=0$ to $i \leq k$). Assuming the property of interest is valid, at least up to bound $k$, in each step the result of $\bq_k(I, T, P)$ (Figure \ref{alg:bvc} and \ref{fig:queries}) will be \unsat . In the same way with IVCs, we can map the unsat-cores to the model elements, which will result in BVCs.
+We described $k$-induction in Chapter \ref{ch:background}. Bounded model checking is the base-case in \label{fig:k-induction} for a given $k$. To obtain validity cores from the base-case query, we need to unroll transition relation step by step (for $i=0$ to $i \leq k$). Assuming the property of interest is valid, at least up to bound $k$, in each step the result of $\bq_k(I, T, P)$ (described in Algorithm \ref{fig:queries} using the formulas from Figure \ref{alg:bvc}) will be \unsat . In the same way with IVCs, we can map the unsat-cores to the model elements, which will result in BVCs.
 
 \begin{algorithm}[t]
   \SetKwInOut{Input}{input}
@@ -17,5 +17,5 @@ We described $k$-induction in Chapter \ref{ch:background}. Bounded model checkin
   \Return{R}
 \caption{\bvcalg: Algorithm for computing a bounded validity core}
 \label{alg:bvc}
-\end{algorithm} 
+\end{algorithm}
 

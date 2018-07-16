@@ -20,3 +20,34 @@ d2 = (false -> pre(doi_on));
    and not inhibit => (doi_on = true);
    --%PROPERTY p;   
 tel;
+
+
+
+
+const THRESHOLD = 10000;  
+const T_HYST = THRESHOLD + 100;  
+  node asw (alt1, alt2: int; inhibit: bool)
+  returns (doi_on: bool);
+     var
+	 a1_below, a2_below, a1_above, a2_above,
+	 below, above_hyst, d1, d2, p: bool;
+     let
+	 a1_below = (alt1 < THRESHOLD);        
+	 a2_below = (alt2 < THRESHOLD);   
+	 a1_above = (alt1 >= T_HYST);     
+	 a2_above = (alt2 >= T_HYST);
+	 below = a1_below or a2_below;         
+	 above_hyst = a1_above and a2_above;    
+	 doi_on = if (below and not inhibit)
+	          then true else d1;
+     d1 =     if (inhibit or above_hyst)         
+	           then false else d2;
+     d2 = (false -> pre(doi_on));    
+
+     p = ((alt1 < THRESHOLD) and (alt2 < THRESHOLD))
+          and not inhibit => (doi_on = true);
+   --%PROPERTY p;
+   --%IVC a1_below, a2_below, a1_above, a2_above, below, above_hyst, d1, d2, p, doi_on;
+
+tel;
+

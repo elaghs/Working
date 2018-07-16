@@ -142,7 +142,87 @@ To add a solver, users must perform these steps:
 \section{{\sc JKind} Lustre Grammar and Command Line Arguments}
 \jkind accepts input from the synchronous dataflow language Lustre used for programming real-time systems. A dataflow language consists of a set of equations that assign variables where a variable can be computed as soon as its data dependencies have been computed. Such a language is a completely functional model without side effects, suitable for formal verification and program transformation. Like all functional language, a data flow language is naturally parallel where the only constraints on parallelism are due to the data-dependencies between variables. 
 
-Note that additions for IVCs and mention that these will be discussed in the next section.
+Dataflow models can be either synchronous or asynchronous. In a synchronous dataflow model, the model is recomputed in a sequence of time instants. In an asynchronous model, the outputs of the system are continually recomputed depending on the inputs to the system.
+
+\subsection{Syntax Overview}
+\jkind Lustre grammar is built in \texttt{ANTLR} and can be referenced at 
+\emph{http://github.com/agacek/\\jkind/blob/master/jkind-common/src/jkind/lustre/parsing/Lustre.gz}.
+
+\jkind supports single line and multi-line comment styles. The grammar elements for comments are shown in Figure \ref{fig:jk1}.
+
+ \begin{figure}
+ \centering
+  \includegraphics[width=\textwidth]{figs/jk1.png}
+  %\vspace{-0.1in}
+  \caption{\texttt{Jkind} comment grammar elements}
+  \vspace{0.1in}
+  \label{fig:jk1}
+\end{figure}
+
+The grammar for identifiers in \texttt{Jkind} are shown in Figure \ref{fig:jk2}. Valid identifers will begin with a upper or lowercase letter, followed by 0 or more letters, numbers, or underscore characters.
+
+ \begin{figure}
+ \centering
+  \includegraphics[width=0.75\textwidth]{figs/jk2.png}
+  %\vspace{-0.1in}
+  \caption{\texttt{Jkind} identifier grammar}
+  \vspace{0.1in}
+  \label{fig:jk2}
+\end{figure}
+
+The grammar for \texttt{Jkind} literals are shown in Figure \ref{fig:jk3}.
+
+ \begin{figure}
+ \centering
+  \includegraphics[width=0.7\textwidth]{figs/jk3.png}
+  %\vspace{-0.1in}
+  \caption{\texttt{Jkind} literal grammar}
+  \vspace{0.1in}
+  \label{fig:jk3}
+\end{figure}
+
+A Lustre program is a collection of constant, type, node, and function declarations. The grammar elements for these declarations are shown in Figure \ref{fig:jk4}.
+
+ \begin{figure}
+ \centering
+  \includegraphics[width=\textwidth]{figs/jk4.png}
+  %\vspace{-0.1in}
+  \caption{Lustre program declarations}
+  \vspace{0.1in}
+  \label{fig:jk4}
+\end{figure}
+
+
+\jkind performs different analyses such as realizability, IVCs, and safety verification, etc. based on several LUSTRE annotations shown in Figure \ref{fig:jk7}.  The entry point of \jkind analysis is a node. For the programs with more than one node,  the node annotated with the $-$$-\%$MAIN declaration is considered as the entry point, otherwise \jkind will use the last node in the file as the main node. To do any meaningful analysis, a Lustre program must have at least one node defined. The remaining elements (constants, type definitions, and functions) can be used to specify a Lustre program for analysis. Properties are Lustre equations identified with $-$$-\%$PROPERTY annotation. \jkind runs the verification engines over equations listed in this annotation. We have added one more annotation for IVC analyses, $-$$-\%$IVC, which will be described in the next section.
+
+ \begin{figure}
+ \centering
+  \includegraphics[width=0.8\textwidth]{figs/jk7.png}
+  %\vspace{-0.1in}
+  \caption{Lustre annotations used by \jkind}
+  \vspace{0.1in}
+  \label{fig:jk7}
+\end{figure}
+
+ \begin{figure}
+ \centering
+  \includegraphics[width=\textwidth]{figs/jk5.png}
+  %\vspace{-0.1in}
+  \caption{\jkind Lustre type grammar}
+  \vspace{0.1in}
+  \label{fig:jk5}
+\end{figure}
+
+Figure \ref{fig:jk5} shows the grammar elements for the Lustre types that \jkind supports. The grammar snippet in Figure \ref{fig:jk6} shows the Lustre expressions elements \jkind supports. ID expressions are used to reference variables, enumeration values, and record field elements by name. Literal expressions are used to express boolean literals of true/false, integer literals 0 to Infinity, and real literals 0.0 to Infinity. For more information on other expressions, see \jkind User Guide \cite{jkind}.
+
+\begin{figure}
+ \centering
+  \includegraphics[width=\textwidth]{figs/jk6.png}
+  %\vspace{-0.1in}
+  \caption{\jkind Expression and Equation grammar}
+  \vspace{0.1in}
+  \label{fig:jk6}
+\end{figure}
 
 \subsection{Command Line}
 Different \jkind functionalities explained so far are accessible from the tool command line. Table \ref{tab:jkindcm} summarizes major options in \jkind.
@@ -184,16 +264,119 @@ Different \jkind functionalities explained so far are accessible from the tool c
 \end{table}
 
 \section{Integration of IVCs into {\sc JKind}}
-Show running example model again, this time with --%PROPERTY and --%IVC annotations.
-
-Describe how --%IVC annotation can be used to scope analysis to subset of variables.  Illustrate with the running example for different combinations of variables
-
-\subsubsection{Inductive Validity Cores (IVC)}
 
 For a proven property, an inductive validity core is a subset of \lustre equations from the input model for which the property still
-holds~\cite{ghassabani2016fse}.  Inductive validity cores can be used for traceability from property to model elements and determining coverage of the model by a set of properties~\cite{Ghass17Cov}.  This facility can be used to automatically generate traceability and adequacy information (such as traceability matrices~\cite{fifarek2017nfm} important to the certification of safety-critical avionics systems~\cite{DO178C}.
-The IVC engine uses a our \ucalg algorithm to efficiently produce minimal or nearly minimal cores. As a side-effect, the IVC algorithm also minimizes the set of invariants used to prove a property and emits this reduced set to other engines.
+holds.  \jkind performs IVC analyses based on the annotation shown at line 41 of Figure \ref{fig:jk7}. Using this annotation, we can mark program variables as potential IVC elements. By doing so, we are asking the tool to check which of these variables are necessary for the proof of each property. Such annotation affects the analyses, and a conservative approach is to bring all variables in this annotation, which can be done with $-all\_assigned$ \jkind option.
+Figure \ref{fig:exjk} is the LUSTRE file for the example presented in Chapter \ref{ch:ivc} with the complete annotations ready to pass to \jkind for IVC analyses. As you can see, all the program equations are annotated as potential IVC elements. With the current annotation, \jkind finds 2 MIVCs  {\small \texttt{\{\{a1\_below, below, doi\_on\}, \{a2\_below, below, doi\_on\}\}}}.
+However, if we change annotation, we may get different results. For example, if we remove  {\small \texttt{a1\_below}} and {\small \texttt{doi\_on}} from the annotation, the All IVCs analysis will come up with only one
+MIVC containing {\small \texttt{\{below\}}}. If we only remove {\small \texttt{a1\_below}} from the annotation, we will get only one MIVC of the form of {\small \texttt{\{below, doi\_on\}}}.
 
+\begin{figure}
+ \centering
+  \includegraphics[width=\textwidth]{figs/exjk.png}
+  %\vspace{-0.1in}
+  \caption{An example of a LUSTRE program}
+  \vspace{0.1in}
+  \label{fig:exjk}
+\end{figure}
+
+%Inductive validity cores can be used for traceability from property to model elements and determining coverage of the model by a set of properties~\cite{Ghass17Cov}.  This facility can be used to automatically generate traceability and adequacy information (such as traceability matrices~\cite{fifarek2017nfm} important to the certification of safety-critical avionics systems~\cite{DO178C}.
+%The IVC engine uses a our \ucalg algorithm to efficiently produce minimal or nearly minimal cores. As a side-effect, the IVC algorithm also minimizes the set of invariants used to prove a property and emits this reduced set to other engines.
+To perform IVC analyses, we have extended \jkind with a set of IVC generation engines. When a property is
+proved and IVC generation is enabled, our IVC engine
+executes one of the {\ucalg, \bfalg, \ucbfalg}~algorithms \cite{Ghass16} to generate an (approximately) minimal IVC. This IVC generation engine is used to implement the \getivc\ procedure in  Algorithm \ref{alg:aivc}. For generating all minimal IVCs, we have added another engine to \texttt{JKind} that implements our online and offline algorithms.
+%It worth mentioning that we could have employed the \ucbfalg ~algorithm for this purpose as well.
+%One might say that since \ucbfalg ~guarantees minimality, it would help to the \aivcalg ~algorithm terminate more quickly.
+%However, as we will show in the experiments, on the one hand, the \ucbfalg ~algorithm is very expensive. On the other hand, the \ucalg ~algorithm is not only fast, but it also generates \ivc s that are
+%quite close to the \mivc s computed by \ucbfalg.
+
+As previously discussed, one issue that needs to
+be handled in any implementation of the \ucalg, \ucbfalg, and \aivcalg~algorithms involves the undecidability of the model checking problem;
+in each iteration of Algorithms~\ref{alg:naive} and~\ref{alg:aivc}, we attempt to prove the property with a subset $S$ of the original model.  Although we know that $(I, T) \vdash P$, from Theorem~\ref{thm:minimal-hard}, the problem of determining whether or not any $S \subset T$ is adequate is undecidable.
+%
+Therefore, we have to set timeouts for the model checking algorithm for each iteration of the \aivcalg\ procedure.
+In our implementation, we measure the time required to prove the property over the original model (\emph{proof-time}), and the time required to calculate the first
+(approximate) IVC using \ucalg\ (\emph{\ucalg-time}).
+The timeout we set for each iteration of the \ucbfalg\ and \aivcalg\ algorithms is ($30$ sec  $+\ 5\ \times$ (\emph{proof-time} $+$ \emph{\ucalg-time})).
+
+If the \texttt{while} loop times out for $S$ in line 8 of Algorithm~\ref{alg:aivc},
+we treat $S$ as an \emph{inadequate} set to ensure that all results support a proof.
+In this case, line 13 will prune off $S$ and all
+its subsets from the search space.  Since the timeout is used by both the brute-force
+algorithm and the \aivcalg\ algorithm, minimality is only guaranteed if there
+are no timeouts.  If a timeout occurs during computation, we report a warning to the user that our results are not guaranteed to be minimal.
+It is important to note that by increasing the timeout, it is possible that
+in some cases smaller IVCs can be generated, but the general problem will remain due
+to the undecidability of the model checking problem.
+
+To implement \bvcalg\ algorithm, a new tool is buit on top of \texttt{JKind}. In the implementation, basically, the \texttt{JKind} BMC engine has been hacked to emit the bounded cores after each step of transition relation unrolling. The user needs to provide a desired bound and timeout for this calculation.
+
+The additional IVC engines integrated in \jkind are shown in Figure \ref{fig:ivcengines}.
+Once IVC generation is activated, through $-ivc$ options, an approximately minimal IVC is generated. If \jkind has been called with $-all\_ivcs$, the IVC\_UC engine passes the first approximate MIVC to the All\_IVCs engine, where one of the all IVC generation algorithms will run depending on the provided configuration.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{ivceng.png}
+  \caption{\jkind IVC engines}
+  %\vspace{-1em}
+ % \mike{Shrink figure vertically}
+  \label{fig:ivcengines}
+\end{figure}
+
+\noindent There are three stand-alone tools implemented in \jkind:
+\begin{itemize}
+  \item BVC: this engine starts bounded model checking for a given bound within a specified timout. At the end of the process, it returns bounded validity cores.
+  \item IVC\_MUST: $MUST$ computation comes for free after  $-all\_ivcs$ engine finds all the minimal MIVCs. The by-product of having all MIVCs are the $MUST$ elements, the intersection of all MIVCs. However, $MUST$ elements can be computed from one single (approximate) minimal IVC, as explained in Chapter \ref{ch:apps}. The IVC\_MUST engine can be called individually and as input it takes the output of IVC\_UC engine.
+  \item UCBF: this is another stand-alone engine that takes the output of IVC\_UC engine and minimize the approximate MIVC to guarantee minimality.
+\end{itemize}
+
+To wrap up this section, we attach the outputs of the IVC engines for our running example (Figure \ref{fig:ucout}- \ref{fig:bvcout}).
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\textwidth]{figs/ucout.jpg}
+  \caption{Sample output of IVC\_UC engine}
+  %\vspace{-1em}
+ % \mike{Shrink figure vertically}
+  \label{fig:ucout}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\textwidth]{figs/aivcout.jpg}
+  \caption{Sample output of ALL\_IVCs engine}
+  %\vspace{-1em}
+ % \mike{Shrink figure vertically}
+  \label{fig:aivcout}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\textwidth]{figs/mustout.jpg}
+  \caption{Sample output of IVC\_MUST engine}
+  %\vspace{-1em}
+ % \mike{Shrink figure vertically}
+  \label{fig:mustout}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\textwidth]{figs/ucbfout.jpg}
+  \caption{Sample output of UCBF engine}
+  %\vspace{-1em}
+ % \mike{Shrink figure vertically}
+  \label{fig:ucbfout}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\textwidth]{figs/bvcout.jpg}
+  \caption{Sample output of BVC engine for bound 4}
+  %\vspace{-1em}
+ % \mike{Shrink figure vertically}
+  \label{fig:bvcout}
+\end{figure}
 
 \section{ Integration of {\sc JKind} and IVCs into Other Tools}
 
@@ -325,103 +508,7 @@ The Rockwell Collins \gryphon
  smoothing and IVC have been successfully used in combination with
  \gryphon to great effect.
 
-\section{IVC Integration}
 
-We have extended \jkind with a set of IVC generation engines. When a property is
-proved and IVC generation is enabled, our IVC engine
-executes one of the {\ucalg, \bfalg, \ucbfalg}~algorithms \cite{Ghass16} to generate an (approximately) minimal IVC. This IVC generation engine is used to implement the \getivc\ procedure in  Algorithm \ref{alg:aivc}. For generating all minimal IVCs, we have added another engine to \texttt{JKind} that implements our online and offline algorithms.
-%It worth mentioning that we could have employed the \ucbfalg ~algorithm for this purpose as well.
-%One might say that since \ucbfalg ~guarantees minimality, it would help to the \aivcalg ~algorithm terminate more quickly.
-%However, as we will show in the experiments, on the one hand, the \ucbfalg ~algorithm is very expensive. On the other hand, the \ucalg ~algorithm is not only fast, but it also generates \ivc s that are
-%quite close to the \mivc s computed by \ucbfalg.
-
-As previously discussed, one issue that needs to
-be handled in any implementation of the \ucalg, \ucbfalg, and \aivcalg~algorithms involves the undecidability of the model checking problem;
-in each iteration of Algorithms~\ref{alg:naive} and~\ref{alg:aivc}, we attempt to prove the property with a subset $S$ of the original model.  Although we know that $(I, T) \vdash P$, from Theorem~\ref{thm:minimal-hard}, the problem of determining whether or not any $S \subset T$ is adequate is undecidable.
-%
-Therefore, we have to set timeouts for the model checking algorithm for each iteration of the \aivcalg\ procedure.
-In our implementation, we measure the time required to prove the property over the original model (\emph{proof-time}), and the time required to calculate the first
-(approximate) IVC using \ucalg\ (\emph{\ucalg-time}).
-The timeout we set for each iteration of the \ucbfalg\ and \aivcalg\ algorithms is ($30$ sec  $+\ 5\ \times$ (\emph{proof-time} $+$ \emph{\ucalg-time})).
-
-If the \texttt{while} loop times out for $S$ in line 8 of Algorithm~\ref{alg:aivc},
-we treat $S$ as an \emph{inadequate} set to ensure that all results support a proof.
-In this case, line 13 will prune off $S$ and all
-its subsets from the search space.  Since the timeout is used by both the brute-force
-algorithm and the \aivcalg\ algorithm, minimality is only guaranteed if there
-are no timeouts.  If a timeout occurs during computation, we report a warning to the user that our results are not guaranteed to be minimal.
-It is important to note that by increasing the timeout, it is possible that
-in some cases smaller IVCs can be generated, but the general problem will remain due
-to the undecidability of the model checking problem.
-
-To implement \bvcalg\ algorithm, a new tool is buit on top of \texttt{JKind}. In the implementation, basically, the \texttt{JKind} BMC engine has been hacked to emit the bounded cores after each step of transition relation unrolling. The user needs to provide a desired bound and timeout for this calculation.
-
-The additional IVC engines integrated in \jkind are shown in Figure \ref{fig:ivcengines}.
-Once IVC generation is activated, through $-ivc$ options, an approximately minimal IVC is generated. If \jkind has been called with $-all\_ivcs$, the IVC\_UC engine passes the first approximate MIVC to the All\_IVCs engine, where one of the all IVC generation algorithms will run depending on the provided configuration.
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.8\textwidth]{ivceng.png}
-  \caption{\jkind IVC engines}
-  %\vspace{-1em}
- % \mike{Shrink figure vertically}
-  \label{fig:ivcengines}
-\end{figure}
-
-\noindent There are three stand-alone tools implemented in \jkind:
-\begin{itemize}
-  \item BVC: this engine starts bounded model checking for a given bound within a specified timout. At the end of the process, it returns bounded validity cores.
-  \item IVC\_MUST: $MUST$ computation comes for free after  $-all\_ivcs$ engine finds all the minimal MIVCs. The by-product of having all MIVCs are the $MUST$ elements, the intersection of all MIVCs. However, $MUST$ elements can be computed from one single (approximate) minimal IVC, as explained in Chapter \ref{ch:apps}. The IVC\_MUST engine can be called individually and as input it takes the output of IVC\_UC engine.
-  \item UCBF: this is another stand-alone engine that takes the output of IVC\_UC engine and minimize the approximate MIVC to guarantee minimality.
-\end{itemize}
-
-To wrap up this chapter, we attach the outputs of the IVC engines for the running example presented in Chapter \ref{ch:ivc} (Figure \ref{fig:ucout}- \ref{fig:bvcout}).
-
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.9\textwidth]{figs/ucout.jpg}
-  \caption{Sample output of IVC\_UC engine}
-  %\vspace{-1em}
- % \mike{Shrink figure vertically}
-  \label{fig:ucout}
-\end{figure}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.9\textwidth]{figs/aivcout.jpg}
-  \caption{Sample output of ALL\_IVCs engine}
-  %\vspace{-1em}
- % \mike{Shrink figure vertically}
-  \label{fig:aivcout}
-\end{figure}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.9\textwidth]{figs/mustout.jpg}
-  \caption{Sample output of IVC\_MUST engine}
-  %\vspace{-1em}
- % \mike{Shrink figure vertically}
-  \label{fig:mustout}
-\end{figure}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.9\textwidth]{figs/ucbfout.jpg}
-  \caption{Sample output of UCBF engine}
-  %\vspace{-1em}
- % \mike{Shrink figure vertically}
-  \label{fig:ucbfout}
-\end{figure}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.9\textwidth]{figs/bvcout.jpg}
-  \caption{Sample output of BVC engine for bound 4}
-  %\vspace{-1em}
- % \mike{Shrink figure vertically}
-  \label{fig:bvcout}
-\end{figure}
 
 
 

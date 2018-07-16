@@ -41,45 +41,44 @@
 \contentsline {subsubsection}{Advice}{61}{section*.35}
 \contentsline {section}{\numberline {4.2}Tool Installation}{61}{section.4.2}
 \contentsline {section}{\numberline {4.3}{\sc JKind} Lustre Grammar and Command Line Arguments}{63}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Command Line}{63}{subsection.4.3.1}
-\contentsline {section}{\numberline {4.4}Integration of IVCs into {\sc JKind}}{63}{section.4.4}
-\contentsline {subsubsection}{Inductive Validity Cores (IVC)}{63}{section*.38}
-\contentsline {section}{\numberline {4.5} Integration of {\sc JKind} and IVCs into Other Tools}{65}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Assume Guarantee Reasoning Environment}{65}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Specification and Analysis of Requirements}{65}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}Static IMPerative AnaLyzer}{66}{subsection.4.5.3}
-\contentsline {subsection}{\numberline {4.5.4}Applications}{67}{subsection.4.5.4}
-\contentsline {subsubsection}{MC/DC Test Case Generation}{67}{section*.39}
-\contentsline {subsubsection}{Model-based Fuzzing}{67}{section*.40}
-\contentsline {subsubsection}{The \texttt {Gryphon}\xspace Framework}{67}{section*.41}
-\contentsline {section}{\numberline {4.6}IVC Integration}{68}{section.4.6}
-\contentsline {chapter}{\numberline {5}Experiments}{73}{chapter.5}
-\contentsline {section}{\numberline {5.1}Experiments involving single IVCs}{74}{section.5.1}
-\contentsline {subsubsection}{RQ1}{75}{section*.48}
-\contentsline {subsubsection}{RQ2}{77}{section*.52}
-\contentsline {subsubsection}{RQ3}{77}{section*.53}
-\contentsline {section}{\numberline {5.2}Experiments on the IVC\_UC and ALL\_IVCs Algorithms}{79}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Experimental Setup}{80}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Experimental Results}{80}{subsection.5.2.2}
-\contentsline {subsubsection}{RQ1}{80}{section*.58}
-\contentsline {subsubsection}{RQ2}{81}{section*.60}
-\contentsline {subsubsection}{RQ3}{82}{section*.61}
-\contentsline {section}{\numberline {5.3}Experiments on the Online method of computing AIVCs}{83}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Experimental Setup}{84}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Experimental Results}{85}{subsection.5.3.2}
-\contentsline {subsubsection}{RQ1 and RQ2}{85}{section*.65}
-\contentsline {subsubsection}{RQ3}{85}{section*.66}
-\contentsline {section}{\numberline {5.4}Experiments on BVCs}{87}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Experimental Setup}{87}{subsection.5.4.1}
-\contentsline {subsubsection}{RQ1}{89}{section*.68}
-\contentsline {subsubsection}{RQ2}{90}{section*.69}
-\contentsline {subsubsection}{RQ3}{93}{section*.72}
-\contentsline {chapter}{\numberline {6}Applications}{95}{chapter.6}
-\contentsline {section}{\numberline {6.1}Automatic Proof-Based Traceability}{95}{section.6.1}
-\contentsline {section}{\numberline {6.2}Coverage Analysis and Requirements Completeness}{96}{section.6.2}
-\contentsline {section}{\numberline {6.3}Discussion}{105}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Granularity}{107}{subsection.6.3.1}
-\contentsline {chapter}{\numberline {7}Conclusions and Future Work}{110}{chapter.7}
-\contentsline {section}{\numberline {7.1}Future Research Directions}{111}{section.7.1}
-\contentsline {chapter}{References}{114}{chapter*.81}
-\contentsline {chapter}{List of Publications}{127}{chapter*.82}
+\contentsline {subsection}{\numberline {4.3.1}Syntax Overview}{63}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Command Line}{66}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Integration of IVCs into {\sc JKind}}{68}{section.4.4}
+\contentsline {section}{\numberline {4.5} Integration of {\sc JKind} and IVCs into Other Tools}{71}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Assume Guarantee Reasoning Environment}{71}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Specification and Analysis of Requirements}{74}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}Static IMPerative AnaLyzer}{74}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.4}Applications}{75}{subsection.4.5.4}
+\contentsline {subsubsection}{MC/DC Test Case Generation}{75}{section*.52}
+\contentsline {subsubsection}{Model-based Fuzzing}{75}{section*.53}
+\contentsline {subsubsection}{The \texttt {Gryphon}\xspace Framework}{76}{section*.54}
+\contentsline {chapter}{\numberline {5}Experiments}{77}{chapter.5}
+\contentsline {section}{\numberline {5.1}Experiments involving single IVCs}{78}{section.5.1}
+\contentsline {subsubsection}{RQ1}{79}{section*.55}
+\contentsline {subsubsection}{RQ2}{81}{section*.59}
+\contentsline {subsubsection}{RQ3}{81}{section*.60}
+\contentsline {section}{\numberline {5.2}Experiments on the IVC\_UC and ALL\_IVCs Algorithms}{83}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Experimental Setup}{84}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Experimental Results}{84}{subsection.5.2.2}
+\contentsline {subsubsection}{RQ1}{84}{section*.65}
+\contentsline {subsubsection}{RQ2}{85}{section*.67}
+\contentsline {subsubsection}{RQ3}{86}{section*.68}
+\contentsline {section}{\numberline {5.3}Experiments on the Online method of computing AIVCs}{87}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Experimental Setup}{88}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Experimental Results}{89}{subsection.5.3.2}
+\contentsline {subsubsection}{RQ1 and RQ2}{89}{section*.72}
+\contentsline {subsubsection}{RQ3}{89}{section*.73}
+\contentsline {section}{\numberline {5.4}Experiments on BVCs}{91}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Experimental Setup}{91}{subsection.5.4.1}
+\contentsline {subsubsection}{RQ1}{93}{section*.75}
+\contentsline {subsubsection}{RQ2}{94}{section*.76}
+\contentsline {subsubsection}{RQ3}{97}{section*.79}
+\contentsline {chapter}{\numberline {6}Applications}{99}{chapter.6}
+\contentsline {section}{\numberline {6.1}Automatic Proof-Based Traceability}{99}{section.6.1}
+\contentsline {section}{\numberline {6.2}Coverage Analysis and Requirements Completeness}{100}{section.6.2}
+\contentsline {section}{\numberline {6.3}Discussion}{109}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Granularity}{111}{subsection.6.3.1}
+\contentsline {chapter}{\numberline {7}Conclusions and Future Work}{114}{chapter.7}
+\contentsline {section}{\numberline {7.1}Future Research Directions}{115}{section.7.1}
+\contentsline {chapter}{References}{118}{chapter*.88}
+\contentsline {chapter}{List of Publications}{131}{chapter*.89}

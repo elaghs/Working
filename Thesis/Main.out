@@ -31,14 +31,14 @@
 \BOOKMARK [2][-]{subsection.4.1.1}{Post Processing and Re-verification}{section.4.1}% 31
 \BOOKMARK [1][-]{section.4.2}{Tool Installation}{chapter.4}% 32
 \BOOKMARK [1][-]{section.4.3}{JKind Lustre Grammar and Command Line Arguments}{chapter.4}% 33
-\BOOKMARK [2][-]{subsection.4.3.1}{Command Line}{section.4.3}% 34
-\BOOKMARK [1][-]{section.4.4}{Integration of IVCs into JKind}{chapter.4}% 35
-\BOOKMARK [1][-]{section.4.5}{ Integration of JKind and IVCs into Other Tools}{chapter.4}% 36
-\BOOKMARK [2][-]{subsection.4.5.1}{Assume Guarantee Reasoning Environment}{section.4.5}% 37
-\BOOKMARK [2][-]{subsection.4.5.2}{Specification and Analysis of Requirements}{section.4.5}% 38
-\BOOKMARK [2][-]{subsection.4.5.3}{Static IMPerative AnaLyzer}{section.4.5}% 39
-\BOOKMARK [2][-]{subsection.4.5.4}{Applications}{section.4.5}% 40
-\BOOKMARK [1][-]{section.4.6}{IVC Integration}{chapter.4}% 41
+\BOOKMARK [2][-]{subsection.4.3.1}{Syntax Overview}{section.4.3}% 34
+\BOOKMARK [2][-]{subsection.4.3.2}{Command Line}{section.4.3}% 35
+\BOOKMARK [1][-]{section.4.4}{Integration of IVCs into JKind}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.5}{ Integration of JKind and IVCs into Other Tools}{chapter.4}% 37
+\BOOKMARK [2][-]{subsection.4.5.1}{Assume Guarantee Reasoning Environment}{section.4.5}% 38
+\BOOKMARK [2][-]{subsection.4.5.2}{Specification and Analysis of Requirements}{section.4.5}% 39
+\BOOKMARK [2][-]{subsection.4.5.3}{Static IMPerative AnaLyzer}{section.4.5}% 40
+\BOOKMARK [2][-]{subsection.4.5.4}{Applications}{section.4.5}% 41
 \BOOKMARK [0][-]{chapter.5}{Experiments}{}% 42
 \BOOKMARK [1][-]{section.5.1}{Experiments involving single IVCs}{chapter.5}% 43
 \BOOKMARK [1][-]{section.5.2}{Experiments on the IVC\137UC and ALL\137IVCs Algorithms}{chapter.5}% 44
@@ -56,5 +56,5 @@
 \BOOKMARK [2][-]{subsection.6.3.1}{Granularity}{section.6.3}% 56
 \BOOKMARK [0][-]{chapter.7}{Conclusions and Future Work}{}% 57
 \BOOKMARK [1][-]{section.7.1}{Future Research Directions}{chapter.7}% 58
-\BOOKMARK [0][-]{chapter*.81}{References}{}% 59
-\BOOKMARK [0][-]{chapter*.82}{List of Publications}{}% 60
+\BOOKMARK [0][-]{chapter*.88}{References}{}% 59
+\BOOKMARK [0][-]{chapter*.89}{List of Publications}{}% 60

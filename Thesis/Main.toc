@@ -53,32 +53,32 @@
 \contentsline {subsubsection}{Model-based Fuzzing}{75}{section*.53}
 \contentsline {subsubsection}{The \texttt {Gryphon}\xspace Framework}{76}{section*.54}
 \contentsline {chapter}{\numberline {5}Experiments}{77}{chapter.5}
-\contentsline {section}{\numberline {5.1}Experiments involving single IVCs}{78}{section.5.1}
-\contentsline {subsubsection}{RQ1}{79}{section*.55}
-\contentsline {subsubsection}{RQ2}{81}{section*.59}
-\contentsline {subsubsection}{RQ3}{81}{section*.60}
-\contentsline {section}{\numberline {5.2}Experiments on the IVC\_UC and ALL\_IVCs Algorithms}{83}{section.5.2}
+\contentsline {section}{\numberline {5.1}On the Relationship between Model Checking Algorithms and IVCs}{78}{section.5.1}
+\contentsline {subsubsection}{RQ1}{80}{section*.55}
+\contentsline {subsubsection}{RQ2}{80}{section*.59}
+\contentsline {subsubsection}{RQ3}{82}{section*.60}
+\contentsline {section}{\numberline {5.2}On the efficiency and efficacy of different "offline" IVC algorithms}{84}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Experimental Setup}{84}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Experimental Results}{84}{subsection.5.2.2}
-\contentsline {subsubsection}{RQ1}{84}{section*.65}
-\contentsline {subsubsection}{RQ2}{85}{section*.67}
-\contentsline {subsubsection}{RQ3}{86}{section*.68}
-\contentsline {section}{\numberline {5.3}Experiments on the Online method of computing AIVCs}{87}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Experimental Setup}{88}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Experimental Results}{89}{subsection.5.3.2}
-\contentsline {subsubsection}{RQ1 and RQ2}{89}{section*.72}
-\contentsline {subsubsection}{RQ3}{89}{section*.73}
-\contentsline {section}{\numberline {5.4}Experiments on BVCs}{91}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Experimental Setup}{91}{subsection.5.4.1}
-\contentsline {subsubsection}{RQ1}{93}{section*.75}
-\contentsline {subsubsection}{RQ2}{94}{section*.76}
-\contentsline {subsubsection}{RQ3}{97}{section*.79}
-\contentsline {chapter}{\numberline {6}Applications}{99}{chapter.6}
-\contentsline {section}{\numberline {6.1}Automatic Proof-Based Traceability}{99}{section.6.1}
-\contentsline {section}{\numberline {6.2}Coverage Analysis and Requirements Completeness}{100}{section.6.2}
-\contentsline {section}{\numberline {6.3}Discussion}{109}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Granularity}{111}{subsection.6.3.1}
-\contentsline {chapter}{\numberline {7}Conclusions and Future Work}{114}{chapter.7}
-\contentsline {section}{\numberline {7.1}Future Research Directions}{115}{section.7.1}
-\contentsline {chapter}{References}{118}{chapter*.88}
-\contentsline {chapter}{List of Publications}{131}{chapter*.89}
+\contentsline {subsection}{\numberline {5.2.2}Experimental Results}{85}{subsection.5.2.2}
+\contentsline {subsubsection}{RQ1}{85}{section*.65}
+\contentsline {subsubsection}{RQ2}{86}{section*.67}
+\contentsline {subsubsection}{RQ3}{87}{section*.68}
+\contentsline {section}{\numberline {5.3}On the relative performance of offline and online algorithms for all IVCs.}{89}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Experimental Setup}{89}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Experimental Results}{90}{subsection.5.3.2}
+\contentsline {subsubsection}{RQ1 and RQ2}{90}{section*.72}
+\contentsline {subsubsection}{RQ3}{90}{section*.73}
+\contentsline {section}{\numberline {5.4}On the relationship of BVCs and MIVCs}{92}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Experimental Setup}{92}{subsection.5.4.1}
+\contentsline {subsubsection}{RQ1}{94}{section*.75}
+\contentsline {subsubsection}{RQ2}{95}{section*.76}
+\contentsline {subsubsection}{RQ3}{98}{section*.79}
+\contentsline {chapter}{\numberline {6}Applications}{100}{chapter.6}
+\contentsline {section}{\numberline {6.1}Automatic Proof-Based Traceability}{100}{section.6.1}
+\contentsline {section}{\numberline {6.2}Coverage Analysis and Requirements Completeness}{101}{section.6.2}
+\contentsline {section}{\numberline {6.3}Discussion}{110}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Granularity}{112}{subsection.6.3.1}
+\contentsline {chapter}{\numberline {7}Conclusions and Future Work}{115}{chapter.7}
+\contentsline {section}{\numberline {7.1}Future Research Directions}{116}{section.7.1}
+\contentsline {chapter}{References}{119}{chapter*.88}
+\contentsline {chapter}{List of Publications}{132}{chapter*.89}

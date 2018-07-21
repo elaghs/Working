@@ -199,13 +199,13 @@ specific execution \cite{Androutsopoulos}. Dynamic slicing is very useful in deb
 For a given slicing criterion, static slices can be constructed from a backward or forward analysis.
 A backward slice of a program with respect to a
 program point $p$ and  set of program variables $V$ include all the program statements that may affect the value of variables in
-$V$ at $p$. Consider the program in Figure \ref{fig:exslic} (a).
-A backward slice for this code snippet over $V = \{b\}$ at the end of the program is shown in  Figure \ref{fig:exslic} (b).
+$V$ at $p$ \cite{slcnote}. Consider the program in Figure \ref{fig:exslic} (a).
+A backward slice for this code snippet over $V = \{b\}$ at the end of the program is shown in  Figure \ref{fig:exslic} (b). 
 
 A forward slice of a program with respect to a
 program point $p$ and set of program variables $V$
 consists of all program statements that may be affected by the value of
-variables in $V$ at p (e.g.  Figure \ref{fig:exslic} (c)).
+variables in $V$ at location $p$ \cite{slcnote} (e.g.  Figure \ref{fig:exslic} (c)).
 
 
 \begin{figure}
@@ -414,7 +414,7 @@ design element is necessary for the proof of the property.
 In general, specification completeness can be defined with
 regard to the notion of coverage. In fact, the way that coverage
 is formalized plays a key part in the strength/ effectiveness of
-a method for the assessment of completeness. 
+a method for the assessment of completeness.
 
 The goal of a coverage metric is usually to assign a numeric score that describes how well properties cover the design. The majority of the work on coverage metrics has focused on {\em mutations}, which are ``atomic'' changes to the design, where the set of possible mutations depends on the notation that is used.  A mutant is ``killed'' if one of the properties that is satisfied by the original design is violated by the mutated design~\cite{chockler_coverage_2003,chockler2001practical,chockler2010coverage,Kupferman:2006:SCF,kupferman_theory_2008}.  There are many different kinds of mutations that have been proposed, primarily focused on checking sequential bit-level hardware designs.  For these designs, {\em state-based} mutations flip the value of one of the bits in the state.  There are several variations depending on whether the flip is performed on a single state within a Kripke structure~\cite{hoskote1999coverage}, or in the description of the signal in the transition relation of the circuit~\cite{chockler2001practical}.  {\em Logic-based} mutations fix the value of a bit to constant zero or one, and can be used to determine whether properties can find stuck-at faults.  {\em Syntactic} mutations~\cite{chockler_coverage_2003} remove states in a control flow graph representation of hardware.  Similarly, for software, it is possible to apply any of the ``standard'' source code mutation operators used for software testing~\cite{Andrews06:mutation} towards requirements coverage analysis.  Some examples of software mutations are \cite{Budd:1980}:
 \begin{enumerate}
@@ -434,7 +434,7 @@ Mutation-based approaches are often impractically expensive to compute; even for
 \newcommand{\inputnode}{{\sc input}}
 
 Mutations for hardware are discussed in~\cite{chockler2010coverage,Kupferman:2006:SCF,kupferman_theory_2008}. A more recent work in \cite{chockler2010coverage} performs coverage analysis through interpolation \cite{mcmillan2003interpolation}. This work is also based on design-dependent mutations \cite{chockler_coverage_2003}, where a design is considered as a net-list with nodes of types \{ \andnode, \invnode, \regnode, \inputnode \}.
-Each mutant design changes the type of a single node to \inputnode . 
+Each mutant design changes the type of a single node to \inputnode .
 %When property $\phi$ satisfied by the original net-list fails on the mutant design, it is said that a mutant is discovered for $\phi$.
 %Then, the coverage metric for $\phi$ is defined as the fraction of the discovered mutants, based on which the coverage of a set of properties is measured as the fraction of mutants discovered by at least one property.
 To decrease the cost of computation, coverage analysis is performed at several stages; first, all the nodes that do not appear in the resolution proof of a given property are marked as \emph{not-covered}, and the rest of the nodes are marked as \emph{unknown}. Then, for the unknown nodes, the basic mutation check is performed: if a corresponding mutant design violates the property, it will be considered as \emph{covered}. Otherwise, the algorithm tries to drive an inductive invariant to prove that the node is not covered. Finally, an interpolant-based model checking is applied to the nodes that are still unknown.

@@ -55,30 +55,31 @@
 \contentsline {chapter}{\numberline {5}Experiments}{77}{chapter.5}
 \contentsline {section}{\numberline {5.1}On the Relationship between Model Checking Algorithms and IVCs}{78}{section.5.1}
 \contentsline {subsubsection}{RQ1}{80}{section*.55}
-\contentsline {subsubsection}{RQ2}{80}{section*.59}
+\contentsline {subsubsection}{RQ2}{82}{section*.59}
 \contentsline {subsubsection}{RQ3}{82}{section*.60}
 \contentsline {section}{\numberline {5.2}On the efficiency and efficacy of different "offline" IVC algorithms}{84}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Experimental Setup}{84}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.1}Experimental Setup}{85}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}Experimental Results}{85}{subsection.5.2.2}
-\contentsline {subsubsection}{RQ1}{85}{section*.65}
-\contentsline {subsubsection}{RQ2}{86}{section*.67}
-\contentsline {subsubsection}{RQ3}{87}{section*.68}
-\contentsline {section}{\numberline {5.3}On the relative performance of offline and online algorithms for all IVCs.}{89}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Experimental Setup}{89}{subsection.5.3.1}
+\contentsline {subsubsection}{RQ1}{86}{section*.65}
+\contentsline {subsubsection}{RQ2}{87}{section*.67}
+\contentsline {subsubsection}{RQ3}{88}{section*.68}
+\contentsline {section}{\numberline {5.3}On the relative performance of offline and online algorithms for all IVCs.}{88}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Experimental Setup}{90}{subsection.5.3.1}
 \contentsline {subsection}{\numberline {5.3.2}Experimental Results}{90}{subsection.5.3.2}
 \contentsline {subsubsection}{RQ1 and RQ2}{90}{section*.72}
-\contentsline {subsubsection}{RQ3}{90}{section*.73}
-\contentsline {section}{\numberline {5.4}On the relationship of BVCs and MIVCs}{92}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Experimental Setup}{92}{subsection.5.4.1}
-\contentsline {subsubsection}{RQ1}{94}{section*.75}
+\contentsline {subsubsection}{RQ3}{92}{section*.73}
+\contentsline {section}{\numberline {5.4}On the relationship of BVCs and MIVCs}{94}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Experimental Setup}{94}{subsection.5.4.1}
+\contentsline {subsubsection}{RQ1}{95}{section*.75}
 \contentsline {subsubsection}{RQ2}{95}{section*.76}
-\contentsline {subsubsection}{RQ3}{98}{section*.79}
-\contentsline {chapter}{\numberline {6}Applications}{100}{chapter.6}
-\contentsline {section}{\numberline {6.1}Automatic Proof-Based Traceability}{100}{section.6.1}
-\contentsline {section}{\numberline {6.2}Coverage Analysis and Requirements Completeness}{101}{section.6.2}
-\contentsline {section}{\numberline {6.3}Discussion}{110}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Granularity}{112}{subsection.6.3.1}
-\contentsline {chapter}{\numberline {7}Conclusions and Future Work}{115}{chapter.7}
-\contentsline {section}{\numberline {7.1}Future Research Directions}{116}{section.7.1}
-\contentsline {chapter}{References}{119}{chapter*.88}
-\contentsline {chapter}{List of Publications}{132}{chapter*.89}
+\contentsline {subsubsection}{RQ3}{98}{section*.80}
+\contentsline {subsubsection}{Discussion}{98}{section*.83}
+\contentsline {chapter}{\numberline {6}Applications}{102}{chapter.6}
+\contentsline {section}{\numberline {6.1}Automatic Proof-Based Traceability}{102}{section.6.1}
+\contentsline {section}{\numberline {6.2}Coverage Analysis and Requirements Completeness}{103}{section.6.2}
+\contentsline {section}{\numberline {6.3}Discussion}{112}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Granularity}{114}{subsection.6.3.1}
+\contentsline {chapter}{\numberline {7}Conclusions and Future Work}{117}{chapter.7}
+\contentsline {section}{\numberline {7.1}Future Research Directions}{118}{section.7.1}
+\contentsline {chapter}{References}{121}{chapter*.90}
+\contentsline {chapter}{List of Publications}{134}{chapter*.91}

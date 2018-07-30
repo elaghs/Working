@@ -2,10 +2,10 @@ We are interested in examining the performance of algorithms to compute minimal 
 We examine \textbf{Grow-Shrink}, the algorithm presented in Section \ref{sec:onaivc}, and the two state-of-the-art algorithms: \textbf{Offline MARCO} (\aivcalg Section \ref{sec:offaivc}), and \textbf{Online MARCO} (Section \ref{sec:onaivc}) that performs a shrink step prior to returning a solution to ensure minimality.
 %\old{We examine three algorithms:
 %\textbf{Offline MARCO}, the algorithm from~\cite{Ghass17AllIVCs}, \textbf{Online MARCO}, a variant of the algorithm from~\cite{Ghass17AllIVCs} that performs a shrink step prior to returning a solution to ensure minimality, and \textbf{Grow-Shrink}, the algorithm described in this paper.}
-We investigate the following research questions: 
+We investigate the following research questions:
 \begin{itemize}
   \item \textbf{RQ1:} For the large models where the complete MIVC enumeration is intractable,
-how many MIVCs are found within the given time limit? 
+how many MIVCs are found within the given time limit?
   \item \textbf{RQ2:} For the tractable models, i.e. models in which all MIVCs are found, how much time is required to complete the enumeration of MIVCs?
   \item \textbf{RQ3:} Finally, we are interested in how many solver calls are necessary for the enumeration. What is the (average) number of solver calls with result adequate/inadequate required by evaluated online algorithms to produce individual MIVCs?
 \end{itemize}
@@ -23,7 +23,7 @@ For each test model, we configured \texttt{JKind} to use the \texttt{Z3} solver 
 
 
 
-\begin{figure}
+\begin{figure*}
 \centering
 \begin{minipage}{\textwidth}
 \centering
@@ -37,7 +37,7 @@ For each test model, we configured \texttt{JKind} to use the \texttt{Z3} solver 
 \captionof{figure}{Runtime for tractable benchmarks for all algorithms in a log scale.}%
 \label{res:time_to_complete}
 \end{minipage}
-\end{figure}
+\end{figure*}
 
 
 
@@ -45,7 +45,7 @@ For each test model, we configured \texttt{JKind} to use the \texttt{Z3} solver 
 In this section, we examine the experimental results to address the research questions.
 
 %\vspace{-5pt}
-vspace{0.1in}
+
 \subsubsection{RQ1 and RQ2}
 Data related to the first two research questions are shown in Figures~\ref{res:found_mivcs} and~\ref{res:time_to_complete}.
 Figure~\ref{res:found_mivcs} describes the number of MIVCs found be the two online algorithms in the intractable benchmarks, i.e. the benchmarks where the algorithms did not complete the computation within the time limit. There are 33 such benchmarks. The Grow-Shrink substantially outperforms Online MARCO in the majority of the benchmarks, finding an average of 55\% additional MIVCs.
@@ -64,16 +64,16 @@ It is on average 1.50 times faster than Online MARCO.
 
 
 %\vspace{-5pt}
-vspace{0.1in}
+
 \subsubsection{RQ3}  For RQ3, we examined the number of required calls to the solver per MIVC.  For this question, we used the 33 models that contained a large number of MIVCs ($>$70) in order to show the solver efficiency as the number of MIVCs increased.  A point with coordinates $(x,y)$ states that the algorithm needed to perform $y$ solver calls (on average) in order to produce (find) the first $x$ MIVCs. We grouped the calls in terms of the number of calls that returned {\em adequate} vs. {\em inadequate} results.  It is evidenced by the results in Figure~\ref{res:checks}, the new algorithm improves upon Online MARCO as the number of MIVCs becomes larger.
 
-\begin{figure}
+\begin{figure*}
 \centering
 \begin{subfigure}{\textwidth}
   \centering
   \includegraphics[scale=0.5]{./figs/adequate_checks_per_mivc_70.png}
   \caption{Checks with result "adequate".}
-  \label{res:adequate_checks} 
+  \label{res:adequate_checks}
 \end{subfigure}\hfill
 \begin{subfigure}{\textwidth}
   \centering
@@ -83,7 +83,7 @@ vspace{0.1in}
 \end{subfigure}
 \caption{Average number of performed adequacy checks required to produce individual MIVCs. Note that Figure (b) is in a log scale.}
 \label{res:checks}
-\end{figure}
+\end{figure*}
 
 The improvement in the number of \emph{inadequate} calls is due the novel shrinking and growing procedures.
 Each (approximately) maximal inadequate subset found by the growing procedure allows to save (up to exponentially) many inadequate calls during subsequent executions of the shrinking procedure.

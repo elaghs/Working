@@ -72,14 +72,14 @@
 \contentsline {subsection}{\numberline {5.4.1}Experimental Setup}{94}{subsection.5.4.1}
 \contentsline {subsubsection}{RQ1}{95}{section*.75}
 \contentsline {subsubsection}{RQ2}{95}{section*.76}
-\contentsline {subsubsection}{RQ3}{98}{section*.80}
-\contentsline {subsubsection}{Discussion}{98}{section*.83}
-\contentsline {chapter}{\numberline {6}Applications}{102}{chapter.6}
-\contentsline {section}{\numberline {6.1}Automatic Proof-Based Traceability}{102}{section.6.1}
-\contentsline {section}{\numberline {6.2}Coverage Analysis and Requirements Completeness}{103}{section.6.2}
-\contentsline {section}{\numberline {6.3}Discussion}{112}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Granularity}{114}{subsection.6.3.1}
-\contentsline {chapter}{\numberline {7}Conclusions and Future Work}{117}{chapter.7}
-\contentsline {section}{\numberline {7.1}Future Research Directions}{118}{section.7.1}
-\contentsline {chapter}{References}{121}{chapter*.90}
-\contentsline {chapter}{List of Publications}{134}{chapter*.91}
+\contentsline {subsubsection}{RQ3}{98}{section*.82}
+\contentsline {subsubsection}{Discussion}{102}{section*.85}
+\contentsline {chapter}{\numberline {6}Applications}{107}{chapter.6}
+\contentsline {section}{\numberline {6.1}Automatic Proof-Based Traceability}{107}{section.6.1}
+\contentsline {section}{\numberline {6.2}Coverage Analysis and Requirements Completeness}{108}{section.6.2}
+\contentsline {section}{\numberline {6.3}Discussion}{117}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Granularity}{119}{subsection.6.3.1}
+\contentsline {chapter}{\numberline {7}Conclusions and Future Work}{122}{chapter.7}
+\contentsline {section}{\numberline {7.1}Future Research Directions}{123}{section.7.1}
+\contentsline {chapter}{References}{126}{chapter*.95}
+\contentsline {chapter}{List of Publications}{139}{chapter*.96}

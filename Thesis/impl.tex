@@ -110,7 +110,7 @@ Installing JKind is accomplished by the following steps:
   \item Download the zip containing the latest release from https://github.com/agacek/jkind/releases. As of the writing of this document, that is version 4.0.\footnote{All IVCs techniques are not yet part of the official release, but they can be obtained from \cite{mygit}}
   \item Unzip the contents of that zip to the directory of your choice.
   \item Add the folder from step 2 to the PATH variable for your OS.
-The installation can be tested by executing jkind –help from the command line. 
+The installation can be tested by executing jkind –help from the command line.
 \end{enumerate}
 Successful installation will provide the following result in Figure \ref{fig:jkins}.
 
@@ -140,12 +140,12 @@ To add a solver, users must perform these steps:
 
 
 \section{{\sc JKind} Lustre Grammar and Command Line Arguments}
-\jkind accepts input from the synchronous dataflow language Lustre used for programming real-time systems. A dataflow language consists of a set of equations that assign variables where a variable can be computed as soon as its data dependencies have been computed. Such a language is a completely functional model without side effects, suitable for formal verification and program transformation. Like all functional language, a data flow language is naturally parallel where the only constraints on parallelism are due to the data-dependencies between variables. 
+\jkind accepts input from the synchronous dataflow language Lustre used for programming real-time systems. A dataflow language consists of a set of equations that assign variables where a variable can be computed as soon as its data dependencies have been computed. Such a language is a completely functional model without side effects, suitable for formal verification and program transformation. Like all functional language, a data flow language is naturally parallel where the only constraints on parallelism are due to the data-dependencies between variables.
 
 Dataflow models can be either synchronous or asynchronous. In a synchronous dataflow model, the model is recomputed in a sequence of time instants. In an asynchronous model, the outputs of the system are continually recomputed depending on the inputs to the system.
 
 \subsection{Syntax Overview}
-\jkind Lustre grammar is built in \texttt{ANTLR} and can be referenced at 
+\jkind Lustre grammar is built in \texttt{ANTLR} and can be referenced at
 \emph{http://github.com/agacek/\\jkind/blob/master/jkind-common/src/jkind/lustre/parsing/Lustre.gz}.
 
 \jkind supports single line and multi-line comment styles. The grammar elements for comments are shown in Figure \ref{fig:jk1}.
@@ -236,28 +236,28 @@ Different \jkind functionalities explained so far are accessible from the tool c
     Command & Description\\
   \hline\hline
   % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
-  $-solver $ $<$$arg$$>$ & SMT solver (default: smtinterpol, alternatives: z3, yices, yices2, cvc4, mathsat)\\[0.5ex]\hline
-  $-n $ $<$$arg$$>$  & maximum depth for BMC and $k$-induction (default is unbounded) \\[0.5ex]
-  $-timeout $ $<$$arg$$>$ & maximum runtime in seconds (default: unbounded)\\[0.5ex]\hline
-  $-no\_bmc$ & disable bounded model checking \\[0.5ex]
-  $-no\_k\_induction $ &  disable $k$-induction \\[0.5ex]
-  $-pdr\_max$ $<$$arg$$>$ & maximum number of PDR parallel instances: if $arg$ is 0, PDR will be disabled \\[0.5ex]
-  $-no\_inv\_gen $ & disable invariant generation \\[0.5ex]
-  $-no\_slicing $ & disable slicing \\[0.5ex]\hline
-  $-ivc$ & find an inductive validity core for valid properties (based on $--\%IVC$ annotated  elements in the LUSTRE input file) \\[0.5ex]
-  $-all\_assigned$ & mark all equations in the input LUSTRE file as $--\%IVC$ elements \\
-  $-all\_ivcs$ & find all inductive validity cores for valid  properties (based on $--\%IVC$ annotated elements) \\[0.5ex]
-  $-all\_ivcs\_algv$ $<$$arg$$>$ & algorithm to be used for finding all IVCs (1: offline generation, 2: online generation) \\[0.5ex]
-  $-all\_ivcs\_max\_grows$ $<$$arg$$>$ & used with the previous option while $arg = 2$ to specify maximal number of grows in the map-based  shrinking procedure (in MIVC enumeration algorithms) \\[0.5ex]
-  $-bvc$ & generate BVC for the value specified with option $-n$ within given $-timeout$ \\[0.5ex]
-  $-use\_unsat\_core$ $<$$arg$$>$ & call UCBF algorithm on an input xml file containing the result provided by the use of $-ivc$ and $-xml$ options\\[0.5ex]\hline
-  $-xml$ & generate results in XML format\\[0.5ex]
-  $-scratch$ & produce files for debugging purposes\\[0.5ex]\hline
-    $-write\_advice <arg>$ & write advice to specified file\\[0.5ex]
-  $ -read\_advice <arg>$ & read advice from specified file \\[0.5ex]\hline
-    $-smooth$ & smooth counterexamples (minimal changes in  input values)\\[0.5ex]
-    $-interval$ & generalize counterexamples using interval\\[0.5ex]\hline
-  $-help$ & print all the command line options \\[0.5ex]
+  \small{$-solver $ $<$$arg$$>$} & \small{SMT solver (default: smtinterpol, alternatives: z3, yices, yices2, cvc4, mathsat)}\\[0.1ex]\hline
+  \small{$-n $ $<$$arg$$>$ } & \small{maximum depth for BMC and $k$-induction} \\[0.1ex]
+ \small{ $-timeout $ $<$$arg$$>$ }& \small{maximum runtime in seconds (default: unbounded)}\\[0.1ex]\hline
+  \small{$-no\_bmc$} & \small{disable bounded model checking} \\
+  \small{$-no\_k\_induction $} & \small{ disable $k$-induction} \\
+  \small{$-pdr\_max$ $<$$arg$$>$} &\small{ maximum number of PDR parallel instances: if $arg$ is 0, PDR will be disabled} \\[0.1ex]
+  \small{$-no\_inv\_gen $} & \small{disable invariant generation} \\
+  \small{$-no\_slicing $} & \small{disable slicing} \\[0.1ex]\hline
+  \small{$-ivc$ }& \small{find an inductive validity core for valid properties (based on $--\%IVC$ annotated  elements in the LUSTRE input file)} \\
+  \small{$-all\_assigned$} & \small{mark all equations of the input file as $--\%IVC$} \\
+  \small{$-all\_ivcs$} & \small{find all inductive validity cores for valid  properties}\\
+  \small{$-all\_ivcs\_algv$ $<$$arg$$>$ }& \small{algorithm to be used for finding all IVCs (1: offline generation, 2: online generation)} \\
+  %\small{$-all\_ivcs\_max\_grows$ $<$$arg$$>$} & \small{used with the previous option while $arg = 2$ to specify maximal number of grows in the map-based  shrinking procedure (in MIVC enumeration algorithms)} \\[0.5ex]
+  \small{$-bvc$ }& \small{generate BVC at depth $-n$ within given $-timeout$} \\
+  \small{$-use\_unsat\_core$ $<$$arg$$>$ }& \small{call UCBF algorithm on an input xml file containing the result provided by the use of $-ivc$ and $-xml$ options}\\[0.1ex]\hline
+  \small{$-xml$} & \small{generate results in XML format}\\
+  \small{$-scratch$} & \small{produce files for debugging purposes}\\[0.1ex]\hline
+    \small{$-write\_advice$ $<$$arg$$>$} & \small{write advice to specified file}\\
+  \small{$-read\_advice$ $<$$arg$$>$} & \small{read advice from specified file} \\[0.1ex]\hline
+    \small{$-smooth$} & \small{smooth counterexamples (minimal changes in  input values)}\\
+    \small{$-interval$} & \small{generalize counterexamples using interval}\\[0.1ex]\hline
+  \small{$-help$ }& \small{print all the command line options} \\
   \hline
 \end{tabularx}\\
 \label{tab:jkindcm}

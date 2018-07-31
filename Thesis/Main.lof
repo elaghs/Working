@@ -33,13 +33,18 @@
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Number of MIVCs produced by online algorithms.\relax }}{91}{figure.caption.71}
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Runtime for tractable benchmarks for all algorithms in a log scale.\relax }}{91}{figure.caption.71}
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Average number of performed adequacy checks required to produce individual MIVCs. Note that Figure (b) is in a log scale.\relax }}{93}{figure.caption.74}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Model ex3\_e8\_381\_e7\_224 as a case study\relax }}{99}{figure.caption.78}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces BVC runs for model ex3\_e8\_381\_e7\_224\relax }}{100}{figure.caption.79}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Size of BVCs at depth 3 and max\relax }}{101}{figure.caption.81}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Difference between $\textit {BVC}_{max}$ and MIVCs vs the model size\relax }}{101}{figure.caption.82}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces A toy example that shows multiple BVCs at earlier depths for a property with single MIVC\relax }}{98}{figure.caption.78}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces BVCs for the property in Figure \ref {fig:toybvc}\relax }}{99}{figure.caption.79}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Model ex3\_e8\_381\_e7\_224 as a case study\relax }}{100}{figure.caption.80}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces BVC runs for model ex3\_e8\_381\_e7\_224\relax }}{101}{figure.caption.81}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Size of BVCs at depth 3 and max\relax }}{102}{figure.caption.83}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Difference between $\textit {BVC}_{max}$ and MIVCs vs the model size\relax }}{103}{figure.caption.84}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Building abstraction using BVCs\relax }}{104}{figure.caption.86}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces A toy example where MIVC is the superset of multiple unique BVCs\relax }}{105}{figure.caption.87}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces BVCs for the property in Figure \ref {fig:toybvc2}\relax }}{106}{figure.caption.88}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Runtime of different analyses\relax }}{109}{figure.caption.85}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Size of the set of covered elements by different algorithms\relax }}{110}{figure.caption.86}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Elements covered by the initial property set\relax }}{112}{figure.caption.88}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Elements covered by the final property set\relax }}{114}{figure.caption.89}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Runtime of different analyses\relax }}{114}{figure.caption.90}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Size of the set of covered elements by different algorithms\relax }}{115}{figure.caption.91}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Elements covered by the initial property set\relax }}{117}{figure.caption.93}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Elements covered by the final property set\relax }}{119}{figure.caption.94}
 \addvspace {10\p@ }

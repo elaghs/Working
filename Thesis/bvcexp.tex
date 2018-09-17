@@ -1,9 +1,9 @@
 We would like to to observe and study how validity cores evolves over unrolling the transition relation. It is interesting to see how quickly validity cores from a bounded proof converges to an actual minimal IVC.
 
-Note that the purpose of our experiments on BVCs is mostly to point out some research directions. Further studies may even can make use of BVCs in verification problems. A lot of time a valid property is hard or not inductive for the model checker to prove. In such cases, looking at the history of BVC runs may give us some confidence about the correctness of the property. The experimental results show that when we reach one of the actual MIVCs, BVC runs result in the same cores over and over. That is to say, when the BVC runs come to stable cores, it may imply we might have already seen all the reachable states, and implicitly known they are safe. Although this hypothesis may not be true and the reverse does not necessarily hold, it may be worth further investigations.
+Note that the purpose of our experiments on BVCs is mostly to point out some research directions. Further studies may even can make use of BVCs in verification problems. It can be the case that a valid property is hard or impossible for an inductive model checker to prove. In such cases, looking at the history of BVC runs may give us some confidence about the correctness of the property. The experimental results show that when we reach one of the actual MIVCs, the BVC algorithm then constantly generates the same cores as depth of exploration increases. That is to say, when the BVC runs begin generating stable cores that do not change as depth changes, it may imply we might have already seen all the reachable states, and implicitly known they are safe. Although this hypothesis is by no means guaranteed to hold, it may be worth further investigations.
 
 \subsection{Experimental Setup}
-  We perform our experiments on the same benchmark suite with 660 models introduced in Section \ref{sec:expsetup}. The experiment is conducted with a maximum depth of 10 and one hour timeout; i.e. for each model, if unrolling to depth 10 takes more than one hour, the \bvcalg\ algorithm will terminate. We capture $\bvc _{k}$ for $ 0 \leq k \le 10$, then compare each \bvc\ of depth $k$ to see how they change during unrolling. Then, the final bounded validity cores obtained from at the maximum\footnote{Maximum depth in this experiment is 10. For most of the models, it is possible to reach this depth in less than an hour.}
+  We perform our experiments on the same benchmark suite with 660 models introduced in Section \ref{sec:expsetup}. The experiment is conducted with a maximum depth of 10 and one hour timeout; i.e., for each model, if unrolling to depth 10 takes more than one hour, the \bvcalg\ algorithm will terminate. We capture $\bvc _{k}$ for $ 0 \leq k \le 10$, then compare each \bvc\ of depth $k$ to see how they change during unrolling. Then, the final bounded validity cores obtained from at the maximum\footnote{Maximum depth in this experiment is 10. For most of the models, it is possible to reach this depth in less than an hour.}
   reachable depth in one hour, denoted by $\bvc _{max}$ , are considered as our final cores. These cores are compared with all the MIVCs gathered in Section \ref{subsec:res} to see if they match up with any of the actual minimal IVCs.
 
 Research questions we would like to answer in this study are as follows:
@@ -20,22 +20,22 @@ Research questions we would like to answer in this study are as follows:
 \subsubsection{RQ1}
 The result of the experiments show that $\bvc _{max}$ is the same as one of the MIVCs for 474 models out of 660. For 27 of the models, $\bvc _{max}$ was not subset of any MIVCs (had additional elements, also none of the MIVCs was a subset of the $\bvc _{max}$)\footnote{We will explain the reason in \textbf{RQ2}}. However, $\bvc _{max}$ was a subset of one of the MIVCs in 159 of the models.
 
-We performed the experiments with \texttt{Z3} and \texttt{Yices} solvers. UNSAT core generation in \texttt{Z3} is faster, and \texttt{JKind} has special hack to get UNSAT cores from \texttt{Yices} because it does not have a support for it. Using \texttt{Z3}, 12 of the models did not reach depth 10 in one hour. With \texttt{Yices}, 18 of the models timed out. An interesting fact is that we had models that did not reach $\bvc _{10}$, but their $\bvc _{max}$ was the same as one of the MIVCs. For example, one of the models containing 571 design elements only reached to $\bvc _{2}$, but $\bvc _{2}$ was the same as one of the MIVCs.
+We performed the experiments with \texttt{Z3} and \texttt{Yices} solvers. UNSAT core generation in \texttt{Z3} is faster than \texttt{Yices} in the current implementation of \texttt{JKind}. Using \texttt{Z3}, 12 of the models did not reach depth 10 in one hour. With \texttt{Yices}, 18 of the models timed out. An interesting fact is that we had models that did not reach $\bvc _{10}$, but their $\bvc _{max}$ was the same as one of the MIVCs. For example, one of the models containing 571 design elements only reached to $\bvc _{2}$, but $\bvc _{2}$ was the same as one of the MIVCs.
 The BVC size for that model at different depths is as follows:\footnote{This particular model is named ``steam\_boiler\_no\_arr1.lus'' in our benchmarks. You can see the results and model in our experimental directories \cite{expr}.}
 
 $|\bvc _{0}| = 6$, $|\bvc _{1}| = 11$, $|\bvc _{2}| = 128$
 
-There are interesting case studies where from the initial depth, the BVC was the same as one of the MIVCs. For example, in our benchmark we have a model with 27 design element\footnote{File ``car\_all\_e8\_856\_e2\_585.lus'' in our benchmark directory.}, for which $|\bvc _{i}| = 5$, $i \leq 0 \le 10$, and $\bvc _{0}$ is the same as its only one MIVC.
+There are interesting case studies where from the initial depth, the BVC was the same as one of the MIVCs. For example, in our benchmark we have a model with 27 design elements\footnote{File ``car\_all\_e8\_856\_e2\_585.lus'' in our benchmark directory.}, for which $|\bvc _{i}| = 5$, $i \leq 0 \le 10$, and $\bvc _{0}$ is the same as its only one MIVC.
 
 \vspace{0.1in}
 \subsubsection{RQ2}
 Our experimental results show that among 474 models for which $\bvc _{max}$ is the same as one of the MIVCs, the size of the BVCs were (nonstrictly) increasing 99.9\% of the time:
       $$ 0 \leq i \le max, |\bvc _{i}| \leq |\bvc _{i+1}|$$
       In other words, for only 12 of these models, the above relation did not hold.
-      It is expected that bounded cores in each unrolling step (nonstrictly) increases as in each step more states are being reached and the cores required for the proof of the property is more likely to expand.
-      We run the experiments over those 12 models with different solvers (once with \texttt{Z3} and once with \texttt{Yices}). In both runs, these models, mostly, behave the same (except 3 of them. The result of BVC runs for these models (on \texttt{Yices}) is shown in Table \ref{tab:bvc-abnormal}.
+      It is expected that bounded cores in each unrolling step (nonstrictly) increase as in each step more states are being reached and the cores required for the proof of the property is more likely to expand.
+      We run the experiments over those 12 models with different solvers (once with \texttt{Z3} and once with \texttt{Yices}). The result of BVC runs for these models (on \texttt{Yices}) is shown in Table \ref{tab:bvc-abnormal}.
 
-      It is interesting to see why those 12 models show different behavior. By looking at different case studies, we have found three main reasons that explain this anomaly.  The first explanation is that when a model has several distinct MIVCs, the bounded core could change during unrolling. However, we examined these models and there are ones with a single MIVC that behaved abnormally. Another explanation for such models is that MIVCs obtained from \aivcalg ~contained timeout loops; therefore, we do not have the exact minimal IVCs for those cases (for example model\#6 in Table \ref{tab:bvc-abnormal}).
+      It is interesting to see why those 12 models show different behavior. By looking at different case studies, we have found three main reasons that explain this anomaly.  The first explanation is that when a model has several distinct MIVCs, the bounded core could change during unrolling. However, the set of 12 models contain models that have only a single MIVC, so this cannot be the entire reason. Another explanation for such models is that MIVCs obtained from \aivcalg ~contained timeout loops; therefore, we do not have the exact minimal IVCs for those cases (for example model\#6 in Table \ref{tab:bvc-abnormal}).
 
 
 
@@ -85,7 +85,7 @@ Our experimental results show that among 474 models for which $\bvc _{max}$ is t
   \label{tab:bvc-abnormal}
 \end{table}
 
-The third reason why the size of BVCs is not always increasing is more interesting, which also explains why in some cases $\bvc _{max}$ is not the subset of any of the MIVCs. This only has to do with the depth of bounded model checking. In some problems, when we are at the earlier steps of unrolling transition relation (i.e. lower depths), the property can be satisfied in different ways. In other words, a property may have multiple \bvc s at depth $k$, but as we advance towards the deeper bounds leading to a proof, the validity cores converges to a smaller subset. For example, consider the toy example in Figure \ref{fig:toybvc}. It shows a simple model containing two counters. The first counter ({\small{\texttt{counter1}}}) has the initial value of 0, and the second counter ({\small{\texttt{counter2}}}) starts off from 6. The property ({\small{\texttt{OK}}}) is either {\small{\texttt{counter1}}} is less than 5 or ({\small{\texttt{counter2}}}) is greater than 5. This property has only one MIVC, which is {\small{\texttt{\{counter2, OK\}}}}. However, before depth 5, this property can be satisfied into ways with {\small{\texttt{\{counter1, OK\}}}} and {\small{\texttt{\{counter2, OK\}}}}. You can see the output of the BVC engine for this example in Figure \ref{fig:toyo1}.
+The third reason why the size of BVCs is not always increasing is more interesting.   This reason explains why in some cases $\bvc _{max}$ is not the subset of any of the MIVCs. This only has to do with the depth of bounded model checking. In some problems, when we are at the earlier steps of unrolling transition relation (i.e., lower depths), the property can be satisfied in different ways. In other words, a property may have multiple \bvc s at depth $k$, but as we advance towards the deeper bounds leading to a proof, the validity cores converge to a smaller subset. For example, consider the toy example in Figure \ref{fig:toybvc}. It shows a simple model containing two counters. The first counter ({\small{\texttt{counter1}}}) has the initial value of 0, and the second counter ({\small{\texttt{counter2}}}) starts off from 6. The property ({\small{\texttt{OK}}}) is either {\small{\texttt{counter1}}} is less than 5 or ({\small{\texttt{counter2}}}) is greater than 5. This property has only one MIVC, which is {\small{\texttt{\{counter2, OK\}}}}. However, before depth 5, this property can be satisfied into ways with {\small{\texttt{\{counter1, OK\}}}} and {\small{\texttt{\{counter2, OK\}}}}. You can see the output of the BVC engine for this example in Figure \ref{fig:toyo1}.
 
 \begin{figure}
  \centering
@@ -98,7 +98,7 @@ The third reason why the size of BVCs is not always increasing is more interesti
 
 \begin{figure}
  \centering
-  \includegraphics[width=\columnwidth]{figs/toyo1.jpg}
+  \includegraphics[width=0.8\columnwidth]{figs/toyo1.jpg}
   %\vspace{-0.1in}
   \caption{BVCs for the property in Figure \ref{fig:toybvc}}
   \vspace{0.1in}
@@ -107,11 +107,11 @@ The third reason why the size of BVCs is not always increasing is more interesti
 
 
 
-Let us take a look at one of the models small enough to see its results. This model is named \emph{ex3\_e8\_381\_e7\_224} in our benchmarks (Figure \ref{fig:expl}). It only has one MIVC ({\small{\texttt{\{V19\_late, V64\_incr, V63\_diff, V65\_PC, OK\}}}}), and \jkind is able to prove its property in less than a second. In addition, for this model, there is no timeout issue in the inner loops of \aivcalg\ algorithm. Using \texttt{Yices} in our experiments, $\bvc _{max}$ is not the subset of the only MIVC that this model has. However if we had just increased the depth by 1, from $\bvc _{10}$ on, the BVC would have become the same as the MIVC. For this model, up to depth 10, we have two ways of satisfying the property (we have two bounded validity cores {\small{\texttt{\{V19\_late, V64\_incr, V63\_diff, V65\_PC, OK\}}}} and {\small{\texttt{\{V20\_early, V64\_incr, V63\_diff, V65\_PC, OK\}}}}), but after depth 10, the property is satisfied with only one validity core ({\small{\texttt{\{V19\_late, V64\_incr, V63\_diff, V65\_PC, OK\}}}}). Figure \ref{fig:explout} shows the output of the \jkind BVC engine over this model up to depth 15.
+Let us take a look at one of the models that is small enough to display its results in a reasonable amount of space. This model is named \emph{ex3\_e8\_381\_e7\_224} in our benchmarks (Figure \ref{fig:expl}). It only has one MIVC ({\small{\texttt{\{V19\_late, V64\_incr, V63\_diff, V65\_PC, OK\}}}}), and \jkind is able to prove its property in less than a second. In addition, for this model, there is no timeout issue in the inner loops of \aivcalg\ algorithm. Using \texttt{Yices} in our experiments, $\bvc _{max}$ is not the subset of the only MIVC that this model has. However if we had just increased the depth by 1, from $\bvc _{10}$ on, the BVC would have become the same as the MIVC. For this model, up to depth 10, we have two ways of satisfying the property (we have two bounded validity cores {\small{\texttt{\{V19\_late, V64\_incr, V63\_diff, V65\_PC, OK\}}}} and {\small{\texttt{\{V20\_early, V64\_incr, V63\_diff, V65\_PC, OK\}}}}), but after depth 10, the property is satisfied with only one validity core ({\small{\texttt{\{V19\_late, V64\_incr, V63\_diff, V65\_PC, OK\}}}}). Figure \ref{fig:explout} shows the output of the \jkind BVC engine over this model up to depth 15.
 
  \begin{figure}
  \centering
-  \includegraphics[width=\columnwidth]{figs/expl.jpg}
+  \includegraphics[width=0.9\columnwidth]{figs/expl.jpg}
   %\vspace{-0.1in}
   \caption{Model ex3\_e8\_381\_e7\_224 as a case study}
   \vspace{0.1in}
@@ -120,7 +120,7 @@ Let us take a look at one of the models small enough to see its results. This mo
 
 \begin{figure}
  \centering
-  \includegraphics[width=\columnwidth]{figs/explout.png}
+  \includegraphics[width=0.9\columnwidth]{figs/explout.png}
   %\vspace{-0.1in}
   \caption{BVC runs for model ex3\_e8\_381\_e7\_224}
   \vspace{0.1in}
@@ -169,9 +169,9 @@ in logarithmic scale.
 
 \vspace{0.1in}
 \subsubsection{Discussion}
-Experimental results show that in many cases, bounded validity cores can be as accurate as actual minimal IVCs. The abnormal behavior in some cases showed that we cannot make a strong claim about the relationships between BVCs and IVCs. One observation is that at deeper bounds, we can have more accurate bounded validity cores. The more accurate bounded cores are, the more useful information we have to evaluate completeness and adequacy of proofs. 
+Experimental results show that in many cases, bounded validity cores can be as accurate as actual minimal IVCs. The abnormal behavior in some cases showed that we cannot make a strong claim about the relationships between BVCs and IVCs. One observation is that at deeper bounds, we can have more accurate bounded validity cores. The more accurate bounded cores are, the more useful information we have to evaluate completeness and adequacy of proofs.
 
-It may be possible to make use of other techniques to evaluate the accuracy of the bounded cores. For example, in case of non-increasing BVCs, we may build different abstractions for the model using different BVCs, and try to prove the property over abstracted models. If property fails over one abstraction, we can easily rule out the bounded core used for that abstraction. For example, in Figure \ref{fig:toybvc}, if we terminate the BVC generation at depth 4, we need to decide which of {\small{\texttt{\{counter1, OK\}}}} and {\small{\texttt{\{counter2, OK\}}}} is necessary for an inductive proof (i.e. is the subset of our MIVC). In order to do so, if we build a new abstract model using BVC {\small{\texttt{\{counter1, OK\}}}} (Figure \ref{fig:absbvc} (a)), and try to re-prove the property, property will be violated, which tells us   {\small{\texttt{counter2}}} was necessary for the proof of our property. In the same way, if we build an abstract model using BVC  {\small{\texttt{\{counter2, OK\}}}} (Figure \ref{fig:absbvc} (b)) and try to re-prove the property, we will see the property is still valid, which means  {\small{\texttt{counter1}}} is not in MIVC of the property.
+It may be possible to make use of other techniques to evaluate the accuracy of the bounded cores. For example, in case of non-increasing BVCs, we may build different abstractions for the model using different BVCs, and try to prove the property over abstracted models. If property fails over one abstraction, we can easily rule out the bounded core used for that abstraction. For example, in Figure \ref{fig:toybvc}, if we terminate the BVC generation at depth 4, we need to decide which of {\small{\texttt{\{counter1, OK\}}}} and {\small{\texttt{\{counter2, OK\}}}} is necessary for an inductive proof (i.e., is the subset of our MIVC). In order to do so, if we build a new abstract model using BVC {\small{\texttt{\{counter1, OK\}}}} (Figure \ref{fig:absbvc} (a)), and try to re-prove the property, property will be violated, which tells us   {\small{\texttt{counter2}}} was necessary for the proof of our property. In the same way, if we build an abstract model using BVC  {\small{\texttt{\{counter2, OK\}}}} (Figure \ref{fig:absbvc} (b)) and try to re-prove the property, we will see the property is still valid, which means  {\small{\texttt{counter1}}} is not in MIVC of the property.
 
   \begin{figure}
  \centering
@@ -180,6 +180,7 @@ It may be possible to make use of other techniques to evaluate the accuracy of t
   \caption{Building abstraction using BVCs}
   \vspace{0.1in}
   \label{fig:absbvc}
+  \vspace{0.1in}
 \end{figure}
 
 
@@ -187,7 +188,7 @@ Another observation is that if we calculate \emph{all} BVCs at a given depth for
 
 \begin{figure}
  \centering
-  \includegraphics[width=0.8\columnwidth]{figs/toybvc2.jpg}
+  \includegraphics[width=0.70\columnwidth]{figs/toybvc2.jpg}
   %\vspace{-0.1in}
   \caption{A toy example where MIVC is the superset of multiple unique BVCs}
   \vspace{0.1in}
@@ -196,9 +197,9 @@ Another observation is that if we calculate \emph{all} BVCs at a given depth for
 
 \begin{figure}
  \centering
-  \includegraphics[width=\columnwidth]{figs/toyo2.jpg}
+  \includegraphics[width=0.8\columnwidth]{figs/toyo2.jpg}
   %\vspace{-0.1in}
   \caption{BVCs for the property in Figure \ref{fig:toybvc2}}
   \vspace{0.1in}
   \label{fig:toyo2}
-\end{figure}
+\end{figure} 

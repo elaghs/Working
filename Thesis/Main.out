@@ -38,23 +38,22 @@
 \BOOKMARK [2][-]{subsection.4.5.1}{Assume Guarantee Reasoning Environment}{section.4.5}% 38
 \BOOKMARK [2][-]{subsection.4.5.2}{Specification and Analysis of Requirements}{section.4.5}% 39
 \BOOKMARK [2][-]{subsection.4.5.3}{Static IMPerative AnaLyzer}{section.4.5}% 40
-\BOOKMARK [2][-]{subsection.4.5.4}{Applications}{section.4.5}% 41
-\BOOKMARK [0][-]{chapter.5}{Experiments}{}% 42
-\BOOKMARK [1][-]{section.5.1}{On the Relationship between Model Checking Algorithms and IVCs}{chapter.5}% 43
-\BOOKMARK [1][-]{section.5.2}{On the efficiency and efficacy of different "offline" IVC algorithms}{chapter.5}% 44
-\BOOKMARK [2][-]{subsection.5.2.1}{Experimental Setup}{section.5.2}% 45
-\BOOKMARK [2][-]{subsection.5.2.2}{Experimental Results}{section.5.2}% 46
-\BOOKMARK [1][-]{section.5.3}{On the relative performance of offline and online algorithms for all IVCs.}{chapter.5}% 47
-\BOOKMARK [2][-]{subsection.5.3.1}{Experimental Setup}{section.5.3}% 48
-\BOOKMARK [2][-]{subsection.5.3.2}{Experimental Results}{section.5.3}% 49
-\BOOKMARK [1][-]{section.5.4}{On the relationship of BVCs and MIVCs}{chapter.5}% 50
-\BOOKMARK [2][-]{subsection.5.4.1}{Experimental Setup}{section.5.4}% 51
-\BOOKMARK [0][-]{chapter.6}{Applications}{}% 52
-\BOOKMARK [1][-]{section.6.1}{Automatic Proof-Based Traceability}{chapter.6}% 53
-\BOOKMARK [1][-]{section.6.2}{Coverage Analysis and Requirements Completeness}{chapter.6}% 54
-\BOOKMARK [1][-]{section.6.3}{Discussion}{chapter.6}% 55
-\BOOKMARK [2][-]{subsection.6.3.1}{Granularity}{section.6.3}% 56
-\BOOKMARK [0][-]{chapter.7}{Conclusions and Future Work}{}% 57
-\BOOKMARK [1][-]{section.7.1}{Future Research Directions}{chapter.7}% 58
-\BOOKMARK [0][-]{chapter*.95}{References}{}% 59
-\BOOKMARK [0][-]{chapter*.96}{List of Publications}{}% 60
+\BOOKMARK [0][-]{chapter.5}{Experiments}{}% 41
+\BOOKMARK [1][-]{section.5.1}{On the Relationship between Model Checking Algorithms and IVCs}{chapter.5}% 42
+\BOOKMARK [1][-]{section.5.2}{On the efficiency and efficacy of different ``offline'' IVC algorithms}{chapter.5}% 43
+\BOOKMARK [2][-]{subsection.5.2.1}{Experimental Setup}{section.5.2}% 44
+\BOOKMARK [2][-]{subsection.5.2.2}{Experimental Results}{section.5.2}% 45
+\BOOKMARK [1][-]{section.5.3}{On the relative performance of offline and online algorithms for all IVCs.}{chapter.5}% 46
+\BOOKMARK [2][-]{subsection.5.3.1}{Experimental Setup}{section.5.3}% 47
+\BOOKMARK [2][-]{subsection.5.3.2}{Experimental Results}{section.5.3}% 48
+\BOOKMARK [1][-]{section.5.4}{On the relationship of BVCs and MIVCs}{chapter.5}% 49
+\BOOKMARK [2][-]{subsection.5.4.1}{Experimental Setup}{section.5.4}% 50
+\BOOKMARK [0][-]{chapter.6}{Applications}{}% 51
+\BOOKMARK [1][-]{section.6.1}{Automatic Proof-Based Traceability}{chapter.6}% 52
+\BOOKMARK [1][-]{section.6.2}{Coverage Analysis and Requirements Completeness}{chapter.6}% 53
+\BOOKMARK [1][-]{section.6.3}{Discussion}{chapter.6}% 54
+\BOOKMARK [2][-]{subsection.6.3.1}{Granularity}{section.6.3}% 55
+\BOOKMARK [0][-]{chapter.7}{Conclusions and Future Work}{}% 56
+\BOOKMARK [1][-]{section.7.1}{Future Research Directions}{chapter.7}% 57
+\BOOKMARK [0][-]{chapter*.92}{References}{}% 58
+\BOOKMARK [0][-]{chapter*.93}{List of Publications}{}% 59

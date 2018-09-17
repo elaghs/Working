@@ -31,7 +31,7 @@ Note that every \ivc ~is an adequate set for $P$, and every \mis ~is an inadequa
 %\end{definition}
 
 %It should be mentioned that minimality and maximality are about minimum or maximum cardinality subsets.
-%Note that $MCS$ is more of syntactic sugar that specifies sets that can also be specified by $MIS$; i.e. for any $MIS$ of $T$, there is a corresponding $MCS$ such that adding any element of that $MCS$ to the $MIS$, makes the property provable by the $MIS$.
+%Note that $MCS$ is more of syntactic sugar that specifies sets that can also be specified by $MIS$; i.e., for any $MIS$ of $T$, there is a corresponding $MCS$ such that adding any element of that $MCS$ to the $MIS$, makes the property provable by the $MIS$.
 %And, that's why it is called the ``minimal correction'' set.
 
 %\begin{lemma}
@@ -109,7 +109,8 @@ $\mathcal{A}$ such that:
     \mathcal{A}$ which are assigned $true$.
 
   \item Every model $M$ of $map$ corresponds to a set $S \in \mathcal{P}(T)$ such that
-$S = \bigcup_{a_i \in M} \actlit ^{-1} (a_i)$ and $M = \bigcup_{T_i \in S} \actlit(T_i)$.
+  
+  $S = \bigcup_{a_i \in M} \actlit ^{-1} (a_i)$ and $M = \bigcup_{T_i \in S} \actlit(T_i)$.
 \vspace{0.05in}
   \item For every explored set $S \in \mathcal{P}(T)$:
   \begin{itemize}
@@ -147,7 +148,7 @@ For $(I, T) \vdash P$, $map$ is satisfiable iff
 at least one $S \in AIVC(P)$ or one \mis\ of $T$ is unexplored.
 \end{lemma}
 \begin{proof}
-Let $map$ is satisfiable with a model $M$, and let $S = \bigcup_{a_i
+Let $map$ be satisfiable with a model $M$, and let $S = \bigcup_{a_i
   \in M} \actlit ^{-1} (a_i)$ be the corresponding set of
 $\mathcal{P}(T)$. If $S$ is adequate, then it contains a \mivc. That
 \mivc\ must not be explored since otherwise $S$ would have been blocked

@@ -5,7 +5,7 @@ To illustrate the \aivcalg ~algorithm we use the example presented in Chapter \r
 %As inspired by the MARCO algorithm in \cite{marco2016fast}, we visualize $\mathcal{P}(\mathcal{A})$ as a lattice in a Hasse diagram (Figure~\ref{fig:lattice1}) to demonstrate the progress of the algorithm. As you can see, each level of the lattice contains sets with the same size linked to sets that are their immediate
 %supersets (upper level regions) and subsets (lower level regions). Note that the power set is viewed as a Boolean formula, so each member in the lattice shows
 % variable with $true$.
-For better description, we view $T$ as an ordered set of its top-level conjuncts; i.e. $T = \{$ {\small \texttt{a1\_below, a2\_below, a1\_above, a2\_above, below, above\_hyst, doi\_on, d1, d2}} $\}$.
+For better description, we view $T$ as an ordered set of its top-level conjuncts; i.e., $T = \{$ {\small \texttt{a1\_below, a2\_below, a1\_above, a2\_above, below, above\_hyst, doi\_on, d1, d2}} $\}$.
 The algorithm starts with creating activation literals for each $T_i \in T$. Let the ordered set of Boolean variables $\{ a_1, \ldots , a_9 \}$ be the corresponding literals to the elements of $T$ (e.g. $\actlit ({ \small \texttt{a1\_below}}) = a_1$ and $\actlit ({\small \texttt{d2}}) = a_9$). Then, line 3 initializes $map$ with $\top$.
 
 In the first iteration of the \texttt{while} loop, since $map$ is
@@ -69,10 +69,10 @@ quite dependent on the maximal model returned in line~\ref{alg:aivc:maxsat} as w
 \label{fig:running_cube}
 \end{figure}
 
-The following example explains the execution of our algorithm on a simple instance where the transition step predicate $T$ is given as a conjunction of five sub-predicates $\{T_1, T_2, T_3, T_4, T_5\}$. 
+The following example explains the execution of our algorithm on a simple instance where the transition step predicate $T$ is given as a conjunction of five sub-predicates $\{T_1, T_2, T_3, T_4, T_5\}$.
 For the sake of simplicity, we do not exactly state what are the predicates and what is the safety property of interest. Instead, Figure~\ref{fig:running_cube} illustrates the power set of $\{T_1, T_2, T_3, T_4, T_5\}$ together with an information about adequacy of individual subsets. The subsets with solid green border are the adequate subsets, and the subsets with dashed red border are the inadequate ones. To save space, we encode subsets as bitvectors, for example the subset $\{T_1, T_2, T_4\}$ is written as 11010. There~are~three~MIVCs~in~this example: 00011, 01001, and 11010.
 
-We illustrate the first iteration of the main procedure \texttt{FindMIVCs} of our algorithm. Initially, all subsets are unexplored, i.e. $f_{\mathit{Unexplored}} = True$ and the queue $\mathit{shrinkingQueue}$ is empty. The procedure starts by finding a maximal unexplored subset and checking it for adequacy. In our case, $U_{\mathit{max}} = 11111$ is the only maximal unexplored subset and it is determined to be adequate. Thus, the algorithm \texttt{IVC\_UC} is used to compute an approximately minimal IVC $U_{\mathit{IVC}} = 01101$ which is then shrunk to a MIVC $01001$.
+We illustrate the first iteration of the main procedure \texttt{FindMIVCs} of our algorithm. Initially, all subsets are unexplored, i.e., $f_{\mathit{Unexplored}} = True$ and the queue $\mathit{shrinkingQueue}$ is empty. The procedure starts by finding a maximal unexplored subset and checking it for adequacy. In our case, $U_{\mathit{max}} = 11111$ is the only maximal unexplored subset and it is determined to be adequate. Thus, the algorithm \texttt{IVC\_UC} is used to compute an approximately minimal IVC $U_{\mathit{IVC}} = 01101$ which is then shrunk to a MIVC $01001$.
 
 During the shrinking, sets $00101$, $01001$, and $01000$ are subsequently checked for adequacy and determined to be inadequate, adequate, and inadequate, respectively. The set $01001$ is the resultant MIVC, thus the formula $f_{\mathit{Unexplored}}$ is updated to $f_{\mathit{Unexplored}} = \mathit{True} \wedge (\neg x_2 \vee \neg x_5)$. The other two sets, $00101$ and $01000$, are enqueued to the $\mathit{growingQueue}$ and
 grown at the end of the procedure.

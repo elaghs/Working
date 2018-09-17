@@ -217,7 +217,7 @@ Immediate from Definition~\ref{def:minimal-ivc} and Definition \ref{def:coverage
 To conclude this section, we should mention that one can define many more proof-based coverage metrics based on the $\mivc /AIVC$ idea. Metrics that make use of the $AIVC$ relation are computationally more expensive to compute than \ivccov\ although they result in higher coverage scores.
 
 Figure~\ref{fig:runtimeall} allows a visualization of the runtime of different coverage analyses
-in comparison with the proof time, which indicates the overhead induced by each algorithm.
+in comparison with the proof time\footnote{Note that this graph is similar to the performance analysis in Chapter \ref{ch:experiment}, except it introduces \mustalg}, which indicates the overhead induced by each algorithm.
 As can be seen, it is computationally cheap to find an
 approximately minimal IVC using the algorithm \ucalg; however, finding a {\em guaranteed}
 minimal IVC using the \ucbfalg\ algorithm is computationally expensive. The overhead of the \ucalg\ algorithm is on average 31\% over the baseline proof, as opposed to 2276\% for the \ucbfalg\ algorithm.

@@ -129,19 +129,20 @@ null de-references, and assertions. The \texttt{Alloy analyzer} \cite{alloy} is 
 As you can see, there are many efficient
 algorithms and tools for checking safety properties due to their prevalence in
 practical applications. However, system specifications still contains liveness requirements.
-Generally speaking, liveness properties are harder to verify than safety
-properties.
-A simple liveness property involves temporal operators of \emph{always eventually}, denoted by $GF$, and intuitively have infinite-length counterexample: an infinite sequence of system states,
-where the system starts in its initial state, but fails to produce the required
-event.
+%Generally speaking, liveness properties are harder to verify than safety
+%properties.
+%A simple liveness property involves temporal operators of \emph{always eventually}, denoted by $GF$, and intuitively have infinite-length counterexample: an infinite sequence of system states,
+%where the system starts in its initial state, but fails to produce the required
+%event.
+Informally, safety properties demonstrate that the system preserves some invariant throughout its execution, while liveness properties demonstrate that eventually the system meets some goal.  Formally, liveness properties can be distinguished from safety properties in that they require an infinite counterexample, an infinite path demonstrating the goal was not achieved.
 
-Essentially, a liveness property specifies a set of live executions, where an execution is an infinite sequence of states. Let $U^\omega$ be the set of infinite sequences of
-program states.  $\sigma_{u_0} = u_0, u_1, u_2, u_3, \cdots u_{k-1}, u_{k} \dots$ is an execution for $(I, T)$ if $$I(u_0) \land T(u_0, u_1) \land T(u_1, u_2) \land \cdots \land T(u_{k-1}, u_{k}) \land \dots$$
-Proving the correctness of a liveness property $P_{live} : U^\omega \rightarrow \bool$ requires to prove that
-a \emph{bad cycle} cannot be reached from the initial state. Such a cycle is a sequence
-of states that the system can repeat indefinitely without producing the required
-event:
-$$\exists \sigma_{u_0} \in U^\omega for (I, T).~~ P_{live} (\sigma_{u_0}) = false$$.
+%Essentially, a liveness property specifies a set of live executions, where an execution is an infinite sequence of states. Let $U^\omega$ be the set of infinite sequences of
+%program states.  $\sigma_{u_0} = u_0, u_1, u_2, u_3, \cdots u_{k-1}, u_{k} \dots$ is an execution for $(I, T)$ if $$I(u_0) \land T(u_0, u_1) \land T(u_1, u_2) \land \cdots \land T(u_{k-1}, u_{k}) \land \dots$$
+%Proving the correctness of a liveness property $P_{live} : U^\omega \rightarrow \bool$ requires to prove that
+%a \emph{bad cycle} cannot be reached from the initial state. Such a cycle is a sequence
+%of states that the system can repeat indefinitely without producing the required
+%event:
+%$$\exists \sigma_{u_0} \in U^\omega for (I, T).~~ P_{live} (\sigma_{u_0}) = false$$.
 
 When it comes to checking such requirements, there are techniques that exploit existing safety verification tools to check liveness. One approach is to reduce a liveness problem to a safety problem \cite{Schuppan:2006}, where a suitable counterexample-detection logic is used by duplicating state elements,
  $U_{copy} = \{ u_c | u \in U \}$. It non-deterministically
@@ -151,15 +152,17 @@ loop during which the behavior of the liveness and fairness
 conditions are observed.
 
 Although converting liveness to safety makes it possible to use existing safety
-verification algorithms, such translation is usually impractical due to substantially increasing the problem size. Another technique is bounded liveness checking, $k$-liveness, \cite{Schuppan:2006}, which proves the absence of a liveness failure up to a certain bound;
-i.e. for a property $GF$ $P$, instead of proving $\neg P$ cannot happen infinitely often, it tries to prove $\neg P$ does not occur consecutively for $k$ steps. $k$-liveness checks liveness as a sequence of safety checks increasing $k$ incrementally.
+verification algorithms, such translations may be impractical because they substantially increase the problem size and complexity. Another technique is bounded liveness checking, $k$-liveness, \cite{Schuppan:2006}, which proves the absence of a liveness failure up to a certain bound;
+i.e., for a property $GF$ $P$, instead of proving $\neg P$ cannot happen infinitely often, it tries to prove $\neg P$ does not occur consecutively for $k$ steps. $k$-liveness checks liveness as a sequence of safety checks increasing $k$ incrementally.
 An improved version of $k$-liveness is to perform a sequence of
 safety queries as necessary to find a large-enough bound to
 avoid spurious failures by counting the maximum number of times that $\neg P$ can occur \cite{claessen2012liveness}. Adapting any of these methods for liveness checking makes it possible to tackle the problem with existing inductive algorithms for safety verification.
 
+We do not discuss liveness further within this thesis, but note that either of these reduction techniques can be transparently used with the IVC techniques in this thesis to perform validity core reasoning for liveness properties.
+
 \subsection{Compositional Reasoning}
-Complex systems are usually composed from libraries of components. The specification of such systems are decomposed into properties of each individual component. Then, compositional verification is employed to ensure the correctness of the top level properties while integrating components \cite{NFM2012:CoGaMiWhLaLu}. Previously Murugesan et al. demonstrated ~\cite{hilt2013} a model-based approach to system construction in which compositional proofs are used to to establish satisfaction arguments. To cope with the complexity of modeling and scalability of verification of large systems,
-they proposed an approach in which systems can be decomposed into subsystems, modeled individually and verified compositionally. The decomposition of system into subsystems induces the need to decompose the requirements of the system `flowed down'' to each subsystem that is then modeled and verified.
+Complex systems are usually composed from libraries of components. The specification of such systems are decomposed into properties of each individual component. Then, compositional verification is employed to ensure the correctness of the top level properties while integrating components \cite{NFM2012:CoGaMiWhLaLu}. Previously, Murugesan et al. demonstrated a model-based approach to system construction in which compositional proofs are used to to establish satisfaction arguments ~\cite{hilt2013}. To cope with the complexity of modeling and scalability of verification of large systems,
+they proposed an approach in which systems can be decomposed into subsystems, modeled individually and verified compositionally. The decomposition of a system into subsystems induces the need to decompose the requirements of the system ``flowed down'' to each subsystem that is then modeled and verified.
 
 Given an architectural model of the system (decomposition of system into components) in which each component (including the system) is endowed with its own set of requirements,
  they used a tool suite called AGREE~\cite{NFM2012:CoGaMiWhLaLu} -- a reasoning framework based on assume-guarantee reasoning -- to compositionally verify whether system level requirements are established as a logical consequence of the component level requirements and the system level assumptions.
@@ -169,7 +172,7 @@ To verify the requirements, \texttt{AGREE} uses the \texttt{JKind} \cite{jkind} 
 There are other tools that perform similar verifications; for example \texttt{Kind 2} \cite{champion2016cav} also supports (assume-guarantee) contracts and \texttt{NuXmv} has a tool called \texttt{OCRA} \cite{ocra} that supports the specification and analysis of component-based architectures.
 
 An evidence in this context is nothing but an
-explanation about which parts of the model (the component requirements and system assumptions) the
+explanation of which parts of the model (the component requirements and system assumptions) the
 model checker used to prove the system level requirement. Since the solvers typically abstract away the proof it creates, with IVCs, we develop a technique to query the solver to excavate the axioms that were used as part of the proof. The IVC helps explain how the solver reported the satisfaction of the requirement, that is comparable to the counterexample explains the negative result.
 
 
@@ -200,7 +203,7 @@ For a given slicing criterion, static slices can be constructed from a backward 
 A backward slice of a program with respect to a
 program point $p$ and  set of program variables $V$ include all the program statements that may affect the value of variables in
 $V$ at $p$ \cite{slcnote}. Consider the program in Figure \ref{fig:exslic} (a).
-A backward slice for this code snippet over $V = \{b\}$ at the end of the program is shown in  Figure \ref{fig:exslic} (b). 
+A backward slice for this code snippet over $V = \{b\}$ at the end of the program is shown in  Figure \ref{fig:exslic} (b).
 
 A forward slice of a program with respect to a
 program point $p$ and set of program variables $V$
@@ -241,7 +244,7 @@ A Boolean formula is satisfiable if there is a consistent assignment of values $
 
 For a given unsatisfiable problem instance, solvers try to generate a proof of unsatisfiability. It is usually more useful to have a minimum proof of unsatisfiability. Such a proof is dependent on identifying a sub-set of clauses that make the problem unsatisfiable. Solvers are usually capable of reporting such sub-sets in the proof, which is known as \emph{UNSAT core}. However, the generated unsat core is not guaranteed to be minimal.
 
-Every propositional logic formula can be transformed into an equivalent conjunctive normal form (CNF) using the laws of Boolean algebra. A formula is in CNF if it is a conjunction of clauses (or a single clause). Each clause is disjunction of positive or negative literals (i.e. a variable or the negation of a variable). So each CNF formula can be formulated as a finite set of clauses (or constraints). Then we assume there is a function $\checksat(F)$ which determines if $F$ is satisfiable or not.
+Every propositional logic formula can be transformed into an equivalent conjunctive normal form (CNF) using the laws of Boolean algebra. A formula is in CNF if it is a conjunction of clauses (or a single clause). Each clause is a disjunction of positive or negative literals (i.e., a variable or the negation of a variable). So each CNF formula can be formulated as a finite set of clauses (or constraints). Then we assume there is a function $\checksat(F)$ which determines if $F$ is satisfiable or not.
 When $F$ is unsatisfiable, we assume we
 have a function $\unsatcore()$ which returns a minimal subset of the
 constraints such that the formula is satisfiable without them.
@@ -258,10 +261,10 @@ constraints such that the formula is satisfiable without them.
 \end{definition}
 
 Our work builds on top of a substantial foundation building
-MUSes from UNSAT cores~\cite{Cimatti2007:UNSAT}, including \cite{marques2010minimal, belov2012towards, ryvchin2011faster, belov2012computing, nadel2010boosting}.  Recent algorithms can handle very large problems, but computing MUSes is still a resource-intensive task.  While some work is aimed at providing a set of minimal unsatisfiable formulae, minimality is usually defined such that given a set of clauses $M$, removing any member of $M$ makes it satisfiable \cite{belov2012computing}.  The step of producing minimal invariants for proofs has been investigated in depth by Ivrii et al. in~\cite{Ivrii14:invariants}.
+MUSes from UNSAT cores \cite{Cimatti2007:UNSAT}.  Recent algorithms can handle very large problems, but computing MUSes is still a resource-intensive task.  While some work is aimed at providing a set of minimal unsatisfiable formulae, minimality is usually defined such that given a set of clauses $M$, removing any member of $M$ makes it satisfiable \cite{belov2012computing}.  The step of producing minimal invariants for proofs has been investigated in depth by Ivrii et al.~\cite{Ivrii14:invariants}.
 
 In  recent  years,  a  number  of  efficient algorithms  for  extracting minimal UNSAT subformulae (MUSes)  have  been proposed \cite{liffiton2005max},
-most of which are focused on computing a single MUS  \cite{bacchus2015using, belov2012muser2, belov2013core, belov2012towards, nadel2014accelerated}. A general algorithm for extracting a single MUS is shown in \ref{alg:mus}.
+most of which are focused on computing a single MUS  \cite{bacchus2015using, belov2012muser2, belov2013core, belov2012towards, nadel2014accelerated}. A general algorithm for extracting a single MUS is shown in Algorithm \ref{alg:mus}.
 
 \begin{algorithm}[t]
   \SetKwInOut{Input}{input}
@@ -286,7 +289,7 @@ These algorithms can be used in our work in order to develop a new algorithm for
 power set of $C$, $\mathcal{P} (C)$,  cleverly exploiting isomorphism between finite power sets
 and Boolean algebras.
 A brute-force approach to calculate all MUSes is basically explore all subsets of $C$ and determine if they are MUS or not. In the power set exploration process, subsets whose satisfiability is not known
-yet are called \emph{unexplored}; i.e. initially, all subsets in $\mathcal{P} (C)$ are unexplored, and at the end, satisfiability of every subset is known; i.e. all are \emph{explored}.
+yet are called \emph{unexplored}; i.e., initially, all subsets in $\mathcal{P} (C)$ are unexplored, and at the end, satisfiability of every subset is known; i.e., all are \emph{explored}.
 In MARCO, subsets of
  $C = \{c_1 ,c_2 , \dots ,c_n \}$ are encoded using a set of Boolean variables (literals)
 $A = \{a_1 ,a_2 , \dots, a_n \}$ such that every constraint $c_i \in C$ is assigned to a Boolean variable $a_i \in A$. Let assume we have a function $Lit: C \rightarrow A$ that returns a corresponding literal of $c_i \in C$.

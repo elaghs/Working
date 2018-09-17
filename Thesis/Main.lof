@@ -1,7 +1,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces $k$-induction formulas: $k$ base cases and one inductive step\relax }}{12}{figure.caption.5}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Example of backward and forward static slicing\relax }}{18}{figure.caption.6}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Example of backward and forward static slicing\relax }}{17}{figure.caption.6}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Altitude Switch Model \relax }}{32}{figure.caption.9}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Graphical representation of \textit {MIVC}s for the model in Figure\nobreakspace {}\ref {fig:asw} with $P = ({\relax \fontsize {10}{12}\selectfont \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \texttt {on\_p}})$\relax }}{34}{figure.caption.10}
@@ -10,7 +10,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces \texttt {JKind}\xspace engine architecture\relax }}{59}{figure.caption.33}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Successful installation of \texttt {JKind}\relax }}{62}{figure.caption.36}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces \texttt {Jkind} comment grammar elements\relax }}{64}{figure.caption.37}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces \texttt {Jkind} comment grammar elements\relax }}{63}{figure.caption.37}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces \texttt {Jkind} identifier grammar\relax }}{64}{figure.caption.38}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces \texttt {Jkind} literal grammar\relax }}{64}{figure.caption.39}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Lustre program declarations\relax }}{65}{figure.caption.40}
@@ -20,31 +20,31 @@
 \contentsline {figure}{\numberline {4.10}{\ignorespaces An example of a LUSTRE program\relax }}{68}{figure.caption.45}
 \contentsline {figure}{\numberline {4.11}{\ignorespaces \texttt {JKind}\xspace IVC engines\relax }}{70}{figure.caption.46}
 \contentsline {figure}{\numberline {4.12}{\ignorespaces Sample output of IVC\_UC engine\relax }}{71}{figure.caption.47}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Sample output of ALL\_IVCs engine\relax }}{72}{figure.caption.48}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Sample output of ALL\_IVCs engine\relax }}{71}{figure.caption.48}
 \contentsline {figure}{\numberline {4.14}{\ignorespaces Sample output of IVC\_MUST engine\relax }}{72}{figure.caption.49}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Sample output of UCBF engine\relax }}{73}{figure.caption.50}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Sample output of UCBF engine\relax }}{72}{figure.caption.50}
 \contentsline {figure}{\numberline {4.16}{\ignorespaces Sample output of BVC engine for bound 4\relax }}{73}{figure.caption.51}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces \texttt {\relax \fontsize {10}{12}\selectfont \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {IVC\_UC}}\ performance on different solvers\relax }}{81}{figure.caption.56}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Pairwise Jaccard distance between IVCs\relax }}{83}{figure.caption.62}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Runtime of \texttt {\relax \fontsize {10}{12}\selectfont \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {All\_IVCs}}, \texttt {\relax \fontsize {10}{12}\selectfont \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {IVC\_UCBF}}, and \texttt {\relax \fontsize {10}{12}\selectfont \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {IVC\_UC}}\nobreakspace {}algorithms\relax }}{86}{figure.caption.64}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Runtime of different computations along with the number of MIVCs\relax }}{89}{figure.caption.69}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Size of the IVC sets produced by different algorithms\relax }}{89}{figure.caption.70}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Number of MIVCs produced by online algorithms.\relax }}{91}{figure.caption.71}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Runtime for tractable benchmarks for all algorithms in a log scale.\relax }}{91}{figure.caption.71}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Average number of performed adequacy checks required to produce individual MIVCs. Note that Figure (b) is in a log scale.\relax }}{93}{figure.caption.74}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces A toy example that shows multiple BVCs at earlier depths for a property with single MIVC\relax }}{98}{figure.caption.78}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces BVCs for the property in Figure \ref {fig:toybvc}\relax }}{99}{figure.caption.79}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Model ex3\_e8\_381\_e7\_224 as a case study\relax }}{100}{figure.caption.80}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces BVC runs for model ex3\_e8\_381\_e7\_224\relax }}{101}{figure.caption.81}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Size of BVCs at depth 3 and max\relax }}{102}{figure.caption.83}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Difference between $\textit {BVC}_{max}$ and MIVCs vs the model size\relax }}{103}{figure.caption.84}
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Building abstraction using BVCs\relax }}{104}{figure.caption.86}
-\contentsline {figure}{\numberline {5.16}{\ignorespaces A toy example where MIVC is the superset of multiple unique BVCs\relax }}{105}{figure.caption.87}
-\contentsline {figure}{\numberline {5.17}{\ignorespaces BVCs for the property in Figure \ref {fig:toybvc2}\relax }}{106}{figure.caption.88}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces \texttt {\relax \fontsize {10}{12}\selectfont \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {IVC\_UC}}\ performance on different solvers\relax }}{80}{figure.caption.53}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Pairwise Jaccard distance between IVCs\relax }}{82}{figure.caption.59}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Runtime of \texttt {\relax \fontsize {10}{12}\selectfont \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {All\_IVCs}}, \texttt {\relax \fontsize {10}{12}\selectfont \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {IVC\_UCBF}}, and \texttt {\relax \fontsize {10}{12}\selectfont \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {IVC\_UC}}\nobreakspace {}algorithms\relax }}{85}{figure.caption.61}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Runtime of different computations along with the number of MIVCs\relax }}{87}{figure.caption.65}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Size of the IVC sets produced by different algorithms\relax }}{88}{figure.caption.67}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Number of MIVCs produced by online algorithms.\relax }}{90}{figure.caption.68}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Runtime for tractable benchmarks for all algorithms in a log scale.\relax }}{90}{figure.caption.68}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Average number of performed adequacy checks required to produce individual MIVCs. Note that Figure (b) is in a log scale.\relax }}{92}{figure.caption.71}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces A toy example that shows multiple BVCs at earlier depths for a property with single MIVC\relax }}{97}{figure.caption.75}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces BVCs for the property in Figure \ref {fig:toybvc}\relax }}{98}{figure.caption.76}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Model ex3\_e8\_381\_e7\_224 as a case study\relax }}{99}{figure.caption.77}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces BVC runs for model ex3\_e8\_381\_e7\_224\relax }}{100}{figure.caption.78}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Size of BVCs at depth 3 and max\relax }}{101}{figure.caption.80}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Difference between $\textit {BVC}_{max}$ and MIVCs vs the model size\relax }}{102}{figure.caption.81}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Building abstraction using BVCs\relax }}{103}{figure.caption.83}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces A toy example where MIVC is the superset of multiple unique BVCs\relax }}{103}{figure.caption.84}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces BVCs for the property in Figure \ref {fig:toybvc2}\relax }}{104}{figure.caption.85}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Runtime of different analyses\relax }}{114}{figure.caption.90}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Size of the set of covered elements by different algorithms\relax }}{115}{figure.caption.91}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Elements covered by the initial property set\relax }}{117}{figure.caption.93}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Elements covered by the final property set\relax }}{119}{figure.caption.94}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Runtime of different analyses\relax }}{112}{figure.caption.87}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Size of the set of covered elements by different algorithms\relax }}{113}{figure.caption.88}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Elements covered by the initial property set\relax }}{116}{figure.caption.90}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Elements covered by the final property set\relax }}{117}{figure.caption.91}
 \addvspace {10\p@ }

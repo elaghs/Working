@@ -147,7 +147,7 @@ Procedure \texttt{Grow} turns a given inadequate set $V$ into an approximately m
 The queue $\mathit{shrinkingQueue}$ is dequeued at the end of each iteration of the main procedure \texttt{FindMIVCs} and the sets that were stored in the queue are shrunk to MIVCs.
 
 
-We need to ensure that each result of the shrinking procedure is a \emph{fresh} MIVC, i.e. that each MIVC is produced only once.
+We need to ensure that each result of the shrinking procedure is a \emph{fresh} MIVC, i.e., that each MIVC is produced only once.
 We shrink two kinds of inadequate sets in our algorithm: those that result from the inadequate maximal unexplored subsets, and those that are stored in $\mathit{shrinkingQueue}$. In the former case, we always shrunk an unexplored subset $U_{\mathit{IVC}}$ which guarantees that the resultant MIVC $U_{\mathit{MIVC}}$ is unexplored and thus fresh (if $U_{\mathit{MIVC}}$ is already explored, then $U_{\mathit{IVC}}$ would be necessarily also explored).
 However, in the latter case, all the sets stored in $\mathit{shrinkingQueue}$ are already explored. To guarantee that shrinking of the sets from $\mathit{shrinkingQueue}$ result only in fresh MIVCs, we maintain the following invariants of the queue:
 
@@ -160,7 +160,7 @@ However, in the latter case, all the sets stored in $\mathit{shrinkingQueue}$ ar
 To ensure that the invariants hold, we use the procedure \texttt{UpdateShrinking\-Queue} which given an adequate set $U$ removes from $\mathit{shrinkingQueue}$ all supersets of $U$. We call the procedure every time a MIVC is found and every time a set is added to the queue.
 
 \paragraph{Correctness:}
-The algorithm produces only the MIVCs found by the shrinking procedure and all of them are \emph{fresh}, i.e. produced only once. Only subsets whose status is known are removed from the set $\mathit{Unexplored}$, thus no MIVC is excluded from the computation. The algorithm terminates and all MIVCs are found since the size of $\mathit{Unexplored}$ is reduced after every iteration.
+The algorithm produces only the MIVCs found by the shrinking procedure and all of them are \emph{fresh}, i.e., produced only once. Only subsets whose status is known are removed from the set $\mathit{Unexplored}$, thus no MIVC is excluded from the computation. The algorithm terminates and all MIVCs are found since the size of $\mathit{Unexplored}$ is reduced after every iteration.
 		
 
 \subsubsection{Symbolic Representation of Unexplored Subsets}

@@ -107,7 +107,11 @@ Names constructed between multiple runs of \jkind\ are stable, so if a model is 
 The prerequisite for installing and using JKind is to have Java installed and on the PATH variable for the OS.
 Installing JKind is accomplished by the following steps:
 \begin{enumerate}
-  \item Download the zip containing the latest release from https://github.com/agacek/jkind/releases. As of the writing of this document, that is version 4.0.\footnote{All IVCs techniques are not yet part of the official release, but they can be obtained from \cite{mygit}}
+  \item Download the zip containing the latest release from:
+  
+   https://github.com/agacek/jkind/releases 
+   
+   As of the writing of this document, that is version 4.0.\footnote{All IVCs techniques are not yet part of the official release, but they can be obtained from \cite{mygit}}
   \item Unzip the contents of that zip to the directory of your choice.
   \item Add the folder from step 2 to the PATH variable for your OS.
 The installation can be tested by executing jkind –help from the command line.
@@ -174,7 +178,7 @@ The grammar for \texttt{Jkind} literals are shown in Figure \ref{fig:jk3}.
 
  \begin{figure}
  \centering
-  \includegraphics[width=0.7\textwidth]{figs/jk3.png}
+  \includegraphics[width=0.5\textwidth]{figs/jk3.png}
   %\vspace{-0.1in}
   \caption{\texttt{Jkind} literal grammar}
   \vspace{0.1in}
@@ -292,7 +296,7 @@ executes one of the {\ucalg, \bfalg, \ucbfalg}~algorithms \cite{Ghass16} to gene
 
 As previously discussed, one issue that needs to
 be handled in any implementation of the \ucalg, \ucbfalg, and \aivcalg~algorithms involves the undecidability of the model checking problem;
-in each iteration of Algorithms~\ref{alg:naive} and~\ref{alg:aivc}, we attempt to prove the property with a subset $S$ of the original model.  Although we know that $(I, T) \vdash P$, from Theorem~\ref{thm:minimal-hard}, the problem of determining whether or not any $S \subset T$ is adequate is undecidable.
+in each iteration of Algorithms~\ref{alg:naive} and~\ref{alg:aivc} from Chapter \ref{ch:ivc}, we attempt to prove the property with a subset $S$ of the original model.  Although we know that $(I, T) \vdash P$, from Theorem~\ref{thm:minimal-hard}, the problem of determining whether or not any $S \subset T$ is adequate is undecidable.
 %
 Therefore, we have to set timeouts for the model checking algorithm for each iteration of the \aivcalg\ procedure.
 In our implementation, we measure the time required to prove the property over the original model (\emph{proof-time}), and the time required to calculate the first
@@ -449,7 +453,7 @@ program to ensure that the software functions as intended.
 
 \jkind is also used by two proprietary tools used by product areas within Rockwell Collins.  The first is a {\em Mode Transition Table} verification tool used for the complex state machines which manage flight modes of an aircraft.
 \jkind is used to check properties and generate tests for mode and transition coverage from \lustre models generated from the state machines.
-IVCs are used to establish traceability, i.e. which transitions are covered by which properties.  The second is a {\em Crew Alerting System} MC/DC test-case generation tool for a proprietary DSL used for messages and alerts to airplane pilots.  Smoothing is very important in this context as test cases need to be run on the actual hardware where
+IVCs are used to establish traceability, i.e., which transitions are covered by which properties.  The second is a {\em Crew Alerting System} MC/DC test-case generation tool for a proprietary DSL used for messages and alerts to airplane pilots.  Smoothing is very important in this context as test cases need to be run on the actual hardware where
 timing is not precisely controllable. Thus, test cases with a minimum
 of changes to the inputs are ideal.
 %
@@ -466,54 +470,54 @@ of changes to the inputs are ideal.
 %test case. The tool presents all this information graphically to its
 %users.
 
-\subsection{Applications}
-
-\subsubsection{MC/DC Test Case Generation}
-
-An engineering group at Rockwell Collins develops equations
-which determine which messages and alerts should be delivered to
-pilots. Certification for this system requires extensive test cases
-which must satisfy criteria such as the Modified Condition/Decision
-Coverage (MC/DC) metric. We have developed a tool which generates
-these tests by translating the equations into \lustre and generating
-MC/DC trap properties in \jkind. Smoothing is very important in this
-context as test cases need to be run on the actual hardware where
-timing is not precisely controllable. Thus, test cases with a minimum
-of changes to the inputs are ideal.
-
-\subsubsection{Model-based Fuzzing}
-
-As part of an ongoing DARPA program, Rockwell Collins is
-developing a tool for generating fuzz tests from system models. This
-tool takes a \lustre description of a system and uses \jkind to
-generate test cases which exercise different portions of the model.
-Effective fuzz testing requires a huge number of test cases which is
-not feasible to generate solely with a model checker. Instead, this
-fuzzing tool uses interval generalization in \jkind to generate
-generalized counterexamples which it then randomly samples at high
-speed. In fact, research in this area has recently expanded interval
-generalization to trapezoidal generalization which is strictly more
-general, but still allows very fast random sampling.
-
-
-\subsubsection{The \gryphon Framework}
-
-The Rockwell Collins \gryphon
- framework~\cite{miller2010cacm} translates Simulink models to various
- analysis tools for verification and testing. \gryphon uses the \lustre
- language internally which was the originally motivation for \kind
- (and eventually \jkind) to accept \lustre. As \gryphon is the only
- application in our list which does not directly integrate \jkind, it
- does not specifically use any features of \jkind. Still, features like
- smoothing and IVC have been successfully used in combination with
- \gryphon to great effect.
-
-
-
-
-
-
-
-
-
-
+%\subsection{Applications}
+%
+%\subsubsection{MC/DC Test Case Generation}
+%
+%An engineering group at Rockwell Collins develops equations
+%which determine which messages and alerts should be delivered to
+%pilots. Certification for this system requires extensive test cases
+%which must satisfy criteria such as the Modified Condition/Decision
+%Coverage (MC/DC) metric. We have developed a tool which generates
+%these tests by translating the equations into \lustre and generating
+%MC/DC trap properties in \jkind. Smoothing is very important in this
+%context as test cases need to be run on the actual hardware where
+%timing is not precisely controllable. Thus, test cases with a minimum
+%of changes to the inputs are ideal.
+%
+%\subsubsection{Model-based Fuzzing}
+%
+%As part of an ongoing DARPA program, Rockwell Collins is
+%developing a tool for generating fuzz tests from system models. This
+%tool takes a \lustre description of a system and uses \jkind to
+%generate test cases which exercise different portions of the model.
+%Effective fuzz testing requires a huge number of test cases which is
+%not feasible to generate solely with a model checker. Instead, this
+%fuzzing tool uses interval generalization in \jkind to generate
+%generalized counterexamples which it then randomly samples at high
+%speed. In fact, research in this area has recently expanded interval
+%generalization to trapezoidal generalization which is strictly more
+%general, but still allows very fast random sampling.
+%
+%
+%\subsubsection{The \gryphon Framework}
+%
+%The Rockwell Collins \gryphon
+% framework~\cite{miller2010cacm} translates Simulink models to various
+% analysis tools for verification and testing. \gryphon uses the \lustre
+% language internally which was the originally motivation for \kind
+% (and eventually \jkind) to accept \lustre. As \gryphon is the only
+% application in our list which does not directly integrate \jkind, it
+% does not specifically use any features of \jkind. Still, features like
+% smoothing and IVC have been successfully used in combination with
+% \gryphon to great effect.
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%

@@ -66,7 +66,8 @@ conjuncts of $T$. When a top-level conjunct $T_i$ is removed from $T$, we write 
   $\ivc(P, S) \wedge \forall T_i \in S.~ (I, S\setminus\{ T_i \}) \nvdash P$.
 \end{definition}
 
-Note that, given $(I, T) \vdash P$, $P$ always has at least one \mivc, and it may also have many distinct {\mivc}s corresponding to different proof paths. To capture the latter, the \emph{all {\mivc}s ($\aivc$)} relation has been introduced in \cite{Murugesan16:renext}.
+Note that, given $(I, T) \vdash P$, $P$ always has at least one \mivc, and it may also have many distinct {\mivc}s corresponding to different proof paths.
+For example, for a specification $G(p \cup q)$ and a system that satisfies $p$ and $q$, there are two possible \mivc s. Looking at the core that contains $p$, one might conclude that the specification is vacuous in $q$. However, the set of all \mivc s shows that the property is not vacuous in $q$ or $p$, but it can be satisfied in two unique ways, which can point out other redundancy in the model or fault tolerance. The $\aivc$ relation has been introduced in \cite{Murugesan16:renext} to address such issues.
 \begin{definition}{\emph{All {\mivc}s ($\aivc$):}}
     \label{def:allivcs}
     Given $(I, T) \vdash P$, $\aivc(P)$ is the set of all \mivc s for $P$:

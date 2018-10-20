@@ -186,7 +186,7 @@ invariants. This gives the result $\{P, Q_1, Q_2\}$, but it may be
 that $Q_2$ alone is enough to prove $P$ thus the original result is
 not minimal. Also note, we do not care about the result of \checksat,
 only the \unsatcore that comes out of it. Since $P \land Q_1 \land
-\cdots \land Q_n$ is $k$-inductive, we know the \checksat call will
+\cdots \land Q_n$ is $k$-inductive, we know the \checksat\ call will
 always return \unsat.
 
 \begin{algorithm}[t]
@@ -212,7 +212,8 @@ Algorithms~\ref{alg:minimize-k}, \ref{alg:reduce-invariants}, and
 always terminating.
 
 Our full inductive validity core algorithm in Algorithm~\ref{alg:ivc}
-does not guarantee a minimal inductive validity core. One reason is
+does not guarantee a minimal inductive validity core. We refer the output of this algorithm as \emph{nearly minimal} \ivc .
+ One reason is
 that \reduceinv does not guarantee a minimal set of invariants. A
 larger reason is that we only consider the invariants that the
 algorithm is given at the outset. It is possible that there are other

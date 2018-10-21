@@ -85,6 +85,9 @@ Nevertheless, we could state this more clearly, especially as it relates to trac
 Note that, given $(I, T) \vdash P$, $P$ always has at least one \mivc, and it may also have many distinct {\mivc}s corresponding to different proof paths.
 For example, for a specification $G(p \cup q)$ and a system that satisfies $p$ and $q$, there are two possible \mivc s. Having the \mivc\ that contains $p$, one might conclude that the specification is vacuous in $q$. However, the set of all \mivc s shows that the property is not vacuous in $q$ or $p$, but it can be satisfied in two unique ways, which can point out other redundancy in the model or fault tolerance. The $\aivc$ relation has been introduced in \cite{Murugesan16:renext} to address such issues.
 
+\ela{and another at the end of the first paragraph of section 4.2:} Note that minimum \mivc\ may not be unique either. And computing all \mivc s reveals all the minimum \mivc s.
+
+
 \paragraph{R1:} \textit{It is also clear why the authors propose to compute a minimal core, rather than a minimum one, as the computation of a minimum one is, if I am not mistaken, $\Sigma_2$ complete (and it is not unique either - see the example above). Still, it would be helpful to have this discussion in the paper.}
 \vspace{0.05in}
 
@@ -100,6 +103,12 @@ In rare cases where there are {\em many} IVCs, it might be more efficient to foc
 \textit{
 One thing we have not explored is efficient techniques for producing a {\em minimum} as opposed to a {\em minimal} IVC.  Although minimum IVCs can be extracted from the set of all MIVCs, there are circumstances in which computing all MIVCs is impractical because of the number of possible MIVCs for the system.  By adding a size constraint to the MIVC query, it may be possible to search for successively smaller IVCs, leading to a more efficient approach to finding a single minimal IVC in these cases.  However, this makes the formula more complex, and (at least in our experiment) it was rare to have large numbers of MIVCs.}
 
+\ela{Mike, I added this. please remove it if unnecessary: }
+\paragraph{R1:} \textit{Note that the same problem also arises when trying to compute coverage based on minimal IVCs. In fact, the example above also demonstrates that a set of states and signals can be considered covered or not covered depending on a particular IVC we consider.}
+\vspace{0.05in}
+We expanded the explanation after the first coverage metric to emphasize this issue was part of the fact we introduce other metrics that can address such issues:
+
+Note that if an \mivc ~contains all model elements (i.e., the model is {\em completely covered}), then there is only one possible \mivc , so in this case there is no diversity of scores. On the other hand, a set of states and signals can be considered covered or not covered depending on a particular \mivc\ we consider for coverage evaluation. To address this issue, we introduce additional coverage metrics using the notions of \may\ and \must.
 
 \paragraph{R2:} First, a general comment by the authors: the definitional material has been reviewed over several conference papers and has not been previously problematic. Here we provide a point-by-point discussion of the issues raised by Reviewer 2 and hope that these will clarify the discussion.  We think that many of the reviewer's comments are related to a misunderstanding: the sets $S$ and $T$ are sets of {\em conjuncts}, that is, constraints, not sets of {\em states}.  This distinction is very important, as a larger set of conjuncts leads to a smaller set of satisfying states.
 

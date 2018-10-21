@@ -57,22 +57,12 @@ The coverage score for \ivccov\ can be calculated with: $$\frac{|S|}{|T|}$$
 Because $P$ may have multiple \mivc s,
   \ivccov\ metric can lead to various scores that belong to the following set:
 \[
-<<<<<<< HEAD
-\Big{~\frac{ |S|}{|T|}~|~S \in AIVC(P)~\Big}
-=======
-\{~\frac{ |S|}{|T|}~|~S \in \aivc(P)~\}
->>>>>>> 55ab1992dbd6e96cf965abe1ee03f1c21467bd70
+{~\frac{ |S|}{|T|}~|~S \in \aivc(P)~}
 \]
 
 \noindent Note that if an \mivc ~contains all model elements (i.e., the model is {\em completely covered}), then there is only one possible \mivc , so in this case there is no diversity of scores. On the other hand, a set of states and signals can be considered covered or not covered depending on a particular \mivc\ we consider for coverage evaluation. To address this issue, we introduce additional coverage metrics using the notions of \may\ and \must.
 
 %the model is {\em completely covered}, on the other hand, then there is only one possible minimal set: the set of all elements.
-
-<<<<<<< HEAD
-Using the notions of \textit{MAY} and \textit{MUST}, we can introduce additional coverage metrics.
-=======
-
->>>>>>> 55ab1992dbd6e96cf965abe1ee03f1c21467bd70
 %Since the primary goal of
 % this paper has been to provide a complementary coverage notion in
 %  formal verification, it is worth exploring other possible notions based on the idea of provability and $\aivc$, which is beneficial, as with testing, because if a coverage notion is an over-approximation, when the coverage

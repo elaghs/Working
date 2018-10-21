@@ -33,7 +33,7 @@ most general version of this transition system that still satisfies
 the property?'' The answer is disappointing. The most general system is
 $I(u) = P(u)$ and $T(u, u') = P(u')$, i.e., you start in any state
 satisfying the property and can transition to any state that still
-satisfies the property. This answer gives no insight into the original
+satisfies the property.  This answer gives no insight into the original
 system because it has no connection to the original system. In this
 section we introduce the notion of {\em inductive validity core} (IVC)
 which looks at generalizing the original transition system while
@@ -63,11 +63,11 @@ conjuncts of $T$. When a top-level conjunct $T_i$ is removed from $T$, we write 
   $\ivc(P, S) \wedge \forall T_i \in S.~ (I, S\setminus\{ T_i \}) \nvdash P$.
 \end{definition}
 
-Note that, given $(I, T) \vdash P$, $P$ always has at least one \mivc, and it may also have many distinct {\mivc}s corresponding to different proof paths. To capture the latter, the \emph{all {\mivc}s ($AIVC$)} relation has been introduced in \cite{Murugesan16:renext}.
-\begin{definition}{\emph{All {\mivc}s ($AIVC$):}}
+Note that, given $(I, T) \vdash P$, $P$ always has at least one \mivc, and it may also have many distinct {\mivc}s corresponding to different proof paths. To capture the latter, the \emph{all {\mivc}s ($\mathit{AIVC}$)} relation has been introduced in \cite{Murugesan16:renext}.
+\begin{definition}{\emph{All {\mivc}s ($\mathit{AIVC}$):}}
     \label{def:allivcs}
     Given $(I, T) \vdash P$, $AIVC(P)$ is the set of all \mivc s for $P$:
-    $$ AIVC(P) \equiv  \{\ S~|~S \subseteq T \land  MIVC(P, S)\} $$
+    $$ \mathit{AIVC}(P) \equiv  \{\ S~|~S \subseteq T \land  MIVC(P, S)\} $$
 \end{definition}
 
 Inductive validity cores have the following monotonicity property.
@@ -85,7 +85,7 @@ Inductive validity cores have the following monotonicity property.
   of $(I, S_1)$.
 \end{proof}
 
-Fig.~\ref{fig:ivcs} illustrates these notions by a graphical representation of minimal IVCs for property $P = ({\small{\texttt{on\_p}}})$ in the example presented in Section~\ref{sec:example}. As shown in the picture, this property has two distinct \mivc s, which means the model satisfies $P$ in two different ways:  {\small \texttt{\{\{a1\_below, below, doi\_on\}, \{a2\_below, below, doi\_on\}\}}}, This is because in the implementation, the DOI is turned on when either of the altimeters is below the threshold, while our property states that they both must be below.
+Fig.~\ref{fig:ivcs} illustrates these notions by a graphical representation of minimal IVCs for property $P = ({\small{\texttt{on\_p}}})$ in the example presented in Section~\ref{sec:example}. As shown in the picture, this property has two distinct \mivc s, which means the model satisfies $P$ in two different ways:  {\small \texttt{\{\{a1\_below, below, doi\_on\}, \{a2\_below, below, doi\_on\}\}}}.  This is because in the implementation, the DOI is turned on when either of the altimeters is below the threshold, while our property states that they both must be below.
 Note that there is a subset of model elements, $\{{\small \texttt{a1\_above, a2\_above, above\_hyst, d1, d2}}\}$, that does not show up in $AIVC(P)$. Elements in such a subset
 do not affect the satisfaction of $P$.  For comparison, note that a backwards static slice starting from {\small{\texttt{on\_p}}} will include the entire model.
 %In the complete ASW model in~\cite{HCW02:ase-deviation} there are additional properties that use these elements, but they are not necessary for the discussion in this paper.
@@ -105,12 +105,12 @@ do not affect the satisfaction of $P$.  For comparison, note that a backwards st
 Generally, an IVC computation technique aims to determine, for any subset $S \subseteq T$, whether $P$ is provable by $S$. Then, a minimal subset that satisfies $P$ is seen as a minimal proof explanation called a minimal Inductive Validity Core.
 
 
-\subsection{Algorithms for computing an inductive validity core}
+\subsection{Algorithms for computing one inductive validity core}
 %\label{subsec:ivcalg}
 \input{ivcalg}
 
 
 
 \subsection{Algorithm for computing all minimal inductive validity cores}
-%\label{sec:allivcs}
+\label{sec:allivcs}
 \input{allivcs}

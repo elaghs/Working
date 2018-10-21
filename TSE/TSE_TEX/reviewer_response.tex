@@ -1,0 +1,323 @@
+\documentclass{article}
+\usepackage{xspace}
+
+
+\begin{document}
+%\begin{itemize}
+
+\newcommand{\lbb}{[\![}
+\newcommand{\rbb}{]\!]}
+\newcommand{\expr}{\phi}
+\newcommand{\exprS}{\Phi}
+\newcommand{\bool}[0]{\mathit{bool}}
+\newcommand{\reach}[0]{\mathit{R}}
+\newcommand{\ite}[3]{\mathit{if}\ {#1}\ \mathit{then}\ {#2}\ \mathit{else}\ {#3}}
+
+\newcommand{\mike}[1]{\textcolor{red}{#1}}
+\newcommand{\fixed}[1]{\textcolor{purple}{#1}}
+\newcommand{\andrew}[1]{\textcolor{green}{#1}}
+\newcommand{\ela}[1]{\textcolor{blue}{#1}}
+\newcommand{\stateequiv}{\equiv_{s}}
+\newcommand{\traceequiv}{\equiv_{\sigma}}
+
+\newcommand{\bfalg}{\texttt{\small{IVC\_BF}}}
+\newcommand{\ucalg}{\texttt{\small{IVC\_UC}}}
+\newcommand{\ucbfalg}{\texttt{\small{IVC\_UCBF}}}
+\newcommand{\mustalg}{\texttt{\small{IVC\_MUST}}}
+
+\newcommand{\nondetcov}{\text{\sc Nondet-Cov}}
+\newcommand{\nondetcovalt}{\text{\sc Nondet-Cov$^{*}$}}
+\newcommand{\ivccov}{\text{\sc IVC-Cov}}
+\newcommand{\maycov}{\text{\sc May-Cov}}
+\newcommand{\mustcov}{\text{\sc Must-Cov}}
+\newcommand{\allcov}{\text{\sc Model-Cov}}
+\newcommand{\mutcov}{\text{\sc Mutant-Cov}}
+
+\newcommand{\ivc}{\textit{IVC}\xspace}
+\newcommand{\mivc}{\textit{MIVC}\xspace}
+
+\newcommand{\bq}{\textsc{BaseQuery}\xspace}
+\newcommand{\iq}{\textsc{IndQuery}\xspace}
+\newcommand{\fq}{\textsc{FullQuery}\xspace}
+
+\newcommand{\mink}{\textsc{MinimizeK}\xspace}
+\newcommand{\reduceinv}{\textsc{ReduceInvariants}\xspace}
+\newcommand{\minivc}{\textsc{MinimizeIvc}\xspace}
+
+\newcommand{\checksat}{\textsc{CheckSat}}
+\newcommand{\isadeq}{\textsc{CheckAdq}}
+\newcommand{\actlit}{\textsc{ActLit}}
+\newcommand{\unsatcore}{\textsc{UnsatCore}\xspace}
+\newcommand{\unsat}{\texttt{UNSAT}\xspace}
+\newcommand{\sat}{\texttt{SAT}\xspace}
+
+\newcommand{\getivc}{\textsc{GetIVC}}
+\newcommand{\getmodel}{\textsc{GetLiteralsFromMaxModel}}
+\newcommand{\aivcalg}{\texttt{\small{All\_IVCs}}}
+\newcommand{\blockup}{\textsc{BlockUp}}
+\newcommand{\blockdown}{\textsc{BlockDown}}
+\newcommand{\mis}{\textit{MIS}}
+\newcommand{\mcs}{\textit{MCS}}
+
+\newcommand{\unknown}{\textsc{Unknown}}
+\newcommand{\adequate}{\textsc{Adequate}}
+\newcommand{\inadequate}{\textsc{Inadequate}}
+
+\newcommand{\true}{\textsc{True}}
+\newcommand{\false}{\textsc{False}}
+
+\paragraph{R1:} \textit{The main concern I have is that an IVC is not unique, hence any conclusions derived from IVC are not uniquely defined.}
+
+\vspace{0.05in}
+
+\noindent This is a very good point.  We do make the point in the introduction: "Depending on the model and property to be analyzed, there is often substantial diversity of possible IVCs used to produce a proof, and there can also be a substantive difference in the size of a {\em minimal} IVC and a {\em minimum} IVC, which is the (not necessarily unique) smallest MIVC."
+
+Nevertheless, we could state this more clearly, especially as it relates to traceability, so we have added the following to the paragraph on traceability in the introduction:
+
+\textit{One important aspect of traceability that is often left unexamined is that of diversity. often there are multiple traceability matrices that could equally well be represent functional traceability (at least, in terms of proof).  Computing all IVCs exposes this diversity and may lead to a more complete understanding of system behavior.  Conversely, a single IVC may not provide a complete understanding of traceability.}
+
+\paragraph{R1:} \textit{It is also clear why the authors propose to compute a minimal core, rather than a minimum one, as the computation of a minimum one is, if I am not mistaken, $\Sigma_2$ complete (and it is not unique either - see the example above). Still, it would be helpful to have this discussion in the paper.}
+\vspace{0.05in}
+
+\noindent This is correct and insightful.  We have tried to discuss and characterize the relationship between single and all-IVCs (which is considerably more expensive to compute and contains the minimum IVC), but we do not spend much time on minimal vs. minimum IVCs.
+
+We have modified the first paragraph on page 2 to the following: 
+\textit{IVCs are made up of a set of model elements (a notion that will be made precise in Section~3).  An IVC is {\em minimal} (MIVC) if no element can be removed while preserving provability.  Depending on the model and property to be analyzed, there is often significant diversity of possible IVCs used to produce a proof, and there can also be a substantive difference in the size of a {\em minimal} IVC and a {\em minimum} IVC, which is the (not necessarily unique) smallest MIVC.  Computing a minimum, rather than minimal, IVC is significantly more expensive, because it involves searching through the space of all proofs to find an IVC of (unknown) minimum size.  In this paper, we provide algorithms for finding minimal IVCs and finding {\em all} MIVCs, from which the set of all minimum iVCs can be extracted.}
+
+We do discuss the tradeoffs in efficiency and minimality in the experimental results section (RQ2) and (RQ3).  Since even the initial model checking problem and the computation of single IVCs is undecidable in the general case, we focus primarily on an empirical comparison of single vs. multiple IVCs, as discussed in RQ2 (efficiency) and RQ3 (size).  
+
+In rare cases where there are {\em many} IVCs, it might be more efficient to focus the proof search for IVCs based on size, by starting from an initial IVC and looking for strictly smaller solutions by adding a concrete maximum size constraint to the IVC formula.  This would produce at most a linear number of olutions but involves construting a more complex formula.  We have added the following to the future work section: 
+
+\textit{
+One thing we have not explored is efficient techniques for producing a {\em minimum} as opposed to a {\em minimal} IVC.  Although minimum IVCs can be extracted from the set of all MIVCs, there are circumstances in which computing all MIVCs is impractical because of the number of possible MIVCs for the system.  By adding a size constraint to the MIVC query, it may be possible to search for successively smaller IVCs, leading to a more efficient approach to finding a single minimal IVC in these cases.  However, this makes the formula more complex, and (at least in our experiment) it was rare to have large numbers of MIVCs.}
+
+
+\paragraph{R2:} First, a general comment by the authors: the definitional material has been reviewed over several conference papers and has not been previously problematic. Here we provide a point-by-point discussion of the issues raised by Reviewer 2 and hope that these will clarify the discussion.  We think that many of the reviewer's comments are related to a misunderstanding: the sets $S$ and $T$ are sets of {\em conjuncts}, that is, constraints, not sets of {\em states}.  This distinction is very important, as a larger set of conjuncts leads to a smaller set of satisfying states.
+
+We closely examined the introduction and believe that this distinction is already fairly clear in the paper, so we have not made any substantive changes, but have tried to add a few clarifications.
+
+The quotations from reviewer 2 are copied verbatim from the marked up PDF.
+
+
+\paragraph{R2: Page 5} \textit{$P$ is not necessarily an
+over-approximation of R as it may not hold on a reachable state.}
+\vspace{0.05in}
+
+
+\noindent The reviewer is correct, in fact, this is precisely what we want to prove.
+Please note that it is not claimed in the paper that $P$ is an overapproximation of the reachable states. As stated by the paragraph immediately after the highlighted text:
+
+\textit{If both formulas hold then $P$ is inductive and holds over the
+system. If (1) fails to hold, then $P$ is violated by an initial
+state of the system. If (2) fails to hold, then $P$ is too much of an
+over-approximation and needs to be refined.}
+
+Note the "if both formulas hold". This is the definition of an
+inductively provable argument over transition systems, and is
+standard in, for example:
+
+\begin{small}
+\begin{verbatim}
+@inproceedings{Sheeran:2000:CSP:646186.683237,
+ author = {Sheeran, Mary and Singh, Satnam and St{\aa}lmarck, Gunnar},
+ title = {Checking Safety Properties Using Induction and a SAT-Solver},
+ booktitle = {Proceedings of the Third International 
+              Conference on Formal Methods in Computer-Aided Design},
+ series = {FMCAD '00},
+ year = {2000},
+ isbn = {3-540-41219-0},
+ pages = {108--125},
+ numpages = {18},
+ url = {http://dl.acm.org/citation.cfm?id=646186.683237},
+ acmid = {683237},
+ publisher = {Springer-Verlag},
+ address = {Berlin, Heidelberg},
+}
+\end{verbatim}
+\end{small}
+
+\paragraph{(R2): Page 6, column 1:} \textit{The set of states satisfying $P$ is exactly the initial states?}
+
+\noindent In this paragraph, we are describing the most general transition system that satisfies the property of interest $P$.  It is used to drive the discussion of the transition system we wish to produce, which is also a generalization of the original transition relation.
+
+\paragraph{(R2): Page 6, column 1:} \textit{How can a binary relation be equal to a unary
+one?}
+\vspace{0.05in}
+
+\noindent This is a standard notational shorthand: $T(u, u')$ is defined to be the set of constraints on the post-state variables defined in $P$ (that
+is, $P(u')$) with no other constraints.
+
+We have added this prose explanation.
+
+\paragraph{(R2) Page 6 column 1:} \textit{$a1\_below$ is a predicate; it is not a binary
+relation between states}
+\vspace{0.05in}
+
+\noindent By `predicate' do you mean single-state relation? If so, then
+any such single-state relation is a two-state relation, but only constraining the primed variables.  Although it is not necessary for the discussion in the paper, here is the
+full definition of $T$ for the example. $init\_state$ is a special
+variable that is initially true (in $I$) and false thereafter.
+
+\begin{verbatim}
+T = { (al_below' = (alt1' < 10000)) and
+      (a2_below' = (alt2' < 10000)) and
+      (a1_above' = (alt1' >= 10100)) and
+      (a2_above' = (alt2' >= 10100))  and
+      (below' = a1_below' or a2_below) and
+      (above_hyst' = a1_above' and a2_above') and
+      (doi_on' = if (below' and not inhibit') then true else d1')
+      and
+      (d1' = if (inhibit' or above_hyst') then false else d2')
+      (d2' = if (init_state) then false else doi_on) and
+      (init_state' = false) }
+}
+\end{verbatim}
+
+We represent each conjunct (and in this case, each conjunct is an equation) by using the name of the variable defined by the equation.
+
+\paragraph{(R2) Page 6 column 1}: \textit{$(I, S)$ is a subtransition system, it is a bit
+misleading to call it inductive when there is no guarantee that it
+is inductive at all.}
+\vspace{0.05in}
+
+\noindent This is not what is being claimed. We state that $(I, S)$ is an
+inductive validity core *if-and-only-if* $(I, S) \vdash T$.
+
+\paragraph{(R2) Page 6 column 2}: \textit{inhibit does not appear so how do you evaluate
+on\_p}
+\vspace{0.05in}
+
+\noindent Inhibit is an input; it is not constrained by the transition
+system, so does not have a definition in our set of conjunctions
+that define the transition system (as described above).
+
+\newcommand{\implies}[0]{\Rightarrow}
+\newcommand{\mkeyword}[1]{\mbox{\texttt{#1}}}
+
+\paragraph{(R2) Page 6, column 2}: \textit{If $S_1$ is a subset of $S_2$ then $S_1 \implies S_2$ should hold}
+\vspace{0.05in}
+
+\noindent This is incorrect. $S_1$ and $S_2$ are sets of constraints, and the implication relation is correct as specified in the paper.  We will illustrate with an example. Suppose $S1$ contains claims $\{a, b\}$ connected by conjunction and $S2$ contains $\{a,
+b, c\}$.  If we know $S1$ is true, then we do not know whether $S2$ is true: $(a \land
+b) \implies (a \land b \land c)$ does not hold in general.  On the other hand: $(a \land b \land c) \implies (a \land b)$ is valid.
+
+Note that if $S_1$ and $S_2$ were sets of states (they are not!), the situation would be reversed, and $S_1 \implies S_2$ would be valid.
+
+
+\paragraph{(R2) Page 7 column 1}: 
+\textit{Once again, adding logical formulae restricts the set of states of the transition system satisfying the foirmula so
+the reachable ones are potentially less. The relation between syntax and
+semantics is countervariant.}
+\vspace{0.05in}
+
+\noindent Larger in this context means additional constraints, not more states.  Each added invariant must be justified in terms of proof support: a set of equations from the original problem definition. So, a system with a *superset* of invariants will have a non-strict superset of elements from the original problem definition.
+
+
+
+\paragraph{(R2) Page 7, column 2}: Sentence from paper: We assume both CHECKSAT and UNSATCORE are always terminating.  Reviewer comment: 
+\textit{Without additional hipothesis this is not true
+for first order logic.}
+\vspace{0.05in}
+
+\noindent SAT and SMT problems usually operate over decidable fragments of FOL, and this is true of our tools, so decidability is not in question.  Nevertheless, it is possible to construct SMT solvers over undecidable theories like arrays and support for nested quantification. We already have support for undecidability that is discussed in Section 4.2. We add the following footnote:
+
+\textit{SAT problems and SMT problems involving decidable theories (such as the theories used by our tools) will always terminate.  For approaches using undecidable theories, we can relax this restriction using  techniques similar to those discussed in Section~4.2}
+
+%Also, ``hipothesis" is spelled ``hypothesis".
+
+\paragraph{(R2) Page 7, column 2}: \textit{How can you reuse? This is not at all obvious to state as this.}
+\vspace{0.05in}
+
+\noindent The reuse is through the standard practice of incremental SMT solving. By performing check-sat under assumptions (as is supported in the SMT lib spec) we can quickly turn on / turn off different activation literals leaving the learned clauses intact. This is
+*not* a focus of the paper and would require an explanation of incremental SMT which is outside the scope of this paper.
+
+We have added a footnote: \textit{Efficiency is improved by using solver support for checking SAT-under-assumptions, which allows us to gradually add and remove constraints.}
+
+
+\paragraph{(R2) Page 8, column 1}: \textit{See previous correction about sat for first
+order logic formulae.}
+\vspace{0.05in}
+
+\noindent The ``corrections" thus far have been incorrect. Please see our earlier comments.  
+
+\paragraph{(R2) Page 8, column 1}: \textit{This proof requires further explanation on the
+intuition behind the proposed construction. The intuition is not clear.}
+\vspace{0.05in}
+
+\noindent The intuition is as follows: model checking has a certain difficulty depending on the structure of the transition relation.  If propositional, then it is decidable. If infinite state, then it is undecidable in general.  Given an (unknown) model checking problem, we show that determining minimality of an IVC is exactly equivalent to solving this problem.  We do so by constructing an extra clause that is required only if the original model checking problem is false.  Thus, to determine minimality of this system, we must solve the original model checking problem.
+
+%This was not an issue for the reviewers of 3 previous conference papers containing the proof.  We prove exactly what is necessary to show the difficulty of computing IVCs.  
+
+\paragraph{(R2) Page 8, column 1}: \textit{In previous paragraphs it was said that SAT for FOL is assumed to be decidable and it is not; and now model-checking is said to be undecidable, which is not. In general, model-checking for undecidable languages is referred to as bounded MC or something like that}
+\vspace{0.05in}
+
+\noindent There are many incorrect statements within this comment.  We have claimed to operate over queries checkable by SMT solvers, and these are decidable for the theories of interest in this paper.  E.g., from page 1: \textit{We assume that our queries are checked by an SMT solver}
+
+Model checking is not decidable for infinite state sequential problems.  This is a well-known result.  The claims involving infinite-state model checking demonstrate a lack of understanding of current model checking techniques by the reviewer.  We recommend the book {\em Principles of Model Checking} by Baier and Katoen for an-depth discussion of these topics and the paper {\em Generalized Property-Directed Reachability} by Hoder et. al.  and {\em $IC^{3}$ Modulo Theores via Implicit Predicate Abstraction} by Cimatti et. al. for more specific discussions of inductive techniques for infinite state model checking.
+
+
+\paragraph{Page 8, column 2}: \textit{What is sequential model-checking in this context?} 
+\vspace{0.05in}
+
+
+\noindent Sequential model checking is just model checking. We have corrected this.
+
+
+\paragraph{(R2) Page 9, column 1}: \textit{Once again, the intuition says that shrinking the transition relation might allow to prove P while a bigger superset would not due to connecting more states of the transition system not satisfying the property.}
+\vspace{0.05in}
+
+\noindent The reviewer is considering $S1$ and $S2$ as sets of states; this is incorrect.  $S1$ and $S2$ are sets of constraints connected by conjunction.  So $S1 \subseteq S2$ means that $S1$ has fewer constraints (that is, admits *more states* than $S2$).
+
+\paragraph{(R2) Page 9, , column 2}: \textit{Once again, for first order logic this is not true without additional hypothesis.}
+\vspace{0.05in}
+
+\noindent See previous comments on the decidability of SAT and SMT problems.
+
+\paragraph{(R2) Page 10, column 1}: \textit{It is not clear what weighted clauses is.}
+\vspace{0.05in}
+
+\noindent We have modified the footnote, which hopefully makes this clearer: 
+\textit{MaxSAT is defined as the problem of producing a satisfying assignment having a maximal {\em weight}.  Each clause within the problem can be assigned a non-negative weight.}  
+
+For a more thorough discussion, the provided references [30, 31] are good sources of information.
+
+
+\paragraph{(R2) Page 10, column 1 and 2}: \textit{Please recall that “approximately” in this case means that you could be using IVC\_UC.  And CHECKSAT terminates which is not obvious at all.}
+\vspace{0.05in}
+
+\noindent We refer the reviewer to the following previous paragraph: 
+
+\textit{We also assume there is a function \isadeq\ that checks whether or
+not $P$ is provable by a given subset of $T$.  Note that from Theorem 1, finding a minimal IVC is (in general) undecidable if the original checking problem is undecidable.  Thus, for undecidable model checking problems, \isadeq\  can return \unknown ~(after a user-defined timeout) as well as \adequate\ or \inadequate.  For a given set $S$, if our implementation is unable to prove the property, we conservatively assume that the property is falsifiable and set a warning flag $w$ to the user that the results may be approximate.  If $S$ is adequate, a $\mivc$~is computed by \getivc ~and added to set $A$ (lines 10-11). In this case $map$ is constrained by a new
+clause in a way described before and shown in line 12. 
+However, in the
+case that $S$ is inadequate or unknown, $map$ is constrained by the corresponding
+literals from $T \setminus S$ in line 14.  Finally, if $S$ is unknown, the warning flag $w$ is set to true, as the results may be approximate (lines 15-16).}
+
+\textit{Note that \isadeq ~can be any method that verifies a safety property, such as K-induction, and the \getivc\ function can be any function that returns an (approximately) minimal IVC, such as the \ucalg\ or \ucbfalg\ algorithms. The only requirement is that it follows the definition of an inductive validity core, that is: $S' \leftarrow \getivc (P, S)$ implies that $S' \subseteq S$ and $(I, S') \vdash P$.}
+
+We well understand that the sequential model checking is undecidable.  The termination argument hinges on the fact that this algorithm will timeout yielding a value of UNKNOWN.  In this case, we return a warning to the user that our results may be approximate, as discussed above.
+
+\paragraph{(R2) Page 12, column 2} : MAY and MUST should use italic text.
+\vspace{0.05in}
+
+Fixed!
+
+\paragraph{(R2) Page 14, column 2} : Rephrase.
+\vspace{0.05in}
+
+Fixed!
+
+\paragraph{(R4) Page 6}: \textit{p. 6 (I am referring to number of pages out of 53, from the submission pdf). You assume that CHECKSAT and UNSATCORE are
+always terminating. What happens if these assumptions are violated?}
+\vspace{0.05in}
+
+\noindent We have added the following footnote to this sentence to elaborate: \textit{SAT problems and SMT problems involving decidable theories (such as the theories used by our tools) will always terminate.  For approaches using undecidable theories, we can relax this restriction using  techniques similar to those discussed in Section~4.2}.
+
+
+In our tools, we are working with decidable theories, so decidability is not an issue, but even so, as a practical matter, model checking can time out.  Given UNSAT properties, we have never had an issue with timeouts for UNSATCORE termination; the results that are returned may be approximate, but we believe that the algorithms are terminating.
+
+
+
+\end{document}
+ 

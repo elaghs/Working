@@ -74,8 +74,8 @@ off_p = ((alt1 >= T_HYST) and (alt2 >= T_HYST))
 %\end{definition}
 
 \noindent In this version, distinctions emerge between the metrics.  \allp\ has two \mivc s: \texttt{\{\{a1\_below, below, doi\_on, d1\}, \{a2\_below, below, doi\_on, d1\}\}}, because of the \onp\ property: in the implementation, the DOI is turned on when either of the altimeters is below the threshold, while our property states that they both must be below.
-Domain experts determine that the requirement is correctly specified and that our implementation is a reasonable refinement, so there is no need to change the model or the property.  The MUST elements are the same as version 1: \texttt{\{below, doi\_on, d1\}}, because neither \aonebelow\ or \atwobelow\ is required for all proofs.  %However, given the MUST elements, we can no longer construct a proof, because at one of these definitions is necessary for either proof.
-The MAY elements contain both \aonebelow\ and \atwobelow.
+Domain experts determine that the requirement is correctly specified and that our implementation is a reasonable refinement, so there is no need to change the model or the property.  The \must elements are the same as version 1: \texttt{\{below, doi\_on, d1\}}, because neither \aonebelow\ or \atwobelow\ is required for all proofs.  %However, given the \must elements, we can no longer construct a proof, because at one of these definitions is necessary for either proof.
+The \may elements contain both \aonebelow\ and \atwobelow.
 
 The \abovehyst, \aoneabove, \atwoabove, and \dtwo\ equations are still missing, meaning that the ``above'' thresholds are irrelevant to our properties.  Examining \offp, we realize that we have a specification error; the DOI should be off if either \inhibit\ is true or both altimeters are above the threshold. The fix is:
 
@@ -91,7 +91,7 @@ off_p = ((alt1 >= T_HYST) and (alt2 >= T_HYST))
 %all_p = on_p and off_p;
 %\end{definition}
 
-\noindent Now the \allp\ requirement proof yields a single \mivc ~that requires all variables except \{\texttt{d2}\}, so \mivc ~= MAY = MUST.  Interestingly, the \offp\ proof requires both the lower altimeter thresholds even though the \onp\ proof does not; the reason is that if either of these is false, then \doion\ will be true.  To cover \{\texttt{d2}\}, we realize no property covers the hysteresis case, so an additional property is added for this case:
+\noindent Now the \allp\ requirement proof yields a single \mivc ~that requires all variables except \{\texttt{d2}\}, so \mivc ~= \may = \must.  Interestingly, the \offp\ proof requires both the lower altimeter thresholds even though the \onp\ proof does not; the reason is that if either of these is false, then \doion\ will be true.  To cover \{\texttt{d2}\}, we realize no property covers the hysteresis case, so an additional property is added for this case:
 
 %\begin{definition} {\emph{ASW Requirements Version 2} }
 {\smaller
@@ -126,7 +126,7 @@ As shown in Figure~\ref{fig:propertyset4}, the measures again coincide and inclu
 
 \iffalse As mentioned, IVCs are derived from inductive invariants; in other words, they are built upon the proof of the validity of a given property. One interesting fact about proofs
   is that a given property could be proved from different proof paths.
-  The $AIVC$ captures this fact and gives a clear picture of various ways a property is satisfied. By getting all the MIVCs for the system properties and categorizing them, one can find if there are design artifacts that do not trace to any property: set $\bigcap \{IRR (P) | P \in \Delta \}$.  If this set is non-empty, it is a possible indication of ``gold plating" or missing properties \cite{Murugesan16:renext}.
+  The $\aivc$ captures this fact and gives a clear picture of various ways a property is satisfied. By getting all the MIVCs for the system properties and categorizing them, one can find if there are design artifacts that do not trace to any property: set $\bigcap \{IRR (P) | P \in \Delta \}$.  If this set is non-empty, it is a possible indication of ``gold plating" or missing properties \cite{Murugesan16:renext}.
 \fi
 
 \subsection{Granularity}

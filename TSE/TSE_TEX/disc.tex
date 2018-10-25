@@ -28,7 +28,7 @@ The goal of this section is to both illustrate the techniques and discuss the po
 %\label{fig:asw2}
 %\end{figure}
 
- We illustrate the results with traceability matrices produced by the  \texttt{Spear} requirements specification tool~\cite{Spear}.  \texttt{JKind} is used as the model checker for the  \texttt{AADL AGREE} tool suite~\cite{NFM2012:CoGaMiWhLaLu} and also \texttt{Spear} ~\cite{Spear}.  We have extended both tools to add graphical support for displaying adequacy and traceability results.  We show screenshots for the  \texttt{Spear} tool for our running example in Figures~\ref{fig:propertyset1} and~\ref{fig:propertyset4}.
+ We illustrate the results with traceability matrices produced by the  \texttt{Spear} requirements specification tool~\cite{Spear}.  \jkind is used as the model checker for the  \texttt{AADL AGREE} tool suite~\cite{NFM2012:CoGaMiWhLaLu} and also \texttt{Spear} ~\cite{Spear}.  We have extended both tools to add graphical support for displaying adequacy and traceability results.  We show screenshots for the  \texttt{Spear} tool for our running example in Figures~\ref{fig:propertyset1} and~\ref{fig:propertyset4}.
 
 The ASW is responsible for turning on and off a device of interest, so we formulate two requirements that describe when the ASW should be {\em on} and when it should be {\em off}.  The first attempt at formalization (property set 1) is as follows:
 
@@ -130,6 +130,7 @@ As shown in Figure~\ref{fig:propertyset4}, the measures again coincide and inclu
 \fi
 
 \subsection{Granularity}
+\label{sec:granularity}
 
 As we have described in Section \ref{sec:background}, a transition relation is considered
 to be a conjunction of Boolean formulas. The granularity of these formulas substantially affects the analysis results.  In the presented example, it was possible to have a ``complete'' specification of the model involving only the hysteresis property \hystp.  The way that the model was structured, in order to determine the validity of the property, all of the equations in the model were required.  However, for this property certain subexpressions of the equations were irrelevant, notably the value assigned to the \texttt{doi\_on} variable in the \texttt{then} branches of equations (7) and (8).  If we decompose the equations into smaller pieces, e.g., creating separate equations for the \texttt{then} and \texttt{else} branches, this incompleteness becomes visible and the model is no longer completely covered.  It is often the case that splitting a model into more conjuncts, that is, making the model more {\em granular}, leads to lower coverage of the model.

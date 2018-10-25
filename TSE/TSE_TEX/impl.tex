@@ -1,27 +1,88 @@
 \section{Implementation}
 \label{sec:impl}
 
-We have implemented all of the inductive validity core algorithms from the previous section in an industrial model checker called \texttt{JKind} ~\cite{jkind},
+We have implemented all of the inductive validity core algorithms from the previous section in an industrial model checker called \jkind~\cite{jkind},
 which verifies safety properties of infinite-state synchronous systems.
-It accepts Lustre programs \cite{Halbwachs91:lustre} as input.  The translation of Lustre
-into a symbolic transition system in \texttt{JKind} is straightforward and is similar to what is described
-in~\cite{Hagen08:FMCAD}.
-Verification is supported by multiple proof engines that execute in parallel, including $k$-induction,
-property directed reachability (PDR), and lemma generation engines that attempt to prove
-multiple properties in parallel.  To implement the engines,
-\texttt{JKind} emits SMT problems using the theories of linear integer and real arithmetic.  \texttt{JKind} supports the
-%I remove citations to save some space in the end
-%------------------
-%\texttt{Z3}~\cite{DeMoura08:z3},
-%\texttt{Yices}~\cite{Dutertre06:yices}, \texttt{MathSAT}~\cite{Cimatti2013:MathSAT},
-%\texttt{SMTInterpol}~\cite{Christ2012:SMTInterpol}, and \texttt{CVC4} \cite{barrett2011cvc4}
-%----------------------------------------------------------------
-\texttt{Z3}, \texttt{Yices1}, \texttt{Yices2}, \texttt{MathSAT}, \texttt{SMTInterpol}, and \texttt{CVC4} SMT solvers as back-ends.  When a property is
+These tools operate over the Lustre language~\cite{Halbwachs91:lustre}, which we briefly illustrate below.
+
+\subsection{Lustre and IVCs}
+\label{sec:lustre}
+
+Lustre~\cite{Halbwachs91:lustre} is a synchronous dataflow language
+used as an input language for various model checkers. The textual
+models in Figures~\ref{fig:ex-before}, \ref{fig:ex-after}, and \ref{fig:asw} are
+written in Lustre. We will use model in Figure~\ref{fig:ex-before} as
+a running example in this section. For our purposes, a Lustre program
+consists of 1) input variables, {\tt x} in the example, 2) output
+variables, {\tt a}, {\tt b}, and {\tt y} in the example, and 3) an
+equation for each output variable. A Lustre program runs over discrete
+time steps. On each step, the input variables take on some values and
+are used to compute values for the output variables on the same step.
+In addition, equations may refer to the previous value of a variable
+using the {\tt pre} operator. This operator is underspecified in the
+first step, so the arrow operator, {\tt ->}, is used to guard the
+{\tt pre} operator. In the first step the expression {\tt e1 -> e2}
+evaluates to {\tt e1}, and it evaluates to {\tt e2} in all other steps.
+
+We interpret a Lustre program as a model specification by considering
+the behavior of the program under all possible input traces. Safety
+properties over Lustre can then be expressed as Boolean expressions in
+Lustre. A safety property holds if the corresponding expression is
+always true for all input traces. For example, the property for
+Figure~\ref{fig:ex-before} is {\tt y >= 0}, which is a valid property.
+
+It is straightforward to translate this interpretation of Lustre into
+the traditional initial and transition relations. We will show this by
+continuing with the example in Figure~\ref{fig:ex-before}. First we
+introduce a new Boolean variable \textit{init} into the state space to denote
+when the system is in its initial state, the state of the system prior
+to initialization. In the initial state, all other variables are
+completely unconstrained which models the underspecification of the \texttt{pre}
+operator during the first step. The model is then:
+\begin{align*}
+  &I((x, a, b, y, \mathit{init})) = \mathit{init} \\
+  &T((x, a, b, y, \mathit{init}), (x', a', b', y', \mathit{init'})) = \\
+  &\hspace{1.5cm} (a' = f(x', \ite{init}{0}{y})) \land~ \\
+  &\hspace{1.5cm} (b' = \ite{a' \geq 0}{a'}{-a'}) \land~ \\
+  &\hspace{1.5cm} (y' = b' + (\ite{init}{0}{y})) \land ~\\
+  &\hspace{1.5cm} \neg\mathit{init'}
+\end{align*}
+Note that $f$ is unspecified in Figure~\ref{fig:ex-before} and so also
+in $T$. In a real system, $f$ would be defined in the Lustre model and
+expanded in $T$. A safety property such as {\tt y >= 0} is translated
+into $\mathit{init} \lor (y \geq 0)$. Nested uses of arrow and pre
+operators are handled by introducing new output variables for nested
+expressions, though such details are unimportant for our purposes.
+
+Each equation in the Lustre program is translated into a single
+top-level conjunct in the transition relation. This is very convenient
+as the IVC of a Lustre property can be reported in terms of the output
+variables whose equations are part of the IVC. Equivalently, the
+interpretation of an IVC for a Lustre property is that any output
+variable that is not part of the IVC can be turned into an input
+variable, its equation thrown away, while preserving the validity of
+the property. Thus the granularity of the IVC analysis is determined
+by the granularity of the Lustre equations and can be adjusted by
+introducing auxiliary variables for subexpressions if desired.  The idea of granularity will be discussed in more detail in Section~\ref{sec:granularity}.
+
+\subsection{\jkind}
+
+\jkind~\cite{jkind} is an infinite-state model checker for safety
+properties. \jkind\ proves safety properties using multiple cooperative
+engines in parallel including $k$-induction~\cite{SheeranSS00},
+property directed reachability~\cite{Een2011:PDR}, and template-based
+lemma generation~\cite{Kahsai2011}. \jkind\ accepts Lustre programs
+written over the theories of linear integer arithmetic, linear real arithmetic, and uninterpreted functions. In the
+back-end, \jkind\ uses an SMT solver such as Z3~\cite{DeMoura08:z3},
+Yices~\cite{Dutertre06:yices}, MathSAT~\cite{Cimatti2013:MathSAT}, or
+SMTInterpol~\cite{Christ2012:SMTInterpol}.
+
+\jkind\ works on multiple properties simultaneously.  When a property is
 proved and IVC generation is enabled, an additional parallel engine
-executes one of the {\ucalg, \bfalg, \ucbfalg}~algorithms \cite{Ghass16} to generate an (approximately) minimal IVC.
-%
-To implement the \aivcalg\ procedure, we have extended \texttt{JKind} with a new engine that implements Algorithm \ref{alg:aivc}.
-We use the \texttt{JKind} IVC generation engine to implement the \getivc\ procedure in  Algorithm \ref{alg:aivc}.
+executes one of the {\ucalg, \bfalg, \ucbfalg}~algorithms \cite{Ghass16} to generate an (approximately) minimal IVC.  To implement the \aivcalg\ procedure, we have extended \jkind\ with a new engine that implements Algorithm \ref{alg:aivc}.
+We use the \jkind\ IVC generation engine to implement the \getivc\ procedure in  Algorithm \ref{alg:aivc}.
+
+
 %It worth mentioning that we could have employed the \ucbfalg ~algorithm for this purpose as well.
 %One might say that since \ucbfalg ~guarantees minimality, it would help to the \aivcalg ~algorithm terminate more quickly.
 %However, as we will show in the experiments, on the one hand, the \ucbfalg ~algorithm is very expensive. On the other hand, the \ucalg ~algorithm is not only fast, but it also generates \ivc s that are
@@ -29,30 +90,43 @@ We use the \texttt{JKind} IVC generation engine to implement the \getivc\ proced
 
 As previously discussed, one issue that needs to
 be handled in any implementation of the \ucalg, \ucbfalg, and \aivcalg~algorithms involves the undecidability of the model checking problem;
-in each iteration of Algorithms~\ref{alg:naive} and~\ref{alg:aivc}, we attempt to prove the property with a subset $S$ of the original model.  Although we know that $(I, T) \vdash P$, from Theorem~\ref{thm:minimal-hard}, the problem of determining whether or not any $S \subset T$ is adequate is undecidable.
-%
-Therefore, we have to set timeouts for the model checking algorithm for each iteration of the \aivcalg\ procedure.
-In our implementation, we measure the time required to prove the property over the original model (\emph{proof-time}), and the time required to calculate the first
+from Theorem~\ref{thm:minimal-hard}, the problem of determining whether or not any $S \subset T$ is adequate is undecidable for infinite-state systems. Thus, we set  timeouts for the model checking algorithm for each iteration of the \aivcalg\ procedure.
+To do so, we measure the time required to prove the property over the original model (\emph{proof-time}), and the time required to calculate the first
 (approximate) IVC using \ucalg\ (\emph{\ucalg-time}).
 The timeout we set for each iteration of the \ucbfalg\ and \aivcalg\ algorithms is ($30$ sec  $+\ 5\ \times$ (\emph{proof-time} $+$ \emph{\ucalg-time})).
+%
+If a timeout occurs during computation, we report a warning to the user that our results are not guaranteed to be minimal.  %It is important to note that by increasing the timeout, it is possible that
+%in some cases smaller IVCs can be generated, but the general problem will remain due
+%to the undecidability of the model checking problem. 
+Complete implementation details on \jkind and the implementation of IVCs can be found in \cite{elathesis}.
 
-If the \texttt{while} loop times out for $S$ in line 8 of Algorithm~\ref{alg:aivc},
-we treat $S$ as an \emph{inadequate} set to ensure that all results support a proof.
-In this case, line 13 will prune off $S$ and all
-its subsets from the search space.  Since the timeout is used by both the brute-force
-algorithm and the \aivcalg\ algorithm, minimality is only guaranteed if there
-are no timeouts.  If a timeout occurs during computation, we report a warning to the user that our results are not guaranteed to be minimal.
-It is important to note that by increasing the timeout, it is possible that
-in some cases smaller IVCs can be generated, but the general problem will remain due
-to the undecidability of the model checking problem. More implementation details can be found in \cite{jkind, elathesis}.
 
+\subsection{AGREE}
+
+The {\em Assume Guarantee Reasoning Environment} (\agree) tool is
+an open-source compositional verification tool that proves properties
+of hierarchically-composed models in the Architectural Analysis and
+Design Language (AADL) language~\cite{NFM2012:CoGaMiWhLaLu,QFCS15:backes,hilt2013}.
+\jkind as the default model checker for AGREE.  \agree
+refers to both an embedded language annex in the Architectural
+Analysis and Design Language (AADL) and to a plugin for the OSATE AADL
+Integrated Development Environment. The \agree annex annotates the
+AADL model with formal requirements, and the plugin reasons about
+these requirements. The purpose of \agree is to model behavioral
+requirements of an embedded system using formal assume guarantee
+contracts. The plugin generates Lustre specifications that are checked
+by \jkind.
+
+This tool suite allows a model-based approach to system construction in which compositional proofs are used to automatically establish satisfaction arguments.
+\agree makes use of multiple \jkind features including MIVCs to show requirements traceability, as well as counterexample generation to check the consistency of an AADL
+component's contract.
 
 
 
 %The source code is publicly available on \cite{mygit}.
 %This section points out some technical issues in the implementation.
 %
-%We have extended \texttt{JKind} with a new engine that
+%We have extended \jkind with a new engine that
 % implements Algorithm \ref{alg:aivc}.
 % First a property is proved and a single IVC set $S$ is computed
 % by the IVC generation engine. Then, the set $S$ is sent to our engine.

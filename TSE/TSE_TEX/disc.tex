@@ -1,4 +1,4 @@
-\section{Discussion}
+\subsection{Illustration of Traceability and Coverage}
 \label{sec:disc}
 
 
@@ -16,8 +16,7 @@
 \newcommand{\abovehyst}{\texttt{above\_hyst}}
 \newcommand{\inhibit}{\texttt{inhibit}}
 
-In this section we show how traceability and coverage analyses can be performed using IVCs.
-The goal of this section is to both illustrate the techniques and discuss the potential pitfalls of the analysis. Here we adapt the same ASW example presented in Section \ref{sec:example}. The code is slightly changed so we can discuss how IVCs help to improve the design and specification.
+In this section we show how traceability and coverage analyses can be performed using IVCs, attempting to both illustrate the techniques and discuss the potential pitfalls of the analysis. Here we adapt the same ASW example presented in Section \ref{sec:example}. The code is slightly changed so we can discuss how IVCs help to improve the design and specification.
 
 % \begin{figure}[t]
 %\centering
@@ -28,9 +27,9 @@ The goal of this section is to both illustrate the techniques and discuss the po
 %\label{fig:asw2}
 %\end{figure}
 
- We illustrate the results with traceability matrices produced by the  \texttt{Spear} requirements specification tool~\cite{Spear}.  \jkind is used as the model checker for the  \texttt{AADL AGREE} tool suite~\cite{NFM2012:CoGaMiWhLaLu} and also \texttt{Spear} ~\cite{Spear}.  We have extended both tools to add graphical support for displaying adequacy and traceability results.  We show screenshots for the  \texttt{Spear} tool for our running example in Figures~\ref{fig:propertyset1} and~\ref{fig:propertyset4}.
+We illustrate the results with traceability matrices produced by the \agree\ tool suite~\cite{NFM2012:CoGaMiWhLaLu}.  We have extended this tool to add graphical support for displaying adequacy and traceability results.  Screenshots for our running example are shown in Figures~\ref{fig:propertyset1} and~\ref{fig:propertyset4}.
 
-The ASW is responsible for turning on and off a device of interest, so we formulate two requirements that describe when the ASW should be {\em on} and when it should be {\em off}.  The first attempt at formalization (property set 1) is as follows:
+We first formulate two requirements that describe when the ASW should be {\em on} and when it should be {\em off} as follows: 
 
 %\begin{definition} {\emph{ASW Requirements Version 1} }
 {\smaller
@@ -54,13 +53,13 @@ all_p = on_p and off_p;
 \end{figure}
 
 
-\noindent Informally, when both altimeters are below the threshold and not inhibited, then the DOI should be on (\onp), and when both altimeters are below the threshold and the ASW is inhibited, then the DOI should be off (\offp).
+\noindent When both altimeters are below the threshold and not inhibited, then the DOI should be on (\onp), and when both altimeters are below the threshold and the ASW is inhibited, then the DOI should be off (\offp).
 For each of the \ivccov, \maycov, and \mustcov\ metrics, \allp\ only requires \texttt{\{below, d1, doi\_on\}}, as shown in Figure~\ref{fig:propertyset1}.   This small set of elements is due to a classic specification problem: using computed variables as the antecedents of implications.  If these values are computed incorrectly (say, we choose the wrong threshold for \aonebelow), it may cause the property to be valid for incorrect reasons.
-
+%
 %This is alarming, and somewhat puzzling, because one would think that at least the definitions of the `below' or `above' would be necessary.  However, because the specification used the model variables \aonebelow, \atwobelow, \aoneabove, and \atwoabove, the actual valuations of the thresholds do not matter.  This situation illustrates a classic specification problem: using computed variables in the antecedents of implications.
 %\footnote{\noindent ~In this case, if the computation of the variables used in the antecedent is incorrect, then our property will not verify what it is expected to verify \mike{citation to one of our papers on specification here...}; note also that this does not mean the property is necessarily {\em vacuous}.}
-
-We therefore modify our properties to use inputs and constants as antecedents and derive:
+%
+We therefore modify our properties to use inputs as follows:
 
 {\smaller
 \begin{verbatim}
@@ -74,8 +73,8 @@ off_p = ((alt1 >= T_HYST) and (alt2 >= T_HYST))
 %\end{definition}
 
 \noindent In this version, distinctions emerge between the metrics.  \allp\ has two \mivc s: \texttt{\{\{a1\_below, below, doi\_on, d1\}, \{a2\_below, below, doi\_on, d1\}\}}, because of the \onp\ property: in the implementation, the DOI is turned on when either of the altimeters is below the threshold, while our property states that they both must be below.
-Domain experts determine that the requirement is correctly specified and that our implementation is a reasonable refinement, so there is no need to change the model or the property.  The \must elements are the same as version 1: \texttt{\{below, doi\_on, d1\}}, because neither \aonebelow\ or \atwobelow\ is required for all proofs.  %However, given the \must elements, we can no longer construct a proof, because at one of these definitions is necessary for either proof.
-The \may elements contain both \aonebelow\ and \atwobelow.
+Domain experts determine that the requirement is correctly specified and that our implementation is a reasonable refinement, so there is no need to change the model or the property.  The \must\ elements are the same as version 1: \texttt{\{below, doi\_on, d1\}}, because neither \aonebelow\ or \atwobelow\ is required for all proofs.  %However, given the \must elements, we can no longer construct a proof, because at one of these definitions is necessary for either proof.
+The \may\ elements contain both \aonebelow\ and \atwobelow.
 
 The \abovehyst, \aoneabove, \atwoabove, and \dtwo\ equations are still missing, meaning that the ``above'' thresholds are irrelevant to our properties.  Examining \offp, we realize that we have a specification error; the DOI should be off if either \inhibit\ is true or both altimeters are above the threshold. The fix is:
 
@@ -91,7 +90,7 @@ off_p = ((alt1 >= T_HYST) and (alt2 >= T_HYST))
 %all_p = on_p and off_p;
 %\end{definition}
 
-\noindent Now the \allp\ requirement proof yields a single \mivc ~that requires all variables except \{\texttt{d2}\}, so \mivc ~= \may = \must.  Interestingly, the \offp\ proof requires both the lower altimeter thresholds even though the \onp\ proof does not; the reason is that if either of these is false, then \doion\ will be true.  To cover \{\texttt{d2}\}, we realize no property covers the hysteresis case, so an additional property is added for this case:
+\noindent Now the \allp\ requirement proof yields a single \mivc ~that requires all variables except \{\texttt{d2}\}, so \mivc ~= \may ~= \must.  Interestingly, the \offp\ proof requires both the lower altimeter thresholds even though the \onp\ proof does not; the reason is that if either of these is false, then \doion\ will be true.  To cover \{\texttt{d2}\}, we realize no property covers the hysteresis case, so an additional property is added for this case:
 
 %\begin{definition} {\emph{ASW Requirements Version 2} }
 {\smaller
@@ -146,10 +145,13 @@ We call a Lustre model {\em totally decomposed} if (1) each computed (i.e., non-
 
 If a set of requirements achieves 100\% coverage of a totally decomposed model, then no granular refinement will achieve less than 100\% coverage.  This is straightforward to show in a proof sketch.  Based on the right side of the equation, there are two cases: (1) the entire right-hand side of the equation is extracted (which may be a constant or a single operator expression). In this case, by assumption the variable assigned is necessary for proof, so its definition must be necessary for the proof; in this case, the fresh variable must also be necessary for the proof; (2) a leaf expression of the single right-hand side operator is extracted.  Since (by definition) the leaf is a variable expression that is used only once, and (by assumption) the variable is necessary for proof, then the fresh variable is also necessary for proof.  The resultant model is also a totally-decomposed model, so we can do any number of these extractions.
 
+Unfortunately, such decompositions also appear to slow model checking performance.  In future work, we hope to explore efficient transformations leading to sufficiently granular models.
+
+\iffalse
 We have implemented a transformation that splits Lustre models into {\em totally decomposed} models.  In a small initial experiment involving 30 of the original models, we performed our transformation and re-ran the analysis.  By changing the granularity of the model, the analysis tools perform significantly slower for proofs, but the ratio of performance between the proof and the \ucalg\ and \mustalg\ algorithms is largely unchanged.  However, on some models, the \mustalg\ algorithm becomes unacceptably slow (analysis times of tens of hours) and occasionally causes the solver to run out of memory.
 
 The issue of granularity of models is significant, but to the best of our knowledge, is not discussed in previous work.  In our approach, we allow the user to choose the level of granularity, but in certain cases, this may lead to misleading answers when checking the adequacy of requirements.  This aspect will be a focus of our future work, especially in situations in which the tool determines that a set of requirements is {\em complete}.  We believe that it is possible to substantially optimize the n{\"a}ive preprocessing algorithm that we have presented.
-
+\fi 
 %\subsection{Use in Certification}
 %Airborne software must undergo a rigorous software development process to ensure its airworthiness. This process is governed by DO-178C: Software Considerations in Airborne Systems and Equipment Certification \cite{DO178C} and when formal methods tools are used, DO-333: Formal Methods Supplement to DO-178C and DO-278A \cite{DO333}. DO-178C proposes a rigorous software development process that starts with an abstract requirements artifact that is iteratively refined into a software designs, source code, and finally, object code, and a set of {\em objectives} that should be met by critical avionics software.  Two of the key tenets of this process are traceability and adequacy; that is, each refinement of an artifact must be traceable to the artifact if was derived from. Further, each refinement must be shown not to introduce functionality not present in the artifact from which it was derived (adequacy). For example, DO-178C objectives A-3.6 (traceability of high-level requirements to system requirements) and A-4.6 (traceability of software design to high-level requirements) specifically require applicants to demonstrate bi-directional traceability.
 %

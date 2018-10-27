@@ -115,6 +115,28 @@ The final question asks how well the approach compares to {\em backwards static 
 
 \takeaway{All \mivc\ algorithms generate much smaller cores than slicing.}
 
+\subsection{Discussion}
+
+\subsection{Discussion}
+
+In the previous section, we presented several algorithms for determining
+single or all inductive validity cores.  For single \mivcs, we started from a baseline brute-force algorithm that is guaranteed minimal, but is often very slow.  We then constructed an UNSAT-core-based algorithm \ucalg, and a hybrid algorithm \ucbfalg.  
+The \ucalg algorithm is much faster, but is
+not guaranteed to be minimal; the result of this algorithm can be
+further, and sometimes quickly, refined by the combined algorithm.
+Thus, we can choose to trade off speed for guaranteed minimality using
+these two algorithms; the combined algorithm can be viewed as a
+refinement algorithm that we can terminate either at completion or
+after a fixed time bound.
+
+Moving to algorithms that compute all \mivcs, additional interesting data arises.  For models that contain only one \mivc, the \aivcalg\ algorithm runs at about the same performance as the \ucbfalg\ algorithm.  This means for the majority of our problems we can characterize all solutions for about the cost of finding a single minimal solution.  However, once models contain more than one \mivc, the cost of computing the \aivcalg\ becomes substantially more expensive.
+
+%One question that arises is: why is the refinement so much quicker than the brute-force approach?  In our preliminary examination, it appears to be because of the actions performed by JKind on the sub-problems.  When the cores produced by \ucalg\ are minimal or close to minimal, it tends to be the case that removing conjuncts from the core leads to short counterexamples.  When performing the brute-force algorithm, removing the irrelevant pieces of the model require repeated proof search.
+
+Although our experiment does not ask statistical questions, it is still worth examining threats towards generalizing our results.  First, are the models and properties that we chose representative?  We started from an existing benchmark from another research group suite to try to assuage this concern, but most of these models were small, so in previous work we extended the benchmark suite with 81 of our own models.  For this paper we have extended the benchmark suite with larger models from our industrial partner, Rockwell Collins.  It is possible that our additions skew the results, though these models are immediately derived from previously published work and not modified for our analysis here.  Second, our models and tools use the Lustre language, which is equational, rather than conjuncted transition systems; it is possible (though, in our opinion, unlikely) that arbitrary conjuncts rather than equations will yield different performance or minimality characteristics.
+
+Our approach is limited by the capabilities of the SMT solvers and inductive model checking algorithms that are used.  For example, it is difficult, given state of the art SMT solvers, to produce proofs involving complex models involving non-linear floating-point arithmetic.  However, given an inductive proof produced by an UNSAT-core-producing SMT solver, we feel confident that the \ucalg\ algorithm can produce an IVC.  Our approach is theory and invariant-generator agnostic, so as inductive model checking algorithms evolve and SMT solvers add support for new theories, the IVC algorithm should be able to work without modification.
+
 
 %. For most of the models, finding all minimal IVCs is within the same ballpark as finding a single minimal IVC in terms of computation time.  However, these results are dependent on the number of minimal IVCs that are associated with the property
 

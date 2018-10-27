@@ -329,19 +329,19 @@ Fixed!
 
 Fixed!
 
-\paragraph{(R3)} : 
+\paragraph{(R3)} :
 \textit{Specifically, which aspects of the larger traceability picture are supported by IVCs and which are not? The technique provides traceability between properties and models (from which code is automatically generated), but what about all of the other life-cycle aspects of traceability? What about traceability to higher level hazards, architectural decisions, and test cases (if they exist)? How does it all fit together. Further, I assume that there would be some natural language textual requirements which must ultimately be translated into properties and models.       Please describe the context in which IVC would be applied -- especially wrt traceability and certification. It would be really helpful to see how IVC fits into the larger traceability picture for a system that is model driven and proof-based. What other artifacts are likely to be used and how will system-wide traceability be achieved that encompasses a more complete set of artifacts?}
 \vspace{0.05in}
 
 We have tried to clarify this considerably.  We have expanded the traceability section considerably, including adding a section (7.1.4) specifically on DO-178C compliance, and more discussion of how this fits into the AGREE tool and architectural reasoning.
-  
-\paragraph{(R3)}: 
+
+\paragraph{(R3)}:
 \textit{Ideally, the paper would include a Traceability Information Model (similar to a database schema) showing artifacts, trace links, and the scope of IVC applicability. This would help to address (a).}
 \vspace{0.05in}
-  
+
 We have not included a Traceability Information Model; the applicability of the techniques and the reach of IVCs depends directly on which portions of the system one chooses to formalize; discussing the limits of hierarchical verification in safety-critical systems is outside the scope of the paper.
 
-\paragraph{(R3)}: 
+\paragraph{(R3)}:
 \textit{(Clarification point) The paper states that ``none of the existing Satisfaction Argument literature discusses that issue that there are often multiple satisfaction arguments between a requirement and its implementation.'' Can you please clarify this? I understand that a specific requirement R1 and its properties may be satisfied using EITHER features A or B in the case of alternate satisfaction arguments. However, if this is the case then shouldn't there also be an additional requirement R2 describing some need for fault tolerance/redundancy -- and if not, then we would make the assumption that the authors claim. So Property P1 might be satisfied either using Features/Components A or B. This would be true; however, there also exists another fault tolerance property P2, which requires redundancy. Can you please address how your system deals with this type of scenario (which seems rather common). Presumably you need to take a more global perspective on determining whether code is superfluous. Actually your approach implies this; but the section on Satisfaction seems to take a more local perspective.}
 \vspace{0.05in}
 
@@ -354,7 +354,7 @@ Also, we have removed this verbiage from the paper.  The most important aspect i
 
 In this case I was referring to the mutation-based formal coverage metrics, such as those by Chockler.  If you take only the elements that are claimed to be necessary by the metric, you often are no longer able to construct a proof, and in fact the remaining fragment of the model will violate the property of interest.
 
-This is not necessarily a problem with the metrics: they are concerned with completeness of coverage rather than provability, but it sometimes leads to counterintuitive results.  We have also de-emphasized this aspect of the coverage metrics: it is possible that one would like a very strong coverage metric for critical software even if it does not preserve provability.  
+This is not necessarily a problem with the metrics: they are concerned with completeness of coverage rather than provability, but it sometimes leads to counterintuitive results.  We have also de-emphasized this aspect of the coverage metrics: it is possible that one would like a very strong coverage metric for critical software even if it does not preserve provability.
 
 \paragraph{(R3)}: \textit{experiments focus primarily on the performance (i.e., runtime costs) of computing IVCs, comparing a brute force approach with an UNSAT core-based algorithm. Experiments were conducted on an existing set of benchmarks that included 660 Lustre Models as well as industrial models. The experimentation wrt performance of the model was therefore extensive. Results from the experiments report time penalties in baseline proof time and for computing All-IVCs. However, for this and other experiments, the authors should at least briefly discuss the implications of these results on practice. While I definitely appreciate that the datasets include industrial ones, the experimental analysis could be improved by discussing the implications of performance results wrt to practical use. Please add a couple of sentences to the RQ1-3 sections to discuss practicality of use.}
 \vspace{0.05in}
@@ -379,7 +379,7 @@ The algorithms we have constructed work for any inductive model checker, and all
 \paragraph{(R3)}: \textit{The claim that you get traceability for free is both 'true' and 'false' at the same time. True, because you already have the models defined and given those models, you can generate IVCs and achieve traceability, but false because   (a) you may need to decompose the models at levels that you otherwise wouldn't have needed to i.e., granularity discussion, and  (b) because of the cost of building those models.   Please be careful about describing the scope of this claim.}
 \vspace{0.05in}
 
-These are all good points.  We have moderated this claim.  
+These are all good points.  We have moderated this claim.
 
 \paragraph{(R4) Page 6}: \textit{p. 6 (I am referring to number of pages out of 53, from the submission pdf). You assume that CHECKSAT and UNSATCORE are
 always terminating. What happens if these assumptions are violated?}
@@ -399,6 +399,8 @@ Fixed!  This was an oversight - we chose the wrong version of the implementation
 
 \mike{Elaheh: in the text we have the following: ``We selected only benchmark problems consisting of a Lustre model with properties that JKind could prove with a 3-hour timeout.'' Which models remained?  Aren't all of the models in the repo provable with this timeout?  If not, how many were excluded?}
 
+\ela{Mike all the models with valid properties are in there. Only invalid properties are removed. Honestly 3-hour timeout was very generous. Models were proved/disproved in the matter of minute. The longest proof time (close to an hour) was for the QFCS models. That's all. So it is completely true to say that we have all the models with valid properties for which JKind found proof within 3-hours.}
+
 \paragraph{(R4)}: \textit{"Discussion, in my opinion, is the weakest part of the paper. Some of the material presented there is not quite discussion. I know it was presented in earlier papers and the authors want it in the ""big"" one, but the treatment of the material is much lighter than the reset of the paper and having it weakens instead of strengthening the paper, IMHO. Some specific examples: Material in paragraph on p. 15, lines 48-54 is presented too quickly and more details are needed.  But the running example, ASW, does not need to be reintroduced again (lines 55-58).}
 \vspace{0.05in}
 
@@ -410,8 +412,9 @@ We have tried to slim this down, and generally re-balance the paper, including m
 \vspace{0.05in}
 
 \mike{Mats, Elaheh - what do you think?}
+\ela {Mike I removed granularity from the contributions. I don't know if it should be in a separate section as discussion, but I believe it is necessary to talk about granularity. Maybe as an ending for the coverage section, instead of a new section. But I don't see a problem with having a discussion section over granularity. Sure no contributions, but we should talk about it!}
 
-\paragraph{(R4)}: \textit{Related work is well done, with the exception of the paragraph on p. 18, lines 15-29. It seems to be a separate new thought that should live in the discussion.} 
+\paragraph{(R4)}: \textit{Related work is well done, with the exception of the paragraph on p. 18, lines 15-29. It seems to be a separate new thought that should live in the discussion.}
 \vspace{0.05in}
 
 \mike{to do: figure this out}
@@ -424,7 +427,7 @@ Fixed!
 \paragraph{(R4)}: \textit{Overall, I find the TSE submission to be a bit "loopsided" in terms of the material that the authors chose to include in it. The core FSE material is of outstanding quality but the exclusion of tooling and inclusion of granularity make the composition of the material unusual. The specific focus application on requirements traceability is fine but it does not add to the overall "balance" of the paper.}
 \vspace{0.05in}
 
-See earlier comment; we have tried to both extend some of the presentation of the basic algorithms and slim down some of the applications section.  
+See earlier comment; we have tried to both extend some of the presentation of the basic algorithms and slim down some of the applications section.
 
 
 

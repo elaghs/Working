@@ -5,26 +5,30 @@ experimental results to address the research questions defined in the experiment
 
 % width=\columnwidth
 % width=0.8\textwidth
-\begin{figure*}
+\begin{figure}
  \centering
-  \includegraphics[width=0.8\textwidth]{figs/performance.jpg}
+ % \includegraphics[width=0.8\textwidth]{figs/performance.jpg}
+  \includegraphics[width=\columnwidth]{figs/performance.jpg}
   \vspace{-0.1in}
   \caption{Runtime of \aivcalg, \ucbfalg, and \ucalg ~algorithms}
   \label{fig:performance}
   %\vspace{-0.1in}
-\end{figure*}
+\end{figure}
 
 
 \subsubsection{RQ1}
 
 To address RQ1, we measured the performance overhead of the various IVC algorithms against the baseline time
 necessary to find a proof using inductive model checking. Fig. \ref{fig:performance} provides an overview of the  overhead of the \aivcalg ~algorithm in comparison with the \ucalg ~and \ucbfalg\ algorithms.  In the figure, each curve is ranked along the x-axis according to the time required for the algorithm to terminate for each analysis problem.
-Table \ref{tab:runtime} provides a summary of the computation time and the overhead of different algorithms.  The \ucalg\ algorithm imposes a  31\% overhead to the baseline proof time, whereas both the \ucbfalg\ and \aivcalg\ algorithms add a substantial time penalty: \ucbfalg\ and \aivcalg\ add a (mean) 2276\% and 9588\% overhead, respectively, to the proof time.
-For small models, much of this penalty is due to starting many instances of the SMT solver; if we examine models that require $\geq6s$ of analysis time, the mean overhead of \aivcalg\ over the baseline analysis drops from 9588\% to 2514\%.
+Table \ref{tab:runtime} provides a summary of the computation time and the overhead of different algorithms.  The \ucalg\ algorithm imposes a  31\% overhead to the baseline proof time.
 
 \takeaway{The \ucalg~algorithm using the Z3 SMT solver adds a modest performance penalty to the time required for inductive proofs.}
 
+On the other hand, both the \ucbfalg\ and \aivcalg\ algorithms add a substantial time penalty: \ucbfalg\ and \aivcalg\ add a (mean) 2276\% and 9588\% overhead, respectively, to the proof time.
+For small models, much of this penalty is due to starting many instances of the SMT solver; if we examine models that require $\geq6s$ of analysis time, the mean overhead of \aivcalg\ over the baseline analysis drops from 9588\% to 2514\%.
+
 \takeaway{The \ucbfalg\ and \aivcalg\ algorithms introduce a substantial performance penalty and may not be feasible for large models.}
+
 % >=1 : aivc overhead = 970.46
 
 %The \aivcalg\ algorithm takes approximately 1.6x more time than the \ucbfalg\ algorithm, calculated in the following way: we measure the ratio of time required for each model for both metrics, then we take the mean of this ratio for all models.  It is important to note that these performance curves are sensitive to the timeout values chosen for individual proof-searches for IVCs (the \getivc\ step in \aivcalg\ and line 3 in the \ucbfalg\ algorithm in~\cite{Ghass16}). It is likely that the performance would change if a different threshold was chosen.
@@ -94,8 +98,13 @@ For small models, much of this penalty is due to starting many instances of the 
 \vspace{0.1in}
 \subsubsection{RQ2} For this research question, we examine how the proof time of the original model and the number of MIVCs associated with the property affects the analysis time of the \aivcalg\ algorithm.  Fig.~\ref{fig:modelsize} provides an overview of this data.  The data in Fig.~\ref{fig:modelsize} is sorted twice along the x-axis: the major axis is the number of MIVCs that exist for the model, and the minor axis is the analysis time of the baseline model.  In this graph, we can visualize how both factors affect the performance of the \aivcalg\ algorithm.  Note that there are two scales for the y-axis: the scale on the left is a logarithmic scale of performance in terms of the run time; the scale on the right is a linear scale based on the number of minimal IVCs discovered.
 
-Fig.~\ref{fig:modelsize} shows two distinct trends.  First, for models whose baseline proofs are inexpensive and that only have a single MIVC, the \aivcalg\ is roughly equivalent in performance to the \ucbfalg.  % Ela: I rewrite the rest of the paragraph based on what I see in QFC
-However, as proofs become more expensive for a single MIVC, the \aivcalg\ begins to underperform the \ucbfalg , this is the case for the properties with one MIVC.  In the cases where several MIVCs are found, the performance of the \aivcalg\ is driven to a large degree by the number of MIVCs that exist : the more MIVCs associated with a property, the higher the expense of \aivcalg\ as compared to the \ucbfalg\ algorithm.
+Fig.~\ref{fig:modelsize} shows two distinct trends.  First, for models that only have a single MIVC, the \aivcalg\ is roughly similar in performance to the \ucbfalg.  There are outliers in which the \aivcalg\ algorithm underperforms the \ucbfalg\ algorithm by an order of magnitude, but for most models, the performance is similar, and for some models, \aivcalg\ outperforms the brute-force algorithm.
+% Ela: I rewrite the rest of the paragraph based on what I see in QFC
+%However, as proofs become more expensive for a single MIVC, the \aivcalg\ begins to underperform the \ucbfalg , this is the case for the properties with one MIVC.  
+In the cases where several MIVCs are found, the the \aivcalg\ algorithm is usually significantly more expensive to compute than the \ucbfalg\ algorithm.  
+
+\takeaway{The performance of the \aivcalg\ algorithm is largely dependent on the number of \mivc s that exist for the model.  The more \mivc s exist, the more expensive it is to compute.}
+
 
 \subsubsection{RQ3}
 For this research question, we analyzed the minimality of the produced IVCs by each algorithm.  For our benchmark suite, the IVCs returned by \ucalg\ are approximately 8\% larger than the known-minimal \ucbfalg\ algorithm.  As shown in Figure~\ref{fig:size}, as the benchmark examples become larger, the \ucalg\ and \ucbfalg\ results become more closely aligned.  Thus, we think that when guaranteed minimality is not required, the \ucalg\ yields a good tradeoff of performance vs. minimality.
@@ -104,6 +113,8 @@ Since 515 of the models had only one MIVC, for these models, the size of the min
 
 The final question asks how well the approach compares to {\em backwards static slicing}~\cite{Tip95asurvey}, since slicing also reduces the set of model elements necessary to construct a proof.  We start the slice from the equation defining the property of interest, and use the usual approach~\cite{Gaucher03:slicing} that performs an iterative backward traversal from the variables used within an equation to their defining equations.  We expect the IVC mechanism to be more precise, because the slice overapproximates the set of equations necessary for {\em any} proof.  This claim is demonstrated in Figure~\ref{fig:size}; averagely, slices are 574\% larger than the IVCs produced by our \ucalg\ algorithm and 597\% larger than those produced by \ucbfalg\ algorithm.
 
+\takeaway{All \mivc\ algorithms generate much smaller cores than slicing.}
+
 
 %. For most of the models, finding all minimal IVCs is within the same ballpark as finding a single minimal IVC in terms of computation time.  However, these results are dependent on the number of minimal IVCs that are associated with the property
 
@@ -111,24 +122,24 @@ The final question asks how well the approach compares to {\em backwards static 
 %Therefore, we would like to examine whether or not there is a relationship between the performance and the size of the model, proof-time, and the diversity of IVCs. A graph showing the size of each model (determined by the number of equations in the model) and the number of IVCs
 % along with the running time of \aivcalg ~and normal verification time is shown in Fig \ref{fig:modelsize}. In the figure, the models are ranked along the x-axis by their size. The picture shows that as models get larger, it is more likely for the \aivcalg ~algorithm to take more time to complete. However, there is no straightforward relationship between the performance and the number of IVCs. It can be expected that the running time of the \aivcalg ~algorithm goes higher when verification takes more time.
 
- \begin{figure}
+ \begin{figure*}
  \centering
-  \includegraphics[width=\columnwidth]{figs/size.jpg}
+  \includegraphics[width=0.8\textwidth]{figs/size.jpg}
   %\vspace{-0.1in}
   \caption{Runtime of different computations along with the number of MIVCs}
   \vspace{0.1in}
   \label{fig:modelsize}
-\end{figure}
+\end{figure*}
 
 
-\begin{figure}
+\begin{figure*}
   \centering
-  \includegraphics[width=\columnwidth]{figs/min.jpg}
-  %\vspace{-0.1in}
+  \includegraphics[width=0.8\textwidth]{figs/min.jpg}
+  \vspace{-0.2in}
   \caption{Size of the IVC sets produced by different algorithms}
   %\vspace{-0.2in}
  \label{fig:size}
-\end{figure}
+\end{figure*}
 
 
 %\ela{do we want this table 3? I commented the table description in case you want to use it...}

@@ -97,7 +97,7 @@ The timeout we set for each iteration of the \ucbfalg\ and \aivcalg\ algorithms 
 %
 If a timeout occurs during computation, we report a warning to the user that our results are not guaranteed to be minimal.  %It is important to note that by increasing the timeout, it is possible that
 %in some cases smaller IVCs can be generated, but the general problem will remain due
-%to the undecidability of the model checking problem. 
+%to the undecidability of the model checking problem.
 Complete implementation details on \jkind and the implementation of IVCs can be found in \cite{elathesis}.
 
 
@@ -113,11 +113,12 @@ Analysis and Design Language (AADL) and to a plugin for the OSATE AADL
 Integrated Development Environment. The \agree annex annotates the
 AADL model with formal requirements, and the plugin reasons about
 these requirements. The purpose of \agree is to model behavioral
-requirements of an embedded system using formal assume guarantee
-contracts. The plugin generates Lustre specifications that are checked
-by \jkind.
+requirements of an embedded system using formal assume/guarantee
+contracts using synchronous observers~\cite{Halbwachs91:lustre}, which can operate either in discrete or continuous time. The plugin generates Lustre specifications that are checked by \jkind.
+
 
 This tool suite allows a model-based approach to system construction in which compositional proofs are used to automatically establish satisfaction arguments.
+Given a component contract at a particular level of the AADL model, we attempt to prove it using the contracts of the subcomponents at the next lower level of the model hierarchy.
 \agree makes use of multiple \jkind features including MIVCs to show requirements traceability, as well as counterexample generation to check the consistency of an AADL
 component's contract.
 

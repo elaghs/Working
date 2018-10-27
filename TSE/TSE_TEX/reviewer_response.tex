@@ -329,14 +329,102 @@ Fixed!
 
 Fixed!
 
+\paragraph{(R3)} : 
+\textit{Specifically, which aspects of the larger traceability picture are supported by IVCs and which are not? The technique provides traceability between properties and models (from which code is automatically generated), but what about all of the other life-cycle aspects of traceability? What about traceability to higher level hazards, architectural decisions, and test cases (if they exist)? How does it all fit together. Further, I assume that there would be some natural language textual requirements which must ultimately be translated into properties and models.       Please describe the context in which IVC would be applied -- especially wrt traceability and certification. It would be really helpful to see how IVC fits into the larger traceability picture for a system that is model driven and proof-based. What other artifacts are likely to be used and how will system-wide traceability be achieved that encompasses a more complete set of artifacts?}
+\vspace{0.05in}
+
+We have tried to clarify this considerably.  We have expanded the traceability section considerably, including adding a section (7.1.4) specifically on DO-178C compliance, and more discussion of how this fits into the AGREE tool and architectural reasoning.
+  
+\paragraph{(R3)}: 
+\textit{Ideally, the paper would include a Traceability Information Model (similar to a database schema) showing artifacts, trace links, and the scope of IVC applicability. This would help to address (a).}
+\vspace{0.05in}
+  
+We have not included a Traceability Information Model; the applicability of the techniques and the reach of IVCs depends directly on which portions of the system one chooses to formalize; discussing the limits of hierarchical verification in safety-critical systems is outside the scope of the paper.
+
+\paragraph{(R3)}: 
+\textit{(Clarification point) The paper states that ``none of the existing Satisfaction Argument literature discusses that issue that there are often multiple satisfaction arguments between a requirement and its implementation.'' Can you please clarify this? I understand that a specific requirement R1 and its properties may be satisfied using EITHER features A or B in the case of alternate satisfaction arguments. However, if this is the case then shouldn't there also be an additional requirement R2 describing some need for fault tolerance/redundancy -- and if not, then we would make the assumption that the authors claim. So Property P1 might be satisfied either using Features/Components A or B. This would be true; however, there also exists another fault tolerance property P2, which requires redundancy. Can you please address how your system deals with this type of scenario (which seems rather common). Presumably you need to take a more global perspective on determining whether code is superfluous. Actually your approach implies this; but the section on Satisfaction seems to take a more local perspective.}
+\vspace{0.05in}
+
+This is a good point (if I understand it correctly).  I believe that the point is: if you have a requirement that can be satisfied in multiple ways, then is it usually the case that you have another requirement such that both paths are required?  For example, you could have a requirement that talks about functional behavior (that can be satisfied in multiple ways) and another that talks about continuity of function even with a single component failure.  If I have understood correctly, then if the properties are specified separately, the system builds IVCs for each property separately.  So, the first property may have two IVCs and the second property one IVC.
+
+Also, we have removed this verbiage from the paper.  The most important aspect is that this traceability information can be generated automatically and accurately; to make such a claim about satisfaction argument literature really should requires additional scoping on which literature is examined: are goal-driven models doing satisfaction?  If so, then perhaps we are being too bold in our claims, because they allow or-decompositions for goal satisfaction.
+
+\paragraph{(R3)}: \textit{When you state that "previous completeness metrics can underapproximate which portions of a program are necessary..." are you referring to non-proof-based techniques e.g., test-case derived metrics?}
+\vspace{0.05in}
+
+In this case I was referring to the mutation-based formal coverage metrics, such as those by Chockler.  If you take only the elements that are claimed to be necessary by the metric, you often are no longer able to construct a proof, and in fact the remaining fragment of the model will violate the property of interest.
+
+This is not necessarily a problem with the metrics: they are concerned with completeness of coverage rather than provability, but it sometimes leads to counterintuitive results.  We have also de-emphasized this aspect of the coverage metrics: it is possible that one would like a very strong coverage metric for critical software even if it does not preserve provability.  
+
+\paragraph{(R3)}: \textit{experiments focus primarily on the performance (i.e., runtime costs) of computing IVCs, comparing a brute force approach with an UNSAT core-based algorithm. Experiments were conducted on an existing set of benchmarks that included 660 Lustre Models as well as industrial models. The experimentation wrt performance of the model was therefore extensive. Results from the experiments report time penalties in baseline proof time and for computing All-IVCs. However, for this and other experiments, the authors should at least briefly discuss the implications of these results on practice. While I definitely appreciate that the datasets include industrial ones, the experimental analysis could be improved by discussing the implications of performance results wrt to practical use. Please add a couple of sentences to the RQ1-3 sections to discuss practicality of use.}
+\vspace{0.05in}
+
+We have added ``takeaway'' summaries in the latest draft of the paper that contains exactly this kind of guidance for each of the research questions.
+
+\paragraph{(R3)}: \textit{As previously mentioned -- experiments focus only on performance, and the application section is devoid of experimentation (with the minor exception that a small experiment on granularity is mentioned in the granularity section). Specific metrics in the applications section could be evaluated, or at least demonstrated. Given that they are proof-based, it would be acceptable to demonstrate them by applying them to at least one system (obviously more would be better). For example, the paper describes a really interesting approach to using mutants to check for requirements completeness and coverage analysis. Given the benchmark datasets, I assume that it would not be difficult to demonstrate the proposed mutant solution as well as other proposed traceability solutions. Applying the approach on at least one of the benchmark datasets would clarify exactly how IVC could support these traceability tasks.}
+\vspace{0.05in}
+
+This is a good point.  Roughly speaking, one can generate a linear multiple of mutants based on the number of operators, variables, and constants found within the model.  We have a mutation tool for Lustre programs (designed for testing), which I ran some of the larger scale models. \mike{Elaheh - do this!  My guess is that any of the big models will yield many thousands of mutants}.  We can give a rough order of magnitude of performance by simply examining the number of analysis problems.  We have put in some data related to the number of mutants \mike{Elaheh - do this!} to provide a rough order of size.  However, it would be difficult for us to run the experiment across the whole data set in the time we have for revisions because it would take a long time to run.  My concern with only running a subset is that we may skew the data.
+
+\paragraph{(R3)}: \textit{Granularity is critical for any traceability task -- and these results are insightful. Could you report the granularity experiment more formally? In your final paragraph of section 8, which body of work are you referring to when you state that granularity is not discussed in prior work? Is this in the specification work or the traceability literature? In the traceability literature it has been discussed wrt OO design traceability (e.g., class, vs. object, vs. line of code) and in other areas. Please clarify -- I'm assuming you are referring to granularity in the Lustre model.}
+\vspace{0.05in}
+
+The work which I was discussing was the literature on coverage as defined on formal models.  We have tried to clarify this section. \mike{MWW: still need to do this!}
+
+\paragraph{(R3)}: \textit{To what extent are your techniques specific to your environment -- or generalizable to other specification languages and models? It appears they would be generalizable to any environment in which liveness and safety properties are modeled.}
+\vspace{0.05in}
+
+The algorithms we have constructed work for any inductive model checker, and all current state of the art tools currently use induction (though this may change in the future).  The approach, though demonstrated on safety properties, can be equally well used for liveness properties based on current extensions of inductive tools to liveness (such as $k$-liveness by Cimatti et al)
+
+\paragraph{(R3)}: \textit{The claim that you get traceability for free is both 'true' and 'false' at the same time. True, because you already have the models defined and given those models, you can generate IVCs and achieve traceability, but false because   (a) you may need to decompose the models at levels that you otherwise wouldn't have needed to i.e., granularity discussion, and  (b) because of the cost of building those models.   Please be careful about describing the scope of this claim.}
+\vspace{0.05in}
+
+These are all good points.  We have moderated this claim.  
+
 \paragraph{(R4) Page 6}: \textit{p. 6 (I am referring to number of pages out of 53, from the submission pdf). You assume that CHECKSAT and UNSATCORE are
 always terminating. What happens if these assumptions are violated?}
 \vspace{0.05in}
 
 \noindent We have added the following footnote to this sentence to elaborate: \textit{SAT problems and SMT problems involving decidable theories (such as the theories used by our tools) will always terminate.  For approaches using undecidable theories, we can relax this restriction using  techniques similar to those discussed in Section~4.2}.
 
-
 In our tools, we are working with decidable theories, so decidability is not an issue, but even so, as a practical matter, model checking can time out.  Given UNSAT properties, we have never had an issue with timeouts for UNSATCORE termination; the results that are returned may be approximate, but we believe that the algorithms are terminating.
+
+\paragraph{(R4)}: \textit{I would have liked more info about the implementation of the tool. While you are building on top of JKind, I would have liked to learn about the architecture, implementation effort, etc. In fact, the provided FSE'16 paper describes the implementation in much more detail than in the TSE manuscript.}
+\vspace{0.05in}
+
+Fixed!  This was an oversight - we chose the wrong version of the implementation file as the basis of this paper.  Thank you for the catch!
+
+\paragraph{(R4)}: \textit{I would also like more info about the experimental setup, Section 6.1: which benchmarks did you exclude then and why?}
+\vspace{0.05in}
+
+\mike{Elaheh: in the text we have the following: ``We selected only benchmark problems consisting of a Lustre model with properties that JKind could prove with a 3-hour timeout.'' Which models remained?  Aren't all of the models in the repo provable with this timeout?  If not, how many were excluded?}
+
+\paragraph{(R4)}: \textit{"Discussion, in my opinion, is the weakest part of the paper. Some of the material presented there is not quite discussion. I know it was presented in earlier papers and the authors want it in the ""big"" one, but the treatment of the material is much lighter than the reset of the paper and having it weakens instead of strengthening the paper, IMHO. Some specific examples: Material in paragraph on p. 15, lines 48-54 is presented too quickly and more details are needed.  But the running example, ASW, does not need to be reintroduced again (lines 55-58).}
+\vspace{0.05in}
+
+\mike{Still some TBD...}
+
+We have tried to slim this down, and generally re-balance the paper, including more material from the FSE paper.
+
+\paragraph{(R4)}: \textit{Granularity is a new idea, or at least it is claimed as novel in the contributions, but it is again presented in a way that is too much for a discussion and too little for a technical contribution. Furthermore, section 8.1 is the sole subsection of the paper - a better organization of the section is needed.  The last two paragraphs of section 8.1 are also troublesome - not quite an experiment and not quite a discussion and not quite a contribution.  I would recommend removing granularity from the paper altogether!}
+\vspace{0.05in}
+
+\mike{Mats, Elaheh - what do you think?}
+
+\paragraph{(R4)}: \textit{Related work is well done, with the exception of the paragraph on p. 18, lines 15-29. It seems to be a separate new thought that should live in the discussion.} 
+\vspace{0.05in}
+
+\mike{to do: figure this out}
+
+\paragraph{(R4)}: \textit{References need to be updated. For some of them, e.g., [59], authors are missing and there are issues with capitalization in the titles. Also, try to avoid "et al" in references.}
+\vspace{0.05in}
+
+Fixed!
+
+\paragraph{(R4)}: \textit{Overall, I find the TSE submission to be a bit "loopsided" in terms of the material that the authors chose to include in it. The core FSE material is of outstanding quality but the exclusion of tooling and inclusion of granularity make the composition of the material unusual. The specific focus application on requirements traceability is fine but it does not add to the overall "balance" of the paper.}
+\vspace{0.05in}
+
+See earlier comment; we have tried to both extend some of the presentation of the basic algorithms and slim down some of the applications section.  
 
 
 

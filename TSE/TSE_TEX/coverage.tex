@@ -39,7 +39,7 @@ Each mutant design changes the type of a single node to {\small \texttt{INPUT}}.
 To decrease the cost of computation, coverage analysis is performed at several stages; first, all the nodes that do not appear in the resolution proof of a given property are marked as \emph{not-covered}, and the rest of the nodes are marked as \emph{unknown}. Then, for the unknown nodes, the basic mutation check is performed: if a corresponding mutant design violates the property, it will be considered as \emph{covered}.
 \fi
 
-Unfortunately, previous metrics based on mutation are expensive to compute, as they involve running many different verification efforts against mutant models.  For example, given a mutant generator developed for testing Lustre programs~\cite{jkind}, the 50 largest models in the benchmark suite each had more than 30,000 mutants.  While it is possible to approximate mutation coverage scores using sampling~\cite{Zhang13:sampling}, samples still often require 5\% or more of the possible mutants.  One can also restrict the set of possible mutations~\cite{chockler2010coverage}, but this runs the risk of biasing the program to miss certain kinds of faults.
+Unfortunately, previous metrics based on mutation are expensive to compute, as they involve running many different verification efforts against mutant models.  For example, given a mutant generator developed for testing Lustre programs~\cite{jkind}, the 50 largest models in the benchmark suite each had more than 30,000 mutants.  While it is possible to approximate mutation coverage scores using sampling~\cite{Zhang13:sampling}, samples still often require 5\% or more of the possible mutants.  One can also restrict the set of possible mutations, but this runs the risk of biasing the program to miss certain kinds of faults.
 
 Thus, we propose a new family of metrics for measuring property completeness based on proofs and \mivc s rather than mutation.  These metrics are based on the notions of \mivc s and MAY and MUST elements introduced in the previous section.  The metrics have benefits in that they are cheaper to compute than previous metrics (especially the \mivc\ metric) and have a formal basis provided by proofs.
 
@@ -59,13 +59,13 @@ For the purposes of this discussion of coverage, without loss of generality, we 
 Given $S \in \aivc(P)$, $T_i$ is covered by $P$ via $S$ \emph{iff} $T_i \in S$.
 \end{definition}
 
-We call Definition \ref{def:coverage-justi} a \emph{proof-preserving} metric because, with a set of the model elements marked as covered by \ivccov ,
-$P$ is provable.  %Other notions, as will be discussed,
+%We call Definition \ref{def:coverage-justi} a \emph{proof-preserving} metric because, with a set of the model elements marked as covered by \ivccov ,
+%$P$ is provable.  %Other notions, as will be discussed,
 %may yield subsets of the model that are insufficient to
 %reconstruct the proof of the property.
 %\footnote{\noindent ~Throughout the paper, when a coverage metric is justifiable, like \ivccov, we say that it preserves provability of the property.}
 %Thus, the coverage score for \ivccov\ is often higher than the score for \nondetcov.
-The coverage score for \ivccov\ can be calculated with: $$\frac{|S|}{|T|}$$
+The coverage score for \ivccov\ can be calculated with: $$\frac{|S|}{|T|}$$  where $|T|$ is the number of conjuncts in $T$.  
 %Note that because minimal proofs are not unique, there are several possible coverage scores.
 Because $P$ may have multiple \mivc s,
   \ivccov\ metric can lead to various scores that belong to the following set:

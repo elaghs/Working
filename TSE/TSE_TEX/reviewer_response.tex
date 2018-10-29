@@ -368,12 +368,13 @@ This is a good point.  Roughly speaking, one can generate a linear multiple of m
 
 We have put in some data related to the number of mutants to provide a rough order of size.  However, it would be difficult for us to run the experiment across the whole data set in the time we have for revisions because it would take a very long time to run.  My concern with only running a subset is that we may skew the data.
 
-It is possible to approximate mutation scores by sampling mutants, but this requires a substantial amount of setup to perform properly: you must think about the distribution of operators and the number of mutants necessary to get a representative sample.  This is outside the scope of the current paper.
+It is possible to approximate mutation scores by sampling mutants, but this requires a substantial amount of setup to perform properly: you must think about the distribution of operators and the number of mutants necessary to get a representative sample, and it still requires a non-trivial fraction of mutants.  This is outside the scope of the current paper.
 
 \paragraph{(R3)}: \textit{Granularity is critical for any traceability task -- and these results are insightful. Could you report the granularity experiment more formally? In your final paragraph of section 8, which body of work are you referring to when you state that granularity is not discussed in prior work? Is this in the specification work or the traceability literature? In the traceability literature it has been discussed wrt OO design traceability (e.g., class, vs. object, vs. line of code) and in other areas. Please clarify -- I'm assuming you are referring to granularity in the Lustre model.}
 \vspace{0.05in}
 
-The work which I was discussing was the literature on coverage as defined on formal models.  We have tried to clarify this section. \mike{MWW: still need to do this!}
+The work which we were discussing was the literature on coverage as defined on formal models.  The important thing in our case is to make sure to point it out for our metrics.  In some of the metrics, such as the 2010 Chockler paper "Coverage in interpolation-based model checking", it is not discussed, and it can affect coverage scores.  However, in some of the earlier work, such as the earlier mutation papers, the metrics are invariant to the structure of the model, so does not really need to be discussed.  For this reason, we have removed this paragraph.
+
 
 \paragraph{(R3)}: \textit{To what extent are your techniques specific to your environment -- or generalizable to other specification languages and models? It appears they would be generalizable to any environment in which liveness and safety properties are modeled.}
 \vspace{0.05in}
@@ -401,14 +402,13 @@ Fixed!  This was an oversight - we chose the wrong version of the implementation
 \paragraph{(R4)}: \textit{I would also like more info about the experimental setup, Section 6.1: which benchmarks did you exclude then and why?}
 \vspace{0.05in}
 
-\mike{Elaheh: in the text we have the following: ``We selected only benchmark problems consisting of a Lustre model with properties that JKind could prove with a 3-hour timeout.'' Which models remained?  Aren't all of the models in the repo provable with this timeout?  If not, how many were excluded?}
+This is an oversight on our part.  I believe that this comment is in response to a sentence in the text: \textit{We selected only benchmark problems consisting of a Lustre model with properties that JKind could prove with a 3-hour timeout.}  However, *all* of the properties are provable within this timeout; no models were removed.  The longest proof time (close to an hour) was for the QFCS models.  We have removed this sentence from the paper!
 
-\ela{Mike all the models with valid properties are in there. Only invalid properties are removed. Honestly 3-hour timeout was very generous. Models were proved/disproved in the matter of minute. The longest proof time (close to an hour) was for the QFCS models. That's all. So it is completely true to say that we have all the models with valid properties for which JKind found proof within 3-hours.}
 
 \paragraph{(R4)}: \textit{"Discussion, in my opinion, is the weakest part of the paper. Some of the material presented there is not quite discussion. I know it was presented in earlier papers and the authors want it in the ""big"" one, but the treatment of the material is much lighter than the reset of the paper and having it weakens instead of strengthening the paper, IMHO. Some specific examples: Material in paragraph on p. 15, lines 48-54 is presented too quickly and more details are needed.  But the running example, ASW, does not need to be reintroduced again (lines 55-58).}
 \vspace{0.05in}
 
-\mike{Still some TBD...}
+%\mike{Still some TBD...}
 
 We have tried to slim this down, and generally re-balance the paper, including more material from the FSE paper, getting rid of some of the extended discussion on coverage, and include more information on traceabilty and applications.  Also, we have retitled the discussion section to be ``Illustration'' because that is what it is.
 
@@ -417,8 +417,8 @@ We have tried to slim this down, and generally re-balance the paper, including m
 
 We believe that the idea of granularity is conceptually important and should be raised, so as to prevent people from gaining unwarranted confidence in coverage scores.  On the other hand, the ``experimental'' discussion is, as you mention, entirely half-baked.  We have cut this section to focus on why the concept is important.
 
-\mike{Mats, Elaheh - what do you think?}
-\ela {Mike I removed granularity from the contributions. I don't know if it should be in a separate section as discussion, but I believe it is necessary to talk about granularity. Maybe as an ending for the coverage section, instead of a new section. But I don't see a problem with having a discussion section over granularity. Sure no contributions, but we should talk about it!}
+%\mike{Mats, Elaheh - what do you think?}
+%\ela {Mike I removed granularity from the contributions. I don't know if it should be in a separate section as discussion, but I believe it is necessary to talk about granularity. Maybe as an ending for the coverage section, instead of a new section. But I don't see a problem with having a discussion section over granularity. Sure no contributions, but we should talk about it!}
 
 \paragraph{(R4)}: \textit{Related work is well done, with the exception of the paragraph on p. 18, lines 15-29. It seems to be a separate new thought that should live in the discussion.}
 \vspace{0.05in}

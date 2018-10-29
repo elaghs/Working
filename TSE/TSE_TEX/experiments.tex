@@ -26,8 +26,8 @@ Our experiments are conducted on a set of benchmarks containing 660 Lustre model
 Most of the academic benchmark models are small (10kB or less, with 6-40 equations) and include a range of hardware benchmarks and software problems involving counters that are difficult to solve inductively.
 The industrial models are much larger; for example, each of the 80 problems from the infusion pump \cite{hilt2013} contain over 600 equations and are each $\geq$80kB in size. The benchmark includes 2 models from the NASA Quad-redundant Flight Control System (QFCS)~\cite{NFM2015:backes}: the Flight Control System (FCS) with 5259 Lustre equations and the Flight Control Computer (FCC) with 10969 equations.
 
-We selected only benchmark problems consisting of a Lustre model with
-properties that \jkind could prove with a 3-hour timeout.
+%We selected only benchmark problems consisting of a Lustre model with
+%properties that \jkind could prove with a 3-hour timeout.
 For each test model, we computed \aivcalg, \ucalg, and \ucbfalg ~algorithms in a configuration with the \texttt{Z3} solver and the ``fastest'' mode of \jkind (which involves running the $k$-induction and PDR engines in parallel and terminating when a solution is found). The experiments were run on an  Intel(R) i5-4690, 3.50GHz, 16 GB memory machine running Linux, and are available online~\cite{expr}.%\footnote{The benchmarks, tools, and experimental results are available on \cite{expr}.}
 
 

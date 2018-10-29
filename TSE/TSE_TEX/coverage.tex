@@ -65,7 +65,7 @@ Given $S \in \aivc(P)$, $T_i$ is covered by $P$ via $S$ \emph{iff} $T_i \in S$.
 %reconstruct the proof of the property.
 %\footnote{\noindent ~Throughout the paper, when a coverage metric is justifiable, like \ivccov, we say that it preserves provability of the property.}
 %Thus, the coverage score for \ivccov\ is often higher than the score for \nondetcov.
-The coverage score for \ivccov\ can be calculated with: $$\frac{|S|}{|T|}$$  where $|T|$ is the number of conjuncts in $T$.  
+The coverage score for \ivccov\ can be calculated with: $$\frac{|S|}{|T|}$$  where $|T|$ is the number of conjuncts in $T$.
 %Note that because minimal proofs are not unique, there are several possible coverage scores.
 Because $P$ may have multiple \mivc s,
   \ivccov\ metric can lead to various scores that belong to the following set:
@@ -277,7 +277,10 @@ $$\mustcov \leq \ivccov\ \leq \maycov\ $$
 %However, \ucalg might report some elements as covered, while they are not because of the minimality issue.
 %And, \mustalg reports some elements uncovered, while they are because it is not able to find \emph{may} elements.
 
-Table~\ref{tab:cov-score} describes the aggregate of the coverage scores returned by the analyses.  Across all benchmarks, the min and max coverage scores are the same, and as expected, the average number of elements required is smallest for the \mustalg\ algorithm and largest the for \ucalg\ algorithm.
+Table~\ref{tab:cov-score} describes the aggregate of the coverage scores returned by the analyses.  Across all benchmarks, the min and max coverage scores are the same, and as expected, the average number of elements required is smallest for the \mustalg\ algorithm and largest the for \ucalg\ algorithm. 
+At first glance, you might expect the average of coverage scores obtained from \maycov\ to be higher than the scores computed by \ivccov . However, this is not quite accurate; most of the models in our benchmark have only one \mivc . The \ivccov\ score for these models are calculated from the output of the \ucalg\ algorithm, which is not necessarily minimal. However, \maycov\ coverage scores are calculated from the output of \aivcalg\ algorithm, where minimality is guaranteed. Therefore, for the models with \emph{one} \mivc , sometimes \maycov\ yields lower coverage scores as apposed to \ivccov , which balances out the average scores by these metrics (Table \ref{tab:cov-score}).
+
+
 
 \begin{table}
   \caption{Coverage scores of different algorithms across all models}

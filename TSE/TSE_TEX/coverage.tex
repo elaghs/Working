@@ -9,7 +9,7 @@ Relatively recently, techniques have been devised for analyzing completeness of 
 Kupferman:2006:SCF,kupferman_theory_2008}.  These models are agnostic to the abstraction level of the implementation: implementations can be lower-level requirements, software architectures, or concrete implementations of system behavior.  The mechanism used is based on {\em mutation} and {\em proof}: is it possible to prove that the requirements still hold of the system after mutating the model in some way?  If so, then the requirements are incomplete with respect to that model element.
 
 
-\iffalse 
+\iffalse
 Mutations are ``atomic'' changes to the design, where the set of possible mutations depends on the notation that is used.  A mutant is ``killed'' if one of the properties that is satisfied by the original design is violated by the mutated design~\cite{chockler_coverage_2003,chockler2001practical,chockler2010coverage,Kupferman:2006:SCF,kupferman_theory_2008}.  There are many different kinds of mutations that have been proposed, primarily focused on checking sequential bit-level hardware designs.
 For these designs, {\em State-based} mutations flip the value of one of the bits in the state.  There are several variations depending on whether the flip is performed on a single state within a Kripke structure~\cite{hoskote1999coverage}, or in the description of the signal in the transition relation of the circuit~\cite{chockler2001practical}.  {\em Logic-based} mutations fix the value of a bit to constant zero or one, and can be used to determine whether properties can find stuck-at faults.  {\em Syntactic} mutations~\cite{chockler_coverage_2003} remove states in a control flow graph representation of hardware.
 Similarly, for software, it is possible to apply any of the ``standard'' source code mutation operators used for software testing~\cite{Andrews06:mutation} towards requirements coverage analysis.
@@ -39,11 +39,11 @@ Each mutant design changes the type of a single node to {\small \texttt{INPUT}}.
 To decrease the cost of computation, coverage analysis is performed at several stages; first, all the nodes that do not appear in the resolution proof of a given property are marked as \emph{not-covered}, and the rest of the nodes are marked as \emph{unknown}. Then, for the unknown nodes, the basic mutation check is performed: if a corresponding mutant design violates the property, it will be considered as \emph{covered}.
 \fi
 
-Unfortunately, previous metrics based on mutation are expensive to compute, as they involve running many different verification efforts against mutant models.  Given a mutant generator developed for testing Lustre programs~\cite{jkind}, the 50 largest models in the benchmark suite each had more than 30,000 mutants.  While it is possible to approximate mutation coverage scores using sampling~\cite{Zhang13:sampling}, samples still often require 5\% or more of the possible mutants.  One can also restrict the set of possible mutations~\cite{chockler2010coverage}, but this runs the risk of biasing the program to miss certain kinds of faults.
+Unfortunately, previous metrics based on mutation are expensive to compute, as they involve running many different verification efforts against mutant models.  For example, given a mutant generator developed for testing Lustre programs~\cite{jkind}, the 50 largest models in the benchmark suite each had more than 30,000 mutants.  While it is possible to approximate mutation coverage scores using sampling~\cite{Zhang13:sampling}, samples still often require 5\% or more of the possible mutants.  One can also restrict the set of possible mutations~\cite{chockler2010coverage}, but this runs the risk of biasing the program to miss certain kinds of faults.
 
 Thus, we propose a new family of metrics for measuring property completeness based on proofs and \mivc s rather than mutation.  These metrics are based on the notions of \mivc s and MAY and MUST elements introduced in the previous section.  The metrics have benefits in that they are cheaper to compute than previous metrics (especially the \mivc\ metric) and have a formal basis provided by proofs.
 
-For the purposes of this discussion of coverage, without loss of generality, we assume that the analysis is performed over a single property $P$ (which may represent the conjunction of all of the properties for the model).  
+For the purposes of this discussion of coverage, without loss of generality, we assume that the analysis is performed over a single property $P$ (which may represent the conjunction of all of the properties for the model).
 
 %they can {\em underapproximate} the portion of the model necessary for proof
 %can {\em underapproximate} which portions of an implementation model are necessary to produce a proof.
@@ -116,7 +116,7 @@ Algorithm \ref{alg:must} is also an efficient way of computing the \emph{must} s
 \caption{\mustalg: an algorithm to compute $\must(P)$ for a given $P$}
 \label{alg:must}
 \end{algorithm}
-\fi 
+\fi
 
 \iffalse
 It is still possible to build more relaxed coverage metrics in which coverage
@@ -139,7 +139,7 @@ The next definition, \allcov, formalizes this notion.
 
 \fi
 
-\iffalse 
+\iffalse
 Based on the categorization of elements, we will state a relationship about \mivc s in order to compare different proof-based metrics proposed earlier.
 
 \begin{lemma}
@@ -229,7 +229,7 @@ Immediate from Definition~\ref{def:minimal-ivc} and Definition \ref{def:coverage
 
 %It should be pointed out that \ivccov\ is accurate meaning that it does not result in false positives. In other words, since IVCs are \emph{minimal}, \ivccov\ does not mark
 %any \emph{actual} uncovered element as covered.
-\fi 
+\fi
 
 \iffalse
 Figure~\ref{fig:runtimeall} allows a visualization of the runtime of different coverage analyses
@@ -280,8 +280,6 @@ $$\mustcov \leq \ivccov\ \leq \maycov\ $$
 Table~\ref{tab:cov-score} describes the aggregate of the coverage scores returned by the analyses.  Across all benchmarks, the min and max coverage scores are the same, and as expected, the average number of elements required is smallest for the \mustalg\ algorithm and largest the for \ucalg\ algorithm.
 
 \begin{table}
-\mike{There is something wrong with this table - it does not line up with the graph.  The \ivccov \ with \ucalg\ is too close to \maycov.  It does not match the information in the graph}
-
   \caption{Coverage scores of different algorithms across all models}
   \centering
   \begin{tabular}{ |c||c|c|c|c| }
@@ -308,7 +306,7 @@ As for the \mustalg\ algorithm, the properties of 290 models in the benchmarks w
  and since more than half of the models are small, 43\% may still not reveal the actual degree
  to which \mustcov\ underapproximates the covered parts of a model.
   The notion of proof preservation is appealing because it allows a concrete demonstration to the user of the irrelevance of portions of the implementation.  The IVC coverage notion also allows, in cases where there are multiple minimal satisfying sets, insight on multiple ways by which the model meets a requirement.
-\fi 
+\fi
 
 %To conclude this section, we should mention that one can define many more proof-based coverage metrics based on the $\mivc$s and $\aivc$s.  Metrics that make use of the $\aivc$ relation are computationally more expensive than \ivccov.
 

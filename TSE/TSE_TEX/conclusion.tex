@@ -1,6 +1,7 @@
 \section{Conclusions \& Future Work}
 \label{sec:conc}
-In this paper, we have attempted to provide a comprehensive exposition of algorithms for computing minimal inductive validity cores.  We have examined both efficient algorithms for computing a single IVC and computing {\em all minimal} IVCs. We have shown
+In this paper, we have attempted to provide a comprehensive exposition of applications of and algorithms for computing minimal inductive validity cores for inductive model checkers.  The algorithms are general for any induction-based model checking tools, and though demonstrated for safety properties, can be straightforwardly adapted to liveness properties through standard transformations~\cite{Schuppan:2006} or small modifications to the induction algorithm~\cite{conf/fmcad/ClaessenS12}.
+We have examined both efficient algorithms for computing a single IVC and computing {\em all minimal} IVCs, and shown
 the correctness and completeness of our methods and algorithms.  In addition, we have a substantial evaluation that shows that the practicality and efficiency of our technique.
 %
 Our techniques have been adopted by our industrial partner Rockwell Collins and are being used in a number of tools used for verifying industrial critical systems.  We believe that IVCs offer insights into the results of formal verification that are not possible using alternate techniques, and that they could be important in addressing both traceability and requirements adequacy concerns from regulatory agencies when using formal verification for critical systems.

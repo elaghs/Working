@@ -81,11 +81,11 @@ Nevertheless, we could state this more clearly, especially as it relates to trac
 
 \textit{One important aspect of traceability that is often left unexamined is that of diversity. often there are multiple traceability matrices that could equally well be represent functional traceability (at least, in terms of proof).  Computing all IVCs exposes this diversity and may lead to a more complete understanding of system behavior.  Conversely, a single IVC may not provide a complete understanding of traceability.}
 
-\ela{Mike, I also add this before the definition of all MIVCs: Let me know if you'd like to change it back:}
-Note that, given $(I, T) \vdash P$, $P$ always has at least one \mivc, and it may also have many distinct {\mivc}s corresponding to different proof paths.
-For example, for a specification $G(p \cup q)$ and a system that satisfies $p$ and $q$, there are two possible \mivc s. Having the \mivc\ that contains $p$, one might conclude that the specification is vacuous in $q$. However, the set of all \mivc s shows that the property is not vacuous in $q$ or $p$, but it can be satisfied in two unique ways, which can point out other redundancy in the model or fault tolerance. The $\aivc$ relation has been introduced in \cite{Murugesan16:renext} to address such issues.
+%\ela{Mike, I also add this before the definition of all MIVCs: Let me know if you'd like to change it back:}
+%Note that, given $(I, T) \vdash P$, $P$ always has at least one \mivc, and it may also have many distinct {\mivc}s corresponding to different proof paths.
+%For example, for a specification $G(p \lor q)$ and a system that satisfies $p$ and $q$, there are two possible \mivc s. Having the \mivc\ that contains $p$, one might conclude that the specification is vacuous in $q$. However, the set of all \mivc s shows that the property is not vacuous in $q$ or $p$, but it can be satisfied in two unique ways, which can point out other redundancy in the model or fault tolerance. The $\aivc$ relation has been introduced in \cite{Murugesan16:renext} to address such issues.
 
-\ela{and another at the end of the first paragraph of section 4.2:} Note that minimum \mivc\ may not be unique either. And computing all \mivc s reveals all the minimum \mivc s.
+%\ela{and another at the end of the first paragraph of section 4.2:} Note that minimum \mivc\ may not be unique either. And computing all \mivc s reveals all the minimum \mivc s.
 
 
 \paragraph{R1:} \textit{It is also clear why the authors propose to compute a minimal core, rather than a minimum one, as the computation of a minimum one is, if I am not mistaken, $\Sigma_2$ complete (and it is not unique either - see the example above). Still, it would be helpful to have this discussion in the paper.}
@@ -103,12 +103,13 @@ In rare cases where there are {\em many} IVCs, it might be more efficient to foc
 \textit{
 One thing we have not explored is efficient techniques for producing a {\em minimum} as opposed to a {\em minimal} IVC.  Although minimum IVCs can be extracted from the set of all MIVCs, there are circumstances in which computing all MIVCs is impractical because of the number of possible MIVCs for the system.  By adding a size constraint to the MIVC query, it may be possible to search for successively smaller IVCs, leading to a more efficient approach to finding a single minimal IVC in these cases.  However, this makes the formula more complex, and (at least in our experiment) it was rare to have large numbers of MIVCs.}
 
-\ela{Mike, I added this. please remove it if unnecessary: }
+%\ela{Mike, I added this. please remove it if unnecessary: }
 \paragraph{R1:} \textit{Note that the same problem also arises when trying to compute coverage based on minimal IVCs. In fact, the example above also demonstrates that a set of states and signals can be considered covered or not covered depending on a particular IVC we consider.}
+
 \vspace{0.05in}
 We expanded the explanation after the first coverage metric to emphasize this issue was part of the fact we introduce other metrics that can address such issues:
 
-Note that if an \mivc ~contains all model elements (i.e., the model is {\em completely covered}), then there is only one possible \mivc , so in this case there is no diversity of scores. On the other hand, a set of states and signals can be considered covered or not covered depending on a particular \mivc\ we consider for coverage evaluation. To address this issue, we introduce additional coverage metrics using the notions of \may\ and \must.
+\textit{Note that if an \mivc ~contains all model elements (i.e., the model is {\em completely covered}), then there is only one possible \mivc , so in this case there is no diversity of scores. On the other hand, a set of states and signals can be considered covered or not covered depending on a particular \mivc\ we consider for coverage evaluation. To address this issue, we introduce additional coverage metrics using the notions of \may\ and \must.}
 
 \paragraph{R2:} First, a general comment by the authors: the definitional material has been reviewed over several conference papers and has not been previously problematic. Here we provide a point-by-point discussion of the issues raised by Reviewer 2 and hope that these will clarify the discussion.  We think that many of the reviewer's comments are related to a misunderstanding: the sets $S$ and $T$ are sets of {\em conjuncts}, that is, constraints, not sets of {\em states}.  This distinction is very important, as a larger set of conjuncts leads to a smaller set of satisfying states.
 
@@ -277,7 +278,7 @@ intuition behind the proposed construction. The intuition is not clear.}
 Model checking is not decidable for infinite state sequential problems.  This is a well-known result.  The claims involving infinite-state model checking demonstrate a lack of understanding of current model checking techniques by the reviewer.  We recommend the book {\em Principles of Model Checking} by Baier and Katoen for an-depth discussion of these topics and the paper {\em Generalized Property-Directed Reachability} by Hoder et. al.  and {\em $IC^{3}$ Modulo Theores via Implicit Predicate Abstraction} by Cimatti et. al. for more specific discussions of inductive techniques for infinite state model checking.
 
 
-\paragraph{Page 8, column 2}: \textit{What is sequential model-checking in this context?}
+\paragraph{(R2) Page 8, column 2}: \textit{What is sequential model-checking in this context?}
 \vspace{0.05in}
 
 
@@ -333,7 +334,7 @@ Fixed!
 \textit{Specifically, which aspects of the larger traceability picture are supported by IVCs and which are not? The technique provides traceability between properties and models (from which code is automatically generated), but what about all of the other life-cycle aspects of traceability? What about traceability to higher level hazards, architectural decisions, and test cases (if they exist)? How does it all fit together. Further, I assume that there would be some natural language textual requirements which must ultimately be translated into properties and models.       Please describe the context in which IVC would be applied -- especially wrt traceability and certification. It would be really helpful to see how IVC fits into the larger traceability picture for a system that is model driven and proof-based. What other artifacts are likely to be used and how will system-wide traceability be achieved that encompasses a more complete set of artifacts?}
 \vspace{0.05in}
 
-We have tried to clarify this considerably.  We have expanded the traceability section considerably, including adding a section (7.1.4) specifically on DO-178C compliance, and more discussion of how this fits into the AGREE tool and architectural reasoning.
+We have tried to clarify the kinds of traceability that can be performed.  We have expanded the traceability section considerably, including adding a section (7.1.4) specifically on DO-178C compliance, and more discussion of how this fits into the AGREE tool and architectural reasoning.
 
 \paragraph{(R3)}:
 \textit{Ideally, the paper would include a Traceability Information Model (similar to a database schema) showing artifacts, trace links, and the scope of IVC applicability. This would help to address (a).}
@@ -345,14 +346,14 @@ We have not included a Traceability Information Model; the applicability of the 
 \textit{(Clarification point) The paper states that ``none of the existing Satisfaction Argument literature discusses that issue that there are often multiple satisfaction arguments between a requirement and its implementation.'' Can you please clarify this? I understand that a specific requirement R1 and its properties may be satisfied using EITHER features A or B in the case of alternate satisfaction arguments. However, if this is the case then shouldn't there also be an additional requirement R2 describing some need for fault tolerance/redundancy -- and if not, then we would make the assumption that the authors claim. So Property P1 might be satisfied either using Features/Components A or B. This would be true; however, there also exists another fault tolerance property P2, which requires redundancy. Can you please address how your system deals with this type of scenario (which seems rather common). Presumably you need to take a more global perspective on determining whether code is superfluous. Actually your approach implies this; but the section on Satisfaction seems to take a more local perspective.}
 \vspace{0.05in}
 
-This is a good point (if I understand it correctly).  I believe that the point is: if you have a requirement that can be satisfied in multiple ways, then is it usually the case that you have another requirement such that both paths are required?  For example, you could have a requirement that talks about functional behavior (that can be satisfied in multiple ways) and another that talks about continuity of function even with a single component failure.  If I have understood correctly, then if the properties are specified separately, the system builds IVCs for each property separately.  So, the first property may have two IVCs and the second property one IVC.
+This is a good point (hopefully we understand it correctly).  We believe that the point is: if you have a requirement that can be satisfied in multiple ways, then is it usually the case that you have another requirement such that both paths are required?  For example, you could have a requirement that talks about functional behavior (that can be satisfied in multiple ways) and another that talks about continuity of function even with a single component failure.  If we have understood correctly, then if the properties are specified separately, the system builds IVCs for each property separately.  So, the first property may have two IVCs and the second property one IVC.
 
-Also, we have removed this verbiage from the paper.  The most important aspect is that this traceability information can be generated automatically and accurately; to make such a claim about satisfaction argument literature really should requires additional scoping on which literature is examined: are goal-driven models doing satisfaction?  If so, then perhaps we are being too bold in our claims, because they allow or-decompositions for goal satisfaction.
+We have removed the verbiage about multiple satisfaction arguments from the paper.  The most important aspect is that this traceability information can be generated automatically and accurately.  To make such a claim about satisfaction argument literature really should requires additional scoping on which literature is examined: are goal-driven models doing satisfaction?  If so, then perhaps we are being too bold in our claims, because goal-driven models allow or-decompositions for goal satisfaction.
 
 \paragraph{(R3)}: \textit{When you state that "previous completeness metrics can underapproximate which portions of a program are necessary..." are you referring to non-proof-based techniques e.g., test-case derived metrics?}
 \vspace{0.05in}
 
-In this case I was referring to the mutation-based formal coverage metrics, such as those by Chockler.  If you take only the elements that are claimed to be necessary by the metric, you often are no longer able to construct a proof, and in fact the remaining fragment of the model will violate the property of interest.
+In this case we were referring to the mutation-based formal coverage metrics, such as those by Chockler.  If you take only the elements that are claimed to be necessary by the metric, you often are no longer able to construct a proof, and in fact the remaining fragment of the model will violate the property of interest.
 
 This is not necessarily a problem with the metrics: they are concerned with completeness of coverage rather than provability, but it sometimes leads to counterintuitive results.  We have also de-emphasized this aspect of the coverage metrics: it is possible that one would like a very strong coverage metric for critical software even if it does not preserve provability.
 
@@ -368,23 +369,28 @@ This is a good point.  Roughly speaking, one can generate a linear multiple of m
 
 We have put in some data related to the number of mutants to provide a rough order of size.  However, it would be difficult for us to run the experiment across the whole data set in the time we have for revisions because it would take a very long time to run.  My concern with only running a subset is that we may skew the data.
 
-It is possible to approximate mutation scores by sampling mutants, but this requires a substantial amount of setup to perform properly: you must think about the distribution of operators and the number of mutants necessary to get a representative sample, and it still requires a non-trivial fraction of mutants.  This is outside the scope of the current paper.
+It is possible to approximate mutation scores by sampling mutants, but this requires a substantial amount of setup to perform properly: you must think about the distribution of operators and the number of mutants necessary to get a representative sample, and it still requires a non-trivial fraction of mutants.  We believe that this is outside the scope of the current paper.
 
 \paragraph{(R3)}: \textit{Granularity is critical for any traceability task -- and these results are insightful. Could you report the granularity experiment more formally? In your final paragraph of section 8, which body of work are you referring to when you state that granularity is not discussed in prior work? Is this in the specification work or the traceability literature? In the traceability literature it has been discussed wrt OO design traceability (e.g., class, vs. object, vs. line of code) and in other areas. Please clarify -- I'm assuming you are referring to granularity in the Lustre model.}
 \vspace{0.05in}
 
-The work which we were discussing was the literature on coverage as defined on formal models.  The important thing in our case is to make sure to point it out for our metrics.  In some of the metrics, such as the 2010 Chockler paper "Coverage in interpolation-based model checking", it is not discussed, and it can affect coverage scores.  However, in some of the earlier work, such as the earlier mutation papers, the metrics are invariant to the structure of the model, so does not really need to be discussed.  For this reason, we have removed this paragraph.
+The work which we were discussing was the literature on coverage as defined on formal models.  The important thing in our case is to make sure to point it out for our metrics.  In some of the metrics, such as the 2010 Chockler paper ``Coverage in interpolation-based model checking", it is not discussed, and it can affect coverage scores.  However, in some of the earlier work, such as the earlier mutation papers, the metrics are invariant to the structure of the model, so does not really need to be discussed.  For this reason, we have removed this paragraph.
 
 
 \paragraph{(R3)}: \textit{To what extent are your techniques specific to your environment -- or generalizable to other specification languages and models? It appears they would be generalizable to any environment in which liveness and safety properties are modeled.}
 \vspace{0.05in}
 
-The algorithms we have constructed work for any inductive model checker, and all current state of the art tools currently use induction (though this may change in the future).  The approach, though demonstrated on safety properties, can be equally well used for liveness properties based on current extensions of inductive tools to liveness (such as $k$-liveness by Cimatti et al)
+The algorithms we have constructed work for any inductive model checker, and all current state of the art tools currently use induction (though this may change in the future).  The approach, though demonstrated on safety properties, can be equally well used for liveness properties based on current extensions of inductive tools to liveness (such as $k$-liveness by Cimatti et al).  We have added the following to the conclusion: 
+
+\textit{These algorithms are general for any induction-based model checking tools, and though demonstrated for safety properties, can be straightforwardly adapted to liveness properties through standard transformations~\cite{Schuppan:2006} or small modifications to the induction algorithm~\cite{conf/fmcad/ClaessenS12}.}
 
 \paragraph{(R3)}: \textit{The claim that you get traceability for free is both 'true' and 'false' at the same time. True, because you already have the models defined and given those models, you can generate IVCs and achieve traceability, but false because   (a) you may need to decompose the models at levels that you otherwise wouldn't have needed to i.e., granularity discussion, and  (b) because of the cost of building those models.   Please be careful about describing the scope of this claim.}
 \vspace{0.05in}
 
-These are all good points.  We have moderated this claim.
+These are all good points.  We have moderated this claim.  We now state: \textit{Our goal
+was to automatically provide such trace links accurately and
+without human effort, provided that the proofs have been
+performed and that the tools are sufficiently scalable.}
 
 \paragraph{(R4) Page 6}: \textit{p. 6 (I am referring to number of pages out of 53, from the submission pdf). You assume that CHECKSAT and UNSATCORE are
 always terminating. What happens if these assumptions are violated?}
@@ -410,7 +416,7 @@ This is an oversight on our part.  I believe that this comment is in response to
 
 %\mike{Still some TBD...}
 
-We have tried to slim this down, and generally re-balance the paper, including more material from the FSE paper, getting rid of some of the extended discussion on coverage, and include more information on traceabilty and applications.  Also, we have retitled the discussion section to be ``Illustration'' because that is what it is.
+We have restructured the portions of the paper dealing with discussions.  First, we have added a discussions section to the experiment, where we bring up issues related to performance and diversity of IVCs.  The section that was previously called discussion is really relevant only to traceability and completeness, and so we have slimmed it down and moved it into a subsection of Section 7 (applications).  Also, we have retitled the discussion section to be ``Illustration'' because that is what it is: an illustration of the traceability and coverage metrics for our running example.
 
 \paragraph{(R4)}: \textit{Granularity is a new idea, or at least it is claimed as novel in the contributions, but it is again presented in a way that is too much for a discussion and too little for a technical contribution. Furthermore, section 8.1 is the sole subsection of the paper - a better organization of the section is needed.  The last two paragraphs of section 8.1 are also troublesome - not quite an experiment and not quite a discussion and not quite a contribution.  I would recommend removing granularity from the paper altogether!}
 \vspace{0.05in}

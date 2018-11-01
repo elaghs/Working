@@ -36,7 +36,7 @@ For these models after performing proofs, \mivc\ elements each correspond to the
 
 \subsubsection{Characterizing Target Artifacts}
 
-%As discussed above, we believe that a single \mivc\ provides a reasonable notion of traceability for both requirements refinement and mapping to implementation elements.  
+%As discussed above, we believe that a single \mivc\ provides a reasonable notion of traceability for both requirements refinement and mapping to implementation elements.
 By defining a requirements satisfaction trace from a requirement to \mivcs\ we have a clear definition of \emph{sufficient} set of trace links---a set that identifies all implementation and environment elements needed to make \emph{one} satisfaction argument. Similarly, we can discuss a \emph{complete} set of trace links---the set that identifies all implementation and environment elements needed to make \emph{all} satisfaction arguments.
 
 \begin{figure}[htb]
@@ -76,9 +76,13 @@ Section 6.3 describes Software Reviews and Analyses for each of the artifacts pr
 
 Section 6.5 describes {\em Software Verification Process Traceability}, which provides bi-directional traceability between software requirements and tests.  Also, much of the focus of the Software Configuration Management Process activities in Chapter 7 are related to traceability; in particular Section 7.2.2 {\em Baselines and Traceability}, which describes traceability with respect to modifications of baselined software tools and libraries as well as {\em configuration items}, which are any items that are associated with the software development process for the software to be constructed.
 
-The traceability ideas related to \mivcs\ can be applied to proofs between all levels and types of requirements and source code, but require that the requirements are formalized as called out in the DO-178C process.  There are 71 total objectives in DO-178C, of which 6 may be addressible by our technique, as shown in Table~\ref{tab:do178c}.  The traceability provided by \mivcs\ can demonstrate traceability between different layers of requirements and source code.  The determinant of success is the level of formality of the modeling effort for the system requirements and architecture.  If model checking is applied to show conformance of several architectural levels (as in~\cite{QFCS15:backes,hilt2013}), then traceability can be generated alongside the proof results.   In addition, the proof process itself can be used to address several more of the compliance objectives, but this is outside the scope of the current paper.
+The traceability ideas related to \mivcs\ can be applied to proofs between all levels and types of requirements and source code, but require that the requirements are formalized as called out in the DO-178C process.  There are 71 total objectives in DO-178C, of which 6 may be addressible by our technique, as shown in Table~\ref{tab:do178c}.  The first three objectives are {\em development} objectives, which call out traceability between artifacts, and the second three are {\em verification} objectives in which you demonstrate this traceability.
 
-On the other hand, IVCs as currently conceived cannot be used to assist with traceability related to configuration management and software testing, as these aspects are not part of the proof process.  Interestingly, there are no specific traceability objectives in DO-178C associated with architecture and design activities, though there are other objectives related to conformance to requirements that are required.  In addition, at some level of abstraction, requirements become (of necessity) informal; at this level it is no longer possible to apply proof and so \mivcs\ cannot be derived.  We have not yet looked outside the DO-178 process to broader certification and safety concerns such as hazard analysis, but leave this as topic for future work.
+In theory, the traceability data provided by \mivcs\ can demonstrate traceability between different layers of requirements and source code.  In practice, the determinant of success is the level of formality of the modeling effort for the system requirements and architecture and the analyzability of the models.  If model checking is applied to show conformance of several architectural levels (as in~\cite{QFCS15:backes,hilt2013}), then traceability can be generated alongside the proof results.   In addition, the proofs themselves can be used to address several more objectives relating to compliance, but this use is outside the scope of the current paper.
+
+On the other hand, IVCs as currently conceived cannot be used to assist with traceability related to configuration management and software testing, as these aspects are not part of the proof process.  Interestingly, there are no specific traceability objectives in DO-178C associated with tying requirements to architecture and design activities, though there are other objectives related to conformance to requirements that are required.  
+
+In addition, at some level of abstraction, requirements become (of necessity) informal; at this level it is no longer possible to apply proof and so \mivcs\ cannot be derived.  We have not yet looked outside the DO-178 process to broader certification and safety concerns such as hazard analysis, but leave this as a topic for future work.
 
 \begin{table*}
   \caption{DO-178C Certification Objectives}
@@ -100,9 +104,11 @@ On the other hand, IVCs as currently conceived cannot be used to assist with tra
 
 \iffalse
 DO-178C currently uses a variety of metrics to determine adequacy of requirements, but much of the effort involves code-level testing.  Test suites are derived from requirements and used to test the software and measured using different structural coverage test metrics.  If code-level test suites do not achieve full coverage, then an analysis is performed to determine whether there are missing requirements and test cases.  The kind of structural coverage required (e.g., statement, branch, MCDC) for adequate testing is driven by the criticality of the software in question.
-\fi 
+\fi
 
-The utility of the IVCs are being evaluated by Rockwell Collins on a pilot project for both traceability and adequacy checking \cite{lucas17}. Previously, bi-directional traceability between artifacts involved tedious manual peer review to determine that requirements were adequate and that additional functionality was not introduced in the implementation model. IVCs offer automation to satisfy the DO-178C objectives related to traceability and adequacy, which is a very important use in providing certifications.
+The utility of the IVCs are being evaluated by Rockwell Collins on a pilot project for both traceability and adequacy checking \cite{lucas17}. Previously, bi-directional traceability between artifacts involved tedious manual peer review to determine that requirements were adequate and that additional functionality was not introduced in the implementation model. The goal of this effort is to eventually be able to automate much of the functional traceability information necessary for the DO-178C certification objectives described in this section.
+
+%IVCs offer automation to satisfy the DO-178C objectives related to traceability and adequacy, which is a very important use in providing certifications.
 
 
 %, so neither does a change in these artifacts affect the satisfaction of the requirement, nor does a change in the requirement necessitate a change in these elements (at least in terms of satisfaction)

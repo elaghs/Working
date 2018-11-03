@@ -7,7 +7,7 @@
 
 Now, we turn to the problem of finding {\em all} minimal IVCs.  By definition, this approach allows us to find the {\em minimum} IVC in terms of number of elements (which may not be unique), and it allows us to explore the {\em diversity} of proofs for a particular property. Note that minimum \mivc\ may not be unique either. And computing all \mivc s reveals all the minimum \mivc s.
 
-Considering the definition of a \mivc, a brute-force technique for enumerating all \mivc s would be the same as exploring the power set of $T$ (denoted by $ \mathcal{P}(T) $).
+Considering the definition of an \mivc, a brute-force technique for enumerating all \mivc s would be the same as exploring the power set of $T$ (denoted by $ \mathcal{P}(T) $).
 Basically, the algorithm needs to explore the provability of a
 given property by any subset of $T$, which would be computationally expensive.  Our approach is an adaptation of the work of MARCO for generating all minimal unsatisfiable subsets (MUSes) in~\cite{marco2016fast}, and only needs to explore a (small) portion of $\mathcal{P}(T)$ in order to compute $\aivc$.  In fact, it can be viewed as an instantiation of the MARCO proof schema for the richer theory of sequential model checking.  We begin by introducing several additional notions and definitions, most of which are analogous or equivalent to those in~\cite{marco2016fast}.
 
@@ -76,7 +76,7 @@ $\mathcal{P}(T)$ from consideration. For example, if a set $S \in
 also inadequate and do not need to be explicitly considered. Second,
 if a set $S \in \mathcal{P}(T)$ is found to be adequate, then a fast
 algorithm (such as \ucalg\ from \cite{Ghass16}) is used to find a
-smaller $S' \subseteq S$ which is still adequate. This feeds into the
+smaller $S' \subseteq S$ that is still adequate. This feeds into the
 first optimization since now all supersets of $S'$ rather than $S$ are
 blocked from future consideration.
 
@@ -149,7 +149,7 @@ at least one $S \in \aivc(P)$ or one \mis\ of $T$ is unexplored.
 \begin{IEEEproof}
 Let $map$ is satisfiable with a model $M$, and let $S = \bigcup_{a_i
   \in M} \actlit ^{-1} (a_i)$ be the corresponding set of
-$\mathcal{P}(T)$. If $S$ is adequate, then it contains a \mivc. That
+$\mathcal{P}(T)$. If $S$ is adequate, then it contains an \mivc. That
 \mivc\ must not be explored since otherwise $S$ would have been blocked
 from consideration. The \mivc\ must not be excluded since it is not a
 strict superset of any adequate set (by minimality) nor a subset of
@@ -228,7 +228,7 @@ We also assume there is a function \isadeq\ that checks whether or
 not $P$ is provable by a given subset of $T$.  Note that from Theorem~\ref{thm:minimal-hard}, finding a minimal IVC is (in general) undecidable if the original checking problem is undecidable.  Thus, for undecidable model checking problems, \isadeq\  can return \unknown ~(after a user-defined timeout) as well as \adequate\ or \inadequate.
 For a given set $S$, if our implementation is unable to prove the property, we conservatively assume that the property is falsifiable and set a warning flag $w$ to the user that the results may be approximate.  %Using this function, the
 %adequacy of $S$ is determined in line 8.
-if $S$ is adequate, a \mivc
+if $S$ is adequate, an \mivc
 ~is computed by \getivc ~and added to set $A$ (lines 10-11).\footnote{Note
   that \isadeq ~can be any method that verifies a safety property,
   such as K-induction, and the \getivc\ function can be any function

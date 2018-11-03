@@ -247,8 +247,7 @@ Therefore, $S$ is minimal if and only if $(I, T)\nvdash P$.
 
 When minimality is important, we can combine \bfalg\ and \ucalg\ into
 a single algorithm which aims to more efficiently determine minimality.  The
-hybrid algorithm, \ucbfalg\ (Algorithm \ref{alg:ucbf}), consists of running \ucalg\ to generate an
-initial nearly minimal IVC which is then run through \bfalg\ to
+hybrid algorithm, \ucbfalg\ (Algorithm \ref{alg:ucbf}), consists of running \ucalg\ to generate an initial nearly minimal IVC that is then run through \bfalg\ to
 attempt to achieve minimality.   For sequential model checking problems with infinite theories, neither \bfalg\ or \ucbfalg\ is guaranteed to terminate, so our implementations simply time out after a set threshold (discussed in more detail in the implementation Section~\ref{sec:impl}).  If no proof can be found within a certain time threshold after removing a model element, we declare that element necessary to the proof. In Section~\ref{sec:experiment} we show that in practice our algorithm is nearly
 minimal and much more efficient than the brute-force approach.
 

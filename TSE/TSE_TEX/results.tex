@@ -100,8 +100,8 @@ For small models, much of this penalty is due to starting many instances of the 
 
 Fig.~\ref{fig:modelsize} shows two distinct trends.  First, for models that only have a single MIVC, the \aivcalg\ is roughly similar in performance to the \ucbfalg.  There are outliers in which the \aivcalg\ algorithm underperforms the \ucbfalg\ algorithm by an order of magnitude, but for most models, the performance is similar, and for some models, \aivcalg\ outperforms the brute-force algorithm.
 % Ela: I rewrite the rest of the paragraph based on what I see in QFC
-%However, as proofs become more expensive for a single MIVC, the \aivcalg\ begins to underperform the \ucbfalg , this is the case for the properties with one MIVC.  
-In the cases where several MIVCs are found, the the \aivcalg\ algorithm is usually significantly more expensive to compute than the \ucbfalg\ algorithm.  
+%However, as proofs become more expensive for a single MIVC, the \aivcalg\ begins to underperform the \ucbfalg , this is the case for the properties with one MIVC.
+In the cases where several MIVCs are found, the the \aivcalg\ algorithm is usually significantly more expensive to compute than the \ucbfalg\ algorithm.
 
 \takeaway{The performance of the \aivcalg\ algorithm is largely dependent on the number of \mivc s that exist for the model.  The more \mivc s exist, the more expensive it is to compute.}
 
@@ -111,18 +111,16 @@ For this research question, we analyzed the minimality of the produced IVCs by e
 
 Since 515 of the models had only one MIVC, for these models, the size of the minimum model produced by the \aivcalg\ algorithm should be (and is) the same as the \ucbfalg\ algorithm.  For the remainder, even when multiple MIVCs were produced, in only 47 cases did the \aivcalg\ produce smaller minimal IVCs.  For these 47 models, the smallest MIVC was 44\% the size of the MIVC produced by \ucbfalg, and in the most dramatic case, the number of elements shrank from 62 to 35. %\ela{actually, both cases are about one model}
 
-The final question asks how well the approach compares to {\em backwards static slicing}~\cite{Tip95asurvey}, since slicing also reduces the set of model elements necessary to construct a proof.  We start the slice from the equation defining the property of interest, and use the usual approach~\cite{Gaucher03:slicing} that performs an iterative backward traversal from the variables used within an equation to their defining equations.  We expect the IVC mechanism to be more precise, because the slice overapproximates the set of equations necessary for {\em any} proof.  This claim is demonstrated in Figure~\ref{fig:size}; averagely, slices are 574\% larger than the IVCs produced by our \ucalg\ algorithm and 597\% larger than those produced by \ucbfalg\ algorithm.
+The final question asks how well the approach compares to {\em backwards static slicing}~\cite{Tip95asurvey}, since slicing also reduces the set of model elements necessary to construct a proof.  We start the slice from the equation defining the property of interest, and use the usual approach~\cite{Gaucher03:slicing} that performs an iterative backward traversal from the variables used within an equation to their defining equations.  We expect the IVC mechanism to be more precise, because the slice overapproximates the set of equations necessary for {\em any} proof.  This claim is demonstrated in Figure~\ref{fig:size}; on average, slices are 574\% larger than the IVCs produced by our \ucalg\ algorithm and 597\% larger than those produced by \ucbfalg\ algorithm.
 
 \takeaway{All \mivc\ algorithms generate much smaller cores than slicing.}
 
 \subsection{Discussion}
 
-\subsection{Discussion}
-
 In the previous section, we presented several algorithms for determining
-single or all inductive validity cores.  For single \mivcs, we started from a baseline brute-force algorithm that is guaranteed minimal, but is often very slow.  We then constructed an UNSAT-core-based algorithm \ucalg, and a hybrid algorithm \ucbfalg.  
+single or all inductive validity cores.  For single \mivcs, we started from a baseline brute-force algorithm that is guaranteed minimal, but is often very slow.  We then constructed an UNSAT-core-based algorithm \ucalg, and a hybrid algorithm \ucbfalg.
 The \ucalg algorithm is much faster, but is
-not guaranteed to be minimal; the result of this algorithm can be
+not guaranteed to generate minimal IVCs; the result of this algorithm can be
 further, and sometimes quickly, refined by the combined algorithm.
 Thus, we can choose to trade off speed for guaranteed minimality using
 these two algorithms; the combined algorithm can be viewed as a

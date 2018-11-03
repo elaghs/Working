@@ -29,7 +29,7 @@ In this section we show how traceability and coverage analyses can be performed 
 
 We illustrate the results with traceability matrices produced by the \agree\ tool suite~\cite{NFM2012:CoGaMiWhLaLu}.  We have extended this tool to add graphical support for displaying adequacy and traceability results.  Screenshots for our running example are shown in Figures~\ref{fig:propertyset1} and~\ref{fig:propertyset4}.
 
-We first formulate two requirements that describe when the ASW should be {\em on} and when it should be {\em off} as follows: 
+We first formulate two requirements that describe when the ASW should be {\em on} and when it should be {\em off} as follows:
 
 %\begin{definition} {\emph{ASW Requirements Version 1} }
 {\smaller
@@ -125,7 +125,7 @@ As shown in Figure~\ref{fig:propertyset4}, the measures again coincide and inclu
 
 \iffalse As mentioned, IVCs are derived from inductive invariants; in other words, they are built upon the proof of the validity of a given property. One interesting fact about proofs
   is that a given property could be proved from different proof paths.
-  The $\aivc$ captures this fact and gives a clear picture of various ways a property is satisfied. By getting all the MIVCs for the system properties and categorizing them, one can find if there are design artifacts that do not trace to any property: set $\bigcap \{IRR (P) | P \in \Delta \}$.  If this set is non-empty, it is a possible indication of ``gold plating" or missing properties \cite{Murugesan16:renext}.
+  The $\aivc$ captures this fact and gives a clear picture of various ways a property is satisfied. By getting all the MIVCs for the system properties and categorizing them, one can find if there are design artifacts that do not trace to any property: set $\bigcap \{IRR (P) | P \in \Delta \}$.  If this set is non-empty, it is a possible indication of ``gold plating'' or missing properties \cite{Murugesan16:renext}.
 \fi
 
 \subsection{Granularity}
@@ -151,7 +151,7 @@ Unfortunately, such decompositions also appear to slow model checking performanc
 We have implemented a transformation that splits Lustre models into {\em totally decomposed} models.  In a small initial experiment involving 30 of the original models, we performed our transformation and re-ran the analysis.  By changing the granularity of the model, the analysis tools perform significantly slower for proofs, but the ratio of performance between the proof and the \ucalg\ and \mustalg\ algorithms is largely unchanged.  However, on some models, the \mustalg\ algorithm becomes unacceptably slow (analysis times of tens of hours) and occasionally causes the solver to run out of memory.
 
 The issue of granularity of models is significant, but to the best of our knowledge, is not discussed in previous work.  In our approach, we allow the user to choose the level of granularity, but in certain cases, this may lead to misleading answers when checking the adequacy of requirements.  This aspect will be a focus of our future work, especially in situations in which the tool determines that a set of requirements is {\em complete}.  We believe that it is possible to substantially optimize the n{\"a}ive preprocessing algorithm that we have presented.
-\fi 
+\fi
 %\subsection{Use in Certification}
 %Airborne software must undergo a rigorous software development process to ensure its airworthiness. This process is governed by DO-178C: Software Considerations in Airborne Systems and Equipment Certification \cite{DO178C} and when formal methods tools are used, DO-333: Formal Methods Supplement to DO-178C and DO-278A \cite{DO333}. DO-178C proposes a rigorous software development process that starts with an abstract requirements artifact that is iteratively refined into a software designs, source code, and finally, object code, and a set of {\em objectives} that should be met by critical avionics software.  Two of the key tenets of this process are traceability and adequacy; that is, each refinement of an artifact must be traceable to the artifact if was derived from. Further, each refinement must be shown not to introduce functionality not present in the artifact from which it was derived (adequacy). For example, DO-178C objectives A-3.6 (traceability of high-level requirements to system requirements) and A-4.6 (traceability of software design to high-level requirements) specifically require applicants to demonstrate bi-directional traceability.
 %

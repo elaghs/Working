@@ -48,7 +48,7 @@ By further abuse of notation,
 $T$ is identified with the set of its top-level conjuncts. Thus, $T_i \in
 T$ means that $T_i$ is a top-level conjunct of $T$, and $S
 \subseteq T$ means all top-level conjuncts of $S$ are top-level
-conjuncts of $T$. When a top-level conjunct $T_i$ is removed from $T$, we write $T \setminus \{T_i\}$. Such a transition system can easily encode our example model in Section~\ref{sec:example}, where each equation defines a conjunct within $T$ that we will denote by the variable assigned; so, $T = \{$ {\small \texttt{a1\_below, a2\_below, a1\_above, a2\_above, below, above\_hyst, doi\_on, d1, d2}} $\}$.  For an example of a complete translation from Lustre into a transition relation, please see Section~ref{sec:lustre}.
+conjuncts of $T$. When a top-level conjunct $T_i$ is removed from $T$, we write $T \setminus \{T_i\}$. Such a transition system can easily encode our example model in Section~\ref{sec:example}, where each equation defines a conjunct within $T$ that we will denote by the variable assigned; so, $T = \{$ {\small \texttt{a1\_below, a2\_below, a1\_above, a2\_above, below, above\_hyst, doi\_on, d1, d2}} $\}$.  For an example of a complete translation from Lustre into a transition relation, please see Section~\ref{sec:lustre}.
 
 \begin{definition}{\emph{Inductive Validity Core (\ivc):}}
   \label{def:ivc}
@@ -107,7 +107,7 @@ do not affect the satisfaction of $P$.  For comparison, note that a backwards st
 
 %Distinct IVCs may have common elements, and the intersection of all \mivc s is called the \emph{must} set for $P$.
 
-Generally, an IVC computation technique aims to determine, for any subset $S \subseteq T$, whether $P$ is provable by $S$. Then, a minimal subset that satisfies $P$ is seen as a minimal proof explanation called a minimal Inductive Validity Core.
+Generally, an IVC computation technique aims to determine, for any subset $S \subseteq T$, whether $P$ is provable by $S$.  A minimal subset that satisfies $P$ is seen as a minimal proof explanation, called a minimal Inductive Validity Core.
 
 
 \subsection{Algorithms for computing one inductive validity core}

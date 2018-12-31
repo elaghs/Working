@@ -18,7 +18,7 @@
 \end{algorithm}
 
 Lemma \ref{lem:ivc-monotonic} gives us a simple, brute-force algorithm for computing
-a minimal inductive validity core, Algorithm \ref{alg:naive} ~(\bfalg). The
+a minimal inductive validity core, shown in Algorithm \ref{alg:naive} ~(\bfalg). The
 resulting set of this algorithm is obviously an inductive validity
 core for $(I, T)\vdash P$. The following lemma shows that it is also
 minimal.
@@ -169,7 +169,7 @@ $k$-inductive for $(I, T)$ and $P \in R$. Like \mink, this function
 only checks the inductive query since each element of $R$ is an
 invariant and therefore will always pass the base query. A significant
 complication for reducing invariants is that some invariants may
-mutually need each other, even though none of them are needed to prove
+mutually require each other, even though none of them are needed to prove
 $P$. Thus in Algorithm~\ref{alg:reduce-invariants} we find a minimal
 set of invariants needed to prove $P$, then we find a minimal set of
 invariants to prove those invariants, and so on. We terminate when no
@@ -248,8 +248,8 @@ Therefore, $S$ is minimal if and only if $(I, T)\nvdash P$.
 When minimality is important, we can combine \bfalg\ and \ucalg\ into
 a single algorithm which aims to more efficiently determine minimality.  The
 hybrid algorithm, \ucbfalg\ (Algorithm \ref{alg:ucbf}), consists of running \ucalg\ to generate an initial nearly minimal IVC that is then run through \bfalg\ to
-attempt to achieve minimality.   For sequential model checking problems with infinite theories, neither \bfalg\ or \ucbfalg\ is guaranteed to terminate, so our implementations simply time out after a set threshold (discussed in more detail in the implementation Section~\ref{sec:impl}).  If no proof can be found within a certain time threshold after removing a model element, we declare that element necessary to the proof. In Section~\ref{sec:experiment} we show that in practice our algorithm is nearly
-minimal and much more efficient than the brute-force approach.
+attempt to achieve minimality.   For sequential model checking problems with infinite theories, neither \bfalg\ or \ucbfalg\ is guaranteed to terminate, so our implementations simply time out after a set threshold (discussed in more detail in the implementation Section~\ref{sec:impl}).  If no proof can be found within a certain time threshold after removing a model element, we declare that element necessary to the proof. In Section~\ref{sec:experiment} we show that in practice our \ucalg\ algorithm is nearly
+minimal and much more efficient than brute-force approaches.
 
 \begin{algorithm}
   \SetKwInOut{Input}{input}

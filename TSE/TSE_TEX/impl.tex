@@ -13,9 +13,9 @@ used as an input language for various model checkers. The textual
 models in Figures~\ref{fig:ex-before}, \ref{fig:ex-after}, and \ref{fig:asw} are
 written in Lustre. We will use model in Figure~\ref{fig:ex-before} as
 a running example in this section. For our purposes, a Lustre program
-consists of 1) input variables, {\tt x} in the example, 2) output
-variables, {\tt a}, {\tt b}, and {\tt y} in the example, and 3) an
-equation for each output variable. A Lustre program runs over discrete
+consists of 1) {\em input variables}: {\tt x} in the example, 2) {\em output
+variables}: {\tt a}, {\tt b}, and {\tt y} in the example, and 3) an
+{\em equation} assigning each output variable. A Lustre program runs over discrete
 time steps. On each step, the input variables take on some values and
 are used to compute values for the output variables on the same step.
 In addition, equations may refer to the previous value of a variable
@@ -60,7 +60,7 @@ as the IVC of a Lustre property can be reported in terms of the output
 variables whose equations are part of the IVC. Equivalently, the
 interpretation of an IVC for a Lustre property is that any output
 variable that is not part of the IVC can be turned into an input
-variable, its equation thrown away, while preserving the validity of
+variable and its equation thrown away, while preserving the validity of
 the property. Thus the granularity of the IVC analysis is determined
 by the granularity of the Lustre equations and can be adjusted by
 introducing auxiliary variables for subexpressions if desired.  The idea of granularity will be discussed in more detail in Section~\ref{sec:granularity}.

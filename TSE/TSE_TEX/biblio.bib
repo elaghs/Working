@@ -221,7 +221,8 @@ url="https://doi.org/10.1007/s10817-007-9084-z"
 
 @misc{jasper_gold,
     title = {{Cadence JasperGold Formal Verification Platform}},
-    howpublished = {\url{https://www.cadence.com/}}
+    howpublished = {\url{https://www.cadence.com/}},
+    year = 2017
 }
 
 @inproceedings{NFM2012:CoGaMiWhLaLu,
@@ -240,7 +241,8 @@ url="https://doi.org/10.1007/s10817-007-9084-z"
 
 @misc{Synopsys_VC_formal,
     title = {{Synopsys VC Formal Platform}},
-    howpublished = {\url{https://www.synopsys.com}}
+    howpublished = {\url{https://www.synopsys.com}},
+    year=2017
 }
 
 @inproceedings{QFCS15:backes,
@@ -614,11 +616,15 @@ ISSN={0098-5589},}
     year = {1999}
 }
 
-@ARTICLE{Kupferman03:Vacuity,
-  AUTHOR={O. Kupferman and M. Y. Vardi},
-  TITLE={Vacuity Detection in Temporal Model Checking},
-  JOURNAL ={STTT},
-  YEAR ={2003}
+@article{Kupferman03:Vacuity,
+  title={Vacuity detection in temporal model checking},
+  author={Kupferman, Orna and Vardi, Moshe Y},
+  journal={International Journal on Software Tools for Technology Transfer (STTT)},
+  volume={4},
+  number={2},
+  pages={224--233},
+  year={2003},
+  publisher={Springer}
 }
 
 @article{Miller10:CACM,
@@ -706,19 +712,17 @@ ISSN={0098-5589},}
 	journal = {Correct hardware design and verification methods},
 	author = {Chockler, H. and Kupferman, O. and Vardi, M.},
 	year = {2003},
-	pages = {111-125}
+	pages = {111-125},
+ volume={LNCS 2860},
+  organization={Springer}
 }
 
-@MISC{DO178C,
-    author = {RTCA/DO-178C},
-    title = {Software Considerations in Airborne Systems and Equipment Certification},
-    year = {}
-}
 
 
 @Book{MOD:00-55,
   title =    {Requirements for Safety Related Software in Defence
                   Equipment, Issue 2},
+  author = {DEF STAN 00-55},
   publisher =    {UK Ministry of Defence},
   year =     {1997},
   key = "MOD0055"
@@ -772,11 +776,14 @@ ISSN={0098-5589},}
  year = {2013}
 }
 
-@TECHREPORT{Dutertre06:yices,
-    author = {Bruno Dutertre and Leonardo De Moura},
-    title = {The {YICES} {SMT} Solver},
-    institution = {SRI},
-    year = {2006}
+@article{Dutertre06:yices,
+  title={The {YICES} {SMT} Solver},
+  author={Dutertre, Bruno and De Moura, Leonardo},
+  journal={Tool paper at http://yices. csl. sri. com/tool-paper. pdf},
+  volume={2},
+  number={2},
+  pages={1--2},
+  year={2006}
 }
 
 @incollection{DeMoura08:z3,
@@ -1041,8 +1048,10 @@ year={2006}
 @inproceedings{zhang2003extracting,
   title={Extracting small unsatisfiable cores from unsatisfiable boolean formula},
   author={Zhang, Lintao and Malik, Sharad},
-  booktitle = {SAT'03}
-  year = {2003}
+  journal={6th International Conferences on
+Theory and Applications of Satisfiability Testing (SAT 2003)},
+  volume={LNCS 2919},
+  year={2003}
 }
 
 @inproceedings{Weiser:1981:slicing,
@@ -1212,13 +1221,11 @@ url="http://dx.doi.org/10.1007/3-540-63166-6_28"
  keywords = {Vacuity detection},
 }
 
-@ARTICLE{Tip95asurvey,
-    author = {F. Tip},
-    title = {A Survey of Program Slicing Techniques},
-    journal = {JOURNAL OF PROGRAMMING LANGUAGES},
-    year = {1995},
-    volume = {3},
-    pages = {121--189}
+@book{Tip95asurvey,
+  title={A survey of program slicing techniques},
+  author={Tip, Frank},
+  year={1994},
+  publisher={Centrum voor Wiskunde en Informatica}
 }
 
 @incollection{torlak2008finding,
@@ -1323,13 +1330,13 @@ title={Scaling Up the Formal Verification of Lustre Programs with SMT-Based Tech
 year={2008}
 }
 
-@TechReport{Gaucher03:slicing,
-    author={F. Gaucher},
-    Title={Slicing Lustre Programs},
-    Institution = {VERIMAG},
-    Address = {Grenoble},
-    Month = {February},
-    Year = {2003}
+@techreport{Gaucher03:slicing,
+  title={Slicing lustre programs},
+  author={Gaucher, Fabien},
+  year={2003},
+  institution={Technical report, VERIMAG, Grenoble},
+  Number ={TR-2003-1},
+  Month = {February},
 }
 
 @incollection{murugesan2015we,
@@ -1527,14 +1534,6 @@ doi="10.1007/s10601-015-9183-0",
 url="http://dx.doi.org/10.1007/s10601-015-9183-0"
 }
 
-
-@inproceedings{zhang2003extracting,
-  title={Extracting small unsatisfiable cores from unsatisfiable boolean formula},
-  author={Zhang, Lintao and Malik, Sharad},
-  booktitle = {6th International Conference on Theory and Applications of Satisfiability Testing: SAT 2003},
-  month = may,
-  year = {2003}
-}
 
 @inproceedings{NFM2015:backes,
  author={Backes, John and Cofer, Darren and Miller, Steven and Whalen, Michael W.},
@@ -1957,30 +1956,29 @@ title={On the interplay between consistency, completeness, and correctness in re
    YEAR = 2009
 }
 
-@manual{DO-178C,
-  title =        {Software Considerations in Airborne Systems and Equipment
-                  Certification},
-  author =       {{RTCA DO-178C}},
-  publisher =    {RTCA},
+@manual{DO178C,
+   TITLE = "{Software Considerations in Airborne Systems and Equipment Certification}",
+   author =       {{RTCA DO-178C}},
+  publisher =    {{RTCA, Incorporated}},
   year =         2011,
   month =        {December},
-  address =      {Washington, DC},
-}
+  address =      {Washington, DC}
+  }
 
 @manual{DO-331,
   title =        {Model-Based Development and Verification Supplement to
                   DO-178C and DO-278A},
   author =       {{RTCA DO-331}},
-  publisher =    {RTCA},
+  publisher =    {{RTCA, Incorporated}},
   year =         2011,
   month =        {December},
-  address =      {Washington, DC},
+  address =      {Washington, DC}
 }
 
-@manual{DO-333,
+@manual{DO333,
   title =        {Formal Methods Supplement to DO-178C and DO-278A},
   author =       {{RTCA DO-333}},
-  publisher =    {RTCA},
+  publisher =    {{RTCA, Incorporated}},
   year =         2011,
   month =        {December},
   address =      {Washington, DC},
@@ -1995,17 +1993,6 @@ title={On the interplay between consistency, completeness, and correctness in re
   address =      {Wash., DC},
 }
 
-@MISC{DO178C,
-    author = {RTCA/DO-178C},
-    title = {Software Considerations in Airborne Systems and Equipment Certification},
-    year = {}
-}
-
-@MISC{DO333,
-    author = {RTCA/DO-333},
-    title = {Formal Methods Supplement},
-    year = {}
-}
 
 @misc{FMCaseStudy,
   title =        {Formal Methods Case Studies for {DO-333}, {NASA} Contractor Report {NASA}/{CR}-2014-218244},
